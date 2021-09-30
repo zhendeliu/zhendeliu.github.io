@@ -32,6 +32,21 @@
       </tags>
   </entry>
   <entry>
+    <title>cv算法面试问题总结（一）</title>
+    <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+        <tag>总结</tag>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OpenCV图像处理基础（二）</title>
     <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[<h2 id="各种滤波器"><a href="#各种滤波器" class="headerlink" title="各种滤波器"></a>各种滤波器</h2>]]></content>
@@ -48,8 +63,8 @@
       </tags>
   </entry>
   <entry>
-    <title>cv算法面试问题总结（一）</title>
-    <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <title>cv算法面试问题总结（二）</title>
+    <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>学习</category>
@@ -60,26 +75,27 @@
         <tag>面试</tag>
         <tag>总结</tag>
         <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像分割-Unet[项目应用]</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2-Unet/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>图像分割</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>项目总结</tag>
       </tags>
   </entry>
   <entry>
     <title>cv算法面试问题总结（三）</title>
     <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>面试</tag>
-        <tag>总结</tag>
-        <tag>技巧</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>cv算法面试问题总结（二）</title>
-    <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>学习</category>
@@ -105,22 +121,6 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>图像分割-Unet[项目应用]</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2-Unet/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>图像分割</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>项目总结</tag>
-      </tags>
   </entry>
   <entry>
     <title>图像分类-EfficientNet&amp;EfficientDet[项目应用]</title>
@@ -186,14 +186,6 @@
       </tags>
   </entry>
   <entry>
-    <title>新文章</title>
-    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0-1/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>编程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>图像识别-VGGNet</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/</url>
     <content><![CDATA[<h1 id="VGGNet"><a href="#VGGNet" class="headerlink" title="VGGNet"></a>VGGNet</h1>]]></content>
@@ -206,41 +198,6 @@
       <tags>
         <tag>编程</tag>
         <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>新文章</title>
-    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>空文档</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>机器学习经典算法概览</title>
-    <url>/2021/09/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
-    <content><![CDATA[<h1 id="集成算法-Ensemble-algorithms"><a href="#集成算法-Ensemble-algorithms" class="headerlink" title="集成算法 Ensemble algorithms"></a>集成算法 Ensemble algorithms</h1><p>将多个弱模型组合，弱模型单独训练，将哥哥弱模型的预测结果以某种方式结合完成总体的预测</p>
-<p>主要问题在于找到可以组合的弱模型和弱模型结果的结合方式</p>
-<ol>
-<li>Boosting</li>
-<li>Bagging</li>
-<li>AdaBoost</li>
-<li>Blending</li>
-<li>Random Forest随机森林</li>
-<li>** GBM（Gradient Boosting Machine）梯度推进机</li>
-<li>** GBRT（Gradient Boosted Regression Tree） 梯度提升回归树</li>
-</ol>
-<p>优点：结合最优秀的模型们，可以得到更加优秀的预测结果</p>
-<p>缺点：多模型融合计算量大</p>
-<h1 id="决策树算法（Decision-Tree-Algorithm"><a href="#决策树算法（Decision-Tree-Algorithm" class="headerlink" title="决策树算法（Decision Tree Algorithm)"></a>决策树算法（Decision Tree Algorithm)</h1><p>Step1 选择分裂节点：当根据某个属性的值不能明确分到样本哪个类别是就将此属性作为节点对其分裂</p>
-<p>Step2 选择一个合适的阈值进行分裂使其分类的错误率最小</p>
-<h2 id="1-ID3"><a href="#1-ID3" class="headerlink" title="1.ID3"></a>1.ID3</h2>]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>概览</tag>
       </tags>
   </entry>
   <entry>
@@ -259,8 +216,66 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习经典算法概览</title>
+    <url>/2021/09/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
+    <content><![CDATA[<h1 id="集成算法-Ensemble-algorithms"><a href="#集成算法-Ensemble-algorithms" class="headerlink" title="集成算法 Ensemble algorithms"></a>集成算法 Ensemble algorithms</h1><p>将多个弱模型组合，弱模型单独训练，将哥哥弱模型的预测结果以某种方式结合完成总体的预测</p>
+<p>主要问题在于找到可以组合的弱模型和弱模型结果的结合方式</p>
+<ol>
+<li>Boosting</li>
+<li>Bagging</li>
+<li>AdaBoost</li>
+<li>Blending</li>
+<li>Random Forest随机森林</li>
+<li>** GBM（Gradient Boosting Machine）梯度推进机</li>
+<li>** GBRT（Gradient Boosted Regression Tree） 梯度提升回归树</li>
+</ol>
+<p>优点：结合最优秀的模型们，可以得到更加优秀的预测结果</p>
+<p>缺点：多模型融合计算量大</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a><span id="more"></span></h3><h1 id="决策树算法（Decision-Tree-Algorithm"><a href="#决策树算法（Decision-Tree-Algorithm" class="headerlink" title="决策树算法（Decision Tree Algorithm)"></a>决策树算法（Decision Tree Algorithm)</h1><p>Step1 选择分裂节点：当根据某个属性的值不能明确分到样本哪个类别是就将此属性作为节点对其分裂</p>
+<p>Step2 选择一个合适的阈值进行分裂使其分类的错误率最小</p>
+<h2 id="1-ID3"><a href="#1-ID3" class="headerlink" title="1.ID3"></a>1.ID3</h2>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>概览</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>目标检测-R-CNN系列</title>
     <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-R-CNN%E7%B3%BB%E5%88%97/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新文章</title>
+    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0-1/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新文章</title>
+    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>空文档</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>目标检测-Retina-Net</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-Retina-Net/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>学习</category>
@@ -281,6 +296,8 @@
 <p>整张图作为网络的输入，在输出层回归Bounding Box的位置和Bounding Box的类别</p>
 <p>相比Faster R-CNN虽然也是整张图输入，但Proposal+ classifier没变, 只是将Proposal也放在了CNN中</p>
 </li>
+</ol>
+<h3 id=""><a href="#" class="headerlink" title=""></a><span id="more"></span></h3><ol>
 <li><p>实现方法</p>
 <ol>
 <li>将整张图分为S*S的网格，如果某个object的中心落在这个网格中，这个网格就负责预测这个object</li>
@@ -336,21 +353,6 @@
   <entry>
     <title>目标检测-SSD系列</title>
     <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>目标检测-Retina-Net</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-Retina-Net/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>学习</category>
