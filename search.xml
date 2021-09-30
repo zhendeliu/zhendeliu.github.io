@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>OpenCV图像处理基础（二）</title>
-    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<h2 id="各种滤波器"><a href="#各种滤波器" class="headerlink" title="各种滤波器"></a>各种滤波器</h2>]]></content>
+    <title>OpenCV图像处理基础（三）</title>
+    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1>]]></content>
       <categories>
         <category>学习</category>
         <category>cv算法</category>
@@ -12,7 +12,7 @@
         <tag>OpenCV</tag>
         <tag>基础操作</tag>
         <tag>噪音</tag>
-        <tag>滤波器</tag>
+        <tag>灰度图</tag>
         <tag>编程</tag>
       </tags>
   </entry>
@@ -32,6 +32,22 @@
       </tags>
   </entry>
   <entry>
+    <title>OpenCV图像处理基础（二）</title>
+    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="各种滤波器"><a href="#各种滤波器" class="headerlink" title="各种滤波器"></a>各种滤波器</h2>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>基础操作</tag>
+        <tag>噪音</tag>
+        <tag>编程</tag>
+        <tag>滤波器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>cv算法面试问题总结（一）</title>
     <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[]]></content>
@@ -44,22 +60,6 @@
         <tag>面试</tag>
         <tag>总结</tag>
         <tag>技巧</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenCV图像处理基础（三）</title>
-    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1>]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-        <tag>基础操作</tag>
-        <tag>噪音</tag>
-        <tag>编程</tag>
-        <tag>灰度图</tag>
       </tags>
   </entry>
   <entry>
@@ -93,22 +93,6 @@
       </tags>
   </entry>
   <entry>
-    <title>图像分割-Unet[项目应用]</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2-Unet/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>图像分割</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>项目总结</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hello-world</title>
     <url>/2021/09/29/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -125,6 +109,22 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>图像分割-Unet[项目应用]</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2-Unet/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>图像分割</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>项目总结</tag>
+      </tags>
   </entry>
   <entry>
     <title>图像分类-EfficientNet&amp;EfficientDet[项目应用]</title>
@@ -160,17 +160,9 @@
       </tags>
   </entry>
   <entry>
-    <title>新文章</title>
-    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0-1/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>编程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图像识别-ResNet</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/</url>
-    <content><![CDATA[<h1 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h1>]]></content>
+    <title>图像识别-GoogLeNet</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/</url>
+    <content><![CDATA[<h1 id="GoogleNet"><a href="#GoogleNet" class="headerlink" title="GoogleNet"></a>GoogleNet</h1>]]></content>
       <categories>
         <category>学习</category>
         <category>cv算法</category>
@@ -183,9 +175,9 @@
       </tags>
   </entry>
   <entry>
-    <title>图像识别-GoogLeNet</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/</url>
-    <content><![CDATA[<h1 id="GoogleNet"><a href="#GoogleNet" class="headerlink" title="GoogleNet"></a>GoogleNet</h1>]]></content>
+    <title>图像识别-ResNet</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/</url>
+    <content><![CDATA[<h1 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h1>]]></content>
       <categories>
         <category>学习</category>
         <category>cv算法</category>
@@ -214,6 +206,14 @@
   </entry>
   <entry>
     <title>新文章</title>
+    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0-1/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新文章</title>
     <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[]]></content>
       <categories>
@@ -223,13 +223,21 @@
   <entry>
     <title>机器学习-决策树Decision Tree</title>
     <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%86%B3%E7%AD%96%E6%A0%91Decision-Tree/</url>
-    <content><![CDATA[<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><p><img src="/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%86%B3%E7%AD%96%E6%A0%91Decision-Tree/1.png"></p>
+    <content><![CDATA[<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><p><img src="/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%86%B3%E7%AD%96%E6%A0%91Decision-Tree/1.png" alt="哈哈哈"></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>机器学习-线性回归Linear Regression</title>
+    <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92Linear-Regression/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>机器学习经典算法概览</title>
     <url>/2021/09/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
-    <content><![CDATA[<h1 id="集成算法-Ensemble-algorithms"><a href="#集成算法-Ensemble-algorithms" class="headerlink" title="集成算法 Ensemble algorithms"></a>集成算法 Ensemble algorithms</h1><p>将多个弱模型组合，弱模型单独训练，将哥哥弱模型的预测结果以某种方式结合完成总体的预测</p>
+    <content><![CDATA[<p>这是一篇机器学习经典算法的简述，包含了线性回归、支持向量机(SVM)、最近邻居(KNN)、逻辑回归、决策树、k平均、随机森林、朴素贝叶斯、降维、梯度增强（更新ing）</p>
+<span id="more"></span>
+
+<h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><h1 id="集成算法-Ensemble-algorithms"><a href="#集成算法-Ensemble-algorithms" class="headerlink" title="集成算法 Ensemble algorithms"></a>集成算法 Ensemble algorithms</h1><p>将多个弱模型组合，弱模型单独训练，将哥哥弱模型的预测结果以某种方式结合完成总体的预测</p>
 <p>主要问题在于找到可以组合的弱模型和弱模型结果的结合方式</p>
 <ol>
 <li>Boosting</li>
@@ -242,7 +250,7 @@
 </ol>
 <p>优点：结合最优秀的模型们，可以得到更加优秀的预测结果</p>
 <p>缺点：多模型融合计算量大</p>
-<h3 id><a href="#" class="headerlink" title></a><span id="more"></span></h3><h1 id="决策树算法（Decision-Tree-Algorithm"><a href="#决策树算法（Decision-Tree-Algorithm" class="headerlink" title="决策树算法（Decision Tree Algorithm)"></a>决策树算法（Decision Tree Algorithm)</h1><p>Step1 选择分裂节点：当根据某个属性的值不能明确分到样本哪个类别是就将此属性作为节点对其分裂</p>
+<h3 id><a href="#" class="headerlink" title></a></h3><h1 id="决策树算法（Decision-Tree-Algorithm"><a href="#决策树算法（Decision-Tree-Algorithm" class="headerlink" title="决策树算法（Decision Tree Algorithm)"></a>决策树算法（Decision Tree Algorithm)</h1><p>Step1 选择分裂节点：当根据某个属性的值不能明确分到样本哪个类别是就将此属性作为节点对其分裂</p>
 <p>Step2 选择一个合适的阈值进行分裂使其分类的错误率最小</p>
 <h2 id="1-ID3"><a href="#1-ID3" class="headerlink" title="1.ID3"></a>1.ID3</h2>]]></content>
       <categories>
@@ -375,18 +383,25 @@
       </tags>
   </entry>
   <entry>
-    <title>轻量化网络-MobileNet</title>
-    <url>/2021/09/29/%E8%BD%BB%E9%87%8F%E5%8C%96%E7%BD%91%E7%BB%9C-MobileNet/</url>
-    <content><![CDATA[]]></content>
+    <title>站内说明</title>
+    <url>/2021/09/14/%E7%AB%99%E5%86%85%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<p>本blog是作为Leo同学的自我拓展过程中的自律自省记录</p>
+<p>对该blog的计划是对一下类别和领域的学习与探索：</p>
+<p>理论方面：</p>
+<p>​    计算机视觉</p>
+<p>​    深度学习算法</p>
+<p>​    机器学习算法</p>
+<p>Coding方面：</p>
+<p>​    OpenCV</p>
+<p>​    Python</p>
+<p>​    Pytorch</p>
+<p>​    </p>
+]]></content>
       <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>轻量化模型</category>
+        <category>其他</category>
       </categories>
       <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
+        <tag>概览</tag>
       </tags>
   </entry>
   <entry>
@@ -399,6 +414,21 @@
       </categories>
       <tags>
         <tag>概览</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>轻量化网络-MobileNet</title>
+    <url>/2021/09/29/%E8%BD%BB%E9%87%8F%E5%8C%96%E7%BD%91%E7%BB%9C-MobileNet/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>轻量化模型</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
       </tags>
   </entry>
 </search>
