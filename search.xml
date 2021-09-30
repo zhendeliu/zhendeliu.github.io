@@ -16,22 +16,6 @@
       </tags>
   </entry>
   <entry>
-    <title>OpenCV图像处理基础（二）</title>
-    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<h2 id="各种滤波器"><a href="#各种滤波器" class="headerlink" title="各种滤波器"></a>各种滤波器</h2>]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-        <tag>基础操作</tag>
-        <tag>噪音</tag>
-        <tag>编程</tag>
-        <tag>滤波器</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenCV图像处理基础（三）</title>
     <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
     <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1>]]></content>
@@ -45,6 +29,22 @@
         <tag>噪音</tag>
         <tag>编程</tag>
         <tag>灰度图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenCV图像处理基础（二）</title>
+    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="各种滤波器"><a href="#各种滤波器" class="headerlink" title="各种滤波器"></a>各种滤波器</h2>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>基础操作</tag>
+        <tag>噪音</tag>
+        <tag>编程</tag>
+        <tag>滤波器</tag>
       </tags>
   </entry>
   <entry>
@@ -78,24 +78,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hello-world</title>
-    <url>/2021/09/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>cv算法面试问题总结（二）</title>
     <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[]]></content>
@@ -109,6 +91,20 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>hello-world</title>
+    <url>/2021/09/29/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>图像分割-Unet[项目应用]</title>
@@ -145,21 +141,6 @@
       </tags>
   </entry>
   <entry>
-    <title>图像识别-AlexNet</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/</url>
-    <content><![CDATA[<h1 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h1>]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>图像识别</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>图像识别-GoogLeNet</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/</url>
     <content><![CDATA[<h1 id="GoogleNet"><a href="#GoogleNet" class="headerlink" title="GoogleNet"></a>GoogleNet</h1>]]></content>
@@ -175,11 +156,18 @@
       </tags>
   </entry>
   <entry>
-    <title>新文章</title>
-    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0-1/</url>
-    <content><![CDATA[]]></content>
+    <title>图像识别-AlexNet</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/</url>
+    <content><![CDATA[<h1 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h1>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>图像识别</category>
+      </categories>
       <tags>
         <tag>编程</tag>
+        <tag>论文复现</tag>
       </tags>
   </entry>
   <entry>
@@ -214,6 +202,14 @@
   </entry>
   <entry>
     <title>新文章</title>
+    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0-1/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新文章</title>
     <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[]]></content>
       <categories>
@@ -221,24 +217,44 @@
       </categories>
   </entry>
   <entry>
-    <title>机器学习-决策树Decision Tree</title>
-    <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%86%B3%E7%AD%96%E6%A0%91Decision-Tree/</url>
-    <content><![CDATA[<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><p><img src="/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%86%B3%E7%AD%96%E6%A0%91Decision-Tree/1.png" alt="哈哈哈"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>机器学习-线性回归Linear Regression</title>
     <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92Linear-Regression/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：找到一系列的参数W，使得f(x) = XW 和真实输出Y之间无限接近或一致。</p>
-<p>解决方法：</p>
+<p>方法简述：</p>
 <p>优点：直接，快速，可解释性高</p>
-<p>缺点：基于一系列假设；对异常值敏感；对数据分布敏感；存在多重共线性，自相关，异方差问题；</p>
+<p>缺点：基于一系列假设；对异常值敏感；对数据分布敏感；存在多重共线性，自相关，异方差问题；容易出现过拟合与欠拟合问题；</p>
 <span id="more"></span>
-
 <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>什么是回归模型？</p>
 <p>回归是用来拟合输入变量和输出变量之间的关系，回归模型就是表示从输入变量到输出变量的映射函数。</p>
 <p>所以线性回归的目标就是找到一系列的参数W，使得f(x) = XW 和真实输出Y之间无限接近或一致。</p>
-<h1 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h1><h1 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h1><h1 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h1><h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1>]]></content>
+<h1 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h1><h1 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h1><h1 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h1><h2 id="过拟合问题"><a href="#过拟合问题" class="headerlink" title="过拟合问题"></a>过拟合问题</h2><p>​    分析数据，重新做数据清冼，将征工程。</p>
+<p>​    扩充数据集，收集更多数据。</p>
+<p>​    减少特征数量 。</p>
+<p>​    **采用正则化方法</p>
+<h2 id="欠拟合问题"><a href="#欠拟合问题" class="headerlink" title="欠拟合问题 **"></a>欠拟合问题 **</h2><p>​    分析数据，增加特征维度</p>
+<p>​    ** 增加多项式特征阶数</p>
+<p>​    ** 减小正则项的超参数系数</p>
+<p>​    ** 局部加权回归 </p>
+<h2 id="多重共线性"><a href="#多重共线性" class="headerlink" title="多重共线性"></a>多重共线性</h2><p>​    那共线性会引发什么问题。。。。：</p>
+<p>1、模型参数估计不准确，有时甚至会出现回归系数的符号与实际情况完全相反的情况，比如逻辑上应该系数为正的特征系数 算出来为负。</p>
+<p>2、本应该显著的自变量不显著，本不显著的自变量却呈现出显著性（也就是说，无法从p-值的大小判断出变量是否显著——下面会给一个例子）</p>
+<p>3、多重共线性使参数估计值的方差增大，模型参数不稳定，也就是每次训练得到的权重系数差异都比较大。</p>
+<p>其实多重共线性这样理解会简单很多:</p>
+<p>假设原始的线性回归公式为：</p>
+<p>y=w1<em>x1+w2</em>x2+w3*x3</p>
+<p>训练完毕的线性回归公式为：</p>
+<p>y=5x1+7x2+10x3,</p>
+<p>此时加入一个新特征x4，假设x4和x3高度相关，x4=2x3,则</p>
+<p>y=w1<em>x1+w2</em>x2+w3<em>x3+w4</em>x4=w1<em>x1+w2</em>x2+(w3+2w4)*x3</p>
+<p>因为我们之前拟合出来的最优的回归方程为：</p>
+<p>y=5x1+7x2+10x3</p>
+<p>显然w3+2w4可以合并成一个新的权重稀疏 w5，则</p>
+<p>y=w1<em>x1+w2</em>x2+w5*x3,显然：</p>
+<p>y=w1<em>x1+w2</em>x2+w3<em>x3和y=w1</em>x1+w2<em>x2+w5</em>x3是等价的。。。。</p>
+<p>那么最终最优的模型应该也是 y=5x1+7x2+10x3</p>
+<p>但是考虑到引入了x4，所以w4和w3的权重是分开计算出来的，这就导致了</p>
+<p>w5=10=w3+2w4，显然这个方程有无穷多的解，比如w3=4，w4=3，或者w4=-1，w3=12等，因此导致了模型系数估计的不稳定并且可能会出现负系数的问题。</p>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><h2 id="基于-Python-scikit-learn-工具包"><a href="#基于-Python-scikit-learn-工具包" class="headerlink" title="基于 Python scikit-learn 工具包"></a>基于 Python scikit-learn 工具包</h2><h2 id="Python自建实现"><a href="#Python自建实现" class="headerlink" title="Python自建实现"></a>Python自建实现</h2>]]></content>
       <categories>
         <category>学习</category>
         <category>机器学习</category>
@@ -249,11 +265,16 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习-决策树Decision Tree</title>
+    <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%86%B3%E7%AD%96%E6%A0%91Decision-Tree/</url>
+    <content><![CDATA[<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><p><img src="/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%86%B3%E7%AD%96%E6%A0%91Decision-Tree/1.png" alt="哈哈哈"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>机器学习经典算法概览</title>
     <url>/2021/09/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
     <content><![CDATA[<p>这是一篇机器学习经典算法的简述，包含了线性回归、支持向量机(SVM)、最近邻居(KNN)、逻辑回归、决策树、k平均、随机森林、朴素贝叶斯、降维、梯度增强（更新ing）</p>
 <span id="more"></span>
-
 <h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><h1 id="集成算法-Ensemble-algorithms"><a href="#集成算法-Ensemble-algorithms" class="headerlink" title="集成算法 Ensemble algorithms"></a>集成算法 Ensemble algorithms</h1><p>将多个弱模型组合，弱模型单独训练，将哥哥弱模型的预测结果以某种方式结合完成总体的预测</p>
 <p>主要问题在于找到可以组合的弱模型和弱模型结果的结合方式</p>
 <ol>
@@ -267,7 +288,7 @@
 </ol>
 <p>优点：结合最优秀的模型们，可以得到更加优秀的预测结果</p>
 <p>缺点：多模型融合计算量大</p>
-<h3 id><a href="#" class="headerlink" title></a></h3><h1 id="决策树算法（Decision-Tree-Algorithm"><a href="#决策树算法（Decision-Tree-Algorithm" class="headerlink" title="决策树算法（Decision Tree Algorithm)"></a>决策树算法（Decision Tree Algorithm)</h1><p>Step1 选择分裂节点：当根据某个属性的值不能明确分到样本哪个类别是就将此属性作为节点对其分裂</p>
+<h3 id><a href="#" class="headerlink" title=" "></a> </h3><h1 id="决策树算法（Decision-Tree-Algorithm"><a href="#决策树算法（Decision-Tree-Algorithm" class="headerlink" title="决策树算法（Decision Tree Algorithm)"></a>决策树算法（Decision Tree Algorithm)</h1><p>Step1 选择分裂节点：当根据某个属性的值不能明确分到样本哪个类别是就将此属性作为节点对其分裂</p>
 <p>Step2 选择一个合适的阈值进行分裂使其分类的错误率最小</p>
 <h2 id="1-ID3"><a href="#1-ID3" class="headerlink" title="1.ID3"></a>1.ID3</h2>]]></content>
       <categories>
@@ -281,7 +302,7 @@
   <entry>
     <title>深度学习</title>
     <url>/2021/09/29/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>#设置标签<br>在编辑文章的时候，tags:后面是设置标签的地方，如果有多个标签的话，可以用下面两种办法来设置：</p>
+    <content><![CDATA[<h1 id="设置标签"><a href="#设置标签" class="headerlink" title="设置标签"></a>设置标签</h1><p>在编辑文章的时候，tags:后面是设置标签的地方，如果有多个标签的话，可以用下面两种办法来设置：</p>
 <h2 id="设置小标签"><a href="#设置小标签" class="headerlink" title="设置小标签"></a>设置小标签</h2><p>在编辑文章的时候，tags:后面是设置标签的地方，如果有多个标签的话，可以用下面两种办法来设置：</p>
 ]]></content>
       <categories>
@@ -294,8 +315,8 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-Retina-Net</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-Retina-Net/</url>
+    <title>目标检测-R-CNN系列</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-R-CNN%E7%B3%BB%E5%88%97/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>学习</category>
@@ -309,8 +330,8 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-R-CNN系列</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-R-CNN%E7%B3%BB%E5%88%97/</url>
+    <title>目标检测-Retina-Net</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-Retina-Net/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>学习</category>
@@ -347,7 +368,7 @@
 <p>相比Faster R-CNN虽然也是整张图输入，但Proposal+ classifier没变, 只是将Proposal也放在了CNN中</p>
 </li>
 </ol>
-<h3 id><a href="#" class="headerlink" title></a><span id="more"></span></h3><ol start="2">
+<h3 id><a href="#" class="headerlink" title></a><span id="more"></span></h3><ol>
 <li><p>实现方法</p>
 <ol>
 <li>将整张图分为S*S的网格，如果某个object的中心落在这个网格中，这个网格就负责预测这个object</li>
@@ -375,12 +396,12 @@
 <ol>
 <li><p>BN层</p>
 </li>
-<li><p>高分辨率分类 224*224 -》448 * 448</p>
+<li><p>高分辨率分类 224<em>224 -》448 </em> 448</p>
 </li>
 <li><h3 id="Convolution-with-anchor-boxes：-YOLOv1包含有全连接层，从而能直接预测Bounding-Boxes的坐标值。Faster-R-CNN算法只用卷积层与Region-Proposal-Network来预测Anchor-Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。"><a href="#Convolution-with-anchor-boxes：-YOLOv1包含有全连接层，从而能直接预测Bounding-Boxes的坐标值。Faster-R-CNN算法只用卷积层与Region-Proposal-Network来预测Anchor-Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。" class="headerlink" title="Convolution with anchor boxes： YOLOv1包含有全连接层，从而能直接预测Bounding Boxes的坐标值。Faster R-CNN算法只用卷积层与Region Proposal Network来预测Anchor Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。"></a>Convolution with anchor boxes： YOLOv1包含有全连接层，从而能直接预测Bounding Boxes的坐标值。Faster R-CNN算法只用卷积层与Region Proposal Network来预测Anchor Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。</h3><p>借鉴Faster RCNN的做法，YOLOv2也尝试采用先验框（anchor）。在每个grid预先设定一组不同大小和宽高比的边框，来覆盖整个图像的不同位置和多种尺度，这些先验框作为预定义的候选区在神经网络中将检测其中是否存在对象，以及微调边框的位置</p>
 </li>
 <li><p>YOLOv2的做法是对训练集中标注的边框进行K-means聚类分析，以寻找尽可能匹配样本的边框尺寸。</p>
-<p><img src="/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLO%E7%B3%BB%E5%88%97/1.png"></p>
+<p><img src="/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLO%E7%B3%BB%E5%88%97/1.png" alt></p>
 </li>
 </ol>
 </li>
@@ -393,21 +414,6 @@
         <category>cv算法</category>
         <category>深度学习</category>
         <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>轻量化网络-MobileNet</title>
-    <url>/2021/09/29/%E8%BD%BB%E9%87%8F%E5%8C%96%E7%BD%91%E7%BB%9C-MobileNet/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>轻量化模型</category>
       </categories>
       <tags>
         <tag>编程</tag>
@@ -446,6 +452,21 @@
       </categories>
       <tags>
         <tag>概览</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>轻量化网络-MobileNet</title>
+    <url>/2021/09/29/%E8%BD%BB%E9%87%8F%E5%8C%96%E7%BD%91%E7%BB%9C-MobileNet/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>轻量化模型</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
       </tags>
   </entry>
 </search>
