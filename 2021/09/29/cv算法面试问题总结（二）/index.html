@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="摘要背景问题： 方法简述： 优点： 缺点：">
+  <meta name="description" content="问题列表 ？？？ 判别模型和生成模型 如何决定算法是否收敛 正则的方法及特点 1*1卷积的作用 ？？？ 无监督学习的方法有哪些 什么是感受野，增大感受野的方法 反卷积的棋盘效应和解决方法 神经网络参数量计算 ？？？ 空洞卷积的原理和作用 ？？？ 空洞卷积的感受野计算">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cv算法面试问题总结（二）">
 <meta property="og:url" content="http://example.com/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="摘要背景问题： 方法简述： 优点： 缺点：">
+<meta property="og:description" content="问题列表 ？？？ 判别模型和生成模型 如何决定算法是否收敛 正则的方法及特点 1*1卷积的作用 ？？？ 无监督学习的方法有哪些 什么是感受野，增大感受野的方法 反卷积的棋盘效应和解决方法 神经网络参数量计算 ？？？ 空洞卷积的原理和作用 ？？？ 空洞卷积的感受野计算">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-29T11:06:55.000Z">
-<meta property="article:modified_time" content="2021-10-01T02:34:05.761Z">
+<meta property="article:modified_time" content="2021-10-01T09:44:48.231Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="面试">
 <meta property="article:tag" content="总结">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-01 10:34:05" itemprop="dateModified" datetime="2021-10-01T10:34:05+08:00">2021-10-01</time>
+                <time title="修改时间：2021-10-01 17:44:48" itemprop="dateModified" datetime="2021-10-01T17:44:48+08:00">2021-10-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,12 +262,78 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
+        <h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
+<li>？？？ 判别模型和生成模型</li>
+<li>如何决定算法是否收敛</li>
+<li>正则的方法及特点</li>
+<li>1*1卷积的作用</li>
+<li>？？？ 无监督学习的方法有哪些</li>
+<li>什么是感受野，增大感受野的方法</li>
+<li>反卷积的棋盘效应和解决方法</li>
+<li>神经网络参数量计算</li>
+<li>？？？ 空洞卷积的原理和作用</li>
+<li>？？？ 空洞卷积的感受野计算</li>
+</ol>
 <span id="more"></span>
-
+<h1 id="问题及解答"><a href="#问题及解答" class="headerlink" title="问题及解答"></a>问题及解答</h1><h2 id="判别模型和生成模型"><a href="#判别模型和生成模型" class="headerlink" title="判别模型和生成模型"></a>判别模型和生成模型</h2><p>？？？</p>
+<h2 id="如何决定算法是否收敛"><a href="#如何决定算法是否收敛" class="headerlink" title="如何决定算法是否收敛"></a>如何决定算法是否收敛</h2><ol>
+<li><p>Loss 小于某个阈值</p>
+</li>
+<li><p>Loss趋于稳定，在某个之附近徘徊</p>
+</li>
+<li><p>迭代到一定的次数</p>
+</li>
+<li><p>看权值矩阵的变化，两次迭代权值变化很小</p>
+</li>
+</ol>
+<h2 id="正则的方法及特点"><a href="#正则的方法及特点" class="headerlink" title="正则的方法及特点"></a>正则的方法及特点</h2><ol>
+<li>正则的目的是防止过拟合，提高泛化能力</li>
+<li>L1正则</li>
+<li>L2正则</li>
+<li>数据集扩增</li>
+<li>dropout</li>
+</ol>
+<h2 id="1-1卷积的作用"><a href="#1-1卷积的作用" class="headerlink" title="1*1卷积的作用"></a>1*1卷积的作用</h2><ol>
+<li>实现跨通道信息融合；不同通道上的一个线性组合，实际上就是加起来乘一个系数</li>
+<li>feature map 通道数上的降维：<ol>
+<li>假设输入特征维度是 100<em>100</em>128，卷积核的大小是5<em>5（stride=1，padding=2）通道数是256，经过卷积后输出的特征维度是（100-5+2</em>2）/1+1 = 100-》100<em>100</em>256 卷积参数量是128<em>5</em>5<em>256=819200 如果在5</em>5卷积之前使用一个64通道1<em>1的卷积，参数量是 128</em>1<em>1</em>64 + 64<em>5</em>5*256 = 417792</li>
+</ol>
+</li>
+<li>增加非线性映射次数 1*1卷积之后会加一个非线性激活函数，使网络更深，也是网络更加具有判别信息的特征</li>
+</ol>
+<h2 id="无监督学习的方法有哪些"><a href="#无监督学习的方法有哪些" class="headerlink" title="无监督学习的方法有哪些"></a>无监督学习的方法有哪些</h2><h2 id="什么是感受野，增大感受野的方法"><a href="#什么是感受野，增大感受野的方法" class="headerlink" title="什么是感受野，增大感受野的方法"></a>什么是感受野，增大感受野的方法</h2><ol>
+<li>感受野是卷积神经网络每一层输出的的feature map上的每个feature 在原图上映射的区域大小（原图：预处理resize，crop，wrap之后的图）</li>
+<li>感受野越大，映射的原始图像的范围越广，可以蕴含更为全局，语义层次更高的信息</li>
+<li>计算公式：一开始RF=1，然后RF= （RF-1）* stride + kernelsize （不管conv层还是pooling层，依次替换stride和kernelsize至最后）</li>
+<li>增加感受野的方法：<ol>
+<li>空洞卷积</li>
+<li>增加pooling层，但会降低准确度 pooling会丢失信息</li>
+<li>增大kernelsize， 会增加参数</li>
+<li>增加卷积层的个数， 会面临梯度消失的问题。CPM中作者采用多阶段训练，并引入中间层监督来解决梯度消失的问题</li>
+</ol>
+</li>
+</ol>
+<h2 id="反卷积的棋盘效应和解决方法"><a href="#反卷积的棋盘效应和解决方法" class="headerlink" title="反卷积的棋盘效应和解决方法"></a>反卷积的棋盘效应和解决方法</h2><ol>
+<li>反卷积是允许小图像中的点来绘制更大图像中的方块，很容易出现不均匀重叠，使得图像中的某个部分颜色比其他部分更深，也就是伪影。尤其是kernelsize不能被stride整除的时候。虽然网络可以通过学习权重来避免这种情况，但实践中很难完全避免</li>
+<li>解决方法：<ol>
+<li>修改反卷积形式<ol>
+<li>确保反卷积核的大小可以被步长整除</li>
+<li>网络末尾使用1*1的反卷积</li>
+<li>调整卷积核权重</li>
+</ol>
+</li>
+<li>修改上采样形式，采用插值方法代替反卷积进行上采样，如邻近差值和双线性差值</li>
+<li>通过损失函数修正输出，在损失函数中加入total variation loss等损失函数，平滑输出图像，但图像边缘会模糊</li>
+</ol>
+</li>
+</ol>
+<h2 id="神经网络参数量计算"><a href="#神经网络参数量计算" class="headerlink" title="神经网络参数量计算"></a>神经网络参数量计算</h2><ol>
+<li>带参数的层是：卷积层，BN层和全连接层。激活函数层，pooling层和Upsample层是没有参数的</li>
+<li>卷积层参数计算：卷积核体积(Kw X Kh X Cin) X 卷积核个数Cout(也就是输出channel数) + 偏置项个数Cout (每个卷积核带有一个偏置项，但是不影响参数的数量级有时候会省略)</li>
+<li>BN层的参数计算：2 X Cin(输入通道数) 有两个需要学习缩放因子和平移因子</li>
+<li>FC层的参数计算：输入向量长度(和feature map相同size的一个卷积核)Ti X 输出向量长度To + 偏置量To  （全连接层逐渐被global average pooling取代 将最后一层的特征图 整张图进行一个均值化形成特征点，将这些特征点组合成最后的特征向量，通过softmax 进行计算）</li>
+</ol>
+<h2 id="空洞卷积的原理和作用"><a href="#空洞卷积的原理和作用" class="headerlink" title="空洞卷积的原理和作用"></a>空洞卷积的原理和作用</h2><h2 id="空洞卷积的感受野计算"><a href="#空洞卷积的感受野计算" class="headerlink" title="空洞卷积的感受野计算"></a>空洞卷积的感受野计算</h2>
     </div>
 
     
@@ -352,7 +418,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%97%E8%A1%A8"><span class="nav-number">1.</span> <span class="nav-text">问题列表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E7%AD%94"><span class="nav-number">2.</span> <span class="nav-text">问题及解答</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B%E5%92%8C%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">判别模型和生成模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%86%B3%E5%AE%9A%E7%AE%97%E6%B3%95%E6%98%AF%E5%90%A6%E6%94%B6%E6%95%9B"><span class="nav-number">2.2.</span> <span class="nav-text">如何决定算法是否收敛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E7%9A%84%E6%96%B9%E6%B3%95%E5%8F%8A%E7%89%B9%E7%82%B9"><span class="nav-number">2.3.</span> <span class="nav-text">正则的方法及特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1%E5%8D%B7%E7%A7%AF%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">2.4.</span> <span class="nav-text">1*1卷积的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="nav-number">2.5.</span> <span class="nav-text">无监督学习的方法有哪些</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%84%9F%E5%8F%97%E9%87%8E%EF%BC%8C%E5%A2%9E%E5%A4%A7%E6%84%9F%E5%8F%97%E9%87%8E%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">2.6.</span> <span class="nav-text">什么是感受野，增大感受野的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E5%8D%B7%E7%A7%AF%E7%9A%84%E6%A3%8B%E7%9B%98%E6%95%88%E5%BA%94%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-number">2.7.</span> <span class="nav-text">反卷积的棋盘效应和解决方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8F%82%E6%95%B0%E9%87%8F%E8%AE%A1%E7%AE%97"><span class="nav-number">2.8.</span> <span class="nav-text">神经网络参数量计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E6%B4%9E%E5%8D%B7%E7%A7%AF%E7%9A%84%E5%8E%9F%E7%90%86%E5%92%8C%E4%BD%9C%E7%94%A8"><span class="nav-number">2.9.</span> <span class="nav-text">空洞卷积的原理和作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E6%B4%9E%E5%8D%B7%E7%A7%AF%E7%9A%84%E6%84%9F%E5%8F%97%E9%87%8E%E8%AE%A1%E7%AE%97"><span class="nav-number">2.10.</span> <span class="nav-text">空洞卷积的感受野计算</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -9,7 +9,6 @@
 <p>绘制形状</p>
 <p>书写文字</p>
 <span id="more"></span>
-
 <h1 id="图像的数字表示"><a href="#图像的数字表示" class="headerlink" title="图像的数字表示"></a>图像的数字表示</h1><p>在计算机系统中存储的是每张图像每个像素点的值</p>
 <p>灰度图，单通道图像也就是8位图像，每个像素点的值占8字节，00000000-11111111也就是0-255</p>
 <p>RGB/BGR图像，是三通道图像，也就是24位图像，每个像素点的值占24字节，也就是三个通道每个通道的值占8字节0-255</p>
@@ -17,21 +16,13 @@
 <p>像素值为0表示黑色，255表示白色</p>
 <p>32位图像在24位的基础上增加了一个alpha分量，该分量用于记录图像的透明度信息。</p>
 <h1 id="读、写、显示"><a href="#读、写、显示" class="headerlink" title="读、写、显示"></a>读、写、显示</h1><h2 id="图片读取"><a href="#图片读取" class="headerlink" title="图片读取"></a>图片读取</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="comment"># 读取函数imread()</span></span><br><span class="line">img = cv2.imread(<span class="string">&quot;Path.jpg/png&quot;</span>)</span><br><span class="line"><span class="comment"># 显示函数 imshow()</span></span><br><span class="line">cv2.imshow(<span class="string">&#x27;窗口名称&#x27;</span>,img)</span><br><span class="line"><span class="comment"># 写入函数 imwrite()</span></span><br><span class="line">cv2.imwrite(<span class="string">&#x27;写入的文件名.jpg&#x27;</span>,img)</span><br><span class="line"><span class="comment"># cv2.IMWRITE_JPEG_QUALITY指定jpg质量，范围0到100，默认95，越高画质越好，文件越大</span></span><br><span class="line">cv2.imwrite(<span class="string">&#x27;写入的文件名.jpg&#x27;</span>, img, (cv2.IMWRITE_JPEG_QUALITY, <span class="number">80</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># cv2.IMWRITE_PNG_COMPRESSION指定png质量，范围0到9，默认3，越高文件越小，画质越差</span></span><br><span class="line">cv2.imwrite(<span class="string">&#x27;写入的文件名.png&#x27;</span>, img, (cv2.IMWRITE_PNG_COMPRESSION, <span class="number">5</span>))</span><br></pre></td></tr></table></figure>
-
 <h2 id="显示图片需要对窗口进行设置"><a href="#显示图片需要对窗口进行设置" class="headerlink" title="显示图片需要对窗口进行设置"></a>显示图片需要对窗口进行设置</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imshow(<span class="string">&#x27;窗口名称&#x27;</span>,img)</span><br><span class="line">cv2.waitkey(<span class="number">0</span>)</span><br><span class="line">cv2.destoryAllWindows()</span><br></pre></td></tr></table></figure>
-
 <p><code>cv2.waitKey()</code> 是键盘绑定函数，可以设置毫秒级数值，如果是0会一直等待，也可以设置为指定字母，比如a</p>
 <p><code>cv2.destoryAllWindows()</code>销毁所有创建的窗口</p>
 <h2 id="视频读取，显示"><a href="#视频读取，显示" class="headerlink" title="视频读取，显示"></a>视频读取，显示</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cap = cv2.VideoCapture(<span class="string">&#x27;视频名称.mp4/avi&#x27;</span>) <span class="comment"># 获取视频</span></span><br><span class="line"><span class="comment"># cap = cv2.VideoCapture(0) # 获取摄像头 0内置 1外置摄像头</span></span><br><span class="line"><span class="comment"># 视频显示：while循环显示视频的每一帧</span></span><br><span class="line"><span class="comment"># 使用read()获取的视频帧，将每一帧显示100ms,如果期间检测到‘q‘则退出，关闭窗口</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">  reg,frame = cap.read()</span><br><span class="line">  cv2.imshow(<span class="string">&#x27;caputre&#x27;</span>,frame)</span><br><span class="line">  <span class="keyword">if</span> cv2.waitkey(<span class="number">100</span>) <span class="keyword">and</span> <span class="number">0xFF</span> == <span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="缩放，补边，裁剪"><a href="#缩放，补边，裁剪" class="headerlink" title="缩放，补边，裁剪"></a>缩放，补边，裁剪</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 缩放成200x200的方形图像</span></span><br><span class="line">img_200x200 = cv2.resize(img, (<span class="number">200</span>, <span class="number">200</span>))</span><br><span class="line"><span class="comment"># 根据缩放比例来</span></span><br><span class="line"><span class="comment"># 默认线性插值 cv2.INTER_LINEAR</span></span><br><span class="line">img = cv2.resize(img,(<span class="number">0</span>,<span class="number">0</span>),fx=<span class="number">0.5</span>,fy=<span class="number">0.5</span>,interpolation=cv2.INTER_NEAREST) <span class="comment"># 邻近插值</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 上下左右分布补边50，40，30，20宽，常数填充 都是黑边</span></span><br><span class="line">img = cv2.copyMakeBorder(img, <span class="number">50</span>, <span class="number">40</span>, <span class="number">30</span>, <span class="number">20</span>,cv2.BORDER_CONSTANT, value=(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据切片来做裁剪</span></span><br><span class="line">imgCropped = img[<span class="number">50</span>:<span class="number">250</span>,<span class="number">120</span>:<span class="number">330</span>]</span><br></pre></td></tr></table></figure>
-
-
-
 <h1 id="绘制形状"><a href="#绘制形状" class="headerlink" title="绘制形状"></a>绘制形状</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># cv2.line() 图像，起点，终点，画笔颜色，线宽</span></span><br><span class="line">img = cv2.line(img,(<span class="number">0</span>,<span class="number">0</span>),(<span class="number">511</span>,<span class="number">511</span>),(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),<span class="number">5</span>)  </span><br><span class="line"><span class="comment"># cv2.circle() 图像，圆心，半径，颜色，-1是表示一个封闭的图形</span></span><br><span class="line">img = cv2.circle(img,(<span class="number">447</span>,<span class="number">63</span>),<span class="number">63</span>,(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),-<span class="number">1</span>)  </span><br><span class="line"><span class="comment"># cv2.rectangle() 图像，左上角，右下角，颜色，线宽</span></span><br><span class="line">img = cv2.rectangle(img,(<span class="number">384</span>,<span class="number">0</span>),(<span class="number">510</span>,<span class="number">128</span>),(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">3</span>) </span><br><span class="line"><span class="comment"># cv2.ellipse()</span></span><br><span class="line">img = cv2.ellipse(img,(<span class="number">256</span>,<span class="number">256</span>),(<span class="number">100</span>,<span class="number">50</span>),<span class="number">0</span>,<span class="number">0</span>,<span class="number">180</span>,<span class="number">255</span>,-<span class="number">1</span>) </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <h1 id="书写文字"><a href="#书写文字" class="headerlink" title="书写文字"></a>书写文字</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># cv2.putText()</span></span><br><span class="line"><span class="comment"># 各参数依次是：图片，添加的文字，左上角坐标，字体，字体大小，颜色，字体粗细</span></span><br><span class="line">img = cv2.putText(img, <span class="built_in">str</span>, (<span class="number">123</span>,<span class="number">456</span>)), font, <span class="number">2</span>, (<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>), <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-
 ]]></content>
       <categories>
         <category>学习</category>
@@ -95,14 +86,13 @@
 <li>dropout 的作用和实现机制</li>
 <li>深度学习中有哪些可加快收敛（降低训练难度）的方法</li>
 <li>什么导致过拟合，如何防止过拟合</li>
-<li>**LSTM防止梯度弥散和爆炸 **</li>
+<li><strong>LSTM防止梯度弥散和爆炸 </strong></li>
 <li>Local Connected Conv</li>
 <li>神经网络权值初始化的方式和区别</li>
 <li>简述Convolution,pooling,和Normalization在卷积中的作用</li>
 <li>Dilated conv(空洞卷积)优缺点和应用场景</li>
 </ol>
 <span id="more"></span>
-
 <h1 id="常见问题及回答总结"><a href="#常见问题及回答总结" class="headerlink" title="常见问题及回答总结"></a>常见问题及回答总结</h1><h2 id="CNN的特点和优势"><a href="#CNN的特点和优势" class="headerlink" title="CNN的特点和优势"></a>CNN的特点和优势</h2><ol>
 <li>改变全链接为局部连接，可以提取局部特征</li>
 <li>权值共享，减少参数数量，降低训练难度（空间和时间都降低）</li>
@@ -210,12 +200,78 @@
   <entry>
     <title>cv算法面试问题总结（二）</title>
     <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
+    <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
+<li>？？？ 判别模型和生成模型</li>
+<li>如何决定算法是否收敛</li>
+<li>正则的方法及特点</li>
+<li>1*1卷积的作用</li>
+<li>？？？ 无监督学习的方法有哪些</li>
+<li>什么是感受野，增大感受野的方法</li>
+<li>反卷积的棋盘效应和解决方法</li>
+<li>神经网络参数量计算</li>
+<li>？？？ 空洞卷积的原理和作用</li>
+<li>？？？ 空洞卷积的感受野计算</li>
+</ol>
 <span id="more"></span>
-]]></content>
+<h1 id="问题及解答"><a href="#问题及解答" class="headerlink" title="问题及解答"></a>问题及解答</h1><h2 id="判别模型和生成模型"><a href="#判别模型和生成模型" class="headerlink" title="判别模型和生成模型"></a>判别模型和生成模型</h2><p>？？？</p>
+<h2 id="如何决定算法是否收敛"><a href="#如何决定算法是否收敛" class="headerlink" title="如何决定算法是否收敛"></a>如何决定算法是否收敛</h2><ol>
+<li><p>Loss 小于某个阈值</p>
+</li>
+<li><p>Loss趋于稳定，在某个之附近徘徊</p>
+</li>
+<li><p>迭代到一定的次数</p>
+</li>
+<li><p>看权值矩阵的变化，两次迭代权值变化很小</p>
+</li>
+</ol>
+<h2 id="正则的方法及特点"><a href="#正则的方法及特点" class="headerlink" title="正则的方法及特点"></a>正则的方法及特点</h2><ol>
+<li>正则的目的是防止过拟合，提高泛化能力</li>
+<li>L1正则</li>
+<li>L2正则</li>
+<li>数据集扩增</li>
+<li>dropout</li>
+</ol>
+<h2 id="1-1卷积的作用"><a href="#1-1卷积的作用" class="headerlink" title="1*1卷积的作用"></a>1*1卷积的作用</h2><ol>
+<li>实现跨通道信息融合；不同通道上的一个线性组合，实际上就是加起来乘一个系数</li>
+<li>feature map 通道数上的降维：<ol>
+<li>假设输入特征维度是 100<em>100</em>128，卷积核的大小是5<em>5（stride=1，padding=2）通道数是256，经过卷积后输出的特征维度是（100-5+2</em>2）/1+1 = 100-》100<em>100</em>256 卷积参数量是128<em>5</em>5<em>256=819200 如果在5</em>5卷积之前使用一个64通道1<em>1的卷积，参数量是 128</em>1<em>1</em>64 + 64<em>5</em>5*256 = 417792</li>
+</ol>
+</li>
+<li>增加非线性映射次数 1*1卷积之后会加一个非线性激活函数，使网络更深，也是网络更加具有判别信息的特征</li>
+</ol>
+<h2 id="无监督学习的方法有哪些"><a href="#无监督学习的方法有哪些" class="headerlink" title="无监督学习的方法有哪些"></a>无监督学习的方法有哪些</h2><h2 id="什么是感受野，增大感受野的方法"><a href="#什么是感受野，增大感受野的方法" class="headerlink" title="什么是感受野，增大感受野的方法"></a>什么是感受野，增大感受野的方法</h2><ol>
+<li>感受野是卷积神经网络每一层输出的的feature map上的每个feature 在原图上映射的区域大小（原图：预处理resize，crop，wrap之后的图）</li>
+<li>感受野越大，映射的原始图像的范围越广，可以蕴含更为全局，语义层次更高的信息</li>
+<li>计算公式：一开始RF=1，然后RF= （RF-1）* stride + kernelsize （不管conv层还是pooling层，依次替换stride和kernelsize至最后）</li>
+<li>增加感受野的方法：<ol>
+<li>空洞卷积</li>
+<li>增加pooling层，但会降低准确度 pooling会丢失信息</li>
+<li>增大kernelsize， 会增加参数</li>
+<li>增加卷积层的个数， 会面临梯度消失的问题。CPM中作者采用多阶段训练，并引入中间层监督来解决梯度消失的问题</li>
+</ol>
+</li>
+</ol>
+<h2 id="反卷积的棋盘效应和解决方法"><a href="#反卷积的棋盘效应和解决方法" class="headerlink" title="反卷积的棋盘效应和解决方法"></a>反卷积的棋盘效应和解决方法</h2><ol>
+<li>反卷积是允许小图像中的点来绘制更大图像中的方块，很容易出现不均匀重叠，使得图像中的某个部分颜色比其他部分更深，也就是伪影。尤其是kernelsize不能被stride整除的时候。虽然网络可以通过学习权重来避免这种情况，但实践中很难完全避免</li>
+<li>解决方法：<ol>
+<li>修改反卷积形式<ol>
+<li>确保反卷积核的大小可以被步长整除</li>
+<li>网络末尾使用1*1的反卷积</li>
+<li>调整卷积核权重</li>
+</ol>
+</li>
+<li>修改上采样形式，采用插值方法代替反卷积进行上采样，如邻近差值和双线性差值</li>
+<li>通过损失函数修正输出，在损失函数中加入total variation loss等损失函数，平滑输出图像，但图像边缘会模糊</li>
+</ol>
+</li>
+</ol>
+<h2 id="神经网络参数量计算"><a href="#神经网络参数量计算" class="headerlink" title="神经网络参数量计算"></a>神经网络参数量计算</h2><ol>
+<li>带参数的层是：卷积层，BN层和全连接层。激活函数层，pooling层和Upsample层是没有参数的</li>
+<li>卷积层参数计算：卷积核体积(Kw X Kh X Cin) X 卷积核个数Cout(也就是输出channel数) + 偏置项个数Cout (每个卷积核带有一个偏置项，但是不影响参数的数量级有时候会省略)</li>
+<li>BN层的参数计算：2 X Cin(输入通道数) 有两个需要学习缩放因子和平移因子</li>
+<li>FC层的参数计算：输入向量长度(和feature map相同size的一个卷积核)Ti X 输出向量长度To + 偏置量To  （全连接层逐渐被global average pooling取代 将最后一层的特征图 整张图进行一个均值化形成特征点，将这些特征点组合成最后的特征向量，通过softmax 进行计算）</li>
+</ol>
+<h2 id="空洞卷积的原理和作用"><a href="#空洞卷积的原理和作用" class="headerlink" title="空洞卷积的原理和作用"></a>空洞卷积的原理和作用</h2><h2 id="空洞卷积的感受野计算"><a href="#空洞卷积的感受野计算" class="headerlink" title="空洞卷积的感受野计算"></a>空洞卷积的感受野计算</h2>]]></content>
       <categories>
         <category>学习</category>
         <category>cv算法</category>
@@ -232,16 +288,12 @@
     <url>/2021/09/29/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
 <p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
 <p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
@@ -403,7 +455,6 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-
 ]]></content>
       <categories>
         <category>学习</category>
@@ -422,7 +473,6 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-
 ]]></content>
       <categories>
         <category>学习</category>
@@ -441,7 +491,6 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-
 ]]></content>
       <categories>
         <category>学习</category>
@@ -460,7 +509,6 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-
 <p>1</p>
 <p><img src="/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%86%B3%E7%AD%96%E6%A0%91Decision-Tree/1.png" alt="哈哈哈"></p>
 ]]></content>
@@ -481,7 +529,6 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-
 ]]></content>
       <categories>
         <category>学习</category>
@@ -518,7 +565,6 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-
 ]]></content>
       <categories>
         <category>学习</category>
@@ -537,7 +583,6 @@
 <p>优点：直接，快速，可解释性高</p>
 <p>缺点：基于一系列假设；对异常值敏感；对数据分布敏感；存在多重共线性，自相关，异方差问题；容易出现过拟合与欠拟合问题；</p>
 <span id="more"></span>
-
 <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>什么是回归模型？</p>
 <p>回归是用来拟合输入变量和输出变量之间的关系，回归模型就是表示从输入变量到输出变量的映射函数。</p>
 <p>所以线性回归的目标就是找到一系列的参数W，使得f(x) = XW 和真实输出Y之间无限接近或一致。</p>
@@ -586,26 +631,6 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习-集成算法-随机森林</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
 ]]></content>
       <categories>
         <category>学习</category>
@@ -624,7 +649,24 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习-集成算法-随机森林</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -640,7 +682,6 @@
     <url>/2021/09/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
     <content><![CDATA[<p>这是一篇机器学习经典算法的简述，包含了线性回归、逻辑回归、支持向量机(SVM)、最近邻居(KNN)、决策树、k平均、随机森林、朴素贝叶斯、降维、梯度增强（更新ing）</p>
 <span id="more"></span>
-
 <h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><h1 id="集成算法-Ensemble-algorithms"><a href="#集成算法-Ensemble-algorithms" class="headerlink" title="集成算法 Ensemble algorithms"></a>集成算法 Ensemble algorithms</h1><p>将多个弱模型组合，弱模型单独训练，将哥哥弱模型的预测结果以某种方式结合完成总体的预测</p>
 <p>主要问题在于找到可以组合的弱模型和弱模型结果的结合方式</p>
 <ol>
@@ -654,7 +695,7 @@
 </ol>
 <p>优点：结合最优秀的模型们，可以得到更加优秀的预测结果</p>
 <p>缺点：多模型融合计算量大</p>
-<h3 id><a href="#" class="headerlink" title></a></h3><h1 id="决策树算法（Decision-Tree-Algorithm"><a href="#决策树算法（Decision-Tree-Algorithm" class="headerlink" title="决策树算法（Decision Tree Algorithm)"></a>决策树算法（Decision Tree Algorithm)</h1><p>Step1 选择分裂节点：当根据某个属性的值不能明确分到样本哪个类别是就将此属性作为节点对其分裂</p>
+<h3 id><a href="#" class="headerlink" title=" "></a> </h3><h1 id="决策树算法（Decision-Tree-Algorithm"><a href="#决策树算法（Decision-Tree-Algorithm" class="headerlink" title="决策树算法（Decision Tree Algorithm)"></a>决策树算法（Decision Tree Algorithm)</h1><p>Step1 选择分裂节点：当根据某个属性的值不能明确分到样本哪个类别是就将此属性作为节点对其分裂</p>
 <p>Step2 选择一个合适的阈值进行分裂使其分类的错误率最小</p>
 <h2 id="1-ID3"><a href="#1-ID3" class="headerlink" title="1.ID3"></a>1.ID3</h2>]]></content>
       <categories>
@@ -668,6 +709,27 @@
   <entry>
     <title>模型评价方法及指标</title>
     <url>/2021/10/01/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BB%B7%E6%96%B9%E6%B3%95%E5%8F%8A%E6%8C%87%E6%A0%87/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>深度学习</category>
+        <category>神经网络</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>总结</tag>
+        <tag>调参</tag>
+        <tag>优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>模型过拟合问题解决方法</title>
+    <url>/2021/10/01/%E6%A8%A1%E5%9E%8B%E8%BF%87%E6%8B%9F%E5%90%88%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
@@ -704,27 +766,6 @@
       <tags>
         <tag>编程</tag>
         <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>模型过拟合问题解决方法</title>
-    <url>/2021/10/01/%E6%A8%A1%E5%9E%8B%E8%BF%87%E6%8B%9F%E5%90%88%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>深度学习</category>
-        <category>神经网络</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>总结</tag>
-        <tag>调参</tag>
-        <tag>优化</tag>
       </tags>
   </entry>
   <entry>
@@ -785,9 +826,6 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-
-
-
 ]]></content>
       <categories>
         <category>学习</category>
@@ -803,7 +841,7 @@
   <entry>
     <title>深度学习</title>
     <url>/2021/09/29/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>#设置标签<br>在编辑文章的时候，tags:后面是设置标签的地方，如果有多个标签的话，可以用下面两种办法来设置：</p>
+    <content><![CDATA[<h1 id="设置标签"><a href="#设置标签" class="headerlink" title="设置标签"></a>设置标签</h1><p>在编辑文章的时候，tags:后面是设置标签的地方，如果有多个标签的话，可以用下面两种办法来设置：</p>
 <h2 id="设置小标签"><a href="#设置小标签" class="headerlink" title="设置小标签"></a>设置小标签</h2><p>在编辑文章的时候，tags:后面是设置标签的地方，如果有多个标签的话，可以用下面两种办法来设置：</p>
 ]]></content>
       <categories>
@@ -883,7 +921,6 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-
 ]]></content>
       <categories>
         <category>学习</category>
@@ -905,7 +942,6 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-
 ]]></content>
       <categories>
         <category>学习</category>
@@ -927,7 +963,6 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-
 ]]></content>
       <categories>
         <category>学习</category>
@@ -970,7 +1005,8 @@
 <p>方法简述：</p>
 <p>优点：</p>
 <p>缺点：</p>
-<span id="more"></span></li>
+<span id="more"></span>
+</li>
 </ul>
 ]]></content>
       <categories>
@@ -993,7 +1029,6 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-
 <h1 id="YOLOv1"><a href="#YOLOv1" class="headerlink" title="YOLOv1"></a>YOLOv1</h1><ol>
 <li><p>核心思想 回归思想</p>
 <p>整张图作为网络的输入，在输出层回归Bounding Box的位置和Bounding Box的类别</p>
@@ -1026,12 +1061,12 @@
 <ol>
 <li><p>BN层</p>
 </li>
-<li><p>高分辨率分类 224*224 -》448 * 448</p>
+<li><p>高分辨率分类 224<em>224 -》448 </em> 448</p>
 </li>
 <li><h3 id="Convolution-with-anchor-boxes：-YOLOv1包含有全连接层，从而能直接预测Bounding-Boxes的坐标值。Faster-R-CNN算法只用卷积层与Region-Proposal-Network来预测Anchor-Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。"><a href="#Convolution-with-anchor-boxes：-YOLOv1包含有全连接层，从而能直接预测Bounding-Boxes的坐标值。Faster-R-CNN算法只用卷积层与Region-Proposal-Network来预测Anchor-Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。" class="headerlink" title="Convolution with anchor boxes： YOLOv1包含有全连接层，从而能直接预测Bounding Boxes的坐标值。Faster R-CNN算法只用卷积层与Region Proposal Network来预测Anchor Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。"></a>Convolution with anchor boxes： YOLOv1包含有全连接层，从而能直接预测Bounding Boxes的坐标值。Faster R-CNN算法只用卷积层与Region Proposal Network来预测Anchor Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。</h3><p>借鉴Faster RCNN的做法，YOLOv2也尝试采用先验框（anchor）。在每个grid预先设定一组不同大小和宽高比的边框，来覆盖整个图像的不同位置和多种尺度，这些先验框作为预定义的候选区在神经网络中将检测其中是否存在对象，以及微调边框的位置</p>
 </li>
 <li><p>YOLOv2的做法是对训练集中标注的边框进行K-means聚类分析，以寻找尽可能匹配样本的边框尺寸。</p>
-<p><img src="/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLO%E7%B3%BB%E5%88%97/1.png"></p>
+<p><img src="/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLO%E7%B3%BB%E5%88%97/1.png" alt></p>
 </li>
 </ol>
 </li>
