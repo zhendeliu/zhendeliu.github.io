@@ -89,8 +89,92 @@
   <entry>
     <title>cv算法面试问题总结（一）</title>
     <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>问题列表：</p>
+    <content><![CDATA[<h1 id="问题列表："><a href="#问题列表：" class="headerlink" title="问题列表："></a>问题列表：</h1><ol>
+<li>CNN的特点和优势</li>
+<li>decent 反卷积的作用</li>
+<li>dropout 的作用和实现机制</li>
+<li>深度学习中有哪些可加快收敛（降低训练难度）的方法</li>
+<li>什么导致过拟合，如何防止过拟合</li>
+<li>**LSTM防止梯度弥散和爆炸 **</li>
+<li>Local Connected Conv</li>
+<li>神经网络权值初始化的方式和区别</li>
+<li>简述Convolution,pooling,和Normalization在卷积中的作用</li>
+<li>Dilated conv(空洞卷积)优缺点和应用场景</li>
+</ol>
 <span id="more"></span>
+
+<h1 id="常见问题及回答总结"><a href="#常见问题及回答总结" class="headerlink" title="常见问题及回答总结"></a>常见问题及回答总结</h1><h2 id="CNN的特点和优势"><a href="#CNN的特点和优势" class="headerlink" title="CNN的特点和优势"></a>CNN的特点和优势</h2><ol>
+<li>改变全链接为局部连接，可以提取局部特征</li>
+<li>权值共享，减少参数数量，降低训练难度（空间和时间都降低）</li>
+<li>降维， 通过池化或者卷积stride实现</li>
+<li>多层次结构：降低层次的局部特征组合为较高层次的特征。不同层次的特征应对不同任务</li>
+<li>可以完全共享也可以局部共享 （比如眼睛鼻子嘴巴等位置样式固定的可以用和脸部不一样的卷积核）</li>
+</ol>
+<h2 id="decent的作用"><a href="#decent的作用" class="headerlink" title="decent的作用"></a>decent的作用</h2><ol>
+<li>CNN可视化，将conv中得到的feature map还原到像素空间，观察特定的feature map对哪些图案比较敏感</li>
+<li>Upsampling 上采样</li>
+<li>Unsupervised learning 重构图像</li>
+</ol>
+<h2 id="dropout-的作用和实现机制"><a href="#dropout-的作用和实现机制" class="headerlink" title="dropout 的作用和实现机制"></a>dropout 的作用和实现机制</h2><ol>
+<li>原理是 在深度学习网络训练中对于输入层和隐藏层的神经网络单元 按照一定的概率P（伯努利分布） 暂时性！！！的丢弃。对于随机梯度下降，由于是随机丢弃，所以对于每一个mini-batch都在训练不同的网络</li>
+<li>作用是防止过拟合，提高效果</li>
+<li>缺点是 收敛速度减慢，由于每一次迭代只有一部分参数更新，导致梯度下降的速度减慢</li>
+<li>测试时，每个权重值需要乘概率p <a href="https://zhuanlan.zhihu.com/p/38200980">https://zhuanlan.zhihu.com/p/38200980</a> dropout 必读</li>
+</ol>
+<h2 id="深度学习中有哪些可加快收敛（降低训练难度）的方法"><a href="#深度学习中有哪些可加快收敛（降低训练难度）的方法" class="headerlink" title="深度学习中有哪些可加快收敛（降低训练难度）的方法"></a>深度学习中有哪些可加快收敛（降低训练难度）的方法</h2><ol>
+<li>bottleneck瓶颈结构： 在计算比较大的卷积层的之前使用一个1<em>1的卷积来压缩大卷积层输入特征图的通道数，用来减少计算量。大卷积层完成之后按照实际情况，有时候需要1</em>1的卷积来将大卷积层的输出特征图的通道数复原</li>
+<li>残差 （还不是很明白）</li>
+<li>学习率，步长，动量</li>
+<li>优化方法</li>
+<li>预训练</li>
+</ol>
+<h2 id="什么导致过拟合，如何防止过拟合"><a href="#什么导致过拟合，如何防止过拟合" class="headerlink" title="什么导致过拟合，如何防止过拟合"></a>什么导致过拟合，如何防止过拟合</h2><ol>
+<li>过拟合的原因： 样本量过小，样本抽取不均衡噪音过多，参数太多模型复杂度高，权值迭代次数足够多拟合了训练样本中的噪音和不具代表性的特征</li>
+<li>防止方法：<ol>
+<li>数据增强 data argumentation</li>
+<li>early stop</li>
+<li>dropout</li>
+<li>Batch Normalization</li>
+<li>使用更简单的模型</li>
+<li>参数正则化： 通过一定方法使神经网络中的部分神经元关闭，降低模型的复杂程度。正则化就是为了减小测试误差的，虽然有的时候可能会以增大训练误差为代价。正则化是为了显著的减小方差而较小的增大偏差。也就是提升泛化能力</li>
+<li>加噪音（输入数噪声，权重噪声，响应结果里面加噪声）</li>
+<li>freeze预训练网络中的某几层 #代码 <a href="https://blog.csdn.net/weixin_41712499/article/details/111295683">https://blog.csdn.net/weixin_41712499/article/details/111295683</a></li>
+<li>结合多个模型 <ol>
+<li>Bagging: 可以将其理解为一个分段函数，使用不同的模型拟合不同部分的训练集。如随机森林就是训练了一堆互不关联的决策树</li>
+<li>Boosting：使用多个模型最后将模型的输出加权平均</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="LSTM防止梯度弥散和爆炸"><a href="#LSTM防止梯度弥散和爆炸" class="headerlink" title="LSTM防止梯度弥散和爆炸"></a>LSTM防止梯度弥散和爆炸</h2><h2 id="Local-Connected-Conv"><a href="#Local-Connected-Conv" class="headerlink" title="Local Connected Conv"></a>Local Connected Conv</h2><ol>
+<li>人脸在不同的区域存在不同的特征（眼睛／鼻子／嘴的分布位置相对固定），当不存在全局的局部特征分布时，Local-Conv更适合特征的提取</li>
+</ol>
+<h2 id="神经网络权值初始化的方式和区别"><a href="#神经网络权值初始化的方式和区别" class="headerlink" title="神经网络权值初始化的方式和区别"></a>神经网络权值初始化的方式和区别</h2><p>​    详见权值初始化blog</p>
+<ol>
+<li>常量初始化</li>
+<li>随机高斯初始化： 将权重初始化为固定的均值和方差（例如均值取0，方差取0.01）如果初始的方差小，如0.1，就会导致在前向传播过程中，不同的层的输入不断减小。会导致权重的更新速度很慢很慢。初始化的方差如果太大，就会使得每一层的输出越来越大。形如tanh激活函数，就会容易导致梯度饱和的现象</li>
+<li>均匀分布初始化</li>
+<li>Xavier初始化</li>
+<li>双线性初始化</li>
+<li>msra初始化</li>
+</ol>
+<h2 id="简述Convolution-pooling-和Normalization在卷积中的作用"><a href="#简述Convolution-pooling-和Normalization在卷积中的作用" class="headerlink" title="简述Convolution,pooling,和Normalization在卷积中的作用"></a>简述Convolution,pooling,和Normalization在卷积中的作用</h2><ol>
+<li>Convolution：通过卷积核运算，提取卷积核希望提取的特征</li>
+<li>pooling层 减小图像大小，加速计算，使其检测出的特征更加健壮</li>
+<li>fully connected： 用来做分类</li>
+<li>激活层 使得函数更加复杂</li>
+<li>Batch Normalization：<ol>
+<li>背景：深度学习中数据分布在某一层开始有明显的偏移，网络加深会加剧，导致模型优化的难度增加，也就是梯度弥散。</li>
+<li>方法：在每个卷积层之后重新调整数据分布，解决梯度问题。在网络每一层输入前，先做归一化处理，加一个归一化层。但并不是盲目加。变换重构，引入可学习的参数r,B, 从而控制归一化尽可能不影响特征提取</li>
+<li>好处：降低对参数初始化的依赖。可使用更高的学习率，加速训练。一定程度上增加了泛化能力，可以取代dropout</li>
+</ol>
+</li>
+</ol>
+<h2 id="Dilated-conv-空洞卷积-优缺点和应用场景"><a href="#Dilated-conv-空洞卷积-优缺点和应用场景" class="headerlink" title="Dilated conv(空洞卷积)优缺点和应用场景"></a>Dilated conv(空洞卷积)优缺点和应用场景</h2><ol>
+<li>背景： FCN全卷积的语义分割问题中，需要输入图像和输出图像的size保持一致。若使用池化层，会降低size之后需要上采样，导致特征信息丢失精度降低。若使用较小的卷积核，可保持size一致，但需要增大特征图通道数会导致计算量较大。</li>
+<li>空洞卷积，在特征图上进行0填充扩大特征图size，既能保持感受野又能保持计算点不变</li>
+</ol>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -183,9 +267,32 @@
       </tags>
   </entry>
   <entry>
-    <title>图像识别-GoogLeNet</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/</url>
-    <content><![CDATA[<h1 id="GoogleNet"><a href="#GoogleNet" class="headerlink" title="GoogleNet"></a>GoogleNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+    <title>图像分类-EfficientNet&amp;EfficientDet[项目应用]</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB-EfficientNet/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>图像分类</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>项目总结</tag>
+        <tag>kaggle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像识别-AlexNet</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
 <p>缺点：</p>
@@ -203,9 +310,9 @@
       </tags>
   </entry>
   <entry>
-    <title>图像识别-AlexNet</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+    <title>图像识别-GoogLeNet</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/</url>
+    <content><![CDATA[<h1 id="GoogleNet"><a href="#GoogleNet" class="headerlink" title="GoogleNet"></a>GoogleNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
 <p>缺点：</p>
@@ -243,55 +350,6 @@
       </tags>
   </entry>
   <entry>
-    <title>图像分类-EfficientNet&amp;EfficientDet[项目应用]</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB-EfficientNet/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-        <category>图像分类</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>项目总结</tag>
-        <tag>kaggle</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>新文章</title>
-    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>空文档</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>新文章</title>
-    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0-1/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <tags>
-        <tag>编程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>图像识别-VGGNet</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/</url>
     <content><![CDATA[<h1 id="VGGNet"><a href="#VGGNet" class="headerlink" title="VGGNet"></a>VGGNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -312,8 +370,34 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-KNN邻近算法</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-KNN%E9%82%BB%E8%BF%91%E7%AE%97%E6%B3%95/</url>
+    <title>新文章</title>
+    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0-1/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <tags>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新文章</title>
+    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>空文档</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>机器学习-K-means算法</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-K-means%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
@@ -331,8 +415,8 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-K-means算法</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-K-means%E7%AE%97%E6%B3%95/</url>
+    <title>机器学习-KNN邻近算法</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-KNN%E9%82%BB%E8%BF%91%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
@@ -427,6 +511,25 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习-朴素贝叶斯</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习-线性回归Linear Regression</title>
     <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92Linear-Regression/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：找到一系列的参数W，使得f(x) = XW 和真实输出Y之间无限接近或一致。</p>
@@ -476,8 +579,8 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-朴素贝叶斯</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/</url>
+    <title>机器学习-逻辑回归Logistic Regression</title>
+    <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92Logistic-Regression/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
@@ -495,8 +598,8 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-逻辑回归Logistic Regression</title>
-    <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92Logistic-Regression/</url>
+    <title>机器学习-集成算法-随机森林</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
@@ -563,28 +666,25 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-集成算法-随机森林</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/</url>
+    <title>模型评价方法及指标</title>
+    <url>/2021/10/01/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BB%B7%E6%96%B9%E6%B3%95%E5%8F%8A%E6%8C%87%E6%A0%87/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-
 ]]></content>
       <categories>
         <category>学习</category>
-        <category>机器学习</category>
+        <category>深度学习</category>
+        <category>神经网络</category>
       </categories>
       <tags>
         <tag>编程</tag>
-        <tag>算法</tag>
+        <tag>总结</tag>
+        <tag>调参</tag>
+        <tag>优化</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>模型评价方法及指标</title>
-    <url>/2021/10/01/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BB%B7%E6%96%B9%E6%B3%95%E5%8F%8A%E6%8C%87%E6%A0%87/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>深度学习-[2013]ZFNet网络模型</title>
@@ -604,6 +704,27 @@
       <tags>
         <tag>编程</tag>
         <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>模型过拟合问题解决方法</title>
+    <url>/2021/10/01/%E6%A8%A1%E5%9E%8B%E8%BF%87%E6%8B%9F%E5%90%88%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>深度学习</category>
+        <category>神经网络</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>总结</tag>
+        <tag>调参</tag>
+        <tag>优化</tag>
       </tags>
   </entry>
   <entry>
@@ -645,6 +766,16 @@
         <tag>编程</tag>
         <tag>论文复现</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>深度学习-LSTM长短期记忆</title>
+    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>深度学习-RNN循环神经网络</title>
+    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>深度学习-深度可分离卷积Depthwise Separable Conv</title>
@@ -725,6 +856,26 @@
       </tags>
   </entry>
   <entry>
+    <title>目标检测-SSD系列</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>目标检测-YOLOv2</title>
     <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv2/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -744,26 +895,6 @@
         <tag>编程</tag>
         <tag>论文复现</tag>
         <tag>YOLO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>目标检测-SSD系列</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
       </tags>
   </entry>
   <entry>
@@ -855,27 +986,6 @@
       </tags>
   </entry>
   <entry>
-    <title>神经网络-learning rate学习率的优化总结</title>
-    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>深度学习</category>
-        <category>神经网络</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>总结</tag>
-        <tag>调参</tag>
-        <tag>优化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>目标检测-YOLOv1</title>
     <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLO%E7%B3%BB%E5%88%97/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -942,8 +1052,50 @@
       </tags>
   </entry>
   <entry>
+    <title>神经网络-learning rate学习率的优化总结</title>
+    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>深度学习</category>
+        <category>神经网络</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>总结</tag>
+        <tag>调参</tag>
+        <tag>优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>神经网络-损失函数</title>
     <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>深度学习</category>
+        <category>神经网络</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>总结</tag>
+        <tag>调参</tag>
+        <tag>优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>神经网络-权值初始化的方法</title>
+    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%9D%83%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -968,20 +1120,29 @@
       </tags>
   </entry>
   <entry>
-    <title>神经网络-激活函数</title>
-    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/</url>
+    <title>神经网络-梯度爆炸和梯度消失</title>
+    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E7%88%86%E7%82%B8%E5%92%8C%E6%A2%AF%E5%BA%A6%E6%B6%88%E5%A4%B1/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>计算机视觉CV算法概览（更新ing）</title>
-    <url>/2021/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89CV%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
-    <content><![CDATA[<h1 id="图像识别"><a href="#图像识别" class="headerlink" title="图像识别"></a>图像识别</h1><h2 id="1-AlexNet"><a href="#1-AlexNet" class="headerlink" title="1. AlexNet"></a>1. AlexNet</h2><h2 id="2-VGGNet"><a href="#2-VGGNet" class="headerlink" title="2. VGGNet"></a>2. VGGNet</h2><h2 id="3-GoogLeNet"><a href="#3-GoogLeNet" class="headerlink" title="3. GoogLeNet"></a>3. GoogLeNet</h2><h2 id="4-ResNet"><a href="#4-ResNet" class="headerlink" title="4. ResNet"></a>4. ResNet</h2><h2 id="5-DenseNet"><a href="#5-DenseNet" class="headerlink" title="5. DenseNet"></a>5. DenseNet</h2><h1 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h1><h2 id="1-R-CNN-系列"><a href="#1-R-CNN-系列" class="headerlink" title="1. R-CNN 系列"></a>1. R-CNN 系列</h2><h3 id="1-R-CNN"><a href="#1-R-CNN" class="headerlink" title="1. R-CNN"></a>1. R-CNN</h3><h3 id="2-Fast-R-CNN"><a href="#2-Fast-R-CNN" class="headerlink" title="2. Fast R-CNN"></a>2. Fast R-CNN</h3><h3 id="3-Faster-R-CNN"><a href="#3-Faster-R-CNN" class="headerlink" title="3. Faster R-CNN"></a>3. Faster R-CNN</h3><h2 id="2-Yolo系列"><a href="#2-Yolo系列" class="headerlink" title="2. Yolo系列"></a>2. Yolo系列</h2><h3 id="1-Yolo-V1"><a href="#1-Yolo-V1" class="headerlink" title="1.Yolo V1"></a>1.Yolo V1</h3><h3 id="2-Yolo-V2"><a href="#2-Yolo-V2" class="headerlink" title="2.Yolo V2"></a>2.Yolo V2</h3><h3 id="3-Yolo-V3"><a href="#3-Yolo-V3" class="headerlink" title="3.Yolo V3"></a>3.Yolo V3</h3><h3 id="4-Yolo-V4"><a href="#4-Yolo-V4" class="headerlink" title="4.Yolo V4"></a>4.Yolo V4</h3><h3 id="5-Yolo-V5"><a href="#5-Yolo-V5" class="headerlink" title="5.Yolo V5"></a>5.Yolo V5</h3><h2 id="3-SSD"><a href="#3-SSD" class="headerlink" title="3. SSD"></a>3. SSD</h2><h2 id="4-Retina-Net"><a href="#4-Retina-Net" class="headerlink" title="4. Retina-Net"></a>4. Retina-Net</h2><h1 id="图像分割"><a href="#图像分割" class="headerlink" title="图像分割"></a>图像分割</h1><h2 id="1-FCN"><a href="#1-FCN" class="headerlink" title="1. FCN"></a>1. FCN</h2><h2 id="2-Mask-R-CNN"><a href="#2-Mask-R-CNN" class="headerlink" title="2. Mask R-CNN"></a>2. Mask R-CNN</h2><h1 id="目标追踪"><a href="#目标追踪" class="headerlink" title="目标追踪"></a>目标追踪</h1><h2 id="1-Goturn"><a href="#1-Goturn" class="headerlink" title="1. Goturn"></a>1. Goturn</h2><h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><h1 id="图像生成"><a href="#图像生成" class="headerlink" title="图像生成"></a>图像生成</h1><h2 id="1-GAN"><a href="#1-GAN" class="headerlink" title="1. GAN"></a>1. GAN</h2>]]></content>
+    <title>神经网络-激活函数</title>
+    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
       <categories>
         <category>学习</category>
-        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>神经网络</category>
       </categories>
       <tags>
-        <tag>概览</tag>
+        <tag>编程</tag>
+        <tag>总结</tag>
+        <tag>调参</tag>
+        <tag>优化</tag>
       </tags>
   </entry>
   <entry>
@@ -1001,6 +1162,18 @@
 ]]></content>
       <categories>
         <category>其他</category>
+      </categories>
+      <tags>
+        <tag>概览</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机视觉CV算法概览（更新ing）</title>
+    <url>/2021/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89CV%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
+    <content><![CDATA[<h1 id="图像识别"><a href="#图像识别" class="headerlink" title="图像识别"></a>图像识别</h1><h2 id="1-AlexNet"><a href="#1-AlexNet" class="headerlink" title="1. AlexNet"></a>1. AlexNet</h2><h2 id="2-VGGNet"><a href="#2-VGGNet" class="headerlink" title="2. VGGNet"></a>2. VGGNet</h2><h2 id="3-GoogLeNet"><a href="#3-GoogLeNet" class="headerlink" title="3. GoogLeNet"></a>3. GoogLeNet</h2><h2 id="4-ResNet"><a href="#4-ResNet" class="headerlink" title="4. ResNet"></a>4. ResNet</h2><h2 id="5-DenseNet"><a href="#5-DenseNet" class="headerlink" title="5. DenseNet"></a>5. DenseNet</h2><h1 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h1><h2 id="1-R-CNN-系列"><a href="#1-R-CNN-系列" class="headerlink" title="1. R-CNN 系列"></a>1. R-CNN 系列</h2><h3 id="1-R-CNN"><a href="#1-R-CNN" class="headerlink" title="1. R-CNN"></a>1. R-CNN</h3><h3 id="2-Fast-R-CNN"><a href="#2-Fast-R-CNN" class="headerlink" title="2. Fast R-CNN"></a>2. Fast R-CNN</h3><h3 id="3-Faster-R-CNN"><a href="#3-Faster-R-CNN" class="headerlink" title="3. Faster R-CNN"></a>3. Faster R-CNN</h3><h2 id="2-Yolo系列"><a href="#2-Yolo系列" class="headerlink" title="2. Yolo系列"></a>2. Yolo系列</h2><h3 id="1-Yolo-V1"><a href="#1-Yolo-V1" class="headerlink" title="1.Yolo V1"></a>1.Yolo V1</h3><h3 id="2-Yolo-V2"><a href="#2-Yolo-V2" class="headerlink" title="2.Yolo V2"></a>2.Yolo V2</h3><h3 id="3-Yolo-V3"><a href="#3-Yolo-V3" class="headerlink" title="3.Yolo V3"></a>3.Yolo V3</h3><h3 id="4-Yolo-V4"><a href="#4-Yolo-V4" class="headerlink" title="4.Yolo V4"></a>4.Yolo V4</h3><h3 id="5-Yolo-V5"><a href="#5-Yolo-V5" class="headerlink" title="5.Yolo V5"></a>5.Yolo V5</h3><h2 id="3-SSD"><a href="#3-SSD" class="headerlink" title="3. SSD"></a>3. SSD</h2><h2 id="4-Retina-Net"><a href="#4-Retina-Net" class="headerlink" title="4. Retina-Net"></a>4. Retina-Net</h2><h1 id="图像分割"><a href="#图像分割" class="headerlink" title="图像分割"></a>图像分割</h1><h2 id="1-FCN"><a href="#1-FCN" class="headerlink" title="1. FCN"></a>1. FCN</h2><h2 id="2-Mask-R-CNN"><a href="#2-Mask-R-CNN" class="headerlink" title="2. Mask R-CNN"></a>2. Mask R-CNN</h2><h1 id="目标追踪"><a href="#目标追踪" class="headerlink" title="目标追踪"></a>目标追踪</h1><h2 id="1-Goturn"><a href="#1-Goturn" class="headerlink" title="1. Goturn"></a>1. Goturn</h2><h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><h1 id="图像生成"><a href="#图像生成" class="headerlink" title="图像生成"></a>图像生成</h1><h2 id="1-GAN"><a href="#1-GAN" class="headerlink" title="1. GAN"></a>1. GAN</h2>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
       </categories>
       <tags>
         <tag>概览</tag>

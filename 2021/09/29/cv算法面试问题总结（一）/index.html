@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="摘要问题列表：">
+  <meta name="description" content="问题列表： CNN的特点和优势 decent 反卷积的作用 dropout 的作用和实现机制 深度学习中有哪些可加快收敛（降低训练难度）的方法 什么导致过拟合，如何防止过拟合 **LSTM防止梯度弥散和爆炸 ** Local Connected Conv 神经网络权值初始化的方式和区别 简述Convolution,pooling,和Normalization在卷积中的作用 Dilated conv">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cv算法面试问题总结（一）">
 <meta property="og:url" content="http://example.com/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="摘要问题列表：">
+<meta property="og:description" content="问题列表： CNN的特点和优势 decent 反卷积的作用 dropout 的作用和实现机制 深度学习中有哪些可加快收敛（降低训练难度）的方法 什么导致过拟合，如何防止过拟合 **LSTM防止梯度弥散和爆炸 ** Local Connected Conv 神经网络权值初始化的方式和区别 简述Convolution,pooling,和Normalization在卷积中的作用 Dilated conv">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-29T11:06:45.000Z">
-<meta property="article:modified_time" content="2021-10-01T07:54:11.078Z">
+<meta property="article:modified_time" content="2021-10-01T09:24:36.774Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="面试">
 <meta property="article:tag" content="总结">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-01 15:54:11" itemprop="dateModified" datetime="2021-10-01T15:54:11+08:00">2021-10-01</time>
+                <time title="修改时间：2021-10-01 17:24:36" itemprop="dateModified" datetime="2021-10-01T17:24:36+08:00">2021-10-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,8 +262,92 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>问题列表：</p>
+        <h1 id="问题列表："><a href="#问题列表：" class="headerlink" title="问题列表："></a>问题列表：</h1><ol>
+<li>CNN的特点和优势</li>
+<li>decent 反卷积的作用</li>
+<li>dropout 的作用和实现机制</li>
+<li>深度学习中有哪些可加快收敛（降低训练难度）的方法</li>
+<li>什么导致过拟合，如何防止过拟合</li>
+<li>**LSTM防止梯度弥散和爆炸 **</li>
+<li>Local Connected Conv</li>
+<li>神经网络权值初始化的方式和区别</li>
+<li>简述Convolution,pooling,和Normalization在卷积中的作用</li>
+<li>Dilated conv(空洞卷积)优缺点和应用场景</li>
+</ol>
 <span id="more"></span>
+
+<h1 id="常见问题及回答总结"><a href="#常见问题及回答总结" class="headerlink" title="常见问题及回答总结"></a>常见问题及回答总结</h1><h2 id="CNN的特点和优势"><a href="#CNN的特点和优势" class="headerlink" title="CNN的特点和优势"></a>CNN的特点和优势</h2><ol>
+<li>改变全链接为局部连接，可以提取局部特征</li>
+<li>权值共享，减少参数数量，降低训练难度（空间和时间都降低）</li>
+<li>降维， 通过池化或者卷积stride实现</li>
+<li>多层次结构：降低层次的局部特征组合为较高层次的特征。不同层次的特征应对不同任务</li>
+<li>可以完全共享也可以局部共享 （比如眼睛鼻子嘴巴等位置样式固定的可以用和脸部不一样的卷积核）</li>
+</ol>
+<h2 id="decent的作用"><a href="#decent的作用" class="headerlink" title="decent的作用"></a>decent的作用</h2><ol>
+<li>CNN可视化，将conv中得到的feature map还原到像素空间，观察特定的feature map对哪些图案比较敏感</li>
+<li>Upsampling 上采样</li>
+<li>Unsupervised learning 重构图像</li>
+</ol>
+<h2 id="dropout-的作用和实现机制"><a href="#dropout-的作用和实现机制" class="headerlink" title="dropout 的作用和实现机制"></a>dropout 的作用和实现机制</h2><ol>
+<li>原理是 在深度学习网络训练中对于输入层和隐藏层的神经网络单元 按照一定的概率P（伯努利分布） 暂时性！！！的丢弃。对于随机梯度下降，由于是随机丢弃，所以对于每一个mini-batch都在训练不同的网络</li>
+<li>作用是防止过拟合，提高效果</li>
+<li>缺点是 收敛速度减慢，由于每一次迭代只有一部分参数更新，导致梯度下降的速度减慢</li>
+<li>测试时，每个权重值需要乘概率p <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/38200980">https://zhuanlan.zhihu.com/p/38200980</a> dropout 必读</li>
+</ol>
+<h2 id="深度学习中有哪些可加快收敛（降低训练难度）的方法"><a href="#深度学习中有哪些可加快收敛（降低训练难度）的方法" class="headerlink" title="深度学习中有哪些可加快收敛（降低训练难度）的方法"></a>深度学习中有哪些可加快收敛（降低训练难度）的方法</h2><ol>
+<li>bottleneck瓶颈结构： 在计算比较大的卷积层的之前使用一个1<em>1的卷积来压缩大卷积层输入特征图的通道数，用来减少计算量。大卷积层完成之后按照实际情况，有时候需要1</em>1的卷积来将大卷积层的输出特征图的通道数复原</li>
+<li>残差 （还不是很明白）</li>
+<li>学习率，步长，动量</li>
+<li>优化方法</li>
+<li>预训练</li>
+</ol>
+<h2 id="什么导致过拟合，如何防止过拟合"><a href="#什么导致过拟合，如何防止过拟合" class="headerlink" title="什么导致过拟合，如何防止过拟合"></a>什么导致过拟合，如何防止过拟合</h2><ol>
+<li>过拟合的原因： 样本量过小，样本抽取不均衡噪音过多，参数太多模型复杂度高，权值迭代次数足够多拟合了训练样本中的噪音和不具代表性的特征</li>
+<li>防止方法：<ol>
+<li>数据增强 data argumentation</li>
+<li>early stop</li>
+<li>dropout</li>
+<li>Batch Normalization</li>
+<li>使用更简单的模型</li>
+<li>参数正则化： 通过一定方法使神经网络中的部分神经元关闭，降低模型的复杂程度。正则化就是为了减小测试误差的，虽然有的时候可能会以增大训练误差为代价。正则化是为了显著的减小方差而较小的增大偏差。也就是提升泛化能力</li>
+<li>加噪音（输入数噪声，权重噪声，响应结果里面加噪声）</li>
+<li>freeze预训练网络中的某几层 #代码 <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41712499/article/details/111295683">https://blog.csdn.net/weixin_41712499/article/details/111295683</a></li>
+<li>结合多个模型 <ol>
+<li>Bagging: 可以将其理解为一个分段函数，使用不同的模型拟合不同部分的训练集。如随机森林就是训练了一堆互不关联的决策树</li>
+<li>Boosting：使用多个模型最后将模型的输出加权平均</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="LSTM防止梯度弥散和爆炸"><a href="#LSTM防止梯度弥散和爆炸" class="headerlink" title="LSTM防止梯度弥散和爆炸"></a>LSTM防止梯度弥散和爆炸</h2><h2 id="Local-Connected-Conv"><a href="#Local-Connected-Conv" class="headerlink" title="Local Connected Conv"></a>Local Connected Conv</h2><ol>
+<li>人脸在不同的区域存在不同的特征（眼睛／鼻子／嘴的分布位置相对固定），当不存在全局的局部特征分布时，Local-Conv更适合特征的提取</li>
+</ol>
+<h2 id="神经网络权值初始化的方式和区别"><a href="#神经网络权值初始化的方式和区别" class="headerlink" title="神经网络权值初始化的方式和区别"></a>神经网络权值初始化的方式和区别</h2><p>​    详见权值初始化blog</p>
+<ol>
+<li>常量初始化</li>
+<li>随机高斯初始化： 将权重初始化为固定的均值和方差（例如均值取0，方差取0.01）如果初始的方差小，如0.1，就会导致在前向传播过程中，不同的层的输入不断减小。会导致权重的更新速度很慢很慢。初始化的方差如果太大，就会使得每一层的输出越来越大。形如tanh激活函数，就会容易导致梯度饱和的现象</li>
+<li>均匀分布初始化</li>
+<li>Xavier初始化</li>
+<li>双线性初始化</li>
+<li>msra初始化</li>
+</ol>
+<h2 id="简述Convolution-pooling-和Normalization在卷积中的作用"><a href="#简述Convolution-pooling-和Normalization在卷积中的作用" class="headerlink" title="简述Convolution,pooling,和Normalization在卷积中的作用"></a>简述Convolution,pooling,和Normalization在卷积中的作用</h2><ol>
+<li>Convolution：通过卷积核运算，提取卷积核希望提取的特征</li>
+<li>pooling层 减小图像大小，加速计算，使其检测出的特征更加健壮</li>
+<li>fully connected： 用来做分类</li>
+<li>激活层 使得函数更加复杂</li>
+<li>Batch Normalization：<ol>
+<li>背景：深度学习中数据分布在某一层开始有明显的偏移，网络加深会加剧，导致模型优化的难度增加，也就是梯度弥散。</li>
+<li>方法：在每个卷积层之后重新调整数据分布，解决梯度问题。在网络每一层输入前，先做归一化处理，加一个归一化层。但并不是盲目加。变换重构，引入可学习的参数r,B, 从而控制归一化尽可能不影响特征提取</li>
+<li>好处：降低对参数初始化的依赖。可使用更高的学习率，加速训练。一定程度上增加了泛化能力，可以取代dropout</li>
+</ol>
+</li>
+</ol>
+<h2 id="Dilated-conv-空洞卷积-优缺点和应用场景"><a href="#Dilated-conv-空洞卷积-优缺点和应用场景" class="headerlink" title="Dilated conv(空洞卷积)优缺点和应用场景"></a>Dilated conv(空洞卷积)优缺点和应用场景</h2><ol>
+<li>背景： FCN全卷积的语义分割问题中，需要输入图像和输出图像的size保持一致。若使用池化层，会降低size之后需要上采样，导致特征信息丢失精度降低。若使用较小的卷积核，可保持size一致，但需要增大特征图通道数会导致计算量较大。</li>
+<li>空洞卷积，在特征图上进行0填充扩大特征图size，既能保持感受野又能保持计算点不变</li>
+</ol>
 
     </div>
 
@@ -349,7 +433,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%97%E8%A1%A8%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">问题列表：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E5%9B%9E%E7%AD%94%E6%80%BB%E7%BB%93"><span class="nav-number">2.</span> <span class="nav-text">常见问题及回答总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN%E7%9A%84%E7%89%B9%E7%82%B9%E5%92%8C%E4%BC%98%E5%8A%BF"><span class="nav-number">2.1.</span> <span class="nav-text">CNN的特点和优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#decent%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">2.2.</span> <span class="nav-text">decent的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropout-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%92%8C%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%88%B6"><span class="nav-number">2.3.</span> <span class="nav-text">dropout 的作用和实现机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E6%9C%89%E5%93%AA%E4%BA%9B%E5%8F%AF%E5%8A%A0%E5%BF%AB%E6%94%B6%E6%95%9B%EF%BC%88%E9%99%8D%E4%BD%8E%E8%AE%AD%E7%BB%83%E9%9A%BE%E5%BA%A6%EF%BC%89%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">2.4.</span> <span class="nav-text">深度学习中有哪些可加快收敛（降低训练难度）的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E5%AF%BC%E8%87%B4%E8%BF%87%E6%8B%9F%E5%90%88%EF%BC%8C%E5%A6%82%E4%BD%95%E9%98%B2%E6%AD%A2%E8%BF%87%E6%8B%9F%E5%90%88"><span class="nav-number">2.5.</span> <span class="nav-text">什么导致过拟合，如何防止过拟合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM%E9%98%B2%E6%AD%A2%E6%A2%AF%E5%BA%A6%E5%BC%A5%E6%95%A3%E5%92%8C%E7%88%86%E7%82%B8"><span class="nav-number">2.6.</span> <span class="nav-text">LSTM防止梯度弥散和爆炸</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Local-Connected-Conv"><span class="nav-number">2.7.</span> <span class="nav-text">Local Connected Conv</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%9D%83%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%96%B9%E5%BC%8F%E5%92%8C%E5%8C%BA%E5%88%AB"><span class="nav-number">2.8.</span> <span class="nav-text">神经网络权值初始化的方式和区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E8%BF%B0Convolution-pooling-%E5%92%8CNormalization%E5%9C%A8%E5%8D%B7%E7%A7%AF%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">2.9.</span> <span class="nav-text">简述Convolution,pooling,和Normalization在卷积中的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dilated-conv-%E7%A9%BA%E6%B4%9E%E5%8D%B7%E7%A7%AF-%E4%BC%98%E7%BC%BA%E7%82%B9%E5%92%8C%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">2.10.</span> <span class="nav-text">Dilated conv(空洞卷积)优缺点和应用场景</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -365,7 +449,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
