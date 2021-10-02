@@ -20,19 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="摘要背景问题： 方法简述： 优点： 缺点：">
+  <meta name="description" content="摘要逻辑回归 &#x3D; 线性回归+逻辑分布 （如：sigmoid函数） 背景问题： 回归是连续的，分类是离散的，怎么将解决分类问题转化为解决回归问题 方法简述：先拟合决策边界(不局限于线性，还可以是多项式)，再建立这个边界与分类的概率联系，从而得到了二分类情况下的概率。分类是离散的，但类别的概率是连续的，让模型拟合概率相关的一个指标（对数几率函数logit） 优点： ​    (1)对率函数任意阶可导，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习-逻辑回归Logistic Regression">
 <meta property="og:url" content="http://example.com/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92Logistic-Regression/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="摘要背景问题： 方法简述： 优点： 缺点：">
+<meta property="og:description" content="摘要逻辑回归 &#x3D; 线性回归+逻辑分布 （如：sigmoid函数） 背景问题： 回归是连续的，分类是离散的，怎么将解决分类问题转化为解决回归问题 方法简述：先拟合决策边界(不局限于线性，还可以是多项式)，再建立这个边界与分类的概率联系，从而得到了二分类情况下的概率。分类是离散的，但类别的概率是连续的，让模型拟合概率相关的一个指标（对数几率函数logit） 优点： ​    (1)对率函数任意阶可导，">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cmu=0,+%5Cgamma=1">
 <meta property="article:published_time" content="2021-09-30T09:19:30.000Z">
-<meta property="article:modified_time" content="2021-09-30T09:20:08.846Z">
+<meta property="article:modified_time" content="2021-10-02T09:31:06.954Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.zhihu.com/equation?tex=%5Cmu=0,+%5Cgamma=1">
 
 <link rel="canonical" href="http://example.com/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92Logistic-Regression/">
 
@@ -222,10 +224,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-09-30 17:19:30 / 修改时间：17:20:08" itemprop="dateCreated datePublished" datetime="2021-09-30T17:19:30+08:00">2021-09-30</time>
+              <time title="创建时间：2021-09-30 17:19:30" itemprop="dateCreated datePublished" datetime="2021-09-30T17:19:30+08:00">2021-09-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-10-02 17:31:06" itemprop="dateModified" datetime="2021-10-02T17:31:06+08:00">2021-10-02</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -251,11 +259,49 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>逻辑回归 = 线性回归+逻辑分布 （如：sigmoid函数）</p>
+<p>背景问题：</p>
+<p>回归是连续的，分类是离散的，怎么将解决分类问题转化为解决回归问题</p>
+<p>方法简述：先拟合决策边界(不局限于线性，还可以是多项式)，再建立这个边界与分类的概率联系，从而得到了二分类情况下的概率。分类是离散的，但类别的概率是连续的，让模型拟合概率相关的一个指标（对数几率函数logit）</p>
 <p>优点：</p>
+<p>​    (1)对率函数任意阶可导，具有很好的数学性质，许多现有的数值优化算法都可以用来求最优解，训练速度快;</p>
+<p>​    (2)简单易理解，模型的可解释性非常好，从特征的权重可以看到不同的特征对最后结果的影响;</p>
+<p>​    (3)适合二分类问题，不需要缩放输入特征</p>
+<p>​    (4)内存资源占用小，因为只需要存储各个维度的特征值;</p>
+<p>​    (5)直接对分类可能性进行建模，无需事先假设数据分布，避免了假设分布不准确所带来的问题</p>
+<p>​    (6)以概率的形式输出，对许多利用概率辅助决策的任务很有用</p>
 <p>缺点：</p>
+<p>​    (1)不能用于解决非线性问题</p>
+<p>​    (2)对多重共线性数据较为敏感;</p>
+<p>​    (3)很难处理数据不平衡的问题;</p>
+<p>​    (4)准确率并不是很高，因为形式非常的简单(非常类似线性模型)，很难去拟合数据的真实分布;</p>
+<p>​    (5)无法筛选特征</p>
 <span id="more"></span>
+
+<p>线性分类器：线性分类器的学习目标便是要在n维的数据空间中找到一个超平面，使得这个超平面可以将已知的数据点分为两个类别</p>
+<p>逻辑回归不是解决回归问题是用来解决分类问题，本质就是假设数据符合这个分布，然后使用极大似然估计做参数的估计</p>
+<h1 id="Logistic-分布函数"><a href="#Logistic-分布函数" class="headerlink" title="Logistic 分布函数"></a>Logistic 分布函数</h1><p>Logistic 分布是一种连续型的分布，它形状与正态分布的形状相似，但是 Logistic 分布的尾部更长，所以我们可以使用 Logistic 分布来建模比正态分布具有更长尾部和更高波峰的数据分布。在深度学习中常用到的 Sigmoid 函数就是 Logistic 的分布函数在 <img src="https://www.zhihu.com/equation?tex=%5Cmu=0,+%5Cgamma=1" alt="[公式]"> 的特殊形式。</p>
+<p>logistic regression是使用线性回归的预测值逼近真实分类的对数几率，优点是：</p>
+<ol>
+<li>直接对分类概率建模，无需进行假设，避免假设带来的不准确</li>
+<li>不仅可预测出类别，还能得到类别的概率，</li>
+<li>对数几率函数是任意阶可导的函数，有许多数值优化算法都是可以求出最优解的</li>
+</ol>
+<p>损失函数：</p>
+<p>优化的主要目标是找到一个方向，参数朝这个方向移动之后使得损失函数的值能够减小，</p>
+<p>优点：</p>
+<p>(1)对率函数任意阶可导，具有很好的数学性质，许多现有的数值优化算法都可以用来求最优解，训练速度快;</p>
+<p>(2)简单易理解，模型的可解释性非常好，从<a target="_blank" rel="noopener" href="https://www.cda.cn/map/tezheng/">特征</a>的权重可以看到不同的<a target="_blank" rel="noopener" href="https://www.cda.cn/map/tezheng/">特征</a>对最后结果的影响;</p>
+<p>(3)适合二分类问题，不需要缩放输入<a target="_blank" rel="noopener" href="https://www.cda.cn/map/tezheng/">特征</a>;</p>
+<p>(4)内存资源占用小，因为只需要存储各个维度的<a target="_blank" rel="noopener" href="https://www.cda.cn/map/tezheng/">特征</a>值;</p>
+<p>(5)直接对分类可能性进行建模，无需事先假设数据分布，避免了假设分布不准确所带来的问题</p>
+<p>(6)以概率的形式输出，而非知识0.1判定，对许多利用概率辅助决策的任务很有用</p>
+<p>缺点：</p>
+<p>(1)不能用<a target="_blank" rel="noopener" href="https://www.cda.cn/map/luojihuigui/">逻辑回归</a>去解决非线性问题，因为Logistic的决策面试线性的;</p>
+<p>(2)对多重共线性数据较为敏感;</p>
+<p>(3)很难处理数据不平衡的问题;</p>
+<p>(4)准确率并不是很高，因为形式非常的简单(非常类似线性模型)，很难去拟合数据的真实分布;</p>
+<p>(5)<a target="_blank" rel="noopener" href="https://www.cda.cn/map/luojihuigui/">逻辑回归</a>本身无法筛选<a target="_blank" rel="noopener" href="https://www.cda.cn/map/tezheng/">特征</a>，有时会用gbdt来筛选<a target="_blank" rel="noopener" href="https://www.cda.cn/map/tezheng/">特征</a>，然后再上<a target="_blank" rel="noopener" href="https://www.cda.cn/map/luojihuigui/">逻辑回归</a>。</p>
 
     </div>
 
@@ -340,7 +386,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Logistic-%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">Logistic 分布函数</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -356,7 +402,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">54</span>
+          <span class="site-state-item-count">62</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

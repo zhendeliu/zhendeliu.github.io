@@ -273,6 +273,7 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
+
 <h1 id="YOLOv1"><a href="#YOLOv1" class="headerlink" title="YOLOv1"></a>YOLOv1</h1><ol>
 <li><p>核心思想 回归思想</p>
 <p>整张图作为网络的输入，在输出层回归Bounding Box的位置和Bounding Box的类别</p>
@@ -305,12 +306,12 @@
 <ol>
 <li><p>BN层</p>
 </li>
-<li><p>高分辨率分类 224<em>224 -》448 </em> 448</p>
+<li><p>高分辨率分类 224*224 -》448 * 448</p>
 </li>
 <li><h3 id="Convolution-with-anchor-boxes：-YOLOv1包含有全连接层，从而能直接预测Bounding-Boxes的坐标值。Faster-R-CNN算法只用卷积层与Region-Proposal-Network来预测Anchor-Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。"><a href="#Convolution-with-anchor-boxes：-YOLOv1包含有全连接层，从而能直接预测Bounding-Boxes的坐标值。Faster-R-CNN算法只用卷积层与Region-Proposal-Network来预测Anchor-Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。" class="headerlink" title="Convolution with anchor boxes： YOLOv1包含有全连接层，从而能直接预测Bounding Boxes的坐标值。Faster R-CNN算法只用卷积层与Region Proposal Network来预测Anchor Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。"></a>Convolution with anchor boxes： YOLOv1包含有全连接层，从而能直接预测Bounding Boxes的坐标值。Faster R-CNN算法只用卷积层与Region Proposal Network来预测Anchor Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。</h3><p>借鉴Faster RCNN的做法，YOLOv2也尝试采用先验框（anchor）。在每个grid预先设定一组不同大小和宽高比的边框，来覆盖整个图像的不同位置和多种尺度，这些先验框作为预定义的候选区在神经网络中将检测其中是否存在对象，以及微调边框的位置</p>
 </li>
 <li><p>YOLOv2的做法是对训练集中标注的边框进行K-means聚类分析，以寻找尽可能匹配样本的边框尺寸。</p>
-<p><img src="/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLO%E7%B3%BB%E5%88%97/1.png" alt></p>
+<p><img src="/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLO%E7%B3%BB%E5%88%97/1.png"></p>
 </li>
 </ol>
 </li>
@@ -418,7 +419,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">54</span>
+          <span class="site-state-item-count">62</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
