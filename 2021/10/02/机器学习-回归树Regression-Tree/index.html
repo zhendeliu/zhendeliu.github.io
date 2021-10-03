@@ -20,17 +20,18 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="毕业于UNSW(QS:43),人工智能，好奇心重，动手能力强">
+  <meta name="description" content="摘要背景问题：决策树是解决分类问题的主要方法，分类是离散问题，但回归是连续问题， 方法简述： CART（Classification and Regression Tree）可以用来做回归，在分类问题中CART只用基尼系数作为特征选择和划分的依据；在回归问题中CART使用MSE(Mean Square Error)或者MAE(Mean Absolute Error)作为特征选择和划分的依据。每个叶">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习-回归树Regression-Tree">
 <meta property="og:url" content="http://example.com/2021/10/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%9B%9E%E5%BD%92%E6%A0%91Regression-Tree/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="毕业于UNSW(QS:43),人工智能，好奇心重，动手能力强">
+<meta property="og:description" content="摘要背景问题：决策树是解决分类问题的主要方法，分类是离散问题，但回归是连续问题， 方法简述： CART（Classification and Regression Tree）可以用来做回归，在分类问题中CART只用基尼系数作为特征选择和划分的依据；在回归问题中CART使用MSE(Mean Square Error)或者MAE(Mean Absolute Error)作为特征选择和划分的依据。每个叶">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-02T10:07:33.000Z">
-<meta property="article:modified_time" content="2021-10-02T10:07:33.698Z">
+<meta property="article:modified_time" content="2021-10-03T03:32:28.912Z">
 <meta property="article:author" content="Leo">
-<meta property="article:tag" content="python 深度学习">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://example.com/2021/10/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%9B%9E%E5%BD%92%E6%A0%91Regression-Tree/">
@@ -224,6 +225,19 @@
 
               <time title="创建时间：2021-10-02 18:07:33" itemprop="dateCreated datePublished" datetime="2021-10-02T18:07:33+08:00">2021-10-02</time>
             </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
+                </span>
+            </span>
 
           
 
@@ -236,7 +250,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：决策树是解决分类问题的主要方法，分类是离散问题，但回归是连续问题，</p>
+<p>方法简述： CART（Classification and Regression Tree）可以用来做回归，在分类问题中CART只用基尼系数作为特征选择和划分的依据；在回归问题中CART使用MSE(Mean Square Error)或者MAE(Mean Absolute Error)作为特征选择和划分的依据。每个叶子代表一个预测值，取值是连续的。</p>
+<p>优点：</p>
+<p>训练速度和预测速度较快；<br>善于获取数据集中的非线性关系；<br>了解数据集中的特征交互；<br>善于处理数据集中出现的异常值；<br>善于在数据集中找到最重要的特征；<br>不需要特征缩放；<br>结果可解释，并易于说明；</p>
+<p>缺点：</p>
+<p>预测精确度较低；<br>需要一些参数的调整；<br>不适用于小型数据集；<br>分离信号和噪声的效果不理想；<br>当新增数据时，不易更新模型；<br>在实践中很少使用，而是更多地使用集合树；<br>可能会出现过度拟合</p>
+<span id="more"></span>
+
+<p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/82054400">https://zhuanlan.zhihu.com/p/82054400</a></p>
+
     </div>
 
     
@@ -244,6 +267,10 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+          </div>
 
         
 
@@ -251,10 +278,13 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/10/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95%EF%BC%9A%E7%89%9B%E9%A1%BF%E6%B3%95%E5%92%8C%E6%8B%9F%E7%89%9B%E9%A1%BF%E6%B3%95/" rel="prev" title="机器学习-优化算法：牛顿法和拟牛顿法">
-      <i class="fa fa-chevron-left"></i> 机器学习-优化算法：牛顿法和拟牛顿法
+    <a href="/2021/10/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95%EF%BC%9A%E7%89%9B%E9%A1%BF%E6%B3%95%E5%92%8C%E6%8B%9F%E7%89%9B%E9%A1%BF%E6%B3%95/" rel="prev" title="【未完成】机器学习-优化算法：牛顿法和拟牛顿法">
+      <i class="fa fa-chevron-left"></i> 【未完成】机器学习-优化算法：牛顿法和拟牛顿法
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-NFL-Helmet-Assignment/" rel="next" title="kaggle比赛-NFL Helmet Assignment">
+      kaggle比赛-NFL Helmet Assignment <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -313,6 +343,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -328,20 +359,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-count">66</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
