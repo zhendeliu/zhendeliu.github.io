@@ -35,11 +35,6 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>AI算法面试问题-机器学习（二）</title>
-    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>OpenCV图像处理基础（一）</title>
     <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>数字图像基础</p>
@@ -82,6 +77,11 @@
         <tag>噪音</tag>
         <tag>编程</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>AI算法面试问题-机器学习（二）</title>
+    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>OpenCV图像处理基础（三）</title>
@@ -413,11 +413,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>kaggle比赛-Molecular Translation</title>
-    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-Molecular-Translation/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>kaggle比赛-NFL Helmet Assignment</title>
     <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-NFL-Helmet-Assignment/</url>
     <content><![CDATA[<p><a href="https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment">https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment</a></p>
@@ -432,6 +427,11 @@
         <tag>编程</tag>
         <tag>Kaggle</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>kaggle比赛-Molecular Translation</title>
+    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-Molecular-Translation/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>kaggle比赛-脑肿瘤检测</title>
@@ -452,29 +452,6 @@
       <tags>
         <tag>编程</tag>
         <tag>Kaggle</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图像分类-EfficientNet&amp;EfficientDet[项目应用]</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB-EfficientNet/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>图像分类</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>项目总结</tag>
-        <tag>kaggle</tag>
       </tags>
   </entry>
   <entry>
@@ -499,8 +476,8 @@
       </tags>
   </entry>
   <entry>
-    <title>图像识别-AlexNet</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/</url>
+    <title>图像分类-EfficientNet&amp;EfficientDet[项目应用]</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB-EfficientNet/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
@@ -511,11 +488,14 @@
         <category>学习</category>
         <category>cv算法</category>
         <category>深度学习</category>
-        <category>图像识别</category>
+        <category>图像分类</category>
+        <category>目标检测</category>
       </categories>
       <tags>
         <tag>编程</tag>
         <tag>论文复现</tag>
+        <tag>项目总结</tag>
+        <tag>kaggle</tag>
       </tags>
   </entry>
   <entry>
@@ -574,6 +554,42 @@
       </tags>
   </entry>
   <entry>
+    <title>图像识别-[2012]AlexNet</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>AlexNet是2012年ImageNet竞赛冠军获得者Alex Krizhevsky设计的</p>
+<p>方法简述：AlexNet有6亿个参数和650,000个神经元，包含5个卷积层，有些层后面跟了max-pooling层，3个全连接层，为了减少过拟合，在全连接层使用了dropout</p>
+<p>优点：</p>
+<ol>
+<li>使用Relu作为激活函数</li>
+<li>使用Dropou避免过拟合</li>
+<li>使用重叠的MaxPooling,让stride小于池化核的大小，池化层的输出有重叠和覆盖，提升了特征的丰富性</li>
+<li>？？？提出LRN层局部响应归一化层？？？</li>
+<li>使用分组卷机通过CUDA加速深度卷机网络的训练</li>
+<li>数据增强，避免过拟合</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>参数过多，计算量大</li>
+<li>网络不深，准确率不高</li>
+</ol>
+<span id="more"></span>
+
+<p>ImageNet是图像算法领域最常见的数据集，训练集包含120万张图片，验证集包含5万张图片，测试集包含15万张图片，这些图片分为了1000个类别，并且有多种不同的分辨率，</p>
+<h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E7%BB%93%E6%9E%84.png"></p>
+<h1 id="参数计算"><a href="#参数计算" class="headerlink" title="参数计算"></a>参数计算</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E5%8F%82%E6%95%B0%E9%87%8F.png"></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>图像识别</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>图像识别-ResNet</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/</url>
     <content><![CDATA[<h1 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -616,11 +632,29 @@
   <entry>
     <title>图像识别-VGGNet</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/</url>
-    <content><![CDATA[<h1 id="VGGNet"><a href="#VGGNet" class="headerlink" title="VGGNet"></a>VGGNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：随着AlexNet提出，很多人开始利用卷积神经网络来解决图像识别的问题。一般的做法都是重复几层卷积网络，每个卷积网络之后接一些池化层，最后再加上几个全连接层。而如何更优的设计网络结构（深度，kernel size等）</p>
+<p>方法简述：用更小更深的卷积核代替大的卷积核，较深的网络层次来提升深度学习的效果。</p>
+<p>使用很小的3x3、步长为1的卷积核来扫描输入。两个3x3的卷积核堆起来，和一个5x5的卷积核的感受野一样；三个3x3的卷积核堆起来，其感受野等同于一个7x7的卷积核。</p>
+<p>VGG16:</p>
+<p>VGG19:</p>
 <p>优点：</p>
+<ol>
+<li>结构简单 整个网络使用相同size 的卷积核（3X3）和最大池化（2X2）</li>
+<li>证明更深的层可以使得函数具有更好的分辨能力</li>
+<li>用多个较小的卷积核可以减少参数</li>
+<li>去掉局部响应归一化模块</li>
+</ol>
 <p>缺点：</p>
+<ol>
+<li>计算耗费更多资源，参数量大（主要是全联接层导致的）， 内存空间占用高 140M</li>
+</ol>
 <span id="more"></span>
+
+<h1 id="基本结构-VGG16"><a href="#基本结构-VGG16" class="headerlink" title="基本结构-VGG16"></a>基本结构-VGG16</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/VGG16%E7%BB%93%E6%9E%84.png"></p>
+<p>图片来源：<a href="https://www.cxyzjd.com/article/weixin_26726011/108260201">https://www.cxyzjd.com/article/weixin_26726011/108260201</a></p>
+<h1 id="参数计算-VGG16"><a href="#参数计算-VGG16" class="headerlink" title="参数计算-VGG16"></a>参数计算-VGG16</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/%E5%8F%82%E6%95%B0%E8%AE%A1%E7%AE%97.png"></p>
+<h1 id="VGG16-VS-VGG19"><a href="#VGG16-VS-VGG19" class="headerlink" title="VGG16 VS VGG19"></a>VGG16 VS VGG19</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/VGG16VS19.png"></p>
+<p>图片来源：<a href="https://www.cnblogs.com/jesse123/p/7110721.html">https://www.cnblogs.com/jesse123/p/7110721.html</a></p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -640,19 +674,6 @@
   </entry>
   <entry>
     <title>新文章</title>
-    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0-1/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <tags>
-        <tag>编程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>新文章</title>
     <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
@@ -667,6 +688,38 @@
   <entry>
     <title>机器学习-K-means算法</title>
     <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-K-means%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新文章</title>
+    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0-1/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <tags>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习-KNN邻近算法</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-KNN%E9%82%BB%E8%BF%91%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
@@ -703,25 +756,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-KNN邻近算法</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-KNN%E9%82%BB%E8%BF%91%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【未完成】机器学习-优化算法：牛顿法和拟牛顿法</title>
     <url>/2021/10/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95%EF%BC%9A%E7%89%9B%E9%A1%BF%E6%B3%95%E5%92%8C%E6%8B%9F%E7%89%9B%E9%A1%BF%E6%B3%95/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>牛顿法（Newton method）和拟牛顿法（quasi Newton method）是求解无约束最优化问题的常用方法，有收敛速度快的优点。牛顿法是迭代算法，每一步都需求解目标函数的海塞矩阵（Hessian Matrix），计算比较复杂。拟牛顿法通过正定矩阵近似海塞矩阵的逆矩阵或海塞矩阵，简化了这一计算过程。</p>
@@ -738,28 +772,6 @@
       <tags>
         <tag>算法</tag>
         <tag>优化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习-回归树Regression-Tree</title>
-    <url>/2021/10/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%9B%9E%E5%BD%92%E6%A0%91Regression-Tree/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：决策树是解决分类问题的主要方法，分类是离散问题，但回归是连续问题，</p>
-<p>方法简述： CART（Classification and Regression Tree）可以用来做回归，在分类问题中CART只用基尼系数作为特征选择和划分的依据；在回归问题中CART使用MSE(Mean Square Error)或者MAE(Mean Absolute Error)作为特征选择和划分的依据。每个叶子代表一个预测值，取值是连续的。</p>
-<p>优点：</p>
-<p>训练速度和预测速度较快；<br>善于获取数据集中的非线性关系；<br>了解数据集中的特征交互；<br>善于处理数据集中出现的异常值；<br>善于在数据集中找到最重要的特征；<br>不需要特征缩放；<br>结果可解释，并易于说明；</p>
-<p>缺点：</p>
-<p>预测精确度较低；<br>需要一些参数的调整；<br>不适用于小型数据集；<br>分离信号和噪声的效果不理想；<br>当新增数据时，不易更新模型；<br>在实践中很少使用，而是更多地使用集合树；<br>可能会出现过度拟合</p>
-<span id="more"></span>
-
-<p>参考：<a href="https://zhuanlan.zhihu.com/p/82054400">https://zhuanlan.zhihu.com/p/82054400</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -796,6 +808,28 @@
 <li><p>C4.5由于使用了熵模型，里面有大量的耗时的对数运算,如果是连续值还有大量的排序运算。</p>
 </li>
 </ol>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习-回归树Regression-Tree</title>
+    <url>/2021/10/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%9B%9E%E5%BD%92%E6%A0%91Regression-Tree/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：决策树是解决分类问题的主要方法，分类是离散问题，但回归是连续问题，</p>
+<p>方法简述： CART（Classification and Regression Tree）可以用来做回归，在分类问题中CART只用基尼系数作为特征选择和划分的依据；在回归问题中CART使用MSE(Mean Square Error)或者MAE(Mean Absolute Error)作为特征选择和划分的依据。每个叶子代表一个预测值，取值是连续的。</p>
+<p>优点：</p>
+<p>训练速度和预测速度较快；<br>善于获取数据集中的非线性关系；<br>了解数据集中的特征交互；<br>善于处理数据集中出现的异常值；<br>善于在数据集中找到最重要的特征；<br>不需要特征缩放；<br>结果可解释，并易于说明；</p>
+<p>缺点：</p>
+<p>预测精确度较低；<br>需要一些参数的调整；<br>不适用于小型数据集；<br>分离信号和噪声的效果不理想；<br>当新增数据时，不易更新模型；<br>在实践中很少使用，而是更多地使用集合树；<br>可能会出现过度拟合</p>
+<span id="more"></span>
+
+<p>参考：<a href="https://zhuanlan.zhihu.com/p/82054400">https://zhuanlan.zhihu.com/p/82054400</a></p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -861,6 +895,25 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习-朴素贝叶斯</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习-线性回归Linear Regression</title>
     <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92Linear-Regression/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：找到一系列的参数W，使得f(x) = XW 和真实输出Y之间无限接近或一致。</p>
@@ -900,25 +953,6 @@
 <p>但是考虑到引入了x4，所以w4和w3的权重是分开计算出来的，这就导致了</p>
 <p>w5=10=w3+2w4，显然这个方程有无穷多的解，比如w3=4，w4=3，或者w4=-1，w3=12等，因此导致了模型系数估计的不稳定并且可能会出现负系数的问题。</p>
 <h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><h2 id="基于-Python-scikit-learn-工具包"><a href="#基于-Python-scikit-learn-工具包" class="headerlink" title="基于 Python scikit-learn 工具包"></a>基于 Python scikit-learn 工具包</h2><h2 id="Python自建实现"><a href="#Python自建实现" class="headerlink" title="Python自建实现"></a>Python自建实现</h2>]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习-朴素贝叶斯</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-]]></content>
       <categories>
         <category>学习</category>
         <category>机器学习</category>
@@ -1074,26 +1108,6 @@
       </tags>
   </entry>
   <entry>
-    <title>深度学习-[2013]ZFNet网络模型</title>
-    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2013-ZFNet%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>模型过拟合问题解决方法</title>
     <url>/2021/10/01/%E6%A8%A1%E5%9E%8B%E8%BF%87%E6%8B%9F%E5%90%88%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -1112,6 +1126,39 @@
         <tag>编程</tag>
         <tag>优化</tag>
         <tag>调参</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>深度学习-[2013]ZFNet网络模型</title>
+    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2013-ZFNet%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：在神经网络卷集训练中没有办法知道每一次卷积、每一次池化、每一次经过激活函数到底发生了什么，也不知道神经网络为什么取得了如此好的效果。ZFNet通过使用可视化技术揭示了神经网络各层到底在干什么，起到了什么作用。一旦知道了这些，如何调整我们的神经网络，往什么方向优化，就有了较好的依据。</p>
+<p>方法简述：</p>
+<p><strong>过程一：</strong>特征提取过程，输入图像-》卷积-》Relu激活-》最大化池化-》feature map</p>
+<p><strong>过程二：</strong>特征还原过程，feature map-》反池化-》反Relu激活-》反卷积-》可视化（原始）图像</p>
+<p><strong>结论一：</strong>CNN网络前面的层学习的是物理轮廓、边缘、颜色、纹理等特征，后面的层学习的是和类别相关的抽象特征</p>
+<p><strong>结论二：</strong>CNN学习到的特征具有平移和缩放不变性，但是，没有旋转不变性</p>
+<p><strong>结论三：</strong>CNN网络的特征提取具有通用性，这是后面微调的理论支持</p>
+<p>优点：</p>
+<ol>
+<li>使用反卷积，可视化feature map 为模型优化提供依据</li>
+<li>与AlexNet相比，前面层使用更小的卷积核和小的步长，保留更多特征</li>
+<li>通过遮挡找到决定图像类别的关键部位，说明了深度增加时，网络课学习到更具区分的特征</li>
+<li>训练时，底层参数收敛快，越高层的参数需要越长的训练时间</li>
+</ol>
+<p>缺点：</p>
+<span id="more"></span>
+
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2013-ZFNet%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/ZFNet.png"></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
       </tags>
   </entry>
   <entry>

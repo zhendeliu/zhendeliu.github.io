@@ -611,10 +611,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="VGGNet"><a href="#VGGNet" class="headerlink" title="VGGNet"></a>VGGNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
+          <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：随着AlexNet提出，很多人开始利用卷积神经网络来解决图像识别的问题。一般的做法都是重复几层卷积网络，每个卷积网络之后接一些池化层，最后再加上几个全连接层。而如何更优的设计网络结构（深度，kernel size等）</p>
+<p>方法简述：用更小更深的卷积核代替大的卷积核，较深的网络层次来提升深度学习的效果。</p>
+<p>使用很小的3x3、步长为1的卷积核来扫描输入。两个3x3的卷积核堆起来，和一个5x5的卷积核的感受野一样；三个3x3的卷积核堆起来，其感受野等同于一个7x7的卷积核。</p>
+<p>VGG16:</p>
+<p>VGG19:</p>
 <p>优点：</p>
+<ol>
+<li>结构简单 整个网络使用相同size 的卷积核（3X3）和最大池化（2X2）</li>
+<li>证明更深的层可以使得函数具有更好的分辨能力</li>
+<li>用多个较小的卷积核可以减少参数</li>
+<li>去掉局部响应归一化模块</li>
+</ol>
 <p>缺点：</p>
+<ol>
+<li>计算耗费更多资源，参数量大（主要是全联接层导致的）， 内存空间占用高 140M</li>
+</ol>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/#more" rel="contents">

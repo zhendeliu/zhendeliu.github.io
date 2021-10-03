@@ -20,19 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="摘要背景问题： 方法简述： 优点： 缺点：">
+  <meta name="description" content="摘要背景问题：在神经网络卷集训练中没有办法知道每一次卷积、每一次池化、每一次经过激活函数到底发生了什么，也不知道神经网络为什么取得了如此好的效果。ZFNet通过使用可视化技术揭示了神经网络各层到底在干什么，起到了什么作用。一旦知道了这些，如何调整我们的神经网络，往什么方向优化，就有了较好的依据。 方法简述： 过程一：特征提取过程，输入图像-》卷积-》Relu激活-》最大化池化-》feature m">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习-[2013]ZFNet网络模型">
 <meta property="og:url" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2013-ZFNet%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="摘要背景问题： 方法简述： 优点： 缺点：">
+<meta property="og:description" content="摘要背景问题：在神经网络卷集训练中没有办法知道每一次卷积、每一次池化、每一次经过激活函数到底发生了什么，也不知道神经网络为什么取得了如此好的效果。ZFNet通过使用可视化技术揭示了神经网络各层到底在干什么，起到了什么作用。一旦知道了这些，如何调整我们的神经网络，往什么方向优化，就有了较好的依据。 方法简述： 过程一：特征提取过程，输入图像-》卷积-》Relu激活-》最大化池化-》feature m">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2013-ZFNet%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/ZFNet.png">
 <meta property="article:published_time" content="2021-10-01T03:26:36.000Z">
-<meta property="article:modified_time" content="2021-10-01T03:30:47.130Z">
+<meta property="article:modified_time" content="2021-10-03T07:03:29.666Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="论文复现">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2013-ZFNet%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/ZFNet.png">
 
 <link rel="canonical" href="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2013-ZFNet%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/">
 
@@ -258,11 +260,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：在神经网络卷集训练中没有办法知道每一次卷积、每一次池化、每一次经过激活函数到底发生了什么，也不知道神经网络为什么取得了如此好的效果。ZFNet通过使用可视化技术揭示了神经网络各层到底在干什么，起到了什么作用。一旦知道了这些，如何调整我们的神经网络，往什么方向优化，就有了较好的依据。</p>
 <p>方法简述：</p>
+<p><strong>过程一：</strong>特征提取过程，输入图像-》卷积-》Relu激活-》最大化池化-》feature map</p>
+<p><strong>过程二：</strong>特征还原过程，feature map-》反池化-》反Relu激活-》反卷积-》可视化（原始）图像</p>
+<p><strong>结论一：</strong>CNN网络前面的层学习的是物理轮廓、边缘、颜色、纹理等特征，后面的层学习的是和类别相关的抽象特征</p>
+<p><strong>结论二：</strong>CNN学习到的特征具有平移和缩放不变性，但是，没有旋转不变性</p>
+<p><strong>结论三：</strong>CNN网络的特征提取具有通用性，这是后面微调的理论支持</p>
 <p>优点：</p>
+<ol>
+<li>使用反卷积，可视化feature map 为模型优化提供依据</li>
+<li>与AlexNet相比，前面层使用更小的卷积核和小的步长，保留更多特征</li>
+<li>通过遮挡找到决定图像类别的关键部位，说明了深度增加时，网络课学习到更具区分的特征</li>
+<li>训练时，底层参数收敛快，越高层的参数需要越长的训练时间</li>
+</ol>
 <p>缺点：</p>
 <span id="more"></span>
+
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2013-ZFNet%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/ZFNet.png"></p>
 
     </div>
 
