@@ -356,6 +356,24 @@
       </tags>
   </entry>
   <entry>
+    <title>hello-world</title>
+    <url>/2021/09/29/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>cv算法面试问题总结（四）</title>
     <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%9B%9B%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
@@ -395,22 +413,9 @@
       </tags>
   </entry>
   <entry>
-    <title>hello-world</title>
-    <url>/2021/09/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
+    <title>kaggle比赛-Molecular Translation</title>
+    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-Molecular-Translation/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>kaggle比赛-NFL Helmet Assignment</title>
@@ -427,11 +432,6 @@
         <tag>编程</tag>
         <tag>Kaggle</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>kaggle比赛-Molecular Translation</title>
-    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-Molecular-Translation/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>kaggle比赛-脑肿瘤检测</title>
@@ -554,6 +554,108 @@
       </tags>
   </entry>
   <entry>
+    <title>图像识别-GoogLeNet</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/</url>
+    <content><![CDATA[<h1 id="GoogleNet"><a href="#GoogleNet" class="headerlink" title="GoogleNet"></a>GoogleNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：一般来说提升网络性能最直接的办法是增加网络深度（卷积层数）和宽度（神经元个数），但是伴随而来的是参数过多，容易过拟合；网络庞大计算复杂；梯度弥散，难以优化；所以需要设计一种模型：1. 让网络模型结构变得稀疏；2.能利用密集矩阵的高性能计算（大部分硬件是对密集矩阵计算优化的，稀疏矩阵计算时耗费的时间并没有减小）</p>
+<p>方法简述：</p>
+<p>Inception网络结构就是为了构造一种基础神经元结构，来搭建稀疏且有高性能的网络结构。</p>
+<p>Inception V1: 卷积核分别采用1、3、5有不同的感受野，最后拼接意味着不同尺度特征的融合</p>
+<p>Inception V2: 引入了BatchNormalization，</p>
+<p>Inception V3: 引入分解</p>
+<p>Inception V4: 结合Residual Connection</p>
+<p>优点：</p>
+<p>1）增加了网络的宽度；</p>
+<p>2）增加了网络对尺度的适应性，提高了网络内部计算资源的利用率；</p>
+<p>3）1x1减少网络参数，且起到信息融合的作用。</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+
+
+<h1 id="Inception-V1"><a href="#Inception-V1" class="headerlink" title="Inception V1:"></a>Inception V1:</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/InceptionV1.png"></p>
+<p>Inception的结构如图所示，其中1*1卷积主要用来降维，用了Inception之后整个网络结构的宽度和深度都可扩大，能够带来2-3倍的性能提升。</p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V1-architecture.png"></p>
+<p>对Inception的结构做以下说明：</p>
+<ol>
+<li><p>采用不同大小的卷积核意味着不同大小的感受野，最后拼接意味着不同尺度特征的融合；</p>
+</li>
+<li><p>卷积核大小采用1、3和5，主要是为了方便对齐。设定卷积步长stride=1后，只要分别设定pad=0、1、2，那么卷积后便可以得到相同维度的特征，然后这些特征就可以直接拼接在一起了；</p>
+</li>
+<li><p>文章说很多地方都表明pooling挺有效，所以Inception里面也嵌入了;</p>
+</li>
+<li><p>网络越到后面，特征越抽象，而且每个特征所涉及的感受野也更大了，因此随着层数的增加，3x3和5x5卷积的比例也要增加。</p>
+</li>
+<li><p>使用5x5的卷积核仍然会带来巨大的计算量。 为此，文章借鉴NIN2卷积神经网络 1*1 卷积核 ，采用1x1卷积核来进行降维。</p>
+</li>
+<li><p>该模型最后采用了average pooling来代替全连接层。但是，实际在最后还是加了一个全连接层，主要是为了方便以后大家finetune。</p>
+</li>
+</ol>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/global-average-pooling.jpeg"></p>
+<p>————————————————<br>参考链接：<a href="https://blog.csdn.net/weixin_42535423/article/details/103674098">https://blog.csdn.net/weixin_42535423/article/details/103674098</a></p>
+<h1 id="Inception-V2"><a href="#Inception-V2" class="headerlink" title="Inception V2"></a>Inception V2</h1><p>作者在论文中提出了几个网路结构的设计准则</p>
+<ol>
+<li>避免表达瓶颈，尤其是网络早期：表达瓶颈也就是高度压缩的层，它会损失大量有用的信息。另外特征的维度（通道数）会逐渐增加，维度通道数不代表信息的多少</li>
+<li>高维特征更容易处理：高维特征是经过多次非线性映射从而带有更多的判别信息，网络更容易训练</li>
+<li>可以在低维特征时进行空间融合，不必担心信息过多损失，有助于加速训练</li>
+<li>平衡网络深度和宽度，过宽或过深都不能达到最优</li>
+</ol>
+<p>改进：</p>
+<ol>
+<li><p>在输入时加入batch_normal层，加速收敛，减少使用dropout</p>
+</li>
+<li><p>将V1版本中的 5x5改进为两个3x3的卷积</p>
+</li>
+<li><p><strong>Inception-V2 其他优势与思考</strong>：</p>
+<p>\1) 可以使用更高的学习率；</p>
+<p>  解释：如果每层的scale不一致，实际上每层需要的学习率不一致。同一层不同维度的scale往往也需要不同大小的学习率，通常使用最小的那个学习率才能保证损失函数有效下降，Batch Normalization将每层、每维的scale保持一致，才可以直接使用较高的学习率进行优化。</p>
+<p>\2) 移除或使用较低的dropout；</p>
+<p>   解释：dropout是常用的防止overfit的方法，而导致overfit的位置往往在数据边界处，如果初始化权重就已经落在数据内部，overfit现象就可以得到一定的缓解。在论文中，最后的模型分别使用10%、5%和0%的dropout训练模型，与之前的40%-50%相比，可以大大提高训练速度。</p>
+<p>\3) 降低L2权重衰减系数；</p>
+<p>  解释：边界处的局部最优往往有几维的权重（斜率）较大，使用L2衰减可以缓解这一问题，使用Batch Normalization，就可以把这个值降低了，论文中降低为原来的5倍。</p>
+<p>\4) 取消Local Response Normalization层；</p>
+<p>  解释：由于使用了一种Normalization，再使用LRN就显得没那么必要了。而且LRN实际上也没那么work。</p>
+<p>\5) 减少图像扭曲的使用；</p>
+<p>  解释：由于现在训练epoch数降低，所以要对输入数据少做一些扭曲，让神经网络多看看真实的数据。</p>
+<p>参考：Hugh_1：<a href="https://www.jianshu.com/p/ddfcf7ed08ab">https://www.jianshu.com/p/ddfcf7ed08ab</a></p>
+</li>
+</ol>
+<h1 id="Inception-V3"><a href="#Inception-V3" class="headerlink" title="Inception V3"></a>Inception V3</h1><ol>
+<li>将nxn的卷积代替为两个不对称的1xn和nx1的卷积，比如将3x3的卷积在输入输出filter一定的情况下分解为1x3和3x1的卷积，计算量减下33%，分解为2个2x2的卷积只能减少11%</li>
+</ol>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V3-architecture.png"></p>
+<center>Inception V3 网络架构</center>
+
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V3-A.png">两个3X3取代5X5</p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V3-B.png"> 7X1和1X7取代7X7</p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V3-C.png"></p>
+<p>3X1和1X3取代3X3</p>
+<p>![](图像识别-GoogLeNet/V3-Grid Size Reduction.png)</p>
+<p>下采样时采用conv+max pooling来取代max pooling，避免信息损失</p>
+<p>![](图像识别-GoogLeNet/V3-Auxiliary Classifier.png)</p>
+<p>Auxiliary Classifier辅助分类器： 在V3最后的 17×17 层的顶部仅使用 1 个辅助分类器，而不是使用 2 个辅助分类器，目的也不一样。在 GoogLeNet / Inception-v1 [4] 中，辅助分类器用于拥有更深的网络。在 Inception-v3 中，辅助分类器用作正则化。所以，实际上，在深度学习中，模块还是很直观的。</p>
+<p>Inception-v2 [6] 中建议的批量归一化也用于辅助分类器</p>
+<p><a href="https://sh-tsang.medium.com/review-inception-v3-1st-runner-up-image-classification-in-ilsvrc-2015-17915421f77c">https://sh-tsang.medium.com/review-inception-v3-1st-runner-up-image-classification-in-ilsvrc-2015-17915421f77c</a></p>
+<p><strong>优点</strong>：</p>
+<p>  1）加速计算（多余的计算能力可以用来加深网络），将1个conv拆成2个conv，使得网络深度进一步增加，增加了网络的非线性；</p>
+<p>  2）网络输入从224x224变为了299x299，更加精细设计了35x35/17x17/8x8的模块。</p>
+<p><strong>细节：</strong></p>
+<p>  1）在辅助层加入了BN-auxiliary</p>
+<p>  2）全连接层后面也进行BN操作。</p>
+<h1 id="Inception-V4"><a href="#Inception-V4" class="headerlink" title="Inception V4"></a>Inception V4</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V4.png"></p>
+<p>ResNet的结构可以极大地加速训练，同时性能也有提升。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>图像识别</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>图像识别-[2012]AlexNet</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>AlexNet是2012年ImageNet竞赛冠军获得者Alex Krizhevsky设计的</p>
@@ -592,31 +694,34 @@
   <entry>
     <title>图像识别-ResNet</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/</url>
-    <content><![CDATA[<h1 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+    <content><![CDATA[<h1 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：<strong>训练集上的性能下降，可以排除过拟合，BN层的引入也基本解决了plain net的梯度消失和梯度爆炸问题。</strong>如果不是过拟合以及梯度消失导致的，那原因是什么？为什么非常深度的网络在增加更多层时会表现得更差？深度网络点退化（Degradation problem）问题</p>
 <p>方法简述：</p>
+<p>ResNet网络是参考了VGG19网络，在其基础上进行了修改，并通过短路机制加入了残差单元，如图5所示。变化主要体现在ResNet直接使用stride=2的卷积做下采样，并且用global average pool层替换了全连接层。ResNet的一个重要设计原则是：当feature map大小降低一半时，feature map的数量增加一倍，这保持了网络层的复杂度。</p>
 <p>优点：</p>
+<p>ResNet通过残差学习解决了深度网络的退化问题，让我们可以训练出更深的网络</p>
 <p>缺点：</p>
 <span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>图像识别</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图像识别-GoogLeNet</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/</url>
-    <content><![CDATA[<h1 id="GoogleNet"><a href="#GoogleNet" class="headerlink" title="GoogleNet"></a>GoogleNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
+
+<p>认知上，深层网络不会比浅层网络的表现更差。基本假设是第N+1层什么也没学到也只是简单的copy或者恒等映射了前一层的结果，也至少和前一层有相同的准确度。</p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/ResNet-Architecture.png"></p>
+<p>参考：<a href="https://www.cnblogs.com/shine-lee/p/12363488.html">https://www.cnblogs.com/shine-lee/p/12363488.html</a></p>
+<p>ResNet的设计有如下特点：</p>
+<ul>
+<li>与plain net相比，ResNet多了很多“旁路”，即shortcut路径，其首尾圈出的layers构成一个Residual Block；</li>
+<li>ResNet中，所有的Residual Block都没有pooling层，<strong>降采样是通过conv的stride实现的</strong>；</li>
+<li>分别在conv3_1、conv4_1和conv5_1 Residual Block，降采样1倍，同时feature map数量增加1倍，如图中虚线划定的block；</li>
+<li><strong>通过Average Pooling得到最终的特征</strong>，而不是通过全连接层；</li>
+<li>每个卷积层之后都紧接着BatchNorm layer，为了简化，图中并没有标出；</li>
+</ul>
+<p>ResNet结构非常容易修改和扩展，通过调整block内的channel数量以及堆叠的block数量，就可以很容易地调整网络的宽度和深度，来得到不同表达能力的网络，而不用过多地担心网络的“退化”问题，只要训练数据足够，逐步加深网络，就可以获得更好的性能表现。</p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/resnet%E6%A8%A1%E5%9D%97.png"></p>
+<h1 id="Residual-Block的分析与改进"><a href="#Residual-Block的分析与改进" class="headerlink" title="Residual Block的分析与改进"></a>Residual Block的分析与改进</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/ResNet%E6%94%B9%E8%BF%9B.png"></p>
+<p>论文：<a href="https://arxiv.org/abs/1603.05027">https://arxiv.org/abs/1603.05027</a></p>
+<p>新提出的Residual Block结构，具有更强的泛化能力，能更好地避免“退化”，堆叠大于1000层后，性能仍在变好。具体的变化在于</p>
+<ul>
+<li><strong>通过保持shortcut路径的“纯净”，可以让信息在前向传播和反向传播中平滑传递，这点十分重要。</strong>为此，如无必要，不引入1×11×1卷积等操作，同时将上图灰色路径上的ReLU移到了𝐹(𝑥)F(x)路径上。</li>
+<li>在残差路径上，<strong>将BN和ReLU统一放在weight前作为pre-activation</strong>，获得了“Ease of optimization”以及“Reducing overfitting”的效果。</li>
+</ul>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -674,16 +779,16 @@
   </entry>
   <entry>
     <title>新文章</title>
-    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0/</url>
+    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0-1/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
 ]]></content>
-      <categories>
-        <category>空文档</category>
-      </categories>
+      <tags>
+        <tag>编程</tag>
+      </tags>
   </entry>
   <entry>
     <title>机器学习-K-means算法</title>
@@ -706,16 +811,16 @@
   </entry>
   <entry>
     <title>新文章</title>
-    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0-1/</url>
+    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
 ]]></content>
-      <tags>
-        <tag>编程</tag>
-      </tags>
+      <categories>
+        <category>空文档</category>
+      </categories>
   </entry>
   <entry>
     <title>机器学习-KNN邻近算法</title>
@@ -819,17 +924,14 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-回归树Regression-Tree</title>
-    <url>/2021/10/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%9B%9E%E5%BD%92%E6%A0%91Regression-Tree/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：决策树是解决分类问题的主要方法，分类是离散问题，但回归是连续问题，</p>
-<p>方法简述： CART（Classification and Regression Tree）可以用来做回归，在分类问题中CART只用基尼系数作为特征选择和划分的依据；在回归问题中CART使用MSE(Mean Square Error)或者MAE(Mean Absolute Error)作为特征选择和划分的依据。每个叶子代表一个预测值，取值是连续的。</p>
+    <title>机器学习-奇异值分解SVD</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%A5%87%E5%BC%82%E5%80%BC%E5%88%86%E8%A7%A3SVD/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
 <p>优点：</p>
-<p>训练速度和预测速度较快；<br>善于获取数据集中的非线性关系；<br>了解数据集中的特征交互；<br>善于处理数据集中出现的异常值；<br>善于在数据集中找到最重要的特征；<br>不需要特征缩放；<br>结果可解释，并易于说明；</p>
 <p>缺点：</p>
-<p>预测精确度较低；<br>需要一些参数的调整；<br>不适用于小型数据集；<br>分离信号和噪声的效果不理想；<br>当新增数据时，不易更新模型；<br>在实践中很少使用，而是更多地使用集合树；<br>可能会出现过度拟合</p>
 <span id="more"></span>
 
-<p>参考：<a href="https://zhuanlan.zhihu.com/p/82054400">https://zhuanlan.zhihu.com/p/82054400</a></p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -841,14 +943,17 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-奇异值分解SVD</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%A5%87%E5%BC%82%E5%80%BC%E5%88%86%E8%A7%A3SVD/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
+    <title>机器学习-回归树Regression-Tree</title>
+    <url>/2021/10/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%9B%9E%E5%BD%92%E6%A0%91Regression-Tree/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：决策树是解决分类问题的主要方法，分类是离散问题，但回归是连续问题，</p>
+<p>方法简述： CART（Classification and Regression Tree）可以用来做回归，在分类问题中CART只用基尼系数作为特征选择和划分的依据；在回归问题中CART使用MSE(Mean Square Error)或者MAE(Mean Absolute Error)作为特征选择和划分的依据。每个叶子代表一个预测值，取值是连续的。</p>
 <p>优点：</p>
+<p>训练速度和预测速度较快；<br>善于获取数据集中的非线性关系；<br>了解数据集中的特征交互；<br>善于处理数据集中出现的异常值；<br>善于在数据集中找到最重要的特征；<br>不需要特征缩放；<br>结果可解释，并易于说明；</p>
 <p>缺点：</p>
+<p>预测精确度较低；<br>需要一些参数的调整；<br>不适用于小型数据集；<br>分离信号和噪声的效果不理想；<br>当新增数据时，不易更新模型；<br>在实践中很少使用，而是更多地使用集合树；<br>可能会出现过度拟合</p>
 <span id="more"></span>
 
+<p>参考：<a href="https://zhuanlan.zhihu.com/p/82054400">https://zhuanlan.zhihu.com/p/82054400</a></p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1108,27 +1213,6 @@
       </tags>
   </entry>
   <entry>
-    <title>模型过拟合问题解决方法</title>
-    <url>/2021/10/01/%E6%A8%A1%E5%9E%8B%E8%BF%87%E6%8B%9F%E5%90%88%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>深度学习</category>
-        <category>神经网络</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-        <tag>编程</tag>
-        <tag>优化</tag>
-        <tag>调参</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>深度学习-[2013]ZFNet网络模型</title>
     <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2013-ZFNet%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：在神经网络卷集训练中没有办法知道每一次卷积、每一次池化、每一次经过激活函数到底发生了什么，也不知道神经网络为什么取得了如此好的效果。ZFNet通过使用可视化技术揭示了神经网络各层到底在干什么，起到了什么作用。一旦知道了这些，如何调整我们的神经网络，往什么方向优化，就有了较好的依据。</p>
@@ -1159,6 +1243,27 @@
       <tags>
         <tag>编程</tag>
         <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>模型过拟合问题解决方法</title>
+    <url>/2021/10/01/%E6%A8%A1%E5%9E%8B%E8%BF%87%E6%8B%9F%E5%90%88%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>深度学习</category>
+        <category>神经网络</category>
+      </categories>
+      <tags>
+        <tag>总结</tag>
+        <tag>编程</tag>
+        <tag>优化</tag>
+        <tag>调参</tag>
       </tags>
   </entry>
   <entry>
