@@ -40,27 +40,6 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>OpenCV图像处理基础（三）</title>
-    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-        <tag>基础操作</tag>
-        <tag>噪音</tag>
-        <tag>灰度图</tag>
-        <tag>编程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenCV图像处理基础（一）</title>
     <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>数字图像基础</p>
@@ -102,6 +81,27 @@
         <tag>基础操作</tag>
         <tag>噪音</tag>
         <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenCV图像处理基础（三）</title>
+    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>基础操作</tag>
+        <tag>噪音</tag>
+        <tag>编程</tag>
+        <tag>灰度图</tag>
       </tags>
   </entry>
   <entry>
@@ -206,6 +206,15 @@
       </tags>
   </entry>
   <entry>
+    <title>cv算法面试问题总结（七）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%83%EF%BC%89/</url>
+    <content><![CDATA[<p>如何解决深度学习中模型训练效果不佳的情况？<br>神经网络中，是否隐藏层如果具有足够数量的单位，它就可以近似任何连续函数？<br>为什么更深的网络更好？<br>更多的数据是否有利于更深的神经网络？<br>不平衡数据是否会影响神经网络的分类效果？<br>无监督降维提供的是帮助还是摧毁？<br>是否可以将任何非线性作为激活函数?<br>批大小如何影响测试正确率？<br>初始化如何影响训练?<br>不同层的权重是否以不同的速度收敛？ </p>
+<p>正则化如何影响权重？<br>什么是fine-tuning？<br>什么是边框回归Bounding-Box regression，以及为什么要做、怎么做<br>请阐述下Selective Search的主要思想<br>什么是非极大值抑制（NMS）？<br>什么是深度学习中的anchor？<br>CNN的特点以及优势<br>深度学习中有什么加快收敛/降低训练难度的方法？<br>请写出链式法则并证明<br>请写出Batch Normalization的计算方法及其应用</p>
+<span id="more"></span>
+
+]]></content>
+  </entry>
+  <entry>
     <title>cv算法面试问题总结（三）</title>
     <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%89%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
@@ -233,6 +242,15 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>cv算法面试问题总结（九）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B9%9D%EF%BC%89/</url>
+    <content><![CDATA[<p>什么是强化学习？<br>强化学习和监督学习、无监督学习的区别是什么？<br>强化学习适合解决什么样子的问题？<br>使用tensorflow进行深度学习算法实验时，如何调节超参数？<br>深度学习中的batch的大小对学习效果有何影响？<br>用梯度下降训练神经网络的参数，为什么参数有时会被训练为nan值？<br>卷积神经网络CNN中池化层有什么作用？<br>请列举几种常见的激活函数。激活函数有什么作用？<br>神经网络中Dropout的作用？具体是怎么实现的？<br>利用梯度下降法训练神经网络，发现模型loss不变，可能有哪些问题？怎么解决？</p>
+<p>如何解决不平衡数据集的分类问题？<br>残差网络为什么能做到很深层？<br>相比sigmoid激活函数ReLU激活函数有什么优势？<br>卷积神经网络中空洞卷积的作用是什么？<br>适用于移动端部署的网络结构都有哪些？<br>深度学习模型参数初始化都有哪些方法？<br>卷积神经网络为什么会具有平移等不变性？</p>
+<span id="more"></span>
+
+]]></content>
   </entry>
   <entry>
     <title>cv算法面试问题总结（二）</title>
@@ -322,25 +340,10 @@
       </tags>
   </entry>
   <entry>
-    <title>cv算法面试问题总结（六）</title>
-    <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AD%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>面试</tag>
-        <tag>总结</tag>
-        <tag>技巧</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>cv算法面试问题总结（五）</title>
     <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%94%EF%BC%89/</url>
-    <content><![CDATA[<p>如何确定CNN的卷积核通道数和卷积输出层的通道数？<br>什么是卷积？<br>什么是CNN的池化pool层？<br>简述下什么是生成对抗网络<br>学梵高作画的原理是什么？<br>请简要介绍下tensorflow的计算图<br>你有哪些深度学习（rnn、cnn）调参的经验？<br>为什么不同的机器学习领域都可以使用CNN，CNN解决了这些领域的哪些共性问题？他是如何解决的？<br>LSTM结构推导，为什么比RNN好？<br>Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。<br>为什么引入非线性激励函数？<br>请问人工神经网络中为什么ReLu要好过于tanh和sigmoid function？<br>为什么LSTM模型中既存在sigmoid又存在tanh两种激活函数，而不是选择统一一种sigmoid或者tanh？这样做的目的是什么？<br>如何解决RNN梯度爆炸和弥散的问题？<br>什么样的数据集不适合用深度学习？<br>广义线性模型是怎被应用在深度学习中？<br>如何缓解梯度消失和梯度膨胀（微调、梯度截断、改良激活函数等）<br>简述神经网络的发展历史<br>深度学习常用方法<br>请简述神经网络的发展史。<br>神经网络中激活函数的真正意义？一个激活函数需要具有哪些必要的属性？还有哪些属性是好的属性但不必要的？<br>梯度下降法的神经网络容易收敛到局部最优，为什么应用广泛？<br>简单说说CNN常用的几个模型<br>为什么很多做人脸的Paper会最后加入一个Local Connected Conv？<br>什么是梯度爆炸？<br>梯度爆炸会引发什么问题？<br>如何确定是否出现梯度爆炸？<br>如何修复梯度爆炸问题？<br>LSTM神经网络输入输出究竟是怎样的？<br>什么是RNN？<br>请详细介绍一下RNN模型的几种经典结构<br>简单说下sigmoid激活函数<br>如何从RNN起步，一步一步通俗理解LSTM（全网最通俗的LSTM详解）<br>CNN究竟是怎样一步一步工作的？<br>rcnn、fast-rcnn和faster-rcnn三者的区别是什么<br>在神经网络中，有哪些办法防止过拟合？<br>CNN是什么，CNN关键的层有哪些？<br>GRU是什么？GRU对LSTM做了哪些改动？<br>如何解决深度学习中模型训练效果不佳的情况？<br>神经网络中，是否隐藏层如果具有足够数量的单位，它就可以近似任何连续函数？<br>为什么更深的网络更好？<br>更多的数据是否有利于更深的神经网络？<br>不平衡数据是否会影响神经网络的分类效果？<br>无监督降维提供的是帮助还是摧毁？<br>是否可以将任何非线性作为激活函数?<br>批大小如何影响测试正确率？<br>初始化如何影响训练?<br>不同层的权重是否以不同的速度收敛？<br>正则化如何影响权重？<br>什么是fine-tuning？<br>什么是边框回归Bounding-Box regression，以及为什么要做、怎么做<br>请阐述下Selective Search的主要思想<br>什么是非极大值抑制（NMS）？<br>什么是深度学习中的anchor？<br>CNN的特点以及优势<br>深度学习中有什么加快收敛/降低训练难度的方法？<br>请写出链式法则并证明<br>请写出Batch Normalization的计算方法及其应用<br>神经网络中会用到批量梯度下降（BGD）吗？为什么用随机梯度下降（SGD）?<br>当神经网络的调参效果不好时，从哪些角度思考？（不要首先归结于overfiting）<br>请阐述下卷积神经网络CNN的基本原理(全网最通俗版)<br>神经网络输出层为什么通常使用softmax?<br>了解无人驾驶的核心技术么？<br>如何形象的理解LSTM的三个门<br>通过一张张动图形象的理解LSTM<br>如何理解反向传播算法BackPropagation<br>请问什么是softmax函数？<br>通俗理解BN(Batch Normalization)<br>批量归一化BN到底解决了什么问题？<br>如何理解随机梯度下降，以及为什么SGD能够收敛？<br>模拟退火算法能解决陷入局部最优的问题么<br>请说下常见优化方法各自的优缺点（BGD、SGD、MBGD、Momentum、NAG、Adagrad、Adadelta、RMSprop、Adam）<br>Adam算法的原理机制是怎么样的？它与相关的AdaGrad和RMSProp方法有什么区别<br>什么是强化学习？<br>强化学习和监督学习、无监督学习的区别是什么？<br>强化学习适合解决什么样子的问题？<br>使用tensorflow进行深度学习算法实验时，如何调节超参数？<br>深度学习中的batch的大小对学习效果有何影响？<br>用梯度下降训练神经网络的参数，为什么参数有时会被训练为nan值？<br>卷积神经网络CNN中池化层有什么作用？<br>请列举几种常见的激活函数。激活函数有什么作用？<br>神经网络中Dropout的作用？具体是怎么实现的？<br>利用梯度下降法训练神经网络，发现模型loss不变，可能有哪些问题？怎么解决？<br>如何解决不平衡数据集的分类问题？<br>残差网络为什么能做到很深层？<br>相比sigmoid激活函数ReLU激活函数有什么优势？<br>卷积神经网络中空洞卷积的作用是什么？<br>适用于移动端部署的网络结构都有哪些？<br>深度学习模型参数初始化都有哪些方法？<br>卷积神经网络为什么会具有平移等不变性？</p>
-<p>基于深度学习的目标检测技术演进：R-CNN、Fast R-CNN、Faster R-CNN、YOLO、SSD<br>请简单解释下目标检测中的这个IOU评价函数（intersection-over-union）<br>KNN与K-means区别？<br>K-means选择初始点的方法有哪些,优缺点是什么?(列出两种以上)<br>简述线性分类器的原理(要求对权重矩阵进行剖析)<br>请简述下log对数、Hinge Loss(折页)、Cross-Entropy Loss(交叉熵)这三个损失函数<br>简述正则化与奥卡姆剃刀原则<br>图像尺寸为 7<em>7, 卷积窗口大小为3</em>3, 步长为3, 是否能输出图像?如果能,输出图像大小为多少?如果不能,说明原因?<br>如果最后一个卷积层和第一个全连接层参数量太大怎么办?<br>为什么说神经网络是端到端的网络?<br>当参数量 &gt;&gt; 样本量时候, 神经网络是如何预防过拟合?<br>什么是感受野？<br>简述你对CBIR(Content-based Image Retrieval基于内容的图像检索)的理解<br>什么是计算机视觉单词模型？<br>简述什么是Local Feature(局部特征算子)？<br>KD-Tree相比KNN来进行快速图像特征比对的好处在哪里?<br>简述encode和decode思想<br>输入图片尺寸不匹配CNN网络input时候的解决方式？（三种以上）<br>FCN与CNN最大的区别？<br>遇到class-imbalanced data（数据类目不平衡）问题怎么办？<br>简述孪生随机网络（Siamese Network）<br>DPM（Deformable Parts Model）算法流程<br>什么是NMS（Non-maximum suppression 非极大值抑制）?<br>列举出常见的损失函数(三个以上)?<br>做过目标检测项目么？比如Mask R-CNN和Python做一个抢车位神器<br>如何理解Faster RCNN<br>one-stage和two-stage目标检测方法的区别和优缺点？<br>请画下YOLOv3的网络结构<br>请简单说下YOLOv1,v2,v3,v4各自的特点与发展史<br>如何理解YOLO：YOLO详解<br>怎么理解YOLOv4<br>神经网络参数共享(parameter sharing)是指什么？<br>2021年网易互联网 计算机视觉 一面<br>美团实习算法岗<br>2021商汤-视频理解研究员-校招-技术面</p>
+    <content><![CDATA[<p>如何确定CNN的卷积核通道数和卷积输出层的通道数？<br>什么是卷积？<br>什么是CNN的池化pool层？<br>简述下什么是生成对抗网络<br>学梵高作画的原理是什么？<br>请简要介绍下tensorflow的计算图<br>你有哪些深度学习（rnn、cnn）调参的经验？<br>为什么不同的机器学习领域都可以使用CNN，CNN解决了这些领域的哪些共性问题？他是如何解决的？<br>LSTM结构推导，为什么比RNN好？<br>Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。</p>
+<p>为什么引入非线性激励函数？<br>请问人工神经网络中为什么ReLu要好过于tanh和sigmoid function？<br>为什么LSTM模型中既存在sigmoid又存在tanh两种激活函数，而不是选择统一一种sigmoid或者tanh？这样做的目的是什么？<br>如何解决RNN梯度爆炸和弥散的问题？<br>什么样的数据集不适合用深度学习？<br>广义线性模型是怎被应用在深度学习中？<br>如何缓解梯度消失和梯度膨胀（微调、梯度截断、改良激活函数等）<br>简述神经网络的发展历史<br>深度学习常用方法<br>请简述神经网络的发展史。</p>
 <span id="more"></span>
 
 ]]></content>
@@ -354,6 +357,38 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>cv算法面试问题总结（八）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AB%EF%BC%89/</url>
+    <content><![CDATA[<p>神经网络中会用到批量梯度下降（BGD）吗？为什么用随机梯度下降（SGD）?<br>当神经网络的调参效果不好时，从哪些角度思考？（不要首先归结于overfiting）<br>请阐述下卷积神经网络CNN的基本原理(全网最通俗版)<br>神经网络输出层为什么通常使用softmax?<br>了解无人驾驶的核心技术么？<br>如何形象的理解LSTM的三个门<br>通过一张张动图形象的理解LSTM<br>如何理解反向传播算法BackPropagation<br>请问什么是softmax函数？<br>通俗理解BN(Batch Normalization)<br>批量归一化BN到底解决了什么问题？<br>如何理解随机梯度下降，以及为什么SGD能够收敛？<br>模拟退火算法能解决陷入局部最优的问题么<br>请说下常见优化方法各自的优缺点（BGD、SGD、MBGD、Momentum、NAG、Adagrad、Adadelta、RMSprop、Adam）<br>Adam算法的原理机制是怎么样的？它与相关的AdaGrad和RMSProp方法有什么区别</p>
+<span id="more"></span>
+]]></content>
+  </entry>
+  <entry>
+    <title>cv算法面试问题总结（六）</title>
+    <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AD%EF%BC%89/</url>
+    <content><![CDATA[<p>神经网络中激活函数的真正意义？一个激活函数需要具有哪些必要的属性？还有哪些属性是好的属性但不必要的？<br>梯度下降法的神经网络容易收敛到局部最优，为什么应用广泛？<br>简单说说CNN常用的几个模型<br>为什么很多做人脸的Paper会最后加入一个Local Connected Conv？<br>什么是梯度爆炸？<br>梯度爆炸会引发什么问题？<br>如何确定是否出现梯度爆炸？<br>如何修复梯度爆炸问题？</p>
+<p>LSTM神经网络输入输出究竟是怎样的？<br>什么是RNN？<br>请详细介绍一下RNN模型的几种经典结构<br>简单说下sigmoid激活函数<br>如何从RNN起步，一步一步通俗理解LSTM（全网最通俗的LSTM详解）<br>CNN究竟是怎样一步一步工作的？<br>rcnn、fast-rcnn和faster-rcnn三者的区别是什么<br>在神经网络中，有哪些办法防止过拟合？<br>CNN是什么，CNN关键的层有哪些？<br>GRU是什么？GRU对LSTM做了哪些改动？</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+        <tag>总结</tag>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>cv算法面试问题总结（十）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%8D%81%EF%BC%89/</url>
+    <content><![CDATA[<p>基于深度学习的目标检测技术演进：R-CNN、Fast R-CNN、Faster R-CNN、YOLO、SSD<br>请简单解释下目标检测中的这个IOU评价函数（intersection-over-union）<br>KNN与K-means区别？<br>K-means选择初始点的方法有哪些,优缺点是什么?(列出两种以上)<br>简述线性分类器的原理(要求对权重矩阵进行剖析)<br>请简述下log对数、Hinge Loss(折页)、Cross-Entropy Loss(交叉熵)这三个损失函数<br>简述正则化与奥卡姆剃刀原则<br>图像尺寸为 7<em>7, 卷积窗口大小为3</em>3, 步长为3, 是否能输出图像?如果能,输出图像大小为多少?如果不能,说明原因?<br>如果最后一个卷积层和第一个全连接层参数量太大怎么办?<br>为什么说神经网络是端到端的网络?<br>当参数量 &gt;&gt; 样本量时候, 神经网络是如何预防过拟合?<br>什么是感受野？</p>
+<p>简述你对CBIR(Content-based Image Retrieval基于内容的图像检索)的理解<br>什么是计算机视觉单词模型？<br>简述什么是Local Feature(局部特征算子)？<br>KD-Tree相比KNN来进行快速图像特征比对的好处在哪里?<br>简述encode和decode思想<br>输入图片尺寸不匹配CNN网络input时候的解决方式？（三种以上）<br>FCN与CNN最大的区别？<br>遇到class-imbalanced data（数据类目不平衡）问题怎么办？<br>简述孪生随机网络（Siamese Network）<br>DPM（Deformable Parts Model）算法流程<br>什么是NMS（Non-maximum suppression 非极大值抑制）?<br>列举出常见的损失函数(三个以上)?<br>做过目标检测项目么？比如Mask R-CNN和Python做一个抢车位神器<br>如何理解Faster RCNN<br>one-stage和two-stage目标检测方法的区别和优缺点？<br>请画下YOLOv3的网络结构<br>请简单说下YOLOv1,v2,v3,v4各自的特点与发展史<br>如何理解YOLO：YOLO详解<br>怎么理解YOLOv4<br>神经网络参数共享(parameter sharing)是指什么？<br>2021年网易互联网 计算机视觉 一面<br>美团实习算法岗<br>2021商汤-视频理解研究员-校招-技术面</p>
+]]></content>
   </entry>
   <entry>
     <title>cv算法面试问题总结（四）</title>
@@ -779,6 +814,19 @@
   </entry>
   <entry>
     <title>新文章</title>
+    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>空文档</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>新文章</title>
     <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0-1/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
@@ -810,40 +858,8 @@
       </tags>
   </entry>
   <entry>
-    <title>新文章</title>
-    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>空文档</category>
-      </categories>
-  </entry>
-  <entry>
     <title>机器学习-KNN邻近算法</title>
     <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-KNN%E9%82%BB%E8%BF%91%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习-主成分分析PCA</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90PCA/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
@@ -913,6 +929,25 @@
 <li><p>C4.5由于使用了熵模型，里面有大量的耗时的对数运算,如果是连续值还有大量的排序运算。</p>
 </li>
 </ol>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习-主成分分析PCA</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90PCA/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1287,26 +1322,6 @@
       </tags>
   </entry>
   <entry>
-    <title>深度学习-Inception结构的理解</title>
-    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>深度学习-RNN的改进：LSTM和GRU</title>
     <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：RNN算法中越晚的输入对结果影响越大，但越晚的输入不一定是最重要的。如何治保留最重要的信息？</p>
@@ -1342,6 +1357,26 @@
 </li>
 </ol>
 <p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/GRU.png"></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>深度学习-Inception结构的理解</title>
+    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1472,8 +1507,8 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-R-CNN系列</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-R-CNN%E7%B3%BB%E5%88%97/</url>
+    <title>目标检测-Retina-Net</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-Retina-Net/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
@@ -1492,8 +1527,8 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-Retina-Net</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-Retina-Net/</url>
+    <title>目标检测-R-CNN系列</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-R-CNN%E7%B3%BB%E5%88%97/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
@@ -1576,14 +1611,13 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-YOLOv4</title>
-    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv4/</url>
+    <title>目标检测-YOLOv5</title>
+    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv5/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1598,13 +1632,14 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-YOLOv5</title>
-    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv5/</url>
+    <title>目标检测-YOLOv4</title>
+    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv4/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
+
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1729,6 +1764,16 @@
       </tags>
   </entry>
   <entry>
+    <title>神经网络-权值初始化的方法</title>
+    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%9D%83%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>权值初始化的原因：1. 防止层激活输出在深度神经网络的正向传递过程中爆炸或消失。2. 有助于加速收敛。</p>
+<p>权值初始化的方法：</p>
+<p>常量初始化（constant）、高斯分布初始化（gaussian）、positive_unitball初始化、均匀分布初始化（uniform）、xavier初始化、msra初始化、双线性初始化（bilinear）</p>
+<span id="more"></span>
+
+<h1 id="常量初始化"><a href="#常量初始化" class="headerlink" title="常量初始化"></a>常量初始化</h1><h1 id="均匀分布初始化"><a href="#均匀分布初始化" class="headerlink" title="均匀分布初始化"></a>均匀分布初始化</h1><h1 id="高斯分布初始化"><a href="#高斯分布初始化" class="headerlink" title="高斯分布初始化"></a>高斯分布初始化</h1><h1 id="Xavier初始化"><a href="#Xavier初始化" class="headerlink" title="Xavier初始化"></a>Xavier初始化</h1><h1 id="MSRA初始化"><a href="#MSRA初始化" class="headerlink" title="MSRA初始化"></a>MSRA初始化</h1><h1 id="双线性初始化"><a href="#双线性初始化" class="headerlink" title="双线性初始化"></a>双线性初始化</h1>]]></content>
+  </entry>
+  <entry>
     <title>神经网络-损失函数</title>
     <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -1748,11 +1793,6 @@
         <tag>优化</tag>
         <tag>调参</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>神经网络-权值初始化的方法</title>
-    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%9D%83%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>神经网络-梯度优化方法</title>
@@ -1778,21 +1818,35 @@
   <entry>
     <title>神经网络-梯度爆炸和梯度消失</title>
     <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E7%88%86%E7%82%B8%E5%92%8C%E6%A2%AF%E5%BA%A6%E6%B6%88%E5%A4%B1/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>梯度消失/弥散与梯度爆炸的产生原因：</p>
-<p>梯度消失/弥散与梯度爆炸的解决方案：</p>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>产生原因：反向传播过程的链式法则会导致梯度剧烈变化。如果每一层神经元对上一层的输出的偏导乘上权重结果都小于1的会导致梯度消失，如果都大于1的会导致梯度爆炸。</p>
+<p>解决办法：</p>
+<ol>
+<li><p>预训练加微调</p>
+</li>
+<li><p>针对梯度爆炸：梯度剪切、权重正则，因此，如果发生梯度爆炸，权值的范数就会变的非常大，通过正则化项，可以<strong>部分</strong>限制<strong>梯度爆炸</strong>的发生。</p>
+</li>
+<li><p>使用不同的激活函数，用ReLU、Leaky-ReLU、P-ReLU、R-ReLU、Maxout等替代sigmoid函数。</p>
+</li>
+<li><p>BN（Batch Normalization），batchnorm就是通过对每一层的输出规范为均值和方差一致的方法，消除了w带来的放大缩小的影响，进而解决梯度消失和爆炸的问题。</p>
+</li>
+<li><p>残差的捷径（shortcut）</p>
+</li>
+<li><p>使用LSTM网络，它内部的“门”可以接下来更新的时候“记住”前几次训练的”残留记忆“</p>
+</li>
+</ol>
 <span id="more"></span>
 
-<h1 id="为什么使用梯度更新"><a href="#为什么使用梯度更新" class="headerlink" title="为什么使用梯度更新"></a>为什么使用梯度更新</h1><p>在深度神经网络中BP（反向传播算法）就是基于梯度下降策略，以目标的负梯度方向对参数进行调整， 参数的更新为 <img src="https://www.zhihu.com/equation?tex=w%5Cleftarrow+w+%5CDelta+w" alt="[公式]"> ，给定学习率 <img src="https://www.zhihu.com/equation?tex=%5Calpha" alt="[公式]"> ，得出 <img src="https://www.zhihu.com/equation?tex=%5CDelta+w=-%5Calpha%5Cfrac%7B%5Cpartial+Loss%7D%7Bw%7D%5C" alt="[公式]"> 。如果更新第二层隐层的权值信息，根据链式求导法则，更新梯度信息为：</p>
+<h1 id="什么是梯度"><a href="#什么是梯度" class="headerlink" title="什么是梯度"></a>什么是梯度</h1><p>在深度神经网络中BP（反向传播算法）就是基于梯度下降策略，以目标的负梯度方向对参数进行调整， 参数的更新为 <img src="https://www.zhihu.com/equation?tex=w%5Cleftarrow+w+%5CDelta+w" alt="[公式]"> ，给定学习率 <img src="https://www.zhihu.com/equation?tex=%5Calpha" alt="[公式]"> ，得出 <img src="https://www.zhihu.com/equation?tex=%5CDelta+w=-%5Calpha%5Cfrac%7B%5Cpartial+Loss%7D%7Bw%7D%5C" alt="[公式]"> 。如果更新第二层隐层的权值信息，根据链式求导法则，更新梯度信息为：</p>
 <p><img src="https://pic1.zhimg.com/80/v2-718946a3296668d9221045a092e42fe0_1440w.jpg" alt="img"></p>
 <p>上式中， <img src="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+f_%7B2%7D%7D%7B%5Cpartial+w_%7B2%7D%7D=f_%7B1%7D" alt="[公式]"> ，即第二隐藏层的输入。<img src="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+f_%7B4%7D%7D%7B%5Cpartial+f_%7B3%7D%7D" alt="[公式]"> 就是对激活函数进行求导，，那么层数增多的时候，最终的求出的梯度更新将以指数形式变化。</p>
 <h1 id="梯度消失-弥散"><a href="#梯度消失-弥散" class="headerlink" title="梯度消失/弥散"></a>梯度消失/弥散</h1><p>根据链式法则，如果每一层神经元对上一层的输出的偏导乘上权重结果都小于1的话，那么即使这个结果是0.99，在经过足够多层传播之后，误差对输入层的偏导会趋于0。</p>
 <p>这种情况会导致靠近输入层的隐含层神经元调整极小。</p>
 <p>梯度消失经常出现，一是在<strong>深层网络</strong>中，二是采用了<strong>不合适的损失函数</strong>，比如sigmoid。</p>
-<h1 id="与梯度爆炸"><a href="#与梯度爆炸" class="headerlink" title="与梯度爆炸"></a>与梯度爆炸</h1><p>据链式法则，如果每一层神经元对上一层的输出的偏导乘上权重结果都大于1的话，在经过足够多层传播之后，误差对输入层的偏导会趋于无穷大。</p>
+<h1 id="梯度爆炸"><a href="#梯度爆炸" class="headerlink" title="梯度爆炸"></a>梯度爆炸</h1><p>据链式法则，如果每一层神经元对上一层的输出的偏导乘上权重结果都大于1的话，在经过足够多层传播之后，误差对输入层的偏导会趋于无穷大。</p>
 <p>这种情况又会导致靠近输入层的隐含层神经元调整变动极大。</p>
 <p>梯度爆炸一般出现在深层网络和<strong>权值初始化值太大</strong>的情况下</p>
 <p>注：事实上，在深度神经网络中，往往是梯度消失出现的更多一些。</p>
-<h1 id="梯度爆炸解决方案："><a href="#梯度爆炸解决方案：" class="headerlink" title="梯度爆炸解决方案："></a>梯度爆炸解决方案：</h1><ol>
+<h1 id="梯度消失-爆炸解决方案："><a href="#梯度消失-爆炸解决方案：" class="headerlink" title="梯度消失/爆炸解决方案："></a>梯度消失/爆炸解决方案：</h1><ol>
 <li>预训练加微调</li>
 </ol>
 <p>此方法来自Hinton在2006年发表的一篇论文，Hinton为了解决梯度的问题，提出采取无监督逐层训练方法，其基本思想是每次训练一层隐节点，训练时将上一层隐节点的输出作为输入，而本层隐节点的输出作为下一层隐节点的输入，此过程是逐层“预训练”（pre-training）；在预训练完成后，再对整个网络进行“微调”（fine-tunning）。Hinton在训练深度信念网络（Deep Belief Networks中，使用了这个方法，在各层预训练完成后，再利用BP算法对整个网络进行训练。此思想相当于是先寻找局部最优，然后整合起来寻找全局最优，此方法有一定的好处，但是目前应用的不是很多了。</p>
@@ -1853,6 +1907,18 @@
       </tags>
   </entry>
   <entry>
+    <title>计算机视觉CV算法概览（更新ing）</title>
+    <url>/2021/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89CV%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
+    <content><![CDATA[<h1 id="图像识别"><a href="#图像识别" class="headerlink" title="图像识别"></a>图像识别</h1><h2 id="1-AlexNet"><a href="#1-AlexNet" class="headerlink" title="1. AlexNet"></a>1. AlexNet</h2><h2 id="2-VGGNet"><a href="#2-VGGNet" class="headerlink" title="2. VGGNet"></a>2. VGGNet</h2><h2 id="3-GoogLeNet"><a href="#3-GoogLeNet" class="headerlink" title="3. GoogLeNet"></a>3. GoogLeNet</h2><h2 id="4-ResNet"><a href="#4-ResNet" class="headerlink" title="4. ResNet"></a>4. ResNet</h2><h2 id="5-DenseNet"><a href="#5-DenseNet" class="headerlink" title="5. DenseNet"></a>5. DenseNet</h2><h1 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h1><h2 id="1-R-CNN-系列"><a href="#1-R-CNN-系列" class="headerlink" title="1. R-CNN 系列"></a>1. R-CNN 系列</h2><h3 id="1-R-CNN"><a href="#1-R-CNN" class="headerlink" title="1. R-CNN"></a>1. R-CNN</h3><h3 id="2-Fast-R-CNN"><a href="#2-Fast-R-CNN" class="headerlink" title="2. Fast R-CNN"></a>2. Fast R-CNN</h3><h3 id="3-Faster-R-CNN"><a href="#3-Faster-R-CNN" class="headerlink" title="3. Faster R-CNN"></a>3. Faster R-CNN</h3><h2 id="2-Yolo系列"><a href="#2-Yolo系列" class="headerlink" title="2. Yolo系列"></a>2. Yolo系列</h2><h3 id="1-Yolo-V1"><a href="#1-Yolo-V1" class="headerlink" title="1.Yolo V1"></a>1.Yolo V1</h3><h3 id="2-Yolo-V2"><a href="#2-Yolo-V2" class="headerlink" title="2.Yolo V2"></a>2.Yolo V2</h3><h3 id="3-Yolo-V3"><a href="#3-Yolo-V3" class="headerlink" title="3.Yolo V3"></a>3.Yolo V3</h3><h3 id="4-Yolo-V4"><a href="#4-Yolo-V4" class="headerlink" title="4.Yolo V4"></a>4.Yolo V4</h3><h3 id="5-Yolo-V5"><a href="#5-Yolo-V5" class="headerlink" title="5.Yolo V5"></a>5.Yolo V5</h3><h2 id="3-SSD"><a href="#3-SSD" class="headerlink" title="3. SSD"></a>3. SSD</h2><h2 id="4-Retina-Net"><a href="#4-Retina-Net" class="headerlink" title="4. Retina-Net"></a>4. Retina-Net</h2><h1 id="图像分割"><a href="#图像分割" class="headerlink" title="图像分割"></a>图像分割</h1><h2 id="1-FCN"><a href="#1-FCN" class="headerlink" title="1. FCN"></a>1. FCN</h2><h2 id="2-Mask-R-CNN"><a href="#2-Mask-R-CNN" class="headerlink" title="2. Mask R-CNN"></a>2. Mask R-CNN</h2><h1 id="目标追踪"><a href="#目标追踪" class="headerlink" title="目标追踪"></a>目标追踪</h1><h2 id="1-Goturn"><a href="#1-Goturn" class="headerlink" title="1. Goturn"></a>1. Goturn</h2><h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><h1 id="图像生成"><a href="#图像生成" class="headerlink" title="图像生成"></a>图像生成</h1><h2 id="1-GAN"><a href="#1-GAN" class="headerlink" title="1. GAN"></a>1. GAN</h2>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+      </categories>
+      <tags>
+        <tag>概览</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>站内说明</title>
     <url>/2021/09/14/%E7%AB%99%E5%86%85%E8%AF%B4%E6%98%8E/</url>
     <content><![CDATA[<p>本blog是作为Leo同学的自我拓展过程中的自律自省记录</p>
@@ -1869,18 +1935,6 @@
 ]]></content>
       <categories>
         <category>其他</category>
-      </categories>
-      <tags>
-        <tag>概览</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机视觉CV算法概览（更新ing）</title>
-    <url>/2021/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89CV%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
-    <content><![CDATA[<h1 id="图像识别"><a href="#图像识别" class="headerlink" title="图像识别"></a>图像识别</h1><h2 id="1-AlexNet"><a href="#1-AlexNet" class="headerlink" title="1. AlexNet"></a>1. AlexNet</h2><h2 id="2-VGGNet"><a href="#2-VGGNet" class="headerlink" title="2. VGGNet"></a>2. VGGNet</h2><h2 id="3-GoogLeNet"><a href="#3-GoogLeNet" class="headerlink" title="3. GoogLeNet"></a>3. GoogLeNet</h2><h2 id="4-ResNet"><a href="#4-ResNet" class="headerlink" title="4. ResNet"></a>4. ResNet</h2><h2 id="5-DenseNet"><a href="#5-DenseNet" class="headerlink" title="5. DenseNet"></a>5. DenseNet</h2><h1 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h1><h2 id="1-R-CNN-系列"><a href="#1-R-CNN-系列" class="headerlink" title="1. R-CNN 系列"></a>1. R-CNN 系列</h2><h3 id="1-R-CNN"><a href="#1-R-CNN" class="headerlink" title="1. R-CNN"></a>1. R-CNN</h3><h3 id="2-Fast-R-CNN"><a href="#2-Fast-R-CNN" class="headerlink" title="2. Fast R-CNN"></a>2. Fast R-CNN</h3><h3 id="3-Faster-R-CNN"><a href="#3-Faster-R-CNN" class="headerlink" title="3. Faster R-CNN"></a>3. Faster R-CNN</h3><h2 id="2-Yolo系列"><a href="#2-Yolo系列" class="headerlink" title="2. Yolo系列"></a>2. Yolo系列</h2><h3 id="1-Yolo-V1"><a href="#1-Yolo-V1" class="headerlink" title="1.Yolo V1"></a>1.Yolo V1</h3><h3 id="2-Yolo-V2"><a href="#2-Yolo-V2" class="headerlink" title="2.Yolo V2"></a>2.Yolo V2</h3><h3 id="3-Yolo-V3"><a href="#3-Yolo-V3" class="headerlink" title="3.Yolo V3"></a>3.Yolo V3</h3><h3 id="4-Yolo-V4"><a href="#4-Yolo-V4" class="headerlink" title="4.Yolo V4"></a>4.Yolo V4</h3><h3 id="5-Yolo-V5"><a href="#5-Yolo-V5" class="headerlink" title="5.Yolo V5"></a>5.Yolo V5</h3><h2 id="3-SSD"><a href="#3-SSD" class="headerlink" title="3. SSD"></a>3. SSD</h2><h2 id="4-Retina-Net"><a href="#4-Retina-Net" class="headerlink" title="4. Retina-Net"></a>4. Retina-Net</h2><h1 id="图像分割"><a href="#图像分割" class="headerlink" title="图像分割"></a>图像分割</h1><h2 id="1-FCN"><a href="#1-FCN" class="headerlink" title="1. FCN"></a>1. FCN</h2><h2 id="2-Mask-R-CNN"><a href="#2-Mask-R-CNN" class="headerlink" title="2. Mask R-CNN"></a>2. Mask R-CNN</h2><h1 id="目标追踪"><a href="#目标追踪" class="headerlink" title="目标追踪"></a>目标追踪</h1><h2 id="1-Goturn"><a href="#1-Goturn" class="headerlink" title="1. Goturn"></a>1. Goturn</h2><h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><h1 id="图像生成"><a href="#图像生成" class="headerlink" title="图像生成"></a>图像生成</h1><h2 id="1-GAN"><a href="#1-GAN" class="headerlink" title="1. GAN"></a>1. GAN</h2>]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
       </categories>
       <tags>
         <tag>概览</tag>
