@@ -35,6 +35,32 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>AI算法面试问题-机器学习（二）</title>
+    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>OpenCV图像处理基础（三）</title>
+    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>基础操作</tag>
+        <tag>噪音</tag>
+        <tag>灰度图</tag>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OpenCV图像处理基础（一）</title>
     <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>数字图像基础</p>
@@ -76,32 +102,6 @@
         <tag>基础操作</tag>
         <tag>噪音</tag>
         <tag>编程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI算法面试问题-机器学习（二）</title>
-    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>OpenCV图像处理基础（三）</title>
-    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-        <tag>基础操作</tag>
-        <tag>噪音</tag>
-        <tag>编程</tag>
-        <tag>灰度图</tag>
       </tags>
   </entry>
   <entry>
@@ -322,6 +322,21 @@
       </tags>
   </entry>
   <entry>
+    <title>cv算法面试问题总结（六）</title>
+    <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AD%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+        <tag>总结</tag>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>cv算法面试问题总结（五）</title>
     <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%94%EF%BC%89/</url>
     <content><![CDATA[<p>如何确定CNN的卷积核通道数和卷积输出层的通道数？<br>什么是卷积？<br>什么是CNN的池化pool层？<br>简述下什么是生成对抗网络<br>学梵高作画的原理是什么？<br>请简要介绍下tensorflow的计算图<br>你有哪些深度学习（rnn、cnn）调参的经验？<br>为什么不同的机器学习领域都可以使用CNN，CNN解决了这些领域的哪些共性问题？他是如何解决的？<br>LSTM结构推导，为什么比RNN好？<br>Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。<br>为什么引入非线性激励函数？<br>请问人工神经网络中为什么ReLu要好过于tanh和sigmoid function？<br>为什么LSTM模型中既存在sigmoid又存在tanh两种激活函数，而不是选择统一一种sigmoid或者tanh？这样做的目的是什么？<br>如何解决RNN梯度爆炸和弥散的问题？<br>什么样的数据集不适合用深度学习？<br>广义线性模型是怎被应用在深度学习中？<br>如何缓解梯度消失和梯度膨胀（微调、梯度截断、改良激活函数等）<br>简述神经网络的发展历史<br>深度学习常用方法<br>请简述神经网络的发展史。<br>神经网络中激活函数的真正意义？一个激活函数需要具有哪些必要的属性？还有哪些属性是好的属性但不必要的？<br>梯度下降法的神经网络容易收敛到局部最优，为什么应用广泛？<br>简单说说CNN常用的几个模型<br>为什么很多做人脸的Paper会最后加入一个Local Connected Conv？<br>什么是梯度爆炸？<br>梯度爆炸会引发什么问题？<br>如何确定是否出现梯度爆炸？<br>如何修复梯度爆炸问题？<br>LSTM神经网络输入输出究竟是怎样的？<br>什么是RNN？<br>请详细介绍一下RNN模型的几种经典结构<br>简单说下sigmoid激活函数<br>如何从RNN起步，一步一步通俗理解LSTM（全网最通俗的LSTM详解）<br>CNN究竟是怎样一步一步工作的？<br>rcnn、fast-rcnn和faster-rcnn三者的区别是什么<br>在神经网络中，有哪些办法防止过拟合？<br>CNN是什么，CNN关键的层有哪些？<br>GRU是什么？GRU对LSTM做了哪些改动？<br>如何解决深度学习中模型训练效果不佳的情况？<br>神经网络中，是否隐藏层如果具有足够数量的单位，它就可以近似任何连续函数？<br>为什么更深的网络更好？<br>更多的数据是否有利于更深的神经网络？<br>不平衡数据是否会影响神经网络的分类效果？<br>无监督降维提供的是帮助还是摧毁？<br>是否可以将任何非线性作为激活函数?<br>批大小如何影响测试正确率？<br>初始化如何影响训练?<br>不同层的权重是否以不同的速度收敛？<br>正则化如何影响权重？<br>什么是fine-tuning？<br>什么是边框回归Bounding-Box regression，以及为什么要做、怎么做<br>请阐述下Selective Search的主要思想<br>什么是非极大值抑制（NMS）？<br>什么是深度学习中的anchor？<br>CNN的特点以及优势<br>深度学习中有什么加快收敛/降低训练难度的方法？<br>请写出链式法则并证明<br>请写出Batch Normalization的计算方法及其应用<br>神经网络中会用到批量梯度下降（BGD）吗？为什么用随机梯度下降（SGD）?<br>当神经网络的调参效果不好时，从哪些角度思考？（不要首先归结于overfiting）<br>请阐述下卷积神经网络CNN的基本原理(全网最通俗版)<br>神经网络输出层为什么通常使用softmax?<br>了解无人驾驶的核心技术么？<br>如何形象的理解LSTM的三个门<br>通过一张张动图形象的理解LSTM<br>如何理解反向传播算法BackPropagation<br>请问什么是softmax函数？<br>通俗理解BN(Batch Normalization)<br>批量归一化BN到底解决了什么问题？<br>如何理解随机梯度下降，以及为什么SGD能够收敛？<br>模拟退火算法能解决陷入局部最优的问题么<br>请说下常见优化方法各自的优缺点（BGD、SGD、MBGD、Momentum、NAG、Adagrad、Adadelta、RMSprop、Adam）<br>Adam算法的原理机制是怎么样的？它与相关的AdaGrad和RMSProp方法有什么区别<br>什么是强化学习？<br>强化学习和监督学习、无监督学习的区别是什么？<br>强化学习适合解决什么样子的问题？<br>使用tensorflow进行深度学习算法实验时，如何调节超参数？<br>深度学习中的batch的大小对学习效果有何影响？<br>用梯度下降训练神经网络的参数，为什么参数有时会被训练为nan值？<br>卷积神经网络CNN中池化层有什么作用？<br>请列举几种常见的激活函数。激活函数有什么作用？<br>神经网络中Dropout的作用？具体是怎么实现的？<br>利用梯度下降法训练神经网络，发现模型loss不变，可能有哪些问题？怎么解决？<br>如何解决不平衡数据集的分类问题？<br>残差网络为什么能做到很深层？<br>相比sigmoid激活函数ReLU激活函数有什么优势？<br>卷积神经网络中空洞卷积的作用是什么？<br>适用于移动端部署的网络结构都有哪些？<br>深度学习模型参数初始化都有哪些方法？<br>卷积神经网络为什么会具有平移等不变性？</p>
@@ -339,39 +354,6 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>cv算法面试问题总结（六）</title>
-    <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AD%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>面试</tag>
-        <tag>总结</tag>
-        <tag>技巧</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hello-world</title>
-    <url>/2021/09/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>cv算法面试问题总结（四）</title>
@@ -411,6 +393,24 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>hello-world</title>
+    <url>/2021/09/29/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>kaggle比赛-Molecular Translation</title>
@@ -554,6 +554,42 @@
       </tags>
   </entry>
   <entry>
+    <title>图像识别-[2012]AlexNet</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>AlexNet是2012年ImageNet竞赛冠军获得者Alex Krizhevsky设计的</p>
+<p>方法简述：AlexNet有6亿个参数和650,000个神经元，包含5个卷积层，有些层后面跟了max-pooling层，3个全连接层，为了减少过拟合，在全连接层使用了dropout</p>
+<p>优点：</p>
+<ol>
+<li>使用Relu作为激活函数</li>
+<li>使用Dropou避免过拟合</li>
+<li>使用重叠的MaxPooling,让stride小于池化核的大小，池化层的输出有重叠和覆盖，提升了特征的丰富性</li>
+<li>？？？提出LRN层局部响应归一化层？？？</li>
+<li>使用分组卷机通过CUDA加速深度卷机网络的训练</li>
+<li>数据增强，避免过拟合</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>参数过多，计算量大</li>
+<li>网络不深，准确率不高</li>
+</ol>
+<span id="more"></span>
+
+<p>ImageNet是图像算法领域最常见的数据集，训练集包含120万张图片，验证集包含5万张图片，测试集包含15万张图片，这些图片分为了1000个类别，并且有多种不同的分辨率，</p>
+<h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E7%BB%93%E6%9E%84.png"></p>
+<h1 id="参数计算"><a href="#参数计算" class="headerlink" title="参数计算"></a>参数计算</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E5%8F%82%E6%95%B0%E9%87%8F.png"></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>图像识别</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>图像识别-GoogLeNet</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/</url>
     <content><![CDATA[<h1 id="GoogleNet"><a href="#GoogleNet" class="headerlink" title="GoogleNet"></a>GoogleNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：一般来说提升网络性能最直接的办法是增加网络深度（卷积层数）和宽度（神经元个数），但是伴随而来的是参数过多，容易过拟合；网络庞大计算复杂；梯度弥散，难以优化；所以需要设计一种模型：1. 让网络模型结构变得稀疏；2.能利用密集矩阵的高性能计算（大部分硬件是对密集矩阵计算优化的，稀疏矩阵计算时耗费的时间并没有减小）</p>
@@ -643,42 +679,6 @@
 <p>  2）全连接层后面也进行BN操作。</p>
 <h1 id="Inception-V4"><a href="#Inception-V4" class="headerlink" title="Inception V4"></a>Inception V4</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V4.png"></p>
 <p>ResNet的结构可以极大地加速训练，同时性能也有提升。</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>图像识别</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图像识别-[2012]AlexNet</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>AlexNet是2012年ImageNet竞赛冠军获得者Alex Krizhevsky设计的</p>
-<p>方法简述：AlexNet有6亿个参数和650,000个神经元，包含5个卷积层，有些层后面跟了max-pooling层，3个全连接层，为了减少过拟合，在全连接层使用了dropout</p>
-<p>优点：</p>
-<ol>
-<li>使用Relu作为激活函数</li>
-<li>使用Dropou避免过拟合</li>
-<li>使用重叠的MaxPooling,让stride小于池化核的大小，池化层的输出有重叠和覆盖，提升了特征的丰富性</li>
-<li>？？？提出LRN层局部响应归一化层？？？</li>
-<li>使用分组卷机通过CUDA加速深度卷机网络的训练</li>
-<li>数据增强，避免过拟合</li>
-</ol>
-<p>缺点：</p>
-<ol>
-<li>参数过多，计算量大</li>
-<li>网络不深，准确率不高</li>
-</ol>
-<span id="more"></span>
-
-<p>ImageNet是图像算法领域最常见的数据集，训练集包含120万张图片，验证集包含5万张图片，测试集包含15万张图片，这些图片分为了1000个类别，并且有多种不同的分辨率，</p>
-<h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E7%BB%93%E6%9E%84.png"></p>
-<h1 id="参数计算"><a href="#参数计算" class="headerlink" title="参数计算"></a>参数计算</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E5%8F%82%E6%95%B0%E9%87%8F.png"></p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -924,25 +924,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-奇异值分解SVD</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%A5%87%E5%BC%82%E5%80%BC%E5%88%86%E8%A7%A3SVD/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习-回归树Regression-Tree</title>
     <url>/2021/10/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%9B%9E%E5%BD%92%E6%A0%91Regression-Tree/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：决策树是解决分类问题的主要方法，分类是离散问题，但回归是连续问题，</p>
@@ -954,6 +935,25 @@
 <span id="more"></span>
 
 <p>参考：<a href="https://zhuanlan.zhihu.com/p/82054400">https://zhuanlan.zhihu.com/p/82054400</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习-奇异值分解SVD</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%A5%87%E5%BC%82%E5%80%BC%E5%88%86%E8%A7%A3SVD/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1213,6 +1213,27 @@
       </tags>
   </entry>
   <entry>
+    <title>模型过拟合问题解决方法</title>
+    <url>/2021/10/01/%E6%A8%A1%E5%9E%8B%E8%BF%87%E6%8B%9F%E5%90%88%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>深度学习</category>
+        <category>神经网络</category>
+      </categories>
+      <tags>
+        <tag>总结</tag>
+        <tag>编程</tag>
+        <tag>优化</tag>
+        <tag>调参</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>深度学习-[2013]ZFNet网络模型</title>
     <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2013-ZFNet%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：在神经网络卷集训练中没有办法知道每一次卷积、每一次池化、每一次经过激活函数到底发生了什么，也不知道神经网络为什么取得了如此好的效果。ZFNet通过使用可视化技术揭示了神经网络各层到底在干什么，起到了什么作用。一旦知道了这些，如何调整我们的神经网络，往什么方向优化，就有了较好的依据。</p>
@@ -1243,27 +1264,6 @@
       <tags>
         <tag>编程</tag>
         <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>模型过拟合问题解决方法</title>
-    <url>/2021/10/01/%E6%A8%A1%E5%9E%8B%E8%BF%87%E6%8B%9F%E5%90%88%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>深度学习</category>
-        <category>神经网络</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-        <tag>编程</tag>
-        <tag>优化</tag>
-        <tag>调参</tag>
       </tags>
   </entry>
   <entry>
@@ -1307,14 +1307,131 @@
       </tags>
   </entry>
   <entry>
-    <title>深度学习-LSTM长短期记忆</title>
+    <title>深度学习-RNN的改进：LSTM和GRU</title>
     <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：RNN算法中越晚的输入对结果影响越大，但越晚的输入不一定是最重要的。如何治保留最重要的信息？</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<ol>
+<li>长期信息可以有效的保留</li>
+<li>挑选重要信息保留，不重要的信息会选择“遗忘”</li>
+</ol>
+<p>缺点：</p>
+<span id="more"></span>
+
+
+
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/LSTMandGRU.png"></p>
+<p>LSTM隐含层的中间单元 t 的数据流动示意图，它接收上一个单元 t-1 的输入 Ct-1 和 ht-1，当然还有来自本单元的输入 xt ，LSTM一共经过4步完成这些信息的处理，<strong>输出 t 单元的状态 Ct ，和 其输出 ht</strong> 。</p>
+<ol>
+<li>forget 阶段：这个阶段主要是对上一个节点传进来的输入进行<strong>选择性</strong>忘记。简单来说就是会 “忘记不重要的，记住重要的”。它是由 sigmoid 神经元层和按照点的乘法操作组成的，sigmoid函数的取值范围为0~1，当为0时，也就是不让当前单元的输入xt 的任何信息进入到这个单元的Ct中，如果等于1，意思是全部进入到 Ct 中。wf和bf是sigmoi节点的权重和偏执</li>
+</ol>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/forget.png"></p>
+<ol start="2">
+<li><p>选择记忆阶段。这个阶段将这个阶段的输入有选择性地进行“记忆”。</p>
+<p>sigmoid层确定我们将要更新哪些值</p>
+<p>tanh层创建新的值向量</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/input.png"></p>
+</li>
+<li><p>更新细胞状态Ct: 圈X是乘法，圈+是加法</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/update_ct.png"></p>
+</li>
+<li><p>输出阶段。这个阶段将决定哪些将会被当成当前状态的输出。Ct只不过隐含地输入给了下一个单元 t+1，因此，最后一步要确定 ht </p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/output.png"></p>
+<h1 id="GRU"><a href="#GRU" class="headerlink" title="GRU"></a>GRU</h1><p>对LSTM的有一种改动版本叫做带门的循环单元（Gated Recurrent Unit），简称为 GRU，在2014年由 Cho 等人提出，它将遗忘门和输入门结合为一个“更新门”，同时，将单元的状态 Ct 和隐藏状态合并为一体，这样的修改的结果是比我们上面介绍的标准的LSTM模型更加简化了，因此变得越来越受欢迎。</p>
+</li>
+</ol>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/GRU.png"></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
   </entry>
   <entry>
     <title>深度学习-RNN循环神经网络</title>
     <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：CNN算法的输入和输出基本是一对一的，不同的输入之间是没有联系的，但是需要处理序列数据（一串互相依赖的数据流）的场景就不能很好的完成了。比如文本，音频，股票走势等</p>
+<p>方法简述：每一个样特征的训练计算的时候不仅仅考虑当前样本的值，也要考虑前一个样本的输出值</p>
+<p>优点：</p>
+<p>缺点：</p>
+<ol>
+<li>RNN 有短期记忆问题，无法处理很长的输入序列</li>
+<li>训练 RNN 需要投入极大的成本</li>
+</ol>
+<span id="more"></span>
+
+
+
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/RNN%E5%8D%95%E5%85%83%E7%BB%93%E6%9E%84.jpeg"></p>
+<p>x是一个向量，它表示<strong>输入层</strong>的值（这里面没有画出来表示神经元节点的圆圈）；</p>
+<p>s是一个向量，它表示<strong>隐藏层</strong>的值（可以想象这一层其实是多个节点，节点数与向量s的维度相同）；</p>
+<p>U是输入层到隐藏层的<strong>权重矩阵</strong>，</p>
+<p>o也是一个向量，它表示<strong>输出层</strong>的值；</p>
+<p>V是隐藏层到输出层的<strong>权重矩阵</strong></p>
+<p><strong>循环神经网络</strong>的<strong>隐藏层</strong>的值s不仅仅取决于当前这次的输入x，还取决于上一次<strong>隐藏层</strong>的值s。<strong>权重矩阵</strong> W就是<strong>隐藏层</strong>上一次的值作为这一次的输入的权重。</p>
+<p>另外还有一个偏置项b</p>
+<p>在计算时，<strong>每一步使用的参数U、W、b都是一样的，也就是说每个步骤的参数都是共享的，这是RNN的重要特点，一定要牢记。</strong></p>
+<p>结构示意图</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/RNN%E5%8D%95%E5%85%83.gif"></p>
+<h1 id="N-vs-N模型"><a href="#N-vs-N模型" class="headerlink" title="N vs N模型"></a>N vs N模型</h1><p>Yi = Softmax(V*hi+c)</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%84.jpeg"></p>
+<p>最后可以看出：<strong>这里的RNN的输入和输出序列是等长的</strong></p>
+<h1 id="N-vs-1-模型"><a href="#N-vs-1-模型" class="headerlink" title="N vs 1 模型"></a>N vs 1 模型</h1><p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%84n_1.jpeg"></p>
+<p>这种结构通常用来处理序列分类问题。输入是一个序列输出为一个单独的值，如输入一段文字判别它所属的类别，输入一个句子判断其情感倾向，输入一段视频并判断它的类别等等。</p>
+<h1 id="1-VS-N模型"><a href="#1-VS-N模型" class="headerlink" title="1 VS N模型"></a>1 VS N模型</h1><p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%841_n.jpeg"></p>
+<p>or</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%841_n2.jpeg"></p>
+<p>这种1 VS N的结构可以处理的问题有：</p>
+<ul>
+<li>从图像生成文字（image caption），此时输入的X就是图像的特征，而输出的y序列就是一段句子</li>
+<li>从类别生成语音或音乐等</li>
+</ul>
+<h1 id="N-vs-M-模型"><a href="#N-vs-M-模型" class="headerlink" title="N vs M 模型"></a>N vs M 模型</h1><p>这种结构又叫Encoder-Decoder模型，也可以称之为Seq2Seq模型。</p>
+<p>原始的N vs N RNN要求序列等长，然而我们遇到的大部分问题序列都是不等长的，如机器翻译中，源语言和目标语言的句子往往并没有相同的长度。<strong>为此，Encoder-Decoder结构先将输入数据编码成一个上下文向量c：****拿到c之后，就用另一个RNN网络对其进行解码</strong>，这部分RNN网络被称为Decoder。具体做法就是将c当做之前的初始状态h0输入到Decoder中：</p>
+<ol>
+<li>c = h4</li>
+<li>c = q(h4)</li>
+<li>c = q(h1,h2,h3,h4)</li>
+</ol>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/N_M.jpeg"></p>
+<p>Or 另一种做法将C当作每一步输入</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/N_M2.jpeg"></p>
+<p>由于这种Encoder-Decoder结构不限制输入和输出的序列长度，因此应用的范围非常广泛，比如：</p>
+<ul>
+<li>机器翻译。Encoder-Decoder的最经典应用，事实上这一结构就是在机器翻译领域最先提出的</li>
+<li>文本摘要。输入是一段文本序列，输出是这段文本序列的摘要序列。</li>
+<li>阅读理解。将输入的文章和问题分别编码，再对其进行解码得到问题的答案。</li>
+<li>语音识别。输入是语音信号序列，输出是文字序列。</li>
+</ul>
+<h1 id="Attention-机制"><a href="#Attention-机制" class="headerlink" title="Attention 机制"></a>Attention 机制</h1><p>问题：在Encoder-Decoder结构中，Encoder把所有的输入序列都编码成一个统一的语义特征c再解码，<strong>因此， c中必须包含原始序列中的所有信息，它的长度就成了限制模型性能的瓶颈。</strong>如机器翻译问题，当要翻译的句子较长时，一个c可能存不下那么多信息，就会造成翻译精度的下降。</p>
+<p>解决方法：Attention机制通过在每个时间输入不同的c来解决这个问题，下图是带有Attention机制的Decoder：</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/attention1.jpeg"></p>
+<p><strong>每一个c会自动去选取与当前所要输出的y最合适的上下文信息。具体来说，我们用 a_ij衡量Encoder中第j阶段的hj和解码时第i阶段的相关性，最终Decoder中第i阶段的输入的上下文信息 c_i 就来自于所有 h_i对 a_ij的加权和。</strong></p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/attention2.jpeg"></p>
+<p>Encoder中的h1、h2、h3、h4就可以分别看做是“我”、“爱”、“中”、“国”所代表的信息。在翻译成英语时，第一个上下文c1应该和“我”这个字最相关，因此对应的 <img src="https://www.zhihu.com/equation?tex=a_%7B11%7D" alt="[公式]"> 就比较大，而相应的 <img src="https://www.zhihu.com/equation?tex=a_%7B12%7D" alt="[公式]"> 、 <img src="https://www.zhihu.com/equation?tex=a_%7B13%7D" alt="[公式]"> 、 <img src="https://www.zhihu.com/equation?tex=a_%7B14%7D" alt="[公式]"> 就比较小。c2应该和“爱”最相关，因此对应的 <img src="https://www.zhihu.com/equation?tex=a_%7B22%7D" alt="[公式]"> 就比较大。最后的c3和h3、h4最相关，因此 <img src="https://www.zhihu.com/equation?tex=a_%7B33%7D" alt="[公式]"> 、 <img src="https://www.zhihu.com/equation?tex=a_%7B34%7D" alt="[公式]"> 的值就比较大。</p>
+<p>至此，关于Attention模型，我们就只剩最后一个问题了，那就是：<strong>这些权重 <img src="https://www.zhihu.com/equation?tex=a_%7Bij%7D" alt="[公式]"> 是怎么来的？</strong></p>
+<p>事实上， <img src="https://www.zhihu.com/equation?tex=a_%7Bij%7D" alt="[公式]"> 同样是从模型中学出的，它实际和Decoder的第i-1阶段的隐状态、Encoder第j个阶段的隐状态有关。</p>
+<p>同样还是拿上面的机器翻译举例， <img src="https://www.zhihu.com/equation?tex=a_%7B1j%7D" alt="[公式]"> 的计算（此时箭头就表示对h’和 <img src="https://www.zhihu.com/equation?tex=h_j" alt="[公式]"> 同时做变换）：</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/attention3.jpeg"></p>
+<p>Reference: <a href="https://zhuanlan.zhihu.com/p/28054589">https://zhuanlan.zhihu.com/p/28054589</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
   </entry>
   <entry>
     <title>深度学习-深度可分离卷积Depthwise Separable Conv</title>
@@ -1661,7 +1778,58 @@
   <entry>
     <title>神经网络-梯度爆炸和梯度消失</title>
     <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E7%88%86%E7%82%B8%E5%92%8C%E6%A2%AF%E5%BA%A6%E6%B6%88%E5%A4%B1/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>梯度消失/弥散与梯度爆炸的产生原因：</p>
+<p>梯度消失/弥散与梯度爆炸的解决方案：</p>
+<span id="more"></span>
+
+<h1 id="为什么使用梯度更新"><a href="#为什么使用梯度更新" class="headerlink" title="为什么使用梯度更新"></a>为什么使用梯度更新</h1><p>在深度神经网络中BP（反向传播算法）就是基于梯度下降策略，以目标的负梯度方向对参数进行调整， 参数的更新为 <img src="https://www.zhihu.com/equation?tex=w%5Cleftarrow+w+%5CDelta+w" alt="[公式]"> ，给定学习率 <img src="https://www.zhihu.com/equation?tex=%5Calpha" alt="[公式]"> ，得出 <img src="https://www.zhihu.com/equation?tex=%5CDelta+w=-%5Calpha%5Cfrac%7B%5Cpartial+Loss%7D%7Bw%7D%5C" alt="[公式]"> 。如果更新第二层隐层的权值信息，根据链式求导法则，更新梯度信息为：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-718946a3296668d9221045a092e42fe0_1440w.jpg" alt="img"></p>
+<p>上式中， <img src="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+f_%7B2%7D%7D%7B%5Cpartial+w_%7B2%7D%7D=f_%7B1%7D" alt="[公式]"> ，即第二隐藏层的输入。<img src="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+f_%7B4%7D%7D%7B%5Cpartial+f_%7B3%7D%7D" alt="[公式]"> 就是对激活函数进行求导，，那么层数增多的时候，最终的求出的梯度更新将以指数形式变化。</p>
+<h1 id="梯度消失-弥散"><a href="#梯度消失-弥散" class="headerlink" title="梯度消失/弥散"></a>梯度消失/弥散</h1><p>根据链式法则，如果每一层神经元对上一层的输出的偏导乘上权重结果都小于1的话，那么即使这个结果是0.99，在经过足够多层传播之后，误差对输入层的偏导会趋于0。</p>
+<p>这种情况会导致靠近输入层的隐含层神经元调整极小。</p>
+<p>梯度消失经常出现，一是在<strong>深层网络</strong>中，二是采用了<strong>不合适的损失函数</strong>，比如sigmoid。</p>
+<h1 id="与梯度爆炸"><a href="#与梯度爆炸" class="headerlink" title="与梯度爆炸"></a>与梯度爆炸</h1><p>据链式法则，如果每一层神经元对上一层的输出的偏导乘上权重结果都大于1的话，在经过足够多层传播之后，误差对输入层的偏导会趋于无穷大。</p>
+<p>这种情况又会导致靠近输入层的隐含层神经元调整变动极大。</p>
+<p>梯度爆炸一般出现在深层网络和<strong>权值初始化值太大</strong>的情况下</p>
+<p>注：事实上，在深度神经网络中，往往是梯度消失出现的更多一些。</p>
+<h1 id="梯度爆炸解决方案："><a href="#梯度爆炸解决方案：" class="headerlink" title="梯度爆炸解决方案："></a>梯度爆炸解决方案：</h1><ol>
+<li>预训练加微调</li>
+</ol>
+<p>此方法来自Hinton在2006年发表的一篇论文，Hinton为了解决梯度的问题，提出采取无监督逐层训练方法，其基本思想是每次训练一层隐节点，训练时将上一层隐节点的输出作为输入，而本层隐节点的输出作为下一层隐节点的输入，此过程是逐层“预训练”（pre-training）；在预训练完成后，再对整个网络进行“微调”（fine-tunning）。Hinton在训练深度信念网络（Deep Belief Networks中，使用了这个方法，在各层预训练完成后，再利用BP算法对整个网络进行训练。此思想相当于是先寻找局部最优，然后整合起来寻找全局最优，此方法有一定的好处，但是目前应用的不是很多了。</p>
+<ol start="2">
+<li>针对梯度爆炸：梯度剪切、权重正则</li>
+</ol>
+<p>梯度剪切这个方案主要是针对梯度爆炸提出的，其思想是设置一个梯度剪切阈值，然后更新梯度的时候，如果梯度超过这个阈值，那么就将其强制限制在这个范围之内。</p>
+<p>权重正则化：</p>
+<p>正则化是通过对网络权重做正则限制过拟合，仔细看正则项在损失函数的形式：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-29298ec3d2b9094b20abdc6d9d7b1272_1440w.png" alt="img"></p>
+<p>其中， <img src="https://www.zhihu.com/equation?tex=%5Calpha" alt="[公式]"> 是指正则项系数，因此，如果发生梯度爆炸，权值的范数就会变的非常大，通过正则化项，可以<strong>部分</strong>限制<strong>梯度爆炸</strong>的发生。</p>
+<ol start="3">
+<li><p>使用不同的激活函数</p>
+<p>用ReLU、Leaky-ReLU、P-ReLU、R-ReLU、Maxout等替代sigmoid函数。</p>
+</li>
+<li><p>BN（Batch Normalization）</p>
+<p>反向传播中，经过每一层的梯度会乘以该层的权重，举个简单例子：</p>
+<p>正向传播中f2=f1(wT∗x+b)，那么反向传播中</p>
+<p><img src="https://pic4.zhimg.com/80/v2-614cb67f4bfae76e8452b3dd06223cdf_1440w.png" alt="img"></p>
+<p>反向传播式子中有w的存在，所以w的大小影响了梯度的消失和爆炸，batchnorm就是通过对每一层的输出规范为均值和方差一致的方法，消除了w带来的放大缩小的影响，进而解决梯度消失和爆炸的问题。</p>
+</li>
+<li><p>残差结构</p>
+<p>残差的捷径（shortcut）</p>
+</li>
+<li><p>使用LSTM网络</p>
+<p>LSTM内部复杂的“门”(gates)，LSTM通过它内部的“门”可以接下来更新的时候“记住”前几次训练的”残留记忆“，因此，经常用于生成文本中。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>梯度</tag>
+      </tags>
   </entry>
   <entry>
     <title>神经网络-激活函数</title>

@@ -20,18 +20,26 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="毕业于UNSW(QS:43),人工智能，好奇心重，动手能力强">
+  <meta name="description" content="摘要背景问题：RNN算法中越晚的输入对结果影响越大，但越晚的输入不一定是最重要的。如何治保留最重要的信息？ 方法简述： 优点：  长期信息可以有效的保留 挑选重要信息保留，不重要的信息会选择“遗忘”  缺点：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深度学习-LSTM长短期记忆">
+<meta property="og:title" content="深度学习-RNN的改进：LSTM和GRU">
 <meta property="og:url" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="毕业于UNSW(QS:43),人工智能，好奇心重，动手能力强">
+<meta property="og:description" content="摘要背景问题：RNN算法中越晚的输入对结果影响越大，但越晚的输入不一定是最重要的。如何治保留最重要的信息？ 方法简述： 优点：  长期信息可以有效的保留 挑选重要信息保留，不重要的信息会选择“遗忘”  缺点：">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/LSTMandGRU.png">
+<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/forget.png">
+<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/input.png">
+<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/update_ct.png">
+<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/output.png">
+<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/GRU.png">
 <meta property="article:published_time" content="2021-10-01T09:14:46.000Z">
-<meta property="article:modified_time" content="2021-10-01T09:14:46.056Z">
+<meta property="article:modified_time" content="2021-10-06T03:30:15.585Z">
 <meta property="article:author" content="Leo">
-<meta property="article:tag" content="python 深度学习">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="论文复现">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/LSTMandGRU.png">
 
 <link rel="canonical" href="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/">
 
@@ -46,7 +54,7 @@
   };
 </script>
 
-  <title>深度学习-LSTM长短期记忆 | Leo的三板斧</title>
+  <title>深度学习-RNN的改进：LSTM和GRU | Leo的三板斧</title>
   
 
 
@@ -212,7 +220,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          深度学习-LSTM长短期记忆
+          深度学习-RNN的改进：LSTM和GRU
         </h1>
 
         <div class="post-meta">
@@ -223,6 +231,27 @@
               <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2021-10-01 17:14:46" itemprop="dateCreated datePublished" datetime="2021-10-01T17:14:46+08:00">2021-10-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/cv%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">cv算法</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" itemprop="url" rel="index"><span itemprop="name">目标检测</span></a>
+                </span>
             </span>
 
           
@@ -236,7 +265,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：RNN算法中越晚的输入对结果影响越大，但越晚的输入不一定是最重要的。如何治保留最重要的信息？</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<ol>
+<li>长期信息可以有效的保留</li>
+<li>挑选重要信息保留，不重要的信息会选择“遗忘”</li>
+</ol>
+<p>缺点：</p>
+<span id="more"></span>
+
+
+
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/LSTMandGRU.png"></p>
+<p>LSTM隐含层的中间单元 t 的数据流动示意图，它接收上一个单元 t-1 的输入 Ct-1 和 ht-1，当然还有来自本单元的输入 xt ，LSTM一共经过4步完成这些信息的处理，<strong>输出 t 单元的状态 Ct ，和 其输出 ht</strong> 。</p>
+<ol>
+<li>forget 阶段：这个阶段主要是对上一个节点传进来的输入进行<strong>选择性</strong>忘记。简单来说就是会 “忘记不重要的，记住重要的”。它是由 sigmoid 神经元层和按照点的乘法操作组成的，sigmoid函数的取值范围为0~1，当为0时，也就是不让当前单元的输入xt 的任何信息进入到这个单元的Ct中，如果等于1，意思是全部进入到 Ct 中。wf和bf是sigmoi节点的权重和偏执</li>
+</ol>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/forget.png"></p>
+<ol start="2">
+<li><p>选择记忆阶段。这个阶段将这个阶段的输入有选择性地进行“记忆”。</p>
+<p>sigmoid层确定我们将要更新哪些值</p>
+<p>tanh层创建新的值向量</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/input.png"></p>
+</li>
+<li><p>更新细胞状态Ct: 圈X是乘法，圈+是加法</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/update_ct.png"></p>
+</li>
+<li><p>输出阶段。这个阶段将决定哪些将会被当成当前状态的输出。Ct只不过隐含地输入给了下一个单元 t+1，因此，最后一步要确定 ht </p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/output.png"></p>
+<h1 id="GRU"><a href="#GRU" class="headerlink" title="GRU"></a>GRU</h1><p>对LSTM的有一种改动版本叫做带门的循环单元（Gated Recurrent Unit），简称为 GRU，在2014年由 Cho 等人提出，它将遗忘门和输入门结合为一个“更新门”，同时，将单元的状态 Ct 和隐藏状态合并为一体，这样的修改的结果是比我们上面介绍的标准的LSTM模型更加简化了，因此变得越来越受欢迎。</p>
+</li>
+</ol>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/GRU.png"></p>
+
     </div>
 
     
@@ -244,6 +306,10 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
+              <a href="/tags/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0/" rel="tag"># 论文复现</a>
+          </div>
 
         
 
@@ -316,6 +382,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GRU"><span class="nav-number">2.</span> <span class="nav-text">GRU</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -344,7 +411,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
