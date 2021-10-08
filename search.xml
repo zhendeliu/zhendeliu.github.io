@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>AI算法面试问题-机器学习（三）</title>
-    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>AI算法面试问题-机器学习（二）</title>
-    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>AI算法面试问题-机器学习（一）</title>
     <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
@@ -40,17 +30,14 @@
       </tags>
   </entry>
   <entry>
-    <title>Pytorch框架基础（一）</title>
-    <url>/2021/09/05/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1>]]></content>
-      <categories>
-        <category>学习</category>
-        <category>Pytorch</category>
-      </categories>
-      <tags>
-        <tag>基础操作</tag>
-        <tag>编程</tag>
-      </tags>
+    <title>AI算法面试问题-机器学习（三）</title>
+    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>AI算法面试问题-机器学习（二）</title>
+    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>OpenCV图像处理基础（一）</title>
@@ -90,10 +77,10 @@
         <category>cv算法</category>
       </categories>
       <tags>
-        <tag>基础操作</tag>
-        <tag>编程</tag>
         <tag>OpenCV</tag>
+        <tag>基础操作</tag>
         <tag>噪音</tag>
+        <tag>编程</tag>
       </tags>
   </entry>
   <entry>
@@ -110,11 +97,62 @@
         <category>cv算法</category>
       </categories>
       <tags>
+        <tag>OpenCV</tag>
+        <tag>基础操作</tag>
+        <tag>噪音</tag>
+        <tag>编程</tag>
+        <tag>灰度图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Pytorch框架基础（一）</title>
+    <url>/2021/09/05/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>view()和reshape()</p>
+<p>Broadcasting 广播机制</p>
+<p>Numpy 和 Tensor互转</p>
+<p>GPU/CPU计算</p>
+<span id="more"></span>
+
+<h1 id="view-和reshape"><a href="#view-和reshape" class="headerlink" title="view()和reshape()"></a>view()和reshape()</h1><p> <code>view()</code>是内存共享的，改变了tensor的观察视角而已</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">a=torch.Tensor([[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]]])</span><br><span class="line"></span><br><span class="line">b = a.view(<span class="number">1</span>,<span class="number">6</span>)</span><br><span class="line">c = a.view(<span class="number">3</span>,<span class="number">2</span>)</span><br><span class="line">d = a.view(<span class="number">6</span>,-<span class="number">1</span>)<span class="comment"># 不确定维数时用-1</span></span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"><span class="built_in">print</span>(c)</span><br><span class="line"><span class="built_in">print</span>(d)</span><br><span class="line">d[<span class="number">0</span>] = <span class="number">9</span> <span class="comment"># 共享地址只要改变 其他都会改变</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"><span class="built_in">print</span>(c)</span><br><span class="line"><span class="built_in">print</span>(d)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>输出分别是:(不改变原有的tensor的shape)</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tensor([[<span class="number">1.</span>, <span class="number">2.</span>, <span class="number">3.</span>, <span class="number">4.</span>, <span class="number">5.</span>, <span class="number">6.</span>]])</span><br><span class="line">tensor([[<span class="number">1.</span>, <span class="number">2.</span>],</span><br><span class="line">        [<span class="number">3.</span>, <span class="number">4.</span>],</span><br><span class="line">        [<span class="number">5.</span>, <span class="number">6.</span>]])</span><br><span class="line">tensor([[<span class="number">1.</span>],</span><br><span class="line">        [<span class="number">2.</span>],</span><br><span class="line">        [<span class="number">3.</span>],</span><br><span class="line">        [<span class="number">4.</span>],</span><br><span class="line">        [<span class="number">5.</span>],</span><br><span class="line">        [<span class="number">6.</span>]])</span><br><span class="line"></span><br><span class="line">tensor([[[<span class="number">9.</span>, <span class="number">2.</span>, <span class="number">3.</span>],</span><br><span class="line">         [<span class="number">4.</span>, <span class="number">5.</span>, <span class="number">6.</span>]]])</span><br><span class="line">tensor([[<span class="number">9.</span>, <span class="number">2.</span>, <span class="number">3.</span>, <span class="number">4.</span>, <span class="number">5.</span>, <span class="number">6.</span>]])</span><br><span class="line">tensor([[<span class="number">9.</span>, <span class="number">2.</span>],</span><br><span class="line">        [<span class="number">3.</span>, <span class="number">4.</span>],</span><br><span class="line">        [<span class="number">5.</span>, <span class="number">6.</span>]])</span><br><span class="line">tensor([[<span class="number">9.</span>],</span><br><span class="line">        [<span class="number">2.</span>],</span><br><span class="line">        [<span class="number">3.</span>],</span><br><span class="line">        [<span class="number">4.</span>],</span><br><span class="line">        [<span class="number">5.</span>],</span><br><span class="line">        [<span class="number">6.</span>]])</span><br></pre></td></tr></table></figure>
+
+<p><code>reshape()</code>不是共享的，可以理解为**reshape获取的是tensor克隆真实副本，<code>reshape()</code>可以改变该tensor结构，但是view()不可以，因为<code>reshape</code>等价于先<code>contiguous()</code>再<code>view()</code>,也就是数据内存给你撸顺了，再改变观察视角。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = torch.rand(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">x = x.transpose(<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(x.is_contiguous()) <span class="comment">#  x.permute(1,0)</span></span><br><span class="line"><span class="comment"># False 输出</span></span><br><span class="line"><span class="comment"># x.view(3,4) 地址不连续会报错</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">RuntimeError: invalid argument 2: view size is not compatible with input tensor&#x27;s....</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="comment"># 但是这样是可以的。</span></span><br><span class="line">x = x.contiguous()</span><br><span class="line">x.view(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">x.reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">x.reshape(3,4) 这个操作</span></span><br><span class="line"><span class="string">等于x = x.contiguous().view()</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Broadcasting-广播机制"><a href="#Broadcasting-广播机制" class="headerlink" title="Broadcasting 广播机制"></a>Broadcasting 广播机制</h1><p>当对两个形状不同的 Tensor 按元素运算 时，可能会触发⼴播（broadcasting）机制：<strong>先适当复制元素使这两个 Tensor 形状相同后再按元素运算</strong>。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">x = torch.arange(<span class="number">1</span>,<span class="number">3</span>).view(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">y = torch.arange(<span class="number">2</span>,<span class="number">5</span>).view(<span class="number">3</span>,<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="built_in">print</span>(y)</span><br><span class="line"><span class="built_in">print</span>(x+y)</span><br></pre></td></tr></table></figure>
+
+<p>结果：(x 中第⼀⾏的2个元素被⼴播 （复制）到了第⼆⾏和第三⾏，⽽ y 中第⼀列的3个元素被⼴播（复制）到了第⼆列)</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tensor([[<span class="number">1</span>, <span class="number">2</span>]])</span><br><span class="line">tensor([[<span class="number">2</span>],</span><br><span class="line">        [<span class="number">3</span>],</span><br><span class="line">        [<span class="number">4</span>]])</span><br><span class="line">tensor([[<span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">        [<span class="number">4</span>, <span class="number">5</span>],</span><br><span class="line">        [<span class="number">5</span>, <span class="number">6</span>]])</span><br></pre></td></tr></table></figure>
+
+<h1 id="Numpy-和-Tensor互转"><a href="#Numpy-和-Tensor互转" class="headerlink" title="Numpy 和 Tensor互转"></a>Numpy 和 Tensor互转</h1><h2 id="Tensor转numpy"><a href="#Tensor转numpy" class="headerlink" title="Tensor转numpy"></a>Tensor转numpy</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">x = torch.ones(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">y = x.numpy()</span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="built_in">print</span>(y)</span><br><span class="line">y += <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="built_in">print</span>(y)</span><br></pre></td></tr></table></figure>
+
+<p>输出： 地址共享</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tensor([[<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>],</span><br><span class="line">        [<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>]])</span><br><span class="line">[[<span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span>]</span><br><span class="line"> [<span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span>]]</span><br><span class="line"> </span><br><span class="line">tensor([[<span class="number">2.</span>, <span class="number">2.</span>, <span class="number">2.</span>],</span><br><span class="line">        [<span class="number">2.</span>, <span class="number">2.</span>, <span class="number">2.</span>]])</span><br><span class="line">[[<span class="number">2.</span> <span class="number">2.</span> <span class="number">2.</span>]</span><br><span class="line"> [<span class="number">2.</span> <span class="number">2.</span> <span class="number">2.</span>]]</span><br></pre></td></tr></table></figure>
+
+<h2 id="Numpy转Tensor"><a href="#Numpy转Tensor" class="headerlink" title="Numpy转Tensor"></a>Numpy转Tensor</h2><p>torch.from_numpy(y) 和torch.tensor(y) 方法</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">z = torch.from_numpy(y)</span><br><span class="line">z2 = torch.tensor(y)</span><br><span class="line">y += <span class="number">2</span></span><br><span class="line"><span class="built_in">print</span>(z)</span><br><span class="line"><span class="built_in">print</span>(z2)</span><br></pre></td></tr></table></figure>
+
+<p>输出：torch.from_numpy()<strong>共享相同的内存</strong>   torch.tensor(y) 方法会进⾏数据拷⻉</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tensor([[4., 4., 4.],</span><br><span class="line">        [4., 4., 4.]])</span><br><span class="line">        </span><br><span class="line">tensor([[2., 2., 2.],</span><br><span class="line">        [2., 2., 2.]])</span><br></pre></td></tr></table></figure>
+
+<h1 id="GPU-CPU计算"><a href="#GPU-CPU计算" class="headerlink" title="GPU/CPU计算"></a>GPU/CPU计算</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">    x = torch.ones(<span class="number">2</span>, <span class="number">3</span>,device=torch.device(<span class="string">&#x27;cuda&#x27;</span>))</span><br><span class="line">    y = y.to(<span class="string">&#x27;cuda&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>Pytorch</category>
+      </categories>
+      <tags>
         <tag>基础操作</tag>
         <tag>编程</tag>
-        <tag>OpenCV</tag>
-        <tag>噪音</tag>
-        <tag>灰度图</tag>
       </tags>
   </entry>
   <entry>
@@ -129,15 +167,6 @@
         <tag>基础操作</tag>
         <tag>编程</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>cv算法面试问题总结（七）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%83%EF%BC%89/</url>
-    <content><![CDATA[<p>如何解决深度学习中模型训练效果不佳的情况？<br>神经网络中，是否隐藏层如果具有足够数量的单位，它就可以近似任何连续函数？<br>为什么更深的网络更好？<br>更多的数据是否有利于更深的神经网络？<br>不平衡数据是否会影响神经网络的分类效果？<br>无监督降维提供的是帮助还是摧毁？<br>是否可以将任何非线性作为激活函数?<br>批大小如何影响测试正确率？<br>初始化如何影响训练?<br>不同层的权重是否以不同的速度收敛？ </p>
-<p>正则化如何影响权重？<br>什么是fine-tuning？<br>什么是边框回归Bounding-Box regression，以及为什么要做、怎么做<br>请阐述下Selective Search的主要思想<br>什么是非极大值抑制（NMS）？<br>什么是深度学习中的anchor？<br>CNN的特点以及优势<br>深度学习中有什么加快收敛/降低训练难度的方法？<br>请写出链式法则并证明<br>请写出Batch Normalization的计算方法及其应用</p>
-<span id="more"></span>
-
-]]></content>
   </entry>
   <entry>
     <title>cv算法面试问题总结（一）</title>
@@ -241,10 +270,10 @@
       </tags>
   </entry>
   <entry>
-    <title>cv算法面试问题总结（九）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B9%9D%EF%BC%89/</url>
-    <content><![CDATA[<p>什么是强化学习？<br>强化学习和监督学习、无监督学习的区别是什么？<br>强化学习适合解决什么样子的问题？<br>使用tensorflow进行深度学习算法实验时，如何调节超参数？<br>深度学习中的batch的大小对学习效果有何影响？<br>用梯度下降训练神经网络的参数，为什么参数有时会被训练为nan值？<br>卷积神经网络CNN中池化层有什么作用？<br>请列举几种常见的激活函数。激活函数有什么作用？<br>神经网络中Dropout的作用？具体是怎么实现的？<br>利用梯度下降法训练神经网络，发现模型loss不变，可能有哪些问题？怎么解决？</p>
-<p>如何解决不平衡数据集的分类问题？<br>残差网络为什么能做到很深层？<br>相比sigmoid激活函数ReLU激活函数有什么优势？<br>卷积神经网络中空洞卷积的作用是什么？<br>适用于移动端部署的网络结构都有哪些？<br>深度学习模型参数初始化都有哪些方法？<br>卷积神经网络为什么会具有平移等不变性？</p>
+    <title>cv算法面试问题总结（七）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%83%EF%BC%89/</url>
+    <content><![CDATA[<p>如何解决深度学习中模型训练效果不佳的情况？<br>神经网络中，是否隐藏层如果具有足够数量的单位，它就可以近似任何连续函数？<br>为什么更深的网络更好？<br>更多的数据是否有利于更深的神经网络？<br>不平衡数据是否会影响神经网络的分类效果？<br>无监督降维提供的是帮助还是摧毁？<br>是否可以将任何非线性作为激活函数?<br>批大小如何影响测试正确率？<br>初始化如何影响训练?<br>不同层的权重是否以不同的速度收敛？ </p>
+<p>正则化如何影响权重？<br>什么是fine-tuning？<br>什么是边框回归Bounding-Box regression，以及为什么要做、怎么做<br>请阐述下Selective Search的主要思想<br>什么是非极大值抑制（NMS）？<br>什么是深度学习中的anchor？<br>CNN的特点以及优势<br>深度学习中有什么加快收敛/降低训练难度的方法？<br>请写出链式法则并证明<br>请写出Batch Normalization的计算方法及其应用</p>
 <span id="more"></span>
 
 ]]></content>
@@ -267,6 +296,34 @@
 <span id="more"></span>
 
 <h1 id="问题及解答"><a href="#问题及解答" class="headerlink" title="问题及解答"></a>问题及解答</h1><h2 id="mAP计算"><a href="#mAP计算" class="headerlink" title="mAP计算"></a>mAP计算</h2><h2 id="为什么要做特征归一化，标准化"><a href="#为什么要做特征归一化，标准化" class="headerlink" title="为什么要做特征归一化，标准化"></a>为什么要做特征归一化，标准化</h2><h2 id="常用的归一化和标准化方法"><a href="#常用的归一化和标准化方法" class="headerlink" title="常用的归一化和标准化方法"></a>常用的归一化和标准化方法</h2><h2 id="为什么线性回归使用mse作文损失函数"><a href="#为什么线性回归使用mse作文损失函数" class="headerlink" title="为什么线性回归使用mse作文损失函数"></a>为什么线性回归使用mse作文损失函数</h2><h2 id="神经网络的深度和宽度分别是什么"><a href="#神经网络的深度和宽度分别是什么" class="headerlink" title="神经网络的深度和宽度分别是什么"></a>神经网络的深度和宽度分别是什么</h2><h2 id="下采样的作用？下采样的方法"><a href="#下采样的作用？下采样的方法" class="headerlink" title="下采样的作用？下采样的方法"></a>下采样的作用？下采样的方法</h2><h2 id="上采样的原理和常用的方法"><a href="#上采样的原理和常用的方法" class="headerlink" title="上采样的原理和常用的方法"></a>上采样的原理和常用的方法</h2><h2 id="模型的FLOPs（计算量）是什么？怎么计算？"><a href="#模型的FLOPs（计算量）是什么？怎么计算？" class="headerlink" title="模型的FLOPs（计算量）是什么？怎么计算？"></a>模型的FLOPs（计算量）是什么？怎么计算？</h2><h2 id="什么是深度可分离卷积？作用？"><a href="#什么是深度可分离卷积？作用？" class="headerlink" title="什么是深度可分离卷积？作用？"></a>什么是深度可分离卷积？作用？</h2><h2 id="转置卷积的原理"><a href="#转置卷积的原理" class="headerlink" title="转置卷积的原理"></a>转置卷积的原理</h2>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+        <tag>总结</tag>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>cv算法面试问题总结（九）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B9%9D%EF%BC%89/</url>
+    <content><![CDATA[<p>什么是强化学习？<br>强化学习和监督学习、无监督学习的区别是什么？<br>强化学习适合解决什么样子的问题？<br>使用tensorflow进行深度学习算法实验时，如何调节超参数？<br>深度学习中的batch的大小对学习效果有何影响？<br>用梯度下降训练神经网络的参数，为什么参数有时会被训练为nan值？<br>卷积神经网络CNN中池化层有什么作用？<br>请列举几种常见的激活函数。激活函数有什么作用？<br>神经网络中Dropout的作用？具体是怎么实现的？<br>利用梯度下降法训练神经网络，发现模型loss不变，可能有哪些问题？怎么解决？</p>
+<p>如何解决不平衡数据集的分类问题？<br>残差网络为什么能做到很深层？<br>相比sigmoid激活函数ReLU激活函数有什么优势？<br>卷积神经网络中空洞卷积的作用是什么？<br>适用于移动端部署的网络结构都有哪些？<br>深度学习模型参数初始化都有哪些方法？<br>卷积神经网络为什么会具有平移等不变性？</p>
+<span id="more"></span>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>cv算法面试问题总结（五）</title>
+    <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%94%EF%BC%89/</url>
+    <content><![CDATA[<p>如何确定CNN的卷积核通道数和卷积输出层的通道数？<br>什么是卷积？<br>什么是CNN的池化pool层？<br>简述下什么是生成对抗网络<br>学梵高作画的原理是什么？<br>请简要介绍下tensorflow的计算图<br>你有哪些深度学习（rnn、cnn）调参的经验？<br>为什么不同的机器学习领域都可以使用CNN，CNN解决了这些领域的哪些共性问题？他是如何解决的？<br>LSTM结构推导，为什么比RNN好？<br>Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。</p>
+<p>为什么引入非线性激励函数？<br>请问人工神经网络中为什么ReLu要好过于tanh和sigmoid function？<br>为什么LSTM模型中既存在sigmoid又存在tanh两种激活函数，而不是选择统一一种sigmoid或者tanh？这样做的目的是什么？<br>如何解决RNN梯度爆炸和弥散的问题？<br>什么样的数据集不适合用深度学习？<br>广义线性模型是怎被应用在深度学习中？<br>如何缓解梯度消失和梯度膨胀（微调、梯度截断、改良激活函数等）<br>简述神经网络的发展历史<br>深度学习常用方法<br>请简述神经网络的发展史。</p>
+<span id="more"></span>
+
+]]></content>
       <categories>
         <category>学习</category>
         <category>cv算法</category>
@@ -373,12 +430,11 @@
 ]]></content>
   </entry>
   <entry>
-    <title>cv算法面试问题总结（五）</title>
-    <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%94%EF%BC%89/</url>
-    <content><![CDATA[<p>如何确定CNN的卷积核通道数和卷积输出层的通道数？<br>什么是卷积？<br>什么是CNN的池化pool层？<br>简述下什么是生成对抗网络<br>学梵高作画的原理是什么？<br>请简要介绍下tensorflow的计算图<br>你有哪些深度学习（rnn、cnn）调参的经验？<br>为什么不同的机器学习领域都可以使用CNN，CNN解决了这些领域的哪些共性问题？他是如何解决的？<br>LSTM结构推导，为什么比RNN好？<br>Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。</p>
-<p>为什么引入非线性激励函数？<br>请问人工神经网络中为什么ReLu要好过于tanh和sigmoid function？<br>为什么LSTM模型中既存在sigmoid又存在tanh两种激活函数，而不是选择统一一种sigmoid或者tanh？这样做的目的是什么？<br>如何解决RNN梯度爆炸和弥散的问题？<br>什么样的数据集不适合用深度学习？<br>广义线性模型是怎被应用在深度学习中？<br>如何缓解梯度消失和梯度膨胀（微调、梯度截断、改良激活函数等）<br>简述神经网络的发展历史<br>深度学习常用方法<br>请简述神经网络的发展史。</p>
+    <title>cv算法面试问题总结（六）</title>
+    <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AD%EF%BC%89/</url>
+    <content><![CDATA[<p>神经网络中激活函数的真正意义？一个激活函数需要具有哪些必要的属性？还有哪些属性是好的属性但不必要的？<br>梯度下降法的神经网络容易收敛到局部最优，为什么应用广泛？<br>简单说说CNN常用的几个模型<br>为什么很多做人脸的Paper会最后加入一个Local Connected Conv？<br>什么是梯度爆炸？<br>梯度爆炸会引发什么问题？<br>如何确定是否出现梯度爆炸？<br>如何修复梯度爆炸问题？</p>
+<p>LSTM神经网络输入输出究竟是怎样的？<br>什么是RNN？<br>请详细介绍一下RNN模型的几种经典结构<br>简单说下sigmoid激活函数<br>如何从RNN起步，一步一步通俗理解LSTM（全网最通俗的LSTM详解）<br>CNN究竟是怎样一步一步工作的？<br>rcnn、fast-rcnn和faster-rcnn三者的区别是什么<br>在神经网络中，有哪些办法防止过拟合？<br>CNN是什么，CNN关键的层有哪些？<br>GRU是什么？GRU对LSTM做了哪些改动？</p>
 <span id="more"></span>
-
 ]]></content>
       <categories>
         <category>学习</category>
@@ -397,42 +453,6 @@
     <content><![CDATA[<p>基于深度学习的目标检测技术演进：R-CNN、Fast R-CNN、Faster R-CNN、YOLO、SSD<br>请简单解释下目标检测中的这个IOU评价函数（intersection-over-union）<br>KNN与K-means区别？<br>K-means选择初始点的方法有哪些,优缺点是什么?(列出两种以上)<br>简述线性分类器的原理(要求对权重矩阵进行剖析)<br>请简述下log对数、Hinge Loss(折页)、Cross-Entropy Loss(交叉熵)这三个损失函数<br>简述正则化与奥卡姆剃刀原则<br>图像尺寸为 7<em>7, 卷积窗口大小为3</em>3, 步长为3, 是否能输出图像?如果能,输出图像大小为多少?如果不能,说明原因?<br>如果最后一个卷积层和第一个全连接层参数量太大怎么办?<br>为什么说神经网络是端到端的网络?<br>当参数量 &gt;&gt; 样本量时候, 神经网络是如何预防过拟合?<br>什么是感受野？</p>
 <p>简述你对CBIR(Content-based Image Retrieval基于内容的图像检索)的理解<br>什么是计算机视觉单词模型？<br>简述什么是Local Feature(局部特征算子)？<br>KD-Tree相比KNN来进行快速图像特征比对的好处在哪里?<br>简述encode和decode思想<br>输入图片尺寸不匹配CNN网络input时候的解决方式？（三种以上）<br>FCN与CNN最大的区别？<br>遇到class-imbalanced data（数据类目不平衡）问题怎么办？<br>简述孪生随机网络（Siamese Network）<br>DPM（Deformable Parts Model）算法流程<br>什么是NMS（Non-maximum suppression 非极大值抑制）?<br>列举出常见的损失函数(三个以上)?<br>做过目标检测项目么？比如Mask R-CNN和Python做一个抢车位神器<br>如何理解Faster RCNN<br>one-stage和two-stage目标检测方法的区别和优缺点？<br>请画下YOLOv3的网络结构<br>请简单说下YOLOv1,v2,v3,v4各自的特点与发展史<br>如何理解YOLO：YOLO详解<br>怎么理解YOLOv4<br>神经网络参数共享(parameter sharing)是指什么？<br>2021年网易互联网 计算机视觉 一面<br>美团实习算法岗<br>2021商汤-视频理解研究员-校招-技术面</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>hello-world</title>
-    <url>/2021/09/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>cv算法面试问题总结（六）</title>
-    <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AD%EF%BC%89/</url>
-    <content><![CDATA[<p>神经网络中激活函数的真正意义？一个激活函数需要具有哪些必要的属性？还有哪些属性是好的属性但不必要的？<br>梯度下降法的神经网络容易收敛到局部最优，为什么应用广泛？<br>简单说说CNN常用的几个模型<br>为什么很多做人脸的Paper会最后加入一个Local Connected Conv？<br>什么是梯度爆炸？<br>梯度爆炸会引发什么问题？<br>如何确定是否出现梯度爆炸？<br>如何修复梯度爆炸问题？</p>
-<p>LSTM神经网络输入输出究竟是怎样的？<br>什么是RNN？<br>请详细介绍一下RNN模型的几种经典结构<br>简单说下sigmoid激活函数<br>如何从RNN起步，一步一步通俗理解LSTM（全网最通俗的LSTM详解）<br>CNN究竟是怎样一步一步工作的？<br>rcnn、fast-rcnn和faster-rcnn三者的区别是什么<br>在神经网络中，有哪些办法防止过拟合？<br>CNN是什么，CNN关键的层有哪些？<br>GRU是什么？GRU对LSTM做了哪些改动？</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>面试</tag>
-        <tag>总结</tag>
-        <tag>技巧</tag>
-      </tags>
   </entry>
   <entry>
     <title>cv算法面试问题总结（四）</title>
@@ -474,9 +494,44 @@
       </tags>
   </entry>
   <entry>
+    <title>hello-world</title>
+    <url>/2021/09/29/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>kaggle比赛-Molecular Translation</title>
     <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-Molecular-Translation/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>kaggle比赛-NFL Helmet Assignment</title>
+    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-NFL-Helmet-Assignment/</url>
+    <content><![CDATA[<p><a href="https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment">https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>Pytorch</category>
+        <category>深度学习</category>
+        <category>项目比赛</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Kaggle</tag>
+      </tags>
   </entry>
   <entry>
     <title>kaggle-糖尿病视网膜病变检测</title>
@@ -507,6 +562,83 @@
       <tags>
         <tag>编程</tag>
         <tag>Kaggle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>kaggle比赛-脑肿瘤检测</title>
+    <url>/2021/09/03/kaggle%E6%AF%94%E8%B5%9B-%E8%84%91%E8%82%BF%E7%98%A4%E6%A3%80%E6%B5%8B/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>数据集简介：脑肿瘤图片</p>
+<p>算法简介：</p>
+<p>Version1.0: EfficientDet 3D 迁移学习+微调</p>
+<p>Version2.0: EfficientDet 3D + ResNet 101</p>
+<p>预测结果： 当前排名500/1300</p>
+<p>Version1.0  Score: 0.642 Rank: 500/1400</p>
+<span id="more"></span>
+
+<p>Version1.0:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys </span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> glob</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> pydicom</span><br><span class="line"><span class="keyword">from</span> pydicom.pixel_data_handlers.util <span class="keyword">import</span> apply_voi_lut</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"><span class="keyword">from</span> torch.utils <span class="keyword">import</span> data <span class="keyword">as</span> torch_data</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> model_selection <span class="keyword">as</span> sk_model_selection</span><br><span class="line"><span class="keyword">from</span> torch.nn <span class="keyword">import</span> functional <span class="keyword">as</span> torch_functional</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> StratifiedKFold</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> roc_auc_score</span><br><span class="line"><span class="keyword">from</span> efficientnet_pytorch_3d <span class="keyword">import</span> EfficientNet3D</span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断数据集和EfficientNet模型的路径</span></span><br><span class="line"><span class="keyword">if</span> os.path.exists(<span class="string">&quot;../input/rsna-miccai-brain-tumor-radiogenomic-classification&quot;</span>):</span><br><span class="line">    data_directory = <span class="string">&#x27;../input/rsna-miccai-brain-tumor-radiogenomic-classification&#x27;</span></span><br><span class="line">    pytorch3dpath = <span class="string">&quot;../input/efficientnetpyttorch3d/EfficientNet-PyTorch-3D&quot;</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    data_directory = <span class="string">&#x27;/media/roland/data/kaggle/rsna-miccai-brain-tumor-radiogenomic-classification&#x27;</span></span><br><span class="line">    pytorch3dpath = <span class="string">&quot;EfficientNet-PyTorch-3D&quot;</span></span><br><span class="line">    </span><br><span class="line">mri_types = [<span class="string">&#x27;FLAIR&#x27;</span>,<span class="string">&#x27;T1w&#x27;</span>,<span class="string">&#x27;T1wCE&#x27;</span>,<span class="string">&#x27;T2w&#x27;</span>]</span><br><span class="line">SIZE = <span class="number">256</span></span><br><span class="line">NUM_IMAGES = <span class="number">64</span></span><br><span class="line"></span><br><span class="line">sys.path.append(pytorch3dpath)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载数据集</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_dicom_image</span>(<span class="params">path, img_size=SIZE, voi_lut=<span class="literal">True</span>, rotate=<span class="number">0</span></span>):</span></span><br><span class="line">    dicom = pydicom.read_file(path) <span class="comment"># MRI扫描图像是多张dicom格式图像，通过pydicom</span></span><br><span class="line">    data = dicom.pixel_array</span><br><span class="line">    <span class="comment">#VOI LUT(DICOM 设备可用)将原始DICOM格式转为易于使用的格式voi_lut</span></span><br><span class="line">    <span class="keyword">if</span> voi_lut:</span><br><span class="line">        data = apply_voi_lut(dicom.pixel_array, dicom)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        data = dicom.pixel_array</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># 图像增强 添加旋转操作</span></span><br><span class="line">    <span class="keyword">if</span> rotate &gt; <span class="number">0</span>:</span><br><span class="line">        rot_choices = [<span class="number">0</span>, cv2.ROTATE_90_CLOCKWISE, cv2.ROTATE_90_COUNTERCLOCKWISE, cv2.ROTATE_180]</span><br><span class="line">        data = cv2.rotate(data, rot_choices[rotate])</span><br><span class="line">        </span><br><span class="line">    data = cv2.resize(data, (img_size, img_size))</span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_dicom_images_3d</span>(<span class="params">scan_id, num_imgs=NUM_IMAGES, img_size=SIZE, mri_type=<span class="string">&quot;FLAIR&quot;</span>, split=<span class="string">&quot;train&quot;</span>, rotate=<span class="number">0</span></span>):</span></span><br><span class="line"></span><br><span class="line">    files = <span class="built_in">sorted</span>(glob.glob(<span class="string">f&quot;<span class="subst">&#123;data_directory&#125;</span>/<span class="subst">&#123;split&#125;</span>/<span class="subst">&#123;scan_id&#125;</span>/<span class="subst">&#123;mri_type&#125;</span>/*.dcm&quot;</span>), </span><br><span class="line">               key=<span class="keyword">lambda</span> var:[<span class="built_in">int</span>(x) <span class="keyword">if</span> x.isdigit() <span class="keyword">else</span> x <span class="keyword">for</span> x <span class="keyword">in</span> re.findall(<span class="string">r&#x27;[^0-9]|[0-9]+&#x27;</span>, var)])</span><br><span class="line">    middle = <span class="built_in">len</span>(files)//<span class="number">2</span></span><br><span class="line">    num_imgs2 = num_imgs//<span class="number">2</span></span><br><span class="line">    p1 = <span class="built_in">max</span>(<span class="number">0</span>, middle - num_imgs2)</span><br><span class="line">    p2 = <span class="built_in">min</span>(<span class="built_in">len</span>(files), middle + num_imgs2)</span><br><span class="line">    <span class="comment"># 取中间的num_imgs张图片，将他们构成3D数据</span></span><br><span class="line">    img3d = np.stack([load_dicom_image(f, rotate=rotate) <span class="keyword">for</span> f <span class="keyword">in</span> files[p1:p2]]).T </span><br><span class="line">    <span class="comment"># 如果要取的图片数量比总共分图片数量要多</span></span><br><span class="line">    <span class="keyword">if</span> img3d.shape[-<span class="number">1</span>] &lt; num_imgs:</span><br><span class="line">        n_zero = np.zeros((img_size, img_size, num_imgs - img3d.shape[-<span class="number">1</span>]))</span><br><span class="line">        img3d = np.concatenate((img3d,  n_zero), axis = -<span class="number">1</span>) <span class="comment"># 不够的拼接0</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">if</span> np.<span class="built_in">min</span>(img3d) &lt; np.<span class="built_in">max</span>(img3d):</span><br><span class="line">        img3d = img3d - np.<span class="built_in">min</span>(img3d)</span><br><span class="line">        img3d = img3d / np.<span class="built_in">max</span>(img3d)</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> np.expand_dims(img3d,<span class="number">0</span>) <span class="comment"># 增加一维，axis=0时，高维扩展数组就给它在最外面再添个括号就</span></span><br><span class="line"></span><br><span class="line">a = load_dicom_images_3d(<span class="string">&quot;00000&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(a.shape)</span><br><span class="line"><span class="built_in">print</span>(np.<span class="built_in">min</span>(a), np.<span class="built_in">max</span>(a), np.mean(a), np.median(a))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 固定随机数种子使用相同的网络结构，跑出来的效果完全一样</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">set_seed</span>(<span class="params">seed</span>):</span></span><br><span class="line">    random.seed(seed)</span><br><span class="line">    os.environ[<span class="string">&quot;PYTHONHASHSEED&quot;</span>] = <span class="built_in">str</span>(seed)</span><br><span class="line">    np.random.seed(seed)</span><br><span class="line">    torch.manual_seed(seed)</span><br><span class="line">    <span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed_all(seed)</span><br><span class="line">        torch.backends.cudnn.deterministic = <span class="literal">True</span> <span class="comment">#固定torch框架种子</span></span><br><span class="line"></span><br><span class="line">set_seed(<span class="number">12</span>)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>Pytorch</category>
+        <category>深度学习</category>
+        <category>项目比赛</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Kaggle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>torch.backends.cudnn相关参数理解及配置</title>
+    <url>/2021/10/08/torch-backends-cudnn%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0%E7%90%86%E8%A7%A3%E5%8F%8A%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="torch-backends-cudnn-deterministic"><a href="#torch-backends-cudnn-deterministic" class="headerlink" title="torch.backends.cudnn.deterministic"></a>torch.backends.cudnn.deterministic</h1><p>使用PyTorch等框架，还要看一下框架的种子是否固定了。</p>
+<p>使用了cuda，必须要设置cuda的随机：将这个 flag 置为True的话，每次返回的卷积算法将是确定的，即默认算法。如果配合上设置 Torch 的随机种子为固定值的话，应该可以保证每次运行网络的时候相同输入的输出是固定的，代码大致这样:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed_all(seed)</span><br><span class="line">        torch.backends.cudnn.deterministic = <span class="literal">True</span></span><br><span class="line">        torch.backends.cudnn.benchmark = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="torch-backends-cudnn-benchmark"><a href="#torch-backends-cudnn-benchmark" class="headerlink" title="torch.backends.cudnn.benchmark"></a>torch.backends.cudnn.benchmark</h1><p>torch.backends.cudnn.benchmark设为True就可以大大提升卷积神经网络的运行速度</p>
+<p>原因：<code>将会让程序在开始时花费一点额外时间，为整个网络的每个卷积层搜索最适合它的卷积实现算法，进而实现网络的加速</code>。</p>
+<p>适用：适用场景是网络结构固定（不是动态变化的），网络的输入形状（包括 batch size，图片大小，输入的通道）是不变的</p>
+<p>背景：</p>
+<p>大多数主流深度学习框架都支持 cuDNN这个GPU加速库，来为训练加速。而卷积网络的具体计算方法又有很多，所以使用torch.backends.cudnn.benchmark就可以在 PyTorch 中<code>对模型里的卷积层进行预先的优化，也就是在每一个卷积层中测试 cuDNN 提供的所有卷积实现算法，然后选择最快的那个</code>。这样在模型启动的时候，只要额外多花一点点预处理时间，就可以较大幅度地减少训练时间。</p>
+<p>影响卷积运行的因素：</p>
+<p>为什么我们可以提前选择每层的算法，即使每次我们送入网络训练的图片是不一样的？即每次网络的输入都是变化的，那么我怎么确保提前选出来的最优算法同样也适用于这个输入呢？原因就是，对于<code>给定输入来说，其具体值的大小是不影响卷积的运行时间的，只有其尺寸才会影响</code>。举例来说，我们只要固定输入大小都是 (8, 64, 224, 224)，即 batch_size 为 8，输入的通道为 64，宽和高为 224，那么卷积层的运行时间都是几乎不变的，无论其中每个像素具体的值是 0.1 还是 1000.0。</p>
+<p>所以当网络的模型不会一直发生变化，且输入的大小不会一直变化的话就可以使用torch.backends.cudnn.benchmark=True来加速训练</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed_all(seed)</span><br><span class="line">        torch.backends.cudnn.deterministic = <span class="literal">True</span></span><br><span class="line">        torch.backends.cudnn.benchmark = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>Pytorch</category>
+      </categories>
+      <tags>
+        <tag>torch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像分割-Unet[项目应用]</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2-Unet/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>Pytorch</category>
+        <category>深度学习</category>
+        <category>图像分割</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>项目总结</tag>
       </tags>
   </entry>
   <entry>
@@ -568,45 +700,6 @@
       </tags>
   </entry>
   <entry>
-    <title>图像分割-Unet[项目应用]</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2-Unet/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>Pytorch</category>
-        <category>深度学习</category>
-        <category>图像分割</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>项目总结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>kaggle比赛-NFL Helmet Assignment</title>
-    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-NFL-Helmet-Assignment/</url>
-    <content><![CDATA[<p><a href="https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment">https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>Pytorch</category>
-        <category>深度学习</category>
-        <category>项目比赛</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>Kaggle</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>图像分类-EfficientNet&amp;EfficientDet[项目应用]</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB-EfficientNet/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -627,33 +720,6 @@
         <tag>论文复现</tag>
         <tag>项目总结</tag>
         <tag>kaggle</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>kaggle比赛-脑肿瘤检测</title>
-    <url>/2021/09/03/kaggle%E6%AF%94%E8%B5%9B-%E8%84%91%E8%82%BF%E7%98%A4%E6%A3%80%E6%B5%8B/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>数据集简介：脑肿瘤图片</p>
-<p>算法简介：</p>
-<p>Version1.0: EfficientDet 3D 迁移学习+微调</p>
-<p>Version2.0: EfficientDet 3D + ResNet 101</p>
-<p>预测结果： 当前排名500/1300</p>
-<p>Version1.0  Score: 0.642 Rank: 500/1400</p>
-<span id="more"></span>
-
-<p>Version1.0:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys </span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> glob</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> pydicom</span><br><span class="line"><span class="keyword">from</span> pydicom.pixel_data_handlers.util <span class="keyword">import</span> apply_voi_lut</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"><span class="keyword">from</span> torch.utils <span class="keyword">import</span> data <span class="keyword">as</span> torch_data</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> model_selection <span class="keyword">as</span> sk_model_selection</span><br><span class="line"><span class="keyword">from</span> torch.nn <span class="keyword">import</span> functional <span class="keyword">as</span> torch_functional</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> StratifiedKFold</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> roc_auc_score</span><br><span class="line"><span class="keyword">from</span> efficientnet_pytorch_3d <span class="keyword">import</span> EfficientNet3D</span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断数据集和EfficientNet模型的路径</span></span><br><span class="line"><span class="keyword">if</span> os.path.exists(<span class="string">&quot;../input/rsna-miccai-brain-tumor-radiogenomic-classification&quot;</span>):</span><br><span class="line">    data_directory = <span class="string">&#x27;../input/rsna-miccai-brain-tumor-radiogenomic-classification&#x27;</span></span><br><span class="line">    pytorch3dpath = <span class="string">&quot;../input/efficientnetpyttorch3d/EfficientNet-PyTorch-3D&quot;</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    data_directory = <span class="string">&#x27;/media/roland/data/kaggle/rsna-miccai-brain-tumor-radiogenomic-classification&#x27;</span></span><br><span class="line">    pytorch3dpath = <span class="string">&quot;EfficientNet-PyTorch-3D&quot;</span></span><br><span class="line">    </span><br><span class="line">mri_types = [<span class="string">&#x27;FLAIR&#x27;</span>,<span class="string">&#x27;T1w&#x27;</span>,<span class="string">&#x27;T1wCE&#x27;</span>,<span class="string">&#x27;T2w&#x27;</span>]</span><br><span class="line">SIZE = <span class="number">256</span></span><br><span class="line">NUM_IMAGES = <span class="number">64</span></span><br><span class="line"></span><br><span class="line">sys.path.append(pytorch3dpath)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载数据集</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_dicom_image</span>(<span class="params">path, img_size=SIZE, voi_lut=<span class="literal">True</span>, rotate=<span class="number">0</span></span>):</span></span><br><span class="line">    dicom = pydicom.read_file(path) <span class="comment"># MRI扫描图像是多张dicom格式图像，通过pydicom</span></span><br><span class="line">    data = dicom.pixel_array</span><br><span class="line">    <span class="comment">#VOI LUT(DICOM 设备可用)将原始DICOM格式转为易于使用的格式voi_lut</span></span><br><span class="line">    <span class="keyword">if</span> voi_lut:</span><br><span class="line">        data = apply_voi_lut(dicom.pixel_array, dicom)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        data = dicom.pixel_array</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># 图像增强 添加旋转操作</span></span><br><span class="line">    <span class="keyword">if</span> rotate &gt; <span class="number">0</span>:</span><br><span class="line">        rot_choices = [<span class="number">0</span>, cv2.ROTATE_90_CLOCKWISE, cv2.ROTATE_90_COUNTERCLOCKWISE, cv2.ROTATE_180]</span><br><span class="line">        data = cv2.rotate(data, rot_choices[rotate])</span><br><span class="line">        </span><br><span class="line">    data = cv2.resize(data, (img_size, img_size))</span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_dicom_images_3d</span>(<span class="params">scan_id, num_imgs=NUM_IMAGES, img_size=SIZE, mri_type=<span class="string">&quot;FLAIR&quot;</span>, split=<span class="string">&quot;train&quot;</span>, rotate=<span class="number">0</span></span>):</span></span><br><span class="line"></span><br><span class="line">    files = <span class="built_in">sorted</span>(glob.glob(<span class="string">f&quot;<span class="subst">&#123;data_directory&#125;</span>/<span class="subst">&#123;split&#125;</span>/<span class="subst">&#123;scan_id&#125;</span>/<span class="subst">&#123;mri_type&#125;</span>/*.dcm&quot;</span>), </span><br><span class="line">               key=<span class="keyword">lambda</span> var:[<span class="built_in">int</span>(x) <span class="keyword">if</span> x.isdigit() <span class="keyword">else</span> x <span class="keyword">for</span> x <span class="keyword">in</span> re.findall(<span class="string">r&#x27;[^0-9]|[0-9]+&#x27;</span>, var)])</span><br><span class="line">    middle = <span class="built_in">len</span>(files)//<span class="number">2</span></span><br><span class="line">    num_imgs2 = num_imgs//<span class="number">2</span></span><br><span class="line">    p1 = <span class="built_in">max</span>(<span class="number">0</span>, middle - num_imgs2)</span><br><span class="line">    p2 = <span class="built_in">min</span>(<span class="built_in">len</span>(files), middle + num_imgs2)</span><br><span class="line">    img3d = np.stack([load_dicom_image(f, rotate=rotate) <span class="keyword">for</span> f <span class="keyword">in</span> files[p1:p2]]).T </span><br><span class="line">    <span class="keyword">if</span> img3d.shape[-<span class="number">1</span>] &lt; num_imgs:</span><br><span class="line">        n_zero = np.zeros((img_size, img_size, num_imgs - img3d.shape[-<span class="number">1</span>]))</span><br><span class="line">        img3d = np.concatenate((img3d,  n_zero), axis = -<span class="number">1</span>)</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">if</span> np.<span class="built_in">min</span>(img3d) &lt; np.<span class="built_in">max</span>(img3d):</span><br><span class="line">        img3d = img3d - np.<span class="built_in">min</span>(img3d)</span><br><span class="line">        img3d = img3d / np.<span class="built_in">max</span>(img3d)</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> np.expand_dims(img3d,<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">a = load_dicom_images_3d(<span class="string">&quot;00000&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(a.shape)</span><br><span class="line"><span class="built_in">print</span>(np.<span class="built_in">min</span>(a), np.<span class="built_in">max</span>(a), np.mean(a), np.median(a))</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>Pytorch</category>
-        <category>深度学习</category>
-        <category>项目比赛</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>Kaggle</tag>
       </tags>
   </entry>
   <entry>
@@ -704,10 +770,10 @@
         <category>cv算法</category>
       </categories>
       <tags>
-        <tag>基础操作</tag>
-        <tag>编程</tag>
         <tag>OpenCV</tag>
+        <tag>基础操作</tag>
         <tag>噪音</tag>
+        <tag>编程</tag>
         <tag>滤波器</tag>
       </tags>
   </entry>
@@ -735,6 +801,49 @@
 <p>ImageNet是图像算法领域最常见的数据集，训练集包含120万张图片，验证集包含5万张图片，测试集包含15万张图片，这些图片分为了1000个类别，并且有多种不同的分辨率，</p>
 <h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E7%BB%93%E6%9E%84.png"></p>
 <h1 id="参数计算"><a href="#参数计算" class="headerlink" title="参数计算"></a>参数计算</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E5%8F%82%E6%95%B0%E9%87%8F.png"></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>图像识别</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像识别-ResNet</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/</url>
+    <content><![CDATA[<h1 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：<strong>训练集上的性能下降，可以排除过拟合，BN层的引入也基本解决了plain net的梯度消失和梯度爆炸问题。</strong>如果不是过拟合以及梯度消失导致的，那原因是什么？为什么非常深度的网络在增加更多层时会表现得更差？深度网络点退化（Degradation problem）问题</p>
+<p>方法简述：</p>
+<p>ResNet网络是参考了VGG19网络，在其基础上进行了修改，并通过短路机制加入了残差单元，如图5所示。变化主要体现在ResNet直接使用stride=2的卷积做下采样，并且用global average pool层替换了全连接层。ResNet的一个重要设计原则是：当feature map大小降低一半时，feature map的数量增加一倍，这保持了网络层的复杂度。</p>
+<p>优点：</p>
+<p>ResNet通过残差学习解决了深度网络的退化问题，让我们可以训练出更深的网络</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+<p>认知上，深层网络不会比浅层网络的表现更差。基本假设是第N+1层什么也没学到也只是简单的copy或者恒等映射了前一层的结果，也至少和前一层有相同的准确度。</p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/ResNet-Architecture.png"></p>
+<p>参考：<a href="https://www.cnblogs.com/shine-lee/p/12363488.html">https://www.cnblogs.com/shine-lee/p/12363488.html</a></p>
+<p>ResNet的设计有如下特点：</p>
+<ul>
+<li>与plain net相比，ResNet多了很多“旁路”，即shortcut路径，其首尾圈出的layers构成一个Residual Block；</li>
+<li>ResNet中，所有的Residual Block都没有pooling层，<strong>降采样是通过conv的stride实现的</strong>；</li>
+<li>分别在conv3_1、conv4_1和conv5_1 Residual Block，降采样1倍，同时feature map数量增加1倍，如图中虚线划定的block；</li>
+<li><strong>通过Average Pooling得到最终的特征</strong>，而不是通过全连接层；</li>
+<li>每个卷积层之后都紧接着BatchNorm layer，为了简化，图中并没有标出；</li>
+</ul>
+<p>ResNet结构非常容易修改和扩展，通过调整block内的channel数量以及堆叠的block数量，就可以很容易地调整网络的宽度和深度，来得到不同表达能力的网络，而不用过多地担心网络的“退化”问题，只要训练数据足够，逐步加深网络，就可以获得更好的性能表现。</p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/resnet%E6%A8%A1%E5%9D%97.png"></p>
+<h1 id="Residual-Block的分析与改进"><a href="#Residual-Block的分析与改进" class="headerlink" title="Residual Block的分析与改进"></a>Residual Block的分析与改进</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/ResNet%E6%94%B9%E8%BF%9B.png"></p>
+<p>论文：<a href="https://arxiv.org/abs/1603.05027">https://arxiv.org/abs/1603.05027</a></p>
+<p>新提出的Residual Block结构，具有更强的泛化能力，能更好地避免“退化”，堆叠大于1000层后，性能仍在变好。具体的变化在于</p>
+<ul>
+<li><strong>通过保持shortcut路径的“纯净”，可以让信息在前向传播和反向传播中平滑传递，这点十分重要。</strong>为此，如无必要，不引入1×11×1卷积等操作，同时将上图灰色路径上的ReLU移到了𝐹(𝑥)F(x)路径上。</li>
+<li>在残差路径上，<strong>将BN和ReLU统一放在weight前作为pre-activation</strong>，获得了“Ease of optimization”以及“Reducing overfitting”的效果。</li>
+</ul>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -850,6 +959,44 @@
       </tags>
   </entry>
   <entry>
+    <title>图像识别-VGGNet</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：随着AlexNet提出，很多人开始利用卷积神经网络来解决图像识别的问题。一般的做法都是重复几层卷积网络，每个卷积网络之后接一些池化层，最后再加上几个全连接层。而如何更优的设计网络结构（深度，kernel size等）</p>
+<p>方法简述：用更小更深的卷积核代替大的卷积核，较深的网络层次来提升深度学习的效果。</p>
+<p>使用很小的3x3、步长为1的卷积核来扫描输入。两个3x3的卷积核堆起来，和一个5x5的卷积核的感受野一样；三个3x3的卷积核堆起来，其感受野等同于一个7x7的卷积核。</p>
+<p>VGG16:</p>
+<p>VGG19:</p>
+<p>优点：</p>
+<ol>
+<li>结构简单 整个网络使用相同size 的卷积核（3X3）和最大池化（2X2）</li>
+<li>证明更深的层可以使得函数具有更好的分辨能力</li>
+<li>用多个较小的卷积核可以减少参数</li>
+<li>去掉局部响应归一化模块</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>计算耗费更多资源，参数量大（主要是全联接层导致的）， 内存空间占用高 140M</li>
+</ol>
+<span id="more"></span>
+
+<h1 id="基本结构-VGG16"><a href="#基本结构-VGG16" class="headerlink" title="基本结构-VGG16"></a>基本结构-VGG16</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/VGG16%E7%BB%93%E6%9E%84.png"></p>
+<p>图片来源：<a href="https://www.cxyzjd.com/article/weixin_26726011/108260201">https://www.cxyzjd.com/article/weixin_26726011/108260201</a></p>
+<h1 id="参数计算-VGG16"><a href="#参数计算-VGG16" class="headerlink" title="参数计算-VGG16"></a>参数计算-VGG16</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/%E5%8F%82%E6%95%B0%E8%AE%A1%E7%AE%97.png"></p>
+<h1 id="VGG16-VS-VGG19"><a href="#VGG16-VS-VGG19" class="headerlink" title="VGG16 VS VGG19"></a>VGG16 VS VGG19</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/VGG16VS19.png"></p>
+<p>图片来源：<a href="https://www.cnblogs.com/jesse123/p/7110721.html">https://www.cnblogs.com/jesse123/p/7110721.html</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>图像识别</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基于python的CUDA编程基础</title>
     <url>/2021/10/07/%E5%9F%BA%E4%BA%8Epython%E7%9A%84CUDA%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>GPU全名为Graphics Processing Unit，又称视觉处理器、图形显示卡。GPU负责渲染出2D、3D、VR效果，主要专注于计算机图形图像领域。无论是CPU还是GPU，在进行计算时，都需要用核心（Core）来做算术逻辑运算，比如加减乘与或非等。核心中有ALU（逻辑运算单元）和寄存器等电路。在进行计算时，一个核心只能顺序执行某项任务。</p>
@@ -896,105 +1043,22 @@
       </tags>
   </entry>
   <entry>
-    <title>图像识别-ResNet</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/</url>
-    <content><![CDATA[<h1 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：<strong>训练集上的性能下降，可以排除过拟合，BN层的引入也基本解决了plain net的梯度消失和梯度爆炸问题。</strong>如果不是过拟合以及梯度消失导致的，那原因是什么？为什么非常深度的网络在增加更多层时会表现得更差？深度网络点退化（Degradation problem）问题</p>
-<p>方法简述：</p>
-<p>ResNet网络是参考了VGG19网络，在其基础上进行了修改，并通过短路机制加入了残差单元，如图5所示。变化主要体现在ResNet直接使用stride=2的卷积做下采样，并且用global average pool层替换了全连接层。ResNet的一个重要设计原则是：当feature map大小降低一半时，feature map的数量增加一倍，这保持了网络层的复杂度。</p>
-<p>优点：</p>
-<p>ResNet通过残差学习解决了深度网络的退化问题，让我们可以训练出更深的网络</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-<p>认知上，深层网络不会比浅层网络的表现更差。基本假设是第N+1层什么也没学到也只是简单的copy或者恒等映射了前一层的结果，也至少和前一层有相同的准确度。</p>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/ResNet-Architecture.png"></p>
-<p>参考：<a href="https://www.cnblogs.com/shine-lee/p/12363488.html">https://www.cnblogs.com/shine-lee/p/12363488.html</a></p>
-<p>ResNet的设计有如下特点：</p>
-<ul>
-<li>与plain net相比，ResNet多了很多“旁路”，即shortcut路径，其首尾圈出的layers构成一个Residual Block；</li>
-<li>ResNet中，所有的Residual Block都没有pooling层，<strong>降采样是通过conv的stride实现的</strong>；</li>
-<li>分别在conv3_1、conv4_1和conv5_1 Residual Block，降采样1倍，同时feature map数量增加1倍，如图中虚线划定的block；</li>
-<li><strong>通过Average Pooling得到最终的特征</strong>，而不是通过全连接层；</li>
-<li>每个卷积层之后都紧接着BatchNorm layer，为了简化，图中并没有标出；</li>
-</ul>
-<p>ResNet结构非常容易修改和扩展，通过调整block内的channel数量以及堆叠的block数量，就可以很容易地调整网络的宽度和深度，来得到不同表达能力的网络，而不用过多地担心网络的“退化”问题，只要训练数据足够，逐步加深网络，就可以获得更好的性能表现。</p>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/resnet%E6%A8%A1%E5%9D%97.png"></p>
-<h1 id="Residual-Block的分析与改进"><a href="#Residual-Block的分析与改进" class="headerlink" title="Residual Block的分析与改进"></a>Residual Block的分析与改进</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/ResNet%E6%94%B9%E8%BF%9B.png"></p>
-<p>论文：<a href="https://arxiv.org/abs/1603.05027">https://arxiv.org/abs/1603.05027</a></p>
-<p>新提出的Residual Block结构，具有更强的泛化能力，能更好地避免“退化”，堆叠大于1000层后，性能仍在变好。具体的变化在于</p>
-<ul>
-<li><strong>通过保持shortcut路径的“纯净”，可以让信息在前向传播和反向传播中平滑传递，这点十分重要。</strong>为此，如无必要，不引入1×11×1卷积等操作，同时将上图灰色路径上的ReLU移到了𝐹(𝑥)F(x)路径上。</li>
-<li>在残差路径上，<strong>将BN和ReLU统一放在weight前作为pre-activation</strong>，获得了“Ease of optimization”以及“Reducing overfitting”的效果。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>图像识别</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图像识别-VGGNet</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：随着AlexNet提出，很多人开始利用卷积神经网络来解决图像识别的问题。一般的做法都是重复几层卷积网络，每个卷积网络之后接一些池化层，最后再加上几个全连接层。而如何更优的设计网络结构（深度，kernel size等）</p>
-<p>方法简述：用更小更深的卷积核代替大的卷积核，较深的网络层次来提升深度学习的效果。</p>
-<p>使用很小的3x3、步长为1的卷积核来扫描输入。两个3x3的卷积核堆起来，和一个5x5的卷积核的感受野一样；三个3x3的卷积核堆起来，其感受野等同于一个7x7的卷积核。</p>
-<p>VGG16:</p>
-<p>VGG19:</p>
-<p>优点：</p>
-<ol>
-<li>结构简单 整个网络使用相同size 的卷积核（3X3）和最大池化（2X2）</li>
-<li>证明更深的层可以使得函数具有更好的分辨能力</li>
-<li>用多个较小的卷积核可以减少参数</li>
-<li>去掉局部响应归一化模块</li>
-</ol>
-<p>缺点：</p>
-<ol>
-<li>计算耗费更多资源，参数量大（主要是全联接层导致的）， 内存空间占用高 140M</li>
-</ol>
-<span id="more"></span>
-
-<h1 id="基本结构-VGG16"><a href="#基本结构-VGG16" class="headerlink" title="基本结构-VGG16"></a>基本结构-VGG16</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/VGG16%E7%BB%93%E6%9E%84.png"></p>
-<p>图片来源：<a href="https://www.cxyzjd.com/article/weixin_26726011/108260201">https://www.cxyzjd.com/article/weixin_26726011/108260201</a></p>
-<h1 id="参数计算-VGG16"><a href="#参数计算-VGG16" class="headerlink" title="参数计算-VGG16"></a>参数计算-VGG16</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/%E5%8F%82%E6%95%B0%E8%AE%A1%E7%AE%97.png"></p>
-<h1 id="VGG16-VS-VGG19"><a href="#VGG16-VS-VGG19" class="headerlink" title="VGG16 VS VGG19"></a>VGG16 VS VGG19</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/VGG16VS19.png"></p>
-<p>图片来源：<a href="https://www.cnblogs.com/jesse123/p/7110721.html">https://www.cnblogs.com/jesse123/p/7110721.html</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>图像识别</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>常见的算法面试（一）</title>
     <url>/2021/10/03/%E5%B8%B8%E8%A7%81%E7%9A%84%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>无人驾驶-视觉方向基础</title>
-    <url>/2021/10/07/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6-%E8%A7%86%E8%A7%89%E6%96%B9%E5%90%91%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>西湖大学无人驾驶视觉方向科研助理招聘：</p>
-<p>视觉方向【岗位职责】：<br>\1. 负责计算机视觉或深度学习算法相关的前沿技术研发工作;<br>\2. 负责图像或三维点云中的目标检测、跟踪，图像理解等相关算法研发工作;<br>\3. 负责SLAM、VIO等相关算法的研发工作;<br>\4. 负责camera、lidar、radar等多传感器融合算法研发工作。<br>【任职要求】：<br>\1. 熟练掌握深度学习技术，在图像视频全景分割、目标检测、语义分析等方面研发经验丰富，有多传感器（相机、激光雷达）融合感知项目经验尤佳；<br>\2. 计算机视觉、机器学习相关专业硕（博）士，有无人驾驶视觉感知系统研发经验者优先；<br>\3. 具有扎实的工程实现能力和一定的数学功底，熟练使用常见的机器学习框架（pytorch、tensorflow，Keras等），计算机编程功底扎实，熟练使用C/C++；<br>\4. 对新技术有持续热情，善于快速学习，个性乐观，善于与人沟通合作。</p>
-<h1 id="什么是SLAM"><a href="#什么是SLAM" class="headerlink" title="什么是SLAM"></a>什么是SLAM</h1><p>SLAM是 Simultaneous Localization And Mapping的 英文首字母组合，一般翻译为：同时定位与建图、同时定位与地图构建。</p>
-<p><strong>SLAM是指当某种移动设备（如机器人、无人机、手机等）从一个未知环境里的未知地点出发，在运动过程中通过传感器（如激光雷达、摄像头等）观测定位自身位置、姿态、运动轨迹，再根据自身位置进行增量式的地图构建，从而达到同时定位和地图构建的目的</strong>。定位和建图是两个相辅相成的过程，地图可以提供更好的定位，而定位也可以进一步扩建地图。</p>
-<p>比如：扫地机器人，如果在室内随机游走，遇到障碍物就转弯，这样会导致有很多地方会漏掉，扫地效率非常低。一台智能的扫地机器人，可以通过自身的传感器对室内进行扫描建图，根据当前的定位进行Z字形规划清扫，还能实现自动回充、断点续扫等高级功能。</p>
-<p>扫地机器人至少需要知道以下几件事情：</p>
-<p>1、我在哪里？也就是扫地机器人在工作过程中要知道自己在房间的具体位置。对应的术语叫：**定位（Localization)**。</p>
-<p>2、我周围的环境是什么样子？也就是扫地机器人需要知道整个房间的地面结构信息。对应的术语叫：**建图(Mapping)**。</p>
-<p>3、我怎样到达指定地点（充电器）？当扫地机器人电量不足时，如何以最短的路径到达充电器所在位置进行自动充电。对应的术语叫：路径规划（Route Planning）。</p>
-<h1 id="什么是VIO"><a href="#什么是VIO" class="headerlink" title="什么是VIO"></a>什么是VIO</h1><p>参考：<a href="https://zhuanlan.zhihu.com/p/44787066">https://zhuanlan.zhihu.com/p/44787066</a></p>
+    <title>新文章</title>
+    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0-1/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
 ]]></content>
+      <tags>
+        <tag>编程</tag>
+      </tags>
   </entry>
   <entry>
     <title>新文章</title>
@@ -1010,17 +1074,19 @@
       </categories>
   </entry>
   <entry>
-    <title>新文章</title>
-    <url>/2021/09/29/%E6%96%B0%E6%96%87%E7%AB%A0-1/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
+    <title>无人驾驶-视觉方向基础</title>
+    <url>/2021/10/07/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6-%E8%A7%86%E8%A7%89%E6%96%B9%E5%90%91%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>西湖大学无人驾驶视觉方向科研助理招聘：</p>
+<p>视觉方向【岗位职责】：<br>\1. 负责计算机视觉或深度学习算法相关的前沿技术研发工作;<br>\2. 负责图像或三维点云中的目标检测、跟踪，图像理解等相关算法研发工作;<br>\3. 负责SLAM、VIO等相关算法的研发工作;<br>\4. 负责camera、lidar、radar等多传感器融合算法研发工作。<br>【任职要求】：<br>\1. 熟练掌握深度学习技术，在图像视频全景分割、目标检测、语义分析等方面研发经验丰富，有多传感器（相机、激光雷达）融合感知项目经验尤佳；<br>\2. 计算机视觉、机器学习相关专业硕（博）士，有无人驾驶视觉感知系统研发经验者优先；<br>\3. 具有扎实的工程实现能力和一定的数学功底，熟练使用常见的机器学习框架（pytorch、tensorflow，Keras等），计算机编程功底扎实，熟练使用C/C++；<br>\4. 对新技术有持续热情，善于快速学习，个性乐观，善于与人沟通合作。</p>
+<h1 id="什么是SLAM"><a href="#什么是SLAM" class="headerlink" title="什么是SLAM"></a>什么是SLAM</h1><p>SLAM是 Simultaneous Localization And Mapping的 英文首字母组合，一般翻译为：同时定位与建图、同时定位与地图构建。</p>
+<p><strong>SLAM是指当某种移动设备（如机器人、无人机、手机等）从一个未知环境里的未知地点出发，在运动过程中通过传感器（如激光雷达、摄像头等）观测定位自身位置、姿态、运动轨迹，再根据自身位置进行增量式的地图构建，从而达到同时定位和地图构建的目的</strong>。定位和建图是两个相辅相成的过程，地图可以提供更好的定位，而定位也可以进一步扩建地图。</p>
+<p>比如：扫地机器人，如果在室内随机游走，遇到障碍物就转弯，这样会导致有很多地方会漏掉，扫地效率非常低。一台智能的扫地机器人，可以通过自身的传感器对室内进行扫描建图，根据当前的定位进行Z字形规划清扫，还能实现自动回充、断点续扫等高级功能。</p>
+<p>扫地机器人至少需要知道以下几件事情：</p>
+<p>1、我在哪里？也就是扫地机器人在工作过程中要知道自己在房间的具体位置。对应的术语叫：**定位（Localization)**。</p>
+<p>2、我周围的环境是什么样子？也就是扫地机器人需要知道整个房间的地面结构信息。对应的术语叫：**建图(Mapping)**。</p>
+<p>3、我怎样到达指定地点（充电器）？当扫地机器人电量不足时，如何以最短的路径到达充电器所在位置进行自动充电。对应的术语叫：路径规划（Route Planning）。</p>
+<h1 id="什么是VIO"><a href="#什么是VIO" class="headerlink" title="什么是VIO"></a>什么是VIO</h1><p>参考：<a href="https://zhuanlan.zhihu.com/p/44787066">https://zhuanlan.zhihu.com/p/44787066</a></p>
 ]]></content>
-      <tags>
-        <tag>编程</tag>
-      </tags>
   </entry>
   <entry>
     <title>机器学习-K-means算法</title>
@@ -1042,8 +1108,8 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-KNN邻近算法</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-KNN%E9%82%BB%E8%BF%91%E7%AE%97%E6%B3%95/</url>
+    <title>机器学习-主成分分析PCA</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90PCA/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
@@ -1061,8 +1127,8 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-主成分分析PCA</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90PCA/</url>
+    <title>机器学习-KNN邻近算法</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-KNN%E9%82%BB%E8%BF%91%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
@@ -1184,25 +1250,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-朴素贝叶斯</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习-支持向量机(SVM)</title>
     <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA-SVM/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：逻辑回归是找到可以划分数据的超平面，但是如何找到最优的超平面来划分数据集呢？</p>
@@ -1228,6 +1275,74 @@
 <p>文本分类领域效果最好的机器学习算法，在工业界主要应用在网页分类、微博情感分析、舆情监控、用户评论挖掘、文本过滤等诸多领域</p>
 <span id="more"></span>
 ]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习-朴素贝叶斯</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习-线性回归Linear Regression</title>
+    <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92Linear-Regression/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：找到一系列的参数W，使得f(x) = XW 和真实输出Y之间无限接近或一致。</p>
+<p>方法简述：</p>
+<p>优点：直接，快速，可解释性高</p>
+<p>缺点：基于一系列假设；对异常值敏感；对数据分布敏感；存在多重共线性，自相关，异方差问题；容易出现过拟合与欠拟合问题；</p>
+<span id="more"></span>
+
+<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>什么是回归模型？</p>
+<p>回归是用来拟合输入变量和输出变量之间的关系，回归模型就是表示从输入变量到输出变量的映射函数。</p>
+<p>所以线性回归的目标就是找到一系列的参数W，使得f(x) = XW 和真实输出Y之间无限接近或一致。</p>
+<h1 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h1><h1 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h1><h1 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h1><h2 id="过拟合问题"><a href="#过拟合问题" class="headerlink" title="过拟合问题"></a>过拟合问题</h2><p>​    分析数据，重新做数据清冼，将征工程。</p>
+<p>​    扩充数据集，收集更多数据。</p>
+<p>​    减少特征数量 。</p>
+<p>​    **采用正则化方法</p>
+<h2 id="欠拟合问题"><a href="#欠拟合问题" class="headerlink" title="欠拟合问题 **"></a>欠拟合问题 **</h2><p>​    分析数据，增加特征维度</p>
+<p>​    ** 增加多项式特征阶数</p>
+<p>​    ** 减小正则项的超参数系数</p>
+<p>​    ** 局部加权回归 </p>
+<h2 id="多重共线性"><a href="#多重共线性" class="headerlink" title="多重共线性"></a>多重共线性</h2><p>​    那共线性会引发什么问题。。。。：</p>
+<p>1、模型参数估计不准确，有时甚至会出现回归系数的符号与实际情况完全相反的情况，比如逻辑上应该系数为正的特征系数 算出来为负。</p>
+<p>2、本应该显著的自变量不显著，本不显著的自变量却呈现出显著性（也就是说，无法从p-值的大小判断出变量是否显著——下面会给一个例子）</p>
+<p>3、多重共线性使参数估计值的方差增大，模型参数不稳定，也就是每次训练得到的权重系数差异都比较大。</p>
+<p>其实多重共线性这样理解会简单很多:</p>
+<p>假设原始的线性回归公式为：</p>
+<p>y=w1<em>x1+w2</em>x2+w3*x3</p>
+<p>训练完毕的线性回归公式为：</p>
+<p>y=5x1+7x2+10x3,</p>
+<p>此时加入一个新特征x4，假设x4和x3高度相关，x4=2x3,则</p>
+<p>y=w1<em>x1+w2</em>x2+w3<em>x3+w4</em>x4=w1<em>x1+w2</em>x2+(w3+2w4)*x3</p>
+<p>因为我们之前拟合出来的最优的回归方程为：</p>
+<p>y=5x1+7x2+10x3</p>
+<p>显然w3+2w4可以合并成一个新的权重稀疏 w5，则</p>
+<p>y=w1<em>x1+w2</em>x2+w5*x3,显然：</p>
+<p>y=w1<em>x1+w2</em>x2+w3<em>x3和y=w1</em>x1+w2<em>x2+w5</em>x3是等价的。。。。</p>
+<p>那么最终最优的模型应该也是 y=5x1+7x2+10x3</p>
+<p>但是考虑到引入了x4，所以w4和w3的权重是分开计算出来的，这就导致了</p>
+<p>w5=10=w3+2w4，显然这个方程有无穷多的解，比如w3=4，w4=3，或者w4=-1，w3=12等，因此导致了模型系数估计的不稳定并且可能会出现负系数的问题。</p>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><h2 id="基于-Python-scikit-learn-工具包"><a href="#基于-Python-scikit-learn-工具包" class="headerlink" title="基于 Python scikit-learn 工具包"></a>基于 Python scikit-learn 工具包</h2><h2 id="Python自建实现"><a href="#Python自建实现" class="headerlink" title="Python自建实现"></a>Python自建实现</h2>]]></content>
       <categories>
         <category>学习</category>
         <category>机器学习</category>
@@ -1284,55 +1399,6 @@
 <p>(4)准确率并不是很高，因为形式非常的简单(非常类似线性模型)，很难去拟合数据的真实分布;</p>
 <p>(5)<a href="https://www.cda.cn/map/luojihuigui/">逻辑回归</a>本身无法筛选<a href="https://www.cda.cn/map/tezheng/">特征</a>，有时会用gbdt来筛选<a href="https://www.cda.cn/map/tezheng/">特征</a>，然后再上<a href="https://www.cda.cn/map/luojihuigui/">逻辑回归</a>。</p>
 ]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习-线性回归Linear Regression</title>
-    <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92Linear-Regression/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：找到一系列的参数W，使得f(x) = XW 和真实输出Y之间无限接近或一致。</p>
-<p>方法简述：</p>
-<p>优点：直接，快速，可解释性高</p>
-<p>缺点：基于一系列假设；对异常值敏感；对数据分布敏感；存在多重共线性，自相关，异方差问题；容易出现过拟合与欠拟合问题；</p>
-<span id="more"></span>
-
-<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>什么是回归模型？</p>
-<p>回归是用来拟合输入变量和输出变量之间的关系，回归模型就是表示从输入变量到输出变量的映射函数。</p>
-<p>所以线性回归的目标就是找到一系列的参数W，使得f(x) = XW 和真实输出Y之间无限接近或一致。</p>
-<h1 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h1><h1 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h1><h1 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h1><h2 id="过拟合问题"><a href="#过拟合问题" class="headerlink" title="过拟合问题"></a>过拟合问题</h2><p>​    分析数据，重新做数据清冼，将征工程。</p>
-<p>​    扩充数据集，收集更多数据。</p>
-<p>​    减少特征数量 。</p>
-<p>​    **采用正则化方法</p>
-<h2 id="欠拟合问题"><a href="#欠拟合问题" class="headerlink" title="欠拟合问题 **"></a>欠拟合问题 **</h2><p>​    分析数据，增加特征维度</p>
-<p>​    ** 增加多项式特征阶数</p>
-<p>​    ** 减小正则项的超参数系数</p>
-<p>​    ** 局部加权回归 </p>
-<h2 id="多重共线性"><a href="#多重共线性" class="headerlink" title="多重共线性"></a>多重共线性</h2><p>​    那共线性会引发什么问题。。。。：</p>
-<p>1、模型参数估计不准确，有时甚至会出现回归系数的符号与实际情况完全相反的情况，比如逻辑上应该系数为正的特征系数 算出来为负。</p>
-<p>2、本应该显著的自变量不显著，本不显著的自变量却呈现出显著性（也就是说，无法从p-值的大小判断出变量是否显著——下面会给一个例子）</p>
-<p>3、多重共线性使参数估计值的方差增大，模型参数不稳定，也就是每次训练得到的权重系数差异都比较大。</p>
-<p>其实多重共线性这样理解会简单很多:</p>
-<p>假设原始的线性回归公式为：</p>
-<p>y=w1<em>x1+w2</em>x2+w3*x3</p>
-<p>训练完毕的线性回归公式为：</p>
-<p>y=5x1+7x2+10x3,</p>
-<p>此时加入一个新特征x4，假设x4和x3高度相关，x4=2x3,则</p>
-<p>y=w1<em>x1+w2</em>x2+w3<em>x3+w4</em>x4=w1<em>x1+w2</em>x2+(w3+2w4)*x3</p>
-<p>因为我们之前拟合出来的最优的回归方程为：</p>
-<p>y=5x1+7x2+10x3</p>
-<p>显然w3+2w4可以合并成一个新的权重稀疏 w5，则</p>
-<p>y=w1<em>x1+w2</em>x2+w5*x3,显然：</p>
-<p>y=w1<em>x1+w2</em>x2+w3<em>x3和y=w1</em>x1+w2<em>x2+w5</em>x3是等价的。。。。</p>
-<p>那么最终最优的模型应该也是 y=5x1+7x2+10x3</p>
-<p>但是考虑到引入了x4，所以w4和w3的权重是分开计算出来的，这就导致了</p>
-<p>w5=10=w3+2w4，显然这个方程有无穷多的解，比如w3=4，w4=3，或者w4=-1，w3=12等，因此导致了模型系数估计的不稳定并且可能会出现负系数的问题。</p>
-<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><h2 id="基于-Python-scikit-learn-工具包"><a href="#基于-Python-scikit-learn-工具包" class="headerlink" title="基于 Python scikit-learn 工具包"></a>基于 Python scikit-learn 工具包</h2><h2 id="Python自建实现"><a href="#Python自建实现" class="headerlink" title="Python自建实现"></a>Python自建实现</h2>]]></content>
       <categories>
         <category>学习</category>
         <category>机器学习</category>
@@ -1486,6 +1552,46 @@
       </tags>
   </entry>
   <entry>
+    <title>深度学习-Bottleneck结构的理解</title>
+    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Bottleneck%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>深度学习-Inception结构的理解</title>
+    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>深度学习-RNN的改进：LSTM和GRU</title>
     <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：RNN算法中越晚的输入对结果影响越大，但越晚的输入不一定是最重要的。如何治保留最重要的信息？</p>
@@ -1521,69 +1627,6 @@
 </li>
 </ol>
 <p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/GRU.png"></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>深度学习-Inception结构的理解</title>
-    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>深度学习-Bottleneck结构的理解</title>
-    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Bottleneck%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>深度学习-深度可分离卷积Depthwise Separable Conv</title>
-    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E5%BA%A6%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8D%B7%E7%A7%AFDepthwise-Separable-Conv/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-
-
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1676,13 +1719,16 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-R-CNN系列</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-R-CNN%E7%B3%BB%E5%88%97/</url>
+    <title>深度学习-深度可分离卷积Depthwise Separable Conv</title>
+    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E5%BA%A6%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8D%B7%E7%A7%AFDepthwise-Separable-Conv/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
+
+
+
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1706,8 +1752,28 @@
         <category>深度学习</category>
       </categories>
       <tags>
-        <tag>编程</tag>
         <tag>OpenCV</tag>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>目标检测-R-CNN系列</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-R-CNN%E7%B3%BB%E5%88%97/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
       </tags>
   </entry>
   <entry>
@@ -1751,6 +1817,50 @@
       </tags>
   </entry>
   <entry>
+    <title>目标检测-YOLOv2</title>
+    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv2/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>YOLO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>目标检测-YOLOv4</title>
+    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv4/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>YOLO</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>目标检测-YOLOv3</title>
     <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv3/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -1773,14 +1883,36 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-YOLOv2</title>
-    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv2/</url>
+    <title>目标检测-YOLOv5</title>
+    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv5/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>YOLO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>目标检测-YOLOx</title>
+    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOx/</url>
+    <content><![CDATA[<ul>
+<li><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span></li>
+</ul>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1861,30 +1993,8 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-YOLOv4</title>
-    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv4/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>YOLO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>目标检测-YOLOv5</title>
-    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv5/</url>
+    <title>神经网络-learning rate学习率的优化总结</title>
+    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
@@ -1893,37 +2003,14 @@
 ]]></content>
       <categories>
         <category>学习</category>
-        <category>cv算法</category>
         <category>深度学习</category>
-        <category>目标检测</category>
+        <category>神经网络</category>
       </categories>
       <tags>
+        <tag>总结</tag>
         <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>YOLO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>目标检测-YOLOx</title>
-    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOx/</url>
-    <content><![CDATA[<ul>
-<li><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span></li>
-</ul>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>YOLO</tag>
+        <tag>优化</tag>
+        <tag>调参</tag>
       </tags>
   </entry>
   <entry>
@@ -1949,8 +2036,18 @@
       </tags>
   </entry>
   <entry>
-    <title>神经网络-learning rate学习率的优化总结</title>
-    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/</url>
+    <title>神经网络-权值初始化的方法</title>
+    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%9D%83%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>权值初始化的原因：1. 防止层激活输出在深度神经网络的正向传递过程中爆炸或消失。2. 有助于加速收敛。</p>
+<p>权值初始化的方法：</p>
+<p>常量初始化（constant）、高斯分布初始化（gaussian）、positive_unitball初始化、均匀分布初始化（uniform）、xavier初始化、msra初始化、双线性初始化（bilinear）</p>
+<span id="more"></span>
+
+<h1 id="常量初始化"><a href="#常量初始化" class="headerlink" title="常量初始化"></a>常量初始化</h1><h1 id="均匀分布初始化"><a href="#均匀分布初始化" class="headerlink" title="均匀分布初始化"></a>均匀分布初始化</h1><h1 id="高斯分布初始化"><a href="#高斯分布初始化" class="headerlink" title="高斯分布初始化"></a>高斯分布初始化</h1><h1 id="Xavier初始化"><a href="#Xavier初始化" class="headerlink" title="Xavier初始化"></a>Xavier初始化</h1><h1 id="MSRA初始化"><a href="#MSRA初始化" class="headerlink" title="MSRA初始化"></a>MSRA初始化</h1><h1 id="双线性初始化"><a href="#双线性初始化" class="headerlink" title="双线性初始化"></a>双线性初始化</h1>]]></content>
+  </entry>
+  <entry>
+    <title>神经网络-梯度优化方法</title>
+    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
@@ -1970,18 +2067,8 @@
       </tags>
   </entry>
   <entry>
-    <title>神经网络-权值初始化的方法</title>
-    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%9D%83%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>权值初始化的原因：1. 防止层激活输出在深度神经网络的正向传递过程中爆炸或消失。2. 有助于加速收敛。</p>
-<p>权值初始化的方法：</p>
-<p>常量初始化（constant）、高斯分布初始化（gaussian）、positive_unitball初始化、均匀分布初始化（uniform）、xavier初始化、msra初始化、双线性初始化（bilinear）</p>
-<span id="more"></span>
-
-<h1 id="常量初始化"><a href="#常量初始化" class="headerlink" title="常量初始化"></a>常量初始化</h1><h1 id="均匀分布初始化"><a href="#均匀分布初始化" class="headerlink" title="均匀分布初始化"></a>均匀分布初始化</h1><h1 id="高斯分布初始化"><a href="#高斯分布初始化" class="headerlink" title="高斯分布初始化"></a>高斯分布初始化</h1><h1 id="Xavier初始化"><a href="#Xavier初始化" class="headerlink" title="Xavier初始化"></a>Xavier初始化</h1><h1 id="MSRA初始化"><a href="#MSRA初始化" class="headerlink" title="MSRA初始化"></a>MSRA初始化</h1><h1 id="双线性初始化"><a href="#双线性初始化" class="headerlink" title="双线性初始化"></a>双线性初始化</h1>]]></content>
-  </entry>
-  <entry>
-    <title>神经网络-梯度优化方法</title>
-    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/</url>
+    <title>神经网络-激活函数</title>
+    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
@@ -2071,39 +2158,6 @@
       </tags>
   </entry>
   <entry>
-    <title>神经网络-激活函数</title>
-    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>深度学习</category>
-        <category>神经网络</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-        <tag>编程</tag>
-        <tag>优化</tag>
-        <tag>调参</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机视觉CV算法概览（更新ing）</title>
-    <url>/2021/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89CV%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
-    <content><![CDATA[<h1 id="图像识别"><a href="#图像识别" class="headerlink" title="图像识别"></a>图像识别</h1><h2 id="1-AlexNet"><a href="#1-AlexNet" class="headerlink" title="1. AlexNet"></a>1. AlexNet</h2><h2 id="2-VGGNet"><a href="#2-VGGNet" class="headerlink" title="2. VGGNet"></a>2. VGGNet</h2><h2 id="3-GoogLeNet"><a href="#3-GoogLeNet" class="headerlink" title="3. GoogLeNet"></a>3. GoogLeNet</h2><h2 id="4-ResNet"><a href="#4-ResNet" class="headerlink" title="4. ResNet"></a>4. ResNet</h2><h2 id="5-DenseNet"><a href="#5-DenseNet" class="headerlink" title="5. DenseNet"></a>5. DenseNet</h2><h1 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h1><h2 id="1-R-CNN-系列"><a href="#1-R-CNN-系列" class="headerlink" title="1. R-CNN 系列"></a>1. R-CNN 系列</h2><h3 id="1-R-CNN"><a href="#1-R-CNN" class="headerlink" title="1. R-CNN"></a>1. R-CNN</h3><h3 id="2-Fast-R-CNN"><a href="#2-Fast-R-CNN" class="headerlink" title="2. Fast R-CNN"></a>2. Fast R-CNN</h3><h3 id="3-Faster-R-CNN"><a href="#3-Faster-R-CNN" class="headerlink" title="3. Faster R-CNN"></a>3. Faster R-CNN</h3><h2 id="2-Yolo系列"><a href="#2-Yolo系列" class="headerlink" title="2. Yolo系列"></a>2. Yolo系列</h2><h3 id="1-Yolo-V1"><a href="#1-Yolo-V1" class="headerlink" title="1.Yolo V1"></a>1.Yolo V1</h3><h3 id="2-Yolo-V2"><a href="#2-Yolo-V2" class="headerlink" title="2.Yolo V2"></a>2.Yolo V2</h3><h3 id="3-Yolo-V3"><a href="#3-Yolo-V3" class="headerlink" title="3.Yolo V3"></a>3.Yolo V3</h3><h3 id="4-Yolo-V4"><a href="#4-Yolo-V4" class="headerlink" title="4.Yolo V4"></a>4.Yolo V4</h3><h3 id="5-Yolo-V5"><a href="#5-Yolo-V5" class="headerlink" title="5.Yolo V5"></a>5.Yolo V5</h3><h2 id="3-SSD"><a href="#3-SSD" class="headerlink" title="3. SSD"></a>3. SSD</h2><h2 id="4-Retina-Net"><a href="#4-Retina-Net" class="headerlink" title="4. Retina-Net"></a>4. Retina-Net</h2><h1 id="图像分割"><a href="#图像分割" class="headerlink" title="图像分割"></a>图像分割</h1><h2 id="1-FCN"><a href="#1-FCN" class="headerlink" title="1. FCN"></a>1. FCN</h2><h2 id="2-Mask-R-CNN"><a href="#2-Mask-R-CNN" class="headerlink" title="2. Mask R-CNN"></a>2. Mask R-CNN</h2><h1 id="目标追踪"><a href="#目标追踪" class="headerlink" title="目标追踪"></a>目标追踪</h1><h2 id="1-Goturn"><a href="#1-Goturn" class="headerlink" title="1. Goturn"></a>1. Goturn</h2><h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><h1 id="图像生成"><a href="#图像生成" class="headerlink" title="图像生成"></a>图像生成</h1><h2 id="1-GAN"><a href="#1-GAN" class="headerlink" title="1. GAN"></a>1. GAN</h2>]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-      </categories>
-      <tags>
-        <tag>概览</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>站内说明</title>
     <url>/2021/09/14/%E7%AB%99%E5%86%85%E8%AF%B4%E6%98%8E/</url>
     <content><![CDATA[<p>本blog是作为Leo同学的自我拓展过程中的自律自省记录</p>
@@ -2126,23 +2180,15 @@
       </tags>
   </entry>
   <entry>
-    <title>轻量化网络-MobileNet</title>
-    <url>/2021/09/29/%E8%BD%BB%E9%87%8F%E5%8C%96%E7%BD%91%E7%BB%9C-MobileNet/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
+    <title>计算机视觉CV算法概览（更新ing）</title>
+    <url>/2021/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89CV%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
+    <content><![CDATA[<h1 id="图像识别"><a href="#图像识别" class="headerlink" title="图像识别"></a>图像识别</h1><h2 id="1-AlexNet"><a href="#1-AlexNet" class="headerlink" title="1. AlexNet"></a>1. AlexNet</h2><h2 id="2-VGGNet"><a href="#2-VGGNet" class="headerlink" title="2. VGGNet"></a>2. VGGNet</h2><h2 id="3-GoogLeNet"><a href="#3-GoogLeNet" class="headerlink" title="3. GoogLeNet"></a>3. GoogLeNet</h2><h2 id="4-ResNet"><a href="#4-ResNet" class="headerlink" title="4. ResNet"></a>4. ResNet</h2><h2 id="5-DenseNet"><a href="#5-DenseNet" class="headerlink" title="5. DenseNet"></a>5. DenseNet</h2><h1 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h1><h2 id="1-R-CNN-系列"><a href="#1-R-CNN-系列" class="headerlink" title="1. R-CNN 系列"></a>1. R-CNN 系列</h2><h3 id="1-R-CNN"><a href="#1-R-CNN" class="headerlink" title="1. R-CNN"></a>1. R-CNN</h3><h3 id="2-Fast-R-CNN"><a href="#2-Fast-R-CNN" class="headerlink" title="2. Fast R-CNN"></a>2. Fast R-CNN</h3><h3 id="3-Faster-R-CNN"><a href="#3-Faster-R-CNN" class="headerlink" title="3. Faster R-CNN"></a>3. Faster R-CNN</h3><h2 id="2-Yolo系列"><a href="#2-Yolo系列" class="headerlink" title="2. Yolo系列"></a>2. Yolo系列</h2><h3 id="1-Yolo-V1"><a href="#1-Yolo-V1" class="headerlink" title="1.Yolo V1"></a>1.Yolo V1</h3><h3 id="2-Yolo-V2"><a href="#2-Yolo-V2" class="headerlink" title="2.Yolo V2"></a>2.Yolo V2</h3><h3 id="3-Yolo-V3"><a href="#3-Yolo-V3" class="headerlink" title="3.Yolo V3"></a>3.Yolo V3</h3><h3 id="4-Yolo-V4"><a href="#4-Yolo-V4" class="headerlink" title="4.Yolo V4"></a>4.Yolo V4</h3><h3 id="5-Yolo-V5"><a href="#5-Yolo-V5" class="headerlink" title="5.Yolo V5"></a>5.Yolo V5</h3><h2 id="3-SSD"><a href="#3-SSD" class="headerlink" title="3. SSD"></a>3. SSD</h2><h2 id="4-Retina-Net"><a href="#4-Retina-Net" class="headerlink" title="4. Retina-Net"></a>4. Retina-Net</h2><h1 id="图像分割"><a href="#图像分割" class="headerlink" title="图像分割"></a>图像分割</h1><h2 id="1-FCN"><a href="#1-FCN" class="headerlink" title="1. FCN"></a>1. FCN</h2><h2 id="2-Mask-R-CNN"><a href="#2-Mask-R-CNN" class="headerlink" title="2. Mask R-CNN"></a>2. Mask R-CNN</h2><h1 id="目标追踪"><a href="#目标追踪" class="headerlink" title="目标追踪"></a>目标追踪</h1><h2 id="1-Goturn"><a href="#1-Goturn" class="headerlink" title="1. Goturn"></a>1. Goturn</h2><h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><h1 id="图像生成"><a href="#图像生成" class="headerlink" title="图像生成"></a>图像生成</h1><h2 id="1-GAN"><a href="#1-GAN" class="headerlink" title="1. GAN"></a>1. GAN</h2>]]></content>
       <categories>
         <category>学习</category>
         <category>cv算法</category>
-        <category>深度学习</category>
-        <category>轻量化模型</category>
       </categories>
       <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
+        <tag>概览</tag>
       </tags>
   </entry>
   <entry>
@@ -2170,6 +2216,26 @@
       <tags>
         <tag>编程</tag>
         <tag>源码阅读</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>轻量化网络-MobileNet</title>
+    <url>/2021/09/29/%E8%BD%BB%E9%87%8F%E5%8C%96%E7%BD%91%E7%BB%9C-MobileNet/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>轻量化模型</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
       </tags>
   </entry>
 </search>

@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="摘要">
+  <meta name="description" content="摘要view()和reshape() Broadcasting 广播机制 Numpy 和 Tensor互转 GPU&#x2F;CPU计算">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pytorch框架基础（一）">
 <meta property="og:url" content="http://example.com/2021/09/05/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="摘要">
+<meta property="og:description" content="摘要view()和reshape() Broadcasting 广播机制 Numpy 和 Tensor互转 GPU&#x2F;CPU计算">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-05T13:57:23.000Z">
-<meta property="article:modified_time" content="2021-10-06T14:03:54.965Z">
+<meta property="article:modified_time" content="2021-10-08T05:06:40.831Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="基础操作">
 <meta property="article:tag" content="编程">
@@ -123,12 +123,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">77</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">78</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">22</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">23</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -280,7 +280,45 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1>
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>view()和reshape()</p>
+<p>Broadcasting 广播机制</p>
+<p>Numpy 和 Tensor互转</p>
+<p>GPU/CPU计算</p>
+<span id="more"></span>
+
+<h1 id="view-和reshape"><a href="#view-和reshape" class="headerlink" title="view()和reshape()"></a>view()和reshape()</h1><p> <code>view()</code>是内存共享的，改变了tensor的观察视角而已</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">a=torch.Tensor([[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]]])</span><br><span class="line"></span><br><span class="line">b = a.view(<span class="number">1</span>,<span class="number">6</span>)</span><br><span class="line">c = a.view(<span class="number">3</span>,<span class="number">2</span>)</span><br><span class="line">d = a.view(<span class="number">6</span>,-<span class="number">1</span>)<span class="comment"># 不确定维数时用-1</span></span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"><span class="built_in">print</span>(c)</span><br><span class="line"><span class="built_in">print</span>(d)</span><br><span class="line">d[<span class="number">0</span>] = <span class="number">9</span> <span class="comment"># 共享地址只要改变 其他都会改变</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"><span class="built_in">print</span>(c)</span><br><span class="line"><span class="built_in">print</span>(d)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>输出分别是:(不改变原有的tensor的shape)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">tensor([[<span class="number">1.</span>, <span class="number">2.</span>, <span class="number">3.</span>, <span class="number">4.</span>, <span class="number">5.</span>, <span class="number">6.</span>]])</span><br><span class="line">tensor([[<span class="number">1.</span>, <span class="number">2.</span>],</span><br><span class="line">        [<span class="number">3.</span>, <span class="number">4.</span>],</span><br><span class="line">        [<span class="number">5.</span>, <span class="number">6.</span>]])</span><br><span class="line">tensor([[<span class="number">1.</span>],</span><br><span class="line">        [<span class="number">2.</span>],</span><br><span class="line">        [<span class="number">3.</span>],</span><br><span class="line">        [<span class="number">4.</span>],</span><br><span class="line">        [<span class="number">5.</span>],</span><br><span class="line">        [<span class="number">6.</span>]])</span><br><span class="line"></span><br><span class="line">tensor([[[<span class="number">9.</span>, <span class="number">2.</span>, <span class="number">3.</span>],</span><br><span class="line">         [<span class="number">4.</span>, <span class="number">5.</span>, <span class="number">6.</span>]]])</span><br><span class="line">tensor([[<span class="number">9.</span>, <span class="number">2.</span>, <span class="number">3.</span>, <span class="number">4.</span>, <span class="number">5.</span>, <span class="number">6.</span>]])</span><br><span class="line">tensor([[<span class="number">9.</span>, <span class="number">2.</span>],</span><br><span class="line">        [<span class="number">3.</span>, <span class="number">4.</span>],</span><br><span class="line">        [<span class="number">5.</span>, <span class="number">6.</span>]])</span><br><span class="line">tensor([[<span class="number">9.</span>],</span><br><span class="line">        [<span class="number">2.</span>],</span><br><span class="line">        [<span class="number">3.</span>],</span><br><span class="line">        [<span class="number">4.</span>],</span><br><span class="line">        [<span class="number">5.</span>],</span><br><span class="line">        [<span class="number">6.</span>]])</span><br></pre></td></tr></table></figure>
+
+<p><code>reshape()</code>不是共享的，可以理解为**reshape获取的是tensor克隆真实副本，<code>reshape()</code>可以改变该tensor结构，但是view()不可以，因为<code>reshape</code>等价于先<code>contiguous()</code>再<code>view()</code>,也就是数据内存给你撸顺了，再改变观察视角。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">x = torch.rand(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">x = x.transpose(<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(x.is_contiguous()) <span class="comment">#  x.permute(1,0)</span></span><br><span class="line"><span class="comment"># False 输出</span></span><br><span class="line"><span class="comment"># x.view(3,4) 地址不连续会报错</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">RuntimeError: invalid argument 2: view size is not compatible with input tensor&#x27;s....</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="comment"># 但是这样是可以的。</span></span><br><span class="line">x = x.contiguous()</span><br><span class="line">x.view(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">x.reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">x.reshape(3,4) 这个操作</span></span><br><span class="line"><span class="string">等于x = x.contiguous().view()</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Broadcasting-广播机制"><a href="#Broadcasting-广播机制" class="headerlink" title="Broadcasting 广播机制"></a>Broadcasting 广播机制</h1><p>当对两个形状不同的 Tensor 按元素运算 时，可能会触发⼴播（broadcasting）机制：<strong>先适当复制元素使这两个 Tensor 形状相同后再按元素运算</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">x = torch.arange(<span class="number">1</span>,<span class="number">3</span>).view(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">y = torch.arange(<span class="number">2</span>,<span class="number">5</span>).view(<span class="number">3</span>,<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="built_in">print</span>(y)</span><br><span class="line"><span class="built_in">print</span>(x+y)</span><br></pre></td></tr></table></figure>
+
+<p>结果：(x 中第⼀⾏的2个元素被⼴播 （复制）到了第⼆⾏和第三⾏，⽽ y 中第⼀列的3个元素被⼴播（复制）到了第⼆列)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tensor([[<span class="number">1</span>, <span class="number">2</span>]])</span><br><span class="line">tensor([[<span class="number">2</span>],</span><br><span class="line">        [<span class="number">3</span>],</span><br><span class="line">        [<span class="number">4</span>]])</span><br><span class="line">tensor([[<span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">        [<span class="number">4</span>, <span class="number">5</span>],</span><br><span class="line">        [<span class="number">5</span>, <span class="number">6</span>]])</span><br></pre></td></tr></table></figure>
+
+<h1 id="Numpy-和-Tensor互转"><a href="#Numpy-和-Tensor互转" class="headerlink" title="Numpy 和 Tensor互转"></a>Numpy 和 Tensor互转</h1><h2 id="Tensor转numpy"><a href="#Tensor转numpy" class="headerlink" title="Tensor转numpy"></a>Tensor转numpy</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">x = torch.ones(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">y = x.numpy()</span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="built_in">print</span>(y)</span><br><span class="line">y += <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="built_in">print</span>(y)</span><br></pre></td></tr></table></figure>
+
+<p>输出： 地址共享</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">tensor([[<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>],</span><br><span class="line">        [<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>]])</span><br><span class="line">[[<span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span>]</span><br><span class="line"> [<span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span>]]</span><br><span class="line"> </span><br><span class="line">tensor([[<span class="number">2.</span>, <span class="number">2.</span>, <span class="number">2.</span>],</span><br><span class="line">        [<span class="number">2.</span>, <span class="number">2.</span>, <span class="number">2.</span>]])</span><br><span class="line">[[<span class="number">2.</span> <span class="number">2.</span> <span class="number">2.</span>]</span><br><span class="line"> [<span class="number">2.</span> <span class="number">2.</span> <span class="number">2.</span>]]</span><br></pre></td></tr></table></figure>
+
+<h2 id="Numpy转Tensor"><a href="#Numpy转Tensor" class="headerlink" title="Numpy转Tensor"></a>Numpy转Tensor</h2><p>torch.from_numpy(y) 和torch.tensor(y) 方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">z = torch.from_numpy(y)</span><br><span class="line">z2 = torch.tensor(y)</span><br><span class="line">y += <span class="number">2</span></span><br><span class="line"><span class="built_in">print</span>(z)</span><br><span class="line"><span class="built_in">print</span>(z2)</span><br></pre></td></tr></table></figure>
+
+<p>输出：torch.from_numpy()<strong>共享相同的内存</strong>   torch.tensor(y) 方法会进⾏数据拷⻉</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tensor([[4., 4., 4.],</span><br><span class="line">        [4., 4., 4.]])</span><br><span class="line">        </span><br><span class="line">tensor([[2., 2., 2.],</span><br><span class="line">        [2., 2., 2.]])</span><br></pre></td></tr></table></figure>
+
+<h1 id="GPU-CPU计算"><a href="#GPU-CPU计算" class="headerlink" title="GPU/CPU计算"></a>GPU/CPU计算</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">    x = torch.ones(<span class="number">2</span>, <span class="number">3</span>,device=torch.device(<span class="string">&#x27;cuda&#x27;</span>))</span><br><span class="line">    y = y.to(<span class="string">&#x27;cuda&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
     </div>
 
     
@@ -364,7 +402,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#view-%E5%92%8Creshape"><span class="nav-number">2.</span> <span class="nav-text">view()和reshape()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Broadcasting-%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6"><span class="nav-number">3.</span> <span class="nav-text">Broadcasting 广播机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Numpy-%E5%92%8C-Tensor%E4%BA%92%E8%BD%AC"><span class="nav-number">4.</span> <span class="nav-text">Numpy 和 Tensor互转</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tensor%E8%BD%ACnumpy"><span class="nav-number">4.1.</span> <span class="nav-text">Tensor转numpy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Numpy%E8%BD%ACTensor"><span class="nav-number">4.2.</span> <span class="nav-text">Numpy转Tensor</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GPU-CPU%E8%AE%A1%E7%AE%97"><span class="nav-number">5.</span> <span class="nav-text">GPU&#x2F;CPU计算</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -380,7 +418,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-count">78</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -393,7 +431,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
