@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="摘要数据集简介：脑肿瘤图片 算法简介： Version1.0: EfficientDet 3D 迁移学习+微调 Version2.0: EfficientDet 3D + ResNet 101 预测结果： 当前排名500&#x2F;1300 Version1.0  Score: 0.642 Rank: 500&#x2F;1400">
+  <meta name="description" content="摘要数据集简介：脑肿瘤图片 任务：对于测试集中的每个BraTS21ID，预测出目标的MGMT_value概率 算法简介： Version1.0: EfficientDet 3D 迁移学习+微调 Version2.0: EfficientDet 3D + ResNet 101 预测结果：  Version1.0  Score: 0.642 Rank: 498&#x2F;1400 Version2.0  Sco">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kaggle比赛-脑肿瘤检测">
 <meta property="og:url" content="http://example.com/2021/09/03/kaggle%E6%AF%94%E8%B5%9B-%E8%84%91%E8%82%BF%E7%98%A4%E6%A3%80%E6%B5%8B/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="摘要数据集简介：脑肿瘤图片 算法简介： Version1.0: EfficientDet 3D 迁移学习+微调 Version2.0: EfficientDet 3D + ResNet 101 预测结果： 当前排名500&#x2F;1300 Version1.0  Score: 0.642 Rank: 500&#x2F;1400">
+<meta property="og:description" content="摘要数据集简介：脑肿瘤图片 任务：对于测试集中的每个BraTS21ID，预测出目标的MGMT_value概率 算法简介： Version1.0: EfficientDet 3D 迁移学习+微调 Version2.0: EfficientDet 3D + ResNet 101 预测结果：  Version1.0  Score: 0.642 Rank: 498&#x2F;1400 Version2.0  Sco">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-03T04:08:36.000Z">
-<meta property="article:modified_time" content="2021-10-08T08:42:01.386Z">
+<meta property="article:modified_time" content="2021-10-09T05:17:57.672Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="Kaggle">
@@ -123,7 +123,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">83</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">81</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -133,7 +133,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">16</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a>
 
   </li>
         <li class="menu-item menu-item-机器学习">
@@ -293,13 +293,19 @@
 
       
         <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>数据集简介：脑肿瘤图片</p>
+<p>任务：对于测试集中的每个<code>BraTS21ID</code>，预测出目标的<code>MGMT_value</code>概率</p>
 <p>算法简介：</p>
 <p>Version1.0: EfficientDet 3D 迁移学习+微调</p>
 <p>Version2.0: EfficientDet 3D + ResNet 101</p>
-<p>预测结果： 当前排名500/1300</p>
-<p>Version1.0  Score: 0.642 Rank: 500/1400</p>
+<p>预测结果： </p>
+<p>Version1.0  Score: 0.642 Rank: 498/1400</p>
+<p>Version2.0  Score: 0.732 Rank: 90/1435</p>
 <span id="more"></span>
 
+<p>迁移学习，迁移学习是一种很常见的深度学习技巧，我们利用很多预训练的经典模型直接去训练我们自己的任务。虽然说领域不同，但是在学习权重的广度方面，两个任务之间还是有联系的。</p>
+<p>我们直接拿来其他任务的训练权重，在进行optimize的时候，如何选择适当的学习率是一个很重要的问题。</p>
+<p>神经网络(如下图)一般分为三个部分，输入层，隐含层和输出层，随着层数的增加，神经网络学习到的特征越抽象。因此，下图中的卷积层和全连接层的学习率也应该设置的不一样，一般来说，卷积层设置的学习率应该更低一些，而全连接层的学习率可以适当提高。</p>
+<p>差分学习率的意思，在不同的层设置不同的学习率，可以提高神经网络的训练效果。</p>
 <p>Version1.0:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys </span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> glob</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> pydicom</span><br><span class="line"><span class="keyword">from</span> pydicom.pixel_data_handlers.util <span class="keyword">import</span> apply_voi_lut</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"><span class="keyword">from</span> torch.utils <span class="keyword">import</span> data <span class="keyword">as</span> torch_data</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> model_selection <span class="keyword">as</span> sk_model_selection</span><br><span class="line"><span class="keyword">from</span> torch.nn <span class="keyword">import</span> functional <span class="keyword">as</span> torch_functional</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> StratifiedKFold</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> roc_auc_score</span><br><span class="line"><span class="keyword">from</span> efficientnet_pytorch_3d <span class="keyword">import</span> EfficientNet3D</span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断数据集和EfficientNet模型的路径</span></span><br><span class="line"><span class="keyword">if</span> os.path.exists(<span class="string">&quot;../input/rsna-miccai-brain-tumor-radiogenomic-classification&quot;</span>):</span><br><span class="line">    data_directory = <span class="string">&#x27;../input/rsna-miccai-brain-tumor-radiogenomic-classification&#x27;</span></span><br><span class="line">    pytorch3dpath = <span class="string">&quot;../input/efficientnetpyttorch3d/EfficientNet-PyTorch-3D&quot;</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    data_directory = <span class="string">&#x27;/media/roland/data/kaggle/rsna-miccai-brain-tumor-radiogenomic-classification&#x27;</span></span><br><span class="line">    pytorch3dpath = <span class="string">&quot;EfficientNet-PyTorch-3D&quot;</span></span><br><span class="line">    </span><br><span class="line">mri_types = [<span class="string">&#x27;FLAIR&#x27;</span>,<span class="string">&#x27;T1w&#x27;</span>,<span class="string">&#x27;T1wCE&#x27;</span>,<span class="string">&#x27;T2w&#x27;</span>]</span><br><span class="line">SIZE = <span class="number">256</span></span><br><span class="line">NUM_IMAGES = <span class="number">64</span></span><br><span class="line"></span><br><span class="line">sys.path.append(pytorch3dpath)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载数据集</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_dicom_image</span>(<span class="params">path, img_size=SIZE, voi_lut=<span class="literal">True</span>, rotate=<span class="number">0</span></span>):</span></span><br><span class="line">    dicom = pydicom.read_file(path) <span class="comment"># MRI扫描图像是多张dicom格式图像，通过pydicom</span></span><br><span class="line">    data = dicom.pixel_array</span><br><span class="line">    <span class="comment">#VOI LUT(DICOM 设备可用)将原始DICOM格式转为易于使用的格式voi_lut</span></span><br><span class="line">    <span class="keyword">if</span> voi_lut:</span><br><span class="line">        data = apply_voi_lut(dicom.pixel_array, dicom)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        data = dicom.pixel_array</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># 图像增强 添加旋转操作</span></span><br><span class="line">    <span class="keyword">if</span> rotate &gt; <span class="number">0</span>:</span><br><span class="line">        rot_choices = [<span class="number">0</span>, cv2.ROTATE_90_CLOCKWISE, cv2.ROTATE_90_COUNTERCLOCKWISE, cv2.ROTATE_180]</span><br><span class="line">        data = cv2.rotate(data, rot_choices[rotate])</span><br><span class="line">        </span><br><span class="line">    data = cv2.resize(data, (img_size, img_size))</span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_dicom_images_3d</span>(<span class="params">scan_id, num_imgs=NUM_IMAGES, img_size=SIZE, mri_type=<span class="string">&quot;FLAIR&quot;</span>, split=<span class="string">&quot;train&quot;</span>, rotate=<span class="number">0</span></span>):</span></span><br><span class="line"></span><br><span class="line">    files = <span class="built_in">sorted</span>(glob.glob(<span class="string">f&quot;<span class="subst">&#123;data_directory&#125;</span>/<span class="subst">&#123;split&#125;</span>/<span class="subst">&#123;scan_id&#125;</span>/<span class="subst">&#123;mri_type&#125;</span>/*.dcm&quot;</span>), </span><br><span class="line">               key=<span class="keyword">lambda</span> var:[<span class="built_in">int</span>(x) <span class="keyword">if</span> x.isdigit() <span class="keyword">else</span> x <span class="keyword">for</span> x <span class="keyword">in</span> re.findall(<span class="string">r&#x27;[^0-9]|[0-9]+&#x27;</span>, var)])</span><br><span class="line">    middle = <span class="built_in">len</span>(files)//<span class="number">2</span></span><br><span class="line">    num_imgs2 = num_imgs//<span class="number">2</span></span><br><span class="line">    p1 = <span class="built_in">max</span>(<span class="number">0</span>, middle - num_imgs2)</span><br><span class="line">    p2 = <span class="built_in">min</span>(<span class="built_in">len</span>(files), middle + num_imgs2)</span><br><span class="line">    <span class="comment"># 取中间的num_imgs张图片，将他们构成3D数据</span></span><br><span class="line">    img3d = np.stack([load_dicom_image(f, rotate=rotate) <span class="keyword">for</span> f <span class="keyword">in</span> files[p1:p2]]).T </span><br><span class="line">    <span class="comment"># 如果要取的图片数量比总共分图片数量要多</span></span><br><span class="line">    <span class="keyword">if</span> img3d.shape[-<span class="number">1</span>] &lt; num_imgs:</span><br><span class="line">        n_zero = np.zeros((img_size, img_size, num_imgs - img3d.shape[-<span class="number">1</span>]))</span><br><span class="line">        img3d = np.concatenate((img3d,  n_zero), axis = -<span class="number">1</span>) <span class="comment"># 不够的拼接0</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">if</span> np.<span class="built_in">min</span>(img3d) &lt; np.<span class="built_in">max</span>(img3d):</span><br><span class="line">        img3d = img3d - np.<span class="built_in">min</span>(img3d)</span><br><span class="line">        img3d = img3d / np.<span class="built_in">max</span>(img3d)</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> np.expand_dims(img3d,<span class="number">0</span>) <span class="comment"># 增加一维，axis=0时，高维扩展数组就给它在最外面再添个括号就</span></span><br><span class="line"></span><br><span class="line">a = load_dicom_images_3d(<span class="string">&quot;00000&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(a.shape)</span><br><span class="line"><span class="built_in">print</span>(np.<span class="built_in">min</span>(a), np.<span class="built_in">max</span>(a), np.mean(a), np.median(a))</span><br></pre></td></tr></table></figure>
 
@@ -330,13 +336,10 @@
 
         
     <div class="post-nav">
+      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2021/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89CV%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/" rel="prev" title="计算机视觉CV算法概览（更新ing）">
-      <i class="fa fa-chevron-left"></i> 计算机视觉CV算法概览（更新ing）
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/09/05/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/" rel="next" title="Pytorch框架基础（一）">
-      Pytorch框架基础（一） <i class="fa fa-chevron-right"></i>
+    <a href="/2021/09/29/hello-world/" rel="next" title="hello-world">
+      hello-world <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -412,14 +415,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">83</span>
+          <span class="site-state-item-count">81</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

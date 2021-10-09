@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要背景问题： 方法简述： 优点： 缺点：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-01T08:25:07.000Z">
-<meta property="article:modified_time" content="2021-10-01T08:26:11.034Z">
+<meta property="article:modified_time" content="2021-10-09T05:11:59.421Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="总结">
 <meta property="article:tag" content="编程">
@@ -125,7 +125,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">83</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">81</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -135,7 +135,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">16</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a>
 
   </li>
         <li class="menu-item menu-item-机器学习">
@@ -292,6 +292,50 @@
 <p>缺点：</p>
 <span id="more"></span>
 
+<h1 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h1><p>dropout是指在深度学习网络的训练过程中，对于神经网络单元，按照一定的概率将其暂时从网络中丢弃。注意是 <strong>「暂时」</strong>，对于随机梯度下降来说，由于是随机丢弃，故而每一个mini-batch都在训练不同的网络。</p>
+<p>Dropout类似于bagging ensemble减少variance。也就是投通过投票来减少可变性。通常我们在全连接层部分使用dropout，在卷积层则不使用。但 <strong>「dropout」</strong> 并不适合所有的情况，不要无脑上<code>Dropout</code>。</p>
+<p><code>Dropout</code>一般适合于全连接层部分，而卷积层由于其参数并不是很多，所以不需要dropout，加上的话对模型的泛化能力并没有太大的影响。</p>
+<p>我们一般在网络的最开始和结束的时候使用全连接层，而hidden layers则是网络中的卷积层。所以一般情况，在全连接层部分，采用较大概率的dropout而在卷积层采用低概率或者不采用dropout。</p>
+<h2 id="数据集处理"><a href="#数据集处理" class="headerlink" title="数据集处理"></a>数据集处理</h2><p>主要有 <strong>「数据筛选」</strong> 以及 <strong>「数据增强」</strong></p>
+<h2 id="难例挖掘-hard-negative-mining"><a href="#难例挖掘-hard-negative-mining" class="headerlink" title="难例挖掘 hard-negative-mining"></a>难例挖掘 hard-negative-mining</h2><p>分析模型难以预测正确的样本，给出针对性方法。</p>
+<h2 id="多模型融合"><a href="#多模型融合" class="headerlink" title="多模型融合"></a>多模型融合</h2><p>Ensemble是论文刷结果的终极核武器,深度学习中一般有以下几种方式</p>
+<ul>
+<li>同样的参数,不同的初始化方式</li>
+<li>不同的参数,通过cross-validation,选取最好的几组</li>
+<li>同样的参数,模型训练的不同阶段，即不同迭代次数的模型。</li>
+<li>不同的模型,进行线性融合. 例如RNN和传统模型.</li>
+</ul>
+<p>提高模型性能和鲁棒性大法：probs融合 和 投票法。</p>
+<p>假设这里有model 1, model 2, model 3，可以这样融合：</p>
+<blockquote>
+<p>\1. model1 probs + model2 probs + model3 probs ==&gt; final label</p>
+</blockquote>
+<blockquote>
+<p>\2. model1 label , model2 label , model3 label ==&gt; voting ==&gt; final label</p>
+</blockquote>
+<blockquote>
+<p>\3. model1_1 probs + … + model1_n probs ==&gt; mode1 label, model2 label与model3获取的label方式与1相同 ==&gt; voting ==&gt; final label多模型融合</p>
+<p>Ensemble是论文刷结果的终极核武器,深度学习中一般有以下几种方式</p>
+<ul>
+<li>同样的参数,不同的初始化方式</li>
+<li>不同的参数,通过cross-validation,选取最好的几组</li>
+<li>同样的参数,模型训练的不同阶段，即不同迭代次数的模型。</li>
+<li>不同的模型,进行线性融合. 例如RNN和传统模型.</li>
+</ul>
+<p>提高模型性能和鲁棒性大法：probs融合 和 投票法。</p>
+<p>假设这里有model 1, model 2, model 3，可以这样融合：</p>
+<blockquote>
+<p>\1. model1 probs + model2 probs + model3 probs ==&gt; final label</p>
+</blockquote>
+<blockquote>
+<p>\2. model1 label , model2 label , model3 label ==&gt; voting ==&gt; final label</p>
+</blockquote>
+<blockquote>
+<p>\3. model1_1 probs + … + model1_n probs ==&gt; mode1 label, model2 label与model3获取的label方式与1相同 ==&gt; voting ==&gt; final label 这个方式的启发来源于，如果一个model的随机种子没有固定，多次预测得到的结果可能不同。</p>
+</blockquote>
+</blockquote>
+<p>以上方式的效果要根据label个数，数据集规模等特征具体问题具体分析，表现可能不同，方式无非是probs融合和投票法的单独使用or结合。</p>
+
     </div>
 
     
@@ -377,7 +421,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dropout"><span class="nav-number">2.</span> <span class="nav-text">Dropout</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E5%A4%84%E7%90%86"><span class="nav-number">2.1.</span> <span class="nav-text">数据集处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%BE%E4%BE%8B%E6%8C%96%E6%8E%98-hard-negative-mining"><span class="nav-number">2.2.</span> <span class="nav-text">难例挖掘 hard-negative-mining</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E6%A8%A1%E5%9E%8B%E8%9E%8D%E5%90%88"><span class="nav-number">2.3.</span> <span class="nav-text">多模型融合</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -393,14 +437,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">83</span>
+          <span class="site-state-item-count">81</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

@@ -20,21 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="摘要https:&#x2F;&#x2F;www.cnblogs.com&#x2F;Jason66661010&#x2F;category&#x2F;1831834.html?page&#x3D;1">
+  <meta name="description" content="图像识别1. AlexNet2. VGGNet3. GoogLeNet4. ResNet5. DenseNet目标检测1. R-CNN 系列1. R-CNN2. Fast R-CNN3. Faster R-CNN2. Yolo系列1.Yolo V12.Yolo V23.Yolo V34.Yolo V45.Yolo V53. SSD4. Retina-Net图像分割1. FCN2. Mask R-C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pytorch框架基础（二）">
-<meta property="og:url" content="http://example.com/2021/09/06/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
+<meta property="og:title" content="计算机视觉CV算法概览（更新ing）">
+<meta property="og:url" content="http://example.com/2021/09/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89CV%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="摘要https:&#x2F;&#x2F;www.cnblogs.com&#x2F;Jason66661010&#x2F;category&#x2F;1831834.html?page&#x3D;1">
+<meta property="og:description" content="图像识别1. AlexNet2. VGGNet3. GoogLeNet4. ResNet5. DenseNet目标检测1. R-CNN 系列1. R-CNN2. Fast R-CNN3. Faster R-CNN2. Yolo系列1.Yolo V12.Yolo V23.Yolo V34.Yolo V45.Yolo V53. SSD4. Retina-Net图像分割1. FCN2. Mask R-C">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-06T13:57:29.000Z">
-<meta property="article:modified_time" content="2021-10-08T06:07:45.228Z">
+<meta property="article:published_time" content="2021-09-29T09:52:44.000Z">
+<meta property="article:modified_time" content="2021-10-09T03:45:48.141Z">
 <meta property="article:author" content="Leo">
-<meta property="article:tag" content="基础操作">
-<meta property="article:tag" content="编程">
+<meta property="article:tag" content="概览">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/09/06/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/">
+<link rel="canonical" href="http://example.com/2021/09/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89CV%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/">
 
 
 <script id="page-configurations">
@@ -47,7 +46,7 @@
   };
 </script>
 
-  <title>Pytorch框架基础（二） | Leo的三板斧</title>
+  <title>计算机视觉CV算法概览（更新ing） | Leo的三板斧</title>
   
 
 
@@ -123,7 +122,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">83</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">81</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -133,7 +132,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">16</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a>
 
   </li>
         <li class="menu-item menu-item-机器学习">
@@ -230,7 +229,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/06/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89CV%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/android-chrome-512x512.png">
@@ -243,7 +242,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Pytorch框架基础（二）
+          计算机视觉CV算法概览（更新ing）
         </h1>
 
         <div class="post-meta">
@@ -253,7 +252,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-09-06 21:57:29" itemprop="dateCreated datePublished" datetime="2021-09-06T21:57:29+08:00">2021-09-06</time>
+              <time title="创建时间：2021-09-29 17:52:44" itemprop="dateCreated datePublished" datetime="2021-09-29T17:52:44+08:00">2021-09-29</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -265,7 +264,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Pytorch/" itemprop="url" rel="index"><span itemprop="name">Pytorch</span></a>
+                  <a href="/categories/cv%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">cv算法</span></a>
                 </span>
             </span>
 
@@ -280,8 +279,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1">https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1</a></p>
-
+        <h1 id="图像识别"><a href="#图像识别" class="headerlink" title="图像识别"></a>图像识别</h1><h2 id="1-AlexNet"><a href="#1-AlexNet" class="headerlink" title="1. AlexNet"></a>1. AlexNet</h2><h2 id="2-VGGNet"><a href="#2-VGGNet" class="headerlink" title="2. VGGNet"></a>2. VGGNet</h2><h2 id="3-GoogLeNet"><a href="#3-GoogLeNet" class="headerlink" title="3. GoogLeNet"></a>3. GoogLeNet</h2><h2 id="4-ResNet"><a href="#4-ResNet" class="headerlink" title="4. ResNet"></a>4. ResNet</h2><h2 id="5-DenseNet"><a href="#5-DenseNet" class="headerlink" title="5. DenseNet"></a>5. DenseNet</h2><h1 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h1><h2 id="1-R-CNN-系列"><a href="#1-R-CNN-系列" class="headerlink" title="1. R-CNN 系列"></a>1. R-CNN 系列</h2><h3 id="1-R-CNN"><a href="#1-R-CNN" class="headerlink" title="1. R-CNN"></a>1. R-CNN</h3><h3 id="2-Fast-R-CNN"><a href="#2-Fast-R-CNN" class="headerlink" title="2. Fast R-CNN"></a>2. Fast R-CNN</h3><h3 id="3-Faster-R-CNN"><a href="#3-Faster-R-CNN" class="headerlink" title="3. Faster R-CNN"></a>3. Faster R-CNN</h3><h2 id="2-Yolo系列"><a href="#2-Yolo系列" class="headerlink" title="2. Yolo系列"></a>2. Yolo系列</h2><h3 id="1-Yolo-V1"><a href="#1-Yolo-V1" class="headerlink" title="1.Yolo V1"></a>1.Yolo V1</h3><h3 id="2-Yolo-V2"><a href="#2-Yolo-V2" class="headerlink" title="2.Yolo V2"></a>2.Yolo V2</h3><h3 id="3-Yolo-V3"><a href="#3-Yolo-V3" class="headerlink" title="3.Yolo V3"></a>3.Yolo V3</h3><h3 id="4-Yolo-V4"><a href="#4-Yolo-V4" class="headerlink" title="4.Yolo V4"></a>4.Yolo V4</h3><h3 id="5-Yolo-V5"><a href="#5-Yolo-V5" class="headerlink" title="5.Yolo V5"></a>5.Yolo V5</h3><h2 id="3-SSD"><a href="#3-SSD" class="headerlink" title="3. SSD"></a>3. SSD</h2><h2 id="4-Retina-Net"><a href="#4-Retina-Net" class="headerlink" title="4. Retina-Net"></a>4. Retina-Net</h2><h1 id="图像分割"><a href="#图像分割" class="headerlink" title="图像分割"></a>图像分割</h1><h2 id="1-FCN"><a href="#1-FCN" class="headerlink" title="1. FCN"></a>1. FCN</h2><h2 id="2-Mask-R-CNN"><a href="#2-Mask-R-CNN" class="headerlink" title="2. Mask R-CNN"></a>2. Mask R-CNN</h2><h1 id="目标追踪"><a href="#目标追踪" class="headerlink" title="目标追踪"></a>目标追踪</h1><h2 id="1-Goturn"><a href="#1-Goturn" class="headerlink" title="1. Goturn"></a>1. Goturn</h2><h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><h1 id="图像生成"><a href="#图像生成" class="headerlink" title="图像生成"></a>图像生成</h1><h2 id="1-GAN"><a href="#1-GAN" class="headerlink" title="1. GAN"></a>1. GAN</h2>
     </div>
 
     
@@ -290,8 +288,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" rel="tag"># 基础操作</a>
-              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
+              <a href="/tags/%E6%A6%82%E8%A7%88/" rel="tag"># 概览</a>
           </div>
 
         
@@ -300,12 +297,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/09/05/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/" rel="prev" title="Pytorch框架基础（一）">
-      <i class="fa fa-chevron-left"></i> Pytorch框架基础（一）
+    <a href="/2021/09/29/%E7%AB%99%E5%86%85%E8%AF%B4%E6%98%8E/" rel="prev" title="站内说明">
+      <i class="fa fa-chevron-left"></i> 站内说明
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/09/14/%E7%AB%99%E5%86%85%E8%AF%B4%E6%98%8E/" rel="next" title="站内说明">
-      站内说明 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/" rel="next" title="OpenCV图像处理基础（一）">
+      OpenCV图像处理基础（一） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -365,7 +362,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">图像识别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-AlexNet"><span class="nav-number">1.1.</span> <span class="nav-text">1. AlexNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-VGGNet"><span class="nav-number">1.2.</span> <span class="nav-text">2. VGGNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-GoogLeNet"><span class="nav-number">1.3.</span> <span class="nav-text">3. GoogLeNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-ResNet"><span class="nav-number">1.4.</span> <span class="nav-text">4. ResNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-DenseNet"><span class="nav-number">1.5.</span> <span class="nav-text">5. DenseNet</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B"><span class="nav-number">2.</span> <span class="nav-text">目标检测</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-R-CNN-%E7%B3%BB%E5%88%97"><span class="nav-number">2.1.</span> <span class="nav-text">1. R-CNN 系列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-R-CNN"><span class="nav-number">2.1.1.</span> <span class="nav-text">1. R-CNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Fast-R-CNN"><span class="nav-number">2.1.2.</span> <span class="nav-text">2. Fast R-CNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Faster-R-CNN"><span class="nav-number">2.1.3.</span> <span class="nav-text">3. Faster R-CNN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Yolo%E7%B3%BB%E5%88%97"><span class="nav-number">2.2.</span> <span class="nav-text">2. Yolo系列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Yolo-V1"><span class="nav-number">2.2.1.</span> <span class="nav-text">1.Yolo V1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Yolo-V2"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.Yolo V2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Yolo-V3"><span class="nav-number">2.2.3.</span> <span class="nav-text">3.Yolo V3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Yolo-V4"><span class="nav-number">2.2.4.</span> <span class="nav-text">4.Yolo V4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Yolo-V5"><span class="nav-number">2.2.5.</span> <span class="nav-text">5.Yolo V5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-SSD"><span class="nav-number">2.3.</span> <span class="nav-text">3. SSD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Retina-Net"><span class="nav-number">2.4.</span> <span class="nav-text">4. Retina-Net</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2"><span class="nav-number">3.</span> <span class="nav-text">图像分割</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-FCN"><span class="nav-number">3.1.</span> <span class="nav-text">1. FCN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Mask-R-CNN"><span class="nav-number">3.2.</span> <span class="nav-text">2. Mask R-CNN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87%E8%BF%BD%E8%B8%AA"><span class="nav-number">4.</span> <span class="nav-text">目标追踪</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Goturn"><span class="nav-number">4.1.</span> <span class="nav-text">1. Goturn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2"><span class="nav-number">4.2.</span> <span class="nav-text">2.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90"><span class="nav-number">5.</span> <span class="nav-text">图像生成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-GAN"><span class="nav-number">5.1.</span> <span class="nav-text">1. GAN</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -381,14 +378,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">83</span>
+          <span class="site-state-item-count">81</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
