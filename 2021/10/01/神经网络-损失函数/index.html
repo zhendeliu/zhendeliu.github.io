@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="摘要背景问题： 方法简述： 优点： 缺点：">
+  <meta name="description" content="摘要背景问题：损失函数用来评价模型的预测值和真实值不一样的程度，损失函数越好，通常模型的性能越好。不同的模型用的损失函数一般也不一样。 方法简述：  均方差损失 Mean Squared Error Loss 平均绝对误差损失 Mean Absolute Error Loss Huber Loss 分位数损失 Quantile Loss 交叉熵损失 Cross Entropy Loss 合页损失">
 <meta property="og:type" content="article">
 <meta property="og:title" content="神经网络-损失函数">
 <meta property="og:url" content="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="摘要背景问题： 方法简述： 优点： 缺点：">
+<meta property="og:description" content="摘要背景问题：损失函数用来评价模型的预测值和真实值不一样的程度，损失函数越好，通常模型的性能越好。不同的模型用的损失函数一般也不一样。 方法简述：  均方差损失 Mean Squared Error Loss 平均绝对误差损失 Mean Absolute Error Loss Huber Loss 分位数损失 Quantile Loss 交叉熵损失 Cross Entropy Loss 合页损失">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-01T07:57:02.000Z">
-<meta property="article:modified_time" content="2021-10-06T14:00:43.605Z">
+<meta property="article:modified_time" content="2021-10-09T06:59:35.500Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="总结">
 <meta property="article:tag" content="编程">
@@ -290,11 +290,45 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：损失函数用来评价模型的预测值和真实值不一样的程度，损失函数越好，通常模型的性能越好。不同的模型用的损失函数一般也不一样。</p>
 <p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
+<ol>
+<li>均方差损失 Mean Squared Error Loss</li>
+<li>平均绝对误差损失 Mean Absolute Error Loss</li>
+<li>Huber Loss</li>
+<li>分位数损失 Quantile Loss</li>
+<li>交叉熵损失 Cross Entropy Loss</li>
+<li>合页损失 Hinge Loss</li>
+</ol>
+<p>适用于回归的均方差损失 Mean Squared Loss、平均绝对误差损失 Mean Absolute Error Loss，两者的区别以及两者相结合得到的 Huber Loss，接着是应用于分位数回归的分位数损失 Quantile Loss，表明了平均绝对误差损失实际上是分位数损失的一种特例，在分类场景下，本文讨论了最常用的交叉熵损失函数 Cross Entropy Loss，包括二分类和多分类下的形式，并从信息论的角度解释了交叉熵损失函数，最后简单介绍了应用于 SVM 中的 Hinge 损失 Hinge Loss。</p>
 <span id="more"></span>
+
+
+
+<p>损失函数分为经验风险损失函数和结构风险损失函数。经验风险损失函数指预测结果和实际结果的差别，结构风险损失函数是指经验风险损失函数加上正则项。</p>
+<p>Loss Function、Cost Function 和 Objective Function 的区别和联系。在机器学习的语境下这三个术语经常被交叉使用。</p>
+<ul>
+<li>- 损失函数 Loss Function 通常是<strong>针对单个训练样本而言</strong>，给定一个模型输出 和一个真实 ，损失函数输出一个实值损失 </li>
+<li>- 代价函数 Cost Function 通常是<strong>针对整个训练集</strong>（或者在使用 mini-batch gradient descent 时一个 mini-batch）的总损失 </li>
+<li>- 目标函数 Objective Function 是一个更通用的术语，表示任意希望被优化的函数，用于机器学习领域和非机器学习领域（比如运筹优化）</li>
+</ul>
+<p>一句话总结三者的关系就是：A loss function is a part of a cost function which is a type of an objective function.</p>
+<h1 id="L2：均方差损失-Mean-Squared-Error-Loss"><a href="#L2：均方差损失-Mean-Squared-Error-Loss" class="headerlink" title="L2：均方差损失 Mean Squared Error Loss"></a>L2：均方差损失 Mean Squared Error Loss</h1><p>损失是机器学习、深度学习回归任务中最常用的一种损失函数，也称为 L2 Loss。</p>
+<p>从直觉上理解均方差损失，这个损失函数的最小值为 0（当预测等于真实值时），最大值为无穷大。下图是对于真实值 ，不同的预测值 的均方差损失的变化图。横轴是不同的预测值，纵轴是均方差损失，可以看到随着预测与真实值绝对误差 的增加，均方差损失呈二次方地增加。</p>
+<p><strong>在模型输出与真实值的误差服从高斯分布的假设下，最小化均方差损失函数与极大似然估计本质上是一致的</strong>，因此在这个假设能被满足的场景中（比如回归），均方差损失是一个很好的损失函数选择；当这个假设没能被满足的场景中（比如分类），均方差损失不是一个好的选择。</p>
+<h1 id="L1：平均绝对误差损失-Mean-Absolute-Error-Loss"><a href="#L1：平均绝对误差损失-Mean-Absolute-Error-Loss" class="headerlink" title="L1：平均绝对误差损失 Mean Absolute Error Loss"></a>L1：平均绝对误差损失 Mean Absolute Error Loss</h1><p>平均绝对误差 Mean Absolute Error (MAE) 是另一类常用的损失函数，也称为 L1 Loss。MAE 损失的最小值为 0（当预测等于真实值时），最大值为无穷大。可以看到随着预测与真实值绝对误差 的增加，MAE 损失呈线性增长。假设模型预测与真实值之间的误差服从拉普拉斯分布 Laplace distribution</p>
+<p>MAE 和 MSE 作为损失函数的主要区别是：</p>
+<p>MSE 损失相比 MAE 通常可以更快地收敛，但 MAE 损失对于 outlier 更加健壮，即更加不易受到 outlier 影响。</p>
+<h1 id="Huber-Loss"><a href="#Huber-Loss" class="headerlink" title="Huber Loss"></a>Huber Loss</h1><p>MSE 损失收敛快但容易受 outlier 影响，MAE 对 outlier 更加健壮但是收敛慢，Huber Loss 则是一种将 MSE 与 MAE 结合起来，取两者优点的损失函数，也被称作 Smooth Mean Absolute Error Loss 。</p>
+<p>Huber Loss 结合了 MSE 和 MAE 损失，在误差接近 0 时使用 MSE，使损失函数可导并且梯度更加稳定；在误差较大时使用 MAE 可以降低 outlier 的影响，使训练对 outlier 更加健壮。缺点是需要额外地设置一个 超参数。</p>
+<h1 id="分位数损失-Quantile-Loss"><a href="#分位数损失-Quantile-Loss" class="headerlink" title="分位数损失 Quantile Loss"></a>分位数损失 Quantile Loss</h1><p>通常的回归算法是拟合目标值的期望或者中位数，而分位数回归可以通过给定不同的分位点，拟合目标值的不同分位数。例如我们可以分别拟合出多个分位点，得到一个置信区间，</p>
+<p>这个损失函数是一个分段的函数 ，将 （高估） 和 （低估） 两种情况分开来，并分别给予不同的系数。当 时，低估的损失要比高估的损失更大，反过来当 时，高估的损失比低估的损失大；分位数损失实现了<strong>分别用不同的系数控制高估和低估的损失，进而实现分位数回归</strong>。特别地，当 时，分位数损失退化为 MAE 损失，从这里可以看出 MAE 损失实际上是分位数损失的一个特例</p>
+<h1 id="交叉熵损失-Cross-Entropy-Loss"><a href="#交叉熵损失-Cross-Entropy-Loss" class="headerlink" title="交叉熵损失 Cross Entropy Loss"></a>交叉熵损失 Cross Entropy Loss</h1><p>上文介绍的几种损失函数都是适用于回归问题损失函数，对于分类问题，最常用的损失函数是交叉熵损失函数 Cross Entropy Loss。</p>
+<h3 id="二分类"><a href="#二分类" class="headerlink" title="二分类"></a>二分类</h3><p>考虑二分类，在二分类中我们通常使用 Sigmoid 函数将模型的输出压缩到 (0, 1) 区间内 ，用来代表给定输入 ，模型判断为正类的概率。由于只有正负两类，因此同时也得到了负类的概率。</p>
+<p>二分类的交叉熵损失越接近目标值损失越小，随着误差变差，损失呈指数增长。</p>
+<h3 id="多分类"><a href="#多分类" class="headerlink" title="多分类"></a>多分类</h3><p>在多分类的任务中，交叉熵损失函数的推导思路和二分类是一样的，变化的地方是真实值 现在是一个 One-hot 向量，同时模型输出的压缩由原来的 Sigmoid 函数换成 Softmax 函数。Softmax 函数将每个维度的输出范围都限定在 之间，同时所有维度的输出和为 1，</p>
+<p>#合页损失 Hinge Loss</p>
+<p>合页损失 Hinge Loss 是另外一种二分类损失函数，适用于 maximum-margin 的分类，支持向量机 Support Vector Machine (SVM) 模型的损失函数本质上就是 Hinge Loss + L2 正则化。</p>
 
     </div>
 
@@ -381,7 +415,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#L2%EF%BC%9A%E5%9D%87%E6%96%B9%E5%B7%AE%E6%8D%9F%E5%A4%B1-Mean-Squared-Error-Loss"><span class="nav-number">2.</span> <span class="nav-text">L2：均方差损失 Mean Squared Error Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#L1%EF%BC%9A%E5%B9%B3%E5%9D%87%E7%BB%9D%E5%AF%B9%E8%AF%AF%E5%B7%AE%E6%8D%9F%E5%A4%B1-Mean-Absolute-Error-Loss"><span class="nav-number">3.</span> <span class="nav-text">L1：平均绝对误差损失 Mean Absolute Error Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Huber-Loss"><span class="nav-number">4.</span> <span class="nav-text">Huber Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E4%BD%8D%E6%95%B0%E6%8D%9F%E5%A4%B1-Quantile-Loss"><span class="nav-number">5.</span> <span class="nav-text">分位数损失 Quantile Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A4%E5%8F%89%E7%86%B5%E6%8D%9F%E5%A4%B1-Cross-Entropy-Loss"><span class="nav-number">6.</span> <span class="nav-text">交叉熵损失 Cross Entropy Loss</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E7%B1%BB"><span class="nav-number">6.0.1.</span> <span class="nav-text">二分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%88%86%E7%B1%BB"><span class="nav-number">6.0.2.</span> <span class="nav-text">多分类</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

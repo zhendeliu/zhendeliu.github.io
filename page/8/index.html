@@ -285,10 +285,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+          <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：损失函数用来评价模型的预测值和真实值不一样的程度，损失函数越好，通常模型的性能越好。不同的模型用的损失函数一般也不一样。</p>
 <p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
+<ol>
+<li>均方差损失 Mean Squared Error Loss</li>
+<li>平均绝对误差损失 Mean Absolute Error Loss</li>
+<li>Huber Loss</li>
+<li>分位数损失 Quantile Loss</li>
+<li>交叉熵损失 Cross Entropy Loss</li>
+<li>合页损失 Hinge Loss</li>
+</ol>
+<p>适用于回归的均方差损失 Mean Squared Loss、平均绝对误差损失 Mean Absolute Error Loss，两者的区别以及两者相结合得到的 Huber Loss，接着是应用于分位数回归的分位数损失 Quantile Loss，表明了平均绝对误差损失实际上是分位数损失的一种特例，在分类场景下，本文讨论了最常用的交叉熵损失函数 Cross Entropy Loss，包括二分类和多分类下的形式，并从信息论的角度解释了交叉熵损失函数，最后简单介绍了应用于 SVM 中的 Hinge 损失 Hinge Loss。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/#more" rel="contents">

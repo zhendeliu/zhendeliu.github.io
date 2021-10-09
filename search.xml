@@ -175,6 +175,15 @@
       </tags>
   </entry>
   <entry>
+    <title>cv算法面试问题总结（七）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%83%EF%BC%89/</url>
+    <content><![CDATA[<p>如何解决深度学习中模型训练效果不佳的情况？<br>神经网络中，是否隐藏层如果具有足够数量的单位，它就可以近似任何连续函数？<br>为什么更深的网络更好？<br>更多的数据是否有利于更深的神经网络？<br>不平衡数据是否会影响神经网络的分类效果？<br>无监督降维提供的是帮助还是摧毁？<br>是否可以将任何非线性作为激活函数?<br>批大小如何影响测试正确率？<br>初始化如何影响训练?<br>不同层的权重是否以不同的速度收敛？ </p>
+<p>正则化如何影响权重？<br>什么是fine-tuning？<br>什么是边框回归Bounding-Box regression，以及为什么要做、怎么做<br>请阐述下Selective Search的主要思想<br>什么是非极大值抑制（NMS）？<br>什么是深度学习中的anchor？<br>CNN的特点以及优势<br>深度学习中有什么加快收敛/降低训练难度的方法？<br>请写出链式法则并证明<br>请写出Batch Normalization的计算方法及其应用</p>
+<span id="more"></span>
+
+]]></content>
+  </entry>
+  <entry>
     <title>cv算法面试问题总结（一）</title>
     <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表："><a href="#问题列表：" class="headerlink" title="问题列表："></a>问题列表：</h1><ol>
@@ -274,15 +283,6 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>cv算法面试问题总结（七）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%83%EF%BC%89/</url>
-    <content><![CDATA[<p>如何解决深度学习中模型训练效果不佳的情况？<br>神经网络中，是否隐藏层如果具有足够数量的单位，它就可以近似任何连续函数？<br>为什么更深的网络更好？<br>更多的数据是否有利于更深的神经网络？<br>不平衡数据是否会影响神经网络的分类效果？<br>无监督降维提供的是帮助还是摧毁？<br>是否可以将任何非线性作为激活函数?<br>批大小如何影响测试正确率？<br>初始化如何影响训练?<br>不同层的权重是否以不同的速度收敛？ </p>
-<p>正则化如何影响权重？<br>什么是fine-tuning？<br>什么是边框回归Bounding-Box regression，以及为什么要做、怎么做<br>请阐述下Selective Search的主要思想<br>什么是非极大值抑制（NMS）？<br>什么是深度学习中的anchor？<br>CNN的特点以及优势<br>深度学习中有什么加快收敛/降低训练难度的方法？<br>请写出链式法则并证明<br>请写出Batch Normalization的计算方法及其应用</p>
-<span id="more"></span>
-
-]]></content>
   </entry>
   <entry>
     <title>cv算法面试问题总结（三）</title>
@@ -1552,6 +1552,8 @@
 </blockquote>
 </blockquote>
 <p>以上方式的效果要根据label个数，数据集规模等特征具体问题具体分析，表现可能不同，方式无非是probs融合和投票法的单独使用or结合。</p>
+<h2 id="多尺度训练"><a href="#多尺度训练" class="headerlink" title="多尺度训练"></a>多尺度训练</h2><p>多尺度训练是一种 <strong>「直接有效」</strong> 的方法，通过输入不同尺度的图像数据集，因为神经网络卷积池化的特殊性，这样可以让神经网络充分地学习不同分辨率下图像的特征，可以提高机器学习的性能。</p>
+<p>也可以用来处理过拟合效应，在图像数据集不是特别充足的情况下，可以先训练小尺寸图像，然后增大尺寸并再次训练相同模型，这样的思想在Yolo-v2的论文中也提到过</p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1851,12 +1853,57 @@
   <entry>
     <title>目标检测-YOLOv2</title>
     <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv2/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：从预测<strong>更准确（Better）</strong>，<strong>速度更快（Faster）</strong>，<strong>识别对象更多（Stronger）</strong>这三个方面进行了改进。</p>
+<p>方法简述：YOLOv2又叫YOLO9000，其能检测超过9000种类别的物体，在VOC2007数据集中在76FPS的速度下，能达到76.8%的mAP，在40FPS的速度下，能达到78.6%的mAP，很好的达到速度与精度的平衡。</p>
 <span id="more"></span>
 
+<h1 id="YOLOv2"><a href="#YOLOv2" class="headerlink" title="YOLOv2"></a>YOLOv2</h1><p>从预测<strong>更准确（Better）</strong>，<strong>速度更快（Faster）</strong>，<strong>识别对象更多（Stronger）</strong>这三个方面进行了改进。</p>
+<p>采用联合训练算法的基本思路就是：同时在检测数据集和分类数据集上训练物体检测器（Object Detectors ），<strong>用检测数据集的数据学习物体的准确位置，用分类数据集的数据来增加分类的类别量、提升健壮性。</strong></p>
+<h2 id="相比于v1的改进"><a href="#相比于v1的改进" class="headerlink" title="相比于v1的改进"></a><strong>相比于v1的改进</strong></h2><p><strong>算法层面：</strong></p>
+<ul>
+<li><p><strong>Anchor:<strong>引入了Faster R-CNN中使用的Anchor，作者在YOLOv2中设计的Anchor并不是像Faster R-CNN中人为事先设计的尺寸和高宽比一级个数，作者通过在所有训练图像的所有边界框上运行k-means聚类来选择锚的个数和形状(k = 5，因此它找到五个最常见的目标形状)。</strong>因此，YOLO的锚是特定于您正在训练(和测试)的数据集的。</strong>k-means算法找到了将所有数据点划分聚类的方法。这里的数据点是数据集中所有真实边界框的宽度和高度。但5个锚是否最佳选择?我们可以在不同数量的聚类上多次运行k-means，并计算真实标签框与它们最接近的锚框之间的平均IOU。毫无疑问，使用更多质心(k值越大)平均IOU越高，但这也意味着我们需要在每个网格单元中使用更多的检测器，并使模型运行速度变慢。对于YOLO v2，他们选择了5个锚作为召回率和模型复杂度之间的良好折衷。</p>
+</li>
+<li><p>**坐标预测:**在这里作者虽然引入了Faster R-CNN中类似的anchor，但是作者并没有像其意义，对bbox中心坐标的预测是基于anchor坐标的偏移量得到的，而是采用了v1中预测anchor中心点相对于对于单元格左上角位置的偏移</p>
+</li>
+<li><p><strong>损失函数：</strong></p>
+<p>1.在计算类概率误差时，YOLOv1中仅对每个单元格计算；而YOLOv2中对每一个anchor box都会计算类概率误差。</p>
+<p>2.YOLOv1中使用w和h的开方来缓和box的尺寸不平衡问题，而在YOLOv2中则通过赋值一个和w，h相关的权重函数达到该目的。</p>
+<p>3.与YOLOv1不同的是修正系数的改变，YOLOv1中no_objects_loss和objects_loss分别是0.5和1，而YOLOv2中则是1和5</p>
+</li>
+</ul>
+<p><strong>网络层面：</strong></p>
+<ul>
+<li>Darknet19: 与v1不同采用的是全卷积网络，取掉了v1中的全连接层，改用全局平均池化，去掉v1中最后一个池化层，增加特征的分辨率。网络共19个卷积层，5个最大池化层，</li>
+</ul>
+<p><strong>训练检测方面：</strong></p>
+<ul>
+<li><strong>训练图像分辨率：</strong>v1在ImageNet上预训练时用的224x224尺寸的图片，正式训练时用448x448,这需要模型适应新的分辨率。YOLOv2是直接使用448x448的输入训练，随着输入分辨率的增加，模型提高了4%的mAP。</li>
+<li><strong>使用了WordTree：</strong>通过WordTree来混合检测数据集与识别数据集之中的数据，使得这一网络结构可以实时地检测超过9000种物体分类。</li>
+<li><strong>联合训练算法：</strong>使用这种联合训练技术同时在ImageNet和COCO数据集上进行训练。YOLO9000进一步缩小了监测数据集与识别数据集之间的代沟。联合训练算法的基本思路就是：同时在检测数据集和分类数据集上训练物体检测器（Object Detectors ），用检测数据集的数据学习物体的准确位置，用分类数据集的数据来增加分类的类别量、提升健壮性。分类信息学习自ImageNet分类数据集，而物体位置检测则学习自COCO检测数据集。</li>
+<li><strong>多尺度训练：</strong>为了提高模型的鲁棒性，在训练的时候采用了多尺度的输入进行训练，由于网络的下采样因子是32，故输入尺寸选择32的倍数288，352，…，544</li>
+<li><strong>多尺度检测，reorg层：</strong>作者将前一层的26<em>26的特征图做一个reorg操作，将其变成13</em>13但又不破坏其大特征图的特征，然后和本层的13*13的1特征图进行concat。</li>
+</ul>
+<p><strong>技巧方面：</strong></p>
+<ul>
+<li><strong>Batch Normalization：</strong>使用Batch Normalization对网络进行优化，让网络提高了收敛性，同时还消除了对其他形式的正则化（regularization）的依赖。通过对YOLO的每一个卷积层增加Batch Normalization，最终使得mAP提高了2%，同时还使model正则化。使用Batch Normalization可以从model中去掉Dropout，而不会产生过拟合。</li>
+</ul>
+<ol>
+<li><p>改进点</p>
+<ol>
+<li><p>BN层</p>
+</li>
+<li><p>高分辨率分类 224*224 -》448 * 448</p>
+</li>
+<li><p>Convolution with anchor boxes： YOLOv1包含有全连接层，从而能直接预测Bounding Boxes的坐标值。Faster R-CNN算法只用卷积层与Region Proposal Network来预测Anchor Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。</p>
+<p>借鉴Faster RCNN的做法，YOLOv2也尝试采用先验框（anchor）。在每个grid预先设定一组不同大小和宽高比的边框，来覆盖整个图像的不同位置和多种尺度，这些先验框作为预定义的候选区在神经网络中将检测其中是否存在对象，以及微调边框的位置</p>
+</li>
+<li><p>YOLOv2的做法是对训练集中标注的边框进行K-means聚类分析，以寻找尽可能匹配样本的边框尺寸。</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>下面我们具体看看y1,y2,y3是如何而来的。<br>网络中作者进行了三次检测，分别是在32倍降采样，16倍降采样，8倍降采样时进行检测，这样在多尺度的feature map上检测跟SSD有点像。在网络中使用up-sample（上采样）的原因:网络越深的特征表达效果越好，比如在进行16倍降采样检测，如果直接使用第四次下采样的特征来检测，这样就使用了浅层特征，这样效果一般并不好。如果想使用32倍降采样后的特征，但深层特征的大小太小，因此YOLOv3使用了步长为2的up-sample（上采样），把32倍降采样得到的feature map的大小提升一倍，也就成了16倍降采样后的维度。同理8倍采样也是对16倍降采样的特征进行步长为2的上采样，这样就可以使用深层特征进行detection。</p>
+<p>作者通过上采样将深层特征提取，其维度是与将要融合的特征层维度相同的（channel不同）。如下图所示，85层将13×13×256的特征上采样得到26×26×256，再将其与61层的特征拼接起来得到26×26×768。为了得到channel255，还需要进行一系列的3×3，1×1卷积操作，这样既可以提高非线性程度增加泛化性能提高网络精度，又能减少参数提高实时性。52×52×255的特征也是类似的过程。</p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1879,6 +1926,24 @@
 <p>缺点：</p>
 <span id="more"></span>
 
+<p><img src="/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLO%E7%B3%BB%E5%88%97/1.png"></p>
+<h2 id="改进点"><a href="#改进点" class="headerlink" title="改进点"></a><strong>改进点</strong></h2><ul>
+<li><p><strong>网络：</strong>Darknet53，采用简化的residual block 取代了原来 1×1 和 3×3的block; (其实就是加了一个shortcut，也是网络加深必然所要采取的手段)。这和上一点是有关系的，v2的darknet-19变成了v3的darknet-53，为啥呢？就是需要上采样啊，卷积层的数量自然就多了，另外作者还是用了一连串的3<em>3、1</em>1卷积，3<em>3的卷积增加channel，而1</em>1的卷积在于压缩3*3卷积后的特征表示。</p>
+</li>
+<li><p><strong>分类损失：</strong>在YOLOv3中，每个框用多标签分类来预测边界框可能包含的类。该算法将v2中的softmax替换成了逻辑回归loss，在训练过程中使用二原交叉熵损失来进行类别预测。对于重叠的标签，多标签方法可以更好的模拟数据。</p>
+</li>
+<li><p><strong>跨尺度预测：</strong>YOLOv3采用多个尺度融合的方式做预测。原来YOLOv2中有一个层叫：passthrough layer，假设最后提取的特征图尺度是13<em>13，那么这个层的作用就是将前面一层的26</em>26的特征图和本层13<em>13的特征图进行连接，有点像ResNet。这样的操作是为了加强YOLO算法对小目标检测的精度。在YOLOv3中，作者采用了类似与FPN的上采样和融合做法（最后融合了3个尺度，其他2个尺度分别是26</em>26和52*52），在多给尺度的特征图上做预测，对于小目标的提升效果还是非常明显的。虽然在YOLOv3中每个网格预测3个边界框，比v2中的5个要少，但v3采用了多个尺度的特征融合，所以边界框的数量也比之前多很多。</p>
+</li>
+</ul>
+<h2 id="尝试，但效果不好的工作"><a href="#尝试，但效果不好的工作" class="headerlink" title="尝试，但效果不好的工作"></a><strong>尝试，但效果不好的工作</strong></h2><ul>
+<li><strong>Anchor box坐标的偏移预测。</strong>作者尝试了常规的Anchor box预测方法，比如利用线性激活将坐标x、y的偏移程度预测为边界框宽度或高度的倍数。但发现这种做法降低了模型的稳定性，且效果不佳。 用线性方法预测x,y，而不是使用逻辑方法。我们尝试使用线性激活来直接预测x，y的offset，而不是逻辑激活，还降低了mAP。</li>
+</ul>
+<ul>
+<li><strong>focal loss。</strong>我们尝试使用focal loss，但使我们的mAP降低了2%。 对于focal loss函数试图解决的问题，YOLOv3从理论上来说已经很强大了，因为它具有单独的对象预测和条件类别预测。因此，对于大多数例子来说，类别预测没有损失？或者其他的东西？我们并不完全确定。</li>
+</ul>
+<ul>
+<li><strong>双IOU阈值和真值分配。</strong>在训练期间，Faster RCNN用了两个IOU阈值，如果预测的边框与ground truth的IoU&gt;0.7，那它是个正样本；如果在[0.3，0.7]之间，则忽略；如果和ground truth的IoU&lt;0.3，那它就是个负样本。作者尝试了这种思路，但效果并不好。</li>
+</ul>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1961,7 +2026,7 @@
   <entry>
     <title>目标检测-YOLOv1</title>
     <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLO%E7%B3%BB%E5%88%97/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>YOLOv1是典型的目标检测one stage方法，用回归的方法去做目标检测，执行速度快，达到非常高效的检测，其背后的原理和思想也非常简单。YOLOv1的基本思想是把一副图片，首先reshape成448x448大小（由于网络中使用了全连接层，所以图片的尺寸需固定大小输入到CNN中），然后将划分成SxS个单元格（原文中S=7），以每个格子所在位置和对应内容为基础，来预测：</p>
 <p>方法简述：</p>
 <p>优点：</p>
 <p>缺点：</p>
@@ -1974,43 +2039,58 @@
 </li>
 <li><p>实现方法</p>
 <ol>
-<li>将整张图分为S*S的网格，如果某个object的中心落在这个网格中，这个网格就负责预测这个object</li>
-<li>每个网格要预测B个bounding box，每个bounding box除了要回归自身的位置之外，还要附带预测一个confidence值。这个confidence代表了所预测的box中含有object的置信度和这个box预测的有多准两重信息</li>
-<li>每个bounding Box 有五个值要预测(x, y, w, h)和confidence。每个网格还要预测一个类别信息，记为C类。则SxS个网格，每个网格要预测B个bounding box还要预测C个categories。输出就是S x S x (5*B+C)的一个tensor。</li>
-<li><strong>简单的概括就是：</strong><ul>
+<li><p>将整张图分为S*S的网格，如果某个object的中心落在这个网格中，这个网格就负责预测这个object</p>
+</li>
+<li><p>每个网格要预测B个bounding box，每个bounding box除了要回归自身的位置之外，还要附带预测一个confidence值。这个confidence代表了所预测的box中含有object的置信度和这个box预测的有多准两重信息</p>
+</li>
+<li><p>每个bounding Box 有五个值要预测(x, y, w, h)和confidence。每个网格还要预测一个类别信息，记为C类。则SxS个网格，每个网格要预测B个bounding box还要预测C个categories。输出就是<strong>S x S x (5*B+C)的一个tenso</strong>r。</p>
+</li>
+<li><p><strong>简单的概括就是：</strong></p>
+<ul>
 <li>给个一个输入图像，首先将图像划分成7*7的网格；</li>
 <li>对于每个网格，我们都预测2个边框（包括每个边框是目标的置信度以及每个边框区域在多个类别上的概率）；</li>
-<li>根据上一步可以预测出7<em>7</em>2个目标窗口，然后根据阈值去除可能性比较低的目标窗口，最后NMS去除冗余窗口即可。</li>
+<li>根据上一步可以预测出7 * 7 * 2个目标窗口，然后根据阈值去除可能性比较低的目标窗口，最后NMS去除冗余窗口即可。</li>
+<li>每个网格包含B个检测框和一个C个类别的概率值，每个检测框含有五个值要预测(x, y, w, h)和confidence</li>
 </ul>
+</li>
+<li><p><strong>注意（重要细节）:</strong></p>
+<p>\1. x，y，w，h，confidence都被限制在区间[0,1]。</p>
+<p>\2. 置信度confidence值只有2种情况，要么为0（边界框中不含目标，P(object)=0），要么为预测框与标注框的IOU，因为P(Object)只有0或1，两种可能，有目标的中心落在格子内，那么P(object)=1，否则为0，不存在（0，1）区间中的值。其他论文中置信度的定义可能跟YOLOv1有些不同，一般置信度指的是预测框中是某类别目标的概率，在[0,1]之间。</p>
+<p>\3. 每个格子预测C个类别的概率分数，而不是每个每个检测框都需要预测C个类别的概率分数。</p>
 </li>
 </ol>
 </li>
 <li><p>在YOLOv1的损失函数中：</p>
-<p>Loss= 坐标预测的Loss + 含object的Box的confidence预测 + 不含object的Box的confidence预测 + 类别预测</p>
+<ol>
+<li>YOLOv1对位置误差，confidence误差，分类误差均使用了均方差作为损失函数。</li>
+<li>三部分误差损失（位置误差，confidence误差，分类误差），在损失函数中所占权重不一样，位置误差权重系数最大，为5</li>
+<li>由于一副图片中没有目标的网格占大多数，有目标的网格占少数，所以损失函数中对没有目标的网格中预测的bbox的confidence误差给予小的权重系数，为0.5。</li>
+<li>有目标的网格中预测的bbox的confidence损失和分类损失，权重系数正常为1。</li>
+<li>由于相同的位置误差对大目标和小目标的影响是不同的，相同的偏差对于小目标来说影响要比大目标大，故作者选择将预测的bbox的w,h先取其平方根，再求均方差损失。</li>
+<li>一个网格预测2个bbox，在计算损失函数的时候，只取与ground truth box中IoU大的那个预测框来计算损失。</li>
+<li>分类误差，只有当单元格中含有目标时才计算，没有目标的单元格的分类误差不计算在内。</li>
+</ol>
+</li>
+<li><p>激活函数</p>
+<ul>
+<li>最后一层全连接层用线性激活函数</li>
+<li>其余层采用leak RELU</li>
+<li></li>
+</ul>
+</li>
+</ol>
+<h1 id="YOLOv1的缺陷"><a href="#YOLOv1的缺陷" class="headerlink" title="YOLOv1的缺陷"></a>YOLOv1的缺陷</h1><ul>
+<li>首先，每个单元格只预测2个bbox，然后每个单元格最后只取与gt_bbox的IOU高的那个最为最后的检测框，也只是说每个单元格最多只预测一个目标，若单个单元格有多个目标时，只能检测出其他的一个，导致小目标漏检，因此YOLOv1对小目标检测效果不好。</li>
+<li>其次，虽然YOLOv1中损失函数中位置误差，对预测的w，h取平方根处理再求均方差，来缓解相同位置误差对大目标，小目标影响不同的弊端，但是作用甚微，没有根本解决问题对于小物体。小的目标的 置信度误差也会对网络优化过程造成很大的影响，从而降低了物体检测的定位准确性。</li>
+<li>由于输出层为全连接层，因此在检测时，YOLO 训练模型只支持与训练图像相同的输入分辨率的图片。</li>
+</ul>
+<ol>
+<li><p>Loss= 坐标预测的Loss + 含object的Box的confidence预测 + 不含object的Box的confidence预测 + 类别预测</p>
 <p>只有当某个网格中有object的时候才对classification error进行惩罚。<br>只有当某个box predictor对某个ground truth box负责的时候，才会对box的coordinate error进行惩罚，而对哪个ground truth box负责就看其预测值和ground truth box的IoU是不是在那个cell的所有box中最大。<br>注：</p>
 <p>YOLOv1方法模型训练依赖于物体识别标注数据，因此，对于非常规的物体形状或比例，YOLOv1的检测效果并不理想。<br>YOLOv1采用了多个下采样层，网络学到的物体特征并不精细，因此也会影响检测效果。<br>YOLOv1的loss函数中，大物体IOU误差和小物体IOU误差对网络训练中loss贡献值接近（虽然采用求平方根方式，但没有根本解决问题）。因此，对于小物体，小的IOU误差也会对网络优化过程造成很大的影响，从而降低了物体检测的定位准确性。<br>YOLO的缺点</p>
 <p>YOLO对相互靠的很近的物体和很小的群体检测效果不好，这是因为一个网格中只预测了两个框，并且只属于一类；<br>同一类物体出现的新的不常见的长宽比和其他情况时，泛化能力偏弱；<br>由于损失函数的问题，定位误差是影响检测效果的主要原因。尤其是大小物体的处理上，还有待加强。</p>
 </li>
 </ol>
-<h1 id="YOLOv2"><a href="#YOLOv2" class="headerlink" title="YOLOv2"></a>YOLOv2</h1><p>从预测<strong>更准确（Better）</strong>，<strong>速度更快（Faster）</strong>，<strong>识别对象更多（Stronger）</strong>这三个方面进行了改进。</p>
-<p>采用联合训练算法的基本思路就是：同时在检测数据集和分类数据集上训练物体检测器（Object Detectors ），<strong>用检测数据集的数据学习物体的准确位置，用分类数据集的数据来增加分类的类别量、提升健壮性。</strong></p>
-<ol>
-<li><p>改进点</p>
-<ol>
-<li><p>BN层</p>
-</li>
-<li><p>高分辨率分类 224*224 -》448 * 448</p>
-</li>
-<li><h3 id="Convolution-with-anchor-boxes：-YOLOv1包含有全连接层，从而能直接预测Bounding-Boxes的坐标值。Faster-R-CNN算法只用卷积层与Region-Proposal-Network来预测Anchor-Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。"><a href="#Convolution-with-anchor-boxes：-YOLOv1包含有全连接层，从而能直接预测Bounding-Boxes的坐标值。Faster-R-CNN算法只用卷积层与Region-Proposal-Network来预测Anchor-Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。" class="headerlink" title="Convolution with anchor boxes： YOLOv1包含有全连接层，从而能直接预测Bounding Boxes的坐标值。Faster R-CNN算法只用卷积层与Region Proposal Network来预测Anchor Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。"></a>Convolution with anchor boxes： YOLOv1包含有全连接层，从而能直接预测Bounding Boxes的坐标值。Faster R-CNN算法只用卷积层与Region Proposal Network来预测Anchor Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。</h3><p>借鉴Faster RCNN的做法，YOLOv2也尝试采用先验框（anchor）。在每个grid预先设定一组不同大小和宽高比的边框，来覆盖整个图像的不同位置和多种尺度，这些先验框作为预定义的候选区在神经网络中将检测其中是否存在对象，以及微调边框的位置</p>
-</li>
-<li><p>YOLOv2的做法是对训练集中标注的边框进行K-means聚类分析，以寻找尽可能匹配样本的边框尺寸。</p>
-<p><img src="/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLO%E7%B3%BB%E5%88%97/1.png"></p>
-</li>
-</ol>
-</li>
-</ol>
-<p>下面我们具体看看y1,y2,y3是如何而来的。<br>网络中作者进行了三次检测，分别是在32倍降采样，16倍降采样，8倍降采样时进行检测，这样在多尺度的feature map上检测跟SSD有点像。在网络中使用up-sample（上采样）的原因:网络越深的特征表达效果越好，比如在进行16倍降采样检测，如果直接使用第四次下采样的特征来检测，这样就使用了浅层特征，这样效果一般并不好。如果想使用32倍降采样后的特征，但深层特征的大小太小，因此YOLOv3使用了步长为2的up-sample（上采样），把32倍降采样得到的feature map的大小提升一倍，也就成了16倍降采样后的维度。同理8倍采样也是对16倍降采样的特征进行步长为2的上采样，这样就可以使用深层特征进行detection。</p>
-<p>作者通过上采样将深层特征提取，其维度是与将要融合的特征层维度相同的（channel不同）。如下图所示，85层将13×13×256的特征上采样得到26×26×256，再将其与61层的特征拼接起来得到26×26×768。为了得到channel255，还需要进行一系列的3×3，1×1卷积操作，这样既可以提高非线性程度增加泛化性能提高网络精度，又能减少参数提高实时性。52×52×255的特征也是类似的过程。</p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -2074,11 +2154,45 @@
   <entry>
     <title>神经网络-损失函数</title>
     <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：损失函数用来评价模型的预测值和真实值不一样的程度，损失函数越好，通常模型的性能越好。不同的模型用的损失函数一般也不一样。</p>
 <p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
+<ol>
+<li>均方差损失 Mean Squared Error Loss</li>
+<li>平均绝对误差损失 Mean Absolute Error Loss</li>
+<li>Huber Loss</li>
+<li>分位数损失 Quantile Loss</li>
+<li>交叉熵损失 Cross Entropy Loss</li>
+<li>合页损失 Hinge Loss</li>
+</ol>
+<p>适用于回归的均方差损失 Mean Squared Loss、平均绝对误差损失 Mean Absolute Error Loss，两者的区别以及两者相结合得到的 Huber Loss，接着是应用于分位数回归的分位数损失 Quantile Loss，表明了平均绝对误差损失实际上是分位数损失的一种特例，在分类场景下，本文讨论了最常用的交叉熵损失函数 Cross Entropy Loss，包括二分类和多分类下的形式，并从信息论的角度解释了交叉熵损失函数，最后简单介绍了应用于 SVM 中的 Hinge 损失 Hinge Loss。</p>
 <span id="more"></span>
+
+
+
+<p>损失函数分为经验风险损失函数和结构风险损失函数。经验风险损失函数指预测结果和实际结果的差别，结构风险损失函数是指经验风险损失函数加上正则项。</p>
+<p>Loss Function、Cost Function 和 Objective Function 的区别和联系。在机器学习的语境下这三个术语经常被交叉使用。</p>
+<ul>
+<li>- 损失函数 Loss Function 通常是<strong>针对单个训练样本而言</strong>，给定一个模型输出 和一个真实 ，损失函数输出一个实值损失 </li>
+<li>- 代价函数 Cost Function 通常是<strong>针对整个训练集</strong>（或者在使用 mini-batch gradient descent 时一个 mini-batch）的总损失 </li>
+<li>- 目标函数 Objective Function 是一个更通用的术语，表示任意希望被优化的函数，用于机器学习领域和非机器学习领域（比如运筹优化）</li>
+</ul>
+<p>一句话总结三者的关系就是：A loss function is a part of a cost function which is a type of an objective function.</p>
+<h1 id="L2：均方差损失-Mean-Squared-Error-Loss"><a href="#L2：均方差损失-Mean-Squared-Error-Loss" class="headerlink" title="L2：均方差损失 Mean Squared Error Loss"></a>L2：均方差损失 Mean Squared Error Loss</h1><p>损失是机器学习、深度学习回归任务中最常用的一种损失函数，也称为 L2 Loss。</p>
+<p>从直觉上理解均方差损失，这个损失函数的最小值为 0（当预测等于真实值时），最大值为无穷大。下图是对于真实值 ，不同的预测值 的均方差损失的变化图。横轴是不同的预测值，纵轴是均方差损失，可以看到随着预测与真实值绝对误差 的增加，均方差损失呈二次方地增加。</p>
+<p><strong>在模型输出与真实值的误差服从高斯分布的假设下，最小化均方差损失函数与极大似然估计本质上是一致的</strong>，因此在这个假设能被满足的场景中（比如回归），均方差损失是一个很好的损失函数选择；当这个假设没能被满足的场景中（比如分类），均方差损失不是一个好的选择。</p>
+<h1 id="L1：平均绝对误差损失-Mean-Absolute-Error-Loss"><a href="#L1：平均绝对误差损失-Mean-Absolute-Error-Loss" class="headerlink" title="L1：平均绝对误差损失 Mean Absolute Error Loss"></a>L1：平均绝对误差损失 Mean Absolute Error Loss</h1><p>平均绝对误差 Mean Absolute Error (MAE) 是另一类常用的损失函数，也称为 L1 Loss。MAE 损失的最小值为 0（当预测等于真实值时），最大值为无穷大。可以看到随着预测与真实值绝对误差 的增加，MAE 损失呈线性增长。假设模型预测与真实值之间的误差服从拉普拉斯分布 Laplace distribution</p>
+<p>MAE 和 MSE 作为损失函数的主要区别是：</p>
+<p>MSE 损失相比 MAE 通常可以更快地收敛，但 MAE 损失对于 outlier 更加健壮，即更加不易受到 outlier 影响。</p>
+<h1 id="Huber-Loss"><a href="#Huber-Loss" class="headerlink" title="Huber Loss"></a>Huber Loss</h1><p>MSE 损失收敛快但容易受 outlier 影响，MAE 对 outlier 更加健壮但是收敛慢，Huber Loss 则是一种将 MSE 与 MAE 结合起来，取两者优点的损失函数，也被称作 Smooth Mean Absolute Error Loss 。</p>
+<p>Huber Loss 结合了 MSE 和 MAE 损失，在误差接近 0 时使用 MSE，使损失函数可导并且梯度更加稳定；在误差较大时使用 MAE 可以降低 outlier 的影响，使训练对 outlier 更加健壮。缺点是需要额外地设置一个 超参数。</p>
+<h1 id="分位数损失-Quantile-Loss"><a href="#分位数损失-Quantile-Loss" class="headerlink" title="分位数损失 Quantile Loss"></a>分位数损失 Quantile Loss</h1><p>通常的回归算法是拟合目标值的期望或者中位数，而分位数回归可以通过给定不同的分位点，拟合目标值的不同分位数。例如我们可以分别拟合出多个分位点，得到一个置信区间，</p>
+<p>这个损失函数是一个分段的函数 ，将 （高估） 和 （低估） 两种情况分开来，并分别给予不同的系数。当 时，低估的损失要比高估的损失更大，反过来当 时，高估的损失比低估的损失大；分位数损失实现了<strong>分别用不同的系数控制高估和低估的损失，进而实现分位数回归</strong>。特别地，当 时，分位数损失退化为 MAE 损失，从这里可以看出 MAE 损失实际上是分位数损失的一个特例</p>
+<h1 id="交叉熵损失-Cross-Entropy-Loss"><a href="#交叉熵损失-Cross-Entropy-Loss" class="headerlink" title="交叉熵损失 Cross Entropy Loss"></a>交叉熵损失 Cross Entropy Loss</h1><p>上文介绍的几种损失函数都是适用于回归问题损失函数，对于分类问题，最常用的损失函数是交叉熵损失函数 Cross Entropy Loss。</p>
+<h3 id="二分类"><a href="#二分类" class="headerlink" title="二分类"></a>二分类</h3><p>考虑二分类，在二分类中我们通常使用 Sigmoid 函数将模型的输出压缩到 (0, 1) 区间内 ，用来代表给定输入 ，模型判断为正类的概率。由于只有正负两类，因此同时也得到了负类的概率。</p>
+<p>二分类的交叉熵损失越接近目标值损失越小，随着误差变差，损失呈指数增长。</p>
+<h3 id="多分类"><a href="#多分类" class="headerlink" title="多分类"></a>多分类</h3><p>在多分类的任务中，交叉熵损失函数的推导思路和二分类是一样的，变化的地方是真实值 现在是一个 One-hot 向量，同时模型输出的压缩由原来的 Sigmoid 函数换成 Softmax 函数。Softmax 函数将每个维度的输出范围都限定在 之间，同时所有维度的输出和为 1，</p>
+<p>#合页损失 Hinge Loss</p>
+<p>合页损失 Hinge Loss 是另外一种二分类损失函数，适用于 maximum-margin 的分类，支持向量机 Support Vector Machine (SVM) 模型的损失函数本质上就是 Hinge Loss + L2 正则化。</p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -2123,9 +2237,98 @@
     <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
+<p>深度学习优化算法经历了 SGD -&gt; SGDM -&gt; NAG -&gt;AdaGrad -&gt; AdaDelta -&gt; Adam -&gt; Nadam 这样的发展历程。</p>
 <span id="more"></span>
+
+
+
+<p>深度学习优化算法经历了 SGD -&gt; SGDM -&gt; NAG -&gt;AdaGrad -&gt; AdaDelta -&gt; Adam -&gt; Nadam 这样的发展历程。</p>
+<h1 id="优化算法通用框架"><a href="#优化算法通用框架" class="headerlink" title="优化算法通用框架"></a>优化算法通用框架</h1><p>首先定义：待优化参数：w ，目标函数： f(w)，初始学习率 α。</p>
+<p>而后，开始进行迭代优化。在每个epoch t：</p>
+<ol>
+<li><p>计算目标函数关于当前参数的梯度： </p>
+</li>
+<li><p>根据历史梯度计算一阶动量和二阶动量：</p>
+</li>
+<li><p>计算当前时刻的下降梯度</p>
+</li>
+<li><p>根据下降梯度进行更新</p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/%E9%80%9A%E7%94%A8%E6%A1%86%E6%9E%B6.png"></p>
+</li>
+</ol>
+<p>一般而言，一个物体的动量指的的是这个物体在它运动方向上保持运动的趋势。动量是矢量这里我们可以把梯度理解成力，力是有大小和方向的，而且力可以改变速度的大小和方向，并且速度可以累积。这里把权值理解成速度，当力（梯度）改变时就会有一段逐渐加速或逐渐减速的过程，我们通过引入动量就可以加速我们的学习过程，可以在鞍点处继续前行，也可以逃离一些较小的局部最优区域下面类比物理学定义这里的动量</p>
+<p><strong>一阶动量</strong>是各个时刻梯度方向的指数移动平均值，约等于最近 个时刻的梯度向量和的平均值（移动平均是啥看最上面的文章）。也就是说， 时刻的下降方向，不仅由当前点的梯度方向决定，而且由此前累积的下降方向决定。 的经验值为0.9，这就意味着下降方向主要是此前累积的下降方向，并略微偏向当前时刻的下降方向。在梯度方向改变时，momentum能够降低参数更新速度，从而减少震荡，在梯度方向相同时，momentum可以加速参数更新， 从而加速收敛，</p>
+<p><strong>二阶动量</strong>用来度量历史更新频率的，二阶动量是迄今为止所有梯度值的平方和，即 ，在最上面的框架中 （在这里 ）， 也就是说，我们的学习率现在是 （一般为了避免分母为0，会在分母上加一个小的平滑项 ），从这里我们就会发现 是恒大于0的，而且参数更新越频繁，二阶动量越大，学习率就越小，这一方法在稀疏数据场景下表现非常好</p>
+<p>reference:<a href="https://www.163.com/dy/article/GKBN2P0H0519EA27.html">https://www.163.com/dy/article/GKBN2P0H0519EA27.html</a></p>
+<h1 id="SGD"><a href="#SGD" class="headerlink" title="SGD"></a>SGD</h1><p><strong>与SGD相关的都是固定学习率的优化算法</strong></p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/SGD.PNG"></p>
+<p>SGD的优点：</p>
+<ol>
+<li><p>虽然看起来SGD波动非常大，会走很多弯路，但是对梯度的要求很低（计算梯度快），而且对于引入噪声，大量的理论和实践工作证明，只要噪声不是特别大，SGD都能很好地收敛。</p>
+</li>
+<li><p>应用大型数据集时，训练速度很快。比如每次从百万数据样本中，取几百个数据点，算一个SGD梯度，更新一下模型参数。相比于标准梯度下降法的遍历全部样本，每输入一个样本更新一次参数，要快得多。</p>
+</li>
+</ol>
+<p>SGD的缺点：</p>
+<ol>
+<li>SGD也没能单独克服局部最优解的问题（主要）。</li>
+<li>SGD在随机选择梯度的同时会引入噪声，使得权值更新的方向不一定正确（次要）。</li>
+</ol>
+<h1 id="SGD-with-Momentum"><a href="#SGD-with-Momentum" class="headerlink" title="SGD with Momentum"></a>SGD with Momentum</h1><p>为了抑制SGD的震荡，SGDM认为梯度下降过程可以加入惯性。下坡的时候，如果发现是陡坡，那就利用惯性跑的快一些。SGDM全称是SGD with momentum，在SGD基础上引入了一阶动量：</p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/SGDM.PNG"></p>
+<p>一阶动量是各个时刻梯度方向的指数移动平均值，约等于最近 1/(1-β1) 个时刻的梯度向量和的平均值。</p>
+<p>也就是说，t 时刻的下降方向，不仅由当前点的梯度方向决定，而且由<strong>此前累积的下降方向</strong>决定。β1的经验值为0.9，这就意味着下降方向主要是此前累积的下降方向，并略微偏向当前时刻的下降方向。就如高速公路上汽车转弯，在高速向前的同时略微偏向，不会急转弯。</p>
+<h1 id="SGD-with-Nesterov-Acceleration-（NAG）"><a href="#SGD-with-Nesterov-Acceleration-（NAG）" class="headerlink" title="SGD with Nesterov Acceleration （NAG）"></a>SGD with Nesterov Acceleration （NAG）</h1><p>SGD 还有一个问题是困在局部最优的沟壑里面震荡。比如走到一个盆地，四周都是略高的小山，没有下坡的方向，那就只能待在这里了。可是如果爬上高地，就会发现外面的世界还很广阔。因此，不能停留在当前位置去观察未来的方向，而要向前一步、多看一步、看远一些。</p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/NAG.PNG"></p>
+<p>SGD及其变种以同样的学习率更新每个参数，但深度神经网络往往包含大量的参数，这些参数并不是总会用得到（想想大规模的embedding）。对于经常更新的参数，我们已经积累了大量关于它的知识，不希望被单个样本影响太大，希望学习速率慢一些；对于偶尔更新的参数，我们了解的信息太少，希望能从每个偶然出现的样本身上多学一些，即学习速率大一些。</p>
+<h1 id="AdaGrad（自适应梯度算法）"><a href="#AdaGrad（自适应梯度算法）" class="headerlink" title="AdaGrad（自适应梯度算法）"></a>AdaGrad（自适应梯度算法）</h1><p>前面的随机梯度和动量随机梯度算法都是使用全局的学习率，所有的参数都是统一步伐的进行更新的，如果可以针对每个参数设置学习率可能会更好，让他根据情况进行调整，也就是自适应梯度下降。怎么样去度量历史更新频率呢？那就是二阶动量——该维度上，迄今为止所有梯度值的平方和</p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/AdaGrad.PNG"></p>
+<p>缺点：</p>
+<p>仍需要手工设置一个全局学习率 , 如果 设置过大的话，会使regularizer过于敏感，对梯度的调节太大</p>
+<p>中后期，分母上梯度累加的平方和会越来越大，使得参数更新量趋近于0，使得训练提前结束，无法学习</p>
+<h1 id="AdaDelta-RMSProp"><a href="#AdaDelta-RMSProp" class="headerlink" title="AdaDelta/RMSProp"></a>AdaDelta/RMSProp</h1><p>由于AdaGrad单调递减的学习率变化过于激进，我们考虑一个改变二阶动量计算方法的策略：不累积全部历史梯度，而只关注过去一段时间窗口的下降梯度。这也就是AdaDelta名称中Delta的来历。</p>
+<p>修改的思路很简单。前面我们讲到，指数移动平均值大约就是过去一段时间的平均值，因此我们用这一方法来计算二阶累积动量：</p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/AdaDelta.PNG"></p>
+<p>就避免了二阶动量持续累积、导致训练过程提前结束的问题了。</p>
+<p>特点：</p>
+<p>​    训练初中期，加速效果不错，很快</p>
+<p>​    训练后期，反复在局部最小值附近抖动</p>
+<h1 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h1><p>我们看到，SGD-M在SGD基础上增加了一阶动量，AdaGrad和AdaDelta在SGD基础上增加了二阶动量。把一阶动量和二阶动量都用起来，就是Adam了——Adaptive + Momentum。</p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/Adam.PNG"></p>
+<p>特点如下：</p>
+<ol>
+<li>Adam梯度经过偏置校正后，每一次迭代学习率都有一个固定范围，使得参数比较平稳。</li>
+<li>结合了Adagrad善于处理稀疏梯度和RMSprop善于处理非平稳目标的优点</li>
+<li>为不同的参数计算不同的自适应学习率</li>
+<li>也适用于大多非凸优化问题——适用于大数据集和高维空间。</li>
+</ol>
+<h1 id="Nadam"><a href="#Nadam" class="headerlink" title="Nadam"></a>Nadam</h1><p>Nesterov + Adam是集大成者，将Adam中的第一步替换为Nesterov</p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/NAdam.PNG"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><strong>Adam可能的问题1:</strong></p>
+<p>SGD没有用到二阶动量，因此学习率是恒定的（实际使用过程中会采用学习率衰减策略，因此学习率递减）。AdaGrad的二阶动量不断累积，单调递增，因此学习率是单调递减的。因此，这两类算法会使得学习率不断递减，最终收敛到0，模型也得以收敛。</p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/Adam%E4%BF%AE%E6%AD%A3.PNG"></p>
+<p><strong>Adam可能的问题2:</strong></p>
+<p><strong>后期Adam的学习率太低，影响了有效的收敛</strong>。</p>
+<p>于是提出了一个用来改进Adam的方法：<strong>前期用Adam，享受Adam快速收敛的优势；后期切换到SGD，慢慢寻找最优解。</strong>这一方法以前也被研究者们用到，不过主要是根据经验来选择切换的时机和切换后的学习率。这篇文章把这一切换过程傻瓜化，给出了切换SGD的时机选择方法，以及学习率的计算方法，效果看起来也不错。</p>
+<p><strong>优化算法的选择和使用方面的一些tricks</strong></p>
+<ol>
+<li><strong>首先，各大算法孰优孰劣并无定论</strong>。如果是刚入门，<strong>优先考虑 SGD+Nesterov Momentum或者Adam</strong>.（Standford 231n : The two recommended updates to use are either SGD+Nesterov Momentum or Adam）</li>
+<li><strong>选择你熟悉的算法</strong>——这样你可以更加熟练地利用你的经验进行调参。</li>
+<li><strong>充分了解你的数据</strong>——如果模型是非常稀疏的，那么优先考虑自适应学习率的算法。</li>
+<li><strong>根据你的需求来选择</strong>——在模型设计实验过程中，要快速验证新模型的效果，可以先用Adam进行快速实验优化；在模型上线或者结果发布前，可以用精调的SGD进行模型的极致优化。</li>
+<li><strong>先用小数据集进行实验</strong>。有论文研究指出，随机梯度下降算法的收敛速度和数据集的大小的关系不大。（The mathematics of stochastic gradient descent are amazingly independent of the training set size. In particular, the asymptotic SGD convergence rates are independent from the sample size. [2]）因此可以先用一个具有代表性的小数据集进行实验，测试一下最好的优化算法，并通过参数搜索来寻找最优的训练参数。</li>
+<li><strong>考虑不同算法的组合</strong>。先用Adam进行快速下降，而后再换到SGD进行充分的调优。切换策略可以参考本文介绍的方法。</li>
+<li><strong>数据集一定要充分的打散（shuffle）</strong>。这样在使用自适应学习率算法的时候，可以避免某些特征集中出现，而导致的有时学习过度、有时学习不足，使得下降方向出现偏差的问题。</li>
+<li>训练过程中<strong>持续监控训练数据和验证数据</strong>上的目标函数值以及精度或者AUC等指标的变化情况。对训练数据的监控是要保证模型进行了充分的训练——下降方向正确，且学习率足够高；对验证数据的监控是为了避免出现过拟合。</li>
+<li><strong>制定一个合适的学习率衰减策略</strong>。可以使用定期衰减策略，比如每过多少个epoch就衰减一次；或者利用精度或者AUC等性能指标来监控，当测试集上的指标不变或者下跌时，就降低学习率。</li>
+<li>对于稀疏数据，尽量使用学习率可自适应的优化方法，不用手动调节，而且最好采用默认值</li>
+<li>SGD通常训练时间更长，但是在好的初始化和学习率调度方案的情况下，结果更可靠</li>
+<li>如果在意更快的收敛，并且需要训练较深较复杂的网络时，推荐使用学习率自适应的优化方法。</li>
+<li>Adadelta，RMSprop，Adam是比较相近的算法，在相似的情况下表现差不多。</li>
+<li>在想使用带动量的RMSprop，或者Adam的地方，大多可以使用Nadam取得更好的效果</li>
+<li>如果验证损失较长时间没有得到改善，可以停止训练。</li>
+<li>添加梯度噪声（高斯分布 ）到参数更新，可使网络对不良初始化更加健壮，并有助于训练特别深而复杂的网络。</li>
+</ol>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -2217,6 +2420,52 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
+
+<h2 id="激活函数的作用"><a href="#激活函数的作用" class="headerlink" title="激活函数的作用"></a>激活函数的作用</h2><ol>
+<li>激活函数对模型学习、理解非常复杂和非线性的函数具有重要作用。</li>
+<li>激活函数可以引入非线性因素。如果不使用激活函数，则输出信号仅是一个简单的线性函数。线性函数一个一级多项式，线性方程的复杂度有限，从数据中学习复杂函数映射的能力很小。没有激活函数，神经网络将无法学习和模拟其他复杂类型的数据，例如图像、视频、音频、语音等。</li>
+<li>激活函数可以把当前特征空间通过一定的线性映射转换到另一个空间，让数据能够更好的被分类。</li>
+<li>假若网络中全部是线性部件，那么线性的组合还是线性，与单独一个线性分类器无异。这样就做不到用非线性来逼近任意函数。</li>
+<li>使用非线性激活函数 ，以便使网络更加强大，增加它的能力，使它可以学习复杂的事物，复杂的表单数据，以及表示输入输出之间非线性的复杂的任意函数映射。使用非线性激活函数，能够从输入输出之间生成非线性映射。</li>
+</ol>
+<h2 id="激活函数的性质"><a href="#激活函数的性质" class="headerlink" title="激活函数的性质"></a>激活函数的性质</h2><ol>
+<li>单调性：当激活函数是单调的时候，单层网络能够保证是凸函数，</li>
+<li>可导性: 在一定范围内处处可导;</li>
+<li>输出值的范围：当激活函数输出值是有限的时候，基于梯度的优化方法会更加稳定，因为特征的表示受有限权值的影响更显著；当激活函数的输出是无限的时候，模型的训练会更加高效，不过在这种情况下，一般需要更小的 Learning Rate。</li>
+<li>非线性：当激活函数是非线性的，一个两层的神经网络就可以基本上逼近所有的函数。但如果激活函数是恒等激活函数的时候，即 ，就不满足这个性质，而且如果 MLP 使用的是恒等激活函数，那么其实整个网络跟单层神经网络是等价的；</li>
+<li>可微性：当优化方法是基于梯度的时候，就体现了该性质；：当激活函数满足这个性质的时候，如果参数的初始化是随机的较小值，那么神经网络的训练将会很高效；如果不满足这个性质，那么就需要详细地去设置初始值；</li>
+</ol>
+<h2 id="不同激活函数适用场景"><a href="#不同激活函数适用场景" class="headerlink" title="不同激活函数适用场景"></a>不同激活函数适用场景</h2><ol>
+<li>sigmoid 激活函数：除了输出层是一个二分类问题基本不会用它。</li>
+<li>tanh 激活函数：tanh 是非常优秀的，几乎适合所有场合。</li>
+<li>ReLu 激活函数：最常用的默认函数，如果不确定用哪个激活函数，就使用 ReLu 或者 Leaky ReLu，再去尝试其他的激活函数。</li>
+<li>Leaky ReLU激活函数，应该很好的应对神经元坏死二等情况。</li>
+<li>如果在隐藏层上不确定使用哪个激活函数，那么通常会使用 Relu 激活函数。有时，也会使用 tanh 激活函数，但 Relu 的一个优点是：当是负值的时候，导数等于 0。</li>
+</ol>
+<h2 id="线性激活函数适用场景"><a href="#线性激活函数适用场景" class="headerlink" title="线性激活函数适用场景"></a>线性激活函数适用场景</h2><ol>
+<li>输出层，大多使用线性激活函数。</li>
+<li>在隐含层可能会使用一些线性激活函数。</li>
+<li>一般用到的线性激活函数很少。</li>
+</ol>
+<h1 id="非线性激活函数"><a href="#非线性激活函数" class="headerlink" title="非线性激活函数"></a>非线性激活函数</h1><p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/%E5%B8%B8%E8%A7%81%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0.png"></p>
+<h2 id="ReLu-激活函数的优点"><a href="#ReLu-激活函数的优点" class="headerlink" title="ReLu 激活函数的优点"></a>ReLu 激活函数的优点</h2><ol>
+<li>在区间变动很大的情况下，ReLu 激活函数的导数或者激活函数的斜率都会远大于 0，在程序实现就是一个 if-else 语句，而 sigmoid 函数需要进行浮点四则运算，在实践中，使用 ReLu 激活函数神经网络通常会比使用 sigmoid 或者 tanh 激活函数学习的更快。</li>
+<li>sigmoid 和 tanh 函数的导数在正负饱和区的梯度都会接近于 0，这会造成梯度弥散，而 Relu 和Leaky ReLu 函数大于 0 部分都为常数，不会产生梯度弥散现象。</li>
+<li>需注意，Relu 进入负半区的时候，梯度为 0，神经元此时不会训练，产生所谓的稀疏性，而 Leaky ReLu 不会产生这个问题。</li>
+</ol>
+<h2 id="Relu（-lt-0-时）为什么是非线性激活函数？"><a href="#Relu（-lt-0-时）为什么是非线性激活函数？" class="headerlink" title="Relu（&lt; 0 时）为什么是非线性激活函数？"></a>Relu（&lt; 0 时）为什么是非线性激活函数？</h2><p>Relu 激活函数图像由上图</p>
+<p>根据图像可看出具有如下特点：</p>
+<ol>
+<li><p>单侧抑制；</p>
+</li>
+<li><p>相对宽阔的兴奋边界；</p>
+</li>
+<li><p>稀疏激活性；</p>
+<p>ReLU 函数从图像上看，是一个分段线性函数，把所有的负值都变为 0，而正值不变，这样就成为单侧抑制。</p>
+<p>因为有了这单侧抑制，才使得神经网络中的神经元也具有了稀疏激活性。</p>
+<p><strong>稀疏激活性</strong>：从信号方面来看，即神经元同时只对输入信号的少部分选择性响应，大量信号被刻意的屏蔽了，这样可以提高学习的精度，更好更快地提取稀疏特征。当 时，ReLU 硬饱和，而当 时，则不存在饱和问题。ReLU 能够在 时保持梯度不衰减，从而缓解梯度消失问题。</p>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>学习</category>

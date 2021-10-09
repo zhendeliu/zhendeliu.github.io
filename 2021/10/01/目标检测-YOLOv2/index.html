@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="摘要背景问题： 方法简述： 优点： 缺点：">
+  <meta name="description" content="摘要背景问题：从预测更准确（Better），速度更快（Faster），识别对象更多（Stronger）这三个方面进行了改进。 方法简述：YOLOv2又叫YOLO9000，其能检测超过9000种类别的物体，在VOC2007数据集中在76FPS的速度下，能达到76.8%的mAP，在40FPS的速度下，能达到78.6%的mAP，很好的达到速度与精度的平衡。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="目标检测-YOLOv2">
 <meta property="og:url" content="http://example.com/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv2/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="摘要背景问题： 方法简述： 优点： 缺点：">
+<meta property="og:description" content="摘要背景问题：从预测更准确（Better），速度更快（Faster），识别对象更多（Stronger）这三个方面进行了改进。 方法简述：YOLOv2又叫YOLO9000，其能检测超过9000种类别的物体，在VOC2007数据集中在76FPS的速度下，能达到76.8%的mAP，在40FPS的速度下，能达到78.6%的mAP，很好的达到速度与精度的平衡。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-01T03:32:30.000Z">
-<meta property="article:modified_time" content="2021-10-01T03:50:47.980Z">
+<meta property="article:modified_time" content="2021-10-09T07:35:38.027Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="论文复现">
@@ -289,12 +289,57 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：从预测<strong>更准确（Better）</strong>，<strong>速度更快（Faster）</strong>，<strong>识别对象更多（Stronger）</strong>这三个方面进行了改进。</p>
+<p>方法简述：YOLOv2又叫YOLO9000，其能检测超过9000种类别的物体，在VOC2007数据集中在76FPS的速度下，能达到76.8%的mAP，在40FPS的速度下，能达到78.6%的mAP，很好的达到速度与精度的平衡。</p>
 <span id="more"></span>
 
+<h1 id="YOLOv2"><a href="#YOLOv2" class="headerlink" title="YOLOv2"></a>YOLOv2</h1><p>从预测<strong>更准确（Better）</strong>，<strong>速度更快（Faster）</strong>，<strong>识别对象更多（Stronger）</strong>这三个方面进行了改进。</p>
+<p>采用联合训练算法的基本思路就是：同时在检测数据集和分类数据集上训练物体检测器（Object Detectors ），<strong>用检测数据集的数据学习物体的准确位置，用分类数据集的数据来增加分类的类别量、提升健壮性。</strong></p>
+<h2 id="相比于v1的改进"><a href="#相比于v1的改进" class="headerlink" title="相比于v1的改进"></a><strong>相比于v1的改进</strong></h2><p><strong>算法层面：</strong></p>
+<ul>
+<li><p><strong>Anchor:<strong>引入了Faster R-CNN中使用的Anchor，作者在YOLOv2中设计的Anchor并不是像Faster R-CNN中人为事先设计的尺寸和高宽比一级个数，作者通过在所有训练图像的所有边界框上运行k-means聚类来选择锚的个数和形状(k = 5，因此它找到五个最常见的目标形状)。</strong>因此，YOLO的锚是特定于您正在训练(和测试)的数据集的。</strong>k-means算法找到了将所有数据点划分聚类的方法。这里的数据点是数据集中所有真实边界框的宽度和高度。但5个锚是否最佳选择?我们可以在不同数量的聚类上多次运行k-means，并计算真实标签框与它们最接近的锚框之间的平均IOU。毫无疑问，使用更多质心(k值越大)平均IOU越高，但这也意味着我们需要在每个网格单元中使用更多的检测器，并使模型运行速度变慢。对于YOLO v2，他们选择了5个锚作为召回率和模型复杂度之间的良好折衷。</p>
+</li>
+<li><p>**坐标预测:**在这里作者虽然引入了Faster R-CNN中类似的anchor，但是作者并没有像其意义，对bbox中心坐标的预测是基于anchor坐标的偏移量得到的，而是采用了v1中预测anchor中心点相对于对于单元格左上角位置的偏移</p>
+</li>
+<li><p><strong>损失函数：</strong></p>
+<p>1.在计算类概率误差时，YOLOv1中仅对每个单元格计算；而YOLOv2中对每一个anchor box都会计算类概率误差。</p>
+<p>2.YOLOv1中使用w和h的开方来缓和box的尺寸不平衡问题，而在YOLOv2中则通过赋值一个和w，h相关的权重函数达到该目的。</p>
+<p>3.与YOLOv1不同的是修正系数的改变，YOLOv1中no_objects_loss和objects_loss分别是0.5和1，而YOLOv2中则是1和5</p>
+</li>
+</ul>
+<p><strong>网络层面：</strong></p>
+<ul>
+<li>Darknet19: 与v1不同采用的是全卷积网络，取掉了v1中的全连接层，改用全局平均池化，去掉v1中最后一个池化层，增加特征的分辨率。网络共19个卷积层，5个最大池化层，</li>
+</ul>
+<p><strong>训练检测方面：</strong></p>
+<ul>
+<li><strong>训练图像分辨率：</strong>v1在ImageNet上预训练时用的224x224尺寸的图片，正式训练时用448x448,这需要模型适应新的分辨率。YOLOv2是直接使用448x448的输入训练，随着输入分辨率的增加，模型提高了4%的mAP。</li>
+<li><strong>使用了WordTree：</strong>通过WordTree来混合检测数据集与识别数据集之中的数据，使得这一网络结构可以实时地检测超过9000种物体分类。</li>
+<li><strong>联合训练算法：</strong>使用这种联合训练技术同时在ImageNet和COCO数据集上进行训练。YOLO9000进一步缩小了监测数据集与识别数据集之间的代沟。联合训练算法的基本思路就是：同时在检测数据集和分类数据集上训练物体检测器（Object Detectors ），用检测数据集的数据学习物体的准确位置，用分类数据集的数据来增加分类的类别量、提升健壮性。分类信息学习自ImageNet分类数据集，而物体位置检测则学习自COCO检测数据集。</li>
+<li><strong>多尺度训练：</strong>为了提高模型的鲁棒性，在训练的时候采用了多尺度的输入进行训练，由于网络的下采样因子是32，故输入尺寸选择32的倍数288，352，…，544</li>
+<li><strong>多尺度检测，reorg层：</strong>作者将前一层的26<em>26的特征图做一个reorg操作，将其变成13</em>13但又不破坏其大特征图的特征，然后和本层的13*13的1特征图进行concat。</li>
+</ul>
+<p><strong>技巧方面：</strong></p>
+<ul>
+<li><strong>Batch Normalization：</strong>使用Batch Normalization对网络进行优化，让网络提高了收敛性，同时还消除了对其他形式的正则化（regularization）的依赖。通过对YOLO的每一个卷积层增加Batch Normalization，最终使得mAP提高了2%，同时还使model正则化。使用Batch Normalization可以从model中去掉Dropout，而不会产生过拟合。</li>
+</ul>
+<ol>
+<li><p>改进点</p>
+<ol>
+<li><p>BN层</p>
+</li>
+<li><p>高分辨率分类 224*224 -》448 * 448</p>
+</li>
+<li><p>Convolution with anchor boxes： YOLOv1包含有全连接层，从而能直接预测Bounding Boxes的坐标值。Faster R-CNN算法只用卷积层与Region Proposal Network来预测Anchor Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。</p>
+<p>借鉴Faster RCNN的做法，YOLOv2也尝试采用先验框（anchor）。在每个grid预先设定一组不同大小和宽高比的边框，来覆盖整个图像的不同位置和多种尺度，这些先验框作为预定义的候选区在神经网络中将检测其中是否存在对象，以及微调边框的位置</p>
+</li>
+<li><p>YOLOv2的做法是对训练集中标注的边框进行K-means聚类分析，以寻找尽可能匹配样本的边框尺寸。</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>下面我们具体看看y1,y2,y3是如何而来的。<br>网络中作者进行了三次检测，分别是在32倍降采样，16倍降采样，8倍降采样时进行检测，这样在多尺度的feature map上检测跟SSD有点像。在网络中使用up-sample（上采样）的原因:网络越深的特征表达效果越好，比如在进行16倍降采样检测，如果直接使用第四次下采样的特征来检测，这样就使用了浅层特征，这样效果一般并不好。如果想使用32倍降采样后的特征，但深层特征的大小太小，因此YOLOv3使用了步长为2的up-sample（上采样），把32倍降采样得到的feature map的大小提升一倍，也就成了16倍降采样后的维度。同理8倍采样也是对16倍降采样的特征进行步长为2的上采样，这样就可以使用深层特征进行detection。</p>
+<p>作者通过上采样将深层特征提取，其维度是与将要融合的特征层维度相同的（channel不同）。如下图所示，85层将13×13×256的特征上采样得到26×26×256，再将其与61层的特征拼接起来得到26×26×768。为了得到channel255，还需要进行一系列的3×3，1×1卷积操作，这样既可以提高非线性程度增加泛化性能提高网络精度，又能减少参数提高实时性。52×52×255的特征也是类似的过程。</p>
 
     </div>
 
@@ -380,7 +425,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#YOLOv2"><span class="nav-number">2.</span> <span class="nav-text">YOLOv2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E6%AF%94%E4%BA%8Ev1%E7%9A%84%E6%94%B9%E8%BF%9B"><span class="nav-number">2.1.</span> <span class="nav-text">相比于v1的改进</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

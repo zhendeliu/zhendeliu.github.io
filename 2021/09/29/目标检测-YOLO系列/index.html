@@ -20,22 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="摘要背景问题： 方法简述： 优点： 缺点：">
+  <meta name="description" content="摘要YOLOv1是典型的目标检测one stage方法，用回归的方法去做目标检测，执行速度快，达到非常高效的检测，其背后的原理和思想也非常简单。YOLOv1的基本思想是把一副图片，首先reshape成448x448大小（由于网络中使用了全连接层，所以图片的尺寸需固定大小输入到CNN中），然后将划分成SxS个单元格（原文中S&#x3D;7），以每个格子所在位置和对应内容为基础，来预测： 方法简述： 优点： 缺">
 <meta property="og:type" content="article">
 <meta property="og:title" content="目标检测-YOLOv1">
 <meta property="og:url" content="http://example.com/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLO%E7%B3%BB%E5%88%97/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="摘要背景问题： 方法简述： 优点： 缺点：">
+<meta property="og:description" content="摘要YOLOv1是典型的目标检测one stage方法，用回归的方法去做目标检测，执行速度快，达到非常高效的检测，其背后的原理和思想也非常简单。YOLOv1的基本思想是把一副图片，首先reshape成448x448大小（由于网络中使用了全连接层，所以图片的尺寸需固定大小输入到CNN中），然后将划分成SxS个单元格（原文中S&#x3D;7），以每个格子所在位置和对应内容为基础，来预测： 方法简述： 优点： 缺">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLO%E7%B3%BB%E5%88%97/1.png">
 <meta property="article:published_time" content="2021-09-29T10:50:55.000Z">
-<meta property="article:modified_time" content="2021-10-01T03:33:35.494Z">
+<meta property="article:modified_time" content="2021-10-09T07:27:17.360Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="论文复现">
 <meta property="article:tag" content="YOLO">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLO%E7%B3%BB%E5%88%97/1.png">
 
 <link rel="canonical" href="http://example.com/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLO%E7%B3%BB%E5%88%97/">
 
@@ -291,7 +289,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>YOLOv1是典型的目标检测one stage方法，用回归的方法去做目标检测，执行速度快，达到非常高效的检测，其背后的原理和思想也非常简单。YOLOv1的基本思想是把一副图片，首先reshape成448x448大小（由于网络中使用了全连接层，所以图片的尺寸需固定大小输入到CNN中），然后将划分成SxS个单元格（原文中S=7），以每个格子所在位置和对应内容为基础，来预测：</p>
 <p>方法简述：</p>
 <p>优点：</p>
 <p>缺点：</p>
@@ -304,43 +302,58 @@
 </li>
 <li><p>实现方法</p>
 <ol>
-<li>将整张图分为S*S的网格，如果某个object的中心落在这个网格中，这个网格就负责预测这个object</li>
-<li>每个网格要预测B个bounding box，每个bounding box除了要回归自身的位置之外，还要附带预测一个confidence值。这个confidence代表了所预测的box中含有object的置信度和这个box预测的有多准两重信息</li>
-<li>每个bounding Box 有五个值要预测(x, y, w, h)和confidence。每个网格还要预测一个类别信息，记为C类。则SxS个网格，每个网格要预测B个bounding box还要预测C个categories。输出就是S x S x (5*B+C)的一个tensor。</li>
-<li><strong>简单的概括就是：</strong><ul>
+<li><p>将整张图分为S*S的网格，如果某个object的中心落在这个网格中，这个网格就负责预测这个object</p>
+</li>
+<li><p>每个网格要预测B个bounding box，每个bounding box除了要回归自身的位置之外，还要附带预测一个confidence值。这个confidence代表了所预测的box中含有object的置信度和这个box预测的有多准两重信息</p>
+</li>
+<li><p>每个bounding Box 有五个值要预测(x, y, w, h)和confidence。每个网格还要预测一个类别信息，记为C类。则SxS个网格，每个网格要预测B个bounding box还要预测C个categories。输出就是<strong>S x S x (5*B+C)的一个tenso</strong>r。</p>
+</li>
+<li><p><strong>简单的概括就是：</strong></p>
+<ul>
 <li>给个一个输入图像，首先将图像划分成7*7的网格；</li>
 <li>对于每个网格，我们都预测2个边框（包括每个边框是目标的置信度以及每个边框区域在多个类别上的概率）；</li>
-<li>根据上一步可以预测出7<em>7</em>2个目标窗口，然后根据阈值去除可能性比较低的目标窗口，最后NMS去除冗余窗口即可。</li>
+<li>根据上一步可以预测出7 * 7 * 2个目标窗口，然后根据阈值去除可能性比较低的目标窗口，最后NMS去除冗余窗口即可。</li>
+<li>每个网格包含B个检测框和一个C个类别的概率值，每个检测框含有五个值要预测(x, y, w, h)和confidence</li>
 </ul>
+</li>
+<li><p><strong>注意（重要细节）:</strong></p>
+<p>\1. x，y，w，h，confidence都被限制在区间[0,1]。</p>
+<p>\2. 置信度confidence值只有2种情况，要么为0（边界框中不含目标，P(object)=0），要么为预测框与标注框的IOU，因为P(Object)只有0或1，两种可能，有目标的中心落在格子内，那么P(object)=1，否则为0，不存在（0，1）区间中的值。其他论文中置信度的定义可能跟YOLOv1有些不同，一般置信度指的是预测框中是某类别目标的概率，在[0,1]之间。</p>
+<p>\3. 每个格子预测C个类别的概率分数，而不是每个每个检测框都需要预测C个类别的概率分数。</p>
 </li>
 </ol>
 </li>
 <li><p>在YOLOv1的损失函数中：</p>
-<p>Loss= 坐标预测的Loss + 含object的Box的confidence预测 + 不含object的Box的confidence预测 + 类别预测</p>
+<ol>
+<li>YOLOv1对位置误差，confidence误差，分类误差均使用了均方差作为损失函数。</li>
+<li>三部分误差损失（位置误差，confidence误差，分类误差），在损失函数中所占权重不一样，位置误差权重系数最大，为5</li>
+<li>由于一副图片中没有目标的网格占大多数，有目标的网格占少数，所以损失函数中对没有目标的网格中预测的bbox的confidence误差给予小的权重系数，为0.5。</li>
+<li>有目标的网格中预测的bbox的confidence损失和分类损失，权重系数正常为1。</li>
+<li>由于相同的位置误差对大目标和小目标的影响是不同的，相同的偏差对于小目标来说影响要比大目标大，故作者选择将预测的bbox的w,h先取其平方根，再求均方差损失。</li>
+<li>一个网格预测2个bbox，在计算损失函数的时候，只取与ground truth box中IoU大的那个预测框来计算损失。</li>
+<li>分类误差，只有当单元格中含有目标时才计算，没有目标的单元格的分类误差不计算在内。</li>
+</ol>
+</li>
+<li><p>激活函数</p>
+<ul>
+<li>最后一层全连接层用线性激活函数</li>
+<li>其余层采用leak RELU</li>
+<li></li>
+</ul>
+</li>
+</ol>
+<h1 id="YOLOv1的缺陷"><a href="#YOLOv1的缺陷" class="headerlink" title="YOLOv1的缺陷"></a>YOLOv1的缺陷</h1><ul>
+<li>首先，每个单元格只预测2个bbox，然后每个单元格最后只取与gt_bbox的IOU高的那个最为最后的检测框，也只是说每个单元格最多只预测一个目标，若单个单元格有多个目标时，只能检测出其他的一个，导致小目标漏检，因此YOLOv1对小目标检测效果不好。</li>
+<li>其次，虽然YOLOv1中损失函数中位置误差，对预测的w，h取平方根处理再求均方差，来缓解相同位置误差对大目标，小目标影响不同的弊端，但是作用甚微，没有根本解决问题对于小物体。小的目标的 置信度误差也会对网络优化过程造成很大的影响，从而降低了物体检测的定位准确性。</li>
+<li>由于输出层为全连接层，因此在检测时，YOLO 训练模型只支持与训练图像相同的输入分辨率的图片。</li>
+</ul>
+<ol>
+<li><p>Loss= 坐标预测的Loss + 含object的Box的confidence预测 + 不含object的Box的confidence预测 + 类别预测</p>
 <p>只有当某个网格中有object的时候才对classification error进行惩罚。<br>只有当某个box predictor对某个ground truth box负责的时候，才会对box的coordinate error进行惩罚，而对哪个ground truth box负责就看其预测值和ground truth box的IoU是不是在那个cell的所有box中最大。<br>注：</p>
 <p>YOLOv1方法模型训练依赖于物体识别标注数据，因此，对于非常规的物体形状或比例，YOLOv1的检测效果并不理想。<br>YOLOv1采用了多个下采样层，网络学到的物体特征并不精细，因此也会影响检测效果。<br>YOLOv1的loss函数中，大物体IOU误差和小物体IOU误差对网络训练中loss贡献值接近（虽然采用求平方根方式，但没有根本解决问题）。因此，对于小物体，小的IOU误差也会对网络优化过程造成很大的影响，从而降低了物体检测的定位准确性。<br>YOLO的缺点</p>
 <p>YOLO对相互靠的很近的物体和很小的群体检测效果不好，这是因为一个网格中只预测了两个框，并且只属于一类；<br>同一类物体出现的新的不常见的长宽比和其他情况时，泛化能力偏弱；<br>由于损失函数的问题，定位误差是影响检测效果的主要原因。尤其是大小物体的处理上，还有待加强。</p>
 </li>
 </ol>
-<h1 id="YOLOv2"><a href="#YOLOv2" class="headerlink" title="YOLOv2"></a>YOLOv2</h1><p>从预测<strong>更准确（Better）</strong>，<strong>速度更快（Faster）</strong>，<strong>识别对象更多（Stronger）</strong>这三个方面进行了改进。</p>
-<p>采用联合训练算法的基本思路就是：同时在检测数据集和分类数据集上训练物体检测器（Object Detectors ），<strong>用检测数据集的数据学习物体的准确位置，用分类数据集的数据来增加分类的类别量、提升健壮性。</strong></p>
-<ol>
-<li><p>改进点</p>
-<ol>
-<li><p>BN层</p>
-</li>
-<li><p>高分辨率分类 224*224 -》448 * 448</p>
-</li>
-<li><h3 id="Convolution-with-anchor-boxes：-YOLOv1包含有全连接层，从而能直接预测Bounding-Boxes的坐标值。Faster-R-CNN算法只用卷积层与Region-Proposal-Network来预测Anchor-Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。"><a href="#Convolution-with-anchor-boxes：-YOLOv1包含有全连接层，从而能直接预测Bounding-Boxes的坐标值。Faster-R-CNN算法只用卷积层与Region-Proposal-Network来预测Anchor-Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。" class="headerlink" title="Convolution with anchor boxes： YOLOv1包含有全连接层，从而能直接预测Bounding Boxes的坐标值。Faster R-CNN算法只用卷积层与Region Proposal Network来预测Anchor Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。"></a>Convolution with anchor boxes： YOLOv1包含有全连接层，从而能直接预测Bounding Boxes的坐标值。Faster R-CNN算法只用卷积层与Region Proposal Network来预测Anchor Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。</h3><p>借鉴Faster RCNN的做法，YOLOv2也尝试采用先验框（anchor）。在每个grid预先设定一组不同大小和宽高比的边框，来覆盖整个图像的不同位置和多种尺度，这些先验框作为预定义的候选区在神经网络中将检测其中是否存在对象，以及微调边框的位置</p>
-</li>
-<li><p>YOLOv2的做法是对训练集中标注的边框进行K-means聚类分析，以寻找尽可能匹配样本的边框尺寸。</p>
-<p><img src="/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLO%E7%B3%BB%E5%88%97/1.png"></p>
-</li>
-</ol>
-</li>
-</ol>
-<p>下面我们具体看看y1,y2,y3是如何而来的。<br>网络中作者进行了三次检测，分别是在32倍降采样，16倍降采样，8倍降采样时进行检测，这样在多尺度的feature map上检测跟SSD有点像。在网络中使用up-sample（上采样）的原因:网络越深的特征表达效果越好，比如在进行16倍降采样检测，如果直接使用第四次下采样的特征来检测，这样就使用了浅层特征，这样效果一般并不好。如果想使用32倍降采样后的特征，但深层特征的大小太小，因此YOLOv3使用了步长为2的up-sample（上采样），把32倍降采样得到的feature map的大小提升一倍，也就成了16倍降采样后的维度。同理8倍采样也是对16倍降采样的特征进行步长为2的上采样，这样就可以使用深层特征进行detection。</p>
-<p>作者通过上采样将深层特征提取，其维度是与将要融合的特征层维度相同的（channel不同）。如下图所示，85层将13×13×256的特征上采样得到26×26×256，再将其与61层的特征拼接起来得到26×26×768。为了得到channel255，还需要进行一系列的3×3，1×1卷积操作，这样既可以提高非线性程度增加泛化性能提高网络精度，又能减少参数提高实时性。52×52×255的特征也是类似的过程。</p>
 
     </div>
 
@@ -426,7 +439,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#YOLOv1"><span class="nav-number">2.</span> <span class="nav-text">YOLOv1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#YOLOv2"><span class="nav-number">3.</span> <span class="nav-text">YOLOv2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Convolution-with-anchor-boxes%EF%BC%9A-YOLOv1%E5%8C%85%E5%90%AB%E6%9C%89%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%B1%82%EF%BC%8C%E4%BB%8E%E8%80%8C%E8%83%BD%E7%9B%B4%E6%8E%A5%E9%A2%84%E6%B5%8BBounding-Boxes%E7%9A%84%E5%9D%90%E6%A0%87%E5%80%BC%E3%80%82Faster-R-CNN%E7%AE%97%E6%B3%95%E5%8F%AA%E7%94%A8%E5%8D%B7%E7%A7%AF%E5%B1%82%E4%B8%8ERegion-Proposal-Network%E6%9D%A5%E9%A2%84%E6%B5%8BAnchor-Box%E7%9A%84%E5%81%8F%E7%A7%BB%E5%80%BC%E4%B8%8E%E7%BD%AE%E4%BF%A1%E5%BA%A6%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AF%E7%9B%B4%E6%8E%A5%E9%A2%84%E6%B5%8B%E5%9D%90%E6%A0%87%E5%80%BC%EF%BC%8CYOLOv2%E4%BD%9C%E8%80%85%E5%8F%91%E7%8E%B0%E9%80%9A%E8%BF%87%E9%A2%84%E6%B5%8B%E5%81%8F%E7%A7%BB%E9%87%8F%E8%80%8C%E4%B8%8D%E6%98%AF%E5%9D%90%E6%A0%87%E5%80%BC%E8%83%BD%E5%A4%9F%E7%AE%80%E5%8C%96%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AE%A9%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E8%B5%B7%E6%9D%A5%E6%9B%B4%E5%AE%B9%E6%98%93%E3%80%82"><span class="nav-number">3.0.1.</span> <span class="nav-text">Convolution with anchor boxes： YOLOv1包含有全连接层，从而能直接预测Bounding Boxes的坐标值。Faster R-CNN算法只用卷积层与Region Proposal Network来预测Anchor Box的偏移值与置信度，而不是直接预测坐标值，YOLOv2作者发现通过预测偏移量而不是坐标值能够简化问题，让神经网络学习起来更容易。</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#YOLOv1"><span class="nav-number">2.</span> <span class="nav-text">YOLOv1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#YOLOv1%E7%9A%84%E7%BC%BA%E9%99%B7"><span class="nav-number">3.</span> <span class="nav-text">YOLOv1的缺陷</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
