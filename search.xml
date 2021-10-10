@@ -30,13 +30,13 @@
       </tags>
   </entry>
   <entry>
-    <title>AI算法面试问题-机器学习（二）</title>
-    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <title>AI算法面试问题-机器学习（三）</title>
+    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>AI算法面试问题-机器学习（三）</title>
-    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <title>AI算法面试问题-机器学习（二）</title>
+    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -276,6 +276,15 @@
       </tags>
   </entry>
   <entry>
+    <title>cv算法面试问题总结（七）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%83%EF%BC%89/</url>
+    <content><![CDATA[<p>如何解决深度学习中模型训练效果不佳的情况？<br>神经网络中，是否隐藏层如果具有足够数量的单位，它就可以近似任何连续函数？<br>为什么更深的网络更好？<br>更多的数据是否有利于更深的神经网络？<br>不平衡数据是否会影响神经网络的分类效果？<br>无监督降维提供的是帮助还是摧毁？<br>是否可以将任何非线性作为激活函数?<br>批大小如何影响测试正确率？<br>初始化如何影响训练?<br>不同层的权重是否以不同的速度收敛？ </p>
+<p>正则化如何影响权重？<br>什么是fine-tuning？<br>什么是边框回归Bounding-Box regression，以及为什么要做、怎么做<br>请阐述下Selective Search的主要思想<br>什么是非极大值抑制（NMS）？<br>什么是深度学习中的anchor？<br>CNN的特点以及优势<br>深度学习中有什么加快收敛/降低训练难度的方法？<br>请写出链式法则并证明<br>请写出Batch Normalization的计算方法及其应用</p>
+<span id="more"></span>
+
+]]></content>
+  </entry>
+  <entry>
     <title>cv算法面试问题总结（三）</title>
     <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%89%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
@@ -303,15 +312,6 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>cv算法面试问题总结（七）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%83%EF%BC%89/</url>
-    <content><![CDATA[<p>如何解决深度学习中模型训练效果不佳的情况？<br>神经网络中，是否隐藏层如果具有足够数量的单位，它就可以近似任何连续函数？<br>为什么更深的网络更好？<br>更多的数据是否有利于更深的神经网络？<br>不平衡数据是否会影响神经网络的分类效果？<br>无监督降维提供的是帮助还是摧毁？<br>是否可以将任何非线性作为激活函数?<br>批大小如何影响测试正确率？<br>初始化如何影响训练?<br>不同层的权重是否以不同的速度收敛？ </p>
-<p>正则化如何影响权重？<br>什么是fine-tuning？<br>什么是边框回归Bounding-Box regression，以及为什么要做、怎么做<br>请阐述下Selective Search的主要思想<br>什么是非极大值抑制（NMS）？<br>什么是深度学习中的anchor？<br>CNN的特点以及优势<br>深度学习中有什么加快收敛/降低训练难度的方法？<br>请写出链式法则并证明<br>请写出Batch Normalization的计算方法及其应用</p>
-<span id="more"></span>
-
-]]></content>
   </entry>
   <entry>
     <title>cv算法面试问题总结（九）</title>
@@ -461,24 +461,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>hello-world</title>
-    <url>/2021/09/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>cv算法面试问题总结（四）</title>
     <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%9B%9B%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
@@ -518,6 +500,24 @@
       </tags>
   </entry>
   <entry>
+    <title>hello-world</title>
+    <url>/2021/09/29/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>kaggle-糖尿病视网膜病变检测</title>
     <url>/2021/10/07/kaggle-%E7%B3%96%E5%B0%BF%E7%97%85%E8%A7%86%E7%BD%91%E8%86%9C%E7%97%85%E5%8F%98%E6%A3%80%E6%B5%8B/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>问题分析：糖尿病作为一种越来越高发的慢性病，每11个人就有一人是糖尿病患者。糖尿病视网膜病变作为并发症导致的视网膜病变失明也十分常见，如何预防因糖尿病继发的视网膜病变问题的是十分迫切的。这影响到62.5万英国人、甚至是全球1亿人的生活。</p>
@@ -549,6 +549,11 @@
       </tags>
   </entry>
   <entry>
+    <title>kaggle比赛-Molecular Translation</title>
+    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-Molecular-Translation/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>kaggle比赛-NFL Helmet Assignment</title>
     <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-NFL-Helmet-Assignment/</url>
     <content><![CDATA[<p><a href="https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment">https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment</a></p>
@@ -564,11 +569,6 @@
         <tag>编程</tag>
         <tag>Kaggle</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>kaggle比赛-Molecular Translation</title>
-    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-Molecular-Translation/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>kaggle比赛-脑肿瘤检测</title>
@@ -1292,6 +1292,25 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习-朴素贝叶斯</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习-线性回归Linear Regression</title>
     <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92Linear-Regression/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：找到一系列的参数W，使得f(x) = XW 和真实输出Y之间无限接近或一致。</p>
@@ -1331,25 +1350,6 @@
 <p>但是考虑到引入了x4，所以w4和w3的权重是分开计算出来的，这就导致了</p>
 <p>w5=10=w3+2w4，显然这个方程有无穷多的解，比如w3=4，w4=3，或者w4=-1，w3=12等，因此导致了模型系数估计的不稳定并且可能会出现负系数的问题。</p>
 <h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><h2 id="基于-Python-scikit-learn-工具包"><a href="#基于-Python-scikit-learn-工具包" class="headerlink" title="基于 Python scikit-learn 工具包"></a>基于 Python scikit-learn 工具包</h2><h2 id="Python自建实现"><a href="#Python自建实现" class="headerlink" title="Python自建实现"></a>Python自建实现</h2>]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习-朴素贝叶斯</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-]]></content>
       <categories>
         <category>学习</category>
         <category>机器学习</category>
@@ -1416,6 +1416,25 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习-集成算法-AdaBoost</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-AdaBoost/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习-集成算法-随机森林</title>
     <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -1462,25 +1481,6 @@
       </categories>
       <tags>
         <tag>概览</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习-集成算法-AdaBoost</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-AdaBoost/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -2772,28 +2772,13 @@
     <title>深度学习-常用卷积方法梳理</title>
     <url>/2021/10/10/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%B8%B8%E7%94%A8%E5%8D%B7%E7%A7%AF%E6%96%B9%E6%B3%95%E6%A2%B3%E7%90%86/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><ol>
-<li><p>深度学习中的卷积（单通道版本，多通道版本）</p>
-</li>
-<li><p>3D 卷积</p>
-</li>
-<li><p>   1×1 卷积</p>
-</li>
-<li><p>   卷积算术</p>
-</li>
-<li><p>   转置卷积（去卷积、棋盘效应）</p>
-</li>
-<li><p>   扩张卷积</p>
-</li>
-<li><p>   可分卷积（空间可分卷积，深度可分卷积）</p>
-</li>
-<li><p>   平展卷积</p>
-</li>
-<li><p>   分组卷积</p>
-</li>
-<li><p>   混洗分组卷积</p>
-</li>
-<li><p>   逐点分组卷积</p>
-</li>
+<li>2D卷积（单通道，多通道）</li>
+<li>3D 卷积</li>
+<li>1×1 卷积</li>
+<li>转置卷积（反卷积）</li>
+<li>空洞卷积</li>
+<li>可分卷积（空间可分卷积，深度可分卷积）</li>
+<li>分组卷积</li>
 </ol>
 <span id="more"></span>
 
