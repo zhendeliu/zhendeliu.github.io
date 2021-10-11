@@ -20,21 +20,24 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="摘要NMS非极大值抑制 Soft-NMS WBF 加权框融合">
+  <meta name="description" content="摘要目标检测的过程中在同一目标的位置上会产生大量的候选框，这些候选框相互之间可能会有重叠，此时我们需要消除冗余的边界框。 NMS非极大值抑制：找到局部极大值，并筛除（抑制）邻域内其余的值。 Soft-NMS：不直接剔除IOU大的框，IoU越大（即，重叠的越多），置信度降低的越强烈 WBF 加权框融合：WBF采用的融合框的置信度为所有形成他的边界框的平均置信度，而其坐标也是所有形成他的边界框的坐标的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="目标检测中候选边界框的处理(NMS,soft-NMS,WBF)">
 <meta property="og:url" content="http://example.com/2021/10/11/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E5%80%99%E9%80%89%E8%BE%B9%E7%95%8C%E6%A1%86%E7%9A%84%E5%A4%84%E7%90%86-NMS-soft-NMS-WBF/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="摘要NMS非极大值抑制 Soft-NMS WBF 加权框融合">
+<meta property="og:description" content="摘要目标检测的过程中在同一目标的位置上会产生大量的候选框，这些候选框相互之间可能会有重叠，此时我们需要消除冗余的边界框。 NMS非极大值抑制：找到局部极大值，并筛除（抑制）邻域内其余的值。 Soft-NMS：不直接剔除IOU大的框，IoU越大（即，重叠的越多），置信度降低的越强烈 WBF 加权框融合：WBF采用的融合框的置信度为所有形成他的边界框的平均置信度，而其坐标也是所有形成他的边界框的坐标的">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/10/11/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E5%80%99%E9%80%89%E8%BE%B9%E7%95%8C%E6%A1%86%E7%9A%84%E5%A4%84%E7%90%86-NMS-soft-NMS-WBF/WBF%E8%AE%A1%E7%AE%97.png">
+<meta property="og:image" content="http://example.com/2021/10/11/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E5%80%99%E9%80%89%E8%BE%B9%E7%95%8C%E6%A1%86%E7%9A%84%E5%A4%84%E7%90%86-NMS-soft-NMS-WBF/re-scale.png">
 <meta property="article:published_time" content="2021-10-11T06:35:19.000Z">
-<meta property="article:modified_time" content="2021-10-11T13:09:39.923Z">
+<meta property="article:modified_time" content="2021-10-11T14:55:28.022Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="目标检测">
 <meta property="article:tag" content="候选框">
 <meta property="article:tag" content="NMS">
 <meta property="article:tag" content="WBF">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/10/11/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E5%80%99%E9%80%89%E8%BE%B9%E7%95%8C%E6%A1%86%E7%9A%84%E5%A4%84%E7%90%86-NMS-soft-NMS-WBF/WBF%E8%AE%A1%E7%AE%97.png">
 
 <link rel="canonical" href="http://example.com/2021/10/11/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E5%80%99%E9%80%89%E8%BE%B9%E7%95%8C%E6%A1%86%E7%9A%84%E5%A4%84%E7%90%86-NMS-soft-NMS-WBF/">
 
@@ -269,10 +272,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>NMS非极大值抑制</p>
-<p>Soft-NMS</p>
-<p>WBF 加权框融合</p>
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>目标检测的过程中在同一目标的位置上会产生大量的候选框，这些候选框相互之间可能会有重叠，此时我们需要消除冗余的边界框。</p>
+<p><strong>NMS非极大值抑制：</strong>找到局部极大值，并筛除（抑制）邻域内其余的值。</p>
+<p><strong>Soft-NMS：</strong>不直接剔除IOU大的框，IoU越大（即，重叠的越多），置信度降低的越强烈</p>
+<p><strong>WBF 加权框融合</strong>：WBF采用的融合框的置信度为所有形成他的边界框的平均置信度，而其坐标也是所有形成他的边界框的坐标的加权和，权重为相应的边界框的置信度。也就是置信度越高的边界框对于融合边界框的坐标做出的贡献越大。</p>
 <span id="more"></span>
+
 <h1 id="NMS-非极大值抑制"><a href="#NMS-非极大值抑制" class="headerlink" title="NMS 非极大值抑制"></a>NMS 非极大值抑制</h1><p>Non-Maximum Suppression是非“极大值”抑制，作用：找到局部极大值，并筛除（抑制）邻域内其余的值。</p>
 <p>算法流程</p>
 <ol>
@@ -284,8 +289,18 @@
 <li>重复2~5，直到所有物体类的NMS处理完成。</li>
 <li>输出列表，算法结束</li>
 </ol>
+<p>缺点：</p>
+<ol>
+<li>密集重叠场景造成误过滤：将得分较低的边框强制性地去掉，如果物体出现较为密集时，本身属于两个物体的边框，其中得分较低的也有可能被抑制掉，降低了模型的召回率。</li>
+<li>速度：NMS的实现存在较多的循环步骤，GPU的并行化实现不是特别容易，尤其是预测框较多时，耗时较多。</li>
+<li>框的置信度和分类的置信度并不是完全对齐的，NMS简单地将得分作为一个边框的置信度，但在一些情况下，得分高的边框不一定位置更准</li>
+</ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">py_cpu_nms</span>(<span class="params">dets, thresh</span>):</span> </span><br><span class="line">    <span class="comment">#dets某个类的框，x1、y1、x2、y2、以及置信度score</span></span><br><span class="line">    <span class="comment">#eg:dets为[[x1,y1,x2,y2,score],[x1,y1,y2,score]……]]</span></span><br><span class="line">    <span class="comment"># thresh是IoU的阈值     </span></span><br><span class="line">    x1 = dets[:, <span class="number">0</span>] </span><br><span class="line">    y1 = dets[:, <span class="number">1</span>]</span><br><span class="line">    x2 = dets[:, <span class="number">2</span>] </span><br><span class="line">    y2 = dets[:, <span class="number">3</span>] </span><br><span class="line">    scores = dets[:, <span class="number">4</span>] </span><br><span class="line">    <span class="comment">#每一个检测框的面积 </span></span><br><span class="line">    areas = (x2 - x1 + <span class="number">1</span>) * (y2 - y1 + <span class="number">1</span>) </span><br><span class="line">    <span class="comment">#按照score置信度降序排序 </span></span><br><span class="line">    order = scores.argsort()[::-<span class="number">1</span>] </span><br><span class="line">    keep = [] <span class="comment">#保留的结果框集合 </span></span><br><span class="line">    <span class="keyword">while</span> order.size &gt; <span class="number">0</span>: </span><br><span class="line">        i = order[<span class="number">0</span>] </span><br><span class="line">        keep.append(i) <span class="comment">#保留该类剩余box中得分最高的一个 </span></span><br><span class="line">        <span class="comment">#得到相交区域,左上及右下 </span></span><br><span class="line">        xx1 = np.maximum(x1[i], x1[order[<span class="number">1</span>:]]) </span><br><span class="line">        yy1 = np.maximum(y1[i], y1[order[<span class="number">1</span>:]]) </span><br><span class="line">        xx2 = np.minimum(x2[i], x2[order[<span class="number">1</span>:]]) </span><br><span class="line">        yy2 = np.minimum(y2[i], y2[order[<span class="number">1</span>:]]) </span><br><span class="line">        <span class="comment">#计算相交的面积,不重叠时面积为0 </span></span><br><span class="line">        w = np.maximum(<span class="number">0.0</span>, xx2 - xx1 + <span class="number">1</span>) </span><br><span class="line">        h = np.maximum(<span class="number">0.0</span>, yy2 - yy1 + <span class="number">1</span>) </span><br><span class="line">        inter = w * h </span><br><span class="line">        <span class="comment">#计算IoU：重叠面积 /（面积1+面积2-重叠面积） </span></span><br><span class="line">        ovr = inter / (areas[i] + areas[order[<span class="number">1</span>:]] - inter) </span><br><span class="line">       <span class="comment">#保留IoU小于阈值的box </span></span><br><span class="line">        inds = np.where(ovr &lt;= thresh)[<span class="number">0</span>] </span><br><span class="line">        order = order[inds + <span class="number">1</span>] <span class="comment">#因为ovr数组的长度比order数组少一个,所以这里要将所有下标后移一位 </span></span><br><span class="line">    <span class="keyword">return</span> keep</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># NMS算法</span></span><br><span class="line"><span class="comment"># bboxes维度为[N,4]，scores维度为[N,], 均为tensor</span></span><br><span class="line"> <span class="function"><span class="keyword">def</span> <span class="title">nms</span>(<span class="params">self, bboxes, scores, threshold=<span class="number">0.5</span></span>):</span></span><br><span class="line">        x1 = bboxes[:,<span class="number">0</span>]</span><br><span class="line">        y1 = bboxes[:,<span class="number">1</span>]</span><br><span class="line">        x2 = bboxes[:,<span class="number">2</span>]</span><br><span class="line">        y2 = bboxes[:,<span class="number">3</span>]</span><br><span class="line">        areas = (x2-x1)*(y2-y1)   <span class="comment"># [N,] 每个bbox的面积</span></span><br><span class="line">        _, order = scores.sort(<span class="number">0</span>, descending=<span class="literal">True</span>)    <span class="comment"># 降序排列</span></span><br><span class="line">        keep = []</span><br><span class="line">        <span class="keyword">while</span> order.numel() &gt; <span class="number">0</span>:       <span class="comment"># torch.numel()返回张量元素个数</span></span><br><span class="line">            <span class="keyword">if</span> order.numel() == <span class="number">1</span>:     <span class="comment"># 保留框只剩一个</span></span><br><span class="line">                i = order.item()</span><br><span class="line">                keep.append(i)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                i = order[<span class="number">0</span>].item()    <span class="comment"># 保留scores最大的那个框box[i] tensor元素取出作为numpy数字</span></span><br><span class="line">                keep.append(i)</span><br><span class="line">            <span class="comment"># 计算box[i]与其余各框的IOU(思路很好)</span></span><br><span class="line">            <span class="comment"># torch.clamp(min, max) 设置上下限</span></span><br><span class="line">            xx1 = x1[order[<span class="number">1</span>:]].clamp(<span class="built_in">min</span>=x1[i])   <span class="comment"># [N-1,] </span></span><br><span class="line">            yy1 = y1[order[<span class="number">1</span>:]].clamp(<span class="built_in">min</span>=y1[i])</span><br><span class="line">            xx2 = x2[order[<span class="number">1</span>:]].clamp(<span class="built_in">max</span>=x2[i]) <span class="comment">#</span></span><br><span class="line">            yy2 = y2[order[<span class="number">1</span>:]].clamp(<span class="built_in">max</span>=y2[i])</span><br><span class="line">            inter = (xx2-xx1).clamp(<span class="built_in">min</span>=<span class="number">0</span>) * (yy2-yy1).clamp(<span class="built_in">min</span>=<span class="number">0</span>)   <span class="comment"># [N-1,]</span></span><br><span class="line">            iou = inter / (areas[i]+areas[order[<span class="number">1</span>:]]-inter)  <span class="comment"># [N-1,]</span></span><br><span class="line">            idx = (iou &lt;= threshold).nonzero().squeeze() <span class="comment"># 注意此时idx为[N-1,] 而order为[N,]</span></span><br><span class="line"> <span class="keyword">if</span> idx.numel() == <span class="number">0</span>:</span><br><span class="line"> <span class="keyword">break</span></span><br><span class="line">            order = order[idx+<span class="number">1</span>]  <span class="comment"># 修补索引之间的差值</span></span><br><span class="line"> <span class="keyword">return</span> torch.LongTensor(keep)   <span class="comment"># Pytorch的索引值为LongTensor</span></span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="soft-NMS"><a href="#soft-NMS" class="headerlink" title="soft-NMS"></a>soft-NMS</h1><p>NMS 算法存在以下问题：</p>
 <ol>
 <li><p>有可能会出现<strong>边界框更准确但是置信度较低的预测框</strong>，我们依靠置信度来决定谁是最佳预测框并不十分准确。</p>
@@ -294,22 +309,27 @@
 </li>
 </ol>
 <p>针对NMS算法简单粗暴删除IoU大于给定阈值的候选框的问题，Soft-NMS 并非直接删除这些具有较高IoU的重叠区域，而是降低这些具有较高IoU的候选框的置信度; 最后, 通过与置信度阈值比较筛选出最佳的预测框。Soft-NMS 算法对密集目标的检测具有一定的提升作用。</p>
+<p>Soft-NMS 算法的置信度重置算法有两种方式，一种是采样线性加权，另一种是高斯加权：IoU越大（即，重叠的越多），置信度降低的越强烈</p>
 <p><strong>NMS 和 soft-NMS 都丢弃了冗余框，因此无法有效地从不同模型中产生平均定位预测</strong>。</p>
-<h1 id="WBF-加权框融合"><a href="#WBF-加权框融合" class="headerlink" title="WBF 加权框融合"></a>WBF 加权框融合</h1><p>NMS和soft-NMS都排除了一些框，但是<strong>Weighted Boxes Fusion</strong> WBF利用了所有框的信息。它可以解决某些情况下，模型预测的框不准确。NMS将只能留下一个不准确的框，而WBF将使用多个框的信息来修复它。</p>
+<h1 id="WBF-加权框融合"><a href="#WBF-加权框融合" class="headerlink" title="WBF 加权框融合"></a>WBF 加权框融合</h1><p>WBF采用的融合框的置信度为所有形成他的边界框的平均置信度，而其坐标也是所有形成他的边界框的坐标的加权和，权重为相应的边界框的置信度。也就是置信度越高的边界框对于融合边界框的坐标做出的贡献越大。</p>
+<p>NMS和soft-NMS都排除了一些框，但是<strong>Weighted Boxes Fusion</strong> WBF利用了所有框的信息。它可以解决某些情况下，模型预测的框不准确。NMS将只能留下一个不准确的框，而WBF将使用多个框的信息来修复它。</p>
 <p>假设，我们对来自 N 个不同模型的同一图像进行了边界框预测。或者，我们对同一图像的原始版本和增强版本（即垂直/水平反射）有 N 个相同模型的预测。WBF 算法的工作步骤如下：</p>
 <ol>
 <li><p>每个模型的每个预测框都添加到单个列表 B 中。该列表按置信度 C 的降序排序。</p>
 </li>
-<li><p>分别为框簇和融合框声明空列表 L 和 F。列表L中的每个位置可以包含一组框（或单个框），形成一个簇；F 中的每个位置只包含一个框，它是来自 L 中相应簇的融合框。生成融合框的方程将在后面讨论。</p>
+<li><p>列表 L是一个框簇储存的是一个个bounding box集合，列表F储存的是融合后的框。列表L中的每个位置可以包含一组框（或单个框），形成一个簇；F 中的每个位置只包含一个框，它是来自 L 中相应簇的融合框。生成融合框的方程将在后面讨论。</p>
 </li>
-<li><p>循环遍历B中的预测框，尝试在列表F中找到匹配框。匹配定义为与问题框重叠较大的框（IoU &gt; THR）。注意：在我们的实验中，THR = 0.55 接近最佳阈值。</p>
+<li><p>循环遍历B中的预测框，尝试在列表F中找到匹配框。匹配定义为与问题框重叠较大的框（IoU &gt; THR）。原论文THR是0.55</p>
 </li>
 <li><p>如果没有找到匹配项，则将列表 B 中的框添加到列表 L 和 F 的末尾作为新条目；继续到列表 B 中的下一个框。</p>
 </li>
-</ol>
-<p>如果找到匹配，则将此框添加到列表L中与列表F中匹配框对应的位置pos处。</p>
-<ol>
-<li>重新计算F[pos]中的box坐标和confidence score，使用集群L[pos]中累积的所有T box，</li>
+<li><p>如果找到匹配，则将此框添加到列表L中与列表F中匹配框对应的位置pos处。</p>
+</li>
+<li><p>重新计算F[pos]中的box坐标和confidence score，使用集群L[pos]中累积的所有T box，其中 score和坐标的计算方式如下, score计算是取算数平均值得到的，而坐标值是通过框的置信度score 和坐标值相乘然后累加再除以 score的累加值得到，这样做可以使得具有较大置信度的框比较小置信度的框对融合后坐标的贡献值更大。</p>
+<p><img src="/2021/10/11/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E5%80%99%E9%80%89%E8%BE%B9%E7%95%8C%E6%A1%86%E7%9A%84%E5%A4%84%E7%90%86-NMS-soft-NMS-WBF/WBF%E8%AE%A1%E7%AE%97.png"></p>
+<p>7、当B中所有的框都循环完后，对于F中每个框的re-scale进行 ，原因是因为如果一个cluster中的框的数量太少的话，可能意味着若干模型中只有很少的模型预测到了这个框，因此是需要减少这种情况下对应框的置信度，作者给出了两种如下re-scale的方式。作者在原论文中指出，这两种方式没有显著的差异，第一种方式的性能会略好一点点。</p>
+<p><img src="/2021/10/11/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E5%80%99%E9%80%89%E8%BE%B9%E7%95%8C%E6%A1%86%E7%9A%84%E5%A4%84%E7%90%86-NMS-soft-NMS-WBF/re-scale.png"></p>
+</li>
 </ol>
 
     </div>
