@@ -436,16 +436,16 @@
       
           <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>根目录文件夹下包含三个文件夹和两个python代码文件：</p>
 <p><code>/data</code> #文件夹内分布保存</p>
-<p>—-<code>/test</code>测试集数据：</p>
-<p>—-<code>/train</code>训练集数据和对应的标签数据</p>
-<p>——–<code>/image</code> #训练数据</p>
-<p>——–<code>/label</code> # 分割标签数据集，分类问题的话是一个label.csv</p>
-<p>—-<code>/mode</code> 模型文件夹</p>
-<p>——– model.py 定义自己的模型类</p>
-<p>—- <code>/utils</code>文件夹 辅助方法</p>
-<p>——– dataset.py 定义自己的数据集类 Dataset，Dataset_loader</p>
-<p>—-train.py 实例化模型，设置loss 优化器，开始训练，调整l r</p>
-<p>—-predict.py 加载测试数据集，开启eval，获得预测结果</p>
+<p>——<code>/test</code>测试集数据：</p>
+<p>——<code>/train</code>训练集数据和对应的标签数据</p>
+<p>————<code>/image</code> #训练数据</p>
+<p>————<code>/label</code> # 分割标签数据集，分类问题的话是一个label.csv</p>
+<p>——<code>/mode</code> 模型文件夹</p>
+<p>———— model.py 定义自己的模型类</p>
+<p>—— <code>/utils</code>文件夹 辅助方法</p>
+<p>———— dataset.py 定义自己的数据集类 Dataset，Dataset_loader</p>
+<p>——train.py 实例化模型，设置loss 优化器，开始训练，调整l r</p>
+<p>——predict.py 加载测试数据集，开启eval，获得预测结果</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/10/09/%E9%92%88%E5%AF%B9%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%BB%9C%E7%9A%84PyTorch%E8%AE%AD%E7%BB%83%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/#more" rel="contents">
@@ -526,7 +526,6 @@
           <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="torch-backends-cudnn-deterministic"><a href="#torch-backends-cudnn-deterministic" class="headerlink" title="torch.backends.cudnn.deterministic"></a>torch.backends.cudnn.deterministic</h1><p>使用PyTorch等框架，还要看一下框架的种子是否固定了。</p>
 <p>使用了cuda，必须要设置cuda的随机：将这个 flag 置为True的话，每次返回的卷积算法将是确定的，即默认算法。如果配合上设置 Torch 的随机种子为固定值的话，应该可以保证每次运行网络的时候相同输入的输出是固定的，代码大致这样:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed_all(seed)</span><br><span class="line">        torch.backends.cudnn.deterministic = <span class="literal">True</span></span><br><span class="line">        torch.backends.cudnn.benchmark = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="torch-backends-cudnn-benchmark"><a href="#torch-backends-cudnn-benchmark" class="headerlink" title="torch.backends.cudnn.benchmark"></a>torch.backends.cudnn.benchmark</h1><p>torch.backends.cudnn.benchmark设为True就可以大大提升卷积神经网络的运行速度</p>
 <p>原因：<code>将会让程序在开始时花费一点额外时间，为整个网络的每个卷积层搜索最适合它的卷积实现算法，进而实现网络的加速</code>。</p>
 <p>适用：适用场景是网络结构固定（不是动态变化的），网络的输入形状（包括 batch size，图片大小，输入的通道）是不变的</p>
@@ -536,7 +535,6 @@
 <p>为什么我们可以提前选择每层的算法，即使每次我们送入网络训练的图片是不一样的？即每次网络的输入都是变化的，那么我怎么确保提前选出来的最优算法同样也适用于这个输入呢？原因就是，对于<code>给定输入来说，其具体值的大小是不影响卷积的运行时间的，只有其尺寸才会影响</code>。举例来说，我们只要固定输入大小都是 (8, 64, 224, 224)，即 batch_size 为 8，输入的通道为 64，宽和高为 224，那么卷积层的运行时间都是几乎不变的，无论其中每个像素具体的值是 0.1 还是 1000.0。</p>
 <p>所以当网络的模型不会一直发生变化，且输入的大小不会一直变化的话就可以使用torch.backends.cudnn.benchmark=True来加速训练</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed_all(seed)</span><br><span class="line">        torch.backends.cudnn.deterministic = <span class="literal">True</span></span><br><span class="line">        torch.backends.cudnn.benchmark = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -594,17 +592,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>西湖大学无人驾驶视觉方向科研助理招聘：</p>
-<p>视觉方向【岗位职责】：<br>\1. 负责计算机视觉或深度学习算法相关的前沿技术研发工作;<br>\2. 负责图像或三维点云中的目标检测、跟踪，图像理解等相关算法研发工作;<br>\3. 负责SLAM、VIO等相关算法的研发工作;<br>\4. 负责camera、lidar、radar等多传感器融合算法研发工作。<br>【任职要求】：<br>\1. 熟练掌握深度学习技术，在图像视频全景分割、目标检测、语义分析等方面研发经验丰富，有多传感器（相机、激光雷达）融合感知项目经验尤佳；<br>\2. 计算机视觉、机器学习相关专业硕（博）士，有无人驾驶视觉感知系统研发经验者优先；<br>\3. 具有扎实的工程实现能力和一定的数学功底，熟练使用常见的机器学习框架（pytorch、tensorflow，Keras等），计算机编程功底扎实，熟练使用C/C++；<br>\4. 对新技术有持续热情，善于快速学习，个性乐观，善于与人沟通合作。</p>
-<h1 id="什么是SLAM"><a href="#什么是SLAM" class="headerlink" title="什么是SLAM"></a>什么是SLAM</h1><p>SLAM是 Simultaneous Localization And Mapping的 英文首字母组合，一般翻译为：同时定位与建图、同时定位与地图构建。</p>
-<p><strong>SLAM是指当某种移动设备（如机器人、无人机、手机等）从一个未知环境里的未知地点出发，在运动过程中通过传感器（如激光雷达、摄像头等）观测定位自身位置、姿态、运动轨迹，再根据自身位置进行增量式的地图构建，从而达到同时定位和地图构建的目的</strong>。定位和建图是两个相辅相成的过程，地图可以提供更好的定位，而定位也可以进一步扩建地图。</p>
-<p>比如：扫地机器人，如果在室内随机游走，遇到障碍物就转弯，这样会导致有很多地方会漏掉，扫地效率非常低。一台智能的扫地机器人，可以通过自身的传感器对室内进行扫描建图，根据当前的定位进行Z字形规划清扫，还能实现自动回充、断点续扫等高级功能。</p>
-<p>扫地机器人至少需要知道以下几件事情：</p>
-<p>1、我在哪里？也就是扫地机器人在工作过程中要知道自己在房间的具体位置。对应的术语叫：**定位（Localization)**。</p>
-<p>2、我周围的环境是什么样子？也就是扫地机器人需要知道整个房间的地面结构信息。对应的术语叫：**建图(Mapping)**。</p>
-<p>3、我怎样到达指定地点（充电器）？当扫地机器人电量不足时，如何以最短的路径到达充电器所在位置进行自动充电。对应的术语叫：路径规划（Route Planning）。</p>
-<h1 id="什么是VIO"><a href="#什么是VIO" class="headerlink" title="什么是VIO"></a>什么是VIO</h1><p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/44787066">https://zhuanlan.zhihu.com/p/44787066</a></p>
-
+          <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>无人驾驶作为人工智能的集大成应用，从来就不是某单一的技术，而是众多技术点的整合。技术上它需要有算法上的创新、系统上的融合，以及来自云平台的支持。</p>
+<p>什么是SLAM？</p>
+<p>什么是VIO？</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/10/07/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6-%E8%A7%86%E8%A7%89%E6%96%B9%E5%90%91%E5%9F%BA%E7%A1%80/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
