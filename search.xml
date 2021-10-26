@@ -30,13 +30,13 @@
       </tags>
   </entry>
   <entry>
-    <title>AI算法面试问题-机器学习（二）</title>
-    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <title>AI算法面试问题-机器学习（三）</title>
+    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>AI算法面试问题-机器学习（三）</title>
-    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <title>AI算法面试问题-机器学习（二）</title>
+    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -143,15 +143,45 @@
       </tags>
   </entry>
   <entry>
+    <title>OpenCV图像处理基础（三）</title>
+    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>基础操作</tag>
+        <tag>噪音</tag>
+        <tag>编程</tag>
+        <tag>灰度图</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Pytorch框架基础（一）</title>
     <url>/2021/09/29/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>view()和reshape()</p>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>Tensor()创建</p>
+<p>view()和reshape()</p>
 <p>Broadcasting 广播机制</p>
 <p>Numpy 和 Tensor互转</p>
 <p>GPU/CPU计算</p>
 <span id="more"></span>
 
-<h1 id="view-和reshape"><a href="#view-和reshape" class="headerlink" title="view()和reshape()"></a>view()和reshape()</h1><p> <code>view()</code>是内存共享的，改变了tensor的观察视角而已</p>
+<h1 id="Tensor-创建"><a href="#Tensor-创建" class="headerlink" title="Tensor() 创建"></a>Tensor() 创建</h1><p><a href="https://pytorch.zhangxiann.com/1-ji-ben-gai-nian/1.2-tensor-zhang-liang-jie-shao">https://pytorch.zhangxiann.com/1-ji-ben-gai-nian/1.2-tensor-zhang-liang-jie-shao</a></p>
+<h2 id="直接创建"><a href="#直接创建" class="headerlink" title="直接创建"></a>直接创建</h2><h3 id="torch-tensor"><a href="#torch-tensor" class="headerlink" title="torch.tensor()"></a>torch.tensor()</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.tensor(data,dtype=<span class="literal">None</span>,device=<span class="literal">None</span>,requires_grad=<span class="literal">False</span>)</span><br><span class="line"><span class="comment"># 复制data数据进行</span></span><br><span class="line"><span class="comment"># data 可以是list, tuple, numpy, scalar</span></span><br><span class="line"><span class="comment"># dtype 返回tensor的类型</span></span><br><span class="line"><span class="comment"># device 指定返回设备</span></span><br><span class="line"><span class="comment"># requires_grad 是否需要在计算中保留梯度信息</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="torch-from-numpy-ndarry"><a href="#torch-from-numpy-ndarry" class="headerlink" title="torch.from_numpy(ndarry)"></a>torch.from_numpy(ndarry)</h3><p>​    共享内存地址</p>
+<h2 id="根据数值创建"><a href="#根据数值创建" class="headerlink" title="根据数值创建"></a>根据数值创建</h2><h3 id="torch-zeros"><a href="#torch-zeros" class="headerlink" title="torch.zeros()"></a>torch.zeros()</h3><h3 id="torch-zeros-like"><a href="#torch-zeros-like" class="headerlink" title="torch.zeros_like()"></a>torch.zeros_like()</h3><h3 id="torch-ones"><a href="#torch-ones" class="headerlink" title="torch.ones()"></a>torch.ones()</h3><h3 id="torch-ones-like"><a href="#torch-ones-like" class="headerlink" title="torch.ones_like()"></a>torch.ones_like()</h3><h3 id="torch-full"><a href="#torch-full" class="headerlink" title="torch.full()"></a>torch.full()</h3><h3 id="torch-full-like"><a href="#torch-full-like" class="headerlink" title="torch.full_like()"></a>torch.full_like()</h3><h3 id="torch-arange"><a href="#torch-arange" class="headerlink" title="torch.arange()"></a>torch.arange()</h3><h3 id="torch-linspace"><a href="#torch-linspace" class="headerlink" title="torch.linspace()"></a>torch.linspace()</h3><h3 id="torch-logspace"><a href="#torch-logspace" class="headerlink" title="torch.logspace()"></a>torch.logspace()</h3><h3 id="torch-eye"><a href="#torch-eye" class="headerlink" title="torch.eye()"></a>torch.eye()</h3><h2 id="根据概率创建"><a href="#根据概率创建" class="headerlink" title="根据概率创建"></a>根据概率创建</h2><h3 id="torch-normal"><a href="#torch-normal" class="headerlink" title="torch.normal()"></a>torch.normal()</h3><h3 id="torch-randn-amp-torch-randn-like"><a href="#torch-randn-amp-torch-randn-like" class="headerlink" title="torch.randn() &amp; torch.randn_like()"></a>torch.randn() &amp; torch.randn_like()</h3><h3 id="torch-rand-amp-torch-rand-like"><a href="#torch-rand-amp-torch-rand-like" class="headerlink" title="torch.rand() &amp; torch.rand_like()"></a>torch.rand() &amp; torch.rand_like()</h3><h3 id="torch-randint-amp-torch-randint-like"><a href="#torch-randint-amp-torch-randint-like" class="headerlink" title="torch.randint() &amp; torch.randint_like()"></a>torch.randint() &amp; torch.randint_like()</h3><h3 id="torch-perm"><a href="#torch-perm" class="headerlink" title="torch.perm()"></a>torch.perm()</h3><h3 id="torch-bernoulli"><a href="#torch-bernoulli" class="headerlink" title="torch.bernoulli()"></a>torch.bernoulli()</h3><h1 id="Tensor的操作"><a href="#Tensor的操作" class="headerlink" title="Tensor的操作"></a>Tensor的操作</h1><h2 id="拼接"><a href="#拼接" class="headerlink" title="拼接"></a>拼接</h2><h3 id="torch-cat"><a href="#torch-cat" class="headerlink" title="torch.cat()"></a>torch.cat()</h3><h3 id="torch-stack"><a href="#torch-stack" class="headerlink" title="torch.stack()"></a>torch.stack()</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># torch.cat(inputs, dimension=0)</span></span><br><span class="line">x = torch.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">res = torch.cat((x,x,x))</span><br><span class="line">res.shape</span><br><span class="line"><span class="comment"># Out[16]: torch.Size([6, 3])</span></span><br><span class="line">res2 = torch.cat((x,x,x),<span class="number">1</span>)</span><br><span class="line">res2.shape</span><br><span class="line"><span class="comment"># Out[17]: torch.Size([2, 9])</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="分割"><a href="#分割" class="headerlink" title="分割"></a>分割</h2><h3 id="torch-chunk"><a href="#torch-chunk" class="headerlink" title="torch.chunk()"></a>torch.chunk()</h3><h3 id="torch-split"><a href="#torch-split" class="headerlink" title="torch.split()"></a>torch.split()</h3><h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><h3 id="torch-index-select"><a href="#torch-index-select" class="headerlink" title="torch.index_select()"></a>torch.index_select()</h3><h3 id="torch-mask-select"><a href="#torch-mask-select" class="headerlink" title="torch.mask_select()"></a>torch.mask_select()</h3><h2 id="变换"><a href="#变换" class="headerlink" title="变换"></a>变换</h2><h3 id="view-和reshape"><a href="#view-和reshape" class="headerlink" title="view()和reshape()"></a>view()和reshape()</h3><p> <code>view()</code>是内存共享的，改变了tensor的观察视角而已</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">a=torch.Tensor([[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]]])</span><br><span class="line"></span><br><span class="line">b = a.view(<span class="number">1</span>,<span class="number">6</span>)</span><br><span class="line">c = a.view(<span class="number">3</span>,<span class="number">2</span>)</span><br><span class="line">d = a.view(<span class="number">6</span>,-<span class="number">1</span>)<span class="comment"># 不确定维数时用-1</span></span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"><span class="built_in">print</span>(c)</span><br><span class="line"><span class="built_in">print</span>(d)</span><br><span class="line">d[<span class="number">0</span>] = <span class="number">9</span> <span class="comment"># 共享地址只要改变 其他都会改变</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"><span class="built_in">print</span>(c)</span><br><span class="line"><span class="built_in">print</span>(d)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>输出分别是:(不改变原有的tensor的shape)</p>
@@ -160,6 +190,11 @@
 <p><code>reshape()</code>不是共享的，可以理解为**reshape获取的是tensor克隆真实副本，<code>reshape()</code>可以改变该tensor结构，但是view()不可以，因为<code>reshape</code>等价于先<code>contiguous()</code>再<code>view()</code>,也就是数据内存给你撸顺了，再改变观察视角。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = torch.rand(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">x = x.transpose(<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(x.is_contiguous()) <span class="comment">#  x.permute(1,0)</span></span><br><span class="line"><span class="comment"># False 输出</span></span><br><span class="line"><span class="comment"># x.view(3,4) 地址不连续会报错</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">RuntimeError: invalid argument 2: view size is not compatible with input tensor&#x27;s....</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="comment"># 但是这样是可以的。</span></span><br><span class="line">x = x.contiguous()</span><br><span class="line">x.view(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">x.reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">x.reshape(3,4) 这个操作</span></span><br><span class="line"><span class="string">等于x = x.contiguous().view()</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="torch-transpose"><a href="#torch-transpose" class="headerlink" title="torch.transpose()"></a>torch.transpose()</h3><p>交换维度</p>
+<h3 id="torch-t"><a href="#torch-t" class="headerlink" title="torch.t()"></a>torch.t()</h3><p>转置</p>
+<h3 id="torch-squeeze"><a href="#torch-squeeze" class="headerlink" title="torch.squeeze()"></a>torch.squeeze()</h3><p>压缩长度为一维</p>
+<h3 id="torch-unsqueeze"><a href="#torch-unsqueeze" class="headerlink" title="torch.unsqueeze()"></a>torch.unsqueeze()</h3><p>根据dim扩展维度</p>
+<h1 id="Tensor的数学计算"><a href="#Tensor的数学计算" class="headerlink" title="Tensor的数学计算"></a>Tensor的数学计算</h1><h3 id="torch-add"><a href="#torch-add" class="headerlink" title="torch.add()"></a>torch.add()</h3><h3 id="torch-addcdiv"><a href="#torch-addcdiv" class="headerlink" title="torch.addcdiv()"></a>torch.addcdiv()</h3><h3 id="torch-addcmul"><a href="#torch-addcmul" class="headerlink" title="torch.addcmul()"></a>torch.addcmul()</h3><p>torch.lerp(star, end, weight) : 返回结果是out= star t+ (end-start) * weight<br>torch.rsqrt(input) : 返回平方根的倒数<br>torch.mean(input) : 返回平均值<br>torch.std(input) : 返回标准偏差<br>torch.prod(input) : 返回所有元素的乘积<br>torch.sum(input) : 返回所有元素的之和<br>torch.var(input) : 返回所有元素的方差<br>torch.tanh(input) ：返回元素双正切的结果<br>torch.equal(torch.Tensor(a), torch.Tensor(b)) ：两个张量进行比较，如果相等返回true<br>torch.max(input)： 返回输入元素的最大值<br>torch.min(input) ： 返回输入元素的最小值<br>element_size() ：返回单个元素的字节<br>torch.from_numpy(obj)，利用一个numpy的array创建Tensor。注意，若obj原来是1列或者1行，无论obj是否为2维，所生成的Tensor都是一阶的，若需要2阶的Tensor，需要利用view()函数进行转换。<br>torch.numel(obj)，返回Tensor对象中的元素总数。<br>torch.ones_like(input)，返回一个全1的Tensor，其维度与input相一致<br>torch.cat(seq, dim)，在给定维度上对输入的张量序列进行连接操作<br>torch.chunk（input, chunks, dim）在给定维度(轴)上将输入张量进行分块<br>torch.squeeze(input)，将input中维度数值为1的维度去除。可以指定某一维度。共享input的内存<br>torch.unsqeeze(input, dim)，在input目前的dim维度上增加一维<br>torch.clamp(input, min, max)，将input的值约束在min和max之间<br>torch.trunc(input)，将input的小数部分舍去 <a href="https://blog.csdn.net/lijiaming_99/article/details/114642093">https://blog.csdn.net/lijiaming_99/article/details/114642093</a></p>
 <h1 id="Broadcasting-广播机制"><a href="#Broadcasting-广播机制" class="headerlink" title="Broadcasting 广播机制"></a>Broadcasting 广播机制</h1><p>当对两个形状不同的 Tensor 按元素运算 时，可能会触发⼴播（broadcasting）机制：<strong>先适当复制元素使这两个 Tensor 形状相同后再按元素运算</strong>。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">x = torch.arange(<span class="number">1</span>,<span class="number">3</span>).view(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">y = torch.arange(<span class="number">2</span>,<span class="number">5</span>).view(<span class="number">3</span>,<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="built_in">print</span>(y)</span><br><span class="line"><span class="built_in">print</span>(x+y)</span><br></pre></td></tr></table></figure>
 
@@ -169,7 +204,7 @@
 <h1 id="Numpy-和-Tensor互转"><a href="#Numpy-和-Tensor互转" class="headerlink" title="Numpy 和 Tensor互转"></a>Numpy 和 Tensor互转</h1><h2 id="Tensor转numpy"><a href="#Tensor转numpy" class="headerlink" title="Tensor转numpy"></a>Tensor转numpy</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">x = torch.ones(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">y = x.numpy()</span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="built_in">print</span>(y)</span><br><span class="line">y += <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="built_in">print</span>(y)</span><br></pre></td></tr></table></figure>
 
 <p>输出： 地址共享</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tensor([[<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>],</span><br><span class="line">        [<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>]])</span><br><span class="line">[[<span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span>]</span><br><span class="line"> [<span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span>]]</span><br><span class="line"> </span><br><span class="line">tensor([[<span class="number">2.</span>, <span class="number">2.</span>, <span class="number">2.</span>],</span><br><span class="line">        [<span class="number">2.</span>, <span class="number">2.</span>, <span class="number">2.</span>]])</span><br><span class="line">[[<span class="number">2.</span> <span class="number">2.</span> <span class="number">2.</span>]</span><br><span class="line"> [<span class="number">2.</span> <span class="number">2.</span> <span class="number">2.</span>]]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tensor([[<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>],</span><br><span class="line">        [<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>]])</span><br><span class="line"></span><br><span class="line">[[<span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span>]</span><br><span class="line"> [<span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span>]]</span><br><span class="line"> </span><br><span class="line">tensor([[<span class="number">2.</span>, <span class="number">2.</span>, <span class="number">2.</span>],</span><br><span class="line">        [<span class="number">2.</span>, <span class="number">2.</span>, <span class="number">2.</span>]])</span><br><span class="line"></span><br><span class="line">[[<span class="number">2.</span> <span class="number">2.</span> <span class="number">2.</span>]</span><br><span class="line"> [<span class="number">2.</span> <span class="number">2.</span> <span class="number">2.</span>]]</span><br></pre></td></tr></table></figure>
 
 <h2 id="Numpy转Tensor"><a href="#Numpy转Tensor" class="headerlink" title="Numpy转Tensor"></a>Numpy转Tensor</h2><p>torch.from_numpy(y) 和torch.tensor(y) 方法</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">z = torch.from_numpy(y)</span><br><span class="line">z2 = torch.tensor(y)</span><br><span class="line">y += <span class="number">2</span></span><br><span class="line"><span class="built_in">print</span>(z)</span><br><span class="line"><span class="built_in">print</span>(z2)</span><br></pre></td></tr></table></figure>
@@ -487,6 +522,52 @@
       </tags>
   </entry>
   <entry>
+    <title>cv算法面试问题总结（十）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%8D%81%EF%BC%89/</url>
+    <content><![CDATA[<p>基于深度学习的目标检测技术演进：R-CNN、Fast R-CNN、Faster R-CNN、YOLO、SSD<br>请简单解释下目标检测中的这个IOU评价函数（intersection-over-union）<br>KNN与K-means区别？<br>K-means选择初始点的方法有哪些,优缺点是什么?(列出两种以上)<br>简述线性分类器的原理(要求对权重矩阵进行剖析)<br>请简述下log对数、Hinge Loss(折页)、Cross-Entropy Loss(交叉熵)这三个损失函数<br>简述正则化与奥卡姆剃刀原则<br>图像尺寸为 7<em>7, 卷积窗口大小为3</em>3, 步长为3, 是否能输出图像?如果能,输出图像大小为多少?如果不能,说明原因?<br>如果最后一个卷积层和第一个全连接层参数量太大怎么办?<br>为什么说神经网络是端到端的网络?<br>当参数量 &gt;&gt; 样本量时候, 神经网络是如何预防过拟合?<br>什么是感受野？</p>
+<p>简述你对CBIR(Content-based Image Retrieval基于内容的图像检索)的理解<br>什么是计算机视觉单词模型？<br>简述什么是Local Feature(局部特征算子)？<br>KD-Tree相比KNN来进行快速图像特征比对的好处在哪里?<br>简述encode和decode思想<br>输入图片尺寸不匹配CNN网络input时候的解决方式？（三种以上）<br>FCN与CNN最大的区别？<br>遇到class-imbalanced data（数据类目不平衡）问题怎么办？<br>简述孪生随机网络（Siamese Network）<br>DPM（Deformable Parts Model）算法流程<br>什么是NMS（Non-maximum suppression 非极大值抑制）?<br>列举出常见的损失函数(三个以上)?<br>做过目标检测项目么？比如Mask R-CNN和Python做一个抢车位神器<br>如何理解Faster RCNN<br>one-stage和two-stage目标检测方法的区别和优缺点？<br>请画下YOLOv3的网络结构<br>请简单说下YOLOv1,v2,v3,v4各自的特点与发展史<br>如何理解YOLO：YOLO详解<br>怎么理解YOLOv4<br>神经网络参数共享(parameter sharing)是指什么？<br>2021年网易互联网 计算机视觉 一面<br>美团实习算法岗<br>2021商汤-视频理解研究员-校招-技术面</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>cv算法面试问题总结（四）</title>
+    <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%9B%9B%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
+<li><p>神经网络中的Addition/concatenate区别</p>
+</li>
+<li><p>目标检测中的anchor机制？作用？</p>
+</li>
+<li><p>BN（Batch Normalization）的原理和作用</p>
+</li>
+<li><p>随机梯度下降相比全局梯度下降的好处</p>
+</li>
+<li><p>网络初始化时给网络赋予0的权重，这个网络能正常训练吗？</p>
+</li>
+<li><p>梯度消失和梯度爆炸的原因？</p>
+</li>
+<li><p>深度学习为什么在计算机视觉领域这么好？</p>
+</li>
+<li><p>什么是正则化？L1正则化和L2正则化有什么区别</p>
+</li>
+<li><p>常用的模型压缩方式有哪些</p>
+</li>
+<li><p>残差网络的设计思想和作用</p>
+<span id="more"></span>
+
+<h1 id><a href="#" class="headerlink" title></a></h1></li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+        <tag>总结</tag>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hello-world</title>
     <url>/2021/09/29/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -533,66 +614,6 @@
       <tags>
         <tag>编程</tag>
         <tag>Kaggle</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenCV图像处理基础（三）</title>
-    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-        <tag>基础操作</tag>
-        <tag>噪音</tag>
-        <tag>编程</tag>
-        <tag>灰度图</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>cv算法面试问题总结（四）</title>
-    <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%9B%9B%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
-<li><p>神经网络中的Addition/concatenate区别</p>
-</li>
-<li><p>目标检测中的anchor机制？作用？</p>
-</li>
-<li><p>BN（Batch Normalization）的原理和作用</p>
-</li>
-<li><p>随机梯度下降相比全局梯度下降的好处</p>
-</li>
-<li><p>网络初始化时给网络赋予0的权重，这个网络能正常训练吗？</p>
-</li>
-<li><p>梯度消失和梯度爆炸的原因？</p>
-</li>
-<li><p>深度学习为什么在计算机视觉领域这么好？</p>
-</li>
-<li><p>什么是正则化？L1正则化和L2正则化有什么区别</p>
-</li>
-<li><p>常用的模型压缩方式有哪些</p>
-</li>
-<li><p>残差网络的设计思想和作用</p>
-<span id="more"></span>
-
-<h1 id><a href="#" class="headerlink" title></a></h1></li>
-</ol>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>面试</tag>
-        <tag>总结</tag>
-        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -658,13 +679,6 @@
         <tag>编程</tag>
         <tag>Kaggle</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>cv算法面试问题总结（十）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%8D%81%EF%BC%89/</url>
-    <content><![CDATA[<p>基于深度学习的目标检测技术演进：R-CNN、Fast R-CNN、Faster R-CNN、YOLO、SSD<br>请简单解释下目标检测中的这个IOU评价函数（intersection-over-union）<br>KNN与K-means区别？<br>K-means选择初始点的方法有哪些,优缺点是什么?(列出两种以上)<br>简述线性分类器的原理(要求对权重矩阵进行剖析)<br>请简述下log对数、Hinge Loss(折页)、Cross-Entropy Loss(交叉熵)这三个损失函数<br>简述正则化与奥卡姆剃刀原则<br>图像尺寸为 7<em>7, 卷积窗口大小为3</em>3, 步长为3, 是否能输出图像?如果能,输出图像大小为多少?如果不能,说明原因?<br>如果最后一个卷积层和第一个全连接层参数量太大怎么办?<br>为什么说神经网络是端到端的网络?<br>当参数量 &gt;&gt; 样本量时候, 神经网络是如何预防过拟合?<br>什么是感受野？</p>
-<p>简述你对CBIR(Content-based Image Retrieval基于内容的图像检索)的理解<br>什么是计算机视觉单词模型？<br>简述什么是Local Feature(局部特征算子)？<br>KD-Tree相比KNN来进行快速图像特征比对的好处在哪里?<br>简述encode和decode思想<br>输入图片尺寸不匹配CNN网络input时候的解决方式？（三种以上）<br>FCN与CNN最大的区别？<br>遇到class-imbalanced data（数据类目不平衡）问题怎么办？<br>简述孪生随机网络（Siamese Network）<br>DPM（Deformable Parts Model）算法流程<br>什么是NMS（Non-maximum suppression 非极大值抑制）?<br>列举出常见的损失函数(三个以上)?<br>做过目标检测项目么？比如Mask R-CNN和Python做一个抢车位神器<br>如何理解Faster RCNN<br>one-stage和two-stage目标检测方法的区别和优缺点？<br>请画下YOLOv3的网络结构<br>请简单说下YOLOv1,v2,v3,v4各自的特点与发展史<br>如何理解YOLO：YOLO详解<br>怎么理解YOLOv4<br>神经网络参数共享(parameter sharing)是指什么？<br>2021年网易互联网 计算机视觉 一面<br>美团实习算法岗<br>2021商汤-视频理解研究员-校招-技术面</p>
-]]></content>
   </entry>
   <entry>
     <title>torch.backends.cudnn相关参数理解及配置</title>
@@ -891,6 +905,87 @@
       </tags>
   </entry>
   <entry>
+    <title>图像识别-ResNet</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/</url>
+    <content><![CDATA[<h1 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：<strong>训练集上的性能下降，可以排除过拟合，BN层的引入也基本解决了plain net的梯度消失和梯度爆炸问题。</strong>如果不是过拟合以及梯度消失导致的，那原因是什么？为什么非常深度的网络在增加更多层时会表现得更差？深度网络点退化（Degradation problem）问题</p>
+<p>方法简述：</p>
+<p>ResNet网络是参考了VGG19网络，在其基础上进行了修改，并通过短路机制加入了残差单元，如图5所示。变化主要体现在ResNet直接使用stride=2的卷积做下采样，并且用global average pool层替换了全连接层。ResNet的一个重要设计原则是：当feature map大小降低一半时，feature map的数量增加一倍，这保持了网络层的复杂度。</p>
+<p>优点：</p>
+<p>ResNet通过残差学习解决了深度网络的退化问题，让我们可以训练出更深的网络</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+<p>认知上，深层网络不会比浅层网络的表现更差。基本假设是第N+1层什么也没学到也只是简单的copy或者恒等映射了前一层的结果，也至少和前一层有相同的准确度。</p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/ResNet-Architecture.png"></p>
+<p>参考：<a href="https://www.cnblogs.com/shine-lee/p/12363488.html">https://www.cnblogs.com/shine-lee/p/12363488.html</a></p>
+<p>ResNet的设计有如下特点：</p>
+<ul>
+<li>与plain net相比，ResNet多了很多“旁路”，即shortcut路径，其首尾圈出的layers构成一个Residual Block；</li>
+<li>ResNet中，所有的Residual Block都没有pooling层，<strong>降采样是通过conv的stride实现的</strong>；</li>
+<li>分别在conv3_1、conv4_1和conv5_1 Residual Block，降采样1倍，同时feature map数量增加1倍，如图中虚线划定的block；</li>
+<li><strong>通过Average Pooling得到最终的特征</strong>，而不是通过全连接层；</li>
+<li>每个卷积层之后都紧接着BatchNorm layer，为了简化，图中并没有标出；</li>
+</ul>
+<p>ResNet结构非常容易修改和扩展，通过调整block内的channel数量以及堆叠的block数量，就可以很容易地调整网络的宽度和深度，来得到不同表达能力的网络，而不用过多地担心网络的“退化”问题，只要训练数据足够，逐步加深网络，就可以获得更好的性能表现。</p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/resnet%E6%A8%A1%E5%9D%97.png"></p>
+<h1 id="Residual-Block的分析与改进"><a href="#Residual-Block的分析与改进" class="headerlink" title="Residual Block的分析与改进"></a>Residual Block的分析与改进</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/ResNet%E6%94%B9%E8%BF%9B.png"></p>
+<p>论文：<a href="https://arxiv.org/abs/1603.05027">https://arxiv.org/abs/1603.05027</a></p>
+<p>新提出的Residual Block结构，具有更强的泛化能力，能更好地避免“退化”，堆叠大于1000层后，性能仍在变好。具体的变化在于</p>
+<ul>
+<li><strong>通过保持shortcut路径的“纯净”，可以让信息在前向传播和反向传播中平滑传递，这点十分重要。</strong>为此，如无必要，不引入1×11×1卷积等操作，同时将上图灰色路径上的ReLU移到了𝐹(𝑥)F(x)路径上。</li>
+<li>在残差路径上，<strong>将BN和ReLU统一放在weight前作为pre-activation</strong>，获得了“Ease of optimization”以及“Reducing overfitting”的效果。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>图像识别</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像识别-VGGNet</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：随着AlexNet提出，很多人开始利用卷积神经网络来解决图像识别的问题。一般的做法都是重复几层卷积网络，每个卷积网络之后接一些池化层，最后再加上几个全连接层。而如何更优的设计网络结构（深度，kernel size等）</p>
+<p>方法简述：用更小更深的卷积核代替大的卷积核，较深的网络层次来提升深度学习的效果。</p>
+<p>使用很小的3x3、步长为1的卷积核来扫描输入。两个3x3的卷积核堆起来，和一个5x5的卷积核的感受野一样；三个3x3的卷积核堆起来，其感受野等同于一个7x7的卷积核。</p>
+<p>VGG16:</p>
+<p>VGG19:</p>
+<p>优点：</p>
+<ol>
+<li>结构简单 整个网络使用相同size 的卷积核（3X3）和最大池化（2X2）</li>
+<li>证明更深的层可以使得函数具有更好的分辨能力</li>
+<li>用多个较小的卷积核可以减少参数</li>
+<li>去掉局部响应归一化模块</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>计算耗费更多资源，参数量大（主要是全联接层导致的）， 内存空间占用高 140M</li>
+</ol>
+<span id="more"></span>
+
+<h1 id="基本结构-VGG16"><a href="#基本结构-VGG16" class="headerlink" title="基本结构-VGG16"></a>基本结构-VGG16</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/VGG16%E7%BB%93%E6%9E%84.png"></p>
+<p>图片来源：<a href="https://www.cxyzjd.com/article/weixin_26726011/108260201">https://www.cxyzjd.com/article/weixin_26726011/108260201</a></p>
+<h1 id="参数计算-VGG16"><a href="#参数计算-VGG16" class="headerlink" title="参数计算-VGG16"></a>参数计算-VGG16</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/%E5%8F%82%E6%95%B0%E8%AE%A1%E7%AE%97.png"></p>
+<h1 id="VGG16-VS-VGG19"><a href="#VGG16-VS-VGG19" class="headerlink" title="VGG16 VS VGG19"></a>VGG16 VS VGG19</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/VGG16VS19.png"></p>
+<p>图片来源：<a href="https://www.cnblogs.com/jesse123/p/7110721.html">https://www.cnblogs.com/jesse123/p/7110721.html</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>图像识别</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>图像识别-GoogLeNet</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/</url>
     <content><![CDATA[<h1 id="GoogleNet"><a href="#GoogleNet" class="headerlink" title="GoogleNet"></a>GoogleNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：一般来说提升网络性能最直接的办法是增加网络深度（卷积层数）和宽度（神经元个数），但是伴随而来的是参数过多，容易过拟合；网络庞大计算复杂；梯度弥散，难以优化；所以需要设计一种模型：1. 让网络模型结构变得稀疏；2.能利用密集矩阵的高性能计算（大部分硬件是对密集矩阵计算优化的，稀疏矩阵计算时耗费的时间并没有减小）</p>
@@ -993,87 +1088,6 @@
       </tags>
   </entry>
   <entry>
-    <title>图像识别-ResNet</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/</url>
-    <content><![CDATA[<h1 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：<strong>训练集上的性能下降，可以排除过拟合，BN层的引入也基本解决了plain net的梯度消失和梯度爆炸问题。</strong>如果不是过拟合以及梯度消失导致的，那原因是什么？为什么非常深度的网络在增加更多层时会表现得更差？深度网络点退化（Degradation problem）问题</p>
-<p>方法简述：</p>
-<p>ResNet网络是参考了VGG19网络，在其基础上进行了修改，并通过短路机制加入了残差单元，如图5所示。变化主要体现在ResNet直接使用stride=2的卷积做下采样，并且用global average pool层替换了全连接层。ResNet的一个重要设计原则是：当feature map大小降低一半时，feature map的数量增加一倍，这保持了网络层的复杂度。</p>
-<p>优点：</p>
-<p>ResNet通过残差学习解决了深度网络的退化问题，让我们可以训练出更深的网络</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-<p>认知上，深层网络不会比浅层网络的表现更差。基本假设是第N+1层什么也没学到也只是简单的copy或者恒等映射了前一层的结果，也至少和前一层有相同的准确度。</p>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/ResNet-Architecture.png"></p>
-<p>参考：<a href="https://www.cnblogs.com/shine-lee/p/12363488.html">https://www.cnblogs.com/shine-lee/p/12363488.html</a></p>
-<p>ResNet的设计有如下特点：</p>
-<ul>
-<li>与plain net相比，ResNet多了很多“旁路”，即shortcut路径，其首尾圈出的layers构成一个Residual Block；</li>
-<li>ResNet中，所有的Residual Block都没有pooling层，<strong>降采样是通过conv的stride实现的</strong>；</li>
-<li>分别在conv3_1、conv4_1和conv5_1 Residual Block，降采样1倍，同时feature map数量增加1倍，如图中虚线划定的block；</li>
-<li><strong>通过Average Pooling得到最终的特征</strong>，而不是通过全连接层；</li>
-<li>每个卷积层之后都紧接着BatchNorm layer，为了简化，图中并没有标出；</li>
-</ul>
-<p>ResNet结构非常容易修改和扩展，通过调整block内的channel数量以及堆叠的block数量，就可以很容易地调整网络的宽度和深度，来得到不同表达能力的网络，而不用过多地担心网络的“退化”问题，只要训练数据足够，逐步加深网络，就可以获得更好的性能表现。</p>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/resnet%E6%A8%A1%E5%9D%97.png"></p>
-<h1 id="Residual-Block的分析与改进"><a href="#Residual-Block的分析与改进" class="headerlink" title="Residual Block的分析与改进"></a>Residual Block的分析与改进</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/ResNet%E6%94%B9%E8%BF%9B.png"></p>
-<p>论文：<a href="https://arxiv.org/abs/1603.05027">https://arxiv.org/abs/1603.05027</a></p>
-<p>新提出的Residual Block结构，具有更强的泛化能力，能更好地避免“退化”，堆叠大于1000层后，性能仍在变好。具体的变化在于</p>
-<ul>
-<li><strong>通过保持shortcut路径的“纯净”，可以让信息在前向传播和反向传播中平滑传递，这点十分重要。</strong>为此，如无必要，不引入1×11×1卷积等操作，同时将上图灰色路径上的ReLU移到了𝐹(𝑥)F(x)路径上。</li>
-<li>在残差路径上，<strong>将BN和ReLU统一放在weight前作为pre-activation</strong>，获得了“Ease of optimization”以及“Reducing overfitting”的效果。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>图像识别</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图像识别-VGGNet</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：随着AlexNet提出，很多人开始利用卷积神经网络来解决图像识别的问题。一般的做法都是重复几层卷积网络，每个卷积网络之后接一些池化层，最后再加上几个全连接层。而如何更优的设计网络结构（深度，kernel size等）</p>
-<p>方法简述：用更小更深的卷积核代替大的卷积核，较深的网络层次来提升深度学习的效果。</p>
-<p>使用很小的3x3、步长为1的卷积核来扫描输入。两个3x3的卷积核堆起来，和一个5x5的卷积核的感受野一样；三个3x3的卷积核堆起来，其感受野等同于一个7x7的卷积核。</p>
-<p>VGG16:</p>
-<p>VGG19:</p>
-<p>优点：</p>
-<ol>
-<li>结构简单 整个网络使用相同size 的卷积核（3X3）和最大池化（2X2）</li>
-<li>证明更深的层可以使得函数具有更好的分辨能力</li>
-<li>用多个较小的卷积核可以减少参数</li>
-<li>去掉局部响应归一化模块</li>
-</ol>
-<p>缺点：</p>
-<ol>
-<li>计算耗费更多资源，参数量大（主要是全联接层导致的）， 内存空间占用高 140M</li>
-</ol>
-<span id="more"></span>
-
-<h1 id="基本结构-VGG16"><a href="#基本结构-VGG16" class="headerlink" title="基本结构-VGG16"></a>基本结构-VGG16</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/VGG16%E7%BB%93%E6%9E%84.png"></p>
-<p>图片来源：<a href="https://www.cxyzjd.com/article/weixin_26726011/108260201">https://www.cxyzjd.com/article/weixin_26726011/108260201</a></p>
-<h1 id="参数计算-VGG16"><a href="#参数计算-VGG16" class="headerlink" title="参数计算-VGG16"></a>参数计算-VGG16</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/%E5%8F%82%E6%95%B0%E8%AE%A1%E7%AE%97.png"></p>
-<h1 id="VGG16-VS-VGG19"><a href="#VGG16-VS-VGG19" class="headerlink" title="VGG16 VS VGG19"></a>VGG16 VS VGG19</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/VGG16VS19.png"></p>
-<p>图片来源：<a href="https://www.cnblogs.com/jesse123/p/7110721.html">https://www.cnblogs.com/jesse123/p/7110721.html</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>图像识别</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>基于YOLOv5的安全帽和口罩检测</title>
     <url>/2021/10/02/%E5%9F%BA%E4%BA%8EYOLOv5%E7%9A%84%E5%AE%89%E5%85%A8%E5%B8%BD%E5%92%8C%E5%8F%A3%E7%BD%A9%E6%A3%80%E6%B5%8B/</url>
     <content><![CDATA[]]></content>
@@ -1130,6 +1144,26 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>强化学习Reinforcement Learning</title>
+    <url>/2021/10/26/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0Reinforcement-Learning/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>强化学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>无人驾驶-视觉方向基础</title>
     <url>/2021/10/07/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6-%E8%A7%86%E8%A7%89%E6%96%B9%E5%90%91%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>无人驾驶作为人工智能的集大成应用，从来就不是某单一的技术，而是众多技术点的整合。技术上它需要有算法上的创新、系统上的融合，以及来自云平台的支持。</p>
@@ -1148,9 +1182,66 @@
 ]]></content>
   </entry>
   <entry>
+    <title>机器学习-K-means算法</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-K-means%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习-KNN邻近算法</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-KNN%E9%82%BB%E8%BF%91%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习-sklearn包的学习</title>
     <url>/2021/10/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-sklearn%E5%8C%85%E7%9A%84%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>机器学习-主成分分析PCA</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90PCA/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
   </entry>
   <entry>
     <title>【未完成】机器学习-优化算法：牛顿法和拟牛顿法</title>
@@ -1257,14 +1348,30 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-K-means算法</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-K-means%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+    <title>机器学习-支持向量机(SVM)</title>
+    <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA-SVM/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：逻辑回归是找到可以划分数据的超平面，但是如何找到最优的超平面来划分数据集呢？</p>
 <p>方法简述：</p>
+<p>线性支持向量机：</p>
+<p>非线性支持向量机：</p>
+<p>核函数：</p>
+<p>软间隔支持向量机：</p>
 <p>优点：</p>
+<p>​    小规模数据集训练，比LR和随机森林准确率高，泛化能力强。</p>
+<p>​    在非线性特征空间中效果较好，有大量的核函数可以使用来解决非线性分类问题</p>
+<p>​    在高维度特征的分类问题和回归问题很有效，即便是特征维度大于样本量的时候</p>
+<p>​    不需要依赖全部样本，仅仅使用一部分样本做支持向量来完成超平面决策</p>
+<p>​    无局部极小值问题；（相对于神经网络等算法）</p>
 <p>缺点：</p>
+<p>​    SVM不能产生分类的概率值，</p>
+<p>​    SVM对大规模训练数据集是不适用的，计算量十分复杂</p>
+<p>​    解决非线性问题时，找到一个合适的核函数是比较困难的</p>
+<p>​    多分类问题支持不友好</p>
+<p>​    对缺失数据敏感</p>
+<p>​    ？？？对于核函数的高维映射解释力不强，尤其是径向基函数；</p>
+<p>应用：</p>
+<p>文本分类领域效果最好的机器学习算法，在工业界主要应用在网页分类、微博情感分析、舆情监控、用户评论挖掘、文本过滤等诸多领域</p>
 <span id="more"></span>
-
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1276,27 +1383,8 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-主成分分析PCA</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90PCA/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习-KNN邻近算法</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-KNN%E9%82%BB%E8%BF%91%E7%AE%97%E6%B3%95/</url>
+    <title>机器学习-朴素贝叶斯</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
@@ -1363,60 +1451,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-朴素贝叶斯</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习-支持向量机(SVM)</title>
-    <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA-SVM/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：逻辑回归是找到可以划分数据的超平面，但是如何找到最优的超平面来划分数据集呢？</p>
-<p>方法简述：</p>
-<p>线性支持向量机：</p>
-<p>非线性支持向量机：</p>
-<p>核函数：</p>
-<p>软间隔支持向量机：</p>
-<p>优点：</p>
-<p>​    小规模数据集训练，比LR和随机森林准确率高，泛化能力强。</p>
-<p>​    在非线性特征空间中效果较好，有大量的核函数可以使用来解决非线性分类问题</p>
-<p>​    在高维度特征的分类问题和回归问题很有效，即便是特征维度大于样本量的时候</p>
-<p>​    不需要依赖全部样本，仅仅使用一部分样本做支持向量来完成超平面决策</p>
-<p>​    无局部极小值问题；（相对于神经网络等算法）</p>
-<p>缺点：</p>
-<p>​    SVM不能产生分类的概率值，</p>
-<p>​    SVM对大规模训练数据集是不适用的，计算量十分复杂</p>
-<p>​    解决非线性问题时，找到一个合适的核函数是比较困难的</p>
-<p>​    多分类问题支持不友好</p>
-<p>​    对缺失数据敏感</p>
-<p>​    ？？？对于核函数的高维映射解释力不强，尤其是径向基函数；</p>
-<p>应用：</p>
-<p>文本分类领域效果最好的机器学习算法，在工业界主要应用在网页分类、微博情感分析、舆情监控、用户评论挖掘、文本过滤等诸多领域</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习-逻辑回归Logistic Regression</title>
     <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92Logistic-Regression/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>逻辑回归 = 线性回归+逻辑分布 （如：sigmoid函数）</p>
@@ -1473,6 +1507,25 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习-集成算法-AdaBoost</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-AdaBoost/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习-集成算法-随机森林</title>
     <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -1492,22 +1545,33 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-集成算法-AdaBoost</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-AdaBoost/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
+    <title>机器学习经典算法概览</title>
+    <url>/2021/09/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
+    <content><![CDATA[<p>这是一篇机器学习经典算法的简述，包含了线性回归、逻辑回归、支持向量机(SVM)、最近邻居(KNN)、决策树、k平均、随机森林、朴素贝叶斯、降维、梯度增强（更新ing）</p>
 <span id="more"></span>
 
-]]></content>
+<h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><h1 id="集成算法-Ensemble-algorithms"><a href="#集成算法-Ensemble-algorithms" class="headerlink" title="集成算法 Ensemble algorithms"></a>集成算法 Ensemble algorithms</h1><p>将多个弱模型组合，弱模型单独训练，将哥哥弱模型的预测结果以某种方式结合完成总体的预测</p>
+<p>主要问题在于找到可以组合的弱模型和弱模型结果的结合方式</p>
+<ol>
+<li>Boosting</li>
+<li>Bagging</li>
+<li>AdaBoost</li>
+<li>Blending</li>
+<li>Random Forest随机森林</li>
+<li>** GBM（Gradient Boosting Machine）梯度推进机</li>
+<li>** GBRT（Gradient Boosted Regression Tree） 梯度提升回归树</li>
+</ol>
+<p>优点：结合最优秀的模型们，可以得到更加优秀的预测结果</p>
+<p>缺点：多模型融合计算量大</p>
+<h3 id><a href="#" class="headerlink" title></a></h3><h1 id="决策树算法（Decision-Tree-Algorithm"><a href="#决策树算法（Decision-Tree-Algorithm" class="headerlink" title="决策树算法（Decision Tree Algorithm)"></a>决策树算法（Decision Tree Algorithm)</h1><p>Step1 选择分裂节点：当根据某个属性的值不能明确分到样本哪个类别是就将此属性作为节点对其分裂</p>
+<p>Step2 选择一个合适的阈值进行分裂使其分类的错误率最小</p>
+<h2 id="1-ID3"><a href="#1-ID3" class="headerlink" title="1.ID3"></a>1.ID3</h2>]]></content>
       <categories>
         <category>学习</category>
         <category>机器学习</category>
       </categories>
       <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
+        <tag>概览</tag>
       </tags>
   </entry>
   <entry>
@@ -1596,36 +1660,6 @@
         <tag>编程</tag>
         <tag>优化</tag>
         <tag>调参</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习经典算法概览</title>
-    <url>/2021/09/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
-    <content><![CDATA[<p>这是一篇机器学习经典算法的简述，包含了线性回归、逻辑回归、支持向量机(SVM)、最近邻居(KNN)、决策树、k平均、随机森林、朴素贝叶斯、降维、梯度增强（更新ing）</p>
-<span id="more"></span>
-
-<h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><h1 id="集成算法-Ensemble-algorithms"><a href="#集成算法-Ensemble-algorithms" class="headerlink" title="集成算法 Ensemble algorithms"></a>集成算法 Ensemble algorithms</h1><p>将多个弱模型组合，弱模型单独训练，将哥哥弱模型的预测结果以某种方式结合完成总体的预测</p>
-<p>主要问题在于找到可以组合的弱模型和弱模型结果的结合方式</p>
-<ol>
-<li>Boosting</li>
-<li>Bagging</li>
-<li>AdaBoost</li>
-<li>Blending</li>
-<li>Random Forest随机森林</li>
-<li>** GBM（Gradient Boosting Machine）梯度推进机</li>
-<li>** GBRT（Gradient Boosted Regression Tree） 梯度提升回归树</li>
-</ol>
-<p>优点：结合最优秀的模型们，可以得到更加优秀的预测结果</p>
-<p>缺点：多模型融合计算量大</p>
-<h3 id><a href="#" class="headerlink" title></a></h3><h1 id="决策树算法（Decision-Tree-Algorithm"><a href="#决策树算法（Decision-Tree-Algorithm" class="headerlink" title="决策树算法（Decision Tree Algorithm)"></a>决策树算法（Decision Tree Algorithm)</h1><p>Step1 选择分裂节点：当根据某个属性的值不能明确分到样本哪个类别是就将此属性作为节点对其分裂</p>
-<p>Step2 选择一个合适的阈值进行分裂使其分类的错误率最小</p>
-<h2 id="1-ID3"><a href="#1-ID3" class="headerlink" title="1.ID3"></a>1.ID3</h2>]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>概览</tag>
       </tags>
   </entry>
   <entry>
@@ -1912,6 +1946,46 @@
       </tags>
   </entry>
   <entry>
+    <title>目标检测-SSD系列</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>目标检测-Retina-Net</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-Retina-Net/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>目标检测-YOLOv2</title>
     <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv2/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：从预测<strong>更准确（Better）</strong>，<strong>速度更快（Faster）</strong>，<strong>识别对象更多（Stronger）</strong>这三个方面进行了改进。</p>
@@ -1979,58 +2053,6 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-SSD系列</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>目标检测-YOLOv4</title>
-    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv4/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-<p>YOLO V4使用 CIOU Loss作为bounding box的损失，与其他提到的方法相比，CIOU带来了更快的收敛和更好的性能。</p>
-<p>尽管YOLO V5目前仍然计逊一筹，但是YOLO V5仍然具有以下显著的优点：</p>
-<ul>
-<li>使用Pytorch框架，对用户非常友好，能够方便地训练自己的数据集，相对于YOLO V4采用的Darknet框架，Pytorch框架更容易投入生产</li>
-<li>代码易读，整合了大量的计算机视觉技术，非常有利于学习和借鉴</li>
-<li>不仅易于配置环境，模型训练也非常快速，并且批处理推理产生实时结果</li>
-<li>能够直接对单个图像，批处理图像，视频甚至网络摄像头端口输入进行有效推理</li>
-<li>能够轻松的将Pytorch权重文件转化为安卓使用的ONXX格式，然后可以转换为OPENCV的使用格式，或者通过CoreML转化为IOS格式，直接部署到手机应用端</li>
-<li>最后YOLO V5s高达140FPS的对象识别速度令人印象非常深刻，使用体验非常棒</li>
-</ul>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>YOLO</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>目标检测-YOLOv3</title>
     <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv3/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -2071,13 +2093,24 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-Retina-Net</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-Retina-Net/</url>
+    <title>目标检测-YOLOv4</title>
+    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv4/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
+
+<p>YOLO V4使用 CIOU Loss作为bounding box的损失，与其他提到的方法相比，CIOU带来了更快的收敛和更好的性能。</p>
+<p>尽管YOLO V5目前仍然计逊一筹，但是YOLO V5仍然具有以下显著的优点：</p>
+<ul>
+<li>使用Pytorch框架，对用户非常友好，能够方便地训练自己的数据集，相对于YOLO V4采用的Darknet框架，Pytorch框架更容易投入生产</li>
+<li>代码易读，整合了大量的计算机视觉技术，非常有利于学习和借鉴</li>
+<li>不仅易于配置环境，模型训练也非常快速，并且批处理推理产生实时结果</li>
+<li>能够直接对单个图像，批处理图像，视频甚至网络摄像头端口输入进行有效推理</li>
+<li>能够轻松的将Pytorch权重文件转化为安卓使用的ONXX格式，然后可以转换为OPENCV的使用格式，或者通过CoreML转化为IOS格式，直接部署到手机应用端</li>
+<li>最后YOLO V5s高达140FPS的对象识别速度令人印象非常深刻，使用体验非常棒</li>
+</ul>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -2088,6 +2121,7 @@
       <tags>
         <tag>编程</tag>
         <tag>论文复现</tag>
+        <tag>YOLO</tag>
       </tags>
   </entry>
   <entry>
@@ -2119,73 +2153,26 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测中候选边界框的处理(NMS,soft-NMS,WBF)</title>
-    <url>/2021/10/11/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E5%80%99%E9%80%89%E8%BE%B9%E7%95%8C%E6%A1%86%E7%9A%84%E5%A4%84%E7%90%86-NMS-soft-NMS-WBF/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>目标检测的过程中在同一目标的位置上会产生大量的候选框，这些候选框相互之间可能会有重叠，此时我们需要消除冗余的边界框。</p>
-<p><strong>NMS非极大值抑制：</strong>找到局部极大值，并筛除（抑制）邻域内其余的值。</p>
-<p><strong>Soft-NMS：</strong>不直接剔除IOU大的框，IoU越大（即，重叠的越多），置信度降低的越强烈</p>
-<p><strong>WBF 加权框融合</strong>：WBF采用的融合框的置信度为所有形成他的边界框的平均置信度，而其坐标也是所有形成他的边界框的坐标的加权和，权重为相应的边界框的置信度。也就是置信度越高的边界框对于融合边界框的坐标做出的贡献越大。</p>
-<span id="more"></span>
-
-<h1 id="NMS-非极大值抑制"><a href="#NMS-非极大值抑制" class="headerlink" title="NMS 非极大值抑制"></a>NMS 非极大值抑制</h1><p>Non-Maximum Suppression是非“极大值”抑制，作用：找到局部极大值，并筛除（抑制）邻域内其余的值。</p>
-<p>算法流程</p>
-<ol>
-<li>将所有的框按类别划分，并剔除背景类，因为无需NMS。</li>
-<li>对每个物体类中的边界框(B_BOX)，按照分类置信度降序排列。</li>
-<li>在某一类中，选择置信度最高的边界框B_BOX1，将B_BOX1从输入列表中去除，并加入输出列表。</li>
-<li>逐个计算B_BOX1与其余B_BOX2的交并比IoU，若IoU(B_BOX1,B_BOX2) &gt; 阈值TH，则在输入去除B_BOX2。</li>
-<li>重复步骤3~4，直到输入列表为空，完成一个物体类的遍历。</li>
-<li>重复2~5，直到所有物体类的NMS处理完成。</li>
-<li>输出列表，算法结束</li>
-</ol>
+    <title>目标检测-YOLOx</title>
+    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOx/</url>
+    <content><![CDATA[<ul>
+<li><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
 <p>缺点：</p>
-<ol>
-<li>密集重叠场景造成误过滤：将得分较低的边框强制性地去掉，如果物体出现较为密集时，本身属于两个物体的边框，其中得分较低的也有可能被抑制掉，降低了模型的召回率。</li>
-<li>速度：NMS的实现存在较多的循环步骤，GPU的并行化实现不是特别容易，尤其是预测框较多时，耗时较多。</li>
-<li>框的置信度和分类的置信度并不是完全对齐的，NMS简单地将得分作为一个边框的置信度，但在一些情况下，得分高的边框不一定位置更准</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">py_cpu_nms</span>(<span class="params">dets, thresh</span>):</span> </span><br><span class="line">    <span class="comment">#dets某个类的框，x1、y1、x2、y2、以及置信度score</span></span><br><span class="line">    <span class="comment">#eg:dets为[[x1,y1,x2,y2,score],[x1,y1,y2,score]……]]</span></span><br><span class="line">    <span class="comment"># thresh是IoU的阈值     </span></span><br><span class="line">    x1 = dets[:, <span class="number">0</span>] </span><br><span class="line">    y1 = dets[:, <span class="number">1</span>]</span><br><span class="line">    x2 = dets[:, <span class="number">2</span>] </span><br><span class="line">    y2 = dets[:, <span class="number">3</span>] </span><br><span class="line">    scores = dets[:, <span class="number">4</span>] </span><br><span class="line">    <span class="comment">#每一个检测框的面积 </span></span><br><span class="line">    areas = (x2 - x1 + <span class="number">1</span>) * (y2 - y1 + <span class="number">1</span>) </span><br><span class="line">    <span class="comment">#按照score置信度降序排序 </span></span><br><span class="line">    order = scores.argsort()[::-<span class="number">1</span>] </span><br><span class="line">    keep = [] <span class="comment">#保留的结果框集合 </span></span><br><span class="line">    <span class="keyword">while</span> order.size &gt; <span class="number">0</span>: </span><br><span class="line">        i = order[<span class="number">0</span>] </span><br><span class="line">        keep.append(i) <span class="comment">#保留该类剩余box中得分最高的一个 </span></span><br><span class="line">        <span class="comment">#得到相交区域,左上及右下 </span></span><br><span class="line">        xx1 = np.maximum(x1[i], x1[order[<span class="number">1</span>:]]) </span><br><span class="line">        yy1 = np.maximum(y1[i], y1[order[<span class="number">1</span>:]]) </span><br><span class="line">        xx2 = np.minimum(x2[i], x2[order[<span class="number">1</span>:]]) </span><br><span class="line">        yy2 = np.minimum(y2[i], y2[order[<span class="number">1</span>:]]) </span><br><span class="line">        <span class="comment">#计算相交的面积,不重叠时面积为0 </span></span><br><span class="line">        w = np.maximum(<span class="number">0.0</span>, xx2 - xx1 + <span class="number">1</span>) </span><br><span class="line">        h = np.maximum(<span class="number">0.0</span>, yy2 - yy1 + <span class="number">1</span>) </span><br><span class="line">        inter = w * h </span><br><span class="line">        <span class="comment">#计算IoU：重叠面积 /（面积1+面积2-重叠面积） </span></span><br><span class="line">        ovr = inter / (areas[i] + areas[order[<span class="number">1</span>:]] - inter) </span><br><span class="line">       <span class="comment">#保留IoU小于阈值的box </span></span><br><span class="line">        inds = np.where(ovr &lt;= thresh)[<span class="number">0</span>] </span><br><span class="line">        order = order[inds + <span class="number">1</span>] <span class="comment">#因为ovr数组的长度比order数组少一个,所以这里要将所有下标后移一位 </span></span><br><span class="line">    <span class="keyword">return</span> keep</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># NMS算法</span></span><br><span class="line"><span class="comment"># bboxes维度为[N,4]，scores维度为[N,], 均为tensor</span></span><br><span class="line"> <span class="function"><span class="keyword">def</span> <span class="title">nms</span>(<span class="params">self, bboxes, scores, threshold=<span class="number">0.5</span></span>):</span></span><br><span class="line">        x1 = bboxes[:,<span class="number">0</span>]</span><br><span class="line">        y1 = bboxes[:,<span class="number">1</span>]</span><br><span class="line">        x2 = bboxes[:,<span class="number">2</span>]</span><br><span class="line">        y2 = bboxes[:,<span class="number">3</span>]</span><br><span class="line">        areas = (x2-x1)*(y2-y1)   <span class="comment"># [N,] 每个bbox的面积</span></span><br><span class="line">        _, order = scores.sort(<span class="number">0</span>, descending=<span class="literal">True</span>)    <span class="comment"># 降序排列</span></span><br><span class="line">        keep = []</span><br><span class="line">        <span class="keyword">while</span> order.numel() &gt; <span class="number">0</span>:       <span class="comment"># torch.numel()返回张量元素个数</span></span><br><span class="line">            <span class="keyword">if</span> order.numel() == <span class="number">1</span>:     <span class="comment"># 保留框只剩一个</span></span><br><span class="line">                i = order.item()</span><br><span class="line">                keep.append(i)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                i = order[<span class="number">0</span>].item()    <span class="comment"># 保留scores最大的那个框box[i] tensor元素取出作为numpy数字</span></span><br><span class="line">                keep.append(i)</span><br><span class="line">            <span class="comment"># 计算box[i]与其余各框的IOU(思路很好)</span></span><br><span class="line">            <span class="comment"># torch.clamp(min, max) 设置上下限</span></span><br><span class="line">            xx1 = x1[order[<span class="number">1</span>:]].clamp(<span class="built_in">min</span>=x1[i])   <span class="comment"># [N-1,] </span></span><br><span class="line">            yy1 = y1[order[<span class="number">1</span>:]].clamp(<span class="built_in">min</span>=y1[i])</span><br><span class="line">            xx2 = x2[order[<span class="number">1</span>:]].clamp(<span class="built_in">max</span>=x2[i]) <span class="comment">#</span></span><br><span class="line">            yy2 = y2[order[<span class="number">1</span>:]].clamp(<span class="built_in">max</span>=y2[i])</span><br><span class="line">            inter = (xx2-xx1).clamp(<span class="built_in">min</span>=<span class="number">0</span>) * (yy2-yy1).clamp(<span class="built_in">min</span>=<span class="number">0</span>)   <span class="comment"># [N-1,]</span></span><br><span class="line">            iou = inter / (areas[i]+areas[order[<span class="number">1</span>:]]-inter)  <span class="comment"># [N-1,]</span></span><br><span class="line">            idx = (iou &lt;= threshold).nonzero().squeeze() <span class="comment"># 注意此时idx为[N-1,] 而order为[N,]</span></span><br><span class="line"> <span class="keyword">if</span> idx.numel() == <span class="number">0</span>:</span><br><span class="line"> <span class="keyword">break</span></span><br><span class="line">            order = order[idx+<span class="number">1</span>]  <span class="comment"># 修补索引之间的差值</span></span><br><span class="line"> <span class="keyword">return</span> torch.LongTensor(keep)   <span class="comment"># Pytorch的索引值为LongTensor</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="soft-NMS"><a href="#soft-NMS" class="headerlink" title="soft-NMS"></a>soft-NMS</h1><p>NMS 算法存在以下问题：</p>
-<ol>
-<li><p>有可能会出现<strong>边界框更准确但是置信度较低的预测框</strong>，我们依靠置信度来决定谁是最佳预测框并不十分准确。</p>
-</li>
-<li><p>假设有两个目标紧在一起，使用NMS算法会造成剔除其中一个目标的预测框</p>
-</li>
-</ol>
-<p>针对NMS算法简单粗暴删除IoU大于给定阈值的候选框的问题，Soft-NMS 并非直接删除这些具有较高IoU的重叠区域，而是降低这些具有较高IoU的候选框的置信度; 最后, 通过与置信度阈值比较筛选出最佳的预测框。Soft-NMS 算法对密集目标的检测具有一定的提升作用。</p>
-<p>Soft-NMS 算法的置信度重置算法有两种方式，一种是采样线性加权，另一种是高斯加权：IoU越大（即，重叠的越多），置信度降低的越强烈</p>
-<p><strong>NMS 和 soft-NMS 都丢弃了冗余框，因此无法有效地从不同模型中产生平均定位预测</strong>。</p>
-<h1 id="WBF-加权框融合"><a href="#WBF-加权框融合" class="headerlink" title="WBF 加权框融合"></a>WBF 加权框融合</h1><p>WBF采用的融合框的置信度为所有形成他的边界框的平均置信度，而其坐标也是所有形成他的边界框的坐标的加权和，权重为相应的边界框的置信度。也就是置信度越高的边界框对于融合边界框的坐标做出的贡献越大。</p>
-<p>NMS和soft-NMS都排除了一些框，但是<strong>Weighted Boxes Fusion</strong> WBF利用了所有框的信息。它可以解决某些情况下，模型预测的框不准确。NMS将只能留下一个不准确的框，而WBF将使用多个框的信息来修复它。</p>
-<p>假设，我们对来自 N 个不同模型的同一图像进行了边界框预测。或者，我们对同一图像的原始版本和增强版本（即垂直/水平反射）有 N 个相同模型的预测。WBF 算法的工作步骤如下：</p>
-<ol>
-<li><p>每个模型的每个预测框都添加到单个列表 B 中。该列表按置信度 C 的降序排序。</p>
-</li>
-<li><p>列表 L是一个框簇储存的是一个个bounding box集合，列表F储存的是融合后的框。列表L中的每个位置可以包含一组框（或单个框），形成一个簇；F 中的每个位置只包含一个框，它是来自 L 中相应簇的融合框。生成融合框的方程将在后面讨论。</p>
-</li>
-<li><p>循环遍历B中的预测框，尝试在列表F中找到匹配框。匹配定义为与问题框重叠较大的框（IoU &gt; THR）。原论文THR是0.55</p>
-</li>
-<li><p>如果没有找到匹配项，则将列表 B 中的框添加到列表 L 和 F 的末尾作为新条目；继续到列表 B 中的下一个框。</p>
-</li>
-<li><p>如果找到匹配，则将此框添加到列表L中与列表F中匹配框对应的位置pos处。</p>
-</li>
-<li><p>重新计算F[pos]中的box坐标和confidence score，使用集群L[pos]中累积的所有T box，其中 score和坐标的计算方式如下, score计算是取算数平均值得到的，而坐标值是通过框的置信度score 和坐标值相乘然后累加再除以 score的累加值得到，这样做可以使得具有较大置信度的框比较小置信度的框对融合后坐标的贡献值更大。</p>
-<p><img src="/2021/10/11/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E5%80%99%E9%80%89%E8%BE%B9%E7%95%8C%E6%A1%86%E7%9A%84%E5%A4%84%E7%90%86-NMS-soft-NMS-WBF/WBF%E8%AE%A1%E7%AE%97.png"></p>
-<p>7、当B中所有的框都循环完后，对于F中每个框的re-scale进行 ，原因是因为如果一个cluster中的框的数量太少的话，可能意味着若干模型中只有很少的模型预测到了这个框，因此是需要减少这种情况下对应框的置信度，作者给出了两种如下re-scale的方式。作者在原论文中指出，这两种方式没有显著的差异，第一种方式的性能会略好一点点。</p>
-<p><img src="/2021/10/11/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E5%80%99%E9%80%89%E8%BE%B9%E7%95%8C%E6%A1%86%E7%9A%84%E5%A4%84%E7%90%86-NMS-soft-NMS-WBF/re-scale.png"></p>
-</li>
-</ol>
+<span id="more"></span></li>
+</ul>
 ]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
       <tags>
-        <tag>目标检测</tag>
-        <tag>候选框</tag>
-        <tag>NMS</tag>
-        <tag>WBF</tag>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>YOLO</tag>
       </tags>
   </entry>
   <entry>
@@ -2270,26 +2257,73 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-YOLOx</title>
-    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOx/</url>
-    <content><![CDATA[<ul>
-<li><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
+    <title>目标检测中候选边界框的处理(NMS,soft-NMS,WBF)</title>
+    <url>/2021/10/11/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E5%80%99%E9%80%89%E8%BE%B9%E7%95%8C%E6%A1%86%E7%9A%84%E5%A4%84%E7%90%86-NMS-soft-NMS-WBF/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>目标检测的过程中在同一目标的位置上会产生大量的候选框，这些候选框相互之间可能会有重叠，此时我们需要消除冗余的边界框。</p>
+<p><strong>NMS非极大值抑制：</strong>找到局部极大值，并筛除（抑制）邻域内其余的值。</p>
+<p><strong>Soft-NMS：</strong>不直接剔除IOU大的框，IoU越大（即，重叠的越多），置信度降低的越强烈</p>
+<p><strong>WBF 加权框融合</strong>：WBF采用的融合框的置信度为所有形成他的边界框的平均置信度，而其坐标也是所有形成他的边界框的坐标的加权和，权重为相应的边界框的置信度。也就是置信度越高的边界框对于融合边界框的坐标做出的贡献越大。</p>
+<span id="more"></span>
+
+<h1 id="NMS-非极大值抑制"><a href="#NMS-非极大值抑制" class="headerlink" title="NMS 非极大值抑制"></a>NMS 非极大值抑制</h1><p>Non-Maximum Suppression是非“极大值”抑制，作用：找到局部极大值，并筛除（抑制）邻域内其余的值。</p>
+<p>算法流程</p>
+<ol>
+<li>将所有的框按类别划分，并剔除背景类，因为无需NMS。</li>
+<li>对每个物体类中的边界框(B_BOX)，按照分类置信度降序排列。</li>
+<li>在某一类中，选择置信度最高的边界框B_BOX1，将B_BOX1从输入列表中去除，并加入输出列表。</li>
+<li>逐个计算B_BOX1与其余B_BOX2的交并比IoU，若IoU(B_BOX1,B_BOX2) &gt; 阈值TH，则在输入去除B_BOX2。</li>
+<li>重复步骤3~4，直到输入列表为空，完成一个物体类的遍历。</li>
+<li>重复2~5，直到所有物体类的NMS处理完成。</li>
+<li>输出列表，算法结束</li>
+</ol>
 <p>缺点：</p>
-<span id="more"></span></li>
-</ul>
+<ol>
+<li>密集重叠场景造成误过滤：将得分较低的边框强制性地去掉，如果物体出现较为密集时，本身属于两个物体的边框，其中得分较低的也有可能被抑制掉，降低了模型的召回率。</li>
+<li>速度：NMS的实现存在较多的循环步骤，GPU的并行化实现不是特别容易，尤其是预测框较多时，耗时较多。</li>
+<li>框的置信度和分类的置信度并不是完全对齐的，NMS简单地将得分作为一个边框的置信度，但在一些情况下，得分高的边框不一定位置更准</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">py_cpu_nms</span>(<span class="params">dets, thresh</span>):</span> </span><br><span class="line">    <span class="comment">#dets某个类的框，x1、y1、x2、y2、以及置信度score</span></span><br><span class="line">    <span class="comment">#eg:dets为[[x1,y1,x2,y2,score],[x1,y1,y2,score]……]]</span></span><br><span class="line">    <span class="comment"># thresh是IoU的阈值     </span></span><br><span class="line">    x1 = dets[:, <span class="number">0</span>] </span><br><span class="line">    y1 = dets[:, <span class="number">1</span>]</span><br><span class="line">    x2 = dets[:, <span class="number">2</span>] </span><br><span class="line">    y2 = dets[:, <span class="number">3</span>] </span><br><span class="line">    scores = dets[:, <span class="number">4</span>] </span><br><span class="line">    <span class="comment">#每一个检测框的面积 </span></span><br><span class="line">    areas = (x2 - x1 + <span class="number">1</span>) * (y2 - y1 + <span class="number">1</span>) </span><br><span class="line">    <span class="comment">#按照score置信度降序排序 </span></span><br><span class="line">    order = scores.argsort()[::-<span class="number">1</span>] </span><br><span class="line">    keep = [] <span class="comment">#保留的结果框集合 </span></span><br><span class="line">    <span class="keyword">while</span> order.size &gt; <span class="number">0</span>: </span><br><span class="line">        i = order[<span class="number">0</span>] </span><br><span class="line">        keep.append(i) <span class="comment">#保留该类剩余box中得分最高的一个 </span></span><br><span class="line">        <span class="comment">#得到相交区域,左上及右下 </span></span><br><span class="line">        xx1 = np.maximum(x1[i], x1[order[<span class="number">1</span>:]]) </span><br><span class="line">        yy1 = np.maximum(y1[i], y1[order[<span class="number">1</span>:]]) </span><br><span class="line">        xx2 = np.minimum(x2[i], x2[order[<span class="number">1</span>:]]) </span><br><span class="line">        yy2 = np.minimum(y2[i], y2[order[<span class="number">1</span>:]]) </span><br><span class="line">        <span class="comment">#计算相交的面积,不重叠时面积为0 </span></span><br><span class="line">        w = np.maximum(<span class="number">0.0</span>, xx2 - xx1 + <span class="number">1</span>) </span><br><span class="line">        h = np.maximum(<span class="number">0.0</span>, yy2 - yy1 + <span class="number">1</span>) </span><br><span class="line">        inter = w * h </span><br><span class="line">        <span class="comment">#计算IoU：重叠面积 /（面积1+面积2-重叠面积） </span></span><br><span class="line">        ovr = inter / (areas[i] + areas[order[<span class="number">1</span>:]] - inter) </span><br><span class="line">       <span class="comment">#保留IoU小于阈值的box </span></span><br><span class="line">        inds = np.where(ovr &lt;= thresh)[<span class="number">0</span>] </span><br><span class="line">        order = order[inds + <span class="number">1</span>] <span class="comment">#因为ovr数组的长度比order数组少一个,所以这里要将所有下标后移一位 </span></span><br><span class="line">    <span class="keyword">return</span> keep</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># NMS算法</span></span><br><span class="line"><span class="comment"># bboxes维度为[N,4]，scores维度为[N,], 均为tensor</span></span><br><span class="line"> <span class="function"><span class="keyword">def</span> <span class="title">nms</span>(<span class="params">self, bboxes, scores, threshold=<span class="number">0.5</span></span>):</span></span><br><span class="line">        x1 = bboxes[:,<span class="number">0</span>]</span><br><span class="line">        y1 = bboxes[:,<span class="number">1</span>]</span><br><span class="line">        x2 = bboxes[:,<span class="number">2</span>]</span><br><span class="line">        y2 = bboxes[:,<span class="number">3</span>]</span><br><span class="line">        areas = (x2-x1)*(y2-y1)   <span class="comment"># [N,] 每个bbox的面积</span></span><br><span class="line">        _, order = scores.sort(<span class="number">0</span>, descending=<span class="literal">True</span>)    <span class="comment"># 降序排列</span></span><br><span class="line">        keep = []</span><br><span class="line">        <span class="keyword">while</span> order.numel() &gt; <span class="number">0</span>:       <span class="comment"># torch.numel()返回张量元素个数</span></span><br><span class="line">            <span class="keyword">if</span> order.numel() == <span class="number">1</span>:     <span class="comment"># 保留框只剩一个</span></span><br><span class="line">                i = order.item()</span><br><span class="line">                keep.append(i)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                i = order[<span class="number">0</span>].item()    <span class="comment"># 保留scores最大的那个框box[i] tensor元素取出作为numpy数字</span></span><br><span class="line">                keep.append(i)</span><br><span class="line">            <span class="comment"># 计算box[i]与其余各框的IOU(思路很好)</span></span><br><span class="line">            <span class="comment"># torch.clamp(min, max) 设置上下限</span></span><br><span class="line">            xx1 = x1[order[<span class="number">1</span>:]].clamp(<span class="built_in">min</span>=x1[i])   <span class="comment"># [N-1,] </span></span><br><span class="line">            yy1 = y1[order[<span class="number">1</span>:]].clamp(<span class="built_in">min</span>=y1[i])</span><br><span class="line">            xx2 = x2[order[<span class="number">1</span>:]].clamp(<span class="built_in">max</span>=x2[i]) <span class="comment">#</span></span><br><span class="line">            yy2 = y2[order[<span class="number">1</span>:]].clamp(<span class="built_in">max</span>=y2[i])</span><br><span class="line">            inter = (xx2-xx1).clamp(<span class="built_in">min</span>=<span class="number">0</span>) * (yy2-yy1).clamp(<span class="built_in">min</span>=<span class="number">0</span>)   <span class="comment"># [N-1,]</span></span><br><span class="line">            iou = inter / (areas[i]+areas[order[<span class="number">1</span>:]]-inter)  <span class="comment"># [N-1,]</span></span><br><span class="line">            idx = (iou &lt;= threshold).nonzero().squeeze() <span class="comment"># 注意此时idx为[N-1,] 而order为[N,]</span></span><br><span class="line"> <span class="keyword">if</span> idx.numel() == <span class="number">0</span>:</span><br><span class="line"> <span class="keyword">break</span></span><br><span class="line">            order = order[idx+<span class="number">1</span>]  <span class="comment"># 修补索引之间的差值</span></span><br><span class="line"> <span class="keyword">return</span> torch.LongTensor(keep)   <span class="comment"># Pytorch的索引值为LongTensor</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="soft-NMS"><a href="#soft-NMS" class="headerlink" title="soft-NMS"></a>soft-NMS</h1><p>NMS 算法存在以下问题：</p>
+<ol>
+<li><p>有可能会出现<strong>边界框更准确但是置信度较低的预测框</strong>，我们依靠置信度来决定谁是最佳预测框并不十分准确。</p>
+</li>
+<li><p>假设有两个目标紧在一起，使用NMS算法会造成剔除其中一个目标的预测框</p>
+</li>
+</ol>
+<p>针对NMS算法简单粗暴删除IoU大于给定阈值的候选框的问题，Soft-NMS 并非直接删除这些具有较高IoU的重叠区域，而是降低这些具有较高IoU的候选框的置信度; 最后, 通过与置信度阈值比较筛选出最佳的预测框。Soft-NMS 算法对密集目标的检测具有一定的提升作用。</p>
+<p>Soft-NMS 算法的置信度重置算法有两种方式，一种是采样线性加权，另一种是高斯加权：IoU越大（即，重叠的越多），置信度降低的越强烈</p>
+<p><strong>NMS 和 soft-NMS 都丢弃了冗余框，因此无法有效地从不同模型中产生平均定位预测</strong>。</p>
+<h1 id="WBF-加权框融合"><a href="#WBF-加权框融合" class="headerlink" title="WBF 加权框融合"></a>WBF 加权框融合</h1><p>WBF采用的融合框的置信度为所有形成他的边界框的平均置信度，而其坐标也是所有形成他的边界框的坐标的加权和，权重为相应的边界框的置信度。也就是置信度越高的边界框对于融合边界框的坐标做出的贡献越大。</p>
+<p>NMS和soft-NMS都排除了一些框，但是<strong>Weighted Boxes Fusion</strong> WBF利用了所有框的信息。它可以解决某些情况下，模型预测的框不准确。NMS将只能留下一个不准确的框，而WBF将使用多个框的信息来修复它。</p>
+<p>假设，我们对来自 N 个不同模型的同一图像进行了边界框预测。或者，我们对同一图像的原始版本和增强版本（即垂直/水平反射）有 N 个相同模型的预测。WBF 算法的工作步骤如下：</p>
+<ol>
+<li><p>每个模型的每个预测框都添加到单个列表 B 中。该列表按置信度 C 的降序排序。</p>
+</li>
+<li><p>列表 L是一个框簇储存的是一个个bounding box集合，列表F储存的是融合后的框。列表L中的每个位置可以包含一组框（或单个框），形成一个簇；F 中的每个位置只包含一个框，它是来自 L 中相应簇的融合框。生成融合框的方程将在后面讨论。</p>
+</li>
+<li><p>循环遍历B中的预测框，尝试在列表F中找到匹配框。匹配定义为与问题框重叠较大的框（IoU &gt; THR）。原论文THR是0.55</p>
+</li>
+<li><p>如果没有找到匹配项，则将列表 B 中的框添加到列表 L 和 F 的末尾作为新条目；继续到列表 B 中的下一个框。</p>
+</li>
+<li><p>如果找到匹配，则将此框添加到列表L中与列表F中匹配框对应的位置pos处。</p>
+</li>
+<li><p>重新计算F[pos]中的box坐标和confidence score，使用集群L[pos]中累积的所有T box，其中 score和坐标的计算方式如下, score计算是取算数平均值得到的，而坐标值是通过框的置信度score 和坐标值相乘然后累加再除以 score的累加值得到，这样做可以使得具有较大置信度的框比较小置信度的框对融合后坐标的贡献值更大。</p>
+<p><img src="/2021/10/11/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E5%80%99%E9%80%89%E8%BE%B9%E7%95%8C%E6%A1%86%E7%9A%84%E5%A4%84%E7%90%86-NMS-soft-NMS-WBF/WBF%E8%AE%A1%E7%AE%97.png"></p>
+<p>7、当B中所有的框都循环完后，对于F中每个框的re-scale进行 ，原因是因为如果一个cluster中的框的数量太少的话，可能意味着若干模型中只有很少的模型预测到了这个框，因此是需要减少这种情况下对应框的置信度，作者给出了两种如下re-scale的方式。作者在原论文中指出，这两种方式没有显著的差异，第一种方式的性能会略好一点点。</p>
+<p><img src="/2021/10/11/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E5%80%99%E9%80%89%E8%BE%B9%E7%95%8C%E6%A1%86%E7%9A%84%E5%A4%84%E7%90%86-NMS-soft-NMS-WBF/re-scale.png"></p>
+</li>
+</ol>
 ]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
       <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>YOLO</tag>
+        <tag>目标检测</tag>
+        <tag>候选框</tag>
+        <tag>NMS</tag>
+        <tag>WBF</tag>
       </tags>
   </entry>
   <entry>
