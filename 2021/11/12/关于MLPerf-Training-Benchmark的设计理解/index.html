@@ -22,18 +22,18 @@
 
   <meta name="description" content="摘要 问题解决： 原理 优点 缺点">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于AIPerf的设计理解">
-<meta property="og:url" content="http://example.com/2021/11/11/%E5%85%B3%E4%BA%8EAIPerf%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/index.html">
+<meta property="og:title" content="关于MLPerf Training Benchmark的设计理解">
+<meta property="og:url" content="http://example.com/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
 <meta property="og:description" content="摘要 问题解决： 原理 优点 缺点">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-11T02:00:46.000Z">
-<meta property="article:modified_time" content="2021-11-12T02:14:42.546Z">
+<meta property="article:published_time" content="2021-11-12T02:39:14.000Z">
+<meta property="article:modified_time" content="2021-11-12T09:06:39.675Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="python 深度学习">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/11/11/%E5%85%B3%E4%BA%8EAIPerf%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/">
+<link rel="canonical" href="http://example.com/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>关于AIPerf的设计理解 | Leo的三板斧</title>
+  <title>关于MLPerf Training Benchmark的设计理解 | Leo的三板斧</title>
   
 
 
@@ -122,7 +122,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">89</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">90</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -229,7 +229,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/11/%E5%85%B3%E4%BA%8EAIPerf%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/android-chrome-512x512.png">
@@ -242,7 +242,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          关于AIPerf的设计理解
+          关于MLPerf Training Benchmark的设计理解
         </h1>
 
         <div class="post-meta">
@@ -252,7 +252,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-11-11 10:00:46" itemprop="dateCreated datePublished" datetime="2021-11-11T10:00:46+08:00">2021-11-11</time>
+              <time title="创建时间：2021-11-12 10:39:14" itemprop="dateCreated datePublished" datetime="2021-11-12T10:39:14+08:00">2021-11-12</time>
             </span>
 
           
@@ -273,24 +273,10 @@
 <p>缺点</p>
 <span id="more"></span>
 
-
-
-<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>大规模人工智能计算系统的计算持续发展，需要一个有效评价计算机系统人工智能算力的评价指标；</p>
-<p>浮点计算峰值是指计算机每秒可以完成的浮点计算次数，包括理论浮点峰值和实测浮点峰值。理论浮点峰值是该计算机理论上每秒可以完成的浮点计算次数，主要由CPU的主频决定。</p>
-<p>理论浮点峰值＝CPU主频×CPU核数×CPU每周期执行浮点运算的次数。</p>
-<p>目前的实测方式如下：</p>
-<p>Linpack Benchmark: 广泛用于高性能计算机双精度浮点运算性能基准评测，但大部分人工智能训练任务以单精度浮点数或者16位浮点数为主</p>
-<p>HPL-AI: 通以Linpack为基础的改善的混合精度的基准测评</p>
-<p>Mobile AI Bench：</p>
-<p>DeepBench：</p>
-<p>AIIA DNN Benchmark:</p>
-<p>AIPerf Benchmark:</p>
-<p> 基于微软NNI（neural network intelligence)框架实现，以自动化机器学习AutoML为负载，进行网络结构搜索（网络态射network morphism ）和超参搜索（树状结构Parzen估计）寻找进度更高的网络结构和超参（batch size；最大epoch；lr；最大搜索模型个数，最长搜索总时间；最大并发搜索模型数量等）</p>
-<h1 id="设计目标"><a href="#设计目标" class="headerlink" title="设计目标"></a>设计目标</h1><h2 id="统一的评价指标Score"><a href="#统一的评价指标Score" class="headerlink" title="统一的评价指标Score"></a>统一的评价指标Score</h2><p>AIPerf的评价指标是Tops（平均每秒处理的混合精度AI浮点操作数），可以用来做横向比较</p>
-<h2 id="处理问题规模可变性"><a href="#处理问题规模可变性" class="headerlink" title="处理问题规模可变性"></a>处理问题规模可变性</h2><p>人工智能计算集群的系统规模在节点数量，加速器数量，加速类型，内存大小等指标上存在差异。需要能适应各种规模的计算集群，因此，在AutoML调整问题规模来适应集群规模的变化。</p>
-<h2 id="实际的人工智能意义"><a href="#实际的人工智能意义" class="headerlink" title="实际的人工智能意义"></a>实际的人工智能意义</h2><p>相较于传统的高性能计算机基准测试程序需要具有人工智能的意义在其中，也是其能够检测集群人工智能算力的核心。AIPerf通过在ImageNet数据集上训练神经网络运行CV方面的算法。</p>
-<h2 id="必要的多机通信"><a href="#必要的多机通信" class="headerlink" title="必要的多机通信"></a>必要的多机通信</h2><p>在计算集群中任务分发，多级训练，结果收集等都是以多机通信为基础，是人工智能计算集群计算能力的重要组成。</p>
-<h1 id="论文精读"><a href="#论文精读" class="headerlink" title="论文精读"></a>论文精读</h1>
+<p>ML Comment 官网： <a target="_blank" rel="noopener" href="https://mlcommons.org/en/">https://mlcommons.org/en/</a> </p>
+<p>论文链接：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1910.01500.pdf">https://arxiv.org/pdf/1910.01500.pdf</a></p>
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>Mchine Learning的发展需要有行业标准的性能基准测评。Machione Learning有三个基准挑战：训练吞吐量，training的随机性和solution时间的差异性，难以用相同的binary，code和超参在不同的软硬件上面进行基准测评。MLPerf定量评估多个厂商的在驱动性能和可伸缩性改进方面的效能。</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1>
     </div>
 
     
@@ -305,13 +291,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/11/02/Python%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/" rel="prev" title="Python内置模块盘点">
-      <i class="fa fa-chevron-left"></i> Python内置模块盘点
+    <a href="/2021/11/11/%E8%AE%BA%E6%96%87%E7%B2%BE%E5%BA%A6-AIPerf-Automated-machine-learning-as-an-AI-HPC-benchmark/" rel="prev" title="论文精度-AIPerf: Automated machine learning as an AI-HPC benchmark">
+      <i class="fa fa-chevron-left"></i> 论文精度-AIPerf: Automated machine learning as an AI-HPC benchmark
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/11/11/%E8%AE%BA%E6%96%87%E7%B2%BE%E5%BA%A6-AIPerf-Automated-machine-learning-as-an-AI-HPC-benchmark/" rel="next" title="论文精度-AIPerf: Automated machine learning as an AI-HPC benchmark">
-      论文精度-AIPerf: Automated machine learning as an AI-HPC benchmark <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -370,7 +353,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87"><span class="nav-number">2.</span> <span class="nav-text">设计目标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9F%E4%B8%80%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87Score"><span class="nav-number">2.1.</span> <span class="nav-text">统一的评价指标Score</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E9%97%AE%E9%A2%98%E8%A7%84%E6%A8%A1%E5%8F%AF%E5%8F%98%E6%80%A7"><span class="nav-number">2.2.</span> <span class="nav-text">处理问题规模可变性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%99%85%E7%9A%84%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%84%8F%E4%B9%89"><span class="nav-number">2.3.</span> <span class="nav-text">实际的人工智能意义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%85%E8%A6%81%E7%9A%84%E5%A4%9A%E6%9C%BA%E9%80%9A%E4%BF%A1"><span class="nav-number">2.4.</span> <span class="nav-text">必要的多机通信</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB"><span class="nav-number">3.</span> <span class="nav-text">论文精读</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusion"><span class="nav-number">2.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -386,7 +369,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">89</span>
+          <span class="site-state-item-count">90</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
