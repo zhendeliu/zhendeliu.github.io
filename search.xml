@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>AI算法面试问题-机器学习（三）</title>
-    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>AI算法面试问题-机器学习（一）</title>
     <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
@@ -37,6 +32,11 @@
   <entry>
     <title>AI算法面试问题-机器学习（二）</title>
     <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>AI算法面试问题-机器学习（三）</title>
+    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -99,27 +99,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>OpenCV图像处理基础（三）</title>
-    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-        <tag>基础操作</tag>
-        <tag>噪音</tag>
-        <tag>灰度图</tag>
-        <tag>编程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenCV图像处理基础（一）</title>
     <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>数字图像基础</p>
@@ -164,18 +143,25 @@
       </tags>
   </entry>
   <entry>
-    <title>Python内置模块盘点</title>
-    <url>/2021/11/02/Python%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="os模块"><a href="#os模块" class="headerlink" title="os模块"></a>os模块</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="shutil模块"><a href="#shutil模块" class="headerlink" title="shutil模块"></a>shutil模块</h1><p>完成文件的复制，删除，移动，压缩，解压</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.copy(src,dst)</span><br><span class="line">shutil.copy2()</span><br><span class="line">shutil.copyfile(src,dst)</span><br><span class="line">shutil.copymode()</span><br><span class="line">shutil.copystat()</span><br><span class="line">shutil.copytree()</span><br><span class="line">shutil.move()</span><br><span class="line">shutil.rmtree()</span><br></pre></td></tr></table></figure>
-
+    <title>OpenCV图像处理基础（三）</title>
+    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
 ]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>基础操作</tag>
+        <tag>噪音</tag>
+        <tag>编程</tag>
+        <tag>灰度图</tag>
+      </tags>
   </entry>
   <entry>
     <title>Python中的*args和**kwargs</title>
@@ -206,6 +192,20 @@
         <tag>基础操作</tag>
         <tag>编程</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Python内置模块盘点</title>
+    <url>/2021/11/02/Python%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="os模块"><a href="#os模块" class="headerlink" title="os模块"></a>os模块</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="shutil模块"><a href="#shutil模块" class="headerlink" title="shutil模块"></a>shutil模块</h1><p>完成文件的复制，删除，移动，压缩，解压</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.copy(src,dst)</span><br><span class="line">shutil.copy2()</span><br><span class="line">shutil.copyfile(src,dst)</span><br><span class="line">shutil.copymode()</span><br><span class="line">shutil.copystat()</span><br><span class="line">shutil.copytree()</span><br><span class="line">shutil.move()</span><br><span class="line">shutil.rmtree()</span><br></pre></td></tr></table></figure>
+
+]]></content>
   </entry>
   <entry>
     <title>Pytorch框架基础（一）</title>
@@ -618,24 +618,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hello-world</title>
-    <url>/2021/09/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>kaggle-糖尿病视网膜病变检测</title>
     <url>/2021/10/07/kaggle-%E7%B3%96%E5%B0%BF%E7%97%85%E8%A7%86%E7%BD%91%E8%86%9C%E7%97%85%E5%8F%98%E6%A3%80%E6%B5%8B/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>问题分析：糖尿病作为一种越来越高发的慢性病，每11个人就有一人是糖尿病患者。糖尿病视网膜病变作为并发症导致的视网膜病变失明也十分常见，如何预防因糖尿病继发的视网膜病变问题的是十分迫切的。这影响到62.5万英国人、甚至是全球1亿人的生活。</p>
@@ -665,6 +647,24 @@
         <tag>编程</tag>
         <tag>Kaggle</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>hello-world</title>
+    <url>/2021/09/29/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>kaggle比赛-Molecular Translation</title>
@@ -768,6 +768,7 @@
 
 <p>ML Comment 官网： <a href="https://mlcommons.org/en/">https://mlcommons.org/en/</a> </p>
 <p>论文链接：<a href="https://arxiv.org/pdf/1910.01500.pdf">https://arxiv.org/pdf/1910.01500.pdf</a></p>
+<p>参考：<a href="https://www.cnblogs.com/caiyishuai/p/14361955.html">https://www.cnblogs.com/caiyishuai/p/14361955.html</a></p>
 <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>Mchine Learning的发展需要有行业标准的性能基准测评。Machione Learning有三个基准挑战：</p>
 <ol>
 <li><p>提升训练吞吐量</p>
@@ -778,7 +779,7 @@
 </li>
 </ol>
 <p>MLPerf定量评估多个厂商的在驱动性能和可伸缩性改进方面的效能。</p>
-<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>MLPerf的目标是创建一个具有代表性的基准测评，公正测评系统性能为了达到5个高级目标：</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>MLPerf的目标是创建一个具有代表性的基准测评，公正测评系统性能为了达到5个目标：</p>
 <ol>
 <li>公平竞赛同时鼓励创新</li>
 <li>通过公平且有用的措施加速ML进程</li>
@@ -795,6 +796,42 @@
 <li>将提交代码开源，以便结果复现</li>
 <li>形成工作组保持benchmark的更新</li>
 </ol>
+<h2 id="MLPerf-实现回面临的问题"><a href="#MLPerf-实现回面临的问题" class="headerlink" title="MLPerf 实现回面临的问题"></a>MLPerf 实现回面临的问题</h2><p>ML 性能基准测试必须确保被测系统达到最先进的质量，同时提供足够的灵活性来适应不同的目标。质量和性能之间的这种权衡具有挑战性，因为多种因素会影响最终质量和实现质量的时间。</p>
+<p>​    <strong>优化对质量的影响</strong>：尽管许多优化会立即改善传统性能指标（如吞吐量），但有些优化可能会降低最终的模型质量，而这种效果只能通过运行整个训练会话来观察到。例如，单精度训练和低精度训练之间的精度差异仅在后来的epoch出现</p>
+<p>​    <strong>训练在时间尺度方面的影响</strong>：系统大小、batch size和动态学习率的变化对性能基准测试带来了另一个挑战。</p>
+<p>​    <strong>运行中的偏差</strong>：DNN训练涉及许多随机影响，这些随机影响在实质性的运行到运行变化中是人为的。例如，随机权重初始化和随机数据传输和系统特征（例如，配置文件驱动的算法选择和浮点加法的非交换性质）。大型分布式训练任务可能涉及异步时间更新，从而改变梯度累积顺序。这些变化使得很难可靠地比较系统性能。</p>
+<p>​    <strong>不同软件架构带来的影响</strong>：软件框架和底层数学库采用不同的算法来实现相同的操作但会产生略有不同的结果。例如，卷积层和完全连接层（现代 DNN 模型中常见的两种计算密集型运算符）通常使用缓存block来利用处理器内存层次结构。块大小和处理顺序（针对不同的硬件进行优化）的不同最最后的结果都有一定的影响</p>
+<h2 id="MLPerf-Training的测试任务"><a href="#MLPerf-Training的测试任务" class="headerlink" title="MLPerf Training的测试任务"></a>MLPerf Training的测试任务</h2><p>Image Classification：</p>
+<p>​        ResNet-50</p>
+<p>Object Detection &amp; Segmentation</p>
+<p>​        Mask R-CNN： 它有两个阶段：第一个阶段提出感兴趣的区域，第二个阶段处理它们以计算边界框和分割掩码。Mask R-CNN 为这些任务提供了高精度的结果，但代价是延迟更高，计算和内存要求更高。基准测试训练时，先做图像resize，将较短的边resize到800，用ResNet-50 作为主干</p>
+<p>​        SSD(Single Shot Detection)： 适用于需要低延迟解决方案的实时应用。SSD以速度换取准确性。训练使用 300 × 300 的输入。选择 ResNet-34 主干网。ResNet-34具有与ResNet-50不同的残差块结构，增加了MLPerf所涵盖的计算主题的多样性。</p>
+<p>Translation</p>
+<p>​        Transformer</p>
+<p>​        GNMT</p>
+<p>Reinforcement Learning</p>
+<p>​        MiniGo</p>
+<p>Recommendation</p>
+<p>​        Neural collaborative filtering (NCF)</p>
+<h2 id="MLPerf-Training"><a href="#MLPerf-Training" class="headerlink" title="MLPerf Training"></a>MLPerf Training</h2><p>MLPerf training可以分为封闭模型分区（Closed Model Division）和开放模型分区（Open Model Division）。</p>
+<p>封闭模型分区要求使用相同模型和优化器，并限制batch大小或学习率等超参数的值，它旨在硬件和软件系统的公平比较。</p>
+<p>开放模型分区只会限制使用相同的数据解决相同的问题，其它模型或平台都不会限制，它旨在推进ML模型和优化的创新。</p>
+<p>对于MLPerf Training每个Benchmark的评价标准是：<strong>在特定数据集上训练一个模型使其达到Quality Target时的Clock time</strong>。由于机器学习任务的训练时间有很大差异，因此，MLPerf 的最终训练结果是由指定次数的基准测试时间平均得出的，其中会去掉最低和最高的数字，一般是运行5次取平均值，Train测试时间包含了模型构建，数据预处理，训练以及质量测试等时间。</p>
+<p>计时从系统接触任何训练或验证数据时开始，到系统在验证数据集上达到定义的质量目标时停止。<br>但不包括一下阶段：</p>
+<p><strong>系统初始化</strong>System initialization，<strong>模型创建和初始化</strong>Model creation and initialization，<strong>数据重新格式化</strong> Data reformatting</p>
+<p><strong>系统初始化</strong>System initialization。初始化（尤其是在大规模初始化）因群集管理选择和系统队列负载而异。例如，它可能涉及在开始训练作业之前对每个节点进行运行诊断。此类开销与系统的训练能力无关，因此将其排除在计时之外。<br><strong>模型创建和初始化</strong>Model creation and initialization.。某些框架可以编译模型图以优化后续执行。在使用行业规模的数据集时，对于较长的训练会话而言，此编译时间无关紧要。然而，MLPerf使用的公共数据集通常比行业数据集小得多。因此，大型分布式系统可以在几分钟内训练一些 MLPerf 基准测试，使累积时间占总时间的很大一部分。为了使基准测试代表在最大的工业数据集上的训练，允许排除长达20分钟的模型创建时间。此限制可确保 MLPerf 限制较小的训练作业，并且不鼓励使用计算和操作成本太高而无法在实践中使用的编译方法进行提交。<br><strong>数据重新格式化</strong> Data reformatting.。原始输入数据通常进行一次重新格式化，然后在许多后续的训练会话中提供。重新格式化示例包括更改图像文件格式和创建数据库（例如，LMDB、TFRecords 或 RecordIO）以实现更高效的访问。由于这些操作对于许多训练系统执行一次，MLPerf 计时不包括重新格式化。但它禁止训练中发生的任何数据处理或增强进入重新格式化阶段（例如，它阻止在定时训练阶段之前创建和保存每个图像的不同裁剪）</p>
+<p>为了解决深度学习方法的随机性质和由此产生的运行到运行方差，MLPerf 要求提交提供每个基准的多次运行以稳定计时。<strong>视觉任务需要5次运</strong>行，以确保来自同一系统的90%的条目在5%以内; 所有其他任务都需要运行 10 次，以确保来自同一系统的 90% 的条目在 10% 以内。<strong>MLPerf 会丢弃最快和最慢的时间，并将剩余运行的算术平均值报告为结果。</strong></p>
+<h3 id="质量阈值的选择"><a href="#质量阈值的选择" class="headerlink" title="质量阈值的选择"></a>质量阈值的选择</h3><p>选择较高阈值，可能需要更长训练的，原因有两个：首先，必须防止优化对最终结果产生不利影响。其次，我们必须尽量减少run-to-run variation，（不同的随机种子产生不同的影响）</p>
+<p><strong>参考实现和超参数</strong><br>MLPerf 使用 PyTorch 或 TensorFlow 框架为每个基准测试提供了一个参考实现，没有被优化，主要目的是定义基准模型和training程序的具体实现。所有提交者都必须遵循这些引用 - 只要 DNN 模型和训练运算在数学上与引用等效，他们就可以在其选择的框架中重新实现基准标记。此外，MLPerf 使用参考实现来建立所需的质量阈值。<br>MLPerf 规则指定可修改的超参数 （Table 2） 以及对其修改的限制。这些限制旨在平衡对不同系统进行调整的需求，并限制超参数搜索空间的大小，以便对计算资源较小的提交者公平。<br>此外，在提交后的审核过程中，允许类似规模的系统之间”超参数借用”，其中一个提交者可以采用另一个提交者的超参数作为特殊基准测试并重新提交其结果（不允许进行其他硬件或软件更改）。在前两轮中，超参数借用成功地用于改进几个提交，表明超参数在某种程度上是可移植的。</p>
+<p><img src="/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/table2.png"></p>
+<h2 id="Report"><a href="#Report" class="headerlink" title="Report"></a>Report</h2><p>MLPerf 提交由系统说明、培训课程日志文件以及重现培训课程所需的所有代码和库组成。所有这些信息都可以在 MLPerf GitHub 网站上公开获得，以及 MLPerf 结果，从而实现可重复性，并使社区能够在后续回合中改进结果。系统描述包括硬件（节点数、处理器和加速器计数和类型、每个节点的存储期限和网络互连）和软件（操作系统以及库及其版本）。培训课程日志文件包含各种结构化信息，包括重要工作负载阶段的时间戳、按规定时间间隔进行的质量指标评估以及超参数选择。这些日志是分析结果的基础。</p>
+<p>An MLPerf submission consists of a system description, training-session log files, and all code and libraries required to reproduce the training sessions. All of this information is publicly available on the MLPerf GitHub site, along with the MLPerf results, allowing for reproducibility and enabling the community to improve the results in subsequent rounds. A system description includes both the hardware (number of nodes, processor and accelerator counts and types, stor- age per node, and network interconnect) and the software (operating system as well as libraries and their versions). A training-session log file contains a variety of structured information including time stamps for important workload stages, quality-metric evaluations at prescribed intervals, and hyperparameter choices. These logs are the foundation for analyzing results.</p>
+<p>4.2 报告结果<br>每个 MLPerf 提交都有多个标签：部门（开放或关闭）、类别（可用、预览或研究）和系统类型（本地或云）。<br>4.2.1 提交部门<br>MLPerf有两个提交部门：封闭和开放。两者都要求提交使用相同的数据集和质量指标作为相应的参考实现。<br>closed区旨在直接进行系统比较，因此它通过要求提交等效于参考实现来努力确保工作负载等效性。等价性包括数学上相同的模型导入、参数初始化、优化器和训练计划以及数据处理和遍历。为了确保公平性，此版本还限制了超参数修改。open区旨在鼓励对重要实际问题进行创新，并鼓励硬件/软件协同设计。它允许提交采用与参考实现不同的模型架构、优化过程和数据增强。</p>
+<p>4.2.2 系统类别<br>为了支持广泛的研究和行业系统，我们定义了三个提交类别：可用、预览和研究。这些类别鼓励新技术和系统（例如，来自学术研究人员），但它们也区分了运输产品和概念验证或早期工程样品。<br>可用类别对硬件和软件可用性都有要求。硬件必须可用于云服务上的第三方租赁，或者，对于本地设备，则可供购买。租赁或购买的铺层和交货时间应适合系统规模和公司规模。为了确保基准测试提交的基准测试被广泛使用，并且不鼓励特定于基准测试的工程，我们还要求此类别中的软件版本化并支持一般用途。<br>预览系统包含自提交之日起 60 天内或下一个提交周期（以较晚者为准）满足可用类别条件的组件。届时，任何预览系统也必须提交到可用类别。<br>研究提交的内容包含无意生产的组件。一个例子是学术研究原型，它被设计为概念验证，而不是一个强大的产品。此类别还包括由专业管道硬件和软件构建但规模大于可用类别配置的系统。</p>
+<p>4.2.3 报告规模<br>现代 ML 训练在系统功耗和成本方面跨越多个数量级。因此，如果报告的性能包括比例，则比较会更有用。通用的规模指标（如成本或功耗）无法在各种系统（云、本地和预生产）中定义，因此需要按系统类型进行区分。<br>在前两轮 MLPerf 中，我们在性能分数旁边加入了系统概念（处理器和/或加速器的数量）。对于本地示例，将来的版本将包括功率测量特性。对于云系统，我们从主机处理器的数量、主机内存量以及加速器的数量和类型中得出了一个”云规模”指标。我们从经验上证实了云规模与三大云提供商的成本密切相关。这些规模指标的报告在 MLPerf v0.5 和 v0.6 中是可选的。</p>
+<p>4.2.4 报告分数<br>MLPerf 结果报告提供了针对每个基准测试进行训练的时间。尽管对于系统比较来说，可能需要一个跨越整个套件的单个摘要分数，但由于两个主要原因，它不适合MLPerf。首先，总分意味着对个人基准分数进行一些加权。鉴于系统用户的多样性和 MLPerf 涵盖的广泛应用，没有一种加权方案具有普遍代表性。其次，如果提交者拒绝报告所有基准测试的结果，则汇总分数的意义就会降低。提交者可能会因为省略某些基准测试而产生多种原因， 并非所有基准测试在每个系统规模上都是可行的（例如，某些模型在最大系统需要数据并行训练所需的迷你批大小下不可训练）。此外，某些处理器可能仅面向某些应用程序。</p>
+<p>5 结果<br>与所有基准一样，MLPerf旨在通过建设性的竞争来鼓励创新;我们通过比较各轮提交的结果来衡量进度。到目前为止，我们已经进行了两轮 MLPerf 训练：v0.5 和 v0.6。它们相隔六个月，底层的硬件和软件系统保持不变。未经修改或在回合之间进行微小修改的结果表明，MLPerf正在推动实现和软件堆栈的快速性能和扩展改进。图3显示，在两个子任务回合之间，尽管目标质量更高，但16芯片系统的最佳性能结果平均提高了1.3×。图4显示，产生最佳整体性能结果所需的芯片数量平均增加了5.5×。其中一些改进归功于更好的基准测试实现，另一些归功于规则更改，例如允许LARS（You et al.，2017）优化器用于大型ResNet批处理。但我们相信，sub-mitters将大部分性能和扩展改进整合到底层软件基础架构中，并将其传递给用户。我们预计MLPerf将通过专注的硬件创新来推动类似的改进。</p>
+<h2 id="MLPerf-Inference"><a href="#MLPerf-Inference" class="headerlink" title="MLPerf Inference"></a>MLPerf Inference</h2><p>对于MLPerf Inference测试，每个Benchmark的评价标准是：<strong>在特定数据集上测量模型的推理性能，包括Latency和吞吐量</strong>。</p>
 <h1 id="MLPerf-Training-BenchMark"><a href="#MLPerf-Training-BenchMark" class="headerlink" title="MLPerf Training BenchMark"></a>MLPerf Training BenchMark</h1><h2 id="Image-Classification"><a href="#Image-Classification" class="headerlink" title="Image Classification"></a>Image Classification</h2><h2 id="Object-Detection-and-Segmentation"><a href="#Object-Detection-and-Segmentation" class="headerlink" title="Object Detection and Segmentation"></a>Object Detection and Segmentation</h2><ol>
 <li><p>Mask R-CNN</p>
 </li>
@@ -950,42 +987,6 @@
       </tags>
   </entry>
   <entry>
-    <title>图像识别-[2012]AlexNet</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>AlexNet是2012年ImageNet竞赛冠军获得者Alex Krizhevsky设计的</p>
-<p>方法简述：AlexNet有6亿个参数和650,000个神经元，包含5个卷积层，有些层后面跟了max-pooling层，3个全连接层，为了减少过拟合，在全连接层使用了dropout</p>
-<p>优点：</p>
-<ol>
-<li>使用Relu作为激活函数</li>
-<li>使用Dropou避免过拟合</li>
-<li>使用重叠的MaxPooling,让stride小于池化核的大小，池化层的输出有重叠和覆盖，提升了特征的丰富性</li>
-<li>？？？提出LRN层局部响应归一化层？？？</li>
-<li>使用分组卷机通过CUDA加速深度卷机网络的训练</li>
-<li>数据增强，避免过拟合</li>
-</ol>
-<p>缺点：</p>
-<ol>
-<li>参数过多，计算量大</li>
-<li>网络不深，准确率不高</li>
-</ol>
-<span id="more"></span>
-
-<p>ImageNet是图像算法领域最常见的数据集，训练集包含120万张图片，验证集包含5万张图片，测试集包含15万张图片，这些图片分为了1000个类别，并且有多种不同的分辨率，</p>
-<h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E7%BB%93%E6%9E%84.png"></p>
-<h1 id="参数计算"><a href="#参数计算" class="headerlink" title="参数计算"></a>参数计算</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E5%8F%82%E6%95%B0%E9%87%8F.png"></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>图像识别</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>图像处理基础-滤波器</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>在图像处理中，经常需要对图像进行平滑去噪、锐化、边界增强等，这些功能可以通过滤波器filter来实现。</p>
@@ -1041,36 +1042,29 @@
       </tags>
   </entry>
   <entry>
-    <title>图像识别-ResNet</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/</url>
-    <content><![CDATA[<h1 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：<strong>训练集上的性能下降，可以排除过拟合，BN层的引入也基本解决了plain net的梯度消失和梯度爆炸问题。</strong>如果不是过拟合以及梯度消失导致的，那原因是什么？为什么非常深度的网络在增加更多层时会表现得更差？深度网络点退化（Degradation problem）问题</p>
-<p>方法简述：</p>
-<p>ResNet网络是参考了VGG19网络，在其基础上进行了修改，并通过短路机制加入了残差单元，如图5所示。变化主要体现在ResNet直接使用stride=2的卷积做下采样，并且用global average pool层替换了全连接层。ResNet的一个重要设计原则是：当feature map大小降低一半时，feature map的数量增加一倍，这保持了网络层的复杂度。</p>
+    <title>图像识别-[2012]AlexNet</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>AlexNet是2012年ImageNet竞赛冠军获得者Alex Krizhevsky设计的</p>
+<p>方法简述：AlexNet有6亿个参数和650,000个神经元，包含5个卷积层，有些层后面跟了max-pooling层，3个全连接层，为了减少过拟合，在全连接层使用了dropout</p>
 <p>优点：</p>
-<p>ResNet通过残差学习解决了深度网络的退化问题，让我们可以训练出更深的网络</p>
+<ol>
+<li>使用Relu作为激活函数</li>
+<li>使用Dropou避免过拟合</li>
+<li>使用重叠的MaxPooling,让stride小于池化核的大小，池化层的输出有重叠和覆盖，提升了特征的丰富性</li>
+<li>？？？提出LRN层局部响应归一化层？？？</li>
+<li>使用分组卷机通过CUDA加速深度卷机网络的训练</li>
+<li>数据增强，避免过拟合</li>
+</ol>
 <p>缺点：</p>
+<ol>
+<li>参数过多，计算量大</li>
+<li>网络不深，准确率不高</li>
+</ol>
 <span id="more"></span>
 
-<p>认知上，深层网络不会比浅层网络的表现更差。基本假设是第N+1层什么也没学到也只是简单的copy或者恒等映射了前一层的结果，也至少和前一层有相同的准确度。</p>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/ResNet-Architecture.png"></p>
-<p>参考：<a href="https://www.cnblogs.com/shine-lee/p/12363488.html">https://www.cnblogs.com/shine-lee/p/12363488.html</a></p>
-<p>ResNet的设计有如下特点：</p>
-<ul>
-<li>与plain net相比，ResNet多了很多“旁路”，即shortcut路径，其首尾圈出的layers构成一个Residual Block；</li>
-<li>ResNet中，所有的Residual Block都没有pooling层，<strong>降采样是通过conv的stride实现的</strong>；</li>
-<li>分别在conv3_1、conv4_1和conv5_1 Residual Block，降采样1倍，同时feature map数量增加1倍，如图中虚线划定的block；</li>
-<li><strong>通过Average Pooling得到最终的特征</strong>，而不是通过全连接层；</li>
-<li>每个卷积层之后都紧接着BatchNorm layer，为了简化，图中并没有标出；</li>
-</ul>
-<p>ResNet结构非常容易修改和扩展，通过调整block内的channel数量以及堆叠的block数量，就可以很容易地调整网络的宽度和深度，来得到不同表达能力的网络，而不用过多地担心网络的“退化”问题，只要训练数据足够，逐步加深网络，就可以获得更好的性能表现。</p>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/resnet%E6%A8%A1%E5%9D%97.png"></p>
-<h1 id="Residual-Block的分析与改进"><a href="#Residual-Block的分析与改进" class="headerlink" title="Residual Block的分析与改进"></a>Residual Block的分析与改进</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/ResNet%E6%94%B9%E8%BF%9B.png"></p>
-<p>论文：<a href="https://arxiv.org/abs/1603.05027">https://arxiv.org/abs/1603.05027</a></p>
-<p>新提出的Residual Block结构，具有更强的泛化能力，能更好地避免“退化”，堆叠大于1000层后，性能仍在变好。具体的变化在于</p>
-<ul>
-<li><strong>通过保持shortcut路径的“纯净”，可以让信息在前向传播和反向传播中平滑传递，这点十分重要。</strong>为此，如无必要，不引入1×11×1卷积等操作，同时将上图灰色路径上的ReLU移到了𝐹(𝑥)F(x)路径上。</li>
-<li>在残差路径上，<strong>将BN和ReLU统一放在weight前作为pre-activation</strong>，获得了“Ease of optimization”以及“Reducing overfitting”的效果。</li>
-</ul>
+<p>ImageNet是图像算法领域最常见的数据集，训练集包含120万张图片，验证集包含5万张图片，测试集包含15万张图片，这些图片分为了1000个类别，并且有多种不同的分辨率，</p>
+<h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E7%BB%93%E6%9E%84.png"></p>
+<h1 id="参数计算"><a href="#参数计算" class="headerlink" title="参数计算"></a>参数计算</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E5%8F%82%E6%95%B0%E9%87%8F.png"></p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1173,6 +1167,49 @@
 <p>  2）全连接层后面也进行BN操作。</p>
 <h1 id="Inception-V4"><a href="#Inception-V4" class="headerlink" title="Inception V4"></a>Inception V4</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V4.png"></p>
 <p>ResNet的结构可以极大地加速训练，同时性能也有提升。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>图像识别</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像识别-ResNet</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/</url>
+    <content><![CDATA[<h1 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：<strong>训练集上的性能下降，可以排除过拟合，BN层的引入也基本解决了plain net的梯度消失和梯度爆炸问题。</strong>如果不是过拟合以及梯度消失导致的，那原因是什么？为什么非常深度的网络在增加更多层时会表现得更差？深度网络点退化（Degradation problem）问题</p>
+<p>方法简述：</p>
+<p>ResNet网络是参考了VGG19网络，在其基础上进行了修改，并通过短路机制加入了残差单元，如图5所示。变化主要体现在ResNet直接使用stride=2的卷积做下采样，并且用global average pool层替换了全连接层。ResNet的一个重要设计原则是：当feature map大小降低一半时，feature map的数量增加一倍，这保持了网络层的复杂度。</p>
+<p>优点：</p>
+<p>ResNet通过残差学习解决了深度网络的退化问题，让我们可以训练出更深的网络</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+<p>认知上，深层网络不会比浅层网络的表现更差。基本假设是第N+1层什么也没学到也只是简单的copy或者恒等映射了前一层的结果，也至少和前一层有相同的准确度。</p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/ResNet-Architecture.png"></p>
+<p>参考：<a href="https://www.cnblogs.com/shine-lee/p/12363488.html">https://www.cnblogs.com/shine-lee/p/12363488.html</a></p>
+<p>ResNet的设计有如下特点：</p>
+<ul>
+<li>与plain net相比，ResNet多了很多“旁路”，即shortcut路径，其首尾圈出的layers构成一个Residual Block；</li>
+<li>ResNet中，所有的Residual Block都没有pooling层，<strong>降采样是通过conv的stride实现的</strong>；</li>
+<li>分别在conv3_1、conv4_1和conv5_1 Residual Block，降采样1倍，同时feature map数量增加1倍，如图中虚线划定的block；</li>
+<li><strong>通过Average Pooling得到最终的特征</strong>，而不是通过全连接层；</li>
+<li>每个卷积层之后都紧接着BatchNorm layer，为了简化，图中并没有标出；</li>
+</ul>
+<p>ResNet结构非常容易修改和扩展，通过调整block内的channel数量以及堆叠的block数量，就可以很容易地调整网络的宽度和深度，来得到不同表达能力的网络，而不用过多地担心网络的“退化”问题，只要训练数据足够，逐步加深网络，就可以获得更好的性能表现。</p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/resnet%E6%A8%A1%E5%9D%97.png"></p>
+<h1 id="Residual-Block的分析与改进"><a href="#Residual-Block的分析与改进" class="headerlink" title="Residual Block的分析与改进"></a>Residual Block的分析与改进</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/ResNet%E6%94%B9%E8%BF%9B.png"></p>
+<p>论文：<a href="https://arxiv.org/abs/1603.05027">https://arxiv.org/abs/1603.05027</a></p>
+<p>新提出的Residual Block结构，具有更强的泛化能力，能更好地避免“退化”，堆叠大于1000层后，性能仍在变好。具体的变化在于</p>
+<ul>
+<li><strong>通过保持shortcut路径的“纯净”，可以让信息在前向传播和反向传播中平滑传递，这点十分重要。</strong>为此，如无必要，不引入1×11×1卷积等操作，同时将上图灰色路径上的ReLU移到了𝐹(𝑥)F(x)路径上。</li>
+<li>在残差路径上，<strong>将BN和ReLU统一放在weight前作为pre-activation</strong>，获得了“Ease of optimization”以及“Reducing overfitting”的效果。</li>
+</ul>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1309,6 +1346,29 @@
 ]]></content>
   </entry>
   <entry>
+    <title>强化学习Reinforcement Learning</title>
+    <url>/2021/10/26/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0Reinforcement-Learning/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+<p><img src="/2021/10/26/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0Reinforcement-Learning/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0Reinforcement-Learning/%E5%88%86%E7%B1%BB.png"></p>
+<p>强化学习的主流分类</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>强化学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>无人驾驶-视觉方向基础</title>
     <url>/2021/10/07/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6-%E8%A7%86%E8%A7%89%E6%96%B9%E5%90%91%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>无人驾驶作为人工智能的集大成应用，从来就不是某单一的技术，而是众多技术点的整合。技术上它需要有算法上的创新、系统上的融合，以及来自云平台的支持。</p>
@@ -1389,48 +1449,6 @@
       </tags>
   </entry>
   <entry>
-    <title>强化学习Reinforcement Learning</title>
-    <url>/2021/10/26/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0Reinforcement-Learning/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-<p><img src="/2021/10/26/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0Reinforcement-Learning/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0Reinforcement-Learning/%E5%88%86%E7%B1%BB.png"></p>
-<p>强化学习的主流分类</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>强化学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【未完成】机器学习-优化算法：牛顿法和拟牛顿法</title>
-    <url>/2021/10/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95%EF%BC%9A%E7%89%9B%E9%A1%BF%E6%B3%95%E5%92%8C%E6%8B%9F%E7%89%9B%E9%A1%BF%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>牛顿法（Newton method）和拟牛顿法（quasi Newton method）是求解无约束最优化问题的常用方法，有收敛速度快的优点。牛顿法是迭代算法，每一步都需求解目标函数的海塞矩阵（Hessian Matrix），计算比较复杂。拟牛顿法通过正定矩阵近似海塞矩阵的逆矩阵或海塞矩阵，简化了这一计算过程。</p>
-<p>方法：</p>
-<p>牛顿法：是使用函数F(x)的泰勒级数的前面几项来寻找方程F(x)=0的根。</p>
-<p>拟牛顿法：牛顿法虽然收敛速度快，但是需要计算海塞矩阵的逆矩阵 ，而且有时目标函数的海塞矩阵无法保持正定，从而使得牛顿法失效。为了克服这两个问题，人们提出了拟牛顿法。这个方法的基本思想是：不用二阶偏导数而构造出可以近似海塞矩阵（或海塞矩阵的逆)的正定对称阵。不同的构造方法就产生了不同的拟牛顿法。</p>
-<p>优点：</p>
-<p>缺点：</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>优化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习-决策树Decision Tree</title>
     <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%86%B3%E7%AD%96%E6%A0%91Decision-Tree/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：根据属性值做if … else …划分。问题在于先行选择哪个属性做划分是最优的？用什么标准来定量的去做这个选择？</p>
@@ -1475,6 +1493,25 @@
       </tags>
   </entry>
   <entry>
+    <title>【未完成】机器学习-优化算法：牛顿法和拟牛顿法</title>
+    <url>/2021/10/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95%EF%BC%9A%E7%89%9B%E9%A1%BF%E6%B3%95%E5%92%8C%E6%8B%9F%E7%89%9B%E9%A1%BF%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>牛顿法（Newton method）和拟牛顿法（quasi Newton method）是求解无约束最优化问题的常用方法，有收敛速度快的优点。牛顿法是迭代算法，每一步都需求解目标函数的海塞矩阵（Hessian Matrix），计算比较复杂。拟牛顿法通过正定矩阵近似海塞矩阵的逆矩阵或海塞矩阵，简化了这一计算过程。</p>
+<p>方法：</p>
+<p>牛顿法：是使用函数F(x)的泰勒级数的前面几项来寻找方程F(x)=0的根。</p>
+<p>拟牛顿法：牛顿法虽然收敛速度快，但是需要计算海塞矩阵的逆矩阵 ，而且有时目标函数的海塞矩阵无法保持正定，从而使得牛顿法失效。为了克服这两个问题，人们提出了拟牛顿法。这个方法的基本思想是：不用二阶偏导数而构造出可以近似海塞矩阵（或海塞矩阵的逆)的正定对称阵。不同的构造方法就产生了不同的拟牛顿法。</p>
+<p>优点：</p>
+<p>缺点：</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习-回归树Regression-Tree</title>
     <url>/2021/10/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%9B%9E%E5%BD%92%E6%A0%91Regression-Tree/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：决策树是解决分类问题的主要方法，分类是离散问题，但回归是连续问题，</p>
@@ -1486,6 +1523,25 @@
 <span id="more"></span>
 
 <p>参考：<a href="https://zhuanlan.zhihu.com/p/82054400">https://zhuanlan.zhihu.com/p/82054400</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习-奇异值分解SVD</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%A5%87%E5%BC%82%E5%80%BC%E5%88%86%E8%A7%A3SVD/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1600,44 +1656,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-奇异值分解SVD</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%A5%87%E5%BC%82%E5%80%BC%E5%88%86%E8%A7%A3SVD/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习-集成算法-AdaBoost</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-AdaBoost/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习-逻辑回归Logistic Regression</title>
     <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92Logistic-Regression/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>逻辑回归 = 线性回归+逻辑分布 （如：sigmoid函数）</p>
@@ -1694,6 +1712,44 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习-集成算法-AdaBoost</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-AdaBoost/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习-集成算法-随机森林</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习经典算法概览</title>
     <url>/2021/09/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
     <content><![CDATA[<p>这是一篇机器学习经典算法的简述，包含了线性回归、逻辑回归、支持向量机(SVM)、最近邻居(KNN)、决策树、k平均、随机森林、朴素贝叶斯、降维、梯度增强（更新ing）</p>
@@ -1721,25 +1777,6 @@
       </categories>
       <tags>
         <tag>概览</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习-集成算法-随机森林</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -2116,17 +2153,13 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-SSD系列</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/</url>
+    <title>目标检测-R-CNN系列</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-R-CNN%E7%B3%BB%E5%88%97/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-
-
-
-<p>git remote set-url origin  <a href="https://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@github.com/zhendeliu/object-detection.git">https://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@github.com/zhendeliu/object-detection.git</a></p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -2160,14 +2193,23 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-R-CNN系列</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-R-CNN%E7%B3%BB%E5%88%97/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+    <title>目标检测-SSD系列</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：解决速度和精度问题</p>
 <p>方法简述：</p>
+<p>SSD （Single Shot MultiBox Detector）是一个one-stage目标检测模型，在一个网络中就可以同时完成目标检测和分类。通过CNN进行特征提取，均匀的在不同位置采用不同的尺寸和长宽比进行密集抽样。同时做物体分类和预选框位置的回归，使得模型速度十分快。</p>
 <p>优点：</p>
+<p>速度快；准确度相对来说比较高；</p>
 <p>缺点：</p>
+<p>均匀密集采样带来的缺点是正样本与负样本（背景）极其不均衡，会导致模型准确度降低，模型训练比较困难</p>
 <span id="more"></span>
-]]></content>
+
+<h1 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h1><p><img src="/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/%E7%BB%86%E8%8A%82%E6%9E%B6%E6%9E%84.png"></p>
+<p>SSD anchor的选择具体参考【目标检测中的anchor】</p>
+<h1 id="论文精读"><a href="#论文精读" class="headerlink" title="论文精读"></a>论文精读</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>SSD 是将bounding box的输出空间离散化到一组不同比例的默认框，scales每个特征映射的位置</p>
+<p>预测阶段：对每个默认框分布在各个类别上进行评分，同时调整 #默认框？？？使得与物体形状更加匹配；另外，网络结合了来自多个不同分辨率的特征图的预测结果，可以自然处理不同size的目标。SSD和 object proposal 方法只有简单的相关（完全取消了预选框的生成和后序的像素处理和重采样阶段），将所有的计算都封装在一个网络。</p>
+<p>SSD mAP达到76.9% 超过Faster R-CNN； 并且比其他单阶段模型有更高的accuracy，即便是输入更小的图片。</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2>]]></content>
       <categories>
         <category>学习</category>
         <category>cv算法</category>
@@ -2370,6 +2412,87 @@
       </tags>
   </entry>
   <entry>
+    <title>目标检测-YOLOv1</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLO%E7%B3%BB%E5%88%97/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>YOLOv1是典型的目标检测one stage方法，用回归的方法去做目标检测，执行速度快，达到非常高效的检测，其背后的原理和思想也非常简单。YOLOv1的基本思想是把一副图片，首先reshape成448x448大小（由于网络中使用了全连接层，所以图片的尺寸需固定大小输入到CNN中），然后将划分成SxS个单元格（原文中S=7），以每个格子所在位置和对应内容为基础，来预测：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+<h1 id="YOLOv1"><a href="#YOLOv1" class="headerlink" title="YOLOv1"></a>YOLOv1</h1><ol>
+<li><p>核心思想 回归思想</p>
+<p>整张图作为网络的输入，在输出层回归Bounding Box的位置和Bounding Box的类别</p>
+<p>相比Faster R-CNN虽然也是整张图输入，但Proposal+ classifier没变, 只是将Proposal也放在了CNN中</p>
+</li>
+<li><p>实现方法</p>
+<ol>
+<li><p>将整张图分为S*S的网格，如果某个object的中心落在这个网格中，这个网格就负责预测这个object</p>
+</li>
+<li><p>每个网格要预测B个bounding box，每个bounding box除了要回归自身的位置之外，还要附带预测一个confidence值。这个confidence代表了所预测的box中含有object的置信度和这个box预测的有多准两重信息</p>
+</li>
+<li><p>每个bounding Box 有五个值要预测(x, y, w, h)和confidence。每个网格还要预测一个类别信息，记为C类。则SxS个网格，每个网格要预测B个bounding box还要预测C个categories。输出就是<strong>S x S x (5*B+C)的一个tenso</strong>r。</p>
+</li>
+<li><p><strong>简单的概括就是：</strong></p>
+<ul>
+<li>给个一个输入图像，首先将图像划分成7*7的网格；</li>
+<li>对于每个网格，我们都预测2个边框（包括每个边框是目标的置信度以及每个边框区域在多个类别上的概率）；</li>
+<li>根据上一步可以预测出7 * 7 * 2个目标窗口，然后根据阈值去除可能性比较低的目标窗口，最后NMS去除冗余窗口即可。</li>
+<li>每个网格包含B个检测框和一个C个类别的概率值，每个检测框含有五个值要预测(x, y, w, h)和confidence</li>
+</ul>
+</li>
+<li><p><strong>注意（重要细节）:</strong></p>
+<p>\1. x，y，w，h，confidence都被限制在区间[0,1]。</p>
+<p>\2. 置信度confidence值只有2种情况，要么为0（边界框中不含目标，P(object)=0），要么为预测框与标注框的IOU，因为P(Object)只有0或1，两种可能，有目标的中心落在格子内，那么P(object)=1，否则为0，不存在（0，1）区间中的值。其他论文中置信度的定义可能跟YOLOv1有些不同，一般置信度指的是预测框中是某类别目标的概率，在[0,1]之间。</p>
+<p>\3. 每个格子预测C个类别的概率分数，而不是每个每个检测框都需要预测C个类别的概率分数。</p>
+</li>
+</ol>
+</li>
+<li><p>在YOLOv1的损失函数中：</p>
+<ol>
+<li>YOLOv1对位置误差，confidence误差，分类误差均使用了均方差作为损失函数。</li>
+<li>三部分误差损失（位置误差，confidence误差，分类误差），在损失函数中所占权重不一样，位置误差权重系数最大，为5</li>
+<li>由于一副图片中没有目标的网格占大多数，有目标的网格占少数，所以损失函数中对没有目标的网格中预测的bbox的confidence误差给予小的权重系数，为0.5。</li>
+<li>有目标的网格中预测的bbox的confidence损失和分类损失，权重系数正常为1。</li>
+<li>由于相同的位置误差对大目标和小目标的影响是不同的，相同的偏差对于小目标来说影响要比大目标大，故作者选择将预测的bbox的w,h先取其平方根，再求均方差损失。</li>
+<li>一个网格预测2个bbox，在计算损失函数的时候，只取与ground truth box中IoU大的那个预测框来计算损失。</li>
+<li>分类误差，只有当单元格中含有目标时才计算，没有目标的单元格的分类误差不计算在内。</li>
+</ol>
+</li>
+<li><p>激活函数</p>
+<ul>
+<li>最后一层全连接层用线性激活函数</li>
+<li>其余层采用leak RELU</li>
+<li></li>
+</ul>
+</li>
+</ol>
+<h1 id="YOLOv1的缺陷"><a href="#YOLOv1的缺陷" class="headerlink" title="YOLOv1的缺陷"></a>YOLOv1的缺陷</h1><ul>
+<li>首先，每个单元格只预测2个bbox，然后每个单元格最后只取与gt_bbox的IOU高的那个最为最后的检测框，也只是说每个单元格最多只预测一个目标，若单个单元格有多个目标时，只能检测出其他的一个，导致小目标漏检，因此YOLOv1对小目标检测效果不好。</li>
+<li>其次，虽然YOLOv1中损失函数中位置误差，对预测的w，h取平方根处理再求均方差，来缓解相同位置误差对大目标，小目标影响不同的弊端，但是作用甚微，没有根本解决问题对于小物体。小的目标的 置信度误差也会对网络优化过程造成很大的影响，从而降低了物体检测的定位准确性。</li>
+<li>由于输出层为全连接层，因此在检测时，YOLO 训练模型只支持与训练图像相同的输入分辨率的图片。</li>
+</ul>
+<ol>
+<li><p>Loss= 坐标预测的Loss + 含object的Box的confidence预测 + 不含object的Box的confidence预测 + 类别预测</p>
+<p>只有当某个网格中有object的时候才对classification error进行惩罚。<br>只有当某个box predictor对某个ground truth box负责的时候，才会对box的coordinate error进行惩罚，而对哪个ground truth box负责就看其预测值和ground truth box的IoU是不是在那个cell的所有box中最大。<br>注：</p>
+<p>YOLOv1方法模型训练依赖于物体识别标注数据，因此，对于非常规的物体形状或比例，YOLOv1的检测效果并不理想。<br>YOLOv1采用了多个下采样层，网络学到的物体特征并不精细，因此也会影响检测效果。<br>YOLOv1的loss函数中，大物体IOU误差和小物体IOU误差对网络训练中loss贡献值接近（虽然采用求平方根方式，但没有根本解决问题）。因此，对于小物体，小的IOU误差也会对网络优化过程造成很大的影响，从而降低了物体检测的定位准确性。<br>YOLO的缺点</p>
+<p>YOLO对相互靠的很近的物体和很小的群体检测效果不好，这是因为一个网格中只预测了两个框，并且只属于一类；<br>同一类物体出现的新的不常见的长宽比和其他情况时，泛化能力偏弱；<br>由于损失函数的问题，定位误差是影响检测效果的主要原因。尤其是大小物体的处理上，还有待加强。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>YOLO</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>目标检测中候选边界框的处理(NMS,soft-NMS,WBF)</title>
     <url>/2021/10/11/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E5%80%99%E9%80%89%E8%BE%B9%E7%95%8C%E6%A1%86%E7%9A%84%E5%A4%84%E7%90%86-NMS-soft-NMS-WBF/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>目标检测的过程中在同一目标的位置上会产生大量的候选框，这些候选框相互之间可能会有重叠，此时我们需要消除冗余的边界框。</p>
@@ -2540,87 +2663,6 @@
         <tag>编程</tag>
         <tag>优化</tag>
         <tag>调参</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>目标检测-YOLOv1</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLO%E7%B3%BB%E5%88%97/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>YOLOv1是典型的目标检测one stage方法，用回归的方法去做目标检测，执行速度快，达到非常高效的检测，其背后的原理和思想也非常简单。YOLOv1的基本思想是把一副图片，首先reshape成448x448大小（由于网络中使用了全连接层，所以图片的尺寸需固定大小输入到CNN中），然后将划分成SxS个单元格（原文中S=7），以每个格子所在位置和对应内容为基础，来预测：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-<h1 id="YOLOv1"><a href="#YOLOv1" class="headerlink" title="YOLOv1"></a>YOLOv1</h1><ol>
-<li><p>核心思想 回归思想</p>
-<p>整张图作为网络的输入，在输出层回归Bounding Box的位置和Bounding Box的类别</p>
-<p>相比Faster R-CNN虽然也是整张图输入，但Proposal+ classifier没变, 只是将Proposal也放在了CNN中</p>
-</li>
-<li><p>实现方法</p>
-<ol>
-<li><p>将整张图分为S*S的网格，如果某个object的中心落在这个网格中，这个网格就负责预测这个object</p>
-</li>
-<li><p>每个网格要预测B个bounding box，每个bounding box除了要回归自身的位置之外，还要附带预测一个confidence值。这个confidence代表了所预测的box中含有object的置信度和这个box预测的有多准两重信息</p>
-</li>
-<li><p>每个bounding Box 有五个值要预测(x, y, w, h)和confidence。每个网格还要预测一个类别信息，记为C类。则SxS个网格，每个网格要预测B个bounding box还要预测C个categories。输出就是<strong>S x S x (5*B+C)的一个tenso</strong>r。</p>
-</li>
-<li><p><strong>简单的概括就是：</strong></p>
-<ul>
-<li>给个一个输入图像，首先将图像划分成7*7的网格；</li>
-<li>对于每个网格，我们都预测2个边框（包括每个边框是目标的置信度以及每个边框区域在多个类别上的概率）；</li>
-<li>根据上一步可以预测出7 * 7 * 2个目标窗口，然后根据阈值去除可能性比较低的目标窗口，最后NMS去除冗余窗口即可。</li>
-<li>每个网格包含B个检测框和一个C个类别的概率值，每个检测框含有五个值要预测(x, y, w, h)和confidence</li>
-</ul>
-</li>
-<li><p><strong>注意（重要细节）:</strong></p>
-<p>\1. x，y，w，h，confidence都被限制在区间[0,1]。</p>
-<p>\2. 置信度confidence值只有2种情况，要么为0（边界框中不含目标，P(object)=0），要么为预测框与标注框的IOU，因为P(Object)只有0或1，两种可能，有目标的中心落在格子内，那么P(object)=1，否则为0，不存在（0，1）区间中的值。其他论文中置信度的定义可能跟YOLOv1有些不同，一般置信度指的是预测框中是某类别目标的概率，在[0,1]之间。</p>
-<p>\3. 每个格子预测C个类别的概率分数，而不是每个每个检测框都需要预测C个类别的概率分数。</p>
-</li>
-</ol>
-</li>
-<li><p>在YOLOv1的损失函数中：</p>
-<ol>
-<li>YOLOv1对位置误差，confidence误差，分类误差均使用了均方差作为损失函数。</li>
-<li>三部分误差损失（位置误差，confidence误差，分类误差），在损失函数中所占权重不一样，位置误差权重系数最大，为5</li>
-<li>由于一副图片中没有目标的网格占大多数，有目标的网格占少数，所以损失函数中对没有目标的网格中预测的bbox的confidence误差给予小的权重系数，为0.5。</li>
-<li>有目标的网格中预测的bbox的confidence损失和分类损失，权重系数正常为1。</li>
-<li>由于相同的位置误差对大目标和小目标的影响是不同的，相同的偏差对于小目标来说影响要比大目标大，故作者选择将预测的bbox的w,h先取其平方根，再求均方差损失。</li>
-<li>一个网格预测2个bbox，在计算损失函数的时候，只取与ground truth box中IoU大的那个预测框来计算损失。</li>
-<li>分类误差，只有当单元格中含有目标时才计算，没有目标的单元格的分类误差不计算在内。</li>
-</ol>
-</li>
-<li><p>激活函数</p>
-<ul>
-<li>最后一层全连接层用线性激活函数</li>
-<li>其余层采用leak RELU</li>
-<li></li>
-</ul>
-</li>
-</ol>
-<h1 id="YOLOv1的缺陷"><a href="#YOLOv1的缺陷" class="headerlink" title="YOLOv1的缺陷"></a>YOLOv1的缺陷</h1><ul>
-<li>首先，每个单元格只预测2个bbox，然后每个单元格最后只取与gt_bbox的IOU高的那个最为最后的检测框，也只是说每个单元格最多只预测一个目标，若单个单元格有多个目标时，只能检测出其他的一个，导致小目标漏检，因此YOLOv1对小目标检测效果不好。</li>
-<li>其次，虽然YOLOv1中损失函数中位置误差，对预测的w，h取平方根处理再求均方差，来缓解相同位置误差对大目标，小目标影响不同的弊端，但是作用甚微，没有根本解决问题对于小物体。小的目标的 置信度误差也会对网络优化过程造成很大的影响，从而降低了物体检测的定位准确性。</li>
-<li>由于输出层为全连接层，因此在检测时，YOLO 训练模型只支持与训练图像相同的输入分辨率的图片。</li>
-</ul>
-<ol>
-<li><p>Loss= 坐标预测的Loss + 含object的Box的confidence预测 + 不含object的Box的confidence预测 + 类别预测</p>
-<p>只有当某个网格中有object的时候才对classification error进行惩罚。<br>只有当某个box predictor对某个ground truth box负责的时候，才会对box的coordinate error进行惩罚，而对哪个ground truth box负责就看其预测值和ground truth box的IoU是不是在那个cell的所有box中最大。<br>注：</p>
-<p>YOLOv1方法模型训练依赖于物体识别标注数据，因此，对于非常规的物体形状或比例，YOLOv1的检测效果并不理想。<br>YOLOv1采用了多个下采样层，网络学到的物体特征并不精细，因此也会影响检测效果。<br>YOLOv1的loss函数中，大物体IOU误差和小物体IOU误差对网络训练中loss贡献值接近（虽然采用求平方根方式，但没有根本解决问题）。因此，对于小物体，小的IOU误差也会对网络优化过程造成很大的影响，从而降低了物体检测的定位准确性。<br>YOLO的缺点</p>
-<p>YOLO对相互靠的很近的物体和很小的群体检测效果不好，这是因为一个网格中只预测了两个框，并且只属于一类；<br>同一类物体出现的新的不常见的长宽比和其他情况时，泛化能力偏弱；<br>由于损失函数的问题，定位误差是影响检测效果的主要原因。尤其是大小物体的处理上，还有待加强。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>YOLO</tag>
       </tags>
   </entry>
   <entry>
@@ -2829,67 +2871,6 @@
       </tags>
   </entry>
   <entry>
-    <title>站内说明</title>
-    <url>/2021/09/29/%E7%AB%99%E5%86%85%E8%AF%B4%E6%98%8E/</url>
-    <content><![CDATA[<p>本blog是作为Leo同学的自我拓展过程中的自律自省记录</p>
-<p>对该blog的计划是对一下类别和领域的学习与探索：</p>
-<p>理论方面：</p>
-<p>​    计算机视觉</p>
-<p>​    深度学习算法</p>
-<p>​    机器学习算法</p>
-<p>Coding方面：</p>
-<p>​    OpenCV</p>
-<p>​    Python</p>
-<p>​    Pytorch</p>
-<p>​    </p>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-      <tags>
-        <tag>概览</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机视觉CV算法概览（更新ing）</title>
-    <url>/2021/09/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89CV%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
-    <content><![CDATA[<h1 id="图像识别"><a href="#图像识别" class="headerlink" title="图像识别"></a>图像识别</h1><h2 id="1-AlexNet"><a href="#1-AlexNet" class="headerlink" title="1. AlexNet"></a>1. AlexNet</h2><h2 id="2-VGGNet"><a href="#2-VGGNet" class="headerlink" title="2. VGGNet"></a>2. VGGNet</h2><h2 id="3-GoogLeNet"><a href="#3-GoogLeNet" class="headerlink" title="3. GoogLeNet"></a>3. GoogLeNet</h2><h2 id="4-ResNet"><a href="#4-ResNet" class="headerlink" title="4. ResNet"></a>4. ResNet</h2><h2 id="5-DenseNet"><a href="#5-DenseNet" class="headerlink" title="5. DenseNet"></a>5. DenseNet</h2><h1 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h1><h2 id="1-R-CNN-系列"><a href="#1-R-CNN-系列" class="headerlink" title="1. R-CNN 系列"></a>1. R-CNN 系列</h2><h3 id="1-R-CNN"><a href="#1-R-CNN" class="headerlink" title="1. R-CNN"></a>1. R-CNN</h3><h3 id="2-Fast-R-CNN"><a href="#2-Fast-R-CNN" class="headerlink" title="2. Fast R-CNN"></a>2. Fast R-CNN</h3><h3 id="3-Faster-R-CNN"><a href="#3-Faster-R-CNN" class="headerlink" title="3. Faster R-CNN"></a>3. Faster R-CNN</h3><h2 id="2-Yolo系列"><a href="#2-Yolo系列" class="headerlink" title="2. Yolo系列"></a>2. Yolo系列</h2><h3 id="1-Yolo-V1"><a href="#1-Yolo-V1" class="headerlink" title="1.Yolo V1"></a>1.Yolo V1</h3><h3 id="2-Yolo-V2"><a href="#2-Yolo-V2" class="headerlink" title="2.Yolo V2"></a>2.Yolo V2</h3><h3 id="3-Yolo-V3"><a href="#3-Yolo-V3" class="headerlink" title="3.Yolo V3"></a>3.Yolo V3</h3><h3 id="4-Yolo-V4"><a href="#4-Yolo-V4" class="headerlink" title="4.Yolo V4"></a>4.Yolo V4</h3><h3 id="5-Yolo-V5"><a href="#5-Yolo-V5" class="headerlink" title="5.Yolo V5"></a>5.Yolo V5</h3><h2 id="3-SSD"><a href="#3-SSD" class="headerlink" title="3. SSD"></a>3. SSD</h2><h2 id="4-Retina-Net"><a href="#4-Retina-Net" class="headerlink" title="4. Retina-Net"></a>4. Retina-Net</h2><h1 id="图像分割"><a href="#图像分割" class="headerlink" title="图像分割"></a>图像分割</h1><h2 id="1-FCN"><a href="#1-FCN" class="headerlink" title="1. FCN"></a>1. FCN</h2><h2 id="2-Mask-R-CNN"><a href="#2-Mask-R-CNN" class="headerlink" title="2. Mask R-CNN"></a>2. Mask R-CNN</h2><h1 id="目标追踪"><a href="#目标追踪" class="headerlink" title="目标追踪"></a>目标追踪</h1><h2 id="1-Goturn"><a href="#1-Goturn" class="headerlink" title="1. Goturn"></a>1. Goturn</h2><h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><h1 id="图像生成"><a href="#图像生成" class="headerlink" title="图像生成"></a>图像生成</h1><h2 id="1-GAN"><a href="#1-GAN" class="headerlink" title="1. GAN"></a>1. GAN</h2>]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-      </categories>
-      <tags>
-        <tag>概览</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机视觉模型库-timm</title>
-    <url>/2021/10/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E6%A8%A1%E5%9E%8B%E5%BA%93-timm/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>Py<strong>T</strong>orch <strong>Im</strong>age <strong>M</strong>odels (<strong>timm</strong>)由Ross Wightman创建的深度学习库，是一个图像模型（models）、层（layers）、实用程序（utilities）、优化器（optimizers）、调度器（schedulers）、数据加载/增强（data-loaders / augmentations）和参考训练/验证脚本（reference training / validation scripts）的集合是一个关于SOTA的计算机视觉模型、层、实用工具、optimizers, schedulers, data-loaders, augmentations，可以复现ImageNet训练结果的训练/验证代码。</p>
-<span id="more"></span>
-
-<h1 id="创建模型"><a href="#创建模型" class="headerlink" title="创建模型"></a>创建模型</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> timm </span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="comment"># 创建模型</span></span><br><span class="line">model = timm.create_model(<span class="string">&#x27;resnet34&#x27;</span>)</span><br><span class="line"><span class="comment"># 如果是要创建一个预训练的模型，则只要设置pretrained=True即可。</span></span><br><span class="line">pretrained_resnet_34 = timm.create_model(<span class="string">&#x27;resnet34&#x27;</span>, pretrained=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 创建一个定制化类别数量的模型，只需设置num_classes</span></span><br><span class="line">model = timm.create_model(<span class="string">&#x27;resnet34&#x27;</span>, num_classes=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">x     = torch.randn(<span class="number">1</span>, <span class="number">3</span>, <span class="number">224</span>, <span class="number">224</span>)</span><br><span class="line">model(x).shape</span><br></pre></td></tr></table></figure>
-
-<h1 id="预训练权重的模型列表"><a href="#预训练权重的模型列表" class="headerlink" title="预训练权重的模型列表"></a>预训练权重的模型列表</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 返回timm中所有模型的列表</span></span><br><span class="line">timm.list_models()</span><br><span class="line"><span class="comment"># 查看具有预训练权重的模型，只需设置pretrained=True</span></span><br><span class="line">avail_pretrained_models = timm.list_models(pretrained=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 使用关键词检索模型架构</span></span><br><span class="line">all_densenet_models = timm.list_models(<span class="string">&#x27;*densenet*&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h1 id="其他设置"><a href="#其他设置" class="headerlink" title="其他设置"></a>其他设置</h1><h2 id="通道数设置"><a href="#通道数设置" class="headerlink" title="通道数设置"></a>通道数设置</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置单通道模型</span></span><br><span class="line">m = timm.create_model(<span class="string">&#x27;resnet34&#x27;</span>,pretrained=<span class="literal">True</span>, in_chans=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># single channel image</span></span><br><span class="line">x = torch.randn(<span class="number">1</span>, <span class="number">1</span>, <span class="number">224</span>, <span class="number">224</span>)</span><br><span class="line">m(x).shape</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置多通道模型</span></span><br><span class="line">m = timm.create_model(<span class="string">&#x27;resnet34&#x27;</span>, pretrained=<span class="literal">True</span>, in_chans=<span class="number">25</span>)</span><br><span class="line"><span class="comment"># 25-channel image</span></span><br><span class="line">x = torch.randn(<span class="number">1</span>, <span class="number">25</span>, <span class="number">224</span>, <span class="number">224</span>)</span><br><span class="line"></span><br><span class="line">m(x).shape</span><br></pre></td></tr></table></figure>
-
-<p>timm源码中的处理方式是</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将通道数设置为1时， timm简单地将原3通道权重相加成单通道权重，并更新权重的shape</span></span><br><span class="line">conv1_weight = state_dict[<span class="string">&#x27;conv1.weight&#x27;</span>]</span><br><span class="line">conv1_weight.<span class="built_in">sum</span>(dim=<span class="number">1</span>, keepdim=<span class="literal">True</span>).shape</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将通道设置为8时，则先将原先的3通道复制3次变为9通道，然后选择前8个通道</span></span><br><span class="line">conv1_name = cfg[<span class="string">&#x27;first_conv&#x27;</span>]</span><br><span class="line">conv1_weight = state_dict[conv1_name + <span class="string">&#x27;.weight&#x27;</span>]</span><br><span class="line">conv1_type = conv1_weight.dtype</span><br><span class="line">conv1_weight = conv1_weight.<span class="built_in">float</span>()</span><br><span class="line">repeat = <span class="built_in">int</span>(math.ceil(in_chans / <span class="number">3</span>))</span><br><span class="line">conv1_weight = conv1_weight.repeat(<span class="number">1</span>, repeat, <span class="number">1</span>, <span class="number">1</span>)[:, :in_chans, :, :]</span><br><span class="line">conv1_weight *= (<span class="number">3</span> / <span class="built_in">float</span>(in_chans))</span><br><span class="line">conv1_weight = conv1_weight.to(conv1_type)</span><br><span class="line">state_dict[conv1_name + <span class="string">&#x27;.weight&#x27;</span>] = conv1_weight</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>Pytorch</category>
-        <category>深度学习</category>
-        <category>图像识别</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>源码阅读</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>神经网络-激活函数</title>
     <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -2957,9 +2938,127 @@
       </tags>
   </entry>
   <entry>
+    <title>站内说明</title>
+    <url>/2021/09/29/%E7%AB%99%E5%86%85%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<p>本blog是作为Leo同学的自我拓展过程中的自律自省记录</p>
+<p>对该blog的计划是对一下类别和领域的学习与探索：</p>
+<p>理论方面：</p>
+<p>​    计算机视觉</p>
+<p>​    深度学习算法</p>
+<p>​    机器学习算法</p>
+<p>Coding方面：</p>
+<p>​    OpenCV</p>
+<p>​    Python</p>
+<p>​    Pytorch</p>
+<p>​    </p>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>概览</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机视觉CV算法概览（更新ing）</title>
+    <url>/2021/09/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89CV%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
+    <content><![CDATA[<h1 id="图像识别"><a href="#图像识别" class="headerlink" title="图像识别"></a>图像识别</h1><h2 id="1-AlexNet"><a href="#1-AlexNet" class="headerlink" title="1. AlexNet"></a>1. AlexNet</h2><h2 id="2-VGGNet"><a href="#2-VGGNet" class="headerlink" title="2. VGGNet"></a>2. VGGNet</h2><h2 id="3-GoogLeNet"><a href="#3-GoogLeNet" class="headerlink" title="3. GoogLeNet"></a>3. GoogLeNet</h2><h2 id="4-ResNet"><a href="#4-ResNet" class="headerlink" title="4. ResNet"></a>4. ResNet</h2><h2 id="5-DenseNet"><a href="#5-DenseNet" class="headerlink" title="5. DenseNet"></a>5. DenseNet</h2><h1 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h1><h2 id="1-R-CNN-系列"><a href="#1-R-CNN-系列" class="headerlink" title="1. R-CNN 系列"></a>1. R-CNN 系列</h2><h3 id="1-R-CNN"><a href="#1-R-CNN" class="headerlink" title="1. R-CNN"></a>1. R-CNN</h3><h3 id="2-Fast-R-CNN"><a href="#2-Fast-R-CNN" class="headerlink" title="2. Fast R-CNN"></a>2. Fast R-CNN</h3><h3 id="3-Faster-R-CNN"><a href="#3-Faster-R-CNN" class="headerlink" title="3. Faster R-CNN"></a>3. Faster R-CNN</h3><h2 id="2-Yolo系列"><a href="#2-Yolo系列" class="headerlink" title="2. Yolo系列"></a>2. Yolo系列</h2><h3 id="1-Yolo-V1"><a href="#1-Yolo-V1" class="headerlink" title="1.Yolo V1"></a>1.Yolo V1</h3><h3 id="2-Yolo-V2"><a href="#2-Yolo-V2" class="headerlink" title="2.Yolo V2"></a>2.Yolo V2</h3><h3 id="3-Yolo-V3"><a href="#3-Yolo-V3" class="headerlink" title="3.Yolo V3"></a>3.Yolo V3</h3><h3 id="4-Yolo-V4"><a href="#4-Yolo-V4" class="headerlink" title="4.Yolo V4"></a>4.Yolo V4</h3><h3 id="5-Yolo-V5"><a href="#5-Yolo-V5" class="headerlink" title="5.Yolo V5"></a>5.Yolo V5</h3><h2 id="3-SSD"><a href="#3-SSD" class="headerlink" title="3. SSD"></a>3. SSD</h2><h2 id="4-Retina-Net"><a href="#4-Retina-Net" class="headerlink" title="4. Retina-Net"></a>4. Retina-Net</h2><h1 id="图像分割"><a href="#图像分割" class="headerlink" title="图像分割"></a>图像分割</h1><h2 id="1-FCN"><a href="#1-FCN" class="headerlink" title="1. FCN"></a>1. FCN</h2><h2 id="2-Mask-R-CNN"><a href="#2-Mask-R-CNN" class="headerlink" title="2. Mask R-CNN"></a>2. Mask R-CNN</h2><h1 id="目标追踪"><a href="#目标追踪" class="headerlink" title="目标追踪"></a>目标追踪</h1><h2 id="1-Goturn"><a href="#1-Goturn" class="headerlink" title="1. Goturn"></a>1. Goturn</h2><h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><h1 id="图像生成"><a href="#图像生成" class="headerlink" title="图像生成"></a>图像生成</h1><h2 id="1-GAN"><a href="#1-GAN" class="headerlink" title="1. GAN"></a>1. GAN</h2>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+      </categories>
+      <tags>
+        <tag>概览</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机视觉模型库-timm</title>
+    <url>/2021/10/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E6%A8%A1%E5%9E%8B%E5%BA%93-timm/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>Py<strong>T</strong>orch <strong>Im</strong>age <strong>M</strong>odels (<strong>timm</strong>)由Ross Wightman创建的深度学习库，是一个图像模型（models）、层（layers）、实用程序（utilities）、优化器（optimizers）、调度器（schedulers）、数据加载/增强（data-loaders / augmentations）和参考训练/验证脚本（reference training / validation scripts）的集合是一个关于SOTA的计算机视觉模型、层、实用工具、optimizers, schedulers, data-loaders, augmentations，可以复现ImageNet训练结果的训练/验证代码。</p>
+<span id="more"></span>
+
+<h1 id="创建模型"><a href="#创建模型" class="headerlink" title="创建模型"></a>创建模型</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> timm </span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="comment"># 创建模型</span></span><br><span class="line">model = timm.create_model(<span class="string">&#x27;resnet34&#x27;</span>)</span><br><span class="line"><span class="comment"># 如果是要创建一个预训练的模型，则只要设置pretrained=True即可。</span></span><br><span class="line">pretrained_resnet_34 = timm.create_model(<span class="string">&#x27;resnet34&#x27;</span>, pretrained=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 创建一个定制化类别数量的模型，只需设置num_classes</span></span><br><span class="line">model = timm.create_model(<span class="string">&#x27;resnet34&#x27;</span>, num_classes=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">x     = torch.randn(<span class="number">1</span>, <span class="number">3</span>, <span class="number">224</span>, <span class="number">224</span>)</span><br><span class="line">model(x).shape</span><br></pre></td></tr></table></figure>
+
+<h1 id="预训练权重的模型列表"><a href="#预训练权重的模型列表" class="headerlink" title="预训练权重的模型列表"></a>预训练权重的模型列表</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 返回timm中所有模型的列表</span></span><br><span class="line">timm.list_models()</span><br><span class="line"><span class="comment"># 查看具有预训练权重的模型，只需设置pretrained=True</span></span><br><span class="line">avail_pretrained_models = timm.list_models(pretrained=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 使用关键词检索模型架构</span></span><br><span class="line">all_densenet_models = timm.list_models(<span class="string">&#x27;*densenet*&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="其他设置"><a href="#其他设置" class="headerlink" title="其他设置"></a>其他设置</h1><h2 id="通道数设置"><a href="#通道数设置" class="headerlink" title="通道数设置"></a>通道数设置</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置单通道模型</span></span><br><span class="line">m = timm.create_model(<span class="string">&#x27;resnet34&#x27;</span>,pretrained=<span class="literal">True</span>, in_chans=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># single channel image</span></span><br><span class="line">x = torch.randn(<span class="number">1</span>, <span class="number">1</span>, <span class="number">224</span>, <span class="number">224</span>)</span><br><span class="line">m(x).shape</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置多通道模型</span></span><br><span class="line">m = timm.create_model(<span class="string">&#x27;resnet34&#x27;</span>, pretrained=<span class="literal">True</span>, in_chans=<span class="number">25</span>)</span><br><span class="line"><span class="comment"># 25-channel image</span></span><br><span class="line">x = torch.randn(<span class="number">1</span>, <span class="number">25</span>, <span class="number">224</span>, <span class="number">224</span>)</span><br><span class="line"></span><br><span class="line">m(x).shape</span><br></pre></td></tr></table></figure>
+
+<p>timm源码中的处理方式是</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将通道数设置为1时， timm简单地将原3通道权重相加成单通道权重，并更新权重的shape</span></span><br><span class="line">conv1_weight = state_dict[<span class="string">&#x27;conv1.weight&#x27;</span>]</span><br><span class="line">conv1_weight.<span class="built_in">sum</span>(dim=<span class="number">1</span>, keepdim=<span class="literal">True</span>).shape</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将通道设置为8时，则先将原先的3通道复制3次变为9通道，然后选择前8个通道</span></span><br><span class="line">conv1_name = cfg[<span class="string">&#x27;first_conv&#x27;</span>]</span><br><span class="line">conv1_weight = state_dict[conv1_name + <span class="string">&#x27;.weight&#x27;</span>]</span><br><span class="line">conv1_type = conv1_weight.dtype</span><br><span class="line">conv1_weight = conv1_weight.<span class="built_in">float</span>()</span><br><span class="line">repeat = <span class="built_in">int</span>(math.ceil(in_chans / <span class="number">3</span>))</span><br><span class="line">conv1_weight = conv1_weight.repeat(<span class="number">1</span>, repeat, <span class="number">1</span>, <span class="number">1</span>)[:, :in_chans, :, :]</span><br><span class="line">conv1_weight *= (<span class="number">3</span> / <span class="built_in">float</span>(in_chans))</span><br><span class="line">conv1_weight = conv1_weight.to(conv1_type)</span><br><span class="line">state_dict[conv1_name + <span class="string">&#x27;.weight&#x27;</span>] = conv1_weight</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>Pytorch</category>
+        <category>深度学习</category>
+        <category>图像识别</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>源码阅读</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>论文精度-AIPerf: Automated machine learning as an AI-HPC benchmark</title>
     <url>/2021/11/11/%E8%AE%BA%E6%96%87%E7%B2%BE%E5%BA%A6-AIPerf-Automated-machine-learning-as-an-AI-HPC-benchmark/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>语义分割-算法概述</title>
+    <url>/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>什么是语义分割？</p>
+<p>架构与方法</p>
+<p>用卷积神经网络分类</p>
+<p>用条件随机场优化</p>
+<span id="more"></span>
+
+<h1 id="什么是语义分割？"><a href="#什么是语义分割？" class="headerlink" title="什么是语义分割？"></a>什么是语义分割？</h1><p>语义分割是计算机视觉中的基本任务，在语义分割中我们需要将视觉输入分为不同的语义可解释类别，「语义的可解释性」即分类类别在真实世界中是有意义的。语义分割是在像素级别上的分类，属于同一类的像素都要被归为一类，因此语义分割是从像素级别来理解图像的。比如说如下的照片，属于人的像素都要分成一类，属于小汽车的像素也要分成一类，除此之外还有背景像素也被分为一类。注意语义分割不同于实例分割，实例分割还要将不同人的像素归为不同的类，实例分割比语义分割更进一步。</p>
+<p><img src="/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/1.png"></p>
+<p>Reference: Zhao 等人的 ICNet（2017）：语义分割的演示视频</p>
+<p>与图像分类或目标检测相比，语义分割使我们对图像有更加细致的了解。这种了解在诸如自动驾驶、机器人以及图像搜索引擎等许多领域都是非常重要的。</p>
+<h1 id="常用于训练语义分割模型的数据集"><a href="#常用于训练语义分割模型的数据集" class="headerlink" title="常用于训练语义分割模型的数据集"></a>常用于训练语义分割模型的数据集</h1><ul>
+<li>Pascal VOC 2012：有 20 类目标，这些目标包括人类、机动车类以及其他类，可用于目标类别或背景的分割</li>
+<li>Cityscapes：50 个城市的城市场景语义理解数据集</li>
+<li>Pascal Context：有 400 多类的室内和室外场景</li>
+<li>Stanford Background Dataset：至少有一个前景物体的一组户外场景。</li>
+</ul>
+<p>评估语义分割算法性能的标准指标是平均 IOU（Intersection Over Union，交并比）</p>
+<h1 id="语义分割思路"><a href="#语义分割思路" class="headerlink" title="语义分割思路"></a>语义分割思路</h1><h2 id><a href="#" class="headerlink" title></a></h2><p><strong>1.Patch classification</strong></p>
+<p>最初的深度学习方法应用于图像分割就是Patch classification。Patch classification方法，顾名思义，图像是切成块喂给深度模型的，然后对像素进行分类。使用图像块的主要原因是因为全连接层需要固定大小的图像。</p>
+<p><strong>2.全卷积方法</strong></p>
+<p>2014年，全卷积网络（FCN）横空出世，FCN将网络全连接层用卷积取代，因此使任意图像大小的输入都变成可能，而且速度比Patch classification方法快很多。</p>
+<p>尽管移除了全连接层，但是CNN模型用于语义分割还存在一个问题，就是下采样操作（比如，pooling）。pooling操作可以扩大感受野因而能够很好地整合上下文信息（context中文称为语境或者上下文，通俗的理解就是综合了更多的信息来进行决策），对high-level的任务（比如分类），这是很有效的。但同时，由于pooling下采样操作，使得分辨率降低，因此削弱了位置信息，而语义分割中需要score map和原图对齐，因此需要丰富的位置信息。</p>
+<p><strong>3.encoder-decoder架构</strong> 如Unet</p>
+<p>encoder-decoder是基于FCN的架构。encoder由于pooling逐渐减少空间维度，而decoder逐渐恢复空间维度和细节信息。通常从encoder到decoder还有shortcut connetction（捷径连接，也就是跨层连接）。其中U-net就是这种架构很流行的一种</p>
+<p><strong>4.空洞卷积</strong></p>
+<p>dilated/atrous （空洞卷积）架构，这种结构代替了pooling，一方面它可以保持空间分辨率，另外一方面它由于可以扩大感受野因而可以很好地整合上下文信息。</p>
+<p><strong>5.条件随机场</strong></p>
+<p>除了以上思路，还有一种对分割结果进行后处理的方法，那就是条件随机场(Conditional Random Fields (CRFs))后处理用来改善分割效果。DeepLab系列文章基本都采用这种后处理方法，可以较好地改善分割结果，如下图：</p>
+<p><strong>6.对抗学习</strong></p>
+<p>作为分割的端到端解决方案有非常强大的性能。</p>
+<h1 id="深度学习语义分割方法"><a href="#深度学习语义分割方法" class="headerlink" title="深度学习语义分割方法"></a>深度学习语义分割方法</h1><p><img src="/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/dl%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2.jpeg"></p>
+<h2 id="FCN"><a href="#FCN" class="headerlink" title="FCN"></a>FCN</h2><p>通常cnn网络在卷积之后会接上若干个全连接层，将卷积层产生的特征图（feature map）映射成为一个固定长度的特征向量。一般的CNN结构适用于图像级别的分类和回归任务，因为它们最后都期望得到输入图像的分类的概率，如ALexNet网络最后输出一个1000维的向量表示输入图像属于每一类的概率。<br>FCN对图像进行像素级的分类，从而解决了语义级别的图像分割问题。与经典的CNN在卷积层使用全连接层得到固定长度的特征向量进行分类不同，FCN可以接受任意尺寸的输入图像，采用反卷积层对最后一个卷基层的特征图（feature map）进行上采样，使它恢复到输入图像相同的尺寸，从而可以对每一个像素都产生一个预测，同时保留了原始输入图像中的空间信息，最后奇偶在上采样的特征图进行像素的分类。<br>-全卷积网络(FCN)是从抽象的特征中恢复出每个像素所属的类别。即从图像级别的分类进一步延伸到像素级别的分类。<br>FCN将传统CNN中的全连接层转化成一个个的卷积层。如下图所示，在传统的CNN结构中，前5层是卷积层，第6层和第7层分别是一个长度为4096的一维向量，第8层是长度为1000的一维向量，分别对应1000个类别的概率。FCN将这3层表示为卷积层，卷积核的大小(通道数，宽，高)分别为（4096,7,7）、（4096,1,1）、（1000,1,1）。所有的层都是卷积层，故称为全卷积网络。 </p>
+<p><img src="/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/FCN.png"></p>
+<p>简单的说，FCN与CNN的区别在于FCN把CNN最后的全连接层换成卷积层，输出一张已经label好的图。</p>
+<p>全连接层转换为卷积层：在两种变换中，将全连接层转化为卷积层在实际运用中更加有用。假设一个卷积神经网络的输入是 224x224x3 的图像，一系列的卷积层和下采样层将图像数据变为尺寸为 7x7x512 的激活数据体。AlexNet使用了两个尺寸为4096的全连接层，最后一个有1000个神经元的全连接层用于计算分类评分。我们可以将这3个全连接层中的任意一个转化为卷积层：</p>
+<p>针对第一个连接区域是[7x7x512]的全连接层，令其滤波器尺寸为F=7，这样输出数据体就为[1x1x4096]了。</p>
+<p>针对第二个全连接层，令其滤波器尺寸为F=1，这样输出数据体为[1x1x4096]。</p>
+<p>对最后一个全连接层也做类似的，令其F=1，最终输出为[1x1x1000]</p>
+<p><img src="/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/FCN2.png"></p>
+<h2 id="逐像素预测"><a href="#逐像素预测" class="headerlink" title="逐像素预测"></a>逐像素预测</h2><p>采用反卷积层对最后一个卷积层的feature map进行上采样, 使它恢复到输入图像相同的尺寸，从而可以对每个像素都产生了一个预测, 同时保留了原始输入图像中的空间信息, 最后在上采样的特征图上进行逐像素分类。</p>
+<p>经过多次卷积和pooling以后，得到的图像越来越小，分辨率越来越低。其中图像到 H/32∗W/32 的时候图片是最小的一层时，所产生图叫做heatmap热图，热图就是我们最重要的高维特征图。</p>
+<p>得到高维特征的heatmap之后就是最重要的一步也是最后的一步对原图像进行upsampling，把图像进行放大、放大、放大，到原图像的大小。</p>
+<p>（也就是将高维特征图翻译成原图时对应的分割图像！！）<br>最后的输出是21张heatmap经过upsampling变为原图大小的图片，为了对每个像素进行分类预测label成最后已经进行语义分割的图像，这里有一个小trick，就是最后通过逐个像素地求其在21张图像该像素位置的最大数值描述（概率）作为该像素的分类。因此产生了一张已经分类好的图片，</p>
+<p>原文链接：<a href="https://blog.csdn.net/qq_36269513/article/details/80420363">https://blog.csdn.net/qq_36269513/article/details/80420363</a></p>
+<h2 id="Segnet"><a href="#Segnet" class="headerlink" title="Segnet"></a>Segnet</h2><p>Segnet是用于进行像素级别图像分割的全卷积网络，分割的核心组件是一个encoder 网络，及其相对应的decoder网络，后接一个象素级别的分类网络。encoder网络：其结构与VGG16网络的前13层卷积层的结构相似。decoder网络：作用是将由encoder的到的低分辨率的feature maps 进行映射得到与输入图像featuremap相同的分辨率进而进行像素级别的分类。Segnet的亮点：decoder进行上采样的方式，直接利用与之对应的encoder阶段中进行max-pooling时的polling index 进行非线性上采样，这样做的好处是上采样阶段就不需要进行学习。 上采样后得到的feature maps 是非常稀疏的，因此，需要进一步选择合适的卷积核进行卷积得到dense featuremaps 。作者与FCN，DeepLab-LargeFOV, DenconvNet结构进行比较，统筹内存与准确率，Segnet实现良好的分割效果。SegNet主要用于场景理解应用，需要在进行inference时考虑内存的占用及分割的准确率。同时，Segnet的训练参数较少（将前面提到的VGG16的全连接层剔除），可以用SGD进行end-to-end训练。</p>
+<p>在decoder 网络中重用encder 网络中对应max pooling index的三点好处：（i）提高边界划分 (ii)减少训练的参数 (iii)这种形式可以广泛的应用在其他encoder-decoder结构。</p>
+<h2 id="Dilated-convolution"><a href="#Dilated-convolution" class="headerlink" title="Dilated convolution"></a>Dilated convolution</h2><h2 id="DeepLab-v1-v2"><a href="#DeepLab-v1-v2" class="headerlink" title="DeepLab(v1,v2)"></a>DeepLab(v1,v2)</h2><h2 id="RefineNet"><a href="#RefineNet" class="headerlink" title="RefineNet"></a>RefineNet</h2><h2 id="PSPNet"><a href="#PSPNet" class="headerlink" title="PSPNet"></a>PSPNet</h2><h2 id="Large-Kernel-Matters"><a href="#Large-Kernel-Matters" class="headerlink" title="Large Kernel Matters"></a>Large Kernel Matters</h2>]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>概述</tag>
+      </tags>
   </entry>
   <entry>
     <title>轻量化网络-MobileNet</title>
@@ -3070,63 +3169,6 @@
 <p>对延时显微镜下的细胞图像做训练，通过OpenCV形态学操作对图像做预处理</p>
 <p>Version1.0: 使用Unet网络框架进行细胞检测并多目标跟踪绘制细胞运动轨迹及运动属性计算</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>语义分割-算法概述</title>
-    <url>/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>什么是语义分割？</p>
-<p>架构与方法</p>
-<p>用卷积神经网络分类</p>
-<p>用条件随机场优化</p>
-<span id="more"></span>
-
-<h1 id="什么是语义分割？"><a href="#什么是语义分割？" class="headerlink" title="什么是语义分割？"></a>什么是语义分割？</h1><p>语义分割是计算机视觉中的基本任务，在语义分割中我们需要将视觉输入分为不同的语义可解释类别，「语义的可解释性」即分类类别在真实世界中是有意义的。语义分割是在像素级别上的分类，属于同一类的像素都要被归为一类，因此语义分割是从像素级别来理解图像的。比如说如下的照片，属于人的像素都要分成一类，属于小汽车的像素也要分成一类，除此之外还有背景像素也被分为一类。注意语义分割不同于实例分割，实例分割还要将不同人的像素归为不同的类，实例分割比语义分割更进一步。</p>
-<p><img src="/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/1.png"></p>
-<p>Reference: Zhao 等人的 ICNet（2017）：语义分割的演示视频</p>
-<p>与图像分类或目标检测相比，语义分割使我们对图像有更加细致的了解。这种了解在诸如自动驾驶、机器人以及图像搜索引擎等许多领域都是非常重要的。</p>
-<h1 id="常用于训练语义分割模型的数据集"><a href="#常用于训练语义分割模型的数据集" class="headerlink" title="常用于训练语义分割模型的数据集"></a>常用于训练语义分割模型的数据集</h1><ul>
-<li>Pascal VOC 2012：有 20 类目标，这些目标包括人类、机动车类以及其他类，可用于目标类别或背景的分割</li>
-<li>Cityscapes：50 个城市的城市场景语义理解数据集</li>
-<li>Pascal Context：有 400 多类的室内和室外场景</li>
-<li>Stanford Background Dataset：至少有一个前景物体的一组户外场景。</li>
-</ul>
-<p>评估语义分割算法性能的标准指标是平均 IOU（Intersection Over Union，交并比）</p>
-<h1 id="语义分割思路"><a href="#语义分割思路" class="headerlink" title="语义分割思路"></a>语义分割思路</h1><h2 id><a href="#" class="headerlink" title></a></h2><p><strong>1.Patch classification</strong></p>
-<p>最初的深度学习方法应用于图像分割就是Patch classification。Patch classification方法，顾名思义，图像是切成块喂给深度模型的，然后对像素进行分类。使用图像块的主要原因是因为全连接层需要固定大小的图像。</p>
-<p><strong>2.全卷积方法</strong></p>
-<p>2014年，全卷积网络（FCN）横空出世，FCN将网络全连接层用卷积取代，因此使任意图像大小的输入都变成可能，而且速度比Patch classification方法快很多。</p>
-<p>尽管移除了全连接层，但是CNN模型用于语义分割还存在一个问题，就是下采样操作（比如，pooling）。pooling操作可以扩大感受野因而能够很好地整合上下文信息（context中文称为语境或者上下文，通俗的理解就是综合了更多的信息来进行决策），对high-level的任务（比如分类），这是很有效的。但同时，由于pooling下采样操作，使得分辨率降低，因此削弱了位置信息，而语义分割中需要score map和原图对齐，因此需要丰富的位置信息。</p>
-<p><strong>3.encoder-decoder架构</strong> 如Unet</p>
-<p>encoder-decoder是基于FCN的架构。encoder由于pooling逐渐减少空间维度，而decoder逐渐恢复空间维度和细节信息。通常从encoder到decoder还有shortcut connetction（捷径连接，也就是跨层连接）。其中U-net就是这种架构很流行的一种</p>
-<p><strong>4.空洞卷积</strong></p>
-<p>dilated/atrous （空洞卷积）架构，这种结构代替了pooling，一方面它可以保持空间分辨率，另外一方面它由于可以扩大感受野因而可以很好地整合上下文信息。</p>
-<p><strong>5.条件随机场</strong></p>
-<p>除了以上思路，还有一种对分割结果进行后处理的方法，那就是条件随机场(Conditional Random Fields (CRFs))后处理用来改善分割效果。DeepLab系列文章基本都采用这种后处理方法，可以较好地改善分割结果，如下图：</p>
-<p><strong>6.对抗学习</strong></p>
-<p>作为分割的端到端解决方案有非常强大的性能。</p>
-<h1 id="深度学习语义分割方法"><a href="#深度学习语义分割方法" class="headerlink" title="深度学习语义分割方法"></a>深度学习语义分割方法</h1><p><img src="/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/dl%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2.jpeg"></p>
-<h2 id="FCN"><a href="#FCN" class="headerlink" title="FCN"></a>FCN</h2><p>通常cnn网络在卷积之后会接上若干个全连接层，将卷积层产生的特征图（feature map）映射成为一个固定长度的特征向量。一般的CNN结构适用于图像级别的分类和回归任务，因为它们最后都期望得到输入图像的分类的概率，如ALexNet网络最后输出一个1000维的向量表示输入图像属于每一类的概率。<br>FCN对图像进行像素级的分类，从而解决了语义级别的图像分割问题。与经典的CNN在卷积层使用全连接层得到固定长度的特征向量进行分类不同，FCN可以接受任意尺寸的输入图像，采用反卷积层对最后一个卷基层的特征图（feature map）进行上采样，使它恢复到输入图像相同的尺寸，从而可以对每一个像素都产生一个预测，同时保留了原始输入图像中的空间信息，最后奇偶在上采样的特征图进行像素的分类。<br>-全卷积网络(FCN)是从抽象的特征中恢复出每个像素所属的类别。即从图像级别的分类进一步延伸到像素级别的分类。<br>FCN将传统CNN中的全连接层转化成一个个的卷积层。如下图所示，在传统的CNN结构中，前5层是卷积层，第6层和第7层分别是一个长度为4096的一维向量，第8层是长度为1000的一维向量，分别对应1000个类别的概率。FCN将这3层表示为卷积层，卷积核的大小(通道数，宽，高)分别为（4096,7,7）、（4096,1,1）、（1000,1,1）。所有的层都是卷积层，故称为全卷积网络。 </p>
-<p><img src="/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/FCN.png"></p>
-<p>简单的说，FCN与CNN的区别在于FCN把CNN最后的全连接层换成卷积层，输出一张已经label好的图。</p>
-<p>全连接层转换为卷积层：在两种变换中，将全连接层转化为卷积层在实际运用中更加有用。假设一个卷积神经网络的输入是 224x224x3 的图像，一系列的卷积层和下采样层将图像数据变为尺寸为 7x7x512 的激活数据体。AlexNet使用了两个尺寸为4096的全连接层，最后一个有1000个神经元的全连接层用于计算分类评分。我们可以将这3个全连接层中的任意一个转化为卷积层：</p>
-<p>针对第一个连接区域是[7x7x512]的全连接层，令其滤波器尺寸为F=7，这样输出数据体就为[1x1x4096]了。</p>
-<p>针对第二个全连接层，令其滤波器尺寸为F=1，这样输出数据体为[1x1x4096]。</p>
-<p>对最后一个全连接层也做类似的，令其F=1，最终输出为[1x1x1000]</p>
-<p><img src="/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/FCN2.png"></p>
-<h2 id="逐像素预测"><a href="#逐像素预测" class="headerlink" title="逐像素预测"></a>逐像素预测</h2><p>采用反卷积层对最后一个卷积层的feature map进行上采样, 使它恢复到输入图像相同的尺寸，从而可以对每个像素都产生了一个预测, 同时保留了原始输入图像中的空间信息, 最后在上采样的特征图上进行逐像素分类。</p>
-<p>经过多次卷积和pooling以后，得到的图像越来越小，分辨率越来越低。其中图像到 H/32∗W/32 的时候图片是最小的一层时，所产生图叫做heatmap热图，热图就是我们最重要的高维特征图。</p>
-<p>得到高维特征的heatmap之后就是最重要的一步也是最后的一步对原图像进行upsampling，把图像进行放大、放大、放大，到原图像的大小。</p>
-<p>（也就是将高维特征图翻译成原图时对应的分割图像！！）<br>最后的输出是21张heatmap经过upsampling变为原图大小的图片，为了对每个像素进行分类预测label成最后已经进行语义分割的图像，这里有一个小trick，就是最后通过逐个像素地求其在21张图像该像素位置的最大数值描述（概率）作为该像素的分类。因此产生了一张已经分类好的图片，</p>
-<p>原文链接：<a href="https://blog.csdn.net/qq_36269513/article/details/80420363">https://blog.csdn.net/qq_36269513/article/details/80420363</a></p>
-<h2 id="Segnet"><a href="#Segnet" class="headerlink" title="Segnet"></a>Segnet</h2><p>Segnet是用于进行像素级别图像分割的全卷积网络，分割的核心组件是一个encoder 网络，及其相对应的decoder网络，后接一个象素级别的分类网络。encoder网络：其结构与VGG16网络的前13层卷积层的结构相似。decoder网络：作用是将由encoder的到的低分辨率的feature maps 进行映射得到与输入图像featuremap相同的分辨率进而进行像素级别的分类。Segnet的亮点：decoder进行上采样的方式，直接利用与之对应的encoder阶段中进行max-pooling时的polling index 进行非线性上采样，这样做的好处是上采样阶段就不需要进行学习。 上采样后得到的feature maps 是非常稀疏的，因此，需要进一步选择合适的卷积核进行卷积得到dense featuremaps 。作者与FCN，DeepLab-LargeFOV, DenconvNet结构进行比较，统筹内存与准确率，Segnet实现良好的分割效果。SegNet主要用于场景理解应用，需要在进行inference时考虑内存的占用及分割的准确率。同时，Segnet的训练参数较少（将前面提到的VGG16的全连接层剔除），可以用SGD进行end-to-end训练。</p>
-<p>在decoder 网络中重用encder 网络中对应max pooling index的三点好处：（i）提高边界划分 (ii)减少训练的参数 (iii)这种形式可以广泛的应用在其他encoder-decoder结构。</p>
-<h2 id="Dilated-convolution"><a href="#Dilated-convolution" class="headerlink" title="Dilated convolution"></a>Dilated convolution</h2><h2 id="DeepLab-v1-v2"><a href="#DeepLab-v1-v2" class="headerlink" title="DeepLab(v1,v2)"></a>DeepLab(v1,v2)</h2><h2 id="RefineNet"><a href="#RefineNet" class="headerlink" title="RefineNet"></a>RefineNet</h2><h2 id="PSPNet"><a href="#PSPNet" class="headerlink" title="PSPNet"></a>PSPNet</h2><h2 id="Large-Kernel-Matters"><a href="#Large-Kernel-Matters" class="headerlink" title="Large Kernel Matters"></a>Large Kernel Matters</h2>]]></content>
-      <categories>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>概述</tag>
-      </tags>
   </entry>
   <entry>
     <title>深度学习-常用卷积方法梳理</title>

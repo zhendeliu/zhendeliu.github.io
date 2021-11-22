@@ -27,11 +27,13 @@
 <meta property="og:site_name" content="Leo的三板斧">
 <meta property="og:description" content="摘要 问题解决： 原理 优点 缺点">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/table2.png">
 <meta property="article:published_time" content="2021-11-12T02:39:14.000Z">
-<meta property="article:modified_time" content="2021-11-18T03:11:08.896Z">
+<meta property="article:modified_time" content="2021-11-22T06:30:41.485Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="python 深度学习">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/table2.png">
 
 <link rel="canonical" href="http://example.com/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/">
 
@@ -275,6 +277,7 @@
 
 <p>ML Comment 官网： <a target="_blank" rel="noopener" href="https://mlcommons.org/en/">https://mlcommons.org/en/</a> </p>
 <p>论文链接：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1910.01500.pdf">https://arxiv.org/pdf/1910.01500.pdf</a></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/caiyishuai/p/14361955.html">https://www.cnblogs.com/caiyishuai/p/14361955.html</a></p>
 <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>Mchine Learning的发展需要有行业标准的性能基准测评。Machione Learning有三个基准挑战：</p>
 <ol>
 <li><p>提升训练吞吐量</p>
@@ -285,7 +288,7 @@
 </li>
 </ol>
 <p>MLPerf定量评估多个厂商的在驱动性能和可伸缩性改进方面的效能。</p>
-<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>MLPerf的目标是创建一个具有代表性的基准测评，公正测评系统性能为了达到5个高级目标：</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>MLPerf的目标是创建一个具有代表性的基准测评，公正测评系统性能为了达到5个目标：</p>
 <ol>
 <li>公平竞赛同时鼓励创新</li>
 <li>通过公平且有用的措施加速ML进程</li>
@@ -302,6 +305,42 @@
 <li>将提交代码开源，以便结果复现</li>
 <li>形成工作组保持benchmark的更新</li>
 </ol>
+<h2 id="MLPerf-实现回面临的问题"><a href="#MLPerf-实现回面临的问题" class="headerlink" title="MLPerf 实现回面临的问题"></a>MLPerf 实现回面临的问题</h2><p>ML 性能基准测试必须确保被测系统达到最先进的质量，同时提供足够的灵活性来适应不同的目标。质量和性能之间的这种权衡具有挑战性，因为多种因素会影响最终质量和实现质量的时间。</p>
+<p>​    <strong>优化对质量的影响</strong>：尽管许多优化会立即改善传统性能指标（如吞吐量），但有些优化可能会降低最终的模型质量，而这种效果只能通过运行整个训练会话来观察到。例如，单精度训练和低精度训练之间的精度差异仅在后来的epoch出现</p>
+<p>​    <strong>训练在时间尺度方面的影响</strong>：系统大小、batch size和动态学习率的变化对性能基准测试带来了另一个挑战。</p>
+<p>​    <strong>运行中的偏差</strong>：DNN训练涉及许多随机影响，这些随机影响在实质性的运行到运行变化中是人为的。例如，随机权重初始化和随机数据传输和系统特征（例如，配置文件驱动的算法选择和浮点加法的非交换性质）。大型分布式训练任务可能涉及异步时间更新，从而改变梯度累积顺序。这些变化使得很难可靠地比较系统性能。</p>
+<p>​    <strong>不同软件架构带来的影响</strong>：软件框架和底层数学库采用不同的算法来实现相同的操作但会产生略有不同的结果。例如，卷积层和完全连接层（现代 DNN 模型中常见的两种计算密集型运算符）通常使用缓存block来利用处理器内存层次结构。块大小和处理顺序（针对不同的硬件进行优化）的不同最最后的结果都有一定的影响</p>
+<h2 id="MLPerf-Training的测试任务"><a href="#MLPerf-Training的测试任务" class="headerlink" title="MLPerf Training的测试任务"></a>MLPerf Training的测试任务</h2><p>Image Classification：</p>
+<p>​        ResNet-50</p>
+<p>Object Detection &amp; Segmentation</p>
+<p>​        Mask R-CNN： 它有两个阶段：第一个阶段提出感兴趣的区域，第二个阶段处理它们以计算边界框和分割掩码。Mask R-CNN 为这些任务提供了高精度的结果，但代价是延迟更高，计算和内存要求更高。基准测试训练时，先做图像resize，将较短的边resize到800，用ResNet-50 作为主干</p>
+<p>​        SSD(Single Shot Detection)： 适用于需要低延迟解决方案的实时应用。SSD以速度换取准确性。训练使用 300 × 300 的输入。选择 ResNet-34 主干网。ResNet-34具有与ResNet-50不同的残差块结构，增加了MLPerf所涵盖的计算主题的多样性。</p>
+<p>Translation</p>
+<p>​        Transformer</p>
+<p>​        GNMT</p>
+<p>Reinforcement Learning</p>
+<p>​        MiniGo</p>
+<p>Recommendation</p>
+<p>​        Neural collaborative filtering (NCF)</p>
+<h2 id="MLPerf-Training"><a href="#MLPerf-Training" class="headerlink" title="MLPerf Training"></a>MLPerf Training</h2><p>MLPerf training可以分为封闭模型分区（Closed Model Division）和开放模型分区（Open Model Division）。</p>
+<p>封闭模型分区要求使用相同模型和优化器，并限制batch大小或学习率等超参数的值，它旨在硬件和软件系统的公平比较。</p>
+<p>开放模型分区只会限制使用相同的数据解决相同的问题，其它模型或平台都不会限制，它旨在推进ML模型和优化的创新。</p>
+<p>对于MLPerf Training每个Benchmark的评价标准是：<strong>在特定数据集上训练一个模型使其达到Quality Target时的Clock time</strong>。由于机器学习任务的训练时间有很大差异，因此，MLPerf 的最终训练结果是由指定次数的基准测试时间平均得出的，其中会去掉最低和最高的数字，一般是运行5次取平均值，Train测试时间包含了模型构建，数据预处理，训练以及质量测试等时间。</p>
+<p>计时从系统接触任何训练或验证数据时开始，到系统在验证数据集上达到定义的质量目标时停止。<br>但不包括一下阶段：</p>
+<p><strong>系统初始化</strong>System initialization，<strong>模型创建和初始化</strong>Model creation and initialization，<strong>数据重新格式化</strong> Data reformatting</p>
+<p><strong>系统初始化</strong>System initialization。初始化（尤其是在大规模初始化）因群集管理选择和系统队列负载而异。例如，它可能涉及在开始训练作业之前对每个节点进行运行诊断。此类开销与系统的训练能力无关，因此将其排除在计时之外。<br><strong>模型创建和初始化</strong>Model creation and initialization.。某些框架可以编译模型图以优化后续执行。在使用行业规模的数据集时，对于较长的训练会话而言，此编译时间无关紧要。然而，MLPerf使用的公共数据集通常比行业数据集小得多。因此，大型分布式系统可以在几分钟内训练一些 MLPerf 基准测试，使累积时间占总时间的很大一部分。为了使基准测试代表在最大的工业数据集上的训练，允许排除长达20分钟的模型创建时间。此限制可确保 MLPerf 限制较小的训练作业，并且不鼓励使用计算和操作成本太高而无法在实践中使用的编译方法进行提交。<br><strong>数据重新格式化</strong> Data reformatting.。原始输入数据通常进行一次重新格式化，然后在许多后续的训练会话中提供。重新格式化示例包括更改图像文件格式和创建数据库（例如，LMDB、TFRecords 或 RecordIO）以实现更高效的访问。由于这些操作对于许多训练系统执行一次，MLPerf 计时不包括重新格式化。但它禁止训练中发生的任何数据处理或增强进入重新格式化阶段（例如，它阻止在定时训练阶段之前创建和保存每个图像的不同裁剪）</p>
+<p>为了解决深度学习方法的随机性质和由此产生的运行到运行方差，MLPerf 要求提交提供每个基准的多次运行以稳定计时。<strong>视觉任务需要5次运</strong>行，以确保来自同一系统的90%的条目在5%以内; 所有其他任务都需要运行 10 次，以确保来自同一系统的 90% 的条目在 10% 以内。<strong>MLPerf 会丢弃最快和最慢的时间，并将剩余运行的算术平均值报告为结果。</strong></p>
+<h3 id="质量阈值的选择"><a href="#质量阈值的选择" class="headerlink" title="质量阈值的选择"></a>质量阈值的选择</h3><p>选择较高阈值，可能需要更长训练的，原因有两个：首先，必须防止优化对最终结果产生不利影响。其次，我们必须尽量减少run-to-run variation，（不同的随机种子产生不同的影响）</p>
+<p><strong>参考实现和超参数</strong><br>MLPerf 使用 PyTorch 或 TensorFlow 框架为每个基准测试提供了一个参考实现，没有被优化，主要目的是定义基准模型和training程序的具体实现。所有提交者都必须遵循这些引用 - 只要 DNN 模型和训练运算在数学上与引用等效，他们就可以在其选择的框架中重新实现基准标记。此外，MLPerf 使用参考实现来建立所需的质量阈值。<br>MLPerf 规则指定可修改的超参数 （Table 2） 以及对其修改的限制。这些限制旨在平衡对不同系统进行调整的需求，并限制超参数搜索空间的大小，以便对计算资源较小的提交者公平。<br>此外，在提交后的审核过程中，允许类似规模的系统之间”超参数借用”，其中一个提交者可以采用另一个提交者的超参数作为特殊基准测试并重新提交其结果（不允许进行其他硬件或软件更改）。在前两轮中，超参数借用成功地用于改进几个提交，表明超参数在某种程度上是可移植的。</p>
+<p><img src="/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/table2.png"></p>
+<h2 id="Report"><a href="#Report" class="headerlink" title="Report"></a>Report</h2><p>MLPerf 提交由系统说明、培训课程日志文件以及重现培训课程所需的所有代码和库组成。所有这些信息都可以在 MLPerf GitHub 网站上公开获得，以及 MLPerf 结果，从而实现可重复性，并使社区能够在后续回合中改进结果。系统描述包括硬件（节点数、处理器和加速器计数和类型、每个节点的存储期限和网络互连）和软件（操作系统以及库及其版本）。培训课程日志文件包含各种结构化信息，包括重要工作负载阶段的时间戳、按规定时间间隔进行的质量指标评估以及超参数选择。这些日志是分析结果的基础。</p>
+<p>An MLPerf submission consists of a system description, training-session log files, and all code and libraries required to reproduce the training sessions. All of this information is publicly available on the MLPerf GitHub site, along with the MLPerf results, allowing for reproducibility and enabling the community to improve the results in subsequent rounds. A system description includes both the hardware (number of nodes, processor and accelerator counts and types, stor- age per node, and network interconnect) and the software (operating system as well as libraries and their versions). A training-session log file contains a variety of structured information including time stamps for important workload stages, quality-metric evaluations at prescribed intervals, and hyperparameter choices. These logs are the foundation for analyzing results.</p>
+<p>4.2 报告结果<br>每个 MLPerf 提交都有多个标签：部门（开放或关闭）、类别（可用、预览或研究）和系统类型（本地或云）。<br>4.2.1 提交部门<br>MLPerf有两个提交部门：封闭和开放。两者都要求提交使用相同的数据集和质量指标作为相应的参考实现。<br>closed区旨在直接进行系统比较，因此它通过要求提交等效于参考实现来努力确保工作负载等效性。等价性包括数学上相同的模型导入、参数初始化、优化器和训练计划以及数据处理和遍历。为了确保公平性，此版本还限制了超参数修改。open区旨在鼓励对重要实际问题进行创新，并鼓励硬件/软件协同设计。它允许提交采用与参考实现不同的模型架构、优化过程和数据增强。</p>
+<p>4.2.2 系统类别<br>为了支持广泛的研究和行业系统，我们定义了三个提交类别：可用、预览和研究。这些类别鼓励新技术和系统（例如，来自学术研究人员），但它们也区分了运输产品和概念验证或早期工程样品。<br>可用类别对硬件和软件可用性都有要求。硬件必须可用于云服务上的第三方租赁，或者，对于本地设备，则可供购买。租赁或购买的铺层和交货时间应适合系统规模和公司规模。为了确保基准测试提交的基准测试被广泛使用，并且不鼓励特定于基准测试的工程，我们还要求此类别中的软件版本化并支持一般用途。<br>预览系统包含自提交之日起 60 天内或下一个提交周期（以较晚者为准）满足可用类别条件的组件。届时，任何预览系统也必须提交到可用类别。<br>研究提交的内容包含无意生产的组件。一个例子是学术研究原型，它被设计为概念验证，而不是一个强大的产品。此类别还包括由专业管道硬件和软件构建但规模大于可用类别配置的系统。</p>
+<p>4.2.3 报告规模<br>现代 ML 训练在系统功耗和成本方面跨越多个数量级。因此，如果报告的性能包括比例，则比较会更有用。通用的规模指标（如成本或功耗）无法在各种系统（云、本地和预生产）中定义，因此需要按系统类型进行区分。<br>在前两轮 MLPerf 中，我们在性能分数旁边加入了系统概念（处理器和/或加速器的数量）。对于本地示例，将来的版本将包括功率测量特性。对于云系统，我们从主机处理器的数量、主机内存量以及加速器的数量和类型中得出了一个”云规模”指标。我们从经验上证实了云规模与三大云提供商的成本密切相关。这些规模指标的报告在 MLPerf v0.5 和 v0.6 中是可选的。</p>
+<p>4.2.4 报告分数<br>MLPerf 结果报告提供了针对每个基准测试进行训练的时间。尽管对于系统比较来说，可能需要一个跨越整个套件的单个摘要分数，但由于两个主要原因，它不适合MLPerf。首先，总分意味着对个人基准分数进行一些加权。鉴于系统用户的多样性和 MLPerf 涵盖的广泛应用，没有一种加权方案具有普遍代表性。其次，如果提交者拒绝报告所有基准测试的结果，则汇总分数的意义就会降低。提交者可能会因为省略某些基准测试而产生多种原因， 并非所有基准测试在每个系统规模上都是可行的（例如，某些模型在最大系统需要数据并行训练所需的迷你批大小下不可训练）。此外，某些处理器可能仅面向某些应用程序。</p>
+<p>5 结果<br>与所有基准一样，MLPerf旨在通过建设性的竞争来鼓励创新;我们通过比较各轮提交的结果来衡量进度。到目前为止，我们已经进行了两轮 MLPerf 训练：v0.5 和 v0.6。它们相隔六个月，底层的硬件和软件系统保持不变。未经修改或在回合之间进行微小修改的结果表明，MLPerf正在推动实现和软件堆栈的快速性能和扩展改进。图3显示，在两个子任务回合之间，尽管目标质量更高，但16芯片系统的最佳性能结果平均提高了1.3×。图4显示，产生最佳整体性能结果所需的芯片数量平均增加了5.5×。其中一些改进归功于更好的基准测试实现，另一些归功于规则更改，例如允许LARS（You et al.，2017）优化器用于大型ResNet批处理。但我们相信，sub-mitters将大部分性能和扩展改进整合到底层软件基础架构中，并将其传递给用户。我们预计MLPerf将通过专注的硬件创新来推动类似的改进。</p>
+<h2 id="MLPerf-Inference"><a href="#MLPerf-Inference" class="headerlink" title="MLPerf Inference"></a>MLPerf Inference</h2><p>对于MLPerf Inference测试，每个Benchmark的评价标准是：<strong>在特定数据集上测量模型的推理性能，包括Latency和吞吐量</strong>。</p>
 <h1 id="MLPerf-Training-BenchMark"><a href="#MLPerf-Training-BenchMark" class="headerlink" title="MLPerf Training BenchMark"></a>MLPerf Training BenchMark</h1><h2 id="Image-Classification"><a href="#Image-Classification" class="headerlink" title="Image Classification"></a>Image Classification</h2><h2 id="Object-Detection-and-Segmentation"><a href="#Object-Detection-and-Segmentation" class="headerlink" title="Object Detection and Segmentation"></a>Object Detection and Segmentation</h2><ol>
 <li><p>Mask R-CNN</p>
 </li>
@@ -392,7 +431,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MLPerf-Training-BenchMark"><span class="nav-number">3.</span> <span class="nav-text">MLPerf Training BenchMark</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-Classification"><span class="nav-number">3.1.</span> <span class="nav-text">Image Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-Detection-and-Segmentation"><span class="nav-number">3.2.</span> <span class="nav-text">Object Detection and Segmentation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusion"><span class="nav-number">4.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MLPerf-%E5%AE%9E%E7%8E%B0%E5%9B%9E%E9%9D%A2%E4%B8%B4%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">MLPerf 实现回面临的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MLPerf-Training%E7%9A%84%E6%B5%8B%E8%AF%95%E4%BB%BB%E5%8A%A1"><span class="nav-number">2.2.</span> <span class="nav-text">MLPerf Training的测试任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MLPerf-Training"><span class="nav-number">2.3.</span> <span class="nav-text">MLPerf Training</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%A8%E9%87%8F%E9%98%88%E5%80%BC%E7%9A%84%E9%80%89%E6%8B%A9"><span class="nav-number">2.3.1.</span> <span class="nav-text">质量阈值的选择</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Report"><span class="nav-number">2.4.</span> <span class="nav-text">Report</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MLPerf-Inference"><span class="nav-number">2.5.</span> <span class="nav-text">MLPerf Inference</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MLPerf-Training-BenchMark"><span class="nav-number">3.</span> <span class="nav-text">MLPerf Training BenchMark</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-Classification"><span class="nav-number">3.1.</span> <span class="nav-text">Image Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-Detection-and-Segmentation"><span class="nav-number">3.2.</span> <span class="nav-text">Object Detection and Segmentation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusion"><span class="nav-number">4.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
