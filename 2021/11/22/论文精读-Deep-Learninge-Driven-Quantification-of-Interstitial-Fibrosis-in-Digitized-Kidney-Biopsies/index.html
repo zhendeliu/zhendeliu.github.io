@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="摘要背景问题： 方法简述： 优点： 缺点：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论文精读-Deep-Learninge-Driven Quantification of Interstitial Fibrosis in Digitized Kidney Biopsies">
+<meta property="og:url" content="http://example.com/2021/11/22/%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB-Deep-Learninge-Driven-Quantification-of-Interstitial-Fibrosis-in-Digitized-Kidney-Biopsies/index.html">
+<meta property="og:site_name" content="Leo的三板斧">
+<meta property="og:description" content="摘要背景问题： 方法简述： 优点： 缺点：">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-22T14:27:38.000Z">
+<meta property="article:modified_time" content="2021-11-27T11:54:04.213Z">
+<meta property="article:author" content="Leo">
+<meta property="article:tag" content="论文">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/11/22/%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB-Deep-Learninge-Driven-Quantification-of-Interstitial-Fibrosis-in-Digitized-Kidney-Biopsies/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>论文精读-Deep-Learninge-Driven Quantification of Interstitial Fibrosis in Digitized Kidney Biopsies | Leo的三板斧</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Leo的三板斧</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录Leo的技术自卷历程，技术探索，望不吝赐教</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">92</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">30</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
+
+  </li>
+        <li class="menu-item menu-item-机器学习">
+
+    <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="section"><i class="fas fa-laptop-code fa-fw"></i>机器学习</a>
+
+  </li>
+        <li class="menu-item menu-item-深度学习">
+
+    <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="section"><i class="fab fa-dev fa-fw"></i>深度学习</a>
+
+  </li>
+        <li class="menu-item menu-item-python">
+
+    <a href="/categories/Python/" rel="section"><i class="fab fa-python fa-fw"></i>Python</a>
+
+  </li>
+        <li class="menu-item menu-item-pytorch">
+
+    <a href="/categories/Pytorch/" rel="section"><i class="fa fa-code fa-fw"></i>PyTorch</a>
+
+  </li>
+        <li class="menu-item menu-item-cuda">
+
+    <a href="/categories/CUDA/" rel="section"><i class="fab fa-intercom fa-fw"></i>CUDA</a>
+
+  </li>
+        <li class="menu-item menu-item-常用工具">
+
+    <a href="/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" rel="section"><i class="fa fa-toolbox fa-fw"></i>常用工具</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/zhendeliu" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/22/%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB-Deep-Learninge-Driven-Quantification-of-Interstitial-Fibrosis-in-Digitized-Kidney-Biopsies/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/android-chrome-512x512.png">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="毕业于UNSW(QS-43)人工智能专业，好奇心重，擅长动手">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo的三板斧">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          论文精读-Deep-Learninge-Driven Quantification of Interstitial Fibrosis in Digitized Kidney Biopsies
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-22 22:27:38" itemprop="dateCreated datePublished" datetime="2021-11-22T22:27:38+08:00">2021-11-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F/" itemprop="url" rel="index"><span itemprop="name">医学图像</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+
+
+<p>肾活检显示间质纤维化和肾小管萎缩 (IFTA) 是疾病慢性化和预后的有力指标。通常用于 IFTA 分级的技术仍然是手动的，导致病理学家之间存在差异。使用计算技术进行准确的 IFTA 估计可以减少这种可变性并提供定量评估。使用从人类肾脏活检处理的三色染色全幻灯片图像 (WSI)，我们开发了一个深度学习框架，该框架以高分辨率和 WSI 级别的整体背景捕获更精细的病理结构，以预测 IFTA 等级。WSI ( <em>n</em> = 67) 来自俄亥俄州立大学韦克斯纳医学中心。五名肾脏病理学家对它们进行了独立审查，并提供了转换为 IFTA 等级的纤维化评分：≤10%（无或极小）、11% 至 25%（轻度）、26% 至 50%（中度）和 &gt;50%（重度） . 该模型是通过将 WSI 与由多数投票决定的 IFTA 等级（参考估计）相关联而开发的。模型性能在 WSI 上进行评估 ( <em>n</em> = 28) 从肾脏精准医学项目中获得。病理学家和参考估计之间的 IFTA 分级非常一致（κ = 0.622 ± 0.071）。深度学习模型在俄亥俄州立大学韦克斯纳医学中心的准确率为 71.8% ± 5.3%，在肾脏精准医学项目数据集上的准确率为 65.0% ± 4.2%。我们分析肾活检微观和 WSI 水平变化的方法试图模仿病理学家，并提供 IFTA 的区域和上下文估计。这样的方法可以帮助临床病理学诊断。</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>病理切片检查是临床诊断的重要依据。</p>
+<p>肾间质纤维化和肾小管萎缩指标的重要性。</p>
+<p>强调了利用数字病理学的进步和开发现代数据分析技术（如深度学习（DL））来对肾脏病理学进行全面图像分析的必要性</p>
+<p>深度学习技术，例如卷神经网络，已被广泛用于组织病理学图像分析。在肾脏的背景下疾病，研究人员已经能够产生高准确度的方法去评估疾病等级的方法，细分各种肾脏结构，并预测临床表型。尽管这项工作非常有价值，但几乎所有工作都侧重于分析<strong>高分辨率全幻灯片图像 （WSI）</strong>，方法是将它们分为较小的板块，或将图像大小调整为较低的分辨率，并将它们与感兴趣的各种输出相关联。这些技术具有各种优点和局限性。虽然基于patch的方法保持了图像分辨率，但独立分析每个patch并不能保持该patch在整个WSI背景下的空间相关性。相比之下，将WSI调整为较低的分辨率可能是一种计算效率较高的方法，但可能无法在高分辨率WSI中捕捉到较好的细节。这里就是说如果将病理图变成一小块一小块的，虽然清晰度高，但是没有整体分析。但是缩小成完整的图片，就是会丢失很多细节信息。</p>
+<p>本研究的目标是开发一种计算管道，该管道可以处理WSI以准确捕获IFTA等级。<strong>模拟了肾病理学家在显微镜下对活检载玻片进行分级的方法。</strong>专家的典型工作流程涉及手动操作，例如平移以及放大和缩小载玻片上的特定区域，以评估病理学的各个方面。在缩小评估中，病理学家会检查整个载玻片，并对肾核进行全局或 WSI 水平的评估。在放大评估中，他们对感兴趣区域的局部病理学进行深入的显微镜评估。这两项评估使他们能够全面评估肾活检，包括IFTA等级的估计。我们认为，基于DL的计算方法将模仿肾病理学家在评估肾脏活检图像时使用的过程。使用来自两个不同队列的WSI及其相应的IFTA等级，解决了以下目标。首先，该框架需要处理图像子区域（或块），并量化这些块中IFTA的范围。其次，该框架需要在其环境的上下文中处理每个图像块，并在WSI上评估IFTA。开发了一个基于深度学习的计算管道，该管道可以整合来自本地图像块的模式和特征以及来自WSI的完整信息，为图像块提供上下文。通过这种图像块和全局的组合，该模型旨在准确预测IFTA等级。一个由执业<strong>肾病理学家组成的国际团队评估了数字化活检</strong>，并提供了IFTA等级。WSI及其相应的IFTA等级用于训练和验证DL模型。<strong>深度学习模型还与基于传统计算机视觉和机器学习的建模框架进行了比较</strong>，该框架使用图像描述符和纹理特征。报告了DL模型的性能以及与IFTA等级高度相关的已识别图像子区域。</p>
+<h1 id="Material-and-Method"><a href="#Material-and-Method" class="headerlink" title="Material and Method"></a>Material and Method</h1><p>获得提交给俄亥<strong>俄州立大学Wexner医学中心（OSUWMC</strong>）的患者的三色染色肾活检的去识别WSI。肾活检以及患者数据收集，染色和数字化遵循OSUWMC机构审查委员会批准的方案（研究编号：2018H0495）（表1）。<strong>从肾脏精准医学项目（KPMP）的以下招聘地点也获得了去识别的WS</strong>I：布莱根妇女医院，克利夫兰诊所，哥伦比亚大学，约翰霍普金斯大学和德克萨斯大学西南大学达拉斯分校。KPMP是一个由国家糖尿病和消化和肾脏疾病研究所资助的多年项目，旨在了解和寻找治疗慢性肾脏疾病和急性肾损伤的新方法。种族/族裔信息直接来自OSUWMC记录和KPMP网站。</p>
+<p>所有 WSI 都上传到一个安全的、基于 Web 的软件（PixelView; deepPath， Inc.， Boston， MA）。C.A.C. 担任软件帐户的组管理员，并向其他肾病理学家（K.R.、S.S..B、L.M.B.和 P.B.）提供对 WSI 的单独访问权限，这些肾病学家作为用户被分配到组帐户。该过程允许每位专家独立评估数字化活检。KPMP WSI和相关临床数据是在审查和批准KPMP与波士顿大学之间的数据使用协议（表2和补充表S1）后获得的。所有方法均按照喂养指南和法规进行。肾组织由OSUWMC和KMP参与者接受的活检的针刺活检样本组成。所有OSUWMC活检均使用WSI扫描仪[Aperio（Leica Biosystems，Wet-zlar，德国）或NanoZoomer（日本滨松市滨松）]以40视在镜放大倍率下进行扫描，从而产生每像素分辨率为0.25 mm的WSI</p>
+<p>KPMP的所有WSI都是通过使用Aperio AT2大容量扫描仪（徕卡病理系统）以40视在视放大倍率下数字化肾活检而生成的，分辨率为每像素0.25毫米（图1）。有关病理学方案的更多详细信息可以直接从KPMP网站获得（<a target="_blank" rel="noopener" href="https://www.kpmp.org,最后一次访问时间为2021年5月1日).基于aperio的wsi以svs格式获得,基于hamamatsu的wsi以ndpi格式获得./">https://www.kpmp.org，最后一次访问时间为2021年5月1日）。基于Aperio的WSI以SVS格式获得，基于Hamamatsu的WSI以NDPI格式获得。</a><br>由肾病理学家（C.A.C.）对所有WSI进行了手动质量检查。此检查确保所选 WSI 区域没有伪影，例如气泡、折叠、压缩、撕裂、过度染色或染色不足、污渍批次变化、刀子颤动和厚度差异。由于大多数WSI具有多个核心，因此肾病理学家能够选择在所有病例上都没有质量问题的核心（补充图S2）。然后仔细裁剪WSI的选定部分并将其转换为数字矩阵以进行进一步分析。</p>
+<p>肾病理学家（C.A.C.）鉴定并注释了每个WSI中的皮质区域（图1），其中皮质和髓质都存在。所有肾病理学家都从各自的计算机上使用PixelView在Web浏览器上访问并独立审查了IFTA的WSI。评分以IFTA皮质区域的百分比（0%至100%）提供，然后将其转换为半定量等级：10%（无或最小），11%至25%（轻度），26%至50%（中度）和&gt;50%（重度）。最终成绩是通过对从每位肾病理学家获得的等级进行多数投票来计算的。KPMP数据集的纤维化评分直接从研究者那里获得，并使用相同的标准转换为IFTA等级。从<strong>两个数据集中</strong>得出的IFTA等级用于进一步分析。</p>
+<h2 id="Deep-Learning"><a href="#Deep-Learning" class="headerlink" title="Deep Learning"></a>Deep Learning</h2><p>FPN</p>
+<p>裁剪后的图像斑块（Np Np 像素）从原始 WSI 中自动提取，并使用以下标准标记为组织或背景。包含至少50%或更多像素内组织的图像贴片被标记为组织，否则标记为背景。包含标记为组织的图像贴片的本地分支被馈送到FPN模型中。包含原始 WSI 的缩减采样低分辨率版本（Ng Ng 像素）的全局分支用作另一个 FPN 模型的输入。为了实现本地和全局特征交互，来自任一分支的所有层的特征图都与其他分支共享（图 2B）。全球分支在与当前本地补丁相同的空间位置裁剪其特征图。要与本地分支进行交互，glpathnet 会将裁剪的特征图上采样，使其与图层中具有相同深度的本地分支的特征图大小相同。随后，glpathnet 连接本地特征图和裁剪的全局特征图，这些特征图被馈送到本地分支的下一层。以对称方式，本地分支将其特征映射缩减采样为与从原始输入图像裁剪的面片相同的相对空间比率。根据裁剪面块的位置，将缩减采样的局部特征图合并为同一图层中具有相同大小的全局分支特征的要素图。所有零的特征图都用于标记为背景的补丁。全局特征图和合并的局部特征图被连接起来并馈送到全局分支的下一层。<br>glpathnet 中的融合分支包含一个卷积层，后跟一个完全连接的层。它从本地分支的最后一层获取串联的特征图，并从全局分支获取相同的特征图。融合分支的输出是补丁级 IFTA 等级，最终的 IFTA 等级被确定为最常见的补丁级 IFTA 等级。<br>交叉熵损失用于使用预训练的DL架构（ResNet50）在OSUWMC数据上训练glpathnet，26作为FPN模型卷积网络的一部分。为了最大限度地提高效率，Np和Ng都设置为508像素。Adam 优化器 （b1 Z 0.9; b2 Z 0.999） 用于优化批大小为 6 的模型训练。我们将本地分支机构的初始学习率分配为2 105，全球分支机构的初始学习率为1 104。Glpathnet是使用PyTorch实现的，模型训练是在包含GeForce RTX 2080 Ti显卡（NVIDIA，Santa Clara，CA）的图形处理单元（GPU）工作站上执行的，该工作站具有11 Gb GDDR6内存。模型训练花了&lt;16个小时才达到收敛。在未用于模型训练的新WSI上预测IFTA等级大约需要30秒。</p>
+<h2 id="Traditional-Method"><a href="#Traditional-Method" class="headerlink" title="Traditional Method"></a>Traditional Method</h2><p>传统机器学习模型<br>为了进行比较，基于传统的机器学习构建了IFTA分类模型，该模型使用来自OSUWMC WSI数据的派生特征。使用加权邻居距离，包括表示形态的算法的复合分层，27e29是一种多用途图像分类器，可以提取近似于3000个通用图像描述符，包括多级分解，高对比度特征，像素统计和纹理（补充表S2）。这些特征直接来自原始WSI，WSI的变换和WSI的复合变换（变换的跨式）。使用这些特征作为输入，构建了一个四标签分类器来预测最终的IFTA等级。该模型在OSUWMC数据集上进行训练，KPMP数据集用于测试。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%BA%E6%96%87/" rel="tag"># 论文</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/" rel="prev" title="关于MLPerf Training Benchmark的设计理解">
+      <i class="fa fa-chevron-left"></i> 关于MLPerf Training Benchmark的设计理解
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/" rel="next" title="关于MLPerf Inference Benchmark的设计理解">
+      关于MLPerf Inference Benchmark的设计理解 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Material-and-Method"><span class="nav-number">3.</span> <span class="nav-text">Material and Method</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-Learning"><span class="nav-number">3.1.</span> <span class="nav-text">Deep Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Traditional-Method"><span class="nav-number">3.2.</span> <span class="nav-text">Traditional Method</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Leo"
+      src="/images/android-chrome-512x512.png">
+  <p class="site-author-name" itemprop="name">Leo</p>
+  <div class="site-description" itemprop="description">毕业于UNSW(QS-43)人工智能专业，好奇心重，擅长动手</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">92</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhendeliu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhendeliu" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:liuzhende636@gmail.com" title="E-Mail → mailto:liuzhende636@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Leo</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+    </div>
+</body>
+</html>
