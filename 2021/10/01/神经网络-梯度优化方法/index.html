@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="Leo的三板斧">
 <meta property="og:description" content="摘要背景问题： 方法简述： 深度学习优化算法经历了 SGD -&gt; SGDM -&gt; NAG -&gt;AdaGrad -&gt; AdaDelta -&gt; Adam -&gt; Nadam 这样的发展历程。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/通用框架.png">
+<meta property="og:image" content="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/%E9%80%9A%E7%94%A8%E6%A1%86%E6%9E%B6.png">
 <meta property="og:image" content="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/SGD.PNG">
 <meta property="og:image" content="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/SGDM.PNG">
 <meta property="og:image" content="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/NAG.PNG">
@@ -35,7 +35,7 @@
 <meta property="og:image" content="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/AdaDelta.PNG">
 <meta property="og:image" content="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/Adam.PNG">
 <meta property="og:image" content="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/NAdam.PNG">
-<meta property="og:image" content="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/Adam修正.PNG">
+<meta property="og:image" content="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/Adam%E4%BF%AE%E6%AD%A3.PNG">
 <meta property="article:published_time" content="2021-10-01T07:57:23.000Z">
 <meta property="article:modified_time" content="2021-10-09T06:44:40.500Z">
 <meta property="article:author" content="Leo">
@@ -44,7 +44,7 @@
 <meta property="article:tag" content="优化">
 <meta property="article:tag" content="调参">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/通用框架.png">
+<meta name="twitter:image" content="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/%E9%80%9A%E7%94%A8%E6%A1%86%E6%9E%B6.png">
 
 <link rel="canonical" href="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/">
 
@@ -300,6 +300,9 @@
 <p>方法简述：</p>
 <p>深度学习优化算法经历了 SGD -&gt; SGDM -&gt; NAG -&gt;AdaGrad -&gt; AdaDelta -&gt; Adam -&gt; Nadam 这样的发展历程。</p>
 <span id="more"></span>
+
+
+
 <p>深度学习优化算法经历了 SGD -&gt; SGDM -&gt; NAG -&gt;AdaGrad -&gt; AdaDelta -&gt; Adam -&gt; Nadam 这样的发展历程。</p>
 <h1 id="优化算法通用框架"><a href="#优化算法通用框架" class="headerlink" title="优化算法通用框架"></a>优化算法通用框架</h1><p>首先定义：待优化参数：w ，目标函数： f(w)，初始学习率 α。</p>
 <p>而后，开始进行迭代优化。在每个epoch t：</p>
@@ -311,7 +314,7 @@
 <li><p>计算当前时刻的下降梯度</p>
 </li>
 <li><p>根据下降梯度进行更新</p>
-<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/通用框架.png" alt></p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/%E9%80%9A%E7%94%A8%E6%A1%86%E6%9E%B6.png"></p>
 </li>
 </ol>
 <p>一般而言，一个物体的动量指的的是这个物体在它运动方向上保持运动的趋势。动量是矢量这里我们可以把梯度理解成力，力是有大小和方向的，而且力可以改变速度的大小和方向，并且速度可以累积。这里把权值理解成速度，当力（梯度）改变时就会有一段逐渐加速或逐渐减速的过程，我们通过引入动量就可以加速我们的学习过程，可以在鞍点处继续前行，也可以逃离一些较小的局部最优区域下面类比物理学定义这里的动量</p>
@@ -319,7 +322,7 @@
 <p><strong>二阶动量</strong>用来度量历史更新频率的，二阶动量是迄今为止所有梯度值的平方和，即 ，在最上面的框架中 （在这里 ）， 也就是说，我们的学习率现在是 （一般为了避免分母为0，会在分母上加一个小的平滑项 ），从这里我们就会发现 是恒大于0的，而且参数更新越频繁，二阶动量越大，学习率就越小，这一方法在稀疏数据场景下表现非常好</p>
 <p>reference:<a target="_blank" rel="noopener" href="https://www.163.com/dy/article/GKBN2P0H0519EA27.html">https://www.163.com/dy/article/GKBN2P0H0519EA27.html</a></p>
 <h1 id="SGD"><a href="#SGD" class="headerlink" title="SGD"></a>SGD</h1><p><strong>与SGD相关的都是固定学习率的优化算法</strong></p>
-<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/SGD.PNG" alt></p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/SGD.PNG"></p>
 <p>SGD的优点：</p>
 <ol>
 <li><p>虽然看起来SGD波动非常大，会走很多弯路，但是对梯度的要求很低（计算梯度快），而且对于引入噪声，大量的理论和实践工作证明，只要噪声不是特别大，SGD都能很好地收敛。</p>
@@ -333,26 +336,26 @@
 <li>SGD在随机选择梯度的同时会引入噪声，使得权值更新的方向不一定正确（次要）。</li>
 </ol>
 <h1 id="SGD-with-Momentum"><a href="#SGD-with-Momentum" class="headerlink" title="SGD with Momentum"></a>SGD with Momentum</h1><p>为了抑制SGD的震荡，SGDM认为梯度下降过程可以加入惯性。下坡的时候，如果发现是陡坡，那就利用惯性跑的快一些。SGDM全称是SGD with momentum，在SGD基础上引入了一阶动量：</p>
-<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/SGDM.PNG" alt></p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/SGDM.PNG"></p>
 <p>一阶动量是各个时刻梯度方向的指数移动平均值，约等于最近 1/(1-β1) 个时刻的梯度向量和的平均值。</p>
 <p>也就是说，t 时刻的下降方向，不仅由当前点的梯度方向决定，而且由<strong>此前累积的下降方向</strong>决定。β1的经验值为0.9，这就意味着下降方向主要是此前累积的下降方向，并略微偏向当前时刻的下降方向。就如高速公路上汽车转弯，在高速向前的同时略微偏向，不会急转弯。</p>
 <h1 id="SGD-with-Nesterov-Acceleration-（NAG）"><a href="#SGD-with-Nesterov-Acceleration-（NAG）" class="headerlink" title="SGD with Nesterov Acceleration （NAG）"></a>SGD with Nesterov Acceleration （NAG）</h1><p>SGD 还有一个问题是困在局部最优的沟壑里面震荡。比如走到一个盆地，四周都是略高的小山，没有下坡的方向，那就只能待在这里了。可是如果爬上高地，就会发现外面的世界还很广阔。因此，不能停留在当前位置去观察未来的方向，而要向前一步、多看一步、看远一些。</p>
-<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/NAG.PNG" alt></p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/NAG.PNG"></p>
 <p>SGD及其变种以同样的学习率更新每个参数，但深度神经网络往往包含大量的参数，这些参数并不是总会用得到（想想大规模的embedding）。对于经常更新的参数，我们已经积累了大量关于它的知识，不希望被单个样本影响太大，希望学习速率慢一些；对于偶尔更新的参数，我们了解的信息太少，希望能从每个偶然出现的样本身上多学一些，即学习速率大一些。</p>
 <h1 id="AdaGrad（自适应梯度算法）"><a href="#AdaGrad（自适应梯度算法）" class="headerlink" title="AdaGrad（自适应梯度算法）"></a>AdaGrad（自适应梯度算法）</h1><p>前面的随机梯度和动量随机梯度算法都是使用全局的学习率，所有的参数都是统一步伐的进行更新的，如果可以针对每个参数设置学习率可能会更好，让他根据情况进行调整，也就是自适应梯度下降。怎么样去度量历史更新频率呢？那就是二阶动量——该维度上，迄今为止所有梯度值的平方和</p>
-<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/AdaGrad.PNG" alt></p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/AdaGrad.PNG"></p>
 <p>缺点：</p>
 <p>仍需要手工设置一个全局学习率 , 如果 设置过大的话，会使regularizer过于敏感，对梯度的调节太大</p>
 <p>中后期，分母上梯度累加的平方和会越来越大，使得参数更新量趋近于0，使得训练提前结束，无法学习</p>
 <h1 id="AdaDelta-RMSProp"><a href="#AdaDelta-RMSProp" class="headerlink" title="AdaDelta/RMSProp"></a>AdaDelta/RMSProp</h1><p>由于AdaGrad单调递减的学习率变化过于激进，我们考虑一个改变二阶动量计算方法的策略：不累积全部历史梯度，而只关注过去一段时间窗口的下降梯度。这也就是AdaDelta名称中Delta的来历。</p>
 <p>修改的思路很简单。前面我们讲到，指数移动平均值大约就是过去一段时间的平均值，因此我们用这一方法来计算二阶累积动量：</p>
-<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/AdaDelta.PNG" alt></p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/AdaDelta.PNG"></p>
 <p>就避免了二阶动量持续累积、导致训练过程提前结束的问题了。</p>
 <p>特点：</p>
 <p>​    训练初中期，加速效果不错，很快</p>
 <p>​    训练后期，反复在局部最小值附近抖动</p>
 <h1 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h1><p>我们看到，SGD-M在SGD基础上增加了一阶动量，AdaGrad和AdaDelta在SGD基础上增加了二阶动量。把一阶动量和二阶动量都用起来，就是Adam了——Adaptive + Momentum。</p>
-<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/Adam.PNG" alt></p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/Adam.PNG"></p>
 <p>特点如下：</p>
 <ol>
 <li>Adam梯度经过偏置校正后，每一次迭代学习率都有一个固定范围，使得参数比较平稳。</li>
@@ -361,10 +364,10 @@
 <li>也适用于大多非凸优化问题——适用于大数据集和高维空间。</li>
 </ol>
 <h1 id="Nadam"><a href="#Nadam" class="headerlink" title="Nadam"></a>Nadam</h1><p>Nesterov + Adam是集大成者，将Adam中的第一步替换为Nesterov</p>
-<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/NAdam.PNG" alt></p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/NAdam.PNG"></p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><strong>Adam可能的问题1:</strong></p>
 <p>SGD没有用到二阶动量，因此学习率是恒定的（实际使用过程中会采用学习率衰减策略，因此学习率递减）。AdaGrad的二阶动量不断累积，单调递增，因此学习率是单调递减的。因此，这两类算法会使得学习率不断递减，最终收敛到0，模型也得以收敛。</p>
-<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/Adam修正.PNG" alt></p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/Adam%E4%BF%AE%E6%AD%A3.PNG"></p>
 <p><strong>Adam可能的问题2:</strong></p>
 <p><strong>后期Adam的学习率太低，影响了有效的收敛</strong>。</p>
 <p>于是提出了一个用来改进Adam的方法：<strong>前期用Adam，享受Adam快速收敛的优势；后期切换到SGD，慢慢寻找最优解。</strong>这一方法以前也被研究者们用到，不过主要是根据经验来选择切换的时机和切换后的学习率。这篇文章把这一切换过程傻瓜化，给出了切换SGD的时机选择方法，以及学习率的计算方法，效果看起来也不错。</p>
