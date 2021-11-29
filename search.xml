@@ -768,6 +768,7 @@
 <p><strong>Tail-latency</strong>：尾部延迟是指在一个系统提供的所有输入/输出（I/O）请求的响应中，与大部分响应时间相比，花费时间最长的那一小部分，就是说如果在系统中引入实时监控，总会有少量响应的延迟高于均值，我们把这些响应称为尾延迟（Tail Latency），本文所提到的tail-latency并不是一个表示延迟的数据，而是百分比</p>
 <span id="more"></span>
 
+<p>——————————————————————论文精读————————————————————————</p>
 <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>各种机器学习软硬件的迅速爆发，超过100家组织在构建ML inference chips， 涵盖现有模型的系统在能耗方面至少跨越是三个数量集，性能方面至少跨越五个数量级。ML软硬件的无数组合使得具有architecture-neutral，representative，and reproducible 的测评具有一定挑战性。MLPerf 联合了30多家组织和200多名ML engineers and practitioners, 制定了一些列的规范和最佳实践确保不同体系结构之间的可比性。第一次征集到了14个组织的600多个可复现的推论，代表了30多个不同的系统，展现了广泛的能力，证明了该benchmark的flexibility and adaptability.</p>
 <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>为什么设计需要设计合适的ML benchmarking 度量，创建真实的ML inference场景，标准化评估方法能够实现推理质量的真实性能优化？</p>
 <ol>
