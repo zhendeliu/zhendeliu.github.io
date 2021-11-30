@@ -293,15 +293,6 @@
       </tags>
   </entry>
   <entry>
-    <title>cv算法面试问题总结（七）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%83%EF%BC%89/</url>
-    <content><![CDATA[<p>如何解决深度学习中模型训练效果不佳的情况？<br>神经网络中，是否隐藏层如果具有足够数量的单位，它就可以近似任何连续函数？<br>为什么更深的网络更好？<br>更多的数据是否有利于更深的神经网络？<br>不平衡数据是否会影响神经网络的分类效果？<br>无监督降维提供的是帮助还是摧毁？<br>是否可以将任何非线性作为激活函数?<br>批大小如何影响测试正确率？<br>初始化如何影响训练?<br>不同层的权重是否以不同的速度收敛？ </p>
-<p>正则化如何影响权重？<br>什么是fine-tuning？<br>什么是边框回归Bounding-Box regression，以及为什么要做、怎么做<br>请阐述下Selective Search的主要思想<br>什么是非极大值抑制（NMS）？<br>什么是深度学习中的anchor？<br>CNN的特点以及优势<br>深度学习中有什么加快收敛/降低训练难度的方法？<br>请写出链式法则并证明<br>请写出Batch Normalization的计算方法及其应用</p>
-<span id="more"></span>
-
-]]></content>
-  </entry>
-  <entry>
     <title>cv算法面试问题总结（一）</title>
     <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表："><a href="#问题列表：" class="headerlink" title="问题列表："></a>问题列表：</h1><ol>
@@ -401,6 +392,15 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>cv算法面试问题总结（七）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%83%EF%BC%89/</url>
+    <content><![CDATA[<p>如何解决深度学习中模型训练效果不佳的情况？<br>神经网络中，是否隐藏层如果具有足够数量的单位，它就可以近似任何连续函数？<br>为什么更深的网络更好？<br>更多的数据是否有利于更深的神经网络？<br>不平衡数据是否会影响神经网络的分类效果？<br>无监督降维提供的是帮助还是摧毁？<br>是否可以将任何非线性作为激活函数?<br>批大小如何影响测试正确率？<br>初始化如何影响训练?<br>不同层的权重是否以不同的速度收敛？ </p>
+<p>正则化如何影响权重？<br>什么是fine-tuning？<br>什么是边框回归Bounding-Box regression，以及为什么要做、怎么做<br>请阐述下Selective Search的主要思想<br>什么是非极大值抑制（NMS）？<br>什么是深度学习中的anchor？<br>CNN的特点以及优势<br>深度学习中有什么加快收敛/降低训练难度的方法？<br>请写出链式法则并证明<br>请写出Batch Normalization的计算方法及其应用</p>
+<span id="more"></span>
+
+]]></content>
   </entry>
   <entry>
     <title>cv算法面试问题总结（三）</title>
@@ -528,13 +528,6 @@
       </tags>
   </entry>
   <entry>
-    <title>cv算法面试问题总结（八）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AB%EF%BC%89/</url>
-    <content><![CDATA[<p>神经网络中会用到批量梯度下降（BGD）吗？为什么用随机梯度下降（SGD）?<br>当神经网络的调参效果不好时，从哪些角度思考？（不要首先归结于overfiting）<br>请阐述下卷积神经网络CNN的基本原理(全网最通俗版)<br>神经网络输出层为什么通常使用softmax?<br>了解无人驾驶的核心技术么？<br>如何形象的理解LSTM的三个门<br>通过一张张动图形象的理解LSTM<br>如何理解反向传播算法BackPropagation<br>请问什么是softmax函数？<br>通俗理解BN(Batch Normalization)<br>批量归一化BN到底解决了什么问题？<br>如何理解随机梯度下降，以及为什么SGD能够收敛？<br>模拟退火算法能解决陷入局部最优的问题么<br>请说下常见优化方法各自的优缺点（BGD、SGD、MBGD、Momentum、NAG、Adagrad、Adadelta、RMSprop、Adam）<br>Adam算法的原理机制是怎么样的？它与相关的AdaGrad和RMSProp方法有什么区别</p>
-<span id="more"></span>
-]]></content>
-  </entry>
-  <entry>
     <title>cv算法面试问题总结（五）</title>
     <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%94%EF%BC%89/</url>
     <content><![CDATA[<p>如何确定CNN的卷积核通道数和卷积输出层的通道数？<br>什么是卷积？<br>什么是CNN的池化pool层？<br>简述下什么是生成对抗网络<br>学梵高作画的原理是什么？<br>请简要介绍下tensorflow的计算图<br>你有哪些深度学习（rnn、cnn）调参的经验？<br>为什么不同的机器学习领域都可以使用CNN，CNN解决了这些领域的哪些共性问题？他是如何解决的？<br>LSTM结构推导，为什么比RNN好？<br>Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。</p>
@@ -552,6 +545,13 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>cv算法面试问题总结（八）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AB%EF%BC%89/</url>
+    <content><![CDATA[<p>神经网络中会用到批量梯度下降（BGD）吗？为什么用随机梯度下降（SGD）?<br>当神经网络的调参效果不好时，从哪些角度思考？（不要首先归结于overfiting）<br>请阐述下卷积神经网络CNN的基本原理(全网最通俗版)<br>神经网络输出层为什么通常使用softmax?<br>了解无人驾驶的核心技术么？<br>如何形象的理解LSTM的三个门<br>通过一张张动图形象的理解LSTM<br>如何理解反向传播算法BackPropagation<br>请问什么是softmax函数？<br>通俗理解BN(Batch Normalization)<br>批量归一化BN到底解决了什么问题？<br>如何理解随机梯度下降，以及为什么SGD能够收敛？<br>模拟退火算法能解决陷入局部最优的问题么<br>请说下常见优化方法各自的优缺点（BGD、SGD、MBGD、Momentum、NAG、Adagrad、Adadelta、RMSprop、Adam）<br>Adam算法的原理机制是怎么样的？它与相关的AdaGrad和RMSProp方法有什么区别</p>
+<span id="more"></span>
+]]></content>
   </entry>
   <entry>
     <title>cv算法面试问题总结（六）</title>
@@ -812,9 +812,12 @@
 <p><strong>Offline</strong></p>
 <p>一次请求将所有的测试样本送入到被测试系统中，被测试系统可以一次或多次以任何顺序返回测试结果，Offline场景的性能评判标准是<strong>每秒推理的样本数</strong>（论文中的原话是throughput measured in samples per second，单位时间的吞吐量，也就是吞吐率，所以我认为它指的是每秒处理的样本数）</p>
 </li>
-<li><p>可信的（statistically) Tail-Latency Bounds</p>
+<li><p>统计置信度Tail-Latency边界</p>
+<p>为了使统计上可靠，每个任务和场景都需要一个最小的推理次数。按照统计学知识，通过置信区间和尾部延迟来得到满足系统的最小推理数量</p>
+<p><img src="/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/query_confidence.png"></p>
 </li>
 </ol>
+<p><img src="/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/equation.png"></p>
 <p> 不同任务的请求数量和请求中的样本个数</p>
 <p>multi-stream和server要测试多次，multi-stream的测试时间要在2.5～7h，server的测试结果要测五次取最小值,所有的benchmark运行时间最小是60s</p>
 <h1 id="Inference-submission-system"><a href="#Inference-submission-system" class="headerlink" title="Inference submission system"></a>Inference submission system</h1><ol>
@@ -949,6 +952,52 @@
 <h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1>]]></content>
   </entry>
   <entry>
+    <title>关于MLPerf和AIPerf的设计理解</title>
+    <url>/2021/11/11/%E5%85%B3%E4%BA%8EMLPerf%E5%92%8CAIPerf%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<p>摘要</p>
+<p>问题解决：</p>
+<p>原理</p>
+<p>优点</p>
+<p>缺点</p>
+<span id="more"></span>
+
+<h1 id="MLPerf"><a href="#MLPerf" class="headerlink" title="MLPerf"></a>MLPerf</h1><p>MLPerf 是AI芯片的一个基准测试，主要包括：Training 和Inference两个方面的性能测试。Training是于测量系统将模型训练到目标质量指标的速度；Inference是用于测试系统使用训练有素的模型处理输入和产生结果的速度。</p>
+<p>具体的详细信息可参见论文：MLPERF TRAINING BENCHMARK以及MLPERF INFERENCE BENCHMARK。</p>
+<p>该基准有两种测试形式：*<strong>Closed Division*</strong> 和 <em><strong>Open Division，</strong></em>其中封闭的测试是基于平台固定的测试模型进行测试；开放的测试是用户可以自定义需要测试的模型。</p>
+<p>当前的测试结果根据芯片当前的使用状态分为：Cloud;Available;Preview;Research, Development, and Other（category）。</p>
+<p><img src="/2021/11/11/%E5%85%B3%E4%BA%8EMLPerf%E5%92%8CAIPerf%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%85%B3%E4%BA%8EMLPerf%E5%92%8CAIPerf%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/8-benchmarks.png"></p>
+<h1 id="AIPerf"><a href="#AIPerf" class="headerlink" title="AIPerf"></a>AIPerf</h1><p>大规模人工智能计算系统的计算持续发展，需要一个有效评价计算机系统人工智能算力的评价指标；</p>
+<p>浮点计算峰值是指计算机每秒可以完成的浮点计算次数，包括理论浮点峰值和实测浮点峰值。理论浮点峰值是该计算机理论上每秒可以完成的浮点计算次数，主要由CPU的主频决定。</p>
+<p>理论浮点峰值＝CPU主频×CPU核数×CPU每周期执行浮点运算的次数。</p>
+<p>目前的实测方式如下：</p>
+<p>Linpack Benchmark: 广泛用于高性能计算机双精度浮点运算性能基准评测，但大部分人工智能训练任务以单精度浮点数或者16位浮点数为主</p>
+<p>HPL-AI: 通以Linpack为基础的改善的混合精度的基准测评</p>
+<p>Mobile AI Bench：</p>
+<p>DeepBench：</p>
+<p>AIIA DNN Benchmark:</p>
+<p>AIPerf Benchmark:</p>
+<p> 基于微软NNI（neural network intelligence)框架实现，以自动化机器学习AutoML为负载，进行网络结构搜索（网络态射network morphism ）和超参搜索（树状结构Parzen估计）寻找进度更高的网络结构和超参（batch size；最大epoch；lr；最大搜索模型个数，最长搜索总时间；最大并发搜索模型数量等）</p>
+<h1 id="设计目标"><a href="#设计目标" class="headerlink" title="设计目标"></a>设计目标</h1><h2 id="统一的评价指标Score"><a href="#统一的评价指标Score" class="headerlink" title="统一的评价指标Score"></a>统一的评价指标Score</h2><p>AIPerf的评价指标是Tops（平均每秒处理的混合精度AI浮点操作数），可以用来做横向比较</p>
+<h2 id="处理问题规模可变性"><a href="#处理问题规模可变性" class="headerlink" title="处理问题规模可变性"></a>处理问题规模可变性</h2><p>人工智能计算集群的系统规模在节点数量，加速器数量，加速类型，内存大小等指标上存在差异。需要能适应各种规模的计算集群，因此，在AutoML调整问题规模来适应集群规模的变化。</p>
+<h2 id="实际的人工智能意义"><a href="#实际的人工智能意义" class="headerlink" title="实际的人工智能意义"></a>实际的人工智能意义</h2><p>相较于传统的高性能计算机基准测试程序需要具有人工智能的意义在其中，也是其能够检测集群人工智能算力的核心。AIPerf通过在ImageNet数据集上训练神经网络运行CV方面的算法。</p>
+<h2 id="必要的多机通信"><a href="#必要的多机通信" class="headerlink" title="必要的多机通信"></a>必要的多机通信</h2><p>在计算集群中任务分发，多级训练，结果收集等都是以多机通信为基础，是人工智能计算集群计算能力的重要组成。</p>
+<h1 id="论文精读"><a href="#论文精读" class="headerlink" title="论文精读"></a>论文精读</h1>]]></content>
+  </entry>
+  <entry>
+    <title>医学图像数据集资源收集</title>
+    <url>/2021/11/30/%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE%E9%9B%86%E8%B5%84%E6%BA%90%E6%94%B6%E9%9B%86/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>数据集</category>
+      </categories>
+  </entry>
+  <entry>
     <title>医疗影像dicom图像预处理-Pydicom</title>
     <url>/2021/10/06/%E5%8C%BB%E7%96%97%E5%BD%B1%E5%83%8Fdicom%E5%9B%BE%E5%83%8F%E9%A2%84%E5%A4%84%E7%90%86-Pydicom/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>pydicom是一个python中的第三方库，用于DICOM文件，主要为了以一种简单的”python式”方式检查和修改dicom数据而设计，可以提供给使用者轻松的修改，读写文件并转换成显式图像图片。</p>
@@ -1005,38 +1054,6 @@
         <tag>编程</tag>
         <tag>医学图像</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>关于MLPerf和AIPerf的设计理解</title>
-    <url>/2021/11/11/%E5%85%B3%E4%BA%8EMLPerf%E5%92%8CAIPerf%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<p>摘要</p>
-<p>问题解决：</p>
-<p>原理</p>
-<p>优点</p>
-<p>缺点</p>
-<span id="more"></span>
-
-<h1 id="MLPerf"><a href="#MLPerf" class="headerlink" title="MLPerf"></a>MLPerf</h1><p>MLPerf 是AI芯片的一个基准测试，主要包括：Training 和Inference两个方面的性能测试。Training是于测量系统将模型训练到目标质量指标的速度；Inference是用于测试系统使用训练有素的模型处理输入和产生结果的速度。</p>
-<p>具体的详细信息可参见论文：MLPERF TRAINING BENCHMARK以及MLPERF INFERENCE BENCHMARK。</p>
-<p>该基准有两种测试形式：*<strong>Closed Division*</strong> 和 <em><strong>Open Division，</strong></em>其中封闭的测试是基于平台固定的测试模型进行测试；开放的测试是用户可以自定义需要测试的模型。</p>
-<p>当前的测试结果根据芯片当前的使用状态分为：Cloud;Available;Preview;Research, Development, and Other（category）。</p>
-<p><img src="/2021/11/11/%E5%85%B3%E4%BA%8EMLPerf%E5%92%8CAIPerf%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%85%B3%E4%BA%8EMLPerf%E5%92%8CAIPerf%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/8-benchmarks.png"></p>
-<h1 id="AIPerf"><a href="#AIPerf" class="headerlink" title="AIPerf"></a>AIPerf</h1><p>大规模人工智能计算系统的计算持续发展，需要一个有效评价计算机系统人工智能算力的评价指标；</p>
-<p>浮点计算峰值是指计算机每秒可以完成的浮点计算次数，包括理论浮点峰值和实测浮点峰值。理论浮点峰值是该计算机理论上每秒可以完成的浮点计算次数，主要由CPU的主频决定。</p>
-<p>理论浮点峰值＝CPU主频×CPU核数×CPU每周期执行浮点运算的次数。</p>
-<p>目前的实测方式如下：</p>
-<p>Linpack Benchmark: 广泛用于高性能计算机双精度浮点运算性能基准评测，但大部分人工智能训练任务以单精度浮点数或者16位浮点数为主</p>
-<p>HPL-AI: 通以Linpack为基础的改善的混合精度的基准测评</p>
-<p>Mobile AI Bench：</p>
-<p>DeepBench：</p>
-<p>AIIA DNN Benchmark:</p>
-<p>AIPerf Benchmark:</p>
-<p> 基于微软NNI（neural network intelligence)框架实现，以自动化机器学习AutoML为负载，进行网络结构搜索（网络态射network morphism ）和超参搜索（树状结构Parzen估计）寻找进度更高的网络结构和超参（batch size；最大epoch；lr；最大搜索模型个数，最长搜索总时间；最大并发搜索模型数量等）</p>
-<h1 id="设计目标"><a href="#设计目标" class="headerlink" title="设计目标"></a>设计目标</h1><h2 id="统一的评价指标Score"><a href="#统一的评价指标Score" class="headerlink" title="统一的评价指标Score"></a>统一的评价指标Score</h2><p>AIPerf的评价指标是Tops（平均每秒处理的混合精度AI浮点操作数），可以用来做横向比较</p>
-<h2 id="处理问题规模可变性"><a href="#处理问题规模可变性" class="headerlink" title="处理问题规模可变性"></a>处理问题规模可变性</h2><p>人工智能计算集群的系统规模在节点数量，加速器数量，加速类型，内存大小等指标上存在差异。需要能适应各种规模的计算集群，因此，在AutoML调整问题规模来适应集群规模的变化。</p>
-<h2 id="实际的人工智能意义"><a href="#实际的人工智能意义" class="headerlink" title="实际的人工智能意义"></a>实际的人工智能意义</h2><p>相较于传统的高性能计算机基准测试程序需要具有人工智能的意义在其中，也是其能够检测集群人工智能算力的核心。AIPerf通过在ImageNet数据集上训练神经网络运行CV方面的算法。</p>
-<h2 id="必要的多机通信"><a href="#必要的多机通信" class="headerlink" title="必要的多机通信"></a>必要的多机通信</h2><p>在计算集群中任务分发，多级训练，结果收集等都是以多机通信为基础，是人工智能计算集群计算能力的重要组成。</p>
-<h1 id="论文精读"><a href="#论文精读" class="headerlink" title="论文精读"></a>论文精读</h1>]]></content>
   </entry>
   <entry>
     <title>图像分割-Unet[项目应用]</title>
@@ -1635,6 +1652,25 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习-奇异值分解SVD</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%A5%87%E5%BC%82%E5%80%BC%E5%88%86%E8%A7%A3SVD/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习-支持向量机(SVM)</title>
     <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA-SVM/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：逻辑回归是找到可以划分数据的超平面，但是如何找到最优的超平面来划分数据集呢？</p>
@@ -1659,25 +1695,6 @@
 <p>应用：</p>
 <p>文本分类领域效果最好的机器学习算法，在工业界主要应用在网页分类、微博情感分析、舆情监控、用户评论挖掘、文本过滤等诸多领域</p>
 <span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习-奇异值分解SVD</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%A5%87%E5%BC%82%E5%80%BC%E5%88%86%E8%A7%A3SVD/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
 ]]></content>
       <categories>
         <category>学习</category>
