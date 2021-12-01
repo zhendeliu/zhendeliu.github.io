@@ -100,30 +100,9 @@
   </entry>
   <entry>
     <title>Hexo网站建设参考资料</title>
-    <url>/2021/11/30/Hexo%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/</url>
+    <url>/2021/10/30/Hexo%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/</url>
     <content><![CDATA[<p>Hexo next主题：右侧栏配置 <a href="https://www.cnblogs.com/lfri/p/12221359.html">https://www.cnblogs.com/lfri/p/12221359.html</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>OpenCV图像处理基础（三）</title>
-    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-        <tag>基础操作</tag>
-        <tag>噪音</tag>
-        <tag>灰度图</tag>
-        <tag>编程</tag>
-      </tags>
   </entry>
   <entry>
     <title>OpenCV图像处理基础（一）</title>
@@ -170,23 +149,30 @@
       </tags>
   </entry>
   <entry>
-    <title>Python内置模块盘点</title>
-    <url>/2021/11/02/Python%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="os模块"><a href="#os模块" class="headerlink" title="os模块"></a>os模块</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="shutil模块"><a href="#shutil模块" class="headerlink" title="shutil模块"></a>shutil模块</h1><p>完成文件的复制，删除，移动，压缩，解压</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.copy(src,dst)</span><br><span class="line">shutil.copy2()</span><br><span class="line">shutil.copyfile(src,dst)</span><br><span class="line">shutil.copymode()</span><br><span class="line">shutil.copystat()</span><br><span class="line">shutil.copytree()</span><br><span class="line">shutil.move()</span><br><span class="line">shutil.rmtree()</span><br></pre></td></tr></table></figure>
-
+    <title>OpenCV图像处理基础（三）</title>
+    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
 ]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>基础操作</tag>
+        <tag>噪音</tag>
+        <tag>编程</tag>
+        <tag>灰度图</tag>
+      </tags>
   </entry>
   <entry>
     <title>Python中的*args和**kwargs</title>
     <url>/2021/10/28/Python%E4%B8%AD%E7%9A%84-args%E5%92%8C-kwargs/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>*和**的用法</p>
+    <content><![CDATA[<p>*和**的用法</p>
 <p>*args和**kwargs的用法</p>
 <span id="more"></span>
 
@@ -212,6 +198,32 @@
         <tag>基础操作</tag>
         <tag>编程</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Python内置模块盘点</title>
+    <url>/2021/11/02/Python%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>os模块</p>
+<p>shutil模块</p>
+<span id="more"></span>
+
+
+
+
+
+
+
+
+
+<h1 id="os模块"><a href="#os模块" class="headerlink" title="os模块"></a>os模块</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="shutil模块"><a href="#shutil模块" class="headerlink" title="shutil模块"></a>shutil模块</h1><p>完成文件的复制，删除，移动，压缩，解压</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.copy(src,dst)</span><br><span class="line">shutil.copy2()</span><br><span class="line">shutil.copyfile(src,dst)</span><br><span class="line">shutil.copymode()</span><br><span class="line">shutil.copystat()</span><br><span class="line">shutil.copytree()</span><br><span class="line">shutil.move()</span><br><span class="line">shutil.rmtree()</span><br></pre></td></tr></table></figure>
+
+]]></content>
   </entry>
   <entry>
     <title>Pytorch框架基础（一）</title>
@@ -400,6 +412,15 @@
       </tags>
   </entry>
   <entry>
+    <title>cv算法面试问题总结（七）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%83%EF%BC%89/</url>
+    <content><![CDATA[<p>如何解决深度学习中模型训练效果不佳的情况？<br>神经网络中，是否隐藏层如果具有足够数量的单位，它就可以近似任何连续函数？<br>为什么更深的网络更好？<br>更多的数据是否有利于更深的神经网络？<br>不平衡数据是否会影响神经网络的分类效果？<br>无监督降维提供的是帮助还是摧毁？<br>是否可以将任何非线性作为激活函数?<br>批大小如何影响测试正确率？<br>初始化如何影响训练?<br>不同层的权重是否以不同的速度收敛？ </p>
+<p>正则化如何影响权重？<br>什么是fine-tuning？<br>什么是边框回归Bounding-Box regression，以及为什么要做、怎么做<br>请阐述下Selective Search的主要思想<br>什么是非极大值抑制（NMS）？<br>什么是深度学习中的anchor？<br>CNN的特点以及优势<br>深度学习中有什么加快收敛/降低训练难度的方法？<br>请写出链式法则并证明<br>请写出Batch Normalization的计算方法及其应用</p>
+<span id="more"></span>
+
+]]></content>
+  </entry>
+  <entry>
     <title>cv算法面试问题总结（三）</title>
     <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%89%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
@@ -427,15 +448,6 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>cv算法面试问题总结（七）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%83%EF%BC%89/</url>
-    <content><![CDATA[<p>如何解决深度学习中模型训练效果不佳的情况？<br>神经网络中，是否隐藏层如果具有足够数量的单位，它就可以近似任何连续函数？<br>为什么更深的网络更好？<br>更多的数据是否有利于更深的神经网络？<br>不平衡数据是否会影响神经网络的分类效果？<br>无监督降维提供的是帮助还是摧毁？<br>是否可以将任何非线性作为激活函数?<br>批大小如何影响测试正确率？<br>初始化如何影响训练?<br>不同层的权重是否以不同的速度收敛？ </p>
-<p>正则化如何影响权重？<br>什么是fine-tuning？<br>什么是边框回归Bounding-Box regression，以及为什么要做、怎么做<br>请阐述下Selective Search的主要思想<br>什么是非极大值抑制（NMS）？<br>什么是深度学习中的anchor？<br>CNN的特点以及优势<br>深度学习中有什么加快收敛/降低训练难度的方法？<br>请写出链式法则并证明<br>请写出Batch Normalization的计算方法及其应用</p>
-<span id="more"></span>
-
-]]></content>
   </entry>
   <entry>
     <title>cv算法面试问题总结（九）</title>
@@ -553,6 +565,13 @@
       </tags>
   </entry>
   <entry>
+    <title>cv算法面试问题总结（八）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AB%EF%BC%89/</url>
+    <content><![CDATA[<p>神经网络中会用到批量梯度下降（BGD）吗？为什么用随机梯度下降（SGD）?<br>当神经网络的调参效果不好时，从哪些角度思考？（不要首先归结于overfiting）<br>请阐述下卷积神经网络CNN的基本原理(全网最通俗版)<br>神经网络输出层为什么通常使用softmax?<br>了解无人驾驶的核心技术么？<br>如何形象的理解LSTM的三个门<br>通过一张张动图形象的理解LSTM<br>如何理解反向传播算法BackPropagation<br>请问什么是softmax函数？<br>通俗理解BN(Batch Normalization)<br>批量归一化BN到底解决了什么问题？<br>如何理解随机梯度下降，以及为什么SGD能够收敛？<br>模拟退火算法能解决陷入局部最优的问题么<br>请说下常见优化方法各自的优缺点（BGD、SGD、MBGD、Momentum、NAG、Adagrad、Adadelta、RMSprop、Adam）<br>Adam算法的原理机制是怎么样的？它与相关的AdaGrad和RMSProp方法有什么区别</p>
+<span id="more"></span>
+]]></content>
+  </entry>
+  <entry>
     <title>cv算法面试问题总结（六）</title>
     <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AD%EF%BC%89/</url>
     <content><![CDATA[<p>神经网络中激活函数的真正意义？一个激活函数需要具有哪些必要的属性？还有哪些属性是好的属性但不必要的？<br>梯度下降法的神经网络容易收敛到局部最优，为什么应用广泛？<br>简单说说CNN常用的几个模型<br>为什么很多做人脸的Paper会最后加入一个Local Connected Conv？<br>什么是梯度爆炸？<br>梯度爆炸会引发什么问题？<br>如何确定是否出现梯度爆炸？<br>如何修复梯度爆炸问题？</p>
@@ -569,13 +588,6 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>cv算法面试问题总结（八）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AB%EF%BC%89/</url>
-    <content><![CDATA[<p>神经网络中会用到批量梯度下降（BGD）吗？为什么用随机梯度下降（SGD）?<br>当神经网络的调参效果不好时，从哪些角度思考？（不要首先归结于overfiting）<br>请阐述下卷积神经网络CNN的基本原理(全网最通俗版)<br>神经网络输出层为什么通常使用softmax?<br>了解无人驾驶的核心技术么？<br>如何形象的理解LSTM的三个门<br>通过一张张动图形象的理解LSTM<br>如何理解反向传播算法BackPropagation<br>请问什么是softmax函数？<br>通俗理解BN(Batch Normalization)<br>批量归一化BN到底解决了什么问题？<br>如何理解随机梯度下降，以及为什么SGD能够收敛？<br>模拟退火算法能解决陷入局部最优的问题么<br>请说下常见优化方法各自的优缺点（BGD、SGD、MBGD、Momentum、NAG、Adagrad、Adadelta、RMSprop、Adam）<br>Adam算法的原理机制是怎么样的？它与相关的AdaGrad和RMSProp方法有什么区别</p>
-<span id="more"></span>
-]]></content>
   </entry>
   <entry>
     <title>cv算法面试问题总结（十）</title>
@@ -995,12 +1007,7 @@
   <entry>
     <title>关于MLPerf和AIPerf的设计理解</title>
     <url>/2021/11/11/%E5%85%B3%E4%BA%8EMLPerf%E5%92%8CAIPerf%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<p>摘要</p>
-<p>问题解决：</p>
-<p>原理</p>
-<p>优点</p>
-<p>缺点</p>
-<span id="more"></span>
+    <content><![CDATA[<span id="more"></span>
 
 <h1 id="MLPerf"><a href="#MLPerf" class="headerlink" title="MLPerf"></a>MLPerf</h1><p>MLPerf 是AI芯片的一个基准测试，主要包括：Training 和Inference两个方面的性能测试。Training是于测量系统将模型训练到目标质量指标的速度；Inference是用于测试系统使用训练有素的模型处理输入和产生结果的速度。</p>
 <p>具体的详细信息可参见论文：MLPERF TRAINING BENCHMARK以及MLPERF INFERENCE BENCHMARK。</p>
@@ -1022,7 +1029,7 @@
 <h2 id="处理问题规模可变性"><a href="#处理问题规模可变性" class="headerlink" title="处理问题规模可变性"></a>处理问题规模可变性</h2><p>人工智能计算集群的系统规模在节点数量，加速器数量，加速类型，内存大小等指标上存在差异。需要能适应各种规模的计算集群，因此，在AutoML调整问题规模来适应集群规模的变化。</p>
 <h2 id="实际的人工智能意义"><a href="#实际的人工智能意义" class="headerlink" title="实际的人工智能意义"></a>实际的人工智能意义</h2><p>相较于传统的高性能计算机基准测试程序需要具有人工智能的意义在其中，也是其能够检测集群人工智能算力的核心。AIPerf通过在ImageNet数据集上训练神经网络运行CV方面的算法。</p>
 <h2 id="必要的多机通信"><a href="#必要的多机通信" class="headerlink" title="必要的多机通信"></a>必要的多机通信</h2><p>在计算集群中任务分发，多级训练，结果收集等都是以多机通信为基础，是人工智能计算集群计算能力的重要组成。</p>
-<h1 id="论文精读"><a href="#论文精读" class="headerlink" title="论文精读"></a>论文精读</h1>]]></content>
+]]></content>
   </entry>
   <entry>
     <title>医学图像数据集资源收集</title>
@@ -1662,10 +1669,9 @@
   <entry>
     <title>底层避障算法ORCA(Optimal Reciprocal Collision Avoidance)</title>
     <url>/2021/11/02/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>问题解决：</p>
-<p>原理</p>
-<p>优点</p>
-<p>缺点</p>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>VO（Velocity Obstacle）</p>
+<p>RVO（Reciprocal Velocity Obstacles）</p>
+<p>ORCA</p>
 <span id="more"></span>
 
 <h1 id="VO（Velocity-Obstacle）"><a href="#VO（Velocity-Obstacle）" class="headerlink" title="VO（Velocity Obstacle）"></a>VO（Velocity Obstacle）</h1><p>以两个移动的物体为例：</p>
@@ -2906,6 +2912,53 @@
       </tags>
   </entry>
   <entry>
+    <title>神经网络-learning rate学习率的优化总结</title>
+    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+<p>学习率是一个非常非常重要的超参数，在 <strong>梯度下降方法</strong> 中，学习率的取值非常关键，如果过大就不会收敛，如果过小则收敛速度太慢。面对不同规模、不同batch-size、不同优化方式、不同数据集，其最合适的值都是不确定的，无法凭借经验来准确地确定<code>lr</code>的值，就是在训练中不断寻找最合适当前状态的学习率。</p>
+<p>可以使用的方法：利用fastai中的lr_find()函数寻找合适的学习率，根据学习率-损失曲线得到合适的学习率。</p>
+<h1 id="learning-rate与batch-size的关系"><a href="#learning-rate与batch-size的关系" class="headerlink" title="learning-rate与batch-size的关系"></a>learning-rate与batch-size的关系</h1><p>一般来说，越大的batch-size使用越大的学习率。原理很简单，越大的<code>batch-size</code>意味着我们学习的时候，收敛方向的<code>confidence</code>越大，我们前进的方向更加坚定，而小的<code>batch-size</code>则显得比较杂乱，毫无规律性，因为相比批次大的时候，批次小的情况下无法照顾到更多的情况，所以需要小的学习率来保证不至于出错。可以看下图<code>损失Loss</code>与<code>学习率Lr</code>的关系：</p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/lr_batchsize.png"></p>
+<p>在显存足够的条件下，最好采用较大的batch-size进行训练，找到合适的学习率后，可以加快收敛速度。</p>
+<p>另外，较大的batch-size可以避免batch normalization出现的一些小问题，参考如下Pytorch库Issue[3]</p>
+<h1 id="学习率衰减-学习率退火"><a href="#学习率衰减-学习率退火" class="headerlink" title="学习率衰减 / 学习率退火"></a>学习率衰减 / 学习率退火</h1><p>从经验上看，<strong>学习率在一开始要保持大些来保证收敛速度，在收敛到最优点附近时要小些以避免来回震荡。</strong>比较简单的学习率调整可以通过 <strong>学习率衰减（Learning Rate Decay）</strong>的方式来实现，也称为 <strong>学习率退火（Learning Rate Annealing）</strong>。</p>
+<p>假设初始化学习率为lr0，在第t次迭代时的学习率lrt。常用的衰减方式为可以设置为 <strong>按迭代次数</strong> 进行衰减。</p>
+<p>常见的衰减方法有以下几种：</p>
+<h5 id="分段常数衰减（Piecewise-Constant-Decay）"><a href="#分段常数衰减（Piecewise-Constant-Decay）" class="headerlink" title="分段常数衰减（Piecewise Constant Decay）"></a>分段常数衰减（Piecewise Constant Decay）</h5><p>即每经过<img src="https://math.jianshu.com/math?formula=T_1,%20T_2,%20%C2%B7%20%C2%B7%20%C2%B7%20,%20T_m" alt="T_1, T_2, · · · , T_m">次迭<br>代将学习率衰减为原来的<img src="https://math.jianshu.com/math?formula=%CE%B2_1,%20%CE%B2_2,%20%C2%B7%20%C2%B7%20%C2%B7%20,%20%CE%B2_m" alt="β_1, β_2, · · · , β_m">倍，其中**<img src="https://math.jianshu.com/math?formula=T_m" alt="T_m">** 和 **<img src="https://math.jianshu.com/math?formula=%CE%B2_m%3C1" alt="β_m&lt;1">**为根据经验设置的 <strong>超参数</strong>。</p>
+<h5 id="逆时衰减（Inverse-Time-Decay）"><a href="#逆时衰减（Inverse-Time-Decay）" class="headerlink" title="逆时衰减（Inverse Time Decay）"></a>逆时衰减（Inverse Time Decay）</h5><p>lr-t = lr0 /(1+b*t)  b为衰减率</p>
+<h5 id="指数衰减（Exponential-Decay）"><a href="#指数衰减（Exponential-Decay）" class="headerlink" title="指数衰减（Exponential Decay）"></a>指数衰减（Exponential Decay）</h5><p>Lr-t = lr0*(b**t)</p>
+<h5 id="自然指数衰减（Natural-Exponential-Decay）"><a href="#自然指数衰减（Natural-Exponential-Decay）" class="headerlink" title="自然指数衰减（Natural Exponential Decay）"></a>自然指数衰减（Natural Exponential Decay）</h5><h5 id="余弦衰减（Cosine-Decay）"><a href="#余弦衰减（Cosine-Decay）" class="headerlink" title="余弦衰减（Cosine Decay）"></a>余弦衰减（Cosine Decay）</h5><p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%A1%B0%E5%87%8F.png"></p>
+<h1 id="学习率预热"><a href="#学习率预热" class="headerlink" title="学习率预热"></a>学习率预热</h1><p>在 <strong>小批量梯度下降方法</strong> 中，当批量大小的设置比较大时，通常需要比较大的学习率。但在刚开始训练时，由于参数是随机初始化的，<strong>梯度往往也比较大</strong>，在加上 <strong>比较大的初始学习率，会使得训练不稳定。</strong></p>
+<p>为了提高训练稳定性，我们可以 <strong>在最初几轮迭代时，采用比较小的学习率，等梯度下降到一定程度后再恢复到初始的学习率，</strong>这种方法称为 <strong>学习率预热（Learning Rate Warmup）。</strong></p>
+<p>一个常用的学习率预热方法是 <strong>逐渐预热（Gradual Warmup）</strong>。<strong>当预热过程结束，再选择一种学习率衰减方法来逐渐降低学习率。</strong></p>
+<h1 id="周期性学习率调整"><a href="#周期性学习率调整" class="headerlink" title="周期性学习率调整"></a>周期性学习率调整</h1><p>为了使得 <strong>梯度下降方法</strong> 能够 <strong>逃离局部最小值或鞍点</strong>，一种经验性的方式是在训练过程中 <strong>周期性地增大学习率</strong>。虽然增加学习率可能短期内有损网络的收敛稳定性，但从长期来看有助于找到更好的局部最优解。</p>
+<p>一般而言，当一个模型 <strong>收敛到一个平坦（Flat）的局部最小值</strong> 时，其 <strong>鲁棒性会更好</strong>，即 <strong>微小的参数变动不会剧烈影响模型能力</strong>；而当模型 <strong>收敛到一个尖锐（Sharp）的局部最小值</strong> 时，其 <strong>鲁棒性也会比较差</strong>。具备良好泛化能力的模型通常应该是鲁棒的，因此理想的局部最小值应该是平坦的。</p>
+<p><strong>周期性学习率调整</strong> 可以使得梯度下降方法在优化过程中 <strong>跳出尖锐的局部极小值</strong>，虽然会短期内会损害优化过程，但最终会收敛到更加理想的局部极小值。</p>
+<h5 id="循环学习率"><a href="#循环学习率" class="headerlink" title="循环学习率"></a>循环学习率</h5><p>一种简单的方法是使用循环学习率，即在让学习率在 <strong>一个区间内</strong> <strong>周期性地增大和缩小</strong>。</p>
+<p>通常可以使用 <strong>线性缩放</strong> 来调整学习率，称为 <strong>三角循环学习率（Triangular Cyclic Learning Rate）。</strong></p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/%E5%BE%AA%E7%8E%AF%E5%AD%A6%E4%B9%A0%E7%8E%87.png"></p>
+<h5 id="带热重启的随机梯度下降"><a href="#带热重启的随机梯度下降" class="headerlink" title="带热重启的随机梯度下降"></a>带热重启的随机梯度下降</h5><p>带热重启的随机梯度下降（Stochastic Gradient Descent with Warm Restarts，SGDR）是用 <strong>热重启方式</strong> 来替代 <strong>学习率衰减</strong> 的方法。</p>
+<p><strong>学习率每间隔一定周期后，重新初始化为某个预先设定值，然后逐渐衰减。</strong>每次重启后模型参数不是从头开始优化，而是从重启前的参数基础上继续优化。</p>
+<p>!</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>深度学习</category>
+        <category>神经网络</category>
+      </categories>
+      <tags>
+        <tag>总结</tag>
+        <tag>编程</tag>
+        <tag>优化</tag>
+        <tag>调参</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>神经网络-损失函数</title>
     <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：损失函数用来评价模型的预测值和真实值不一样的程度，损失函数越好，通常模型的性能越好。不同的模型用的损失函数一般也不一样。</p>
@@ -2951,53 +3004,6 @@
       <categories>
         <category>学习</category>
         <category>Pytorch</category>
-        <category>深度学习</category>
-        <category>神经网络</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-        <tag>编程</tag>
-        <tag>优化</tag>
-        <tag>调参</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>神经网络-learning rate学习率的优化总结</title>
-    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-<p>学习率是一个非常非常重要的超参数，在 <strong>梯度下降方法</strong> 中，学习率的取值非常关键，如果过大就不会收敛，如果过小则收敛速度太慢。面对不同规模、不同batch-size、不同优化方式、不同数据集，其最合适的值都是不确定的，无法凭借经验来准确地确定<code>lr</code>的值，就是在训练中不断寻找最合适当前状态的学习率。</p>
-<p>可以使用的方法：利用fastai中的lr_find()函数寻找合适的学习率，根据学习率-损失曲线得到合适的学习率。</p>
-<h1 id="learning-rate与batch-size的关系"><a href="#learning-rate与batch-size的关系" class="headerlink" title="learning-rate与batch-size的关系"></a>learning-rate与batch-size的关系</h1><p>一般来说，越大的batch-size使用越大的学习率。原理很简单，越大的<code>batch-size</code>意味着我们学习的时候，收敛方向的<code>confidence</code>越大，我们前进的方向更加坚定，而小的<code>batch-size</code>则显得比较杂乱，毫无规律性，因为相比批次大的时候，批次小的情况下无法照顾到更多的情况，所以需要小的学习率来保证不至于出错。可以看下图<code>损失Loss</code>与<code>学习率Lr</code>的关系：</p>
-<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/lr_batchsize.png"></p>
-<p>在显存足够的条件下，最好采用较大的batch-size进行训练，找到合适的学习率后，可以加快收敛速度。</p>
-<p>另外，较大的batch-size可以避免batch normalization出现的一些小问题，参考如下Pytorch库Issue[3]</p>
-<h1 id="学习率衰减-学习率退火"><a href="#学习率衰减-学习率退火" class="headerlink" title="学习率衰减 / 学习率退火"></a>学习率衰减 / 学习率退火</h1><p>从经验上看，<strong>学习率在一开始要保持大些来保证收敛速度，在收敛到最优点附近时要小些以避免来回震荡。</strong>比较简单的学习率调整可以通过 <strong>学习率衰减（Learning Rate Decay）</strong>的方式来实现，也称为 <strong>学习率退火（Learning Rate Annealing）</strong>。</p>
-<p>假设初始化学习率为lr0，在第t次迭代时的学习率lrt。常用的衰减方式为可以设置为 <strong>按迭代次数</strong> 进行衰减。</p>
-<p>常见的衰减方法有以下几种：</p>
-<h5 id="分段常数衰减（Piecewise-Constant-Decay）"><a href="#分段常数衰减（Piecewise-Constant-Decay）" class="headerlink" title="分段常数衰减（Piecewise Constant Decay）"></a>分段常数衰减（Piecewise Constant Decay）</h5><p>即每经过<img src="https://math.jianshu.com/math?formula=T_1,%20T_2,%20%C2%B7%20%C2%B7%20%C2%B7%20,%20T_m" alt="T_1, T_2, · · · , T_m">次迭<br>代将学习率衰减为原来的<img src="https://math.jianshu.com/math?formula=%CE%B2_1,%20%CE%B2_2,%20%C2%B7%20%C2%B7%20%C2%B7%20,%20%CE%B2_m" alt="β_1, β_2, · · · , β_m">倍，其中**<img src="https://math.jianshu.com/math?formula=T_m" alt="T_m">** 和 **<img src="https://math.jianshu.com/math?formula=%CE%B2_m%3C1" alt="β_m&lt;1">**为根据经验设置的 <strong>超参数</strong>。</p>
-<h5 id="逆时衰减（Inverse-Time-Decay）"><a href="#逆时衰减（Inverse-Time-Decay）" class="headerlink" title="逆时衰减（Inverse Time Decay）"></a>逆时衰减（Inverse Time Decay）</h5><p>lr-t = lr0 /(1+b*t)  b为衰减率</p>
-<h5 id="指数衰减（Exponential-Decay）"><a href="#指数衰减（Exponential-Decay）" class="headerlink" title="指数衰减（Exponential Decay）"></a>指数衰减（Exponential Decay）</h5><p>Lr-t = lr0*(b**t)</p>
-<h5 id="自然指数衰减（Natural-Exponential-Decay）"><a href="#自然指数衰减（Natural-Exponential-Decay）" class="headerlink" title="自然指数衰减（Natural Exponential Decay）"></a>自然指数衰减（Natural Exponential Decay）</h5><h5 id="余弦衰减（Cosine-Decay）"><a href="#余弦衰减（Cosine-Decay）" class="headerlink" title="余弦衰减（Cosine Decay）"></a>余弦衰减（Cosine Decay）</h5><p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%A1%B0%E5%87%8F.png"></p>
-<h1 id="学习率预热"><a href="#学习率预热" class="headerlink" title="学习率预热"></a>学习率预热</h1><p>在 <strong>小批量梯度下降方法</strong> 中，当批量大小的设置比较大时，通常需要比较大的学习率。但在刚开始训练时，由于参数是随机初始化的，<strong>梯度往往也比较大</strong>，在加上 <strong>比较大的初始学习率，会使得训练不稳定。</strong></p>
-<p>为了提高训练稳定性，我们可以 <strong>在最初几轮迭代时，采用比较小的学习率，等梯度下降到一定程度后再恢复到初始的学习率，</strong>这种方法称为 <strong>学习率预热（Learning Rate Warmup）。</strong></p>
-<p>一个常用的学习率预热方法是 <strong>逐渐预热（Gradual Warmup）</strong>。<strong>当预热过程结束，再选择一种学习率衰减方法来逐渐降低学习率。</strong></p>
-<h1 id="周期性学习率调整"><a href="#周期性学习率调整" class="headerlink" title="周期性学习率调整"></a>周期性学习率调整</h1><p>为了使得 <strong>梯度下降方法</strong> 能够 <strong>逃离局部最小值或鞍点</strong>，一种经验性的方式是在训练过程中 <strong>周期性地增大学习率</strong>。虽然增加学习率可能短期内有损网络的收敛稳定性，但从长期来看有助于找到更好的局部最优解。</p>
-<p>一般而言，当一个模型 <strong>收敛到一个平坦（Flat）的局部最小值</strong> 时，其 <strong>鲁棒性会更好</strong>，即 <strong>微小的参数变动不会剧烈影响模型能力</strong>；而当模型 <strong>收敛到一个尖锐（Sharp）的局部最小值</strong> 时，其 <strong>鲁棒性也会比较差</strong>。具备良好泛化能力的模型通常应该是鲁棒的，因此理想的局部最小值应该是平坦的。</p>
-<p><strong>周期性学习率调整</strong> 可以使得梯度下降方法在优化过程中 <strong>跳出尖锐的局部极小值</strong>，虽然会短期内会损害优化过程，但最终会收敛到更加理想的局部极小值。</p>
-<h5 id="循环学习率"><a href="#循环学习率" class="headerlink" title="循环学习率"></a>循环学习率</h5><p>一种简单的方法是使用循环学习率，即在让学习率在 <strong>一个区间内</strong> <strong>周期性地增大和缩小</strong>。</p>
-<p>通常可以使用 <strong>线性缩放</strong> 来调整学习率，称为 <strong>三角循环学习率（Triangular Cyclic Learning Rate）。</strong></p>
-<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/%E5%BE%AA%E7%8E%AF%E5%AD%A6%E4%B9%A0%E7%8E%87.png"></p>
-<h5 id="带热重启的随机梯度下降"><a href="#带热重启的随机梯度下降" class="headerlink" title="带热重启的随机梯度下降"></a>带热重启的随机梯度下降</h5><p>带热重启的随机梯度下降（Stochastic Gradient Descent with Warm Restarts，SGDR）是用 <strong>热重启方式</strong> 来替代 <strong>学习率衰减</strong> 的方法。</p>
-<p><strong>学习率每间隔一定周期后，重新初始化为某个预先设定值，然后逐渐衰减。</strong>每次重启后模型参数不是从头开始优化，而是从重启前的参数基础上继续优化。</p>
-<p>!</p>
-]]></content>
-      <categories>
-        <category>学习</category>
         <category>深度学习</category>
         <category>神经网络</category>
       </categories>
@@ -3348,7 +3354,7 @@
   </entry>
   <entry>
     <title>论文精读-Deep-Learninge-Driven Quantification of Interstitial Fibrosis in Digitized Kidney Biopsies</title>
-    <url>/2021/11/22/%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB-Deep-Learninge-Driven-Quantification-of-Interstitial-Fibrosis-in-Digitized-Kidney-Biopsies/</url>
+    <url>/2021/11/12/%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB-Deep-Learninge-Driven-Quantification-of-Interstitial-Fibrosis-in-Digitized-Kidney-Biopsies/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
