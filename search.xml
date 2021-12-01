@@ -40,12 +40,6 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>Hexo网站建设参考资料</title>
-    <url>/2021/11/30/Hexo%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/</url>
-    <content><![CDATA[<p>Hexo next主题：右侧栏配置 <a href="https://www.cnblogs.com/lfri/p/12221359.html">https://www.cnblogs.com/lfri/p/12221359.html</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Global-Wheat-Detection全球小麦麦穗检测</title>
     <url>/2021/10/02/Global-Wheat-Detection%E5%85%A8%E7%90%83%E5%B0%8F%E9%BA%A6%E9%BA%A6%E7%A9%97%E6%A3%80%E6%B5%8B/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>Version1.0: 通过对 Faster R-CNN 网络进行微调来实现检测<br> Version2.0: 基于 EfficientDet 网络实现并结合 Pseudo-Labeling 策略进行改进</p>
@@ -105,6 +99,33 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Hexo网站建设参考资料</title>
+    <url>/2021/11/30/Hexo%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/</url>
+    <content><![CDATA[<p>Hexo next主题：右侧栏配置 <a href="https://www.cnblogs.com/lfri/p/12221359.html">https://www.cnblogs.com/lfri/p/12221359.html</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>OpenCV图像处理基础（三）</title>
+    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>基础操作</tag>
+        <tag>噪音</tag>
+        <tag>灰度图</tag>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OpenCV图像处理基础（一）</title>
     <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>数字图像基础</p>
@@ -149,25 +170,18 @@
       </tags>
   </entry>
   <entry>
-    <title>OpenCV图像处理基础（三）</title>
-    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
+    <title>Python内置模块盘点</title>
+    <url>/2021/11/02/Python%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="os模块"><a href="#os模块" class="headerlink" title="os模块"></a>os模块</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="shutil模块"><a href="#shutil模块" class="headerlink" title="shutil模块"></a>shutil模块</h1><p>完成文件的复制，删除，移动，压缩，解压</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.copy(src,dst)</span><br><span class="line">shutil.copy2()</span><br><span class="line">shutil.copyfile(src,dst)</span><br><span class="line">shutil.copymode()</span><br><span class="line">shutil.copystat()</span><br><span class="line">shutil.copytree()</span><br><span class="line">shutil.move()</span><br><span class="line">shutil.rmtree()</span><br></pre></td></tr></table></figure>
+
 ]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-        <tag>基础操作</tag>
-        <tag>噪音</tag>
-        <tag>编程</tag>
-        <tag>灰度图</tag>
-      </tags>
   </entry>
   <entry>
     <title>Python中的*args和**kwargs</title>
@@ -193,34 +207,6 @@
       <categories>
         <category>学习</category>
         <category>Python</category>
-      </categories>
-      <tags>
-        <tag>基础操作</tag>
-        <tag>编程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python内置模块盘点</title>
-    <url>/2021/11/02/Python%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="os模块"><a href="#os模块" class="headerlink" title="os模块"></a>os模块</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="shutil模块"><a href="#shutil模块" class="headerlink" title="shutil模块"></a>shutil模块</h1><p>完成文件的复制，删除，移动，压缩，解压</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.copy(src,dst)</span><br><span class="line">shutil.copy2()</span><br><span class="line">shutil.copyfile(src,dst)</span><br><span class="line">shutil.copymode()</span><br><span class="line">shutil.copystat()</span><br><span class="line">shutil.copytree()</span><br><span class="line">shutil.move()</span><br><span class="line">shutil.rmtree()</span><br></pre></td></tr></table></figure>
-
-]]></content>
-  </entry>
-  <entry>
-    <title>Pytorch框架基础（二）</title>
-    <url>/2021/09/29/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p><a href="https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1">https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>Pytorch</category>
       </categories>
       <tags>
         <tag>基础操作</tag>
@@ -288,6 +274,20 @@
 
 
 
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>Pytorch</category>
+      </categories>
+      <tags>
+        <tag>基础操作</tag>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Pytorch框架基础（二）</title>
+    <url>/2021/09/29/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p><a href="https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1">https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1</a></p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -400,15 +400,6 @@
       </tags>
   </entry>
   <entry>
-    <title>cv算法面试问题总结（七）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%83%EF%BC%89/</url>
-    <content><![CDATA[<p>如何解决深度学习中模型训练效果不佳的情况？<br>神经网络中，是否隐藏层如果具有足够数量的单位，它就可以近似任何连续函数？<br>为什么更深的网络更好？<br>更多的数据是否有利于更深的神经网络？<br>不平衡数据是否会影响神经网络的分类效果？<br>无监督降维提供的是帮助还是摧毁？<br>是否可以将任何非线性作为激活函数?<br>批大小如何影响测试正确率？<br>初始化如何影响训练?<br>不同层的权重是否以不同的速度收敛？ </p>
-<p>正则化如何影响权重？<br>什么是fine-tuning？<br>什么是边框回归Bounding-Box regression，以及为什么要做、怎么做<br>请阐述下Selective Search的主要思想<br>什么是非极大值抑制（NMS）？<br>什么是深度学习中的anchor？<br>CNN的特点以及优势<br>深度学习中有什么加快收敛/降低训练难度的方法？<br>请写出链式法则并证明<br>请写出Batch Normalization的计算方法及其应用</p>
-<span id="more"></span>
-
-]]></content>
-  </entry>
-  <entry>
     <title>cv算法面试问题总结（三）</title>
     <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%89%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
@@ -436,6 +427,15 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>cv算法面试问题总结（七）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%83%EF%BC%89/</url>
+    <content><![CDATA[<p>如何解决深度学习中模型训练效果不佳的情况？<br>神经网络中，是否隐藏层如果具有足够数量的单位，它就可以近似任何连续函数？<br>为什么更深的网络更好？<br>更多的数据是否有利于更深的神经网络？<br>不平衡数据是否会影响神经网络的分类效果？<br>无监督降维提供的是帮助还是摧毁？<br>是否可以将任何非线性作为激活函数?<br>批大小如何影响测试正确率？<br>初始化如何影响训练?<br>不同层的权重是否以不同的速度收敛？ </p>
+<p>正则化如何影响权重？<br>什么是fine-tuning？<br>什么是边框回归Bounding-Box regression，以及为什么要做、怎么做<br>请阐述下Selective Search的主要思想<br>什么是非极大值抑制（NMS）？<br>什么是深度学习中的anchor？<br>CNN的特点以及优势<br>深度学习中有什么加快收敛/降低训练难度的方法？<br>请写出链式法则并证明<br>请写出Batch Normalization的计算方法及其应用</p>
+<span id="more"></span>
+
+]]></content>
   </entry>
   <entry>
     <title>cv算法面试问题总结（九）</title>
@@ -553,13 +553,6 @@
       </tags>
   </entry>
   <entry>
-    <title>cv算法面试问题总结（八）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AB%EF%BC%89/</url>
-    <content><![CDATA[<p>神经网络中会用到批量梯度下降（BGD）吗？为什么用随机梯度下降（SGD）?<br>当神经网络的调参效果不好时，从哪些角度思考？（不要首先归结于overfiting）<br>请阐述下卷积神经网络CNN的基本原理(全网最通俗版)<br>神经网络输出层为什么通常使用softmax?<br>了解无人驾驶的核心技术么？<br>如何形象的理解LSTM的三个门<br>通过一张张动图形象的理解LSTM<br>如何理解反向传播算法BackPropagation<br>请问什么是softmax函数？<br>通俗理解BN(Batch Normalization)<br>批量归一化BN到底解决了什么问题？<br>如何理解随机梯度下降，以及为什么SGD能够收敛？<br>模拟退火算法能解决陷入局部最优的问题么<br>请说下常见优化方法各自的优缺点（BGD、SGD、MBGD、Momentum、NAG、Adagrad、Adadelta、RMSprop、Adam）<br>Adam算法的原理机制是怎么样的？它与相关的AdaGrad和RMSProp方法有什么区别</p>
-<span id="more"></span>
-]]></content>
-  </entry>
-  <entry>
     <title>cv算法面试问题总结（六）</title>
     <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AD%EF%BC%89/</url>
     <content><![CDATA[<p>神经网络中激活函数的真正意义？一个激活函数需要具有哪些必要的属性？还有哪些属性是好的属性但不必要的？<br>梯度下降法的神经网络容易收敛到局部最优，为什么应用广泛？<br>简单说说CNN常用的几个模型<br>为什么很多做人脸的Paper会最后加入一个Local Connected Conv？<br>什么是梯度爆炸？<br>梯度爆炸会引发什么问题？<br>如何确定是否出现梯度爆炸？<br>如何修复梯度爆炸问题？</p>
@@ -576,6 +569,13 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>cv算法面试问题总结（八）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AB%EF%BC%89/</url>
+    <content><![CDATA[<p>神经网络中会用到批量梯度下降（BGD）吗？为什么用随机梯度下降（SGD）?<br>当神经网络的调参效果不好时，从哪些角度思考？（不要首先归结于overfiting）<br>请阐述下卷积神经网络CNN的基本原理(全网最通俗版)<br>神经网络输出层为什么通常使用softmax?<br>了解无人驾驶的核心技术么？<br>如何形象的理解LSTM的三个门<br>通过一张张动图形象的理解LSTM<br>如何理解反向传播算法BackPropagation<br>请问什么是softmax函数？<br>通俗理解BN(Batch Normalization)<br>批量归一化BN到底解决了什么问题？<br>如何理解随机梯度下降，以及为什么SGD能够收敛？<br>模拟退火算法能解决陷入局部最优的问题么<br>请说下常见优化方法各自的优缺点（BGD、SGD、MBGD、Momentum、NAG、Adagrad、Adadelta、RMSprop、Adam）<br>Adam算法的原理机制是怎么样的？它与相关的AdaGrad和RMSProp方法有什么区别</p>
+<span id="more"></span>
+]]></content>
   </entry>
   <entry>
     <title>cv算法面试问题总结（十）</title>
@@ -1027,12 +1027,196 @@
   <entry>
     <title>医学图像数据集资源收集</title>
     <url>/2021/11/30/%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE%E9%9B%86%E8%B5%84%E6%BA%90%E6%94%B6%E9%9B%86/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>肺部数据集</p>
+<p>肾脏病数据集</p>
+<p>心脏数据集</p>
+<p>胰腺数据集</p>
+<p>视网膜数据集</p>
+<p>肿瘤研究数据集</p>
+<p>大脑神经数据集</p>
+<p>皮肤数据集</p>
+<p>肛肠数据集</p>
+<p>COVID-19新冠肺炎数据集</p>
+<p>Others</p>
 <span id="more"></span>
 
+<h1 id="肺部数据集"><a href="#肺部数据集" class="headerlink" title="肺部数据集"></a>肺部数据集</h1><ol>
+<li><p><strong>肺部图像数据库联盟（LIDC）</strong></p>
+<p>数据下载链接：</p>
+<p><a href="https://wiki.cancerimagingarchive.net/display/Public/LIDC-IDRI#">https://wiki.cancerimagingarchive.net/display/Public/LIDC-IDRI#</a></p>
+<p>数据介绍：肺图像数据库联合会图像收集（LIDC-IDRI）包括诊断性和肺癌筛查性胸部X线断层扫描（CT）扫描，并标明带注释的病变。它是可通过网络访问的国际资源，用于开发，培训和评估用于肺癌检测和诊断的计算机辅助诊断（CAD）方法。由美国国立癌症研究所（NCI）发起，并由美国国立卫生研究院（FNIH）基金会进一步推动，并在食品药品监督管理局（FDA）的积极参与下，这种公私合作伙伴关系证明了一项成功的研究成果。</p>
+</li>
+</ol>
+<h1 id="肾脏病数据集"><a href="#肾脏病数据集" class="headerlink" title="肾脏病数据集"></a>肾脏病数据集</h1><ol>
+<li>肾脏疾病基因mRNA水平表达数据集</li>
+</ol>
+<p><a href="https://www.nephroseq.org/resource/login.html">https://www.nephroseq.org/resource/login.html</a></p>
+<h1 id="心脏数据集"><a href="#心脏数据集" class="headerlink" title="心脏数据集"></a>心脏数据集</h1><ol>
+<li><p><strong>AMRG Cardiac Atlas（心脏MRI图像）</strong></p>
+<p>数据下载链接：</p>
+<p><a href="http://www.cardiacatlas.org/studies/amrg-cardiac-atlas/">http://www.cardiacatlas.org/studies/amrg-cardiac-atlas/</a></p>
+<p>数据介绍：奥克兰MRI研究小组的Siemens Avanto扫描仪采集的正常患者心脏的完整带标签MRI图像集。</p>
+</li>
+<li><p><strong>先天性心脏病（CHD）图集</strong></p>
+<p>数据下载链接：</p>
+<p><a href="https://data.gov.uk/dataset/f13fbd0e-fc8a-4d42-82ef-d40f930e4b70/congenital-heart-disease-chd">https://data.gov.uk/dataset/f13fbd0e-fc8a-4d42-82ef-d40f930e4b70/congenital-heart-disease-chd</a></p>
+<p>数据介绍：先天性心脏病（CHD）图集代表来自患有各种先天性心脏病的成年人和儿童的MRI数据集，生理临床数据和计算机模型。</p>
+</li>
+<li><p><strong>森尼布鲁克心脏数据</strong></p>
+<p>数据下载链接：<a href="http://www.cardiacatlas.org/studies/">http://www.cardiacatlas.org/studies/</a></p>
+<p>数据介绍：Sunnybrook心脏数据（SCD）也称为2009心脏MR左心室分割挑战数据，由来自以下患者和病理混合的45幅cine-MRI图像组成：健康，肥大，伴有梗塞和心脏的心力衰竭。</p>
+</li>
+</ol>
+<h1 id="胰腺数据集"><a href="#胰腺数据集" class="headerlink" title="胰腺数据集"></a><strong>胰腺数据集</strong></h1><ol>
+<li><p><strong>胰腺分割数据集</strong></p>
+<p>数据下载链接：</p>
+<p><a href="http://academictorrents.com/details/80ecfefcabede760cdbdf63e38986501f7becd49">http://academictorrents.com/details/80ecfefcabede760cdbdf63e38986501f7becd49</a></p>
+<p>数据介绍：包含82个病例的胰腺数据集。</p>
+</li>
+<li><p><strong>MICCAI胰腺分割数据集</strong></p>
+<p>数据下载链接：<a href="http://medicaldecathlon.com/">http://medicaldecathlon.com/</a></p>
+<p>数据介绍：282个训练病例，139个测试病例，同时分割胰腺和肿瘤，测试集label是hidden的。</p>
+</li>
+<li><p><strong>INbreast：数字化乳腺摄影数据库</strong></p>
+<p>数据库下载链接：</p>
+<p><a href="http://medicalresearch.inescporto.pt/breastresearch/index.php/Get_INbreast_Database">http://medicalresearch.inescporto.pt/breastresearch/index.php/Get_INbreast_Database</a></p>
+<p>数据库介绍：INbreast数据库是一个乳腺摄影数据库，其中的图像是从位于大学医院（葡萄牙波尔图的乳腺癌中心，圣若昂医院）的乳腺癌中心获取的。INbreast共有115例（410幅图像），其中90例来自双乳女性（每例4幅图像），而25例来自乳房切除术患者（每例2幅图像）。包括几种类型的病变（肿块，钙化，不对称和变形）。专家还以XML格式提供了精确的轮廓。</p>
+</li>
+</ol>
+<h1 id="视网膜数据集"><a href="#视网膜数据集" class="headerlink" title="视网膜数据集"></a>视网膜数据集</h1><ol>
+<li><p>光学相干断层扫描血管造影（OCTA）是一种新兴的非侵入式成像技术，通过该技术可以获得视网膜血流系统的三维结构，帮助医生观察不同视网膜层的血流信息： <a href="https://ieee-dataport.org/open-access/octa-500">https://ieee-dataport.org/open-access/octa-500</a></p>
+</li>
+<li><p><strong>用于视网膜提取的数字视网膜图像</strong></p>
+<p>数据下载链接：<a href="https://www.isi.uu.nl/Research/Databases/DRIVE/download.php">https://www.isi.uu.nl/Research/Databases/DRIVE/download.php</a></p>
+<p>数据介绍：用于视网膜图像中血管分割的比较研究，它由40张照片组成，其中7张显示出轻度早期糖尿病性视网膜病变的迹象。</p>
+</li>
+</ol>
+<h1 id="肿瘤研究数据集"><a href="#肿瘤研究数据集" class="headerlink" title="肿瘤研究数据集"></a>肿瘤研究数据集</h1><ol>
+<li>TCGA<ol>
+<li>ccRCC透明细胞肾细胞癌</li>
+</ol>
+</li>
+<li>GEPIA</li>
+<li>GEO</li>
+<li>oncomine </li>
+</ol>
+<h1 id="大脑神经数据集"><a href="#大脑神经数据集" class="headerlink" title="大脑神经数据集"></a>大脑神经数据集</h1><ol>
+<li><p><strong>阿尔茨海默氏病神经影像数据</strong></p>
+<p>数据下载链接：<a href="http://adni.loni.usc.edu/data-samples/access-data/">http://adni.loni.usc.edu/data-samples/access-data/</a></p>
+<p>数据介绍：阿尔茨海默氏病患者和健康对照的MRI数据库。还具有临床，基因组和生物制造商数据。</p>
+</li>
+<li><p><strong>大脑MRI数据集</strong></p>
+<p>数据下载链接：<a href="http://www.oasis-brains.org/">http://www.oasis-brains.org/</a></p>
+<p>数据介绍：OASIS影像研究开放获取系列（OASIS）是一个旨在向科学界免费提供大脑的MRI数据集的项目。有两个数据集：横截面和纵向集。年轻，中年，非痴呆和痴呆老年人的横断面MRI数据：此集合包括416名18至96岁的受试者的横断面集合。非痴呆和痴呆老年人的纵向MRI数据：该组纵向收集了150名年龄在60至96岁之间的受试者。两次或两次以上就诊时对每个受试者进行了扫描，相隔至少一年，共进行373次成像。</p>
+</li>
+</ol>
+<h1 id="皮肤数据集"><a href="#皮肤数据集" class="headerlink" title="皮肤数据集"></a>皮肤数据集</h1><ol>
+<li><p><strong>Isic Archive（黑色素瘤）</strong></p>
+<p>数据下载链接：</p>
+<p><a href="https://github.com/GalAvineri/ISIC-Archive-Downloader">https://github.com/GalAvineri/ISIC-Archive-Downloader</a></p>
+<p>数据介绍：该档案库包含分类皮肤损伤的23k图像。它包含了恶性和良性的例子。每个示例均包含病变的图像，有关病变的元数据（包括分类和分割）以及有关患者的元数据。</p>
+</li>
+</ol>
+<h1 id="肛肠数据集"><a href="#肛肠数据集" class="headerlink" title="肛肠数据集"></a>肛肠数据集</h1><ol>
+<li><p><strong>结肠癌CT数据</strong></p>
+<p>数据下载链接：</p>
+<p><a href="https://wiki.cancerimagingarchive.net/display/Public/CT+COLONOGRAPHY#dc149b9170f54aa29e88f1119e25ba3e">https://wiki.cancerimagingarchive.net/display/Public/CT+COLONOGRAPHY#dc149b9170f54aa29e88f1119e25ba3e</a></p>
+<p>数据介绍：CT扫描诊断结肠癌。包括没有息肉，6-9mm息肉和大于10mm息肉的患者的数据。该系列中有825例带有XLS片的病例，提供了息肉描述及其在结肠段中的位置。</p>
+</li>
+</ol>
+<h1 id="COVID-19新馆肺炎数据集"><a href="#COVID-19新馆肺炎数据集" class="headerlink" title="COVID-19新馆肺炎数据集"></a>COVID-19新馆肺炎数据集</h1><ol>
+<li>微软、白宫发布的COVID-19开放研究数据集</li>
+</ol>
+<p><a href="https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge">https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge</a></p>
+<ol start="2">
+<li>韩国COVID-19新冠疫情数据集</li>
+</ol>
+<p><a href="https://github.com/ieee8023/covid-chestxray-dataset">https://github.com/ieee8023/covid-chestxray-dataset</a></p>
+<ol start="3">
+<li>COVID-19新冠肺炎胸片图像数据集</li>
+</ol>
+<p><a href="https://www.kaggle.com/kimjihoo/coronavirusdataset">https://www.kaggle.com/kimjihoo/coronavirusdataset</a></p>
+<ol start="4">
+<li>新冠病毒时序数据集</li>
+</ol>
+<p><a href="https://github.com/datasets/covid-19">https://github.com/datasets/covid-19</a></p>
+<ol start="5">
+<li>英国的冠状病毒追踪器：仪表板显示英国报告的冠状病毒病例，包括新病例，英格兰上级地方当局的病例以及死亡人数</li>
+</ol>
+<p><a href="https://www.gov.uk/government/publications/covid-19-track-coronavirus-cases">https://www.gov.uk/government/publications/covid-19-track-coronavirus-cases</a></p>
+<ol start="5">
+<li>各国名人感染名单</li>
+</ol>
+<p><a href="https://www.celebritieswithcorona.com/">https://www.celebritieswithcorona.com/</a></p>
+<ol start="6">
+<li>跟踪COVID-19：跟踪COVID-19在交互式仪表板上实时传播，并提供可供下载的数据</li>
+</ol>
+<p><a href="https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6</a></p>
+<ol start="7">
+<li>Coronanalytics：每日分析冠状病毒。</li>
+</ol>
+<p><a href="https://coronanalytics.com/">https://coronanalytics.com/</a></p>
+<ol start="8">
+<li>新冠百科图谱</li>
+</ol>
+<p><a href="http://www.openkg.cn/dataset/covid-19-baike">http://www.openkg.cn/dataset/covid-19-baike</a></p>
+<ol start="9">
+<li>冠状病毒时间表：全球冠状病毒（2019-nCoV，正式称为SARS-CoV-2或COVID-19）的地图，数据和时间表。</li>
+</ol>
+<p><a href="https://bnonews.com/index.php/2020/02/the-latest-coronavirus-cases/">https://bnonews.com/index.php/2020/02/the-latest-coronavirus-cases/</a></p>
+<ol start="10">
+<li>冠状病毒研究资源：探索最新的COVID-19研究，包括来自全球的补充内容。</li>
+</ol>
+<p><a href="https://pages.semanticscholar.org/coronavirus-research">https://pages.semanticscholar.org/coronavirus-research</a></p>
+<ol start="11">
+<li>日冕地图：日冕病毒大流行在空间和时间上的映射。</li>
+</ol>
+<p><a href="https://www.thecoronamap.com/">https://www.thecoronamap.com/</a></p>
+<ol start="12">
+<li>冠状病毒-集线器：来自世界上最可信赖的来源的COVID-19新闻，分析和最佳实践的集合。</li>
+</ol>
+<p><a href="https://flipboard.com/@health/coronavirus-the-hub-mbc9fs4t93llu0mb">https://flipboard.com/@health/coronavirus-the-hub-mbc9fs4t93llu0mb</a></p>
+<ol start="13">
+<li>COVID-19 GDP：冠状病毒对GDP的影响。</li>
+</ol>
+<p><a href="https://coronavirus.clevermaps.io/">https://coronavirus.clevermaps.io/</a></p>
+<ol start="14">
+<li>冠状病毒仪表板：实时冠状病毒仪表板跟踪器。查看数据，地图，社交媒体趋势，并了解预防措施。</li>
+</ol>
+<p><a href="https://ncov2019.live/">https://ncov2019.live/</a></p>
+<ol start="15">
+<li>2019新型冠状病毒数据：该公共存储库会随着时间的推移从网络上的各种公共来源存档数据。</li>
+</ol>
+<p><a href="https://github.com/globalcitizen/2019-wuhan-coronavirus-data/">https://github.com/globalcitizen/2019-wuhan-coronavirus-data/</a></p>
+<ol start="16">
+<li>用于新型冠状病毒COVID-19的Wolfram资源：与新型冠状病毒COVID-19（又名2019-nCoV）有关的Wolfram资源中心。</li>
+</ol>
+<p><a href="https://community.wolfram.com/groups/-/m/t/1872608">https://community.wolfram.com/groups/-/m/t/1872608</a></p>
+<ol start="17">
+<li><p>冠状病毒追踪器：最快的实时服务，可跟踪新冠病毒，它提供实时数据以及COVID-19冠状病毒的全球冠状病毒新闻报道更新。</p>
+<p><a href="https://thevirustracker.com/">https://thevirustracker.com/</a></p>
+</li>
+</ol>
+<h1 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h1><ol>
+<li><p><strong>The National Library of Medicine presents MedPix</strong></p>
+<p>数据下载链接：<a href="https://medpix.nlm.nih.gov/home">https://medpix.nlm.nih.gov/home</a></p>
+<p>数据介绍：MedPix®是一个免费的开放式在线访问数据库，其中包含医学图像，教学案例和临床主题，集成了图像和文本元数据，包括12,000多个患者案例，9,000个主题和近59,000个图像。我们的主要目标受众包括医师和护士，专职医疗人员，医学生，护理生以及其他对医学知识感兴趣的人。内容材料按疾病位置（器官系统）组织；病理类别患者资料；以及通过图像分类和图像标题。该集合可按患者症状和体征，诊断，器官系统，图像形式和图像描述，关键字，特约作者和许多其他搜索选项进行搜索。</p>
+</li>
+<li><p><strong>前列腺癌数据集</strong></p>
+<p>数据下载链接：</p>
+<p><a href="http://www.ehealthlab.cs.ucy.ac.cy/index.php/facilities/32-software/218-datasets">http://www.ehealthlab.cs.ucy.ac.cy/index.php/facilities/32-software/218-datasets</a></p>
+<p>数据介绍：</p>
+<p>1、图像格式：关于数据集的某些技术方面，T2-W MRI，DCE MRI和DWI MRI，ADC将以DICOM格式交付。</p>
+<p>2、关于MRSI数据将以RDA（西门子）或DICOM（GE）格式提供。</p>
+<p>3、以DICOM格式提供每种形式的所有地面真实图像。</p>
+<p>Ground Truth：</p>
+<p>对于每种方式，都提供了一组Ground Truth。GT由四个不同类别组成：（i）前列腺，（ii）边缘区（PZ），（iii）中央腺体（CG），（iv）CaP。</p>
+</li>
+<li><p><strong>SCR数据库（胸部X光片中的分割）</strong></p>
+<p>数据下载链接：<a href="http://www.isi.uu.nl/Research/Databases/SCR/">http://www.isi.uu.nl/Research/Databases/SCR/</a></p>
+<p>数据介绍：所有胸部X光片均取自JSRT数据库，这是一个公开可用的数据库，其中包含247张PA胸片。在每幅图像中，都对肺野，心脏和锁骨进行了手动分割，以提供参考标准。</p>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>数据集</category>
@@ -2722,53 +2906,6 @@
       </tags>
   </entry>
   <entry>
-    <title>神经网络-learning rate学习率的优化总结</title>
-    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-<p>学习率是一个非常非常重要的超参数，在 <strong>梯度下降方法</strong> 中，学习率的取值非常关键，如果过大就不会收敛，如果过小则收敛速度太慢。面对不同规模、不同batch-size、不同优化方式、不同数据集，其最合适的值都是不确定的，无法凭借经验来准确地确定<code>lr</code>的值，就是在训练中不断寻找最合适当前状态的学习率。</p>
-<p>可以使用的方法：利用fastai中的lr_find()函数寻找合适的学习率，根据学习率-损失曲线得到合适的学习率。</p>
-<h1 id="learning-rate与batch-size的关系"><a href="#learning-rate与batch-size的关系" class="headerlink" title="learning-rate与batch-size的关系"></a>learning-rate与batch-size的关系</h1><p>一般来说，越大的batch-size使用越大的学习率。原理很简单，越大的<code>batch-size</code>意味着我们学习的时候，收敛方向的<code>confidence</code>越大，我们前进的方向更加坚定，而小的<code>batch-size</code>则显得比较杂乱，毫无规律性，因为相比批次大的时候，批次小的情况下无法照顾到更多的情况，所以需要小的学习率来保证不至于出错。可以看下图<code>损失Loss</code>与<code>学习率Lr</code>的关系：</p>
-<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/lr_batchsize.png"></p>
-<p>在显存足够的条件下，最好采用较大的batch-size进行训练，找到合适的学习率后，可以加快收敛速度。</p>
-<p>另外，较大的batch-size可以避免batch normalization出现的一些小问题，参考如下Pytorch库Issue[3]</p>
-<h1 id="学习率衰减-学习率退火"><a href="#学习率衰减-学习率退火" class="headerlink" title="学习率衰减 / 学习率退火"></a>学习率衰减 / 学习率退火</h1><p>从经验上看，<strong>学习率在一开始要保持大些来保证收敛速度，在收敛到最优点附近时要小些以避免来回震荡。</strong>比较简单的学习率调整可以通过 <strong>学习率衰减（Learning Rate Decay）</strong>的方式来实现，也称为 <strong>学习率退火（Learning Rate Annealing）</strong>。</p>
-<p>假设初始化学习率为lr0，在第t次迭代时的学习率lrt。常用的衰减方式为可以设置为 <strong>按迭代次数</strong> 进行衰减。</p>
-<p>常见的衰减方法有以下几种：</p>
-<h5 id="分段常数衰减（Piecewise-Constant-Decay）"><a href="#分段常数衰减（Piecewise-Constant-Decay）" class="headerlink" title="分段常数衰减（Piecewise Constant Decay）"></a>分段常数衰减（Piecewise Constant Decay）</h5><p>即每经过<img src="https://math.jianshu.com/math?formula=T_1,%20T_2,%20%C2%B7%20%C2%B7%20%C2%B7%20,%20T_m" alt="T_1, T_2, · · · , T_m">次迭<br>代将学习率衰减为原来的<img src="https://math.jianshu.com/math?formula=%CE%B2_1,%20%CE%B2_2,%20%C2%B7%20%C2%B7%20%C2%B7%20,%20%CE%B2_m" alt="β_1, β_2, · · · , β_m">倍，其中**<img src="https://math.jianshu.com/math?formula=T_m" alt="T_m">** 和 **<img src="https://math.jianshu.com/math?formula=%CE%B2_m%3C1" alt="β_m&lt;1">**为根据经验设置的 <strong>超参数</strong>。</p>
-<h5 id="逆时衰减（Inverse-Time-Decay）"><a href="#逆时衰减（Inverse-Time-Decay）" class="headerlink" title="逆时衰减（Inverse Time Decay）"></a>逆时衰减（Inverse Time Decay）</h5><p>lr-t = lr0 /(1+b*t)  b为衰减率</p>
-<h5 id="指数衰减（Exponential-Decay）"><a href="#指数衰减（Exponential-Decay）" class="headerlink" title="指数衰减（Exponential Decay）"></a>指数衰减（Exponential Decay）</h5><p>Lr-t = lr0*(b**t)</p>
-<h5 id="自然指数衰减（Natural-Exponential-Decay）"><a href="#自然指数衰减（Natural-Exponential-Decay）" class="headerlink" title="自然指数衰减（Natural Exponential Decay）"></a>自然指数衰减（Natural Exponential Decay）</h5><h5 id="余弦衰减（Cosine-Decay）"><a href="#余弦衰减（Cosine-Decay）" class="headerlink" title="余弦衰减（Cosine Decay）"></a>余弦衰减（Cosine Decay）</h5><p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%A1%B0%E5%87%8F.png"></p>
-<h1 id="学习率预热"><a href="#学习率预热" class="headerlink" title="学习率预热"></a>学习率预热</h1><p>在 <strong>小批量梯度下降方法</strong> 中，当批量大小的设置比较大时，通常需要比较大的学习率。但在刚开始训练时，由于参数是随机初始化的，<strong>梯度往往也比较大</strong>，在加上 <strong>比较大的初始学习率，会使得训练不稳定。</strong></p>
-<p>为了提高训练稳定性，我们可以 <strong>在最初几轮迭代时，采用比较小的学习率，等梯度下降到一定程度后再恢复到初始的学习率，</strong>这种方法称为 <strong>学习率预热（Learning Rate Warmup）。</strong></p>
-<p>一个常用的学习率预热方法是 <strong>逐渐预热（Gradual Warmup）</strong>。<strong>当预热过程结束，再选择一种学习率衰减方法来逐渐降低学习率。</strong></p>
-<h1 id="周期性学习率调整"><a href="#周期性学习率调整" class="headerlink" title="周期性学习率调整"></a>周期性学习率调整</h1><p>为了使得 <strong>梯度下降方法</strong> 能够 <strong>逃离局部最小值或鞍点</strong>，一种经验性的方式是在训练过程中 <strong>周期性地增大学习率</strong>。虽然增加学习率可能短期内有损网络的收敛稳定性，但从长期来看有助于找到更好的局部最优解。</p>
-<p>一般而言，当一个模型 <strong>收敛到一个平坦（Flat）的局部最小值</strong> 时，其 <strong>鲁棒性会更好</strong>，即 <strong>微小的参数变动不会剧烈影响模型能力</strong>；而当模型 <strong>收敛到一个尖锐（Sharp）的局部最小值</strong> 时，其 <strong>鲁棒性也会比较差</strong>。具备良好泛化能力的模型通常应该是鲁棒的，因此理想的局部最小值应该是平坦的。</p>
-<p><strong>周期性学习率调整</strong> 可以使得梯度下降方法在优化过程中 <strong>跳出尖锐的局部极小值</strong>，虽然会短期内会损害优化过程，但最终会收敛到更加理想的局部极小值。</p>
-<h5 id="循环学习率"><a href="#循环学习率" class="headerlink" title="循环学习率"></a>循环学习率</h5><p>一种简单的方法是使用循环学习率，即在让学习率在 <strong>一个区间内</strong> <strong>周期性地增大和缩小</strong>。</p>
-<p>通常可以使用 <strong>线性缩放</strong> 来调整学习率，称为 <strong>三角循环学习率（Triangular Cyclic Learning Rate）。</strong></p>
-<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/%E5%BE%AA%E7%8E%AF%E5%AD%A6%E4%B9%A0%E7%8E%87.png"></p>
-<h5 id="带热重启的随机梯度下降"><a href="#带热重启的随机梯度下降" class="headerlink" title="带热重启的随机梯度下降"></a>带热重启的随机梯度下降</h5><p>带热重启的随机梯度下降（Stochastic Gradient Descent with Warm Restarts，SGDR）是用 <strong>热重启方式</strong> 来替代 <strong>学习率衰减</strong> 的方法。</p>
-<p><strong>学习率每间隔一定周期后，重新初始化为某个预先设定值，然后逐渐衰减。</strong>每次重启后模型参数不是从头开始优化，而是从重启前的参数基础上继续优化。</p>
-<p>!</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>深度学习</category>
-        <category>神经网络</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-        <tag>编程</tag>
-        <tag>优化</tag>
-        <tag>调参</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>神经网络-损失函数</title>
     <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：损失函数用来评价模型的预测值和真实值不一样的程度，损失函数越好，通常模型的性能越好。不同的模型用的损失函数一般也不一样。</p>
@@ -2814,6 +2951,53 @@
       <categories>
         <category>学习</category>
         <category>Pytorch</category>
+        <category>深度学习</category>
+        <category>神经网络</category>
+      </categories>
+      <tags>
+        <tag>总结</tag>
+        <tag>编程</tag>
+        <tag>优化</tag>
+        <tag>调参</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>神经网络-learning rate学习率的优化总结</title>
+    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+<p>学习率是一个非常非常重要的超参数，在 <strong>梯度下降方法</strong> 中，学习率的取值非常关键，如果过大就不会收敛，如果过小则收敛速度太慢。面对不同规模、不同batch-size、不同优化方式、不同数据集，其最合适的值都是不确定的，无法凭借经验来准确地确定<code>lr</code>的值，就是在训练中不断寻找最合适当前状态的学习率。</p>
+<p>可以使用的方法：利用fastai中的lr_find()函数寻找合适的学习率，根据学习率-损失曲线得到合适的学习率。</p>
+<h1 id="learning-rate与batch-size的关系"><a href="#learning-rate与batch-size的关系" class="headerlink" title="learning-rate与batch-size的关系"></a>learning-rate与batch-size的关系</h1><p>一般来说，越大的batch-size使用越大的学习率。原理很简单，越大的<code>batch-size</code>意味着我们学习的时候，收敛方向的<code>confidence</code>越大，我们前进的方向更加坚定，而小的<code>batch-size</code>则显得比较杂乱，毫无规律性，因为相比批次大的时候，批次小的情况下无法照顾到更多的情况，所以需要小的学习率来保证不至于出错。可以看下图<code>损失Loss</code>与<code>学习率Lr</code>的关系：</p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/lr_batchsize.png"></p>
+<p>在显存足够的条件下，最好采用较大的batch-size进行训练，找到合适的学习率后，可以加快收敛速度。</p>
+<p>另外，较大的batch-size可以避免batch normalization出现的一些小问题，参考如下Pytorch库Issue[3]</p>
+<h1 id="学习率衰减-学习率退火"><a href="#学习率衰减-学习率退火" class="headerlink" title="学习率衰减 / 学习率退火"></a>学习率衰减 / 学习率退火</h1><p>从经验上看，<strong>学习率在一开始要保持大些来保证收敛速度，在收敛到最优点附近时要小些以避免来回震荡。</strong>比较简单的学习率调整可以通过 <strong>学习率衰减（Learning Rate Decay）</strong>的方式来实现，也称为 <strong>学习率退火（Learning Rate Annealing）</strong>。</p>
+<p>假设初始化学习率为lr0，在第t次迭代时的学习率lrt。常用的衰减方式为可以设置为 <strong>按迭代次数</strong> 进行衰减。</p>
+<p>常见的衰减方法有以下几种：</p>
+<h5 id="分段常数衰减（Piecewise-Constant-Decay）"><a href="#分段常数衰减（Piecewise-Constant-Decay）" class="headerlink" title="分段常数衰减（Piecewise Constant Decay）"></a>分段常数衰减（Piecewise Constant Decay）</h5><p>即每经过<img src="https://math.jianshu.com/math?formula=T_1,%20T_2,%20%C2%B7%20%C2%B7%20%C2%B7%20,%20T_m" alt="T_1, T_2, · · · , T_m">次迭<br>代将学习率衰减为原来的<img src="https://math.jianshu.com/math?formula=%CE%B2_1,%20%CE%B2_2,%20%C2%B7%20%C2%B7%20%C2%B7%20,%20%CE%B2_m" alt="β_1, β_2, · · · , β_m">倍，其中**<img src="https://math.jianshu.com/math?formula=T_m" alt="T_m">** 和 **<img src="https://math.jianshu.com/math?formula=%CE%B2_m%3C1" alt="β_m&lt;1">**为根据经验设置的 <strong>超参数</strong>。</p>
+<h5 id="逆时衰减（Inverse-Time-Decay）"><a href="#逆时衰减（Inverse-Time-Decay）" class="headerlink" title="逆时衰减（Inverse Time Decay）"></a>逆时衰减（Inverse Time Decay）</h5><p>lr-t = lr0 /(1+b*t)  b为衰减率</p>
+<h5 id="指数衰减（Exponential-Decay）"><a href="#指数衰减（Exponential-Decay）" class="headerlink" title="指数衰减（Exponential Decay）"></a>指数衰减（Exponential Decay）</h5><p>Lr-t = lr0*(b**t)</p>
+<h5 id="自然指数衰减（Natural-Exponential-Decay）"><a href="#自然指数衰减（Natural-Exponential-Decay）" class="headerlink" title="自然指数衰减（Natural Exponential Decay）"></a>自然指数衰减（Natural Exponential Decay）</h5><h5 id="余弦衰减（Cosine-Decay）"><a href="#余弦衰减（Cosine-Decay）" class="headerlink" title="余弦衰减（Cosine Decay）"></a>余弦衰减（Cosine Decay）</h5><p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%A1%B0%E5%87%8F.png"></p>
+<h1 id="学习率预热"><a href="#学习率预热" class="headerlink" title="学习率预热"></a>学习率预热</h1><p>在 <strong>小批量梯度下降方法</strong> 中，当批量大小的设置比较大时，通常需要比较大的学习率。但在刚开始训练时，由于参数是随机初始化的，<strong>梯度往往也比较大</strong>，在加上 <strong>比较大的初始学习率，会使得训练不稳定。</strong></p>
+<p>为了提高训练稳定性，我们可以 <strong>在最初几轮迭代时，采用比较小的学习率，等梯度下降到一定程度后再恢复到初始的学习率，</strong>这种方法称为 <strong>学习率预热（Learning Rate Warmup）。</strong></p>
+<p>一个常用的学习率预热方法是 <strong>逐渐预热（Gradual Warmup）</strong>。<strong>当预热过程结束，再选择一种学习率衰减方法来逐渐降低学习率。</strong></p>
+<h1 id="周期性学习率调整"><a href="#周期性学习率调整" class="headerlink" title="周期性学习率调整"></a>周期性学习率调整</h1><p>为了使得 <strong>梯度下降方法</strong> 能够 <strong>逃离局部最小值或鞍点</strong>，一种经验性的方式是在训练过程中 <strong>周期性地增大学习率</strong>。虽然增加学习率可能短期内有损网络的收敛稳定性，但从长期来看有助于找到更好的局部最优解。</p>
+<p>一般而言，当一个模型 <strong>收敛到一个平坦（Flat）的局部最小值</strong> 时，其 <strong>鲁棒性会更好</strong>，即 <strong>微小的参数变动不会剧烈影响模型能力</strong>；而当模型 <strong>收敛到一个尖锐（Sharp）的局部最小值</strong> 时，其 <strong>鲁棒性也会比较差</strong>。具备良好泛化能力的模型通常应该是鲁棒的，因此理想的局部最小值应该是平坦的。</p>
+<p><strong>周期性学习率调整</strong> 可以使得梯度下降方法在优化过程中 <strong>跳出尖锐的局部极小值</strong>，虽然会短期内会损害优化过程，但最终会收敛到更加理想的局部极小值。</p>
+<h5 id="循环学习率"><a href="#循环学习率" class="headerlink" title="循环学习率"></a>循环学习率</h5><p>一种简单的方法是使用循环学习率，即在让学习率在 <strong>一个区间内</strong> <strong>周期性地增大和缩小</strong>。</p>
+<p>通常可以使用 <strong>线性缩放</strong> 来调整学习率，称为 <strong>三角循环学习率（Triangular Cyclic Learning Rate）。</strong></p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/%E5%BE%AA%E7%8E%AF%E5%AD%A6%E4%B9%A0%E7%8E%87.png"></p>
+<h5 id="带热重启的随机梯度下降"><a href="#带热重启的随机梯度下降" class="headerlink" title="带热重启的随机梯度下降"></a>带热重启的随机梯度下降</h5><p>带热重启的随机梯度下降（Stochastic Gradient Descent with Warm Restarts，SGDR）是用 <strong>热重启方式</strong> 来替代 <strong>学习率衰减</strong> 的方法。</p>
+<p><strong>学习率每间隔一定周期后，重新初始化为某个预先设定值，然后逐渐衰减。</strong>每次重启后模型参数不是从头开始优化，而是从重启前的参数基础上继续优化。</p>
+<p>!</p>
+]]></content>
+      <categories>
+        <category>学习</category>
         <category>深度学习</category>
         <category>神经网络</category>
       </categories>
@@ -3197,26 +3381,6 @@
       </tags>
   </entry>
   <entry>
-    <title>轻量化网络-MobileNet</title>
-    <url>/2021/09/29/%E8%BD%BB%E9%87%8F%E5%8C%96%E7%BD%91%E7%BB%9C-MobileNet/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>轻量化模型</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>语义分割-算法概述</title>
     <url>/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>什么是语义分割？</p>
@@ -3271,6 +3435,26 @@
       </categories>
       <tags>
         <tag>概述</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>轻量化网络-MobileNet</title>
+    <url>/2021/09/29/%E8%BD%BB%E9%87%8F%E5%8C%96%E7%BD%91%E7%BB%9C-MobileNet/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>轻量化模型</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
       </tags>
   </entry>
   <entry>
