@@ -531,16 +531,16 @@
       
           <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>根目录文件夹下包含三个文件夹和两个python代码文件：</p>
 <p><code>/data</code> #文件夹内分布保存</p>
-<p>—-<code>/test</code>测试集数据：</p>
-<p>—-<code>/train</code>训练集数据和对应的标签数据</p>
-<p>——–<code>/image</code> #训练数据</p>
-<p>——–<code>/label</code> # 分割标签数据集，分类问题的话是一个label.csv</p>
-<p>—-<code>/mode</code> 模型文件夹</p>
-<p>——– model.py 定义自己的模型类</p>
-<p>—- <code>/utils</code>文件夹 辅助方法</p>
-<p>——– dataset.py 定义自己的数据集类 Dataset，Dataset_loader</p>
-<p>—-train.py 实例化模型，设置loss 优化器，开始训练，调整l r</p>
-<p>—-predict.py 加载测试数据集，开启eval，获得预测结果</p>
+<p>——<code>/test</code>测试集数据：</p>
+<p>——<code>/train</code>训练集数据和对应的标签数据</p>
+<p>————<code>/image</code> #训练数据</p>
+<p>————<code>/label</code> # 分割标签数据集，分类问题的话是一个label.csv</p>
+<p>——<code>/mode</code> 模型文件夹</p>
+<p>———— model.py 定义自己的模型类</p>
+<p>—— <code>/utils</code>文件夹 辅助方法</p>
+<p>———— dataset.py 定义自己的数据集类 Dataset，Dataset_loader</p>
+<p>——train.py 实例化模型，设置loss 优化器，开始训练，调整l r</p>
+<p>——predict.py 加载测试数据集，开启eval，获得预测结果</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/10/09/%E9%92%88%E5%AF%B9%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%BB%9C%E7%9A%84PyTorch%E8%AE%AD%E7%BB%83%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/#more" rel="contents">
@@ -621,7 +621,6 @@
           <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="torch-backends-cudnn-deterministic"><a href="#torch-backends-cudnn-deterministic" class="headerlink" title="torch.backends.cudnn.deterministic"></a>torch.backends.cudnn.deterministic</h1><p>使用PyTorch等框架，还要看一下框架的种子是否固定了。</p>
 <p>使用了cuda，必须要设置cuda的随机：将这个 flag 置为True的话，每次返回的卷积算法将是确定的，即默认算法。如果配合上设置 Torch 的随机种子为固定值的话，应该可以保证每次运行网络的时候相同输入的输出是固定的，代码大致这样:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed_all(seed)</span><br><span class="line">        torch.backends.cudnn.deterministic = <span class="literal">True</span></span><br><span class="line">        torch.backends.cudnn.benchmark = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="torch-backends-cudnn-benchmark"><a href="#torch-backends-cudnn-benchmark" class="headerlink" title="torch.backends.cudnn.benchmark"></a>torch.backends.cudnn.benchmark</h1><p>torch.backends.cudnn.benchmark设为True就可以大大提升卷积神经网络的运行速度</p>
 <p>原因：<code>将会让程序在开始时花费一点额外时间，为整个网络的每个卷积层搜索最适合它的卷积实现算法，进而实现网络的加速</code>。</p>
 <p>适用：适用场景是网络结构固定（不是动态变化的），网络的输入形状（包括 batch size，图片大小，输入的通道）是不变的</p>
@@ -631,7 +630,6 @@
 <p>为什么我们可以提前选择每层的算法，即使每次我们送入网络训练的图片是不一样的？即每次网络的输入都是变化的，那么我怎么确保提前选出来的最优算法同样也适用于这个输入呢？原因就是，对于<code>给定输入来说，其具体值的大小是不影响卷积的运行时间的，只有其尺寸才会影响</code>。举例来说，我们只要固定输入大小都是 (8, 64, 224, 224)，即 batch_size 为 8，输入的通道为 64，宽和高为 224，那么卷积层的运行时间都是几乎不变的，无论其中每个像素具体的值是 0.1 还是 1000.0。</p>
 <p>所以当网络的模型不会一直发生变化，且输入的大小不会一直变化的话就可以使用torch.backends.cudnn.benchmark=True来加速训练</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed_all(seed)</span><br><span class="line">        torch.backends.cudnn.deterministic = <span class="literal">True</span></span><br><span class="line">        torch.backends.cudnn.benchmark = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-
 
       
     </div>

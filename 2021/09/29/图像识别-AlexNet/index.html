@@ -27,15 +27,15 @@
 <meta property="og:site_name" content="Leo的三板斧">
 <meta property="og:description" content="摘要AlexNet是2012年ImageNet竞赛冠军获得者Alex Krizhevsky设计的 方法简述：AlexNet有6亿个参数和650,000个神经元，包含5个卷积层，有些层后面跟了max-pooling层，3个全连接层，为了减少过拟合，在全连接层使用了dropout 优点：  使用Relu作为激活函数 使用Dropou避免过拟合 使用重叠的MaxPooling,让stride小于池化核的">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E7%BB%93%E6%9E%84.png">
-<meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E5%8F%82%E6%95%B0%E9%87%8F.png">
+<meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/结构.png">
+<meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/参数量.png">
 <meta property="article:published_time" content="2021-09-29T10:39:42.000Z">
 <meta property="article:modified_time" content="2021-10-03T07:11:23.685Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="论文复现">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E7%BB%93%E6%9E%84.png">
+<meta name="twitter:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/结构.png">
 
 <link rel="canonical" href="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/">
 
@@ -313,10 +313,9 @@
 <li>网络不深，准确率不高</li>
 </ol>
 <span id="more"></span>
-
 <p>ImageNet是图像算法领域最常见的数据集，训练集包含120万张图片，验证集包含5万张图片，测试集包含15万张图片，这些图片分为了1000个类别，并且有多种不同的分辨率，</p>
-<h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E7%BB%93%E6%9E%84.png"></p>
-<h1 id="参数计算"><a href="#参数计算" class="headerlink" title="参数计算"></a>参数计算</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E5%8F%82%E6%95%B0%E9%87%8F.png"></p>
+<h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/结构.png" alt></p>
+<h1 id="参数计算"><a href="#参数计算" class="headerlink" title="参数计算"></a>参数计算</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/参数量.png" alt></p>
 
     </div>
 

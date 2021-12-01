@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://example.com/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/scenario.png">
 <meta property="og:image" content="http://example.com/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/query_confidence.png">
 <meta property="og:image" content="http://example.com/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/equation.png">
-<meta property="og:image" content="http://example.com/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3%5CLoadGen.jpg">
+<meta property="og:image" content="http://example.com/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/LoadGen.jpg">
 <meta property="article:published_time" content="2021-11-25T01:37:51.000Z">
 <meta property="article:modified_time" content="2021-12-01T07:54:51.482Z">
 <meta property="article:author" content="Leo">
@@ -285,7 +285,6 @@
 <p><strong>Latency</strong>：LoadGenerator将query传递到SUT，到Inference完成并收到回复的时间，是一个数字，表示时间，一个sample就有一个latency</p>
 <p><strong>Tail-latency</strong>：尾部延迟是指在一个系统提供的所有输入/输出（I/O）请求的响应中，与大部分响应时间相比，花费时间最长的那一小部分，就是说如果在系统中引入实时监控，总会有少量响应的延迟高于均值，我们把这些响应称为尾延迟（Tail Latency），本文所提到的tail-latency并不是一个表示延迟的数据，而是百分比</p>
 <span id="more"></span>
-
 <p>———论文精读———</p>
 <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>各种机器学习软硬件的迅速爆发，超过100家组织在构建ML inference chips， 涵盖现有模型的系统在能耗方面至少跨越是三个数量集，性能方面至少跨越五个数量级。ML软硬件的无数组合使得具有architecture-neutral，representative，and reproducible 的测评具有一定挑战性。MLPerf 联合了30多家组织和200多名ML engineers and practitioners, 制定了一些列的规范和最佳实践确保不同体系结构之间的可比性。第一次征集到了14个组织的600多个可复现的推论，代表了30多个不同的系统，展现了广泛的能力，证明了该benchmark的flexibility and adaptability.</p>
 <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>为什么设计需要设计合适的ML benchmarking 度量，创建真实的ML inference场景，标准化评估方法能够实现推理质量的真实性能优化？</p>
@@ -299,14 +298,14 @@
 <h1 id="Challenges"><a href="#Challenges" class="headerlink" title="Challenges"></a>Challenges</h1><p>一个有用的ML Benchmark必须克服三个主要挑战：模型的多样性，部署场景的多样性，推理系统的部署</p>
 <ol>
 <li><p>Diversity of Models</p>
-<p><img src="/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/Operations.png"></p>
+<p><img src="/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/Operations.png" alt></p>
 <p>横坐标表示网络需要运算的次数，也就是模型的计算量（S表示gpu运算性能，s表示网络要运算的次数），纵坐标表示置信度最高的类的准确率，面积越大表示参数量越大，模型各有优缺点，需要在各种因素之间需要权衡</p>
 </li>
 <li><p>Deployment-Scenario Diversity</p>
 <p>对于offline场景，比如图片分类，要求将图片在内存中随时可用才能保证加速器达到峰值性能。但是在实时程序中如自动驾驶，模型要持续处理数据流而不是一次性载入全部数据，只有在设备上的推理延迟并不能满足实际应用的需求</p>
 </li>
 <li><p>Inference-System Diversity</p>
-<p><img src="/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/diversity.png"></p>
+<p><img src="/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/diversity.png" alt></p>
 <p>上层应用到底层设备的栈图，每一层都有多种组合，每个组合都有其特点（idiosyn）导致推理系统的基准很难确定</p>
 </li>
 </ol>
@@ -319,7 +318,7 @@
 </li>
 <li><p>真实的用户场景</p>
 <p>MLPerf提供了四种inference的场景，四种测试场景的主要区别在于请求是怎样发送和接收的</p>
-<p><img src="/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/scenario.png"></p>
+<p><img src="/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/scenario.png" alt></p>
 <p>server场景和offline场景都是针对数据中心的，而single-stream和multi-stream是针对边缘计算和物联网的</p>
 <p><strong>single-stream</strong></p>
 <p>一次查询送入系统一个样本，到上个请求的响应之前不会发送下一个请求，性能指标<strong>是90%的延迟</strong>。记录所有的请求完成的延迟时间，将所有样本从小到大排列，第90%个样本的处理时间就是这个系统的性能指标</p>
@@ -332,10 +331,10 @@
 </li>
 <li><p>统计置信度Tail-Latency边界</p>
 <p>为满足统计置信度，不同任务的请求数量和请求中的样本个数可以不相同。为了使统计上可靠， 每个任务和场景都需要一个最小的推理次数。按照统计学知识，通过置信区间和尾部延迟来得到满足系统的最小推理数量</p>
-<p><img src="/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/query_confidence.png"></p>
+<p><img src="/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/query_confidence.png" alt></p>
 </li>
 </ol>
-<p><img src="/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/equation.png"></p>
+<p><img src="/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/equation.png" alt></p>
 <p>公式2计算的是统计测量是需要的query的次数，是和tail-latency percentage, confidence, and margin有关。 tail-latency percentage 和query次数都是根据场景和任务来确定的。</p>
 <p>multi-stream和server要测试多次，multi-stream的测试时间要在2.5～7h，server的测试结果要测五次取最小值,所有的benchmark运行时间最小是60s （以后可能会对此进行修改）</p>
 <h1 id="Inference-submission-system"><a href="#Inference-submission-system" class="headerlink" title="Inference submission system"></a>Inference submission system</h1><p>一个MLPerf Inference提交系统包含：测试系统SUT，负载生成器LoadGen（固定的）, 一个数据集（固定的）， 一份准确度描述（固定的）</p>
@@ -345,11 +344,13 @@
 <p><strong>Allowed Techniques</strong>: 各种数学上的等价替换比如：多项式函数代替超越函数（三角，对数，指数等）；稀疏操作代替密集操作等。预处理过程不进行计时；允许对不同的精度格式进行量化，允许的精度列表包括（INT4, INT8,INT16, UINT8, UINT16, FP11 (1-bit sign, 5-bit mantissa, and 5-bit exponent), FP16, bfloat16, and FP32  ）</p>
 <p><strong>Prohibited techniques</strong>: 禁止retrain和pruning (未来可能放宽); 为了简化测试，不允许缓存（缓存应用的差异性很大，难以建模）；禁止针对数据集和测试系统但不适用于生产环境的优化（如：考虑LoadGen实现的优化，利用性能和数据集的统计信息进行的优化）</p>
 </li>
+</ol>
+<ol>
 <li><p>Load Generator</p>
 <p>LoadGen根据前面描述的场景(即单流、多流、服务器和脱机)的规则生成查询流量，可以一次提交一个query，定期提交query，也可以泊松分布发送query。然后记录来自SUT的查询和响应，在运行结束时，它报告统计数据，总结结果，并确定模型的准确度是否在允许范围之内，确定运行是否有效。</p>
 <p>LoadGen有<strong>精度和性能</strong>两种模式。在精度模式下，模型的目标是对整个数据集做推理，精度结果在log文件中，确保模型满足所需的质量目标。在性能模式下，LoadGen避免遍历整个数据集，使用足够的数据样本就能确定系统性能。</p>
 <p>通过SUT和LoadGen的接口，MLPerf Inference 可以处理LoadGen中的新场景和实验。同时将LoadGen独立为单独的模块，放在提交者提交的代码之外，可以允许各种语言进行绑定，提升扩展性和泛化应用，实现end-to-end基准测试目标。</p>
-<p><img src="/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3%5CLoadGen.jpg"></p>
+<p><img src="/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/LoadGen.jpg" alt></p>
 <p>Server场景中，根据泊松分布发送查询。在Single-Stream中，记录对SUT发的每一个query的响应时间，完成前一个query再发送下一个。</p>
 </li>
 <li><p>数据集</p>
