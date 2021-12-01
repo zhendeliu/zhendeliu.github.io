@@ -40,6 +40,12 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>Hexo网站建设参考资料</title>
+    <url>/2021/11/30/Hexo%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/</url>
+    <content><![CDATA[<p>Hexo next主题：右侧栏配置 <a href="https://www.cnblogs.com/lfri/p/12221359.html">https://www.cnblogs.com/lfri/p/12221359.html</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Global-Wheat-Detection全球小麦麦穗检测</title>
     <url>/2021/10/02/Global-Wheat-Detection%E5%85%A8%E7%90%83%E5%B0%8F%E9%BA%A6%E9%BA%A6%E7%A9%97%E6%A3%80%E6%B5%8B/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>Version1.0: 通过对 Faster R-CNN 网络进行微调来实现检测<br> Version2.0: 基于 EfficientDet 网络实现并结合 Pseudo-Labeling 策略进行改进</p>
@@ -208,6 +214,20 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Pytorch框架基础（二）</title>
+    <url>/2021/09/29/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p><a href="https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1">https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>Pytorch</category>
+      </categories>
+      <tags>
+        <tag>基础操作</tag>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Pytorch框架基础（一）</title>
     <url>/2021/09/29/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>Tensor()创建</p>
@@ -268,20 +288,6 @@
 
 
 
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>Pytorch</category>
-      </categories>
-      <tags>
-        <tag>基础操作</tag>
-        <tag>编程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Pytorch框架基础（二）</title>
-    <url>/2021/09/29/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p><a href="https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1">https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1</a></p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -759,8 +765,7 @@
   <entry>
     <title>关于MLPerf Inference Benchmark的设计理解</title>
     <url>/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<p>ML Comment 官网： <a href="https://mlcommons.org/en/">https://mlcommons.org/en/</a> </p>
-<p><strong>LoadGenerator</strong>：负载生成器，MLPerf使用它生成不同的测试场景对inference进行测试</p>
+    <content><![CDATA[<p><strong>LoadGenerator</strong>：负载生成器，MLPerf使用它生成不同的测试场景对inference进行测试</p>
 <p><strong>SUT</strong>：被测试系统</p>
 <p><strong>Sample</strong>：运行inference的单位，一个image或者一个sequence</p>
 <p><strong>query</strong>：一组进行推理的N个样本</p>
@@ -813,23 +818,52 @@
 <p>一次请求将所有的测试样本送入到被测试系统中，被测试系统可以一次或多次以任何顺序返回测试结果，Offline场景的性能评判标准是<strong>每秒推理的样本数</strong>（论文中的原话是throughput measured in samples per second，单位时间的吞吐量，也就是吞吐率，所以我认为它指的是每秒处理的样本数）</p>
 </li>
 <li><p>统计置信度Tail-Latency边界</p>
-<p>为了使统计上可靠，每个任务和场景都需要一个最小的推理次数。按照统计学知识，通过置信区间和尾部延迟来得到满足系统的最小推理数量</p>
+<p>为满足统计置信度，不同任务的请求数量和请求中的样本个数可以不相同。为了使统计上可靠， 每个任务和场景都需要一个最小的推理次数。按照统计学知识，通过置信区间和尾部延迟来得到满足系统的最小推理数量</p>
 <p><img src="/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/query_confidence.png"></p>
 </li>
 </ol>
 <p><img src="/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/equation.png"></p>
-<p> 不同任务的请求数量和请求中的样本个数</p>
-<p>multi-stream和server要测试多次，multi-stream的测试时间要在2.5～7h，server的测试结果要测五次取最小值,所有的benchmark运行时间最小是60s</p>
-<h1 id="Inference-submission-system"><a href="#Inference-submission-system" class="headerlink" title="Inference submission system"></a>Inference submission system</h1><ol>
-<li>测试系统</li>
-<li>Load Generator</li>
-<li>数据集</li>
-<li>Accuracy Checker</li>
+<p>公式2计算的是统计测量是需要的query的次数，是和tail-latency percentage, confidence, and margin有关。 tail-latency percentage 和query次数都是根据场景和任务来确定的。</p>
+<p>multi-stream和server要测试多次，multi-stream的测试时间要在2.5～7h，server的测试结果要测五次取最小值,所有的benchmark运行时间最小是60s （以后可能会对此进行修改）</p>
+<h1 id="Inference-submission-system"><a href="#Inference-submission-system" class="headerlink" title="Inference submission system"></a>Inference submission system</h1><p>一个MLPerf Inference提交系统包含：测试系统SUT，负载生成器LoadGen（固定的）, 一个数据集（固定的）， 一份准确度描述（固定的）</p>
+<ol>
+<li><p>测试系统</p>
+<p>测试系统需要权衡realism，可比性，中立性，和小团队的友好性。因此设定了 model-equivalence rules：</p>
+<p><strong>Allowed Techniques</strong>: 各种数学上的等价替换比如：多项式函数代替超越函数（三角，对数，指数等）；稀疏操作代替密集操作等。预处理过程不进行计时；允许对不同的精度格式进行量化，允许的精度列表包括（INT4, INT8,INT16, UINT8, UINT16, FP11 (1-bit sign, 5-bit mantissa, and 5-bit exponent), FP16, bfloat16, and FP32  ）</p>
+<p><strong>Prohibited techniques</strong>: 禁止retrain和pruning (未来可能放宽); 为了简化测试，不允许缓存（缓存应用的差异性很大，难以建模）；禁止针对数据集和测试系统但不适用于生产环境的优化（如：考虑LoadGen实现的优化，利用性能和数据集的统计信息进行的优化）</p>
+</li>
+<li><p>Load Generator</p>
+<p>LoadGen根据前面描述的场景(即单流、多流、服务器和脱机)的规则生成查询流量，可以一次提交一个query，定期提交query，也可以泊松分布发送query。然后记录来自SUT的查询和响应，在运行结束时，它报告统计数据，总结结果，并确定模型的准确度是否在允许范围之内，确定运行是否有效。</p>
+<p>LoadGen有<strong>精度和性能</strong>两种模式。在精度模式下，模型的目标是对整个数据集做推理，精度结果在log文件中，确保模型满足所需的质量目标。在性能模式下，LoadGen避免遍历整个数据集，使用足够的数据样本就能确定系统性能。</p>
+<p>通过SUT和LoadGen的接口，MLPerf Inference 可以处理LoadGen中的新场景和实验。同时将LoadGen独立为单独的模块，放在提交者提交的代码之外，可以允许各种语言进行绑定，提升扩展性和泛化应用，实现end-to-end基准测试目标。</p>
+<p><img src="/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3%5CLoadGen.jpg"></p>
+<p>Server场景中，根据泊松分布发送查询。在Single-Stream中，记录对SUT发的每一个query的响应时间，完成前一个query再发送下一个。</p>
+</li>
+<li><p>数据集</p>
+<p>采用标准且公开的数据集，确保可参与度</p>
+</li>
+<li><p>Accuracy Checker</p>
+<p>提交者提供了一个实验性的配置文件，LoadGen可以自检验证确保提交系统符合规则的特性，确保源代码在提交过程中未被修改。</p>
+</li>
 </ol>
 <h1 id="Submission-System-Evaluation"><a href="#Submission-System-Evaluation" class="headerlink" title="Submission-System Evaluation"></a>Submission-System Evaluation</h1><ol>
-<li>结果提交，分类，类别</li>
-<li>结果审查</li>
-<li>结果报告</li>
+<li><p>结果提交，分类，类别</p>
+<p>结果提交需要包含：performance scores， benchmark code，系统主要配置描述文件（如：加速器数量，cpu数量，software release，和内存系统等），LoadGen日志文件。这些文件都会被公开，供同行评审。</p>
+<p>区域划分：Closed区和Open区使用相同的数据集，参与者可以任选和全选参与。</p>
+<p>​    Closed区域使用相同的模型，数据集，质量目标来比较不同的系统架构，允许等价模型，允许预处理后处理等，不允许retrain。</p>
+<p>​    Open区域鼓励系统、算法、软硬件协同设计优化创新，执行相同的ML任务，但可能会改变模型的体系结构和质量目标，也允许retain等，提交时需包含文档说明与closed区的版本的差异</p>
+<p>在MLPerf　Training之后，参与者根据硬件和软件的可用性将他们提交的材料分为三类:可用的;预览;以及研究、开发或其他系统(RDO)。这种分类有助于消费者确定系统的成熟度以及它们是否可用(用于租赁或购买)。</p>
+</li>
+<li><p>结果审查</p>
+<ol>
+<li>精度验证：确保在performance模式下进行的有效推理</li>
+<li>动态缓存检测</li>
+<li>随机种子测试</li>
+<li>自定义数据集</li>
+</ol>
+</li>
+<li><p>结果报告</p>
+</li>
 </ol>
 <h1 id="Benchmark-Assessment"><a href="#Benchmark-Assessment" class="headerlink" title="Benchmark Assessment"></a>Benchmark Assessment</h1><ol>
 <li>任务范围</li>
@@ -858,21 +892,25 @@
 <p><strong>latency-bounded throughout</strong> 作为inference performance 的度量，将它引入到数据中心ML加速中。比latency和throughout反应更加现实的约束</p>
 <h2 id="Accuracy-performance-tradeoff-精度和性能的平衡"><a href="#Accuracy-performance-tradeoff-精度和性能的平衡" class="headerlink" title="Accuracy/performance tradeoff 精度和性能的平衡"></a>Accuracy/performance tradeoff 精度和性能的平衡</h2><p>根据工业和学术专家的意见，设定对于MLPerf Inference的accuracy 和可容忍的退化阈值，允许使用分布式测量和结果优化。这种方法使得AI系统设计和评估标准化，学术和工业研究能够使用MLPerf Inference工作负载的精度要求去做比较。</p>
 <h2 id="Evaluation-of-AI-inference-accelerators-人工智能推理加速器的评估"><a href="#Evaluation-of-AI-inference-accelerators-人工智能推理加速器的评估" class="headerlink" title="Evaluation of AI inference accelerators 人工智能推理加速器的评估"></a>Evaluation of AI inference accelerators 人工智能推理加速器的评估</h2><p>识别和描述matrice以及AI inference加速器在哪些推理场景下是有用的（server，single-stream，multi-stream，and offline），MLPerf引入批处理对于server，multi-stream，and offline在5个网络上，并且开发者和研究人员还可以在这些场景上继续额外的优化。</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>ML Comment 官网： <a href="https://mlcommons.org/en/">https://mlcommons.org/en/</a> </p>
+<p>MLPerf Inference Benchmark 原论文地址：<a href="https://arxiv.org/abs/1911.02549">https://arxiv.org/abs/1911.02549</a></p>
 ]]></content>
   </entry>
   <entry>
     <title>关于MLPerf Training Benchmark的设计理解</title>
     <url>/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<p>摘要</p>
-<p>问题解决：</p>
-<p>原理</p>
-<p>优点</p>
-<p>缺点</p>
+    <content><![CDATA[<p>Mchine Learning的发展需要有行业标准的性能基准测评。Machione Learning有三个基准挑战：</p>
+<ol>
+<li><p>提升训练吞吐量</p>
+</li>
+<li><p>训练中的随机性以及solution的时间会有明显的差异性</p>
+</li>
+<li><p>软硬件的差异性导致难以用相同的精度，code和超参在不同的软硬件上面进行基准测评。</p>
+</li>
+</ol>
+<p>MLPerf定量评估多个厂商的在驱动性能和可伸缩性改进方面的效能</p>
 <span id="more"></span>
 
-<p>ML Comment 官网： <a href="https://mlcommons.org/en/">https://mlcommons.org/en/</a> </p>
-<p>论文链接：<a href="https://arxiv.org/pdf/1910.01500.pdf">https://arxiv.org/pdf/1910.01500.pdf</a></p>
-<p>参考：<a href="https://www.cnblogs.com/caiyishuai/p/14361955.html">https://www.cnblogs.com/caiyishuai/p/14361955.html</a></p>
 <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>Mchine Learning的发展需要有行业标准的性能基准测评。Machione Learning有三个基准挑战：</p>
 <ol>
 <li><p>提升训练吞吐量</p>
@@ -949,7 +987,10 @@
 </li>
 <li></li>
 </ol>
-<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1>]]></content>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>ML Comment 官网： <a href="https://mlcommons.org/en/">https://mlcommons.org/en/</a> </p>
+<p>论文链接：<a href="https://arxiv.org/pdf/1910.01500.pdf">https://arxiv.org/pdf/1910.01500.pdf</a></p>
+<p>其他：<a href="https://www.cnblogs.com/caiyishuai/p/14361955.html">https://www.cnblogs.com/caiyishuai/p/14361955.html</a></p>
+]]></content>
   </entry>
   <entry>
     <title>关于MLPerf和AIPerf的设计理解</title>
@@ -3156,6 +3197,26 @@
       </tags>
   </entry>
   <entry>
+    <title>轻量化网络-MobileNet</title>
+    <url>/2021/09/29/%E8%BD%BB%E9%87%8F%E5%8C%96%E7%BD%91%E7%BB%9C-MobileNet/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>轻量化模型</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>语义分割-算法概述</title>
     <url>/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>什么是语义分割？</p>
@@ -3210,26 +3271,6 @@
       </categories>
       <tags>
         <tag>概述</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>轻量化网络-MobileNet</title>
-    <url>/2021/09/29/%E8%BD%BB%E9%87%8F%E5%8C%96%E7%BD%91%E7%BB%9C-MobileNet/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>轻量化模型</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
       </tags>
   </entry>
   <entry>
