@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要什么是语义分割？ 架构与方法 用卷积神经网络分类 用条件随机场优化">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/1.png">
-<meta property="og:image" content="http://example.com/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/dl语义分割.jpeg">
+<meta property="og:image" content="http://example.com/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/dl%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2.jpeg">
 <meta property="og:image" content="http://example.com/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/FCN.png">
 <meta property="og:image" content="http://example.com/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/FCN2.png">
 <meta property="article:published_time" content="2021-10-04T08:45:37.000Z">
@@ -290,8 +290,9 @@
 <p>用卷积神经网络分类</p>
 <p>用条件随机场优化</p>
 <span id="more"></span>
+
 <h1 id="什么是语义分割？"><a href="#什么是语义分割？" class="headerlink" title="什么是语义分割？"></a>什么是语义分割？</h1><p>语义分割是计算机视觉中的基本任务，在语义分割中我们需要将视觉输入分为不同的语义可解释类别，「语义的可解释性」即分类类别在真实世界中是有意义的。语义分割是在像素级别上的分类，属于同一类的像素都要被归为一类，因此语义分割是从像素级别来理解图像的。比如说如下的照片，属于人的像素都要分成一类，属于小汽车的像素也要分成一类，除此之外还有背景像素也被分为一类。注意语义分割不同于实例分割，实例分割还要将不同人的像素归为不同的类，实例分割比语义分割更进一步。</p>
-<p><img src="/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/1.png" alt></p>
+<p><img src="/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/1.png"></p>
 <p>Reference: Zhao 等人的 ICNet（2017）：语义分割的演示视频</p>
 <p>与图像分类或目标检测相比，语义分割使我们对图像有更加细致的了解。这种了解在诸如自动驾驶、机器人以及图像搜索引擎等许多领域都是非常重要的。</p>
 <h1 id="常用于训练语义分割模型的数据集"><a href="#常用于训练语义分割模型的数据集" class="headerlink" title="常用于训练语义分割模型的数据集"></a>常用于训练语义分割模型的数据集</h1><ul>
@@ -301,7 +302,7 @@
 <li>Stanford Background Dataset：至少有一个前景物体的一组户外场景。</li>
 </ul>
 <p>评估语义分割算法性能的标准指标是平均 IOU（Intersection Over Union，交并比）</p>
-<h1 id="语义分割思路"><a href="#语义分割思路" class="headerlink" title="语义分割思路"></a>语义分割思路</h1><h2 id><a href="#" class="headerlink" title=" "></a> </h2><p><strong>1.Patch classification</strong></p>
+<h1 id="语义分割思路"><a href="#语义分割思路" class="headerlink" title="语义分割思路"></a>语义分割思路</h1><h2 id><a href="#" class="headerlink" title></a></h2><p><strong>1.Patch classification</strong></p>
 <p>最初的深度学习方法应用于图像分割就是Patch classification。Patch classification方法，顾名思义，图像是切成块喂给深度模型的，然后对像素进行分类。使用图像块的主要原因是因为全连接层需要固定大小的图像。</p>
 <p><strong>2.全卷积方法</strong></p>
 <p>2014年，全卷积网络（FCN）横空出世，FCN将网络全连接层用卷积取代，因此使任意图像大小的输入都变成可能，而且速度比Patch classification方法快很多。</p>
@@ -314,15 +315,15 @@
 <p>除了以上思路，还有一种对分割结果进行后处理的方法，那就是条件随机场(Conditional Random Fields (CRFs))后处理用来改善分割效果。DeepLab系列文章基本都采用这种后处理方法，可以较好地改善分割结果，如下图：</p>
 <p><strong>6.对抗学习</strong></p>
 <p>作为分割的端到端解决方案有非常强大的性能。</p>
-<h1 id="深度学习语义分割方法"><a href="#深度学习语义分割方法" class="headerlink" title="深度学习语义分割方法"></a>深度学习语义分割方法</h1><p><img src="/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/dl语义分割.jpeg" alt></p>
+<h1 id="深度学习语义分割方法"><a href="#深度学习语义分割方法" class="headerlink" title="深度学习语义分割方法"></a>深度学习语义分割方法</h1><p><img src="/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/dl%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2.jpeg"></p>
 <h2 id="FCN"><a href="#FCN" class="headerlink" title="FCN"></a>FCN</h2><p>通常cnn网络在卷积之后会接上若干个全连接层，将卷积层产生的特征图（feature map）映射成为一个固定长度的特征向量。一般的CNN结构适用于图像级别的分类和回归任务，因为它们最后都期望得到输入图像的分类的概率，如ALexNet网络最后输出一个1000维的向量表示输入图像属于每一类的概率。<br>FCN对图像进行像素级的分类，从而解决了语义级别的图像分割问题。与经典的CNN在卷积层使用全连接层得到固定长度的特征向量进行分类不同，FCN可以接受任意尺寸的输入图像，采用反卷积层对最后一个卷基层的特征图（feature map）进行上采样，使它恢复到输入图像相同的尺寸，从而可以对每一个像素都产生一个预测，同时保留了原始输入图像中的空间信息，最后奇偶在上采样的特征图进行像素的分类。<br>-全卷积网络(FCN)是从抽象的特征中恢复出每个像素所属的类别。即从图像级别的分类进一步延伸到像素级别的分类。<br>FCN将传统CNN中的全连接层转化成一个个的卷积层。如下图所示，在传统的CNN结构中，前5层是卷积层，第6层和第7层分别是一个长度为4096的一维向量，第8层是长度为1000的一维向量，分别对应1000个类别的概率。FCN将这3层表示为卷积层，卷积核的大小(通道数，宽，高)分别为（4096,7,7）、（4096,1,1）、（1000,1,1）。所有的层都是卷积层，故称为全卷积网络。 </p>
-<p><img src="/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/FCN.png" alt></p>
+<p><img src="/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/FCN.png"></p>
 <p>简单的说，FCN与CNN的区别在于FCN把CNN最后的全连接层换成卷积层，输出一张已经label好的图。</p>
 <p>全连接层转换为卷积层：在两种变换中，将全连接层转化为卷积层在实际运用中更加有用。假设一个卷积神经网络的输入是 224x224x3 的图像，一系列的卷积层和下采样层将图像数据变为尺寸为 7x7x512 的激活数据体。AlexNet使用了两个尺寸为4096的全连接层，最后一个有1000个神经元的全连接层用于计算分类评分。我们可以将这3个全连接层中的任意一个转化为卷积层：</p>
 <p>针对第一个连接区域是[7x7x512]的全连接层，令其滤波器尺寸为F=7，这样输出数据体就为[1x1x4096]了。</p>
 <p>针对第二个全连接层，令其滤波器尺寸为F=1，这样输出数据体为[1x1x4096]。</p>
 <p>对最后一个全连接层也做类似的，令其F=1，最终输出为[1x1x1000]</p>
-<p><img src="/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/FCN2.png" alt></p>
+<p><img src="/2021/10/04/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/FCN2.png"></p>
 <h2 id="逐像素预测"><a href="#逐像素预测" class="headerlink" title="逐像素预测"></a>逐像素预测</h2><p>采用反卷积层对最后一个卷积层的feature map进行上采样, 使它恢复到输入图像相同的尺寸，从而可以对每个像素都产生了一个预测, 同时保留了原始输入图像中的空间信息, 最后在上采样的特征图上进行逐像素分类。</p>
 <p>经过多次卷积和pooling以后，得到的图像越来越小，分辨率越来越低。其中图像到 H/32∗W/32 的时候图片是最小的一层时，所产生图叫做heatmap热图，热图就是我们最重要的高维特征图。</p>
 <p>得到高维特征的heatmap之后就是最重要的一步也是最后的一步对原图像进行upsampling，把图像进行放大、放大、放大，到原图像的大小。</p>
@@ -413,7 +414,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">什么是语义分割？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E4%BA%8E%E8%AE%AD%E7%BB%83%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">3.</span> <span class="nav-text">常用于训练语义分割模型的数据集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E6%80%9D%E8%B7%AF"><span class="nav-number">4.</span> <span class="nav-text">语义分割思路</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.1.</span> <span class="nav-text"> </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E6%96%B9%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">深度学习语义分割方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#FCN"><span class="nav-number">5.1.</span> <span class="nav-text">FCN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%90%E5%83%8F%E7%B4%A0%E9%A2%84%E6%B5%8B"><span class="nav-number">5.2.</span> <span class="nav-text">逐像素预测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Segnet"><span class="nav-number">5.3.</span> <span class="nav-text">Segnet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dilated-convolution"><span class="nav-number">5.4.</span> <span class="nav-text">Dilated convolution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DeepLab-v1-v2"><span class="nav-number">5.5.</span> <span class="nav-text">DeepLab(v1,v2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RefineNet"><span class="nav-number">5.6.</span> <span class="nav-text">RefineNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PSPNet"><span class="nav-number">5.7.</span> <span class="nav-text">PSPNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Large-Kernel-Matters"><span class="nav-number">5.8.</span> <span class="nav-text">Large Kernel Matters</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">什么是语义分割？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E4%BA%8E%E8%AE%AD%E7%BB%83%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">3.</span> <span class="nav-text">常用于训练语义分割模型的数据集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E6%80%9D%E8%B7%AF"><span class="nav-number">4.</span> <span class="nav-text">语义分割思路</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.1.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E6%96%B9%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">深度学习语义分割方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#FCN"><span class="nav-number">5.1.</span> <span class="nav-text">FCN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%90%E5%83%8F%E7%B4%A0%E9%A2%84%E6%B5%8B"><span class="nav-number">5.2.</span> <span class="nav-text">逐像素预测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Segnet"><span class="nav-number">5.3.</span> <span class="nav-text">Segnet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dilated-convolution"><span class="nav-number">5.4.</span> <span class="nav-text">Dilated convolution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DeepLab-v1-v2"><span class="nav-number">5.5.</span> <span class="nav-text">DeepLab(v1,v2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RefineNet"><span class="nav-number">5.6.</span> <span class="nav-text">RefineNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PSPNet"><span class="nav-number">5.7.</span> <span class="nav-text">PSPNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Large-Kernel-Matters"><span class="nav-number">5.8.</span> <span class="nav-text">Large Kernel Matters</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

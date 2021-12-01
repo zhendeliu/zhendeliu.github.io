@@ -296,6 +296,7 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
+
 <h1 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h1><p>dropout是指在深度学习网络的训练过程中，对于神经网络单元，按照一定的概率将其暂时从网络中丢弃。注意是 <strong>「暂时」</strong>，对于随机梯度下降来说，由于是随机丢弃，故而每一个mini-batch都在训练不同的网络。</p>
 <p>Dropout类似于bagging ensemble减少variance。也就是投通过投票来减少可变性。通常我们在全连接层部分使用dropout，在卷积层则不使用。但 <strong>「dropout」</strong> 并不适合所有的情况，不要无脑上<code>Dropout</code>。</p>
 <p><code>Dropout</code>一般适合于全连接层部分，而卷积层由于其参数并不是很多，所以不需要dropout，加上的话对模型的泛化能力并没有太大的影响。</p>
@@ -313,7 +314,11 @@
 <p>假设这里有model 1, model 2, model 3，可以这样融合：</p>
 <blockquote>
 <p>\1. model1 probs + model2 probs + model3 probs ==&gt; final label</p>
+</blockquote>
+<blockquote>
 <p>\2. model1 label , model2 label , model3 label ==&gt; voting ==&gt; final label</p>
+</blockquote>
+<blockquote>
 <p>\3. model1_1 probs + … + model1_n probs ==&gt; mode1 label, model2 label与model3获取的label方式与1相同 ==&gt; voting ==&gt; final label多模型融合</p>
 <p>Ensemble是论文刷结果的终极核武器,深度学习中一般有以下几种方式</p>
 <ul>
@@ -326,7 +331,11 @@
 <p>假设这里有model 1, model 2, model 3，可以这样融合：</p>
 <blockquote>
 <p>\1. model1 probs + model2 probs + model3 probs ==&gt; final label</p>
+</blockquote>
+<blockquote>
 <p>\2. model1 label , model2 label , model3 label ==&gt; voting ==&gt; final label</p>
+</blockquote>
+<blockquote>
 <p>\3. model1_1 probs + … + model1_n probs ==&gt; mode1 label, model2 label与model3获取的label方式与1相同 ==&gt; voting ==&gt; final label 这个方式的启发来源于，如果一个model的随机种子没有固定，多次预测得到的结果可能不同。</p>
 </blockquote>
 </blockquote>

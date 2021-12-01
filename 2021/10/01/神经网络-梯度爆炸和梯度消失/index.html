@@ -27,11 +27,11 @@
 <meta property="og:site_name" content="Leo的三板斧">
 <meta property="og:description" content="摘要产生原因：反向传播过程的链式法则会导致梯度剧烈变化。如果每一层神经元对上一层的输出的偏导乘上权重结果都小于1的会导致梯度消失，如果都大于1的会导致梯度爆炸。 解决办法：  预训练加微调  针对梯度爆炸：梯度剪切、权重正则，因此，如果发生梯度爆炸，权值的范数就会变的非常大，通过正则化项，可以部分限制梯度爆炸的发生。  使用不同的激活函数，用ReLU、Leaky-ReLU、P-ReLU、R-ReL">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=w%5Cleftarrow+w%2B%5CDelta+w">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=w%5Cleftarrow+w+%5CDelta+w">
 <meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Calpha">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5CDelta+w%3D-%5Calpha%5Cfrac%7B%5Cpartial+Loss%7D%7Bw%7D%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5CDelta+w=-%5Calpha%5Cfrac%7B%5Cpartial+Loss%7D%7Bw%7D%5C">
 <meta property="og:image" content="https://pic1.zhimg.com/80/v2-718946a3296668d9221045a092e42fe0_1440w.jpg">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+f_%7B2%7D%7D%7B%5Cpartial+w_%7B2%7D%7D%3Df_%7B1%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+f_%7B2%7D%7D%7B%5Cpartial+w_%7B2%7D%7D=f_%7B1%7D">
 <meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+f_%7B4%7D%7D%7B%5Cpartial+f_%7B3%7D%7D">
 <meta property="og:image" content="https://pic3.zhimg.com/80/v2-29298ec3d2b9094b20abdc6d9d7b1272_1440w.png">
 <meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Calpha">
@@ -41,7 +41,7 @@
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="梯度">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.zhihu.com/equation?tex=w%5Cleftarrow+w%2B%5CDelta+w">
+<meta name="twitter:image" content="https://www.zhihu.com/equation?tex=w%5Cleftarrow+w+%5CDelta+w">
 
 <link rel="canonical" href="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E7%88%86%E7%82%B8%E5%92%8C%E6%A2%AF%E5%BA%A6%E6%B6%88%E5%A4%B1/">
 
@@ -315,9 +315,10 @@
 </li>
 </ol>
 <span id="more"></span>
-<h1 id="什么是梯度"><a href="#什么是梯度" class="headerlink" title="什么是梯度"></a>什么是梯度</h1><p>在深度神经网络中BP（反向传播算法）就是基于梯度下降策略，以目标的负梯度方向对参数进行调整， 参数的更新为 <img src="https://www.zhihu.com/equation?tex=w%5Cleftarrow+w%2B%5CDelta+w" alt="[公式]"> ，给定学习率 <img src="https://www.zhihu.com/equation?tex=%5Calpha" alt="[公式]"> ，得出 <img src="https://www.zhihu.com/equation?tex=%5CDelta+w%3D-%5Calpha%5Cfrac%7B%5Cpartial+Loss%7D%7Bw%7D%5C" alt="[公式]"> 。如果更新第二层隐层的权值信息，根据链式求导法则，更新梯度信息为：</p>
+
+<h1 id="什么是梯度"><a href="#什么是梯度" class="headerlink" title="什么是梯度"></a>什么是梯度</h1><p>在深度神经网络中BP（反向传播算法）就是基于梯度下降策略，以目标的负梯度方向对参数进行调整， 参数的更新为 <img src="https://www.zhihu.com/equation?tex=w%5Cleftarrow+w+%5CDelta+w" alt="[公式]"> ，给定学习率 <img src="https://www.zhihu.com/equation?tex=%5Calpha" alt="[公式]"> ，得出 <img src="https://www.zhihu.com/equation?tex=%5CDelta+w=-%5Calpha%5Cfrac%7B%5Cpartial+Loss%7D%7Bw%7D%5C" alt="[公式]"> 。如果更新第二层隐层的权值信息，根据链式求导法则，更新梯度信息为：</p>
 <p><img src="https://pic1.zhimg.com/80/v2-718946a3296668d9221045a092e42fe0_1440w.jpg" alt="img"></p>
-<p>上式中， <img src="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+f_%7B2%7D%7D%7B%5Cpartial+w_%7B2%7D%7D%3Df_%7B1%7D" alt="[公式]"> ，即第二隐藏层的输入。<img src="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+f_%7B4%7D%7D%7B%5Cpartial+f_%7B3%7D%7D" alt="[公式]"> 就是对激活函数进行求导，，那么层数增多的时候，最终的求出的梯度更新将以指数形式变化。</p>
+<p>上式中， <img src="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+f_%7B2%7D%7D%7B%5Cpartial+w_%7B2%7D%7D=f_%7B1%7D" alt="[公式]"> ，即第二隐藏层的输入。<img src="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+f_%7B4%7D%7D%7B%5Cpartial+f_%7B3%7D%7D" alt="[公式]"> 就是对激活函数进行求导，，那么层数增多的时候，最终的求出的梯度更新将以指数形式变化。</p>
 <h1 id="梯度消失-弥散"><a href="#梯度消失-弥散" class="headerlink" title="梯度消失/弥散"></a>梯度消失/弥散</h1><p>根据链式法则，如果每一层神经元对上一层的输出的偏导乘上权重结果都小于1的话，那么即使这个结果是0.99，在经过足够多层传播之后，误差对输入层的偏导会趋于0。</p>
 <p>这种情况会导致靠近输入层的隐含层神经元调整极小。</p>
 <p>梯度消失经常出现，一是在<strong>深层网络</strong>中，二是采用了<strong>不合适的损失函数</strong>，比如sigmoid。</p>
@@ -329,7 +330,7 @@
 <li>预训练加微调</li>
 </ol>
 <p>此方法来自Hinton在2006年发表的一篇论文，Hinton为了解决梯度的问题，提出采取无监督逐层训练方法，其基本思想是每次训练一层隐节点，训练时将上一层隐节点的输出作为输入，而本层隐节点的输出作为下一层隐节点的输入，此过程是逐层“预训练”（pre-training）；在预训练完成后，再对整个网络进行“微调”（fine-tunning）。Hinton在训练深度信念网络（Deep Belief Networks中，使用了这个方法，在各层预训练完成后，再利用BP算法对整个网络进行训练。此思想相当于是先寻找局部最优，然后整合起来寻找全局最优，此方法有一定的好处，但是目前应用的不是很多了。</p>
-<ol>
+<ol start="2">
 <li>针对梯度爆炸：梯度剪切、权重正则</li>
 </ol>
 <p>梯度剪切这个方案主要是针对梯度爆炸提出的，其思想是设置一个梯度剪切阈值，然后更新梯度的时候，如果梯度超过这个阈值，那么就将其强制限制在这个范围之内。</p>
@@ -337,7 +338,7 @@
 <p>正则化是通过对网络权重做正则限制过拟合，仔细看正则项在损失函数的形式：</p>
 <p><img src="https://pic3.zhimg.com/80/v2-29298ec3d2b9094b20abdc6d9d7b1272_1440w.png" alt="img"></p>
 <p>其中， <img src="https://www.zhihu.com/equation?tex=%5Calpha" alt="[公式]"> 是指正则项系数，因此，如果发生梯度爆炸，权值的范数就会变的非常大，通过正则化项，可以<strong>部分</strong>限制<strong>梯度爆炸</strong>的发生。</p>
-<ol>
+<ol start="3">
 <li><p>使用不同的激活函数</p>
 <p>用ReLU、Leaky-ReLU、P-ReLU、R-ReLU、Maxout等替代sigmoid函数。</p>
 </li>
