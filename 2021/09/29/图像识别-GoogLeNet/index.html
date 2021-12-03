@@ -34,8 +34,6 @@
 <meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V3-A.png">
 <meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V3-B.png">
 <meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V3-C.png">
-<meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V3-Grid%20Size%20Reduction.png">
-<meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V3-Auxiliary%20Classifier.png">
 <meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V4.png">
 <meta property="article:published_time" content="2021-09-29T10:40:31.000Z">
 <meta property="article:modified_time" content="2021-10-04T05:14:33.751Z">
@@ -134,12 +132,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">94</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">96</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">30</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -317,9 +315,12 @@
 <p>3）1x1减少网络参数，且起到信息融合的作用。</p>
 <p>缺点：</p>
 <span id="more"></span>
-<h1 id="Inception-V1"><a href="#Inception-V1" class="headerlink" title="Inception V1:"></a>Inception V1:</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/InceptionV1.png" alt></p>
+
+
+
+<h1 id="Inception-V1"><a href="#Inception-V1" class="headerlink" title="Inception V1:"></a>Inception V1:</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/InceptionV1.png"></p>
 <p>Inception的结构如图所示，其中1*1卷积主要用来降维，用了Inception之后整个网络结构的宽度和深度都可扩大，能够带来2-3倍的性能提升。</p>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V1-architecture.png" alt></p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V1-architecture.png"></p>
 <p>对Inception的结构做以下说明：</p>
 <ol>
 <li><p>采用不同大小的卷积核意味着不同大小的感受野，最后拼接意味着不同尺度特征的融合；</p>
@@ -335,7 +336,7 @@
 <li><p>该模型最后采用了average pooling来代替全连接层。但是，实际在最后还是加了一个全连接层，主要是为了方便以后大家finetune。</p>
 </li>
 </ol>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/global-average-pooling.jpeg" alt></p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/global-average-pooling.jpeg"></p>
 <p>————————————————<br>参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42535423/article/details/103674098">https://blog.csdn.net/weixin_42535423/article/details/103674098</a></p>
 <h1 id="Inception-V2"><a href="#Inception-V2" class="headerlink" title="Inception V2"></a>Inception V2</h1><p>作者在论文中提出了几个网路结构的设计准则</p>
 <ol>
@@ -361,22 +362,22 @@
 <p>  解释：由于使用了一种Normalization，再使用LRN就显得没那么必要了。而且LRN实际上也没那么work。</p>
 <p>\5) 减少图像扭曲的使用；</p>
 <p>  解释：由于现在训练epoch数降低，所以要对输入数据少做一些扭曲，让神经网络多看看真实的数据。</p>
+<p>参考：Hugh_1：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ddfcf7ed08ab">https://www.jianshu.com/p/ddfcf7ed08ab</a></p>
 </li>
 </ol>
-<p>   参考：Hugh_1：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ddfcf7ed08ab">https://www.jianshu.com/p/ddfcf7ed08ab</a></p>
 <h1 id="Inception-V3"><a href="#Inception-V3" class="headerlink" title="Inception V3"></a>Inception V3</h1><ol>
 <li>将nxn的卷积代替为两个不对称的1xn和nx1的卷积，比如将3x3的卷积在输入输出filter一定的情况下分解为1x3和3x1的卷积，计算量减下33%，分解为2个2x2的卷积只能减少11%</li>
 </ol>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V3-architecture.png" alt></p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V3-architecture.png"></p>
 <center>Inception V3 网络架构</center>
 
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V3-A.png" alt>两个3X3取代5X5</p>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V3-B.png" alt> 7X1和1X7取代7X7</p>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V3-C.png" alt></p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V3-A.png">两个3X3取代5X5</p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V3-B.png"> 7X1和1X7取代7X7</p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V3-C.png"></p>
 <p>3X1和1X3取代3X3</p>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V3-Grid Size Reduction.png" alt></p>
+<p>![](图像识别-GoogLeNet/V3-Grid Size Reduction.png)</p>
 <p>下采样时采用conv+max pooling来取代max pooling，避免信息损失</p>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V3-Auxiliary Classifier.png" alt></p>
+<p>![](图像识别-GoogLeNet/V3-Auxiliary Classifier.png)</p>
 <p>Auxiliary Classifier辅助分类器： 在V3最后的 17×17 层的顶部仅使用 1 个辅助分类器，而不是使用 2 个辅助分类器，目的也不一样。在 GoogLeNet / Inception-v1 [4] 中，辅助分类器用于拥有更深的网络。在 Inception-v3 中，辅助分类器用作正则化。所以，实际上，在深度学习中，模块还是很直观的。</p>
 <p>Inception-v2 [6] 中建议的批量归一化也用于辅助分类器</p>
 <p><a target="_blank" rel="noopener" href="https://sh-tsang.medium.com/review-inception-v3-1st-runner-up-image-classification-in-ilsvrc-2015-17915421f77c">https://sh-tsang.medium.com/review-inception-v3-1st-runner-up-image-classification-in-ilsvrc-2015-17915421f77c</a></p>
@@ -386,7 +387,7 @@
 <p><strong>细节：</strong></p>
 <p>  1）在辅助层加入了BN-auxiliary</p>
 <p>  2）全连接层后面也进行BN操作。</p>
-<h1 id="Inception-V4"><a href="#Inception-V4" class="headerlink" title="Inception V4"></a>Inception V4</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V4.png" alt></p>
+<h1 id="Inception-V4"><a href="#Inception-V4" class="headerlink" title="Inception V4"></a>Inception V4</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/V4.png"></p>
 <p>ResNet的结构可以极大地加速训练，同时性能也有提升。</p>
 
     </div>
@@ -488,7 +489,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">94</span>
+          <span class="site-state-item-count">96</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -501,7 +502,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

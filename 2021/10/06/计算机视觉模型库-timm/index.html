@@ -123,12 +123,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">94</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">96</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">30</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -295,11 +295,16 @@
       
         <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>Py<strong>T</strong>orch <strong>Im</strong>age <strong>M</strong>odels (<strong>timm</strong>)由Ross Wightman创建的深度学习库，是一个图像模型（models）、层（layers）、实用程序（utilities）、优化器（optimizers）、调度器（schedulers）、数据加载/增强（data-loaders / augmentations）和参考训练/验证脚本（reference training / validation scripts）的集合是一个关于SOTA的计算机视觉模型、层、实用工具、optimizers, schedulers, data-loaders, augmentations，可以复现ImageNet训练结果的训练/验证代码。</p>
 <span id="more"></span>
+
 <h1 id="创建模型"><a href="#创建模型" class="headerlink" title="创建模型"></a>创建模型</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> timm </span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="comment"># 创建模型</span></span><br><span class="line">model = timm.create_model(<span class="string">&#x27;resnet34&#x27;</span>)</span><br><span class="line"><span class="comment"># 如果是要创建一个预训练的模型，则只要设置pretrained=True即可。</span></span><br><span class="line">pretrained_resnet_34 = timm.create_model(<span class="string">&#x27;resnet34&#x27;</span>, pretrained=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 创建一个定制化类别数量的模型，只需设置num_classes</span></span><br><span class="line">model = timm.create_model(<span class="string">&#x27;resnet34&#x27;</span>, num_classes=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">x     = torch.randn(<span class="number">1</span>, <span class="number">3</span>, <span class="number">224</span>, <span class="number">224</span>)</span><br><span class="line">model(x).shape</span><br></pre></td></tr></table></figure>
+
 <h1 id="预训练权重的模型列表"><a href="#预训练权重的模型列表" class="headerlink" title="预训练权重的模型列表"></a>预训练权重的模型列表</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 返回timm中所有模型的列表</span></span><br><span class="line">timm.list_models()</span><br><span class="line"><span class="comment"># 查看具有预训练权重的模型，只需设置pretrained=True</span></span><br><span class="line">avail_pretrained_models = timm.list_models(pretrained=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 使用关键词检索模型架构</span></span><br><span class="line">all_densenet_models = timm.list_models(<span class="string">&#x27;*densenet*&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
 <h1 id="其他设置"><a href="#其他设置" class="headerlink" title="其他设置"></a>其他设置</h1><h2 id="通道数设置"><a href="#通道数设置" class="headerlink" title="通道数设置"></a>通道数设置</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置单通道模型</span></span><br><span class="line">m = timm.create_model(<span class="string">&#x27;resnet34&#x27;</span>,pretrained=<span class="literal">True</span>, in_chans=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># single channel image</span></span><br><span class="line">x = torch.randn(<span class="number">1</span>, <span class="number">1</span>, <span class="number">224</span>, <span class="number">224</span>)</span><br><span class="line">m(x).shape</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置多通道模型</span></span><br><span class="line">m = timm.create_model(<span class="string">&#x27;resnet34&#x27;</span>, pretrained=<span class="literal">True</span>, in_chans=<span class="number">25</span>)</span><br><span class="line"><span class="comment"># 25-channel image</span></span><br><span class="line">x = torch.randn(<span class="number">1</span>, <span class="number">25</span>, <span class="number">224</span>, <span class="number">224</span>)</span><br><span class="line"></span><br><span class="line">m(x).shape</span><br></pre></td></tr></table></figure>
+
 <p>timm源码中的处理方式是</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将通道数设置为1时， timm简单地将原3通道权重相加成单通道权重，并更新权重的shape</span></span><br><span class="line">conv1_weight = state_dict[<span class="string">&#x27;conv1.weight&#x27;</span>]</span><br><span class="line">conv1_weight.<span class="built_in">sum</span>(dim=<span class="number">1</span>, keepdim=<span class="literal">True</span>).shape</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将通道设置为8时，则先将原先的3通道复制3次变为9通道，然后选择前8个通道</span></span><br><span class="line">conv1_name = cfg[<span class="string">&#x27;first_conv&#x27;</span>]</span><br><span class="line">conv1_weight = state_dict[conv1_name + <span class="string">&#x27;.weight&#x27;</span>]</span><br><span class="line">conv1_type = conv1_weight.dtype</span><br><span class="line">conv1_weight = conv1_weight.<span class="built_in">float</span>()</span><br><span class="line">repeat = <span class="built_in">int</span>(math.ceil(in_chans / <span class="number">3</span>))</span><br><span class="line">conv1_weight = conv1_weight.repeat(<span class="number">1</span>, repeat, <span class="number">1</span>, <span class="number">1</span>)[:, :in_chans, :, :]</span><br><span class="line">conv1_weight *= (<span class="number">3</span> / <span class="built_in">float</span>(in_chans))</span><br><span class="line">conv1_weight = conv1_weight.to(conv1_type)</span><br><span class="line">state_dict[conv1_name + <span class="string">&#x27;.weight&#x27;</span>] = conv1_weight</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -400,7 +405,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">94</span>
+          <span class="site-state-item-count">96</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -413,7 +418,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

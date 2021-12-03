@@ -27,14 +27,14 @@
 <meta property="og:site_name" content="Leo的三板斧">
 <meta property="og:description" content="摘要背景问题：解决速度和精度问题 方法简述： SSD （Single Shot MultiBox Detector）是一个one-stage目标检测模型，在一个网络中就可以同时完成目标检测和分类。通过CNN进行特征提取，均匀的在不同位置采用不同的尺寸和长宽比进行密集抽样。同时做物体分类和预选框位置的回归，使得模型速度十分快。 优点： 速度快；准确度相对来说比较高； 缺点： 均匀密集采样带来的缺点是">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/zhendeliu/Documents/GitHub/gitblog/source/_posts/目标检测-SSD系列/细节架构.png">
+<meta property="og:image" content="http://example.com/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/%E7%BB%86%E8%8A%82%E6%9E%B6%E6%9E%84.png">
 <meta property="article:published_time" content="2021-09-29T10:51:04.000Z">
 <meta property="article:modified_time" content="2021-11-22T01:16:27.392Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="论文复现">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/zhendeliu/Documents/GitHub/gitblog/source/_posts/目标检测-SSD系列/细节架构.png">
+<meta name="twitter:image" content="http://example.com/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/%E7%BB%86%E8%8A%82%E6%9E%B6%E6%9E%84.png">
 
 <link rel="canonical" href="http://example.com/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/">
 
@@ -125,12 +125,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">94</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">96</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">30</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -303,7 +303,8 @@
 <p>缺点：</p>
 <p>均匀密集采样带来的缺点是正样本与负样本（背景）极其不均衡，会导致模型准确度降低，模型训练比较困难</p>
 <span id="more"></span>
-<h1 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h1><p><img src="/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/zhendeliu/Documents/GitHub/gitblog/source/_posts/目标检测-SSD系列/细节架构.png" alt></p>
+
+<h1 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h1><p><img src="/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/%E7%BB%86%E8%8A%82%E6%9E%B6%E6%9E%84.png"></p>
 <p>SSD anchor的选择具体参考【目标检测中的anchor】</p>
 <h1 id="论文精读"><a href="#论文精读" class="headerlink" title="论文精读"></a>论文精读</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>SSD 是将bounding box的输出空间离散化到一组不同比例的默认框，scales每个特征映射的位置</p>
 <p>预测阶段：对每个默认框分布在各个类别上进行评分，同时调整 #默认框？？？使得与物体形状更加匹配；另外，网络结合了来自多个不同分辨率的特征图的预测结果，可以自然处理不同size的目标。SSD和 object proposal 方法只有简单的相关（完全取消了预选框的生成和后序的像素处理和重采样阶段），将所有的计算都封装在一个网络。</p>
@@ -408,7 +409,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">94</span>
+          <span class="site-state-item-count">96</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -421,7 +422,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
