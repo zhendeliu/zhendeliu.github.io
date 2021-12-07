@@ -35,9 +35,21 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>AI算法面试问题-机器学习（二）</title>
+    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>ElasticSearch学习记录</title>
     <url>/2021/12/05/ElasticSearch%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h1 id="索引操作"><a href="#索引操作" class="headerlink" title="索引操作"></a>索引操作</h1><p>创建索引：<code>put  http://127.0.0.1:9200/shopping</code></p>
+    <content><![CDATA[<p>索引操作</p>
+<p>文档操作</p>
+<p>查询操作</p>
+<span id="more"></span>
+
+
+
+<h1 id="索引操作"><a href="#索引操作" class="headerlink" title="索引操作"></a>索引操作</h1><p>创建索引：<code>put  http://127.0.0.1:9200/shopping</code></p>
 <p>查看索引：<code>get  http://127.0.0.1:9200/shopping</code></p>
 <p>查看所有索引：<code>get  http://127.0.0.1:9200/_cat/indices?v</code></p>
 <p>删除索引：<code>delete  http://127.0.0.1:9200/shopping</code></p>
@@ -60,11 +72,6 @@
 <h2 id="聚合操作-group-by"><a href="#聚合操作-group-by" class="headerlink" title="聚合操作- group by"></a>聚合操作- group by</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;aggs&quot;</span>：&#123;</span><br><span class="line">		<span class="string">&quot;id_group&quot;</span> : &#123;</span><br><span class="line">			<span class="string">&quot;terms&quot;</span>:&#123;</span><br><span class="line">				<span class="string">&quot;field&quot;</span>:<span class="string">&quot;RID&quot;</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;size&quot;</span> : <span class="number">0</span> // 隐藏原始数据</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;aggs&quot;</span>:&#123;</span><br><span class="line">		<span class="string">&quot;id_group&quot;</span> : &#123;</span><br><span class="line">			<span class="string">&quot;terms&quot;</span>:&#123;</span><br><span class="line">				<span class="string">&quot;script&quot;</span>: &#123;</span><br><span class="line">					<span class="string">&quot;source&quot;</span>:<span class="string">&quot;doc[&#x27;FID&#x27;].value + doc[&#x27;RID&#x27;].value&quot;</span>,</span><br><span class="line">					<span class="string">&quot;lang&quot;</span>:<span class="string">&quot;painless&quot;</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;size&quot;</span> : <span class="number">0</span> // 隐藏原始数据</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="结果去重"><a href="#结果去重" class="headerlink" title="结果去重"></a>结果去重</h1>]]></content>
-  </entry>
-  <entry>
-    <title>AI算法面试问题-机器学习（二）</title>
-    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Global-Wheat-Detection全球小麦麦穗检测</title>
@@ -3614,26 +3621,6 @@
       </tags>
   </entry>
   <entry>
-    <title>轻量化网络-MobileNet</title>
-    <url>/2021/09/29/%E8%BD%BB%E9%87%8F%E5%8C%96%E7%BD%91%E7%BB%9C-MobileNet/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>轻量化模型</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>针对深度学习网络的PyTorch训练代码结构</title>
     <url>/2021/10/09/%E9%92%88%E5%AF%B9%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%BB%9C%E7%9A%84PyTorch%E8%AE%AD%E7%BB%83%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>根目录文件夹下包含三个文件夹和两个python代码文件：</p>
@@ -3711,6 +3698,26 @@
       <tags>
         <tag>基础操作</tag>
         <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>轻量化网络-MobileNet</title>
+    <url>/2021/09/29/%E8%BD%BB%E9%87%8F%E5%8C%96%E7%BD%91%E7%BB%9C-MobileNet/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>轻量化模型</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
       </tags>
   </entry>
   <entry>
