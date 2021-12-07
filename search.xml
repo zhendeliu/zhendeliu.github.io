@@ -35,6 +35,33 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>ElasticSearch学习记录</title>
+    <url>/2021/12/05/ElasticSearch%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="索引操作"><a href="#索引操作" class="headerlink" title="索引操作"></a>索引操作</h1><p>创建索引：<code>put  http://127.0.0.1:9200/shopping</code></p>
+<p>查看索引：<code>get  http://127.0.0.1:9200/shopping</code></p>
+<p>查看所有索引：<code>get  http://127.0.0.1:9200/_cat/indices?v</code></p>
+<p>删除索引：<code>delete  http://127.0.0.1:9200/shopping</code></p>
+<h1 id="文档操作"><a href="#文档操作" class="headerlink" title="文档操作"></a>文档操作</h1><p>创建</p>
+<p>查询</p>
+<p>修改</p>
+<p>删除</p>
+<h1 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h1><h2 id="基本查询语句"><a href="#基本查询语句" class="headerlink" title="基本查询语句"></a>基本查询语句</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     <span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">          <span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">               <span class="string">&quot;Rfsize&quot;</span>: <span class="string">&quot;71&quot;</span></span><br><span class="line">          &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">	  <span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">	       <span class="string">&quot;Rfsize&quot;</span>: <span class="string">&quot;71&quot;</span></span><br><span class="line">	  &#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;from&quot;</span>:<span class="number">0</span>,</span><br><span class="line">	<span class="string">&quot;size&quot;</span>:<span class="number">2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="指定返回字段-并排序"><a href="#指定返回字段-并排序" class="headerlink" title="指定返回字段,并排序"></a>指定返回字段,并排序</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">	  <span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">	       <span class="string">&quot;Rfsize&quot;</span>: <span class="string">&quot;71&quot;</span></span><br><span class="line">	  &#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;_source&quot;</span>:[<span class="string">&quot;ID&quot;</span>,<span class="string">&quot;RID&quot;</span>,<span class="string">&quot;FID&quot;</span>],</span><br><span class="line">	<span class="string">&quot;sort&quot;</span>:&#123;</span><br><span class="line">		<span class="string">&quot;FID&quot;</span>: &#123;</span><br><span class="line">			<span class="string">&quot;order&quot;</span>: <span class="string">&quot;desc&quot;</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="多条件查询"><a href="#多条件查询" class="headerlink" title="多条件查询"></a>多条件查询</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 多条件查询</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">		<span class="string">&quot;bool&quot;</span>: &#123;</span><br><span class="line">			<span class="string">&quot;must&quot;</span>: [</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Rfsize&quot;</span>:<span class="number">88</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Pfsize&quot;</span>:<span class="number">64</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Tfsize&quot;</span>:<span class="number">36</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			],</span><br><span class="line">			<span class="string">&quot;filter&quot;</span>:&#123;</span><br><span class="line">					<span class="string">&quot;range&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;FID&quot;</span>:&#123;</span><br><span class="line">							<span class="string">&quot;gt&quot;</span>:<span class="number">4000</span>,</span><br><span class="line">							<span class="string">&quot;lt&quot;</span>:<span class="number">8000</span></span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="多范围搜索"><a href="#多范围搜索" class="headerlink" title="多范围搜索"></a>多范围搜索</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">		<span class="string">&quot;bool&quot;</span>: &#123;</span><br><span class="line">			<span class="string">&quot;must&quot;</span>: [</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Rfsize&quot;</span>:<span class="number">88</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Pfsize&quot;</span>:<span class="number">64</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Tfsize&quot;</span>:<span class="number">36</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;range&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;FID&quot;</span>:&#123;</span><br><span class="line">							<span class="string">&quot;gt&quot;</span>:<span class="number">4000</span>,</span><br><span class="line">							<span class="string">&quot;lt&quot;</span>:<span class="number">8000</span></span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;range&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Startp&quot;</span>:&#123;</span><br><span class="line">							<span class="string">&quot;gt&quot;</span>:<span class="number">100</span>,</span><br><span class="line">							<span class="string">&quot;lt&quot;</span>:<span class="number">200</span></span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">			]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="聚合操作-group-by"><a href="#聚合操作-group-by" class="headerlink" title="聚合操作- group by"></a>聚合操作- group by</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;aggs&quot;</span>：&#123;</span><br><span class="line">		<span class="string">&quot;id_group&quot;</span> : &#123;</span><br><span class="line">			<span class="string">&quot;terms&quot;</span>:&#123;</span><br><span class="line">				<span class="string">&quot;field&quot;</span>:<span class="string">&quot;RID&quot;</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;size&quot;</span> : <span class="number">0</span> // 隐藏原始数据</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;aggs&quot;</span>:&#123;</span><br><span class="line">		<span class="string">&quot;id_group&quot;</span> : &#123;</span><br><span class="line">			<span class="string">&quot;terms&quot;</span>:&#123;</span><br><span class="line">				<span class="string">&quot;script&quot;</span>: &#123;</span><br><span class="line">					<span class="string">&quot;source&quot;</span>:<span class="string">&quot;doc[&#x27;FID&#x27;].value + doc[&#x27;RID&#x27;].value&quot;</span>,</span><br><span class="line">					<span class="string">&quot;lang&quot;</span>:<span class="string">&quot;painless&quot;</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;size&quot;</span> : <span class="number">0</span> // 隐藏原始数据</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="结果去重"><a href="#结果去重" class="headerlink" title="结果去重"></a>结果去重</h1>]]></content>
+  </entry>
+  <entry>
     <title>AI算法面试问题-机器学习（二）</title>
     <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[]]></content>
@@ -149,6 +176,27 @@
       </tags>
   </entry>
   <entry>
+    <title>OpenCV图像处理基础（三）</title>
+    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>基础操作</tag>
+        <tag>噪音</tag>
+        <tag>编程</tag>
+        <tag>灰度图</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python中的*args和**kwargs</title>
     <url>/2021/10/28/Python%E4%B8%AD%E7%9A%84-args%E5%92%8C-kwargs/</url>
     <content><![CDATA[<p>*和**的用法</p>
@@ -176,27 +224,6 @@
       <tags>
         <tag>基础操作</tag>
         <tag>编程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenCV图像处理基础（三）</title>
-    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-        <tag>基础操作</tag>
-        <tag>噪音</tag>
-        <tag>编程</tag>
-        <tag>灰度图</tag>
       </tags>
   </entry>
   <entry>
@@ -546,13 +573,6 @@
       </tags>
   </entry>
   <entry>
-    <title>cv算法面试问题总结（八）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AB%EF%BC%89/</url>
-    <content><![CDATA[<p>神经网络中会用到批量梯度下降（BGD）吗？为什么用随机梯度下降（SGD）?<br>当神经网络的调参效果不好时，从哪些角度思考？（不要首先归结于overfiting）<br>请阐述下卷积神经网络CNN的基本原理(全网最通俗版)<br>神经网络输出层为什么通常使用softmax?<br>了解无人驾驶的核心技术么？<br>如何形象的理解LSTM的三个门<br>通过一张张动图形象的理解LSTM<br>如何理解反向传播算法BackPropagation<br>请问什么是softmax函数？<br>通俗理解BN(Batch Normalization)<br>批量归一化BN到底解决了什么问题？<br>如何理解随机梯度下降，以及为什么SGD能够收敛？<br>模拟退火算法能解决陷入局部最优的问题么<br>请说下常见优化方法各自的优缺点（BGD、SGD、MBGD、Momentum、NAG、Adagrad、Adadelta、RMSprop、Adam）<br>Adam算法的原理机制是怎么样的？它与相关的AdaGrad和RMSProp方法有什么区别</p>
-<span id="more"></span>
-]]></content>
-  </entry>
-  <entry>
     <title>cv算法面试问题总结（五）</title>
     <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%94%EF%BC%89/</url>
     <content><![CDATA[<p>如何确定CNN的卷积核通道数和卷积输出层的通道数？<br>什么是卷积？<br>什么是CNN的池化pool层？<br>简述下什么是生成对抗网络<br>学梵高作画的原理是什么？<br>请简要介绍下tensorflow的计算图<br>你有哪些深度学习（rnn、cnn）调参的经验？<br>为什么不同的机器学习领域都可以使用CNN，CNN解决了这些领域的哪些共性问题？他是如何解决的？<br>LSTM结构推导，为什么比RNN好？<br>Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。</p>
@@ -570,6 +590,13 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>cv算法面试问题总结（八）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AB%EF%BC%89/</url>
+    <content><![CDATA[<p>神经网络中会用到批量梯度下降（BGD）吗？为什么用随机梯度下降（SGD）?<br>当神经网络的调参效果不好时，从哪些角度思考？（不要首先归结于overfiting）<br>请阐述下卷积神经网络CNN的基本原理(全网最通俗版)<br>神经网络输出层为什么通常使用softmax?<br>了解无人驾驶的核心技术么？<br>如何形象的理解LSTM的三个门<br>通过一张张动图形象的理解LSTM<br>如何理解反向传播算法BackPropagation<br>请问什么是softmax函数？<br>通俗理解BN(Batch Normalization)<br>批量归一化BN到底解决了什么问题？<br>如何理解随机梯度下降，以及为什么SGD能够收敛？<br>模拟退火算法能解决陷入局部最优的问题么<br>请说下常见优化方法各自的优缺点（BGD、SGD、MBGD、Momentum、NAG、Adagrad、Adadelta、RMSprop、Adam）<br>Adam算法的原理机制是怎么样的？它与相关的AdaGrad和RMSProp方法有什么区别</p>
+<span id="more"></span>
+]]></content>
   </entry>
   <entry>
     <title>cv算法面试问题总结（六）</title>
@@ -634,6 +661,14 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/12/06/elasticsearch%E5%AE%9E%E8%B7%B5/</url>
+    <content><![CDATA[<p>安装 elasticsearch</p>
+<p>安装es可视化工具  kibana</p>
+<p>从MySQL数据导入es：logstash安装操作：   [elk收集windows日志 - 今夕何兮 - 博客园 (cnblogs.com)](<a href="https://www.cnblogs.com/f66666/p/10273435.html#:~:text=%E4%B8%80%E3%80%81windows%E5%AE%89%E8%A3%85logstash">https://www.cnblogs.com/f66666/p/10273435.html#:~:text=一、windows安装logstash</a>. 1. 安装过程. logstash安装需要java环境支持，需先安装jkd1.8。. 官网下载logstash安装包，下载地址：https%3A%2F%2F<a href="http://www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。">www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。</a>. 在bin目录下运行命令：logstash -e “input,{ } } output { stdout {}}”. 然后你会发现终端在等待你的输入。.)</p>
+]]></content>
   </entry>
   <entry>
     <title>hello-world</title>
@@ -1033,6 +1068,18 @@
 <h2 id="实际的人工智能意义"><a href="#实际的人工智能意义" class="headerlink" title="实际的人工智能意义"></a>实际的人工智能意义</h2><p>相较于传统的高性能计算机基准测试程序需要具有人工智能的意义在其中，也是其能够检测集群人工智能算力的核心。AIPerf通过在ImageNet数据集上训练神经网络运行CV方面的算法。</p>
 <h2 id="必要的多机通信"><a href="#必要的多机通信" class="headerlink" title="必要的多机通信"></a>必要的多机通信</h2><p>在计算集群中任务分发，多级训练，结果收集等都是以多机通信为基础，是人工智能计算集群计算能力的重要组成。</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>医学图像数据集资源收集</title>
+    <url>/2021/11/30/%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE%E9%9B%86%E8%B5%84%E6%BA%90%E6%94%B6%E9%9B%86/</url>
+    <content><![CDATA[<p>背景问题：</p>
+<p>方法简述：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>数据集</category>
+      </categories>
   </entry>
   <entry>
     <title>医疗影像dicom图像预处理-Pydicom</title>
@@ -1721,7 +1768,7 @@
   </entry>
   <entry>
     <title>我的知识体系构建方法</title>
-    <url>/2021/12/03/%E6%88%91%E7%9A%84%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA%E6%96%B9%E6%B3%95/</url>
+    <url>/2021/09/16/%E6%88%91%E7%9A%84%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h1 id="医学"><a href="#医学" class="headerlink" title="医学"></a>医学</h1><p>​    医学图像<br>​    医学数据集</p>
 <h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><ul>
 <li>深度学习<ul>
