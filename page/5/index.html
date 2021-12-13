@@ -120,7 +120,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">99</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">101</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -227,6 +227,157 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/08/torch-backends-cudnn%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0%E7%90%86%E8%A7%A3%E5%8F%8A%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/android-chrome-512x512.png">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="毕业于UNSW(QS-43)人工智能专业，好奇心重，擅长动手">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo的三板斧">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/10/08/torch-backends-cudnn%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0%E7%90%86%E8%A7%A3%E5%8F%8A%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">torch.backends.cudnn相关参数理解及配置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-10-08 11:52:56" itemprop="dateCreated datePublished" datetime="2021-10-08T11:52:56+08:00">2021-10-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Pytorch/" itemprop="url" rel="index"><span itemprop="name">Pytorch</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="torch-backends-cudnn-deterministic"><a href="#torch-backends-cudnn-deterministic" class="headerlink" title="torch.backends.cudnn.deterministic"></a>torch.backends.cudnn.deterministic</h1><p>使用PyTorch等框架，还要看一下框架的种子是否固定了。</p>
+<p>使用了cuda，必须要设置cuda的随机：将这个 flag 置为True的话，每次返回的卷积算法将是确定的，即默认算法。如果配合上设置 Torch 的随机种子为固定值的话，应该可以保证每次运行网络的时候相同输入的输出是固定的，代码大致这样:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed_all(seed)</span><br><span class="line">        torch.backends.cudnn.deterministic = <span class="literal">True</span></span><br><span class="line">        torch.backends.cudnn.benchmark = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="torch-backends-cudnn-benchmark"><a href="#torch-backends-cudnn-benchmark" class="headerlink" title="torch.backends.cudnn.benchmark"></a>torch.backends.cudnn.benchmark</h1><p>torch.backends.cudnn.benchmark设为True就可以大大提升卷积神经网络的运行速度</p>
+<p>原因：<code>将会让程序在开始时花费一点额外时间，为整个网络的每个卷积层搜索最适合它的卷积实现算法，进而实现网络的加速</code>。</p>
+<p>适用：适用场景是网络结构固定（不是动态变化的），网络的输入形状（包括 batch size，图片大小，输入的通道）是不变的</p>
+<p>背景：</p>
+<p>大多数主流深度学习框架都支持 cuDNN这个GPU加速库，来为训练加速。而卷积网络的具体计算方法又有很多，所以使用torch.backends.cudnn.benchmark就可以在 PyTorch 中<code>对模型里的卷积层进行预先的优化，也就是在每一个卷积层中测试 cuDNN 提供的所有卷积实现算法，然后选择最快的那个</code>。这样在模型启动的时候，只要额外多花一点点预处理时间，就可以较大幅度地减少训练时间。</p>
+<p>影响卷积运行的因素：</p>
+<p>为什么我们可以提前选择每层的算法，即使每次我们送入网络训练的图片是不一样的？即每次网络的输入都是变化的，那么我怎么确保提前选出来的最优算法同样也适用于这个输入呢？原因就是，对于<code>给定输入来说，其具体值的大小是不影响卷积的运行时间的，只有其尺寸才会影响</code>。举例来说，我们只要固定输入大小都是 (8, 64, 224, 224)，即 batch_size 为 8，输入的通道为 64，宽和高为 224，那么卷积层的运行时间都是几乎不变的，无论其中每个像素具体的值是 0.1 还是 1000.0。</p>
+<p>所以当网络的模型不会一直发生变化，且输入的大小不会一直变化的话就可以使用torch.backends.cudnn.benchmark=True来加速训练</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed_all(seed)</span><br><span class="line">        torch.backends.cudnn.deterministic = <span class="literal">True</span></span><br><span class="line">        torch.backends.cudnn.benchmark = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/07/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6-%E8%A7%86%E8%A7%89%E6%96%B9%E5%90%91%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/android-chrome-512x512.png">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="毕业于UNSW(QS-43)人工智能专业，好奇心重，擅长动手">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo的三板斧">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/10/07/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6-%E8%A7%86%E8%A7%89%E6%96%B9%E5%90%91%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">无人驾驶-视觉方向基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-10-07 22:23:37" itemprop="dateCreated datePublished" datetime="2021-10-07T22:23:37+08:00">2021-10-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>无人驾驶作为人工智能的集大成应用，从来就不是某单一的技术，而是众多技术点的整合。技术上它需要有算法上的创新、系统上的融合，以及来自云平台的支持。</p>
+<p>什么是SLAM？</p>
+<p>什么是VIO？</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/10/07/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6-%E8%A7%86%E8%A7%89%E6%96%B9%E5%90%91%E5%9F%BA%E7%A1%80/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -488,148 +639,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/06/%E5%8C%BB%E7%96%97%E5%BD%B1%E5%83%8Fdicom%E5%9B%BE%E5%83%8F%E9%A2%84%E5%A4%84%E7%90%86-Pydicom/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/android-chrome-512x512.png">
-      <meta itemprop="name" content="Leo">
-      <meta itemprop="description" content="毕业于UNSW(QS-43)人工智能专业，好奇心重，擅长动手">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leo的三板斧">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/10/06/%E5%8C%BB%E7%96%97%E5%BD%B1%E5%83%8Fdicom%E5%9B%BE%E5%83%8F%E9%A2%84%E5%A4%84%E7%90%86-Pydicom/" class="post-title-link" itemprop="url">医疗影像dicom图像预处理-Pydicom</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-10-06 21:17:42" itemprop="dateCreated datePublished" datetime="2021-10-06T21:17:42+08:00">2021-10-06</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" itemprop="url" rel="index"><span itemprop="name">图像识别</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>pydicom是一个python中的第三方库，用于DICOM文件，主要为了以一种简单的”python式”方式检查和修改dicom数据而设计，可以提供给使用者轻松的修改，读写文件并转换成显式图像图片。</p>
-<p>DICOM被广泛应用于放射医疗、心血管成像以及放射诊疗诊断设备（X射线，CT，核磁共振，超声等），并且在眼科和牙科等其它医学领域得到越来越深入广泛的应用。在数以万计的在用医学成像设备中，DICOM是部署最为广泛的医疗信息标准之一。当前大约有百亿级符合DICOM标准的医学图像用于临床使用。<br>患者的医学图像以DICOM文件格式进行存储，其中包含了图像信息以及患者的PHI（protected health information，即姓名、性别、年龄等），以及产生图像的设备的相关信息。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/10/06/%E5%8C%BB%E7%96%97%E5%BD%B1%E5%83%8Fdicom%E5%9B%BE%E5%83%8F%E9%A2%84%E5%A4%84%E7%90%86-Pydicom/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%8D%81%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/android-chrome-512x512.png">
-      <meta itemprop="name" content="Leo">
-      <meta itemprop="description" content="毕业于UNSW(QS-43)人工智能专业，好奇心重，擅长动手">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leo的三板斧">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%8D%81%EF%BC%89/" class="post-title-link" itemprop="url">cv算法面试问题总结（十）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-10-06 11:51:07" itemprop="dateCreated datePublished" datetime="2021-10-06T11:51:07+08:00">2021-10-06</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>基于深度学习的目标检测技术演进：R-CNN、Fast R-CNN、Faster R-CNN、YOLO、SSD<br>请简单解释下目标检测中的这个IOU评价函数（intersection-over-union）<br>KNN与K-means区别？<br>K-means选择初始点的方法有哪些,优缺点是什么?(列出两种以上)<br>简述线性分类器的原理(要求对权重矩阵进行剖析)<br>请简述下log对数、Hinge Loss(折页)、Cross-Entropy Loss(交叉熵)这三个损失函数<br>简述正则化与奥卡姆剃刀原则<br>图像尺寸为 7<em>7, 卷积窗口大小为3</em>3, 步长为3, 是否能输出图像?如果能,输出图像大小为多少?如果不能,说明原因?<br>如果最后一个卷积层和第一个全连接层参数量太大怎么办?<br>为什么说神经网络是端到端的网络?<br>当参数量 &gt;&gt; 样本量时候, 神经网络是如何预防过拟合?<br>什么是感受野？</p>
-<p>简述你对CBIR(Content-based Image Retrieval基于内容的图像检索)的理解<br>什么是计算机视觉单词模型？<br>简述什么是Local Feature(局部特征算子)？<br>KD-Tree相比KNN来进行快速图像特征比对的好处在哪里?<br>简述encode和decode思想<br>输入图片尺寸不匹配CNN网络input时候的解决方式？（三种以上）<br>FCN与CNN最大的区别？<br>遇到class-imbalanced data（数据类目不平衡）问题怎么办？<br>简述孪生随机网络（Siamese Network）<br>DPM（Deformable Parts Model）算法流程<br>什么是NMS（Non-maximum suppression 非极大值抑制）?<br>列举出常见的损失函数(三个以上)?<br>做过目标检测项目么？比如Mask R-CNN和Python做一个抢车位神器<br>如何理解Faster RCNN<br>one-stage和two-stage目标检测方法的区别和优缺点？<br>请画下YOLOv3的网络结构<br>请简单说下YOLOv1,v2,v3,v4各自的特点与发展史<br>如何理解YOLO：YOLO详解<br>怎么理解YOLOv4<br>神经网络参数共享(parameter sharing)是指什么？<br>2021年网易互联网 计算机视觉 一面<br>美团实习算法岗<br>2021商汤-视频理解研究员-校招-技术面</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -697,7 +710,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-count">101</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

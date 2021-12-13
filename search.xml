@@ -40,6 +40,42 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>ElasticSearch(1):基础理论</title>
+    <url>/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<p>ElasticSearch概述</p>
+<p>基本概念</p>
+<p>运行原理</p>
+<p>支持场景</p>
+<span id="more"></span>
+
+<h1 id="ElasticSearch概述"><a href="#ElasticSearch概述" class="headerlink" title="ElasticSearch概述"></a>ElasticSearch概述</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Elasticsearch（ES）是一个基于Lucene （<em>Lucene是apache下的一个开源的全文检索引擎工具包。提供一个简单易用的工具包（类库），方便的在目标系统中实现全文检索的功能。</em>）构建的开源、分布式、RESTful接口的全文搜索引擎。Elasticsearch还是一个分布式文档数据库，其中每个字段均可被索引，而且每个字段的数据均可被搜索，ES能够横向扩展至数以百计的服务器存储以及处理PB级的数据。可以在极短的时间内存储、搜索和分析大量的数据</p>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%5C%E5%A4%9A%E5%88%86%E7%89%87.webp"></p>
+<h3 id="Cluster集群"><a href="#Cluster集群" class="headerlink" title="Cluster集群"></a>Cluster集群</h3><h3 id="Node节点"><a href="#Node节点" class="headerlink" title="Node节点"></a>Node节点</h3><h3 id="Index-索引"><a href="#Index-索引" class="headerlink" title="Index 索引"></a>Index 索引</h3><p>ES将数据存到索引之中，索引存放和读取的单元是Document文档。与关系型数据库中的数据库实列database是类似的。</p>
+<h3 id="Document文档"><a href="#Document文档" class="headerlink" title="Document文档"></a>Document文档</h3><p>在ES中Document文档是最基础的可被索引的数据单元，类似于一个JSON格式数据</p>
+<h3 id="Shards分片"><a href="#Shards分片" class="headerlink" title="Shards分片"></a>Shards分片</h3><p><code>number_of_shards</code>值与索引有关，而不与整个集群有关。此值指定每个索引的分片数量（而不是集群中的总主分片）。由于Elasticsearch是分布式搜索引擎，因此索引通常会分为多个元素，这些元素称为分片，分布在多个节点上。Elasticsearch自动管理这些分片的排列。它还会根据需要重新平衡分片，因此用户无需担心细节。</p>
+<h3 id="Replicas副本"><a href="#Replicas副本" class="headerlink" title="Replicas副本"></a>Replicas副本</h3><p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%5C%E9%9B%86%E7%BE%A4%E7%A4%BA%E6%84%8F%E5%9B%BE.png"></p>
+<h2 id="支持的业务场景"><a href="#支持的业务场景" class="headerlink" title="支持的业务场景"></a>支持的业务场景</h2><p>网站搜索、日志分析等</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>ElasticSearch(2):安装部署</title>
+    <url>/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<p>ElasticSearch安装</p>
+<p>常用操作</p>
+<span id="more"></span>
+
+
+
+<h1 id="ElasticSearch安装"><a href="#ElasticSearch安装" class="headerlink" title="ElasticSearch安装"></a>ElasticSearch安装</h1><h2 id="安装es可视化工具-kibana"><a href="#安装es可视化工具-kibana" class="headerlink" title="安装es可视化工具  kibana"></a>安装es可视化工具  kibana</h2><p>访问： <a href="http://localhost:`5601`/">http://localhost:`5601`/</a></p>
+<p><a href="https://blog.csdn.net/Soinice/article/details/87861121">(21条消息) Kibana（安装篇）：Windows下安装和运行Kibana_Soinice的博客-CSDN博客_kibana windows启动</a></p>
+<h1 id="ES数据导入"><a href="#ES数据导入" class="headerlink" title="ES数据导入"></a>ES数据导入</h1><h2 id="从MySQL数据导入es："><a href="#从MySQL数据导入es：" class="headerlink" title="从MySQL数据导入es："></a>从MySQL数据导入es：</h2><p>logstash安装操作：   [elk收集windows日志 - 今夕何兮 - 博客园 (cnblogs.com)](<a href="https://www.cnblogs.com/f66666/p/10273435.html#:~:text=%E4%B8%80%E3%80%81windows%E5%AE%89%E8%A3%85logstash">https://www.cnblogs.com/f66666/p/10273435.html#:~:text=一、windows安装logstash</a>. 1. 安装过程. logstash安装需要java环境支持，需先安装jkd1.8。. 官网下载logstash安装包，下载地址：https%3A%2F%2F<a href="http://www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。">www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。</a>. 在bin目录下运行命令：logstash -e “input,{ } } output { stdout {}}”. 然后你会发现终端在等待你的输入。.)</p>
+<h1 id="ES操作方式"><a href="#ES操作方式" class="headerlink" title="ES操作方式"></a>ES操作方式</h1><h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><p>创建索引的时候需要根据数据量的大小确定分片数量！比如根据实际情况1000万条数据大约占用7.68G, </p>
+<p>查看索引分片信息： <code>http://127.0.0.1:9200/索引名称/_search_shards</code></p>
+<p>或者： <code>curl -XGET http://localhost:9200/_cat/shards/test*?v</code> </p>
+<p>查看全部索引的空间占用信息： <code>curl -X GET localhost:9200/_cat/indices?v</code></p>
+]]></content>
+  </entry>
+  <entry>
     <title>ElasticSearch学习记录</title>
     <url>/2021/12/05/ElasticSearch%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>索引操作</p>
@@ -47,8 +83,8 @@
 <p>查询操作</p>
 <span id="more"></span>
 
-
-
+<p>注意：</p>
+<p>大小写敏感！</p>
 <h1 id="索引操作"><a href="#索引操作" class="headerlink" title="索引操作"></a>索引操作</h1><p>创建索引：<code>put  http://127.0.0.1:9200/shopping</code></p>
 <p>查看索引：<code>get  http://127.0.0.1:9200/shopping</code></p>
 <p>查看所有索引：<code>get  http://127.0.0.1:9200/_cat/indices?v</code></p>
@@ -69,9 +105,11 @@
 
 <h2 id="多范围搜索"><a href="#多范围搜索" class="headerlink" title="多范围搜索"></a>多范围搜索</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">		<span class="string">&quot;bool&quot;</span>: &#123;</span><br><span class="line">			<span class="string">&quot;must&quot;</span>: [</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Rfsize&quot;</span>:<span class="number">88</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Pfsize&quot;</span>:<span class="number">64</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Tfsize&quot;</span>:<span class="number">36</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;range&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;FID&quot;</span>:&#123;</span><br><span class="line">							<span class="string">&quot;gt&quot;</span>:<span class="number">4000</span>,</span><br><span class="line">							<span class="string">&quot;lt&quot;</span>:<span class="number">8000</span></span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;range&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Startp&quot;</span>:&#123;</span><br><span class="line">							<span class="string">&quot;gt&quot;</span>:<span class="number">100</span>,</span><br><span class="line">							<span class="string">&quot;lt&quot;</span>:<span class="number">200</span></span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">			]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="聚合操作-group-by"><a href="#聚合操作-group-by" class="headerlink" title="聚合操作- group by"></a>聚合操作- group by</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;aggs&quot;</span>：&#123;</span><br><span class="line">		<span class="string">&quot;id_group&quot;</span> : &#123;</span><br><span class="line">			<span class="string">&quot;terms&quot;</span>:&#123;</span><br><span class="line">				<span class="string">&quot;field&quot;</span>:<span class="string">&quot;RID&quot;</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;size&quot;</span> : <span class="number">0</span> // 隐藏原始数据</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;aggs&quot;</span>:&#123;</span><br><span class="line">		<span class="string">&quot;id_group&quot;</span> : &#123;</span><br><span class="line">			<span class="string">&quot;terms&quot;</span>:&#123;</span><br><span class="line">				<span class="string">&quot;script&quot;</span>: &#123;</span><br><span class="line">					<span class="string">&quot;source&quot;</span>:<span class="string">&quot;doc[&#x27;FID&#x27;].value + doc[&#x27;RID&#x27;].value&quot;</span>,</span><br><span class="line">					<span class="string">&quot;lang&quot;</span>:<span class="string">&quot;painless&quot;</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;size&quot;</span> : <span class="number">0</span> // 隐藏原始数据</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="聚合操作-group-by"><a href="#聚合操作-group-by" class="headerlink" title="聚合操作- group by"></a>聚合操作- group by</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;aggs&quot;</span>:&#123;</span><br><span class="line">		<span class="string">&quot;id_group&quot;</span> : &#123;</span><br><span class="line">			<span class="string">&quot;terms&quot;</span>:&#123;</span><br><span class="line">				<span class="string">&quot;field&quot;</span>:<span class="string">&quot;RID&quot;</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;size&quot;</span> : <span class="number">0</span> // 隐藏原始数据</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;aggs&quot;</span>:&#123;</span><br><span class="line">		<span class="string">&quot;id_group&quot;</span> : &#123;</span><br><span class="line">			<span class="string">&quot;terms&quot;</span>:&#123;</span><br><span class="line">				<span class="string">&quot;script&quot;</span>: &#123;</span><br><span class="line">					<span class="string">&quot;source&quot;</span>:<span class="string">&quot;doc[&#x27;FID&#x27;].value + doc[&#x27;RID&#x27;].value&quot;</span>,</span><br><span class="line">					<span class="string">&quot;lang&quot;</span>:<span class="string">&quot;painless&quot;</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;size&quot;</span> : <span class="number">0</span> // 隐藏原始数据</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="结果去重"><a href="#结果去重" class="headerlink" title="结果去重"></a>结果去重</h1>]]></content>
+<h2 id="结果去重"><a href="#结果去重" class="headerlink" title="结果去重"></a>结果去重</h2><h2 id="结果统计"><a href="#结果统计" class="headerlink" title="结果统计"></a>结果统计</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;aggs&quot;</span>:&#123;</span><br><span class="line">		<span class="string">&quot;distict_id&quot;</span> : &#123;</span><br><span class="line">			<span class="string">&quot;cardinality&quot;</span>:&#123;</span><br><span class="line">				<span class="string">&quot;field&quot;</span>:<span class="string">&quot;ID&quot;</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;size&quot;</span> : <span class="number">0</span> // 隐藏原始数据</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
   </entry>
   <entry>
     <title>Global-Wheat-Detection全球小麦麦穗检测</title>
@@ -130,12 +168,6 @@
 
 
 
-]]></content>
-  </entry>
-  <entry>
-    <title>Hexo网站建设参考资料</title>
-    <url>/2021/10/30/Hexo%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/</url>
-    <content><![CDATA[<p>Hexo next主题：右侧栏配置 <a href="https://www.cnblogs.com/lfri/p/12221359.html">https://www.cnblogs.com/lfri/p/12221359.html</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -202,6 +234,12 @@
         <tag>编程</tag>
         <tag>灰度图</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hexo网站建设参考资料</title>
+    <url>/2021/10/30/Hexo%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/</url>
+    <content><![CDATA[<p>Hexo next主题：右侧栏配置 <a href="https://www.cnblogs.com/lfri/p/12221359.html">https://www.cnblogs.com/lfri/p/12221359.html</a></p>
+]]></content>
   </entry>
   <entry>
     <title>Python中的*args和**kwargs</title>
@@ -345,6 +383,185 @@
       </tags>
   </entry>
   <entry>
+    <title>ElasticSearch(3):实践记录</title>
+    <url>/2021/12/13/ElasticSearch-3-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>问题场景描述</p>
+<p>采用方法</p>
+<p>实践过程</p>
+<p>结果比较</p>
+<p>总结</p>
+<span id="more"></span>
+
+<h1 id="问题场景描述"><a href="#问题场景描述" class="headerlink" title="问题场景描述"></a>问题场景描述</h1><p>已知数据是从原始文本集提取的特征数据表。数据表根据类别做了分类，每个类别下有多张数据表，这些表格以 class01-1、class01-2 。。。class05-58命名，保存在mysql数据库中，单张表的数据量有一千万到一亿条记录不等，每条记录包含50个字段。所有字段均为整数数值。</p>
+<p>数值范围查询要比字符串范围查询高效很多！！！ </p>
+<h1 id="ES实践过程"><a href="#ES实践过程" class="headerlink" title="ES实践过程"></a>ES实践过程</h1><ol>
+<li><p>ES是对大小写敏感的，解决SQL语句不规范导致的问题？</p>
+</li>
+<li><p>ES如何实现去重效果？</p>
+<ol>
+<li><p>根据单个字段去重使用collapse做折叠操作</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;collapse&quot;:&#123;</span><br><span class="line">        &quot;field&quot;:&quot;uid&quot;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>根据多字段去重，等同于SQL中的group by，使用top_hits</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">      </span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>ES对查询结果的获取：默认返回10000条查询结果，如何返回更多结果</p>
+<ol>
+<li><p>from和size 来确定返回的记录</p>
+<ul>
+<li>from：表示记录开始的顺序，默认0</li>
+<li>size：表示取回几笔数据，默认10</li>
+<li>from+size 默认不能超过10000，可以通过修改索引index参数 <code>&quot;max_result_window&quot; : 100000000</code></li>
+<li>修改集群配置config/elasticsearch.yml 文件，增加 <code>max_result_window: 100000</code></li>
+</ul>
+<p>但是 使用from和size 存在弊端。from+size在数据量不大的情况下，效率比较高<br>缺点：在数据量非常大的情况下，from+size分页会把全部记录加载到内存中，运行速度特别慢，也容易让es出现内存不足。比如要取第5001页的数据，在分页的时候，elasticsearch需要首先在每一个节点上取出50020的数据，然后和每一个节点的所有数据进行排序，取出排序后在50010到50020的数据，然后返回。这样随着数据量的增大，每次分页时排序的开销会越来越大。</p>
+<p>reference： <a href="http://www.4k8k.xyz/article/qq_28834355/109143795">http://www.4k8k.xyz/article/qq_28834355/109143795</a></p>
+</li>
+</ol>
+</li>
+<li><p>如何更高效的返回更多结果</p>
+<ol>
+<li><p>使用scroll做</p>
+<p><a href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/scroll.html#scroll">https://www.elastic.co/guide/cn/elasticsearch/guide/current/scroll.html#scroll</a></p>
+</li>
+<li><p>使用<code>helpers.scan</code> 做查询生成器</p>
+<p>速度小于0.1S，但在获取所有查询结果的时候需要调用生成器，不适合大规模取数据，适合取top100等取数据方式。效率低于scroll</p>
+</li>
+</ol>
+</li>
+<li><p>关闭ES的score机制，来提升查询效率，使用<code>filter</code>来代替<code>must</code></p>
+</li>
+</ol>
+<h1 id="ES实践结果"><a href="#ES实践结果" class="headerlink" title="ES实践结果"></a>ES实践结果</h1><h3 id="Lenovo-X1-intel-i7-16G-查询结果"><a href="#Lenovo-X1-intel-i7-16G-查询结果" class="headerlink" title="Lenovo X1 (intel-i7 16G ) 查询结果"></a>Lenovo X1 (intel-i7 16G ) 查询结果</h3><table>
+<thead>
+<tr>
+<th>数据量</th>
+<th>查询时间</th>
+<th>结果数量</th>
+<th>缓存清理</th>
+<th>去重</th>
+<th>写入文件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1003W</td>
+<td>1.39S</td>
+<td>7806</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>1003W</td>
+<td>1.46S</td>
+<td>7806</td>
+<td>否</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td>1003W</td>
+<td>1.89</td>
+<td>7806</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>1003W</td>
+<td>1.94</td>
+<td>7806</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="物理机查询结果：-（通过python脚本实现进行评估）"><a href="#物理机查询结果：-（通过python脚本实现进行评估）" class="headerlink" title="物理机查询结果： （通过python脚本实现进行评估）"></a>物理机查询结果： （通过python脚本实现进行评估）</h3><p>执行第1条语句   缓存清理完成   结果：0    共耗时约 0.08 秒   去重True<br>执行第2条语句   缓存清理完成   结果：94   共耗时约 0.17 秒   去重True<br>执行第3条语句   缓存清理完成   结果：7806  共耗时约 2.75 秒   去重True<br>执行第4条语句   缓存清理完成   结果：0     共耗时约 0.05 秒   去重True<br>执行第5条语句   缓存清理完成   结果：0   共耗时约 0.15 秒   去重True<br>执行第6条语句   缓存清理完成   结果：7   共耗时约 0.43 秒   去重True<br>执行第7条语句   缓存清理完成   结果：7   共耗时约 0.49 秒   去重False<br>执行第8条语句   缓存清理完成   结果：7   共耗时约 0.43 秒   去重False<br>执行第9条语句   缓存清理完成   结果：7   共耗时约 0.40 秒   去重False<br>执行第10条语句  缓存清理完成   结果：0   共耗时约 0.32 秒   去重True            </p>
+<h3 id="物理机并发查询结果："><a href="#物理机并发查询结果：" class="headerlink" title="物理机并发查询结果："></a>物理机并发查询结果：</h3><p>10个线程并发： 执行第三条SQL　返回7806条数据  耗时3-8秒  CPU ~100%</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">I&#x27;m NO.5 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 6.24 秒</span><br><span class="line">I&#x27;m NO.4 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 5.69 秒</span><br><span class="line">I&#x27;m NO.2 thread!!!</span><br><span class="line">共耗时约 5.59 秒</span><br><span class="line">I&#x27;m NO.3 thread!!!</span><br><span class="line">共耗时约 6.03 秒</span><br><span class="line">I&#x27;m NO.0 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 4.88 秒</span><br><span class="line">I&#x27;m NO.6 thread!!!</span><br><span class="line">共耗时约 4.46 秒</span><br><span class="line">I&#x27;m NO.8 thread!!!</span><br><span class="line">共耗时约 5.59 秒</span><br><span class="line">I&#x27;m NO.1 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 4.36 秒</span><br><span class="line">I&#x27;m NO.7 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 4.13 秒</span><br><span class="line">I&#x27;m NO.9 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 3.94 秒</span><br></pre></td></tr></table></figure>
+
+<p>100个线程并发  返回7806条   耗时40-60秒  CPU 830%-&gt;74%</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">I&#x27;m NO.64 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 36.97 秒</span><br><span class="line">I&#x27;m NO.49 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 42.53 秒</span><br><span class="line">I&#x27;m NO.4 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 46.43 秒</span><br><span class="line">I&#x27;m NO.12 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 40.81 秒</span><br><span class="line">I&#x27;m NO.21 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 41.34 秒</span><br><span class="line">I&#x27;m NO.93 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 51.63 秒</span><br><span class="line">I&#x27;m NO.0 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 44.42 秒</span><br><span class="line">I&#x27;m NO.86 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 45.17 秒</span><br></pre></td></tr></table></figure>
+
+<p>400个线程并发 执行第三条SQL　返回7806条  耗时40-70秒  CPU 1900%-&gt;150%</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">I&#x27;m NO.63 thread!!!</span><br><span class="line">共耗时约 49.61 秒</span><br><span class="line">I&#x27;m NO.16 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 61.87 秒</span><br><span class="line">I&#x27;m NO.11 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 57.21 秒</span><br><span class="line">I&#x27;m NO.120 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 54.67 秒</span><br><span class="line">I&#x27;m NO.62 thread!!!</span><br><span class="line">共耗时约 54.94 秒</span><br><span class="line">I&#x27;m NO.96 thread!!!</span><br><span class="line">共耗时约 56.83 秒</span><br><span class="line">I&#x27;m NO.15 thread!!!</span><br><span class="line">共耗时约 58.06 秒</span><br><span class="line">I&#x27;m NO.43 thread!!!</span><br><span class="line">共耗时约 57.07 秒</span><br><span class="line">I&#x27;m NO.6 thread!!!</span><br><span class="line">共耗时约 59.93 秒</span><br><span class="line">I&#x27;m NO.37 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 58.40 秒</span><br><span class="line">I&#x27;m NO.25 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">7806共耗时约 54.85 秒</span><br><span class="line">I&#x27;m NO.31 thread!!!</span><br></pre></td></tr></table></figure>
+
+<p>总结：</p>
+<p>10个线程并发：每个线程100次查询 执行第三条SQL　  CPU 20%~100%  </p>
+<p>100个线程并发：  每个线程100次查询  执行第三条SQL  CPU 74&amp;~830%</p>
+<p>400个线程并发： 每个线程100次查询 执行第三条SQL  CPU 150%~1900%</p>
+<h2 id="多线程并发测试二"><a href="#多线程并发测试二" class="headerlink" title="多线程并发测试二"></a>多线程并发测试二</h2><p>在不同数量线程并发条件下，每个线程分别执行index-S1查询20次，index-S2查询20次</p>
+<table>
+<thead>
+<tr>
+<th>线程数量</th>
+<th>查询时间</th>
+<th>总查询次数</th>
+<th>平均处理时间</th>
+<th>CPU占用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5</td>
+<td>118.79S</td>
+<td>200</td>
+<td>0.59S</td>
+<td>40~130%</td>
+</tr>
+<tr>
+<td>10</td>
+<td>246.26S</td>
+<td>400</td>
+<td>0.61S</td>
+<td></td>
+</tr>
+<tr>
+<td>20</td>
+<td>508.45</td>
+<td>800</td>
+<td>0.63S</td>
+<td>63%~170%</td>
+</tr>
+<tr>
+<td>40</td>
+<td>944.82</td>
+<td>1600</td>
+<td>0.59S</td>
+<td>80%~192%</td>
+</tr>
+<tr>
+<td>80</td>
+<td>1990.94</td>
+<td>3200</td>
+<td>0.622S</td>
+<td>64%<del>270%</del>570%</td>
+</tr>
+</tbody></table>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ol>
+<li>默认返回10000条，需要修改重新配置，设置最大返回size<ol>
+<li>返回数据越多，效率明显降低</li>
+</ol>
+</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
     <title>cv算法面试问题总结（一）</title>
     <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表："><a href="#问题列表：" class="headerlink" title="问题列表："></a>问题列表：</h1><ol>
@@ -446,15 +663,6 @@
       </tags>
   </entry>
   <entry>
-    <title>cv算法面试问题总结（七）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%83%EF%BC%89/</url>
-    <content><![CDATA[<p>如何解决深度学习中模型训练效果不佳的情况？<br>神经网络中，是否隐藏层如果具有足够数量的单位，它就可以近似任何连续函数？<br>为什么更深的网络更好？<br>更多的数据是否有利于更深的神经网络？<br>不平衡数据是否会影响神经网络的分类效果？<br>无监督降维提供的是帮助还是摧毁？<br>是否可以将任何非线性作为激活函数?<br>批大小如何影响测试正确率？<br>初始化如何影响训练?<br>不同层的权重是否以不同的速度收敛？ </p>
-<p>正则化如何影响权重？<br>什么是fine-tuning？<br>什么是边框回归Bounding-Box regression，以及为什么要做、怎么做<br>请阐述下Selective Search的主要思想<br>什么是非极大值抑制（NMS）？<br>什么是深度学习中的anchor？<br>CNN的特点以及优势<br>深度学习中有什么加快收敛/降低训练难度的方法？<br>请写出链式法则并证明<br>请写出Batch Normalization的计算方法及其应用</p>
-<span id="more"></span>
-
-]]></content>
-  </entry>
-  <entry>
     <title>cv算法面试问题总结（三）</title>
     <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%89%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
@@ -484,10 +692,10 @@
       </tags>
   </entry>
   <entry>
-    <title>cv算法面试问题总结（九）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B9%9D%EF%BC%89/</url>
-    <content><![CDATA[<p>什么是强化学习？<br>强化学习和监督学习、无监督学习的区别是什么？<br>强化学习适合解决什么样子的问题？<br>使用tensorflow进行深度学习算法实验时，如何调节超参数？<br>深度学习中的batch的大小对学习效果有何影响？<br>用梯度下降训练神经网络的参数，为什么参数有时会被训练为nan值？<br>卷积神经网络CNN中池化层有什么作用？<br>请列举几种常见的激活函数。激活函数有什么作用？<br>神经网络中Dropout的作用？具体是怎么实现的？<br>利用梯度下降法训练神经网络，发现模型loss不变，可能有哪些问题？怎么解决？</p>
-<p>如何解决不平衡数据集的分类问题？<br>残差网络为什么能做到很深层？<br>相比sigmoid激活函数ReLU激活函数有什么优势？<br>卷积神经网络中空洞卷积的作用是什么？<br>适用于移动端部署的网络结构都有哪些？<br>深度学习模型参数初始化都有哪些方法？<br>卷积神经网络为什么会具有平移等不变性？</p>
+    <title>cv算法面试问题总结（七）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%83%EF%BC%89/</url>
+    <content><![CDATA[<p>如何解决深度学习中模型训练效果不佳的情况？<br>神经网络中，是否隐藏层如果具有足够数量的单位，它就可以近似任何连续函数？<br>为什么更深的网络更好？<br>更多的数据是否有利于更深的神经网络？<br>不平衡数据是否会影响神经网络的分类效果？<br>无监督降维提供的是帮助还是摧毁？<br>是否可以将任何非线性作为激活函数?<br>批大小如何影响测试正确率？<br>初始化如何影响训练?<br>不同层的权重是否以不同的速度收敛？ </p>
+<p>正则化如何影响权重？<br>什么是fine-tuning？<br>什么是边框回归Bounding-Box regression，以及为什么要做、怎么做<br>请阐述下Selective Search的主要思想<br>什么是非极大值抑制（NMS）？<br>什么是深度学习中的anchor？<br>CNN的特点以及优势<br>深度学习中有什么加快收敛/降低训练难度的方法？<br>请写出链式法则并证明<br>请写出Batch Normalization的计算方法及其应用</p>
 <span id="more"></span>
 
 ]]></content>
@@ -580,6 +788,15 @@
       </tags>
   </entry>
   <entry>
+    <title>cv算法面试问题总结（九）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B9%9D%EF%BC%89/</url>
+    <content><![CDATA[<p>什么是强化学习？<br>强化学习和监督学习、无监督学习的区别是什么？<br>强化学习适合解决什么样子的问题？<br>使用tensorflow进行深度学习算法实验时，如何调节超参数？<br>深度学习中的batch的大小对学习效果有何影响？<br>用梯度下降训练神经网络的参数，为什么参数有时会被训练为nan值？<br>卷积神经网络CNN中池化层有什么作用？<br>请列举几种常见的激活函数。激活函数有什么作用？<br>神经网络中Dropout的作用？具体是怎么实现的？<br>利用梯度下降法训练神经网络，发现模型loss不变，可能有哪些问题？怎么解决？</p>
+<p>如何解决不平衡数据集的分类问题？<br>残差网络为什么能做到很深层？<br>相比sigmoid激活函数ReLU激活函数有什么优势？<br>卷积神经网络中空洞卷积的作用是什么？<br>适用于移动端部署的网络结构都有哪些？<br>深度学习模型参数初始化都有哪些方法？<br>卷积神经网络为什么会具有平移等不变性？</p>
+<span id="more"></span>
+
+]]></content>
+  </entry>
+  <entry>
     <title>cv算法面试问题总结（五）</title>
     <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%94%EF%BC%89/</url>
     <content><![CDATA[<p>如何确定CNN的卷积核通道数和卷积输出层的通道数？<br>什么是卷积？<br>什么是CNN的池化pool层？<br>简述下什么是生成对抗网络<br>学梵高作画的原理是什么？<br>请简要介绍下tensorflow的计算图<br>你有哪些深度学习（rnn、cnn）调参的经验？<br>为什么不同的机器学习领域都可以使用CNN，CNN解决了这些领域的哪些共性问题？他是如何解决的？<br>LSTM结构推导，为什么比RNN好？<br>Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。</p>
@@ -624,13 +841,6 @@
       </tags>
   </entry>
   <entry>
-    <title>cv算法面试问题总结（十）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%8D%81%EF%BC%89/</url>
-    <content><![CDATA[<p>基于深度学习的目标检测技术演进：R-CNN、Fast R-CNN、Faster R-CNN、YOLO、SSD<br>请简单解释下目标检测中的这个IOU评价函数（intersection-over-union）<br>KNN与K-means区别？<br>K-means选择初始点的方法有哪些,优缺点是什么?(列出两种以上)<br>简述线性分类器的原理(要求对权重矩阵进行剖析)<br>请简述下log对数、Hinge Loss(折页)、Cross-Entropy Loss(交叉熵)这三个损失函数<br>简述正则化与奥卡姆剃刀原则<br>图像尺寸为 7<em>7, 卷积窗口大小为3</em>3, 步长为3, 是否能输出图像?如果能,输出图像大小为多少?如果不能,说明原因?<br>如果最后一个卷积层和第一个全连接层参数量太大怎么办?<br>为什么说神经网络是端到端的网络?<br>当参数量 &gt;&gt; 样本量时候, 神经网络是如何预防过拟合?<br>什么是感受野？</p>
-<p>简述你对CBIR(Content-based Image Retrieval基于内容的图像检索)的理解<br>什么是计算机视觉单词模型？<br>简述什么是Local Feature(局部特征算子)？<br>KD-Tree相比KNN来进行快速图像特征比对的好处在哪里?<br>简述encode和decode思想<br>输入图片尺寸不匹配CNN网络input时候的解决方式？（三种以上）<br>FCN与CNN最大的区别？<br>遇到class-imbalanced data（数据类目不平衡）问题怎么办？<br>简述孪生随机网络（Siamese Network）<br>DPM（Deformable Parts Model）算法流程<br>什么是NMS（Non-maximum suppression 非极大值抑制）?<br>列举出常见的损失函数(三个以上)?<br>做过目标检测项目么？比如Mask R-CNN和Python做一个抢车位神器<br>如何理解Faster RCNN<br>one-stage和two-stage目标检测方法的区别和优缺点？<br>请画下YOLOv3的网络结构<br>请简单说下YOLOv1,v2,v3,v4各自的特点与发展史<br>如何理解YOLO：YOLO详解<br>怎么理解YOLOv4<br>神经网络参数共享(parameter sharing)是指什么？<br>2021年网易互联网 计算机视觉 一面<br>美团实习算法岗<br>2021商汤-视频理解研究员-校招-技术面</p>
-]]></content>
-  </entry>
-  <entry>
     <title>cv算法面试问题总结（四）</title>
     <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%9B%9B%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
@@ -670,14 +880,6 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2021/12/06/elasticsearch%E5%AE%9E%E8%B7%B5/</url>
-    <content><![CDATA[<p>安装 elasticsearch</p>
-<p>安装es可视化工具  kibana</p>
-<p>从MySQL数据导入es：logstash安装操作：   [elk收集windows日志 - 今夕何兮 - 博客园 (cnblogs.com)](<a href="https://www.cnblogs.com/f66666/p/10273435.html#:~:text=%E4%B8%80%E3%80%81windows%E5%AE%89%E8%A3%85logstash">https://www.cnblogs.com/f66666/p/10273435.html#:~:text=一、windows安装logstash</a>. 1. 安装过程. logstash安装需要java环境支持，需先安装jkd1.8。. 官网下载logstash安装包，下载地址：https%3A%2F%2F<a href="http://www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。">www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。</a>. 在bin目录下运行命令：logstash -e “input,{ } } output { stdout {}}”. 然后你会发现终端在等待你的输入。.)</p>
-]]></content>
-  </entry>
-  <entry>
     <title>hello-world</title>
     <url>/2021/09/29/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -693,6 +895,13 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>cv算法面试问题总结（十）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%8D%81%EF%BC%89/</url>
+    <content><![CDATA[<p>基于深度学习的目标检测技术演进：R-CNN、Fast R-CNN、Faster R-CNN、YOLO、SSD<br>请简单解释下目标检测中的这个IOU评价函数（intersection-over-union）<br>KNN与K-means区别？<br>K-means选择初始点的方法有哪些,优缺点是什么?(列出两种以上)<br>简述线性分类器的原理(要求对权重矩阵进行剖析)<br>请简述下log对数、Hinge Loss(折页)、Cross-Entropy Loss(交叉熵)这三个损失函数<br>简述正则化与奥卡姆剃刀原则<br>图像尺寸为 7<em>7, 卷积窗口大小为3</em>3, 步长为3, 是否能输出图像?如果能,输出图像大小为多少?如果不能,说明原因?<br>如果最后一个卷积层和第一个全连接层参数量太大怎么办?<br>为什么说神经网络是端到端的网络?<br>当参数量 &gt;&gt; 样本量时候, 神经网络是如何预防过拟合?<br>什么是感受野？</p>
+<p>简述你对CBIR(Content-based Image Retrieval基于内容的图像检索)的理解<br>什么是计算机视觉单词模型？<br>简述什么是Local Feature(局部特征算子)？<br>KD-Tree相比KNN来进行快速图像特征比对的好处在哪里?<br>简述encode和decode思想<br>输入图片尺寸不匹配CNN网络input时候的解决方式？（三种以上）<br>FCN与CNN最大的区别？<br>遇到class-imbalanced data（数据类目不平衡）问题怎么办？<br>简述孪生随机网络（Siamese Network）<br>DPM（Deformable Parts Model）算法流程<br>什么是NMS（Non-maximum suppression 非极大值抑制）?<br>列举出常见的损失函数(三个以上)?<br>做过目标检测项目么？比如Mask R-CNN和Python做一个抢车位神器<br>如何理解Faster RCNN<br>one-stage和two-stage目标检测方法的区别和优缺点？<br>请画下YOLOv3的网络结构<br>请简单说下YOLOv1,v2,v3,v4各自的特点与发展史<br>如何理解YOLO：YOLO详解<br>怎么理解YOLOv4<br>神经网络参数共享(parameter sharing)是指什么？<br>2021年网易互联网 计算机视觉 一面<br>美团实习算法岗<br>2021商汤-视频理解研究员-校招-技术面</p>
 ]]></content>
   </entry>
   <entry>
@@ -727,11 +936,6 @@
       </tags>
   </entry>
   <entry>
-    <title>kaggle比赛-Molecular Translation</title>
-    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-Molecular-Translation/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>kaggle比赛-NFL Helmet Assignment</title>
     <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-NFL-Helmet-Assignment/</url>
     <content><![CDATA[<p><a href="https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment">https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment</a></p>
@@ -747,6 +951,11 @@
         <tag>编程</tag>
         <tag>Kaggle</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>kaggle比赛-Molecular Translation</title>
+    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-Molecular-Translation/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>kaggle比赛-脑肿瘤检测</title>
@@ -788,32 +997,6 @@
       <tags>
         <tag>编程</tag>
         <tag>Kaggle</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>torch.backends.cudnn相关参数理解及配置</title>
-    <url>/2021/10/08/torch-backends-cudnn%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0%E7%90%86%E8%A7%A3%E5%8F%8A%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="torch-backends-cudnn-deterministic"><a href="#torch-backends-cudnn-deterministic" class="headerlink" title="torch.backends.cudnn.deterministic"></a>torch.backends.cudnn.deterministic</h1><p>使用PyTorch等框架，还要看一下框架的种子是否固定了。</p>
-<p>使用了cuda，必须要设置cuda的随机：将这个 flag 置为True的话，每次返回的卷积算法将是确定的，即默认算法。如果配合上设置 Torch 的随机种子为固定值的话，应该可以保证每次运行网络的时候相同输入的输出是固定的，代码大致这样:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed_all(seed)</span><br><span class="line">        torch.backends.cudnn.deterministic = <span class="literal">True</span></span><br><span class="line">        torch.backends.cudnn.benchmark = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="torch-backends-cudnn-benchmark"><a href="#torch-backends-cudnn-benchmark" class="headerlink" title="torch.backends.cudnn.benchmark"></a>torch.backends.cudnn.benchmark</h1><p>torch.backends.cudnn.benchmark设为True就可以大大提升卷积神经网络的运行速度</p>
-<p>原因：<code>将会让程序在开始时花费一点额外时间，为整个网络的每个卷积层搜索最适合它的卷积实现算法，进而实现网络的加速</code>。</p>
-<p>适用：适用场景是网络结构固定（不是动态变化的），网络的输入形状（包括 batch size，图片大小，输入的通道）是不变的</p>
-<p>背景：</p>
-<p>大多数主流深度学习框架都支持 cuDNN这个GPU加速库，来为训练加速。而卷积网络的具体计算方法又有很多，所以使用torch.backends.cudnn.benchmark就可以在 PyTorch 中<code>对模型里的卷积层进行预先的优化，也就是在每一个卷积层中测试 cuDNN 提供的所有卷积实现算法，然后选择最快的那个</code>。这样在模型启动的时候，只要额外多花一点点预处理时间，就可以较大幅度地减少训练时间。</p>
-<p>影响卷积运行的因素：</p>
-<p>为什么我们可以提前选择每层的算法，即使每次我们送入网络训练的图片是不一样的？即每次网络的输入都是变化的，那么我怎么确保提前选出来的最优算法同样也适用于这个输入呢？原因就是，对于<code>给定输入来说，其具体值的大小是不影响卷积的运行时间的，只有其尺寸才会影响</code>。举例来说，我们只要固定输入大小都是 (8, 64, 224, 224)，即 batch_size 为 8，输入的通道为 64，宽和高为 224，那么卷积层的运行时间都是几乎不变的，无论其中每个像素具体的值是 0.1 还是 1000.0。</p>
-<p>所以当网络的模型不会一直发生变化，且输入的大小不会一直变化的话就可以使用torch.backends.cudnn.benchmark=True来加速训练</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed_all(seed)</span><br><span class="line">        torch.backends.cudnn.deterministic = <span class="literal">True</span></span><br><span class="line">        torch.backends.cudnn.benchmark = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>Pytorch</category>
-      </categories>
-      <tags>
-        <tag>torch</tag>
       </tags>
   </entry>
   <entry>
@@ -1048,6 +1231,32 @@
 ]]></content>
   </entry>
   <entry>
+    <title>torch.backends.cudnn相关参数理解及配置</title>
+    <url>/2021/10/08/torch-backends-cudnn%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0%E7%90%86%E8%A7%A3%E5%8F%8A%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="torch-backends-cudnn-deterministic"><a href="#torch-backends-cudnn-deterministic" class="headerlink" title="torch.backends.cudnn.deterministic"></a>torch.backends.cudnn.deterministic</h1><p>使用PyTorch等框架，还要看一下框架的种子是否固定了。</p>
+<p>使用了cuda，必须要设置cuda的随机：将这个 flag 置为True的话，每次返回的卷积算法将是确定的，即默认算法。如果配合上设置 Torch 的随机种子为固定值的话，应该可以保证每次运行网络的时候相同输入的输出是固定的，代码大致这样:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed_all(seed)</span><br><span class="line">        torch.backends.cudnn.deterministic = <span class="literal">True</span></span><br><span class="line">        torch.backends.cudnn.benchmark = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="torch-backends-cudnn-benchmark"><a href="#torch-backends-cudnn-benchmark" class="headerlink" title="torch.backends.cudnn.benchmark"></a>torch.backends.cudnn.benchmark</h1><p>torch.backends.cudnn.benchmark设为True就可以大大提升卷积神经网络的运行速度</p>
+<p>原因：<code>将会让程序在开始时花费一点额外时间，为整个网络的每个卷积层搜索最适合它的卷积实现算法，进而实现网络的加速</code>。</p>
+<p>适用：适用场景是网络结构固定（不是动态变化的），网络的输入形状（包括 batch size，图片大小，输入的通道）是不变的</p>
+<p>背景：</p>
+<p>大多数主流深度学习框架都支持 cuDNN这个GPU加速库，来为训练加速。而卷积网络的具体计算方法又有很多，所以使用torch.backends.cudnn.benchmark就可以在 PyTorch 中<code>对模型里的卷积层进行预先的优化，也就是在每一个卷积层中测试 cuDNN 提供的所有卷积实现算法，然后选择最快的那个</code>。这样在模型启动的时候，只要额外多花一点点预处理时间，就可以较大幅度地减少训练时间。</p>
+<p>影响卷积运行的因素：</p>
+<p>为什么我们可以提前选择每层的算法，即使每次我们送入网络训练的图片是不一样的？即每次网络的输入都是变化的，那么我怎么确保提前选出来的最优算法同样也适用于这个输入呢？原因就是，对于<code>给定输入来说，其具体值的大小是不影响卷积的运行时间的，只有其尺寸才会影响</code>。举例来说，我们只要固定输入大小都是 (8, 64, 224, 224)，即 batch_size 为 8，输入的通道为 64，宽和高为 224，那么卷积层的运行时间都是几乎不变的，无论其中每个像素具体的值是 0.1 还是 1000.0。</p>
+<p>所以当网络的模型不会一直发生变化，且输入的大小不会一直变化的话就可以使用torch.backends.cudnn.benchmark=True来加速训练</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed_all(seed)</span><br><span class="line">        torch.backends.cudnn.deterministic = <span class="literal">True</span></span><br><span class="line">        torch.backends.cudnn.benchmark = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>Pytorch</category>
+      </categories>
+      <tags>
+        <tag>torch</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于MLPerf和AIPerf的设计理解</title>
     <url>/2021/11/11/%E5%85%B3%E4%BA%8EMLPerf%E5%92%8CAIPerf%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/</url>
     <content><![CDATA[<p>MLPerf 是AI芯片的一个基准测试，主要包括：Training 和Inference两个方面的性能测试。Training是于测量系统将模型训练到目标质量指标的速度；Inference是用于测试系统使用训练有素的模型处理输入和产生结果的速度。</p>
@@ -1075,18 +1284,6 @@
 <h2 id="实际的人工智能意义"><a href="#实际的人工智能意义" class="headerlink" title="实际的人工智能意义"></a>实际的人工智能意义</h2><p>相较于传统的高性能计算机基准测试程序需要具有人工智能的意义在其中，也是其能够检测集群人工智能算力的核心。AIPerf通过在ImageNet数据集上训练神经网络运行CV方面的算法。</p>
 <h2 id="必要的多机通信"><a href="#必要的多机通信" class="headerlink" title="必要的多机通信"></a>必要的多机通信</h2><p>在计算集群中任务分发，多级训练，结果收集等都是以多机通信为基础，是人工智能计算集群计算能力的重要组成。</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>医学图像数据集资源收集</title>
-    <url>/2021/11/30/%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE%E9%9B%86%E8%B5%84%E6%BA%90%E6%94%B6%E9%9B%86/</url>
-    <content><![CDATA[<p>背景问题：</p>
-<p>方法简述：</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>数据集</category>
-      </categories>
   </entry>
   <entry>
     <title>医疗影像dicom图像预处理-Pydicom</title>
@@ -1144,6 +1341,18 @@
         <tag>编程</tag>
         <tag>医学图像</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>医学图像数据集资源收集</title>
+    <url>/2021/11/30/%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE%E9%9B%86%E8%B5%84%E6%BA%90%E6%94%B6%E9%9B%86/</url>
+    <content><![CDATA[<p>背景问题：</p>
+<p>方法简述：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>数据集</category>
+      </categories>
   </entry>
   <entry>
     <title>医疗数据集资源收集</title>
@@ -2085,6 +2294,25 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习-朴素贝叶斯</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习-支持向量机(SVM)</title>
     <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA-SVM/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：逻辑回归是找到可以划分数据的超平面，但是如何找到最优的超平面来划分数据集呢？</p>
@@ -2109,25 +2337,6 @@
 <p>应用：</p>
 <p>文本分类领域效果最好的机器学习算法，在工业界主要应用在网页分类、微博情感分析、舆情监控、用户评论挖掘、文本过滤等诸多领域</p>
 <span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习-朴素贝叶斯</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
 ]]></content>
       <categories>
         <category>学习</category>
@@ -2705,26 +2914,6 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-Retina-Net</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-Retina-Net/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>目标检测-SSD系列</title>
     <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：解决速度和精度问题</p>
@@ -2861,6 +3050,34 @@
       </tags>
   </entry>
   <entry>
+    <title>目标检测-YOLOv5</title>
+    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv5/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+
+
+
+
+<p>YOLO V5使用 GIOU Loss作为bounding box的损失。</p>
+<p>YOLO V5使用二进制交叉熵和 Logits 损失函数计算类概率和目标得分的损失。同时我们也可以使用fl _ gamma参数来激活Focal loss计算损失函数。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>YOLO</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>目标检测-YOLOv4</title>
     <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv4/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -2879,34 +3096,6 @@
 <li>能够轻松的将Pytorch权重文件转化为安卓使用的ONXX格式，然后可以转换为OPENCV的使用格式，或者通过CoreML转化为IOS格式，直接部署到手机应用端</li>
 <li>最后YOLO V5s高达140FPS的对象识别速度令人印象非常深刻，使用体验非常棒</li>
 </ul>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>YOLO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>目标检测-YOLOv5</title>
-    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv5/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-
-
-
-
-<p>YOLO V5使用 GIOU Loss作为bounding box的损失。</p>
-<p>YOLO V5使用二进制交叉熵和 Logits 损失函数计算类概率和目标得分的损失。同时我们也可以使用fl _ gamma参数来激活Focal loss计算损失函数。</p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -3142,6 +3331,31 @@
       </tags>
   </entry>
   <entry>
+    <title>神经网络-权值初始化的方法</title>
+    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%9D%83%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>权值初始化的原因：1. 防止层激活输出在深度神经网络的正向传递过程中爆炸或消失。2. 有助于加速收敛。</p>
+<p>权值初始化的方法：</p>
+<p>常量初始化（constant）、高斯分布初始化（gaussian）、positive_unitball初始化、均匀分布初始化（uniform）、xavier初始化、msra初始化、双线性初始化（bilinear）</p>
+<span id="more"></span>
+
+<p>权重初始化相比于其他的trick来说在平常使用并不是很频繁。因为大部分人使用的模型都是预训练模型，使用的权重都是在大型数据集上训练好的模型，当然不需要自己去初始化权重了。只有没有预训练模型的领域会自己初始化权重，或者在模型中去初始化神经网络最后那几个全连接层的权重。常用的权重初始化算法是 :</p>
+<h1 id="常量初始化"><a href="#常量初始化" class="headerlink" title="常量初始化"></a>常量初始化</h1><h1 id="均匀分布初始化"><a href="#均匀分布初始化" class="headerlink" title="均匀分布初始化"></a>均匀分布初始化</h1><h1 id="高斯分布初始化"><a href="#高斯分布初始化" class="headerlink" title="高斯分布初始化"></a>高斯分布初始化</h1><ul>
+<li>normal高斯分布初始化， 其中stdev为高斯分布的标准差，均值设为0：</li>
+</ul>
+<h1 id="Xavier初始化"><a href="#Xavier初始化" class="headerlink" title="Xavier初始化"></a>Xavier初始化</h1><ul>
+<li>Xavier初始法，适用于普通激活函数(tanh, sigmoid)：</li>
+</ul>
+<p>Xavier初始化将每层权重设置为在有界的随机均匀分布中选择的值</p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%9D%83%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95/Xavier.png"></p>
+<h1 id="MSRA初始化"><a href="#MSRA初始化" class="headerlink" title="MSRA初始化"></a>MSRA初始化</h1><h1 id="双线性初始化"><a href="#双线性初始化" class="headerlink" title="双线性初始化"></a>双线性初始化</h1><h1 id="Kaiming初始化"><a href="#Kaiming初始化" class="headerlink" title="Kaiming初始化"></a>Kaiming初始化</h1><p>保持层激活的标准偏差大约为1将允许我们在深度神经网络中堆叠更多层而不会出现梯度爆炸或消失。</p>
+<p>关于探索如何在类ReLU的激活的网络中最佳地初始化权重促使何凯明等优秀学者提出自己的初始化方案，这些方案是专门用来处理这些非对称，非线性激活的深层神经网络的。</p>
+<p>在他们的2015年论文中何凯明等人证明了如果采用以下输入权重初始化策略，深层网络（例如22层CNN）会更早收敛：</p>
+<p>\1. 使用适合给定图层的权重矩阵创建张量，并使用从标准正态分布中随机选择的数字填充它。</p>
+<p>\2. 将每个随机选择的数字乘以√2/√n，其中n是从前一层输出到指定层的连接数（也称为“fan-in”）。</p>
+<p>\3. 偏差张量初始化为零。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>神经网络-损失函数</title>
     <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：损失函数用来评价模型的预测值和真实值不一样的程度，损失函数越好，通常模型的性能越好。不同的模型用的损失函数一般也不一样。</p>
@@ -3198,29 +3412,24 @@
       </tags>
   </entry>
   <entry>
-    <title>神经网络-权值初始化的方法</title>
-    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%9D%83%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>权值初始化的原因：1. 防止层激活输出在深度神经网络的正向传递过程中爆炸或消失。2. 有助于加速收敛。</p>
-<p>权值初始化的方法：</p>
-<p>常量初始化（constant）、高斯分布初始化（gaussian）、positive_unitball初始化、均匀分布初始化（uniform）、xavier初始化、msra初始化、双线性初始化（bilinear）</p>
+    <title>目标检测-Retina-Net</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-Retina-Net/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
 <span id="more"></span>
-
-<p>权重初始化相比于其他的trick来说在平常使用并不是很频繁。因为大部分人使用的模型都是预训练模型，使用的权重都是在大型数据集上训练好的模型，当然不需要自己去初始化权重了。只有没有预训练模型的领域会自己初始化权重，或者在模型中去初始化神经网络最后那几个全连接层的权重。常用的权重初始化算法是 :</p>
-<h1 id="常量初始化"><a href="#常量初始化" class="headerlink" title="常量初始化"></a>常量初始化</h1><h1 id="均匀分布初始化"><a href="#均匀分布初始化" class="headerlink" title="均匀分布初始化"></a>均匀分布初始化</h1><h1 id="高斯分布初始化"><a href="#高斯分布初始化" class="headerlink" title="高斯分布初始化"></a>高斯分布初始化</h1><ul>
-<li>normal高斯分布初始化， 其中stdev为高斯分布的标准差，均值设为0：</li>
-</ul>
-<h1 id="Xavier初始化"><a href="#Xavier初始化" class="headerlink" title="Xavier初始化"></a>Xavier初始化</h1><ul>
-<li>Xavier初始法，适用于普通激活函数(tanh, sigmoid)：</li>
-</ul>
-<p>Xavier初始化将每层权重设置为在有界的随机均匀分布中选择的值</p>
-<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%9D%83%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95/Xavier.png"></p>
-<h1 id="MSRA初始化"><a href="#MSRA初始化" class="headerlink" title="MSRA初始化"></a>MSRA初始化</h1><h1 id="双线性初始化"><a href="#双线性初始化" class="headerlink" title="双线性初始化"></a>双线性初始化</h1><h1 id="Kaiming初始化"><a href="#Kaiming初始化" class="headerlink" title="Kaiming初始化"></a>Kaiming初始化</h1><p>保持层激活的标准偏差大约为1将允许我们在深度神经网络中堆叠更多层而不会出现梯度爆炸或消失。</p>
-<p>关于探索如何在类ReLU的激活的网络中最佳地初始化权重促使何凯明等优秀学者提出自己的初始化方案，这些方案是专门用来处理这些非对称，非线性激活的深层神经网络的。</p>
-<p>在他们的2015年论文中何凯明等人证明了如果采用以下输入权重初始化策略，深层网络（例如22层CNN）会更早收敛：</p>
-<p>\1. 使用适合给定图层的权重矩阵创建张量，并使用从标准正态分布中随机选择的数字填充它。</p>
-<p>\2. 将每个随机选择的数字乘以√2/√n，其中n是从前一层输出到指定层的连接数（也称为“fan-in”）。</p>
-<p>\3. 偏差张量初始化为零。</p>
 ]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
   </entry>
   <entry>
     <title>神经网络-梯度优化方法</title>
@@ -3403,6 +3612,28 @@
       </tags>
   </entry>
   <entry>
+    <title>站内说明</title>
+    <url>/2021/09/29/%E7%AB%99%E5%86%85%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<p>本blog是作为Leo同学的自我拓展过程中的自律自省记录</p>
+<p>对该blog的计划是对一下类别和领域的学习与探索：</p>
+<p>理论方面：</p>
+<p>​    计算机视觉</p>
+<p>​    深度学习算法</p>
+<p>​    机器学习算法</p>
+<p>Coding方面：</p>
+<p>​    OpenCV</p>
+<p>​    Python</p>
+<p>​    Pytorch</p>
+<p>​    </p>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>概览</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>神经网络-激活函数</title>
     <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -3467,28 +3698,6 @@
         <tag>编程</tag>
         <tag>优化</tag>
         <tag>调参</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>站内说明</title>
-    <url>/2021/09/29/%E7%AB%99%E5%86%85%E8%AF%B4%E6%98%8E/</url>
-    <content><![CDATA[<p>本blog是作为Leo同学的自我拓展过程中的自律自省记录</p>
-<p>对该blog的计划是对一下类别和领域的学习与探索：</p>
-<p>理论方面：</p>
-<p>​    计算机视觉</p>
-<p>​    深度学习算法</p>
-<p>​    机器学习算法</p>
-<p>Coding方面：</p>
-<p>​    OpenCV</p>
-<p>​    Python</p>
-<p>​    Pytorch</p>
-<p>​    </p>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-      <tags>
-        <tag>概览</tag>
       </tags>
   </entry>
   <entry>

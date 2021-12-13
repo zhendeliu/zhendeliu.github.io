@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="问题场景描述 采用方法 实践过程 结果比较 总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ElasticSearch(3):实践记录">
+<meta property="og:url" content="http://example.com/2021/12/13/ElasticSearch-3-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="Leo的三板斧">
+<meta property="og:description" content="问题场景描述 采用方法 实践过程 结果比较 总结">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-13T08:34:34.000Z">
+<meta property="article:modified_time" content="2021-12-13T09:25:55.000Z">
+<meta property="article:author" content="Leo">
+<meta property="article:tag" content="python 深度学习">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/12/13/ElasticSearch-3-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>ElasticSearch(3):实践记录 | Leo的三板斧</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Leo的三板斧</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录Leo的技术自卷历程，技术探索，望不吝赐教</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">101</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">18</span></a>
+
+  </li>
+        <li class="menu-item menu-item-机器学习">
+
+    <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="section"><i class="fas fa-laptop-code fa-fw"></i>机器学习</a>
+
+  </li>
+        <li class="menu-item menu-item-深度学习">
+
+    <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="section"><i class="fab fa-dev fa-fw"></i>深度学习</a>
+
+  </li>
+        <li class="menu-item menu-item-python">
+
+    <a href="/categories/Python/" rel="section"><i class="fab fa-python fa-fw"></i>Python</a>
+
+  </li>
+        <li class="menu-item menu-item-pytorch">
+
+    <a href="/categories/Pytorch/" rel="section"><i class="fa fa-code fa-fw"></i>PyTorch</a>
+
+  </li>
+        <li class="menu-item menu-item-cuda">
+
+    <a href="/categories/CUDA/" rel="section"><i class="fab fa-intercom fa-fw"></i>CUDA</a>
+
+  </li>
+        <li class="menu-item menu-item-常用工具">
+
+    <a href="/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" rel="section"><i class="fa fa-toolbox fa-fw"></i>常用工具</a>
+
+  </li>
+        <li class="menu-item menu-item-数据集">
+
+    <a href="/categories/%E6%95%B0%E6%8D%AE%E9%9B%86/" rel="section"><i class="fab fa-dev fa-fw"></i>数据集</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/zhendeliu" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/13/ElasticSearch-3-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/android-chrome-512x512.png">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="毕业于UNSW(QS-43)人工智能专业，好奇心重，擅长动手">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo的三板斧">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ElasticSearch(3):实践记录
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-13 16:34:34" itemprop="dateCreated datePublished" datetime="2021-12-13T16:34:34+08:00">2021-12-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>问题场景描述</p>
+<p>采用方法</p>
+<p>实践过程</p>
+<p>结果比较</p>
+<p>总结</p>
+<span id="more"></span>
+
+<h1 id="问题场景描述"><a href="#问题场景描述" class="headerlink" title="问题场景描述"></a>问题场景描述</h1><p>已知数据是从原始文本集提取的特征数据表。数据表根据类别做了分类，每个类别下有多张数据表，这些表格以 class01-1、class01-2 。。。class05-58命名，保存在mysql数据库中，单张表的数据量有一千万到一亿条记录不等，每条记录包含50个字段。所有字段均为整数数值。</p>
+<p>数值范围查询要比字符串范围查询高效很多！！！ </p>
+<h1 id="ES实践过程"><a href="#ES实践过程" class="headerlink" title="ES实践过程"></a>ES实践过程</h1><ol>
+<li><p>ES是对大小写敏感的，解决SQL语句不规范导致的问题？</p>
+</li>
+<li><p>ES如何实现去重效果？</p>
+<ol>
+<li><p>根据单个字段去重使用collapse做折叠操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;collapse&quot;:&#123;</span><br><span class="line">        &quot;field&quot;:&quot;uid&quot;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>根据多字段去重，等同于SQL中的group by，使用top_hits</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">      </span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>ES对查询结果的获取：默认返回10000条查询结果，如何返回更多结果</p>
+<ol>
+<li><p>from和size 来确定返回的记录</p>
+<ul>
+<li>from：表示记录开始的顺序，默认0</li>
+<li>size：表示取回几笔数据，默认10</li>
+<li>from+size 默认不能超过10000，可以通过修改索引index参数 <code>&quot;max_result_window&quot; : 100000000</code></li>
+<li>修改集群配置config/elasticsearch.yml 文件，增加 <code>max_result_window: 100000</code></li>
+</ul>
+<p>但是 使用from和size 存在弊端。from+size在数据量不大的情况下，效率比较高<br>缺点：在数据量非常大的情况下，from+size分页会把全部记录加载到内存中，运行速度特别慢，也容易让es出现内存不足。比如要取第5001页的数据，在分页的时候，elasticsearch需要首先在每一个节点上取出50020的数据，然后和每一个节点的所有数据进行排序，取出排序后在50010到50020的数据，然后返回。这样随着数据量的增大，每次分页时排序的开销会越来越大。</p>
+<p>reference： <a target="_blank" rel="noopener" href="http://www.4k8k.xyz/article/qq_28834355/109143795">http://www.4k8k.xyz/article/qq_28834355/109143795</a></p>
+</li>
+</ol>
+</li>
+<li><p>如何更高效的返回更多结果</p>
+<ol>
+<li><p>使用scroll做</p>
+<p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/scroll.html#scroll">https://www.elastic.co/guide/cn/elasticsearch/guide/current/scroll.html#scroll</a></p>
+</li>
+<li><p>使用<code>helpers.scan</code> 做查询生成器</p>
+<p>速度小于0.1S，但在获取所有查询结果的时候需要调用生成器，不适合大规模取数据，适合取top100等取数据方式。效率低于scroll</p>
+</li>
+</ol>
+</li>
+<li><p>关闭ES的score机制，来提升查询效率，使用<code>filter</code>来代替<code>must</code></p>
+</li>
+</ol>
+<h1 id="ES实践结果"><a href="#ES实践结果" class="headerlink" title="ES实践结果"></a>ES实践结果</h1><h3 id="Lenovo-X1-intel-i7-16G-查询结果"><a href="#Lenovo-X1-intel-i7-16G-查询结果" class="headerlink" title="Lenovo X1 (intel-i7 16G ) 查询结果"></a>Lenovo X1 (intel-i7 16G ) 查询结果</h3><table>
+<thead>
+<tr>
+<th>数据量</th>
+<th>查询时间</th>
+<th>结果数量</th>
+<th>缓存清理</th>
+<th>去重</th>
+<th>写入文件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1003W</td>
+<td>1.39S</td>
+<td>7806</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>1003W</td>
+<td>1.46S</td>
+<td>7806</td>
+<td>否</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td>1003W</td>
+<td>1.89</td>
+<td>7806</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>1003W</td>
+<td>1.94</td>
+<td>7806</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="物理机查询结果：-（通过python脚本实现进行评估）"><a href="#物理机查询结果：-（通过python脚本实现进行评估）" class="headerlink" title="物理机查询结果： （通过python脚本实现进行评估）"></a>物理机查询结果： （通过python脚本实现进行评估）</h3><p>执行第1条语句   缓存清理完成   结果：0    共耗时约 0.08 秒   去重True<br>执行第2条语句   缓存清理完成   结果：94   共耗时约 0.17 秒   去重True<br>执行第3条语句   缓存清理完成   结果：7806  共耗时约 2.75 秒   去重True<br>执行第4条语句   缓存清理完成   结果：0     共耗时约 0.05 秒   去重True<br>执行第5条语句   缓存清理完成   结果：0   共耗时约 0.15 秒   去重True<br>执行第6条语句   缓存清理完成   结果：7   共耗时约 0.43 秒   去重True<br>执行第7条语句   缓存清理完成   结果：7   共耗时约 0.49 秒   去重False<br>执行第8条语句   缓存清理完成   结果：7   共耗时约 0.43 秒   去重False<br>执行第9条语句   缓存清理完成   结果：7   共耗时约 0.40 秒   去重False<br>执行第10条语句  缓存清理完成   结果：0   共耗时约 0.32 秒   去重True            </p>
+<h3 id="物理机并发查询结果："><a href="#物理机并发查询结果：" class="headerlink" title="物理机并发查询结果："></a>物理机并发查询结果：</h3><p>10个线程并发： 执行第三条SQL　返回7806条数据  耗时3-8秒  CPU ~100%</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">I&#x27;m NO.5 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 6.24 秒</span><br><span class="line">I&#x27;m NO.4 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 5.69 秒</span><br><span class="line">I&#x27;m NO.2 thread!!!</span><br><span class="line">共耗时约 5.59 秒</span><br><span class="line">I&#x27;m NO.3 thread!!!</span><br><span class="line">共耗时约 6.03 秒</span><br><span class="line">I&#x27;m NO.0 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 4.88 秒</span><br><span class="line">I&#x27;m NO.6 thread!!!</span><br><span class="line">共耗时约 4.46 秒</span><br><span class="line">I&#x27;m NO.8 thread!!!</span><br><span class="line">共耗时约 5.59 秒</span><br><span class="line">I&#x27;m NO.1 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 4.36 秒</span><br><span class="line">I&#x27;m NO.7 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 4.13 秒</span><br><span class="line">I&#x27;m NO.9 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 3.94 秒</span><br></pre></td></tr></table></figure>
+
+<p>100个线程并发  返回7806条   耗时40-60秒  CPU 830%-&gt;74%</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">I&#x27;m NO.64 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 36.97 秒</span><br><span class="line">I&#x27;m NO.49 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 42.53 秒</span><br><span class="line">I&#x27;m NO.4 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 46.43 秒</span><br><span class="line">I&#x27;m NO.12 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 40.81 秒</span><br><span class="line">I&#x27;m NO.21 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 41.34 秒</span><br><span class="line">I&#x27;m NO.93 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 51.63 秒</span><br><span class="line">I&#x27;m NO.0 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 44.42 秒</span><br><span class="line">I&#x27;m NO.86 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 45.17 秒</span><br></pre></td></tr></table></figure>
+
+<p>400个线程并发 执行第三条SQL　返回7806条  耗时40-70秒  CPU 1900%-&gt;150%</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">I&#x27;m NO.63 thread!!!</span><br><span class="line">共耗时约 49.61 秒</span><br><span class="line">I&#x27;m NO.16 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 61.87 秒</span><br><span class="line">I&#x27;m NO.11 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 57.21 秒</span><br><span class="line">I&#x27;m NO.120 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 54.67 秒</span><br><span class="line">I&#x27;m NO.62 thread!!!</span><br><span class="line">共耗时约 54.94 秒</span><br><span class="line">I&#x27;m NO.96 thread!!!</span><br><span class="line">共耗时约 56.83 秒</span><br><span class="line">I&#x27;m NO.15 thread!!!</span><br><span class="line">共耗时约 58.06 秒</span><br><span class="line">I&#x27;m NO.43 thread!!!</span><br><span class="line">共耗时约 57.07 秒</span><br><span class="line">I&#x27;m NO.6 thread!!!</span><br><span class="line">共耗时约 59.93 秒</span><br><span class="line">I&#x27;m NO.37 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 58.40 秒</span><br><span class="line">I&#x27;m NO.25 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">7806共耗时约 54.85 秒</span><br><span class="line">I&#x27;m NO.31 thread!!!</span><br></pre></td></tr></table></figure>
+
+<p>总结：</p>
+<p>10个线程并发：每个线程100次查询 执行第三条SQL　  CPU 20%~100%  </p>
+<p>100个线程并发：  每个线程100次查询  执行第三条SQL  CPU 74&amp;~830%</p>
+<p>400个线程并发： 每个线程100次查询 执行第三条SQL  CPU 150%~1900%</p>
+<h2 id="多线程并发测试二"><a href="#多线程并发测试二" class="headerlink" title="多线程并发测试二"></a>多线程并发测试二</h2><p>在不同数量线程并发条件下，每个线程分别执行index-S1查询20次，index-S2查询20次</p>
+<table>
+<thead>
+<tr>
+<th>线程数量</th>
+<th>查询时间</th>
+<th>总查询次数</th>
+<th>平均处理时间</th>
+<th>CPU占用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5</td>
+<td>118.79S</td>
+<td>200</td>
+<td>0.59S</td>
+<td>40~130%</td>
+</tr>
+<tr>
+<td>10</td>
+<td>246.26S</td>
+<td>400</td>
+<td>0.61S</td>
+<td></td>
+</tr>
+<tr>
+<td>20</td>
+<td>508.45</td>
+<td>800</td>
+<td>0.63S</td>
+<td>63%~170%</td>
+</tr>
+<tr>
+<td>40</td>
+<td>944.82</td>
+<td>1600</td>
+<td>0.59S</td>
+<td>80%~192%</td>
+</tr>
+<tr>
+<td>80</td>
+<td>1990.94</td>
+<td>3200</td>
+<td>0.622S</td>
+<td>64%<del>270%</del>570%</td>
+</tr>
+</tbody></table>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ol>
+<li>默认返回10000条，需要修改重新配置，设置最大返回size<ol>
+<li>返回数据越多，效率明显降低</li>
+</ol>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" rel="prev" title="ElasticSearch(2):安装部署">
+      <i class="fa fa-chevron-left"></i> ElasticSearch(2):安装部署
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%9C%BA%E6%99%AF%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">问题场景描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E5%AE%9E%E8%B7%B5%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">ES实践过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E5%AE%9E%E8%B7%B5%E7%BB%93%E6%9E%9C"><span class="nav-number">3.</span> <span class="nav-text">ES实践结果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lenovo-X1-intel-i7-16G-%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C"><span class="nav-number">3.0.1.</span> <span class="nav-text">Lenovo X1 (intel-i7 16G ) 查询结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E6%9C%BA%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%EF%BC%9A-%EF%BC%88%E9%80%9A%E8%BF%87python%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0%E8%BF%9B%E8%A1%8C%E8%AF%84%E4%BC%B0%EF%BC%89"><span class="nav-number">3.0.2.</span> <span class="nav-text">物理机查询结果： （通过python脚本实现进行评估）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E6%9C%BA%E5%B9%B6%E5%8F%91%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%EF%BC%9A"><span class="nav-number">3.0.3.</span> <span class="nav-text">物理机并发查询结果：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91%E6%B5%8B%E8%AF%95%E4%BA%8C"><span class="nav-number">3.1.</span> <span class="nav-text">多线程并发测试二</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusion"><span class="nav-number">4.</span> <span class="nav-text">Conclusion</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-number">4.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-number">4.2.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Leo"
+      src="/images/android-chrome-512x512.png">
+  <p class="site-author-name" itemprop="name">Leo</p>
+  <div class="site-description" itemprop="description">毕业于UNSW(QS-43)人工智能专业，好奇心重，擅长动手</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">101</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhendeliu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhendeliu" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:liuzhende636@gmail.com" title="E-Mail → mailto:liuzhende636@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Leo</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+    </div>
+</body>
+</html>
