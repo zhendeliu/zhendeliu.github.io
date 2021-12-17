@@ -113,62 +113,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>ElasticSearch(2):安装部署</title>
-    <url>/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<p>ElasticSearch安装</p>
-<p>Postman安装</p>
-<p>常用操作</p>
-<p>集群搭建（暂无）</p>
-<p>集群操作（暂无）</p>
-<span id="more"></span>
-
-<h1 id="ElasticSearch安装"><a href="#ElasticSearch安装" class="headerlink" title="ElasticSearch安装"></a>ElasticSearch安装</h1><p>ElasticSearch Centos7 安装步骤如下：</p>
-<ol>
-<li><p>ES依赖于java环境，使用<code>java -version</code>查看系统java环境，需要1.8以上的java环境</p>
-<p><img src="/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%5Cjava-version.png"></p>
-</li>
-<li><p>官网下载es <a href="https://www.elastic.co/cn/downloads/elasticsearch">https://www.elastic.co/cn/downloads/elasticsearch</a></p>
-</li>
-<li><p>上传安装包到服务器，使用“tar -xvf 解压安装包”</p>
-<p><code>tar -xvf elasticsearch-7.16.0-linux-x86_64.tar</code></p>
-</li>
-<li><p>配置文件修改，进入解压包找到conf包下elasticsearch.yml文件</p>
-<p><img src="/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%5C%E9%85%8D%E7%BD%AE.png"></p>
-</li>
-<li><p> ES安全要求不能直接使用root用户，创建其他用户</p>
-</li>
-<li><p>用户创建完成，启动时出现 vm.max_map_count too low 虚拟内存过小的问题 </p>
-<p><img src="/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%5Cmax_map_count.jpg"></p>
-<p>使用 <code>sysctl -w vm.max_map_count=262144</code> 进行配置，</p>
-<p>或者，在 /etc/sysctl.conf文件最后添加一行</p>
-<p><code>vm.max_map_count=262144</code></p>
-</li>
-<li><p>启动ES <code>sh ./bin/elasticsearch -d</code></p>
-</li>
-<li><p>远程操作时需要需要防火墙开启 9200 端口</p>
-<p>开启防火墙 远程访问9200</p>
-<p><code>firewall-cmd --zone=public --add-port=9200/tcp --permanent </code></p>
-<p>#–permanent永久生效，没有此参数重启后失效</p>
-<p>重新加载防火墙：</p>
-<p> <code>firewall-cmd --reload</code></p>
-</li>
-</ol>
-<h1 id="Postman安装"><a href="#Postman安装" class="headerlink" title="Postman安装"></a>Postman安装</h1><p>安装下载地址：<a href="https://www.postman.com/">https://www.postman.com/</a></p>
-<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><p>#后面加一个<code>v</code>，让输出内容表格显示表头; <code>pretty</code>则让输出缩进更规范</p>
-<h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><p>创建索引的时候需要根据数据量的大小确定分片数量！比如根据实际情况1000万条数据大约占用7.68G, </p>
-<p>查看索引分片信息： <code>http://127.0.0.1:9200/索引名称/_search_shards</code></p>
-<p>或者： <code>curl -XGET http://localhost:9200/_cat/shards/test*?v</code> </p>
-<p>查看全部索引的空间占用信息： <code>curl -X GET localhost:9200/_cat/indices?v</code></p>
-<h1 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a>集群搭建</h1><p>暂无</p>
-<h1 id="集群操作"><a href="#集群操作" class="headerlink" title="集群操作"></a>集群操作</h1><p>暂无</p>
-<p>Reference：</p>
-<ol>
-<li>  ES 集群管理（集群规划、集群搭建、集群管理） <a href="https://www.cnblogs.com/leesmall/p/9220535.html">https://www.cnblogs.com/leesmall/p/9220535.html</a></li>
-<li>   <a href="https://www.dotnetboy.com/blog/detail/353574479298826240.html">https://www.dotnetboy.com/blog/detail/353574479298826240.html</a></li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
     <title>ElasticSearch(3):实践记录</title>
     <url>/2021/12/13/ElasticSearch-3-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>问题场景描述</p>
@@ -435,9 +379,65 @@
 ]]></content>
   </entry>
   <entry>
+    <title>ElasticSearch(2):安装部署</title>
+    <url>/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<p>ElasticSearch安装</p>
+<p>Postman安装</p>
+<p>常用操作</p>
+<p>集群搭建（暂无）</p>
+<p>集群操作（暂无）</p>
+<span id="more"></span>
+
+<h1 id="ElasticSearch安装"><a href="#ElasticSearch安装" class="headerlink" title="ElasticSearch安装"></a>ElasticSearch安装</h1><p>ElasticSearch Centos7 安装步骤如下：</p>
+<ol>
+<li><p>ES依赖于java环境，使用<code>java -version</code>查看系统java环境，需要1.8以上的java环境</p>
+<p><img src="/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%5Cjava-version.png"></p>
+</li>
+<li><p>官网下载es <a href="https://www.elastic.co/cn/downloads/elasticsearch">https://www.elastic.co/cn/downloads/elasticsearch</a></p>
+</li>
+<li><p>上传安装包到服务器，使用“tar -xvf 解压安装包”</p>
+<p><code>tar -xvf elasticsearch-7.16.0-linux-x86_64.tar</code></p>
+</li>
+<li><p>配置文件修改，进入解压包找到conf包下elasticsearch.yml文件</p>
+<p><img src="/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%5C%E9%85%8D%E7%BD%AE.png"></p>
+</li>
+<li><p> ES安全要求不能直接使用root用户，创建其他用户</p>
+</li>
+<li><p>用户创建完成，启动时出现 vm.max_map_count too low 虚拟内存过小的问题 </p>
+<p><img src="/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%5Cmax_map_count.jpg"></p>
+<p>使用 <code>sysctl -w vm.max_map_count=262144</code> 进行配置，</p>
+<p>或者，在 /etc/sysctl.conf文件最后添加一行</p>
+<p><code>vm.max_map_count=262144</code></p>
+</li>
+<li><p>启动ES <code>sh ./bin/elasticsearch -d</code></p>
+</li>
+<li><p>远程操作时需要需要防火墙开启 9200 端口</p>
+<p>开启防火墙 远程访问9200</p>
+<p><code>firewall-cmd --zone=public --add-port=9200/tcp --permanent </code></p>
+<p>#–permanent永久生效，没有此参数重启后失效</p>
+<p>重新加载防火墙：</p>
+<p> <code>firewall-cmd --reload</code></p>
+</li>
+</ol>
+<h1 id="Postman安装"><a href="#Postman安装" class="headerlink" title="Postman安装"></a>Postman安装</h1><p>安装下载地址：<a href="https://www.postman.com/">https://www.postman.com/</a></p>
+<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><p>#后面加一个<code>v</code>，让输出内容表格显示表头; <code>pretty</code>则让输出缩进更规范</p>
+<h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><p>创建索引的时候需要根据数据量的大小确定分片数量！比如根据实际情况1000万条数据大约占用7.68G, </p>
+<p>查看索引分片信息： <code>http://127.0.0.1:9200/索引名称/_search_shards</code></p>
+<p>或者： <code>curl -XGET http://localhost:9200/_cat/shards/test*?v</code> </p>
+<p>查看全部索引的空间占用信息： <code>curl -X GET localhost:9200/_cat/indices?v</code></p>
+<h1 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a>集群搭建</h1><p>暂无</p>
+<h1 id="集群操作"><a href="#集群操作" class="headerlink" title="集群操作"></a>集群操作</h1><p>暂无</p>
+<p>Reference：</p>
+<ol>
+<li>  ES 集群管理（集群规划、集群搭建、集群管理） <a href="https://www.cnblogs.com/leesmall/p/9220535.html">https://www.cnblogs.com/leesmall/p/9220535.html</a></li>
+<li>   <a href="https://www.dotnetboy.com/blog/detail/353574479298826240.html">https://www.dotnetboy.com/blog/detail/353574479298826240.html</a></li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
     <title>ElasticSearch(4):logstash从MySQL数据库导入数据</title>
     <url>/2021/12/14/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
-    <content><![CDATA[<p>Logstash 是免费且开放的服务器端数据处理管道，拥有200多个插件，能够从多个来源采集数据，转换数据，然后将数据发送到喜欢的“存储库”中。在本文中主要实践的是将数十亿的数据从MySQL数据库如何高效导入ES</p>
+    <content><![CDATA[<p>Logstash 是免费且开放的服务器端数据处理管道，拥有200多个插件，能够从多个来源采集数据，转换数据，然后将数据发送到指定的存储库中。在本文中主要实践的是将数十亿的数据从MySQL数据库如何高效导入ES</p>
 <p>Logstash管道介绍</p>
 <p>Logstash安装下载</p>
 <p>Logstash文件配置</p>
@@ -553,25 +553,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>ElasticSearch(5):可视化管理Kibana</title>
-    <url>/2021/12/15/ElasticSearch-5-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/</url>
-    <content><![CDATA[<p>发</p>
-<span id="more"></span>
-
-
-
-<h2 id="安装es可视化工具-kibana"><a href="#安装es可视化工具-kibana" class="headerlink" title="安装es可视化工具  kibana"></a>安装es可视化工具  kibana</h2><p>访问： <a href="http://localhost:`5601`/">http://localhost:`5601`/</a></p>
-<p><a href="https://blog.csdn.net/Soinice/article/details/87861121">(21条消息) Kibana（安装篇）：Windows下安装和运行Kibana_Soinice的博客-CSDN博客_kibana windows启动</a></p>
-<h1 id="ES数据导入"><a href="#ES数据导入" class="headerlink" title="ES数据导入"></a>ES数据导入</h1><h2 id="从MySQL数据导入es："><a href="#从MySQL数据导入es：" class="headerlink" title="从MySQL数据导入es："></a>从MySQL数据导入es：</h2><p>logstash安装操作：   [elk收集windows日志 - 今夕何兮 - 博客园 (cnblogs.com)](<a href="https://www.cnblogs.com/f66666/p/10273435.html#:~:text=%E4%B8%80%E3%80%81windows%E5%AE%89%E8%A3%85logstash">https://www.cnblogs.com/f66666/p/10273435.html#:~:text=一、windows安装logstash</a>. 1. 安装过程. logstash安装需要java环境支持，需先安装jkd1.8。. 官网下载logstash安装包，下载地址：https%3A%2F%2F<a href="http://www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。">www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。</a>. 在bin目录下运行命令：logstash -e “input,{ } } output { stdout {}}”. 然后你会发现终端在等待你的输入。.)</p>
-<h1 id="ES操作方式"><a href="#ES操作方式" class="headerlink" title="ES操作方式"></a>ES操作方式</h1><h1 id="过程监控"><a href="#过程监控" class="headerlink" title="过程监控"></a>过程监控</h1><p>开启</p>
-<h1 id><a href="#" class="headerlink" title></a></h1><p>查看每个index的存储情况：</p>
-<p><code>curl -X GET localhost:9200/_cat/indices?v</code></p>
-<p>查看每个shard的存储情况：</p>
-<p><code>curl -X GET localhost:9200/_cat/shards?v</code></p>
-<p>OK! 终于完成了ELK套件，可以深入的内容还有很多</p>
-]]></content>
-  </entry>
-  <entry>
     <title>ElasticSearch学习记录</title>
     <url>/2021/12/05/ElasticSearch%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>索引操作</p>
@@ -670,6 +651,25 @@
     <title>Hexo网站建设参考资料</title>
     <url>/2021/10/30/Hexo%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/</url>
     <content><![CDATA[<p>Hexo next主题：右侧栏配置 <a href="https://www.cnblogs.com/lfri/p/12221359.html">https://www.cnblogs.com/lfri/p/12221359.html</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>ElasticSearch(5):可视化管理Kibana</title>
+    <url>/2021/12/15/ElasticSearch-5-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/</url>
+    <content><![CDATA[<p>发</p>
+<span id="more"></span>
+
+
+
+<h2 id="安装es可视化工具-kibana"><a href="#安装es可视化工具-kibana" class="headerlink" title="安装es可视化工具  kibana"></a>安装es可视化工具  kibana</h2><p>访问： <a href="http://localhost:`5601`/">http://localhost:`5601`/</a></p>
+<p><a href="https://blog.csdn.net/Soinice/article/details/87861121">(21条消息) Kibana（安装篇）：Windows下安装和运行Kibana_Soinice的博客-CSDN博客_kibana windows启动</a></p>
+<h1 id="ES数据导入"><a href="#ES数据导入" class="headerlink" title="ES数据导入"></a>ES数据导入</h1><h2 id="从MySQL数据导入es："><a href="#从MySQL数据导入es：" class="headerlink" title="从MySQL数据导入es："></a>从MySQL数据导入es：</h2><p>logstash安装操作：   [elk收集windows日志 - 今夕何兮 - 博客园 (cnblogs.com)](<a href="https://www.cnblogs.com/f66666/p/10273435.html#:~:text=%E4%B8%80%E3%80%81windows%E5%AE%89%E8%A3%85logstash">https://www.cnblogs.com/f66666/p/10273435.html#:~:text=一、windows安装logstash</a>. 1. 安装过程. logstash安装需要java环境支持，需先安装jkd1.8。. 官网下载logstash安装包，下载地址：https%3A%2F%2F<a href="http://www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。">www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。</a>. 在bin目录下运行命令：logstash -e “input,{ } } output { stdout {}}”. 然后你会发现终端在等待你的输入。.)</p>
+<h1 id="ES操作方式"><a href="#ES操作方式" class="headerlink" title="ES操作方式"></a>ES操作方式</h1><h1 id="过程监控"><a href="#过程监控" class="headerlink" title="过程监控"></a>过程监控</h1><p>开启</p>
+<h1 id><a href="#" class="headerlink" title></a></h1><p>查看每个index的存储情况：</p>
+<p><code>curl -X GET localhost:9200/_cat/indices?v</code></p>
+<p>查看每个shard的存储情况：</p>
+<p><code>curl -X GET localhost:9200/_cat/shards?v</code></p>
+<p>OK! 终于完成了ELK套件，可以深入的内容还有很多</p>
 ]]></content>
   </entry>
   <entry>
@@ -1682,146 +1682,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>图像分割-Unet[项目应用]</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2-Unet/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>Pytorch</category>
-        <category>深度学习</category>
-        <category>图像分割</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>项目总结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图像分类-EfficientNet&amp;EfficientDet[项目应用]</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB-EfficientNet/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：EfficientNet每个主干包含7个block。这些block还有不同数量的子block，这些子block的数量随着EfficientNetB0到EfficientNetB7而增加。</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-<p>EfficientNet每个主干包含7个block。这些block还有不同数量的子block，这些子block的数量随着EfficientNetB0到EfficientNetB7而增加。</p>
-<p>EfficientNet-B0的总层数，总数是237层，而EfficientNet-B7的总数是813层！！但不用担心，所有这些层都可以由下面的5个模块和上面的主干组成。</p>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB-EfficientNet/EfficientNet.png"></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>图像分类</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>项目总结</tag>
-        <tag>kaggle</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图像处理基础-滤波器</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>在图像处理中，经常需要对图像进行平滑去噪、锐化、边界增强等，这些功能可以通过滤波器filter来实现。</p>
-<p>噪音的分类及如何添加</p>
-<p>椒盐噪声：是一种随机出现的白点(salt)或者黑点(peppe)</p>
-<p>高斯噪声：概率密度函数服从高斯分布（即正态分布）的一类噪声</p>
-<p>常用滤波算法：</p>
-<p>均值滤波器：把邻域内的平均值赋给中心元素。邻域内的像素权重是相等的；但不能保护细节，不能消除椒盐噪声</p>
-<p>高斯滤波器：邻域内各个像素值不同权重的和，将中心点的权重增大，远离中心的的权重减小</p>
-<p>中值滤波器：不使用权重，邻域内所有像素值的中间值来代替当前像素点的像素值</p>
-<p>双边滤波器：同时考虑距离信息（距离越远，权重越小)和色彩信息（色彩差别越大，权重越小）</p>
-<span id="more"></span>
-
-<h1 id="滤波相关概念："><a href="#滤波相关概念：" class="headerlink" title="滤波相关概念："></a>滤波相关概念：</h1><p>图像的时域： 自变量是时间,即横轴是时间,纵轴是信号的变化。其动态信号x（t）是描述信号在不同时刻取值的函数</p>
-<p>图像的频域：自变量是频率,即横轴是频率,纵轴是该频率信号的幅度,也就是通常说的频谱图。频谱图描述了信号的频率结构及频率与该频率信号幅度的关系</p>
-<p>图像的频率： 图像的频率又称为空间频率，它反映了图像的像素灰度在空间中变化的情况</p>
-<p>如何定量的测量图像的空间频率，最为常用的方法就是二维傅里叶变换。图像经过二维傅里叶变换后会形成与图像等大的复数矩阵，取其幅值形成幅度谱，取其相位形成相位谱。图像的频率能量分布主要体现在幅度谱中。通常习惯将低频成分放在幅度谱的中央，而将高频成分放在幅度谱边缘。</p>
-<p>在图像频域里面，频率低的地方是比较平滑的，低频的区域中灰度值变化是比较小的；频率高的地方通常是边缘或者噪声，这些区域灰度值是突变的</p>
-<p>高通滤波：让频率较高的部分通过，突出边缘等</p>
-<p>低通滤波：保留频率比较低的部分，通常为平滑图像，弱化边缘，消除噪声</p>
-<p>在时域中的滤波器和在频域中的滤波器组成了傅里叶变换对，这部分暂时不深入了。</p>
-<h2 id="滤波器分类"><a href="#滤波器分类" class="headerlink" title="滤波器分类"></a>滤波器分类</h2><p>线性滤波： 对邻域中的像素的计算为线性运算时，如利用窗口函数进行平滑加权求和的运算，或者某种卷积运算，都可以称为线性滤波。常见的线性滤波有：方框滤波、均值滤波、高斯滤波、拉普拉斯滤波等等，通常线性滤波器之间只是模版的系数不同。</p>
-<p>非线性滤波： 非线性滤波利用原始图像跟模版之间的一种逻辑关系得到结果，如最值滤波器，中值滤波器。比较常用的有中值滤波器和双边滤波器。</p>
-<p>reference：<a href="https://blog.csdn.net/qq_44957388/article/details/105763906">https://blog.csdn.net/qq_44957388/article/details/105763906</a></p>
-<h1 id="常见的滤波器："><a href="#常见的滤波器：" class="headerlink" title="常见的滤波器："></a>常见的滤波器：</h1><h2 id="均值滤波器"><a href="#均值滤波器" class="headerlink" title="均值滤波器"></a>均值滤波器</h2><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E5%9D%87%E5%80%BC.png"></p>
-<h3 id="均值滤波的缺点"><a href="#均值滤波的缺点" class="headerlink" title="均值滤波的缺点"></a>均值滤波的缺点</h3><p>均值滤波本身存在着固有的缺陷，即它不能很好地保护图像细节，在图像去噪的同时也破坏了图像的细节部分，从而使图像变得模糊，不能很好地去除噪声点。特别是椒盐噪声。</p>
-<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>均值模糊可以模糊图像以便得到感兴趣物体的粗略描述，也就是说，去除图像中的不相关细节，其中“不相关”是指与滤波器模板尺寸相比较小的像素区域，从而对图像有一个整体的认知。即为了对感兴趣的物体得到一个大致的整体的描述而模糊一幅图像，忽略细小的细节。</p>
-<h2 id="高斯滤波器"><a href="#高斯滤波器" class="headerlink" title="高斯滤波器"></a>高斯滤波器</h2><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E9%AB%98%E6%96%AF.png"></p>
-<p><strong>应用：</strong> 高斯滤波是一种线性平滑滤波器，对于服从正态分布的噪声有很好的抑制作用。在实际场景中，我们通常会假定图像包含的噪声为高斯白噪声，所以在许多实际应用的预处理部分，都会采用高斯滤波抑制噪声，如传统车牌识别等。</p>
-<h2 id="中值滤波器"><a href="#中值滤波器" class="headerlink" title="中值滤波器"></a>中值滤波器</h2><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E4%B8%AD%E5%80%BC.png"></p>
-<p>中值滤波不再采用加权求和的方式计算滤波结果，它用邻域内所有像素值的中间值来代替当前像素点的像素值。</p>
-<p>中值滤波会取当前像素点及其周围临近像素点的像素值，一般有奇数个像素点，将这些像素值排序，将排序后位于中间位置的像素值作为当前像素点的像素值。</p>
-<p>中值滤波对于斑点噪声（speckle noise）和椒盐噪声（salt-and-pepper<br>noise）来说尤其有用，因为它不依赖于邻域内那些与典型值差别很大的值，而且噪声成分很难被选上，所以可以在几乎不影响原有图像的情况下去除全部噪声。但是由于需要进行排序操作，中值滤波的计算量较大。</p>
-<p>中值滤波器在处理连续图像窗函数时与线性滤波器的工作方式类似，但滤波过程却不再是加权运算。</p>
-<h2 id="双边滤波器"><a href="#双边滤波器" class="headerlink" title="双边滤波器"></a>双边滤波器</h2><p>双边滤波是综合考虑空间信息和色彩信息的滤波方式，在滤波过程中能有效的保护图像内的边缘信息。</p>
-<p>双边滤波在计算某一个像素点的像素值时，同时考虑距离信息（距离越远，权重越小)和色彩信息（色彩差别越大，权重越小）。既能去除噪声，又能较好的保护边缘信息。</p>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E5%8F%8C%E8%BE%B9.png"></p>
-<p>在双边滤波中，计算左侧白色区域的滤波结果时：</p>
-<p>对于白色的点，权重较大<br>对于黑色的点，与白色的色彩差别较大（0和255），所以可以将他们的权重设置为0<br>计算右侧黑色区域的滤波结果时：</p>
-<p>对于黑色的点，权重较大<br>对于白色的点，与黑色的色彩差别较大（255和0），所以可以将他们的权重设置为0<br>这样，左侧白色的滤波结果仍是白色，黑色的像素点权重为0，对它不会有影响；右侧黑色的滤波结果仍是黑色，白色的像素点权重为0，对它不会有影响。所以，双边滤波会将边缘信息保留。</p>
-<p>参考链接：<a href="https://blog.csdn.net/qq_44957388/article/details/105763906">https://blog.csdn.net/qq_44957388/article/details/105763906</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-        <tag>基础操作</tag>
-        <tag>噪音</tag>
-        <tag>编程</tag>
-        <tag>滤波器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图像识别-[2012]AlexNet</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>AlexNet是2012年ImageNet竞赛冠军获得者Alex Krizhevsky设计的</p>
-<p>方法简述：AlexNet有6亿个参数和650,000个神经元，包含5个卷积层，有些层后面跟了max-pooling层，3个全连接层，为了减少过拟合，在全连接层使用了dropout</p>
-<p>优点：</p>
-<ol>
-<li>使用Relu作为激活函数</li>
-<li>使用Dropou避免过拟合</li>
-<li>使用重叠的MaxPooling,让stride小于池化核的大小，池化层的输出有重叠和覆盖，提升了特征的丰富性</li>
-<li>？？？提出LRN层局部响应归一化层？？？</li>
-<li>使用分组卷机通过CUDA加速深度卷机网络的训练</li>
-<li>数据增强，避免过拟合</li>
-</ol>
-<p>缺点：</p>
-<ol>
-<li>参数过多，计算量大</li>
-<li>网络不深，准确率不高</li>
-</ol>
-<span id="more"></span>
-
-<p>ImageNet是图像算法领域最常见的数据集，训练集包含120万张图片，验证集包含5万张图片，测试集包含15万张图片，这些图片分为了1000个类别，并且有多种不同的分辨率，</p>
-<h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E7%BB%93%E6%9E%84.png"></p>
-<h1 id="参数计算"><a href="#参数计算" class="headerlink" title="参数计算"></a>参数计算</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E5%8F%82%E6%95%B0%E9%87%8F.png"></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>图像识别</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>医疗数据集资源收集</title>
     <url>/2021/11/23/%E5%8C%BB%E7%96%97%E6%95%B0%E6%8D%AE%E9%9B%86%E8%B5%84%E6%BA%90%E6%94%B6%E9%9B%86/</url>
     <content><![CDATA[<h1 id="数据集类别"><a href="#数据集类别" class="headerlink" title="数据集类别"></a>数据集类别</h1><p>肺部数据集</p>
@@ -2018,6 +1878,146 @@
       <categories>
         <category>数据集</category>
       </categories>
+  </entry>
+  <entry>
+    <title>图像分割-Unet[项目应用]</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2-Unet/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>Pytorch</category>
+        <category>深度学习</category>
+        <category>图像分割</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>项目总结</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像分类-EfficientNet&amp;EfficientDet[项目应用]</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB-EfficientNet/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：EfficientNet每个主干包含7个block。这些block还有不同数量的子block，这些子block的数量随着EfficientNetB0到EfficientNetB7而增加。</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+<p>EfficientNet每个主干包含7个block。这些block还有不同数量的子block，这些子block的数量随着EfficientNetB0到EfficientNetB7而增加。</p>
+<p>EfficientNet-B0的总层数，总数是237层，而EfficientNet-B7的总数是813层！！但不用担心，所有这些层都可以由下面的5个模块和上面的主干组成。</p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB-EfficientNet/EfficientNet.png"></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>图像分类</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>项目总结</tag>
+        <tag>kaggle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像处理基础-滤波器</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>在图像处理中，经常需要对图像进行平滑去噪、锐化、边界增强等，这些功能可以通过滤波器filter来实现。</p>
+<p>噪音的分类及如何添加</p>
+<p>椒盐噪声：是一种随机出现的白点(salt)或者黑点(peppe)</p>
+<p>高斯噪声：概率密度函数服从高斯分布（即正态分布）的一类噪声</p>
+<p>常用滤波算法：</p>
+<p>均值滤波器：把邻域内的平均值赋给中心元素。邻域内的像素权重是相等的；但不能保护细节，不能消除椒盐噪声</p>
+<p>高斯滤波器：邻域内各个像素值不同权重的和，将中心点的权重增大，远离中心的的权重减小</p>
+<p>中值滤波器：不使用权重，邻域内所有像素值的中间值来代替当前像素点的像素值</p>
+<p>双边滤波器：同时考虑距离信息（距离越远，权重越小)和色彩信息（色彩差别越大，权重越小）</p>
+<span id="more"></span>
+
+<h1 id="滤波相关概念："><a href="#滤波相关概念：" class="headerlink" title="滤波相关概念："></a>滤波相关概念：</h1><p>图像的时域： 自变量是时间,即横轴是时间,纵轴是信号的变化。其动态信号x（t）是描述信号在不同时刻取值的函数</p>
+<p>图像的频域：自变量是频率,即横轴是频率,纵轴是该频率信号的幅度,也就是通常说的频谱图。频谱图描述了信号的频率结构及频率与该频率信号幅度的关系</p>
+<p>图像的频率： 图像的频率又称为空间频率，它反映了图像的像素灰度在空间中变化的情况</p>
+<p>如何定量的测量图像的空间频率，最为常用的方法就是二维傅里叶变换。图像经过二维傅里叶变换后会形成与图像等大的复数矩阵，取其幅值形成幅度谱，取其相位形成相位谱。图像的频率能量分布主要体现在幅度谱中。通常习惯将低频成分放在幅度谱的中央，而将高频成分放在幅度谱边缘。</p>
+<p>在图像频域里面，频率低的地方是比较平滑的，低频的区域中灰度值变化是比较小的；频率高的地方通常是边缘或者噪声，这些区域灰度值是突变的</p>
+<p>高通滤波：让频率较高的部分通过，突出边缘等</p>
+<p>低通滤波：保留频率比较低的部分，通常为平滑图像，弱化边缘，消除噪声</p>
+<p>在时域中的滤波器和在频域中的滤波器组成了傅里叶变换对，这部分暂时不深入了。</p>
+<h2 id="滤波器分类"><a href="#滤波器分类" class="headerlink" title="滤波器分类"></a>滤波器分类</h2><p>线性滤波： 对邻域中的像素的计算为线性运算时，如利用窗口函数进行平滑加权求和的运算，或者某种卷积运算，都可以称为线性滤波。常见的线性滤波有：方框滤波、均值滤波、高斯滤波、拉普拉斯滤波等等，通常线性滤波器之间只是模版的系数不同。</p>
+<p>非线性滤波： 非线性滤波利用原始图像跟模版之间的一种逻辑关系得到结果，如最值滤波器，中值滤波器。比较常用的有中值滤波器和双边滤波器。</p>
+<p>reference：<a href="https://blog.csdn.net/qq_44957388/article/details/105763906">https://blog.csdn.net/qq_44957388/article/details/105763906</a></p>
+<h1 id="常见的滤波器："><a href="#常见的滤波器：" class="headerlink" title="常见的滤波器："></a>常见的滤波器：</h1><h2 id="均值滤波器"><a href="#均值滤波器" class="headerlink" title="均值滤波器"></a>均值滤波器</h2><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E5%9D%87%E5%80%BC.png"></p>
+<h3 id="均值滤波的缺点"><a href="#均值滤波的缺点" class="headerlink" title="均值滤波的缺点"></a>均值滤波的缺点</h3><p>均值滤波本身存在着固有的缺陷，即它不能很好地保护图像细节，在图像去噪的同时也破坏了图像的细节部分，从而使图像变得模糊，不能很好地去除噪声点。特别是椒盐噪声。</p>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>均值模糊可以模糊图像以便得到感兴趣物体的粗略描述，也就是说，去除图像中的不相关细节，其中“不相关”是指与滤波器模板尺寸相比较小的像素区域，从而对图像有一个整体的认知。即为了对感兴趣的物体得到一个大致的整体的描述而模糊一幅图像，忽略细小的细节。</p>
+<h2 id="高斯滤波器"><a href="#高斯滤波器" class="headerlink" title="高斯滤波器"></a>高斯滤波器</h2><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E9%AB%98%E6%96%AF.png"></p>
+<p><strong>应用：</strong> 高斯滤波是一种线性平滑滤波器，对于服从正态分布的噪声有很好的抑制作用。在实际场景中，我们通常会假定图像包含的噪声为高斯白噪声，所以在许多实际应用的预处理部分，都会采用高斯滤波抑制噪声，如传统车牌识别等。</p>
+<h2 id="中值滤波器"><a href="#中值滤波器" class="headerlink" title="中值滤波器"></a>中值滤波器</h2><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E4%B8%AD%E5%80%BC.png"></p>
+<p>中值滤波不再采用加权求和的方式计算滤波结果，它用邻域内所有像素值的中间值来代替当前像素点的像素值。</p>
+<p>中值滤波会取当前像素点及其周围临近像素点的像素值，一般有奇数个像素点，将这些像素值排序，将排序后位于中间位置的像素值作为当前像素点的像素值。</p>
+<p>中值滤波对于斑点噪声（speckle noise）和椒盐噪声（salt-and-pepper<br>noise）来说尤其有用，因为它不依赖于邻域内那些与典型值差别很大的值，而且噪声成分很难被选上，所以可以在几乎不影响原有图像的情况下去除全部噪声。但是由于需要进行排序操作，中值滤波的计算量较大。</p>
+<p>中值滤波器在处理连续图像窗函数时与线性滤波器的工作方式类似，但滤波过程却不再是加权运算。</p>
+<h2 id="双边滤波器"><a href="#双边滤波器" class="headerlink" title="双边滤波器"></a>双边滤波器</h2><p>双边滤波是综合考虑空间信息和色彩信息的滤波方式，在滤波过程中能有效的保护图像内的边缘信息。</p>
+<p>双边滤波在计算某一个像素点的像素值时，同时考虑距离信息（距离越远，权重越小)和色彩信息（色彩差别越大，权重越小）。既能去除噪声，又能较好的保护边缘信息。</p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E5%8F%8C%E8%BE%B9.png"></p>
+<p>在双边滤波中，计算左侧白色区域的滤波结果时：</p>
+<p>对于白色的点，权重较大<br>对于黑色的点，与白色的色彩差别较大（0和255），所以可以将他们的权重设置为0<br>计算右侧黑色区域的滤波结果时：</p>
+<p>对于黑色的点，权重较大<br>对于白色的点，与黑色的色彩差别较大（255和0），所以可以将他们的权重设置为0<br>这样，左侧白色的滤波结果仍是白色，黑色的像素点权重为0，对它不会有影响；右侧黑色的滤波结果仍是黑色，白色的像素点权重为0，对它不会有影响。所以，双边滤波会将边缘信息保留。</p>
+<p>参考链接：<a href="https://blog.csdn.net/qq_44957388/article/details/105763906">https://blog.csdn.net/qq_44957388/article/details/105763906</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>基础操作</tag>
+        <tag>噪音</tag>
+        <tag>编程</tag>
+        <tag>滤波器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像识别-[2012]AlexNet</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>AlexNet是2012年ImageNet竞赛冠军获得者Alex Krizhevsky设计的</p>
+<p>方法简述：AlexNet有6亿个参数和650,000个神经元，包含5个卷积层，有些层后面跟了max-pooling层，3个全连接层，为了减少过拟合，在全连接层使用了dropout</p>
+<p>优点：</p>
+<ol>
+<li>使用Relu作为激活函数</li>
+<li>使用Dropou避免过拟合</li>
+<li>使用重叠的MaxPooling,让stride小于池化核的大小，池化层的输出有重叠和覆盖，提升了特征的丰富性</li>
+<li>？？？提出LRN层局部响应归一化层？？？</li>
+<li>使用分组卷机通过CUDA加速深度卷机网络的训练</li>
+<li>数据增强，避免过拟合</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>参数过多，计算量大</li>
+<li>网络不深，准确率不高</li>
+</ol>
+<span id="more"></span>
+
+<p>ImageNet是图像算法领域最常见的数据集，训练集包含120万张图片，验证集包含5万张图片，测试集包含15万张图片，这些图片分为了1000个类别，并且有多种不同的分辨率，</p>
+<h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E7%BB%93%E6%9E%84.png"></p>
+<h1 id="参数计算"><a href="#参数计算" class="headerlink" title="参数计算"></a>参数计算</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E5%8F%82%E6%95%B0%E9%87%8F.png"></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>图像识别</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
   </entry>
   <entry>
     <title>图像识别-GoogLeNet</title>
@@ -2493,11 +2493,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-sklearn包的学习</title>
-    <url>/2021/10/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-sklearn%E5%8C%85%E7%9A%84%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>机器学习-主成分分析PCA</title>
     <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90PCA/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -2515,6 +2510,11 @@
         <tag>编程</tag>
         <tag>算法</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>机器学习-sklearn包的学习</title>
+    <url>/2021/10/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-sklearn%E5%8C%85%E7%9A%84%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>【未完成】机器学习-优化算法：牛顿法和拟牛顿法</title>
@@ -3221,8 +3221,8 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-R-CNN系列</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-R-CNN%E7%B3%BB%E5%88%97/</url>
+    <title>目标检测-Retina-Net</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-Retina-Net/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
@@ -3241,8 +3241,8 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-Retina-Net</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-Retina-Net/</url>
+    <title>目标检测-R-CNN系列</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-R-CNN%E7%B3%BB%E5%88%97/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
