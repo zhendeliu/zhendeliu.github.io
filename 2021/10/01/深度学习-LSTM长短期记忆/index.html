@@ -309,27 +309,30 @@
 </ol>
 <p>缺点：</p>
 <span id="more"></span>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/LSTMandGRU.png" alt></p>
+
+
+
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/LSTMandGRU.png"></p>
 <p>LSTM隐含层的中间单元 t 的数据流动示意图，它接收上一个单元 t-1 的输入 Ct-1 和 ht-1，当然还有来自本单元的输入 xt ，LSTM一共经过4步完成这些信息的处理，<strong>输出 t 单元的状态 Ct ，和 其输出 ht</strong> 。</p>
 <ol>
 <li>forget 阶段：这个阶段主要是对上一个节点传进来的输入进行<strong>选择性</strong>忘记。简单来说就是会 “忘记不重要的，记住重要的”。它是由 sigmoid 神经元层和按照点的乘法操作组成的，sigmoid函数的取值范围为0~1，当为0时，也就是不让当前单元的输入xt 的任何信息进入到这个单元的Ct中，如果等于1，意思是全部进入到 Ct 中。wf和bf是sigmoi节点的权重和偏执</li>
 </ol>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/forget.png" alt></p>
-<ol>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/forget.png"></p>
+<ol start="2">
 <li><p>选择记忆阶段。这个阶段将这个阶段的输入有选择性地进行“记忆”。</p>
 <p>sigmoid层确定我们将要更新哪些值</p>
 <p>tanh层创建新的值向量</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/input.png" alt></p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/input.png"></p>
 </li>
 <li><p>更新细胞状态Ct: 圈X是乘法，圈+是加法</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/update_ct.png" alt></p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/update_ct.png"></p>
 </li>
 <li><p>输出阶段。这个阶段将决定哪些将会被当成当前状态的输出。Ct只不过隐含地输入给了下一个单元 t+1，因此，最后一步要确定 ht </p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/output.png" alt></p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/output.png"></p>
 <h1 id="GRU"><a href="#GRU" class="headerlink" title="GRU"></a>GRU</h1><p>对LSTM的有一种改动版本叫做带门的循环单元（Gated Recurrent Unit），简称为 GRU，在2014年由 Cho 等人提出，它将遗忘门和输入门结合为一个“更新门”，同时，将单元的状态 Ct 和隐藏状态合并为一体，这样的修改的结果是比我们上面介绍的标准的LSTM模型更加简化了，因此变得越来越受欢迎。</p>
 </li>
 </ol>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/GRU.png" alt></p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/GRU.png"></p>
 
     </div>
 
