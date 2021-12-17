@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>AI算法面试问题-机器学习（三）</title>
+    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>AI算法面试问题-机器学习（一）</title>
     <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
@@ -28,11 +33,6 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>AI算法面试问题-机器学习（三）</title>
-    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>AI算法面试问题-机器学习（二）</title>
@@ -109,6 +109,62 @@
 <li>ES原理三连击 | 写入原理/查询原理/倒排索引 <a href="https://cloud.tencent.com/developer/article/1739481">https://cloud.tencent.com/developer/article/1739481</a></li>
 <li>ES分布式架构及底层原理 <a href="https://segmentfault.com/a/119000001525697">https://segmentfault.com/a/119000001525697</a></li>
 <li>Elasticsearch的由来、原理及应用场景分析 <a href="https://my.oschina.net/90888/blog/1619325">https://my.oschina.net/90888/blog/1619325</a></li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>ElasticSearch(2):安装部署</title>
+    <url>/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<p>ElasticSearch安装</p>
+<p>Postman安装</p>
+<p>常用操作</p>
+<p>集群搭建（暂无）</p>
+<p>集群操作（暂无）</p>
+<span id="more"></span>
+
+<h1 id="ElasticSearch安装"><a href="#ElasticSearch安装" class="headerlink" title="ElasticSearch安装"></a>ElasticSearch安装</h1><p>ElasticSearch Centos7 安装步骤如下：</p>
+<ol>
+<li><p>ES依赖于java环境，使用<code>java -version</code>查看系统java环境，需要1.8以上的java环境</p>
+<p><img src="/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%5Cjava-version.png"></p>
+</li>
+<li><p>官网下载es <a href="https://www.elastic.co/cn/downloads/elasticsearch">https://www.elastic.co/cn/downloads/elasticsearch</a></p>
+</li>
+<li><p>上传安装包到服务器，使用“tar -xvf 解压安装包”</p>
+<p><code>tar -xvf elasticsearch-7.16.0-linux-x86_64.tar</code></p>
+</li>
+<li><p>配置文件修改，进入解压包找到conf包下elasticsearch.yml文件</p>
+<p><img src="/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%5C%E9%85%8D%E7%BD%AE.png"></p>
+</li>
+<li><p> ES安全要求不能直接使用root用户，创建其他用户</p>
+</li>
+<li><p>用户创建完成，启动时出现 vm.max_map_count too low 虚拟内存过小的问题 </p>
+<p><img src="/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%5Cmax_map_count.jpg"></p>
+<p>使用 <code>sysctl -w vm.max_map_count=262144</code> 进行配置，</p>
+<p>或者，在 /etc/sysctl.conf文件最后添加一行</p>
+<p><code>vm.max_map_count=262144</code></p>
+</li>
+<li><p>启动ES <code>sh ./bin/elasticsearch -d</code></p>
+</li>
+<li><p>远程操作时需要需要防火墙开启 9200 端口</p>
+<p>开启防火墙 远程访问9200</p>
+<p><code>firewall-cmd --zone=public --add-port=9200/tcp --permanent </code></p>
+<p>#–permanent永久生效，没有此参数重启后失效</p>
+<p>重新加载防火墙：</p>
+<p> <code>firewall-cmd --reload</code></p>
+</li>
+</ol>
+<h1 id="Postman安装"><a href="#Postman安装" class="headerlink" title="Postman安装"></a>Postman安装</h1><p>安装下载地址：<a href="https://www.postman.com/">https://www.postman.com/</a></p>
+<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><p>#后面加一个<code>v</code>，让输出内容表格显示表头; <code>pretty</code>则让输出缩进更规范</p>
+<h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><p>创建索引的时候需要根据数据量的大小确定分片数量！比如根据实际情况1000万条数据大约占用7.68G, </p>
+<p>查看索引分片信息： <code>http://127.0.0.1:9200/索引名称/_search_shards</code></p>
+<p>或者： <code>curl -XGET http://localhost:9200/_cat/shards/test*?v</code> </p>
+<p>查看全部索引的空间占用信息： <code>curl -X GET localhost:9200/_cat/indices?v</code></p>
+<h1 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a>集群搭建</h1><p>暂无</p>
+<h1 id="集群操作"><a href="#集群操作" class="headerlink" title="集群操作"></a>集群操作</h1><p>暂无</p>
+<p>Reference：</p>
+<ol>
+<li>  ES 集群管理（集群规划、集群搭建、集群管理） <a href="https://www.cnblogs.com/leesmall/p/9220535.html">https://www.cnblogs.com/leesmall/p/9220535.html</a></li>
+<li>   <a href="https://www.dotnetboy.com/blog/detail/353574479298826240.html">https://www.dotnetboy.com/blog/detail/353574479298826240.html</a></li>
 </ol>
 ]]></content>
   </entry>
@@ -379,62 +435,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>ElasticSearch(2):安装部署</title>
-    <url>/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<p>ElasticSearch安装</p>
-<p>Postman安装</p>
-<p>常用操作</p>
-<p>集群搭建（暂无）</p>
-<p>集群操作（暂无）</p>
-<span id="more"></span>
-
-<h1 id="ElasticSearch安装"><a href="#ElasticSearch安装" class="headerlink" title="ElasticSearch安装"></a>ElasticSearch安装</h1><p>ElasticSearch Centos7 安装步骤如下：</p>
-<ol>
-<li><p>ES依赖于java环境，使用<code>java -version</code>查看系统java环境，需要1.8以上的java环境</p>
-<p><img src="/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%5Cjava-version.png"></p>
-</li>
-<li><p>官网下载es <a href="https://www.elastic.co/cn/downloads/elasticsearch">https://www.elastic.co/cn/downloads/elasticsearch</a></p>
-</li>
-<li><p>上传安装包到服务器，使用“tar -xvf 解压安装包”</p>
-<p><code>tar -xvf elasticsearch-7.16.0-linux-x86_64.tar</code></p>
-</li>
-<li><p>配置文件修改，进入解压包找到conf包下elasticsearch.yml文件</p>
-<p><img src="/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%5C%E9%85%8D%E7%BD%AE.png"></p>
-</li>
-<li><p> ES安全要求不能直接使用root用户，创建其他用户</p>
-</li>
-<li><p>用户创建完成，启动时出现 vm.max_map_count too low 虚拟内存过小的问题 </p>
-<p><img src="/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%5Cmax_map_count.jpg"></p>
-<p>使用 <code>sysctl -w vm.max_map_count=262144</code> 进行配置，</p>
-<p>或者，在 /etc/sysctl.conf文件最后添加一行</p>
-<p><code>vm.max_map_count=262144</code></p>
-</li>
-<li><p>启动ES <code>sh ./bin/elasticsearch -d</code></p>
-</li>
-<li><p>远程操作时需要需要防火墙开启 9200 端口</p>
-<p>开启防火墙 远程访问9200</p>
-<p><code>firewall-cmd --zone=public --add-port=9200/tcp --permanent </code></p>
-<p>#–permanent永久生效，没有此参数重启后失效</p>
-<p>重新加载防火墙：</p>
-<p> <code>firewall-cmd --reload</code></p>
-</li>
-</ol>
-<h1 id="Postman安装"><a href="#Postman安装" class="headerlink" title="Postman安装"></a>Postman安装</h1><p>安装下载地址：<a href="https://www.postman.com/">https://www.postman.com/</a></p>
-<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><p>#后面加一个<code>v</code>，让输出内容表格显示表头; <code>pretty</code>则让输出缩进更规范</p>
-<h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><p>创建索引的时候需要根据数据量的大小确定分片数量！比如根据实际情况1000万条数据大约占用7.68G, </p>
-<p>查看索引分片信息： <code>http://127.0.0.1:9200/索引名称/_search_shards</code></p>
-<p>或者： <code>curl -XGET http://localhost:9200/_cat/shards/test*?v</code> </p>
-<p>查看全部索引的空间占用信息： <code>curl -X GET localhost:9200/_cat/indices?v</code></p>
-<h1 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a>集群搭建</h1><p>暂无</p>
-<h1 id="集群操作"><a href="#集群操作" class="headerlink" title="集群操作"></a>集群操作</h1><p>暂无</p>
-<p>Reference：</p>
-<ol>
-<li>  ES 集群管理（集群规划、集群搭建、集群管理） <a href="https://www.cnblogs.com/leesmall/p/9220535.html">https://www.cnblogs.com/leesmall/p/9220535.html</a></li>
-<li>   <a href="https://www.dotnetboy.com/blog/detail/353574479298826240.html">https://www.dotnetboy.com/blog/detail/353574479298826240.html</a></li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
     <title>ElasticSearch(4):logstash从MySQL数据库导入数据</title>
     <url>/2021/12/14/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
     <content><![CDATA[<p>Logstash 是免费且开放的服务器端数据处理管道，拥有200多个插件，能够从多个来源采集数据，转换数据，然后将数据发送到指定的存储库中。在本文中主要实践的是将数十亿的数据从MySQL数据库如何高效导入ES</p>
@@ -553,6 +553,25 @@
 ]]></content>
   </entry>
   <entry>
+    <title>ElasticSearch(5):可视化管理Kibana</title>
+    <url>/2021/12/15/ElasticSearch-5-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/</url>
+    <content><![CDATA[<p>发</p>
+<span id="more"></span>
+
+
+
+<h2 id="安装es可视化工具-kibana"><a href="#安装es可视化工具-kibana" class="headerlink" title="安装es可视化工具  kibana"></a>安装es可视化工具  kibana</h2><p>访问： <a href="http://localhost:`5601`/">http://localhost:`5601`/</a></p>
+<p><a href="https://blog.csdn.net/Soinice/article/details/87861121">(21条消息) Kibana（安装篇）：Windows下安装和运行Kibana_Soinice的博客-CSDN博客_kibana windows启动</a></p>
+<h1 id="ES数据导入"><a href="#ES数据导入" class="headerlink" title="ES数据导入"></a>ES数据导入</h1><h2 id="从MySQL数据导入es："><a href="#从MySQL数据导入es：" class="headerlink" title="从MySQL数据导入es："></a>从MySQL数据导入es：</h2><p>logstash安装操作：   [elk收集windows日志 - 今夕何兮 - 博客园 (cnblogs.com)](<a href="https://www.cnblogs.com/f66666/p/10273435.html#:~:text=%E4%B8%80%E3%80%81windows%E5%AE%89%E8%A3%85logstash">https://www.cnblogs.com/f66666/p/10273435.html#:~:text=一、windows安装logstash</a>. 1. 安装过程. logstash安装需要java环境支持，需先安装jkd1.8。. 官网下载logstash安装包，下载地址：https%3A%2F%2F<a href="http://www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。">www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。</a>. 在bin目录下运行命令：logstash -e “input,{ } } output { stdout {}}”. 然后你会发现终端在等待你的输入。.)</p>
+<h1 id="ES操作方式"><a href="#ES操作方式" class="headerlink" title="ES操作方式"></a>ES操作方式</h1><h1 id="过程监控"><a href="#过程监控" class="headerlink" title="过程监控"></a>过程监控</h1><p>开启</p>
+<h1 id><a href="#" class="headerlink" title></a></h1><p>查看每个index的存储情况：</p>
+<p><code>curl -X GET localhost:9200/_cat/indices?v</code></p>
+<p>查看每个shard的存储情况：</p>
+<p><code>curl -X GET localhost:9200/_cat/shards?v</code></p>
+<p>OK! 终于完成了ELK套件，可以深入的内容还有很多</p>
+]]></content>
+  </entry>
+  <entry>
     <title>ElasticSearch学习记录</title>
     <url>/2021/12/05/ElasticSearch%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>索引操作</p>
@@ -651,25 +670,6 @@
     <title>Hexo网站建设参考资料</title>
     <url>/2021/10/30/Hexo%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/</url>
     <content><![CDATA[<p>Hexo next主题：右侧栏配置 <a href="https://www.cnblogs.com/lfri/p/12221359.html">https://www.cnblogs.com/lfri/p/12221359.html</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>ElasticSearch(5):可视化管理Kibana</title>
-    <url>/2021/12/15/ElasticSearch-5-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/</url>
-    <content><![CDATA[<p>发</p>
-<span id="more"></span>
-
-
-
-<h2 id="安装es可视化工具-kibana"><a href="#安装es可视化工具-kibana" class="headerlink" title="安装es可视化工具  kibana"></a>安装es可视化工具  kibana</h2><p>访问： <a href="http://localhost:`5601`/">http://localhost:`5601`/</a></p>
-<p><a href="https://blog.csdn.net/Soinice/article/details/87861121">(21条消息) Kibana（安装篇）：Windows下安装和运行Kibana_Soinice的博客-CSDN博客_kibana windows启动</a></p>
-<h1 id="ES数据导入"><a href="#ES数据导入" class="headerlink" title="ES数据导入"></a>ES数据导入</h1><h2 id="从MySQL数据导入es："><a href="#从MySQL数据导入es：" class="headerlink" title="从MySQL数据导入es："></a>从MySQL数据导入es：</h2><p>logstash安装操作：   [elk收集windows日志 - 今夕何兮 - 博客园 (cnblogs.com)](<a href="https://www.cnblogs.com/f66666/p/10273435.html#:~:text=%E4%B8%80%E3%80%81windows%E5%AE%89%E8%A3%85logstash">https://www.cnblogs.com/f66666/p/10273435.html#:~:text=一、windows安装logstash</a>. 1. 安装过程. logstash安装需要java环境支持，需先安装jkd1.8。. 官网下载logstash安装包，下载地址：https%3A%2F%2F<a href="http://www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。">www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。</a>. 在bin目录下运行命令：logstash -e “input,{ } } output { stdout {}}”. 然后你会发现终端在等待你的输入。.)</p>
-<h1 id="ES操作方式"><a href="#ES操作方式" class="headerlink" title="ES操作方式"></a>ES操作方式</h1><h1 id="过程监控"><a href="#过程监控" class="headerlink" title="过程监控"></a>过程监控</h1><p>开启</p>
-<h1 id><a href="#" class="headerlink" title></a></h1><p>查看每个index的存储情况：</p>
-<p><code>curl -X GET localhost:9200/_cat/indices?v</code></p>
-<p>查看每个shard的存储情况：</p>
-<p><code>curl -X GET localhost:9200/_cat/shards?v</code></p>
-<p>OK! 终于完成了ELK套件，可以深入的内容还有很多</p>
 ]]></content>
   </entry>
   <entry>
@@ -865,20 +865,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Pytorch框架基础（二）</title>
-    <url>/2021/09/29/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p><a href="https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1">https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>Pytorch</category>
-      </categories>
-      <tags>
-        <tag>基础操作</tag>
-        <tag>编程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>cv算法面试问题总结（一）</title>
     <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表："><a href="#问题列表：" class="headerlink" title="问题列表："></a>问题列表：</h1><ol>
@@ -980,10 +966,33 @@
       </tags>
   </entry>
   <entry>
+    <title>Pytorch框架基础（二）</title>
+    <url>/2021/09/29/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p><a href="https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1">https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>Pytorch</category>
+      </categories>
+      <tags>
+        <tag>基础操作</tag>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>cv算法面试问题总结（七）</title>
     <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%83%EF%BC%89/</url>
     <content><![CDATA[<p>如何解决深度学习中模型训练效果不佳的情况？<br>神经网络中，是否隐藏层如果具有足够数量的单位，它就可以近似任何连续函数？<br>为什么更深的网络更好？<br>更多的数据是否有利于更深的神经网络？<br>不平衡数据是否会影响神经网络的分类效果？<br>无监督降维提供的是帮助还是摧毁？<br>是否可以将任何非线性作为激活函数?<br>批大小如何影响测试正确率？<br>初始化如何影响训练?<br>不同层的权重是否以不同的速度收敛？ </p>
 <p>正则化如何影响权重？<br>什么是fine-tuning？<br>什么是边框回归Bounding-Box regression，以及为什么要做、怎么做<br>请阐述下Selective Search的主要思想<br>什么是非极大值抑制（NMS）？<br>什么是深度学习中的anchor？<br>CNN的特点以及优势<br>深度学习中有什么加快收敛/降低训练难度的方法？<br>请写出链式法则并证明<br>请写出Batch Normalization的计算方法及其应用</p>
+<span id="more"></span>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>cv算法面试问题总结（九）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B9%9D%EF%BC%89/</url>
+    <content><![CDATA[<p>什么是强化学习？<br>强化学习和监督学习、无监督学习的区别是什么？<br>强化学习适合解决什么样子的问题？<br>使用tensorflow进行深度学习算法实验时，如何调节超参数？<br>深度学习中的batch的大小对学习效果有何影响？<br>用梯度下降训练神经网络的参数，为什么参数有时会被训练为nan值？<br>卷积神经网络CNN中池化层有什么作用？<br>请列举几种常见的激活函数。激活函数有什么作用？<br>神经网络中Dropout的作用？具体是怎么实现的？<br>利用梯度下降法训练神经网络，发现模型loss不变，可能有哪些问题？怎么解决？</p>
+<p>如何解决不平衡数据集的分类问题？<br>残差网络为什么能做到很深层？<br>相比sigmoid激活函数ReLU激活函数有什么优势？<br>卷积神经网络中空洞卷积的作用是什么？<br>适用于移动端部署的网络结构都有哪些？<br>深度学习模型参数初始化都有哪些方法？<br>卷积神经网络为什么会具有平移等不变性？</p>
 <span id="more"></span>
 
 ]]></content>
@@ -1016,15 +1025,6 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>cv算法面试问题总结（九）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B9%9D%EF%BC%89/</url>
-    <content><![CDATA[<p>什么是强化学习？<br>强化学习和监督学习、无监督学习的区别是什么？<br>强化学习适合解决什么样子的问题？<br>使用tensorflow进行深度学习算法实验时，如何调节超参数？<br>深度学习中的batch的大小对学习效果有何影响？<br>用梯度下降训练神经网络的参数，为什么参数有时会被训练为nan值？<br>卷积神经网络CNN中池化层有什么作用？<br>请列举几种常见的激活函数。激活函数有什么作用？<br>神经网络中Dropout的作用？具体是怎么实现的？<br>利用梯度下降法训练神经网络，发现模型loss不变，可能有哪些问题？怎么解决？</p>
-<p>如何解决不平衡数据集的分类问题？<br>残差网络为什么能做到很深层？<br>相比sigmoid激活函数ReLU激活函数有什么优势？<br>卷积神经网络中空洞卷积的作用是什么？<br>适用于移动端部署的网络结构都有哪些？<br>深度学习模型参数初始化都有哪些方法？<br>卷积神经网络为什么会具有平移等不变性？</p>
-<span id="more"></span>
-
-]]></content>
   </entry>
   <entry>
     <title>cv算法面试问题总结（二）</title>
@@ -1258,23 +1258,6 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>kaggle比赛-NFL Helmet Assignment</title>
-    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-NFL-Helmet-Assignment/</url>
-    <content><![CDATA[<p><a href="https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment">https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>Pytorch</category>
-        <category>深度学习</category>
-        <category>项目比赛</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>Kaggle</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>kaggle比赛-脑肿瘤检测</title>
     <url>/2021/09/30/kaggle%E6%AF%94%E8%B5%9B-%E8%84%91%E8%82%BF%E7%98%A4%E6%A3%80%E6%B5%8B/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>数据集简介：脑肿瘤图片</p>
@@ -1303,6 +1286,23 @@
 
 <p>Python3:  str.zfill(lenth) 方法返回指定长度的字符串，原字符串右对齐，前面填充0。</p>
 <p>目标检测、语义分割、姿态估计、SLAM、3D重建</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>Pytorch</category>
+        <category>深度学习</category>
+        <category>项目比赛</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Kaggle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>kaggle比赛-NFL Helmet Assignment</title>
+    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-NFL-Helmet-Assignment/</url>
+    <content><![CDATA[<p><a href="https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment">https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment</a></p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1672,16 +1672,6 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2021/12/16/%E5%8D%8E%E4%B8%BA%E6%98%87%E8%85%BECANN%E6%95%99%E7%A8%8B-TBE%E7%AE%97%E5%AD%90%E5%BC%80%E5%8F%91/</url>
-    <content><![CDATA[<h1 id="华为昇腾CANN教程-TBE算子开发"><a href="#华为昇腾CANN教程-TBE算子开发" class="headerlink" title="华为昇腾CANN教程-TBE算子开发"></a>华为昇腾CANN教程-TBE算子开发</h1><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><p><strong>算子</strong>：一个函数空间到另一个函数空间的映射，可以说对任何函数进行某一项操作都可以将其认为是一个算子，在神经网络模型中涉及到的计算函数。例如：卷积层中的卷积算法，全连接中的权值求和算子，还有众多激活函数算子。</p>
-<p>每个算子有自己独有的名称，每个网络包含多种算子类型Type。比如神经网络中的卷积类型的算子有conv1，conv2… 池化类型的算子有pool1，pool2…</p>
-<p>TBE（Tensor Boost Engine）：是一款华为自研的NPU算子开发工具，以TVM为基础框架进行扩展。可以用python来开发的。</p>
-<p>NPU（Neural-network Processing Unit）：一类专用于人工智能（神经网络等方面）的硬件加速处理器。课程中使用昇腾910处理器</p>
-<p>TVM（Tensor Virtual Machine）： 能加载多种模型框架在多种平台上运行的中间框架</p>
-]]></content>
-  </entry>
-  <entry>
     <title>医疗数据集资源收集</title>
     <url>/2021/11/23/%E5%8C%BB%E7%96%97%E6%95%B0%E6%8D%AE%E9%9B%86%E8%B5%84%E6%BA%90%E6%94%B6%E9%9B%86/</url>
     <content><![CDATA[<h1 id="数据集类别"><a href="#数据集类别" class="headerlink" title="数据集类别"></a>数据集类别</h1><p>肺部数据集</p>
@@ -1878,6 +1868,16 @@
       <categories>
         <category>数据集</category>
       </categories>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/12/16/%E5%8D%8E%E4%B8%BA%E6%98%87%E8%85%BECANN%E6%95%99%E7%A8%8B-TBE%E7%AE%97%E5%AD%90%E5%BC%80%E5%8F%91/</url>
+    <content><![CDATA[<h1 id="华为昇腾CANN教程-TBE算子开发"><a href="#华为昇腾CANN教程-TBE算子开发" class="headerlink" title="华为昇腾CANN教程-TBE算子开发"></a>华为昇腾CANN教程-TBE算子开发</h1><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><p><strong>算子</strong>：一个函数空间到另一个函数空间的映射，可以说对任何函数进行某一项操作都可以将其认为是一个算子，在神经网络模型中涉及到的计算函数。例如：卷积层中的卷积算法，全连接中的权值求和算子，还有众多激活函数算子。</p>
+<p>每个算子有自己独有的名称，每个网络包含多种算子类型Type。比如神经网络中的卷积类型的算子有conv1，conv2… 池化类型的算子有pool1，pool2…</p>
+<p>TBE（Tensor Boost Engine）：是一款华为自研的NPU算子开发工具，以TVM为基础框架进行扩展。可以用python来开发的。</p>
+<p>NPU（Neural-network Processing Unit）：一类专用于人工智能（神经网络等方面）的硬件加速处理器。课程中使用昇腾910处理器</p>
+<p>TVM（Tensor Virtual Machine）： 能加载多种模型框架在多种平台上运行的中间框架</p>
+]]></content>
   </entry>
   <entry>
     <title>图像分割-Unet[项目应用]</title>
@@ -2493,6 +2493,11 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习-sklearn包的学习</title>
+    <url>/2021/10/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-sklearn%E5%8C%85%E7%9A%84%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>机器学习-主成分分析PCA</title>
     <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90PCA/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -2510,11 +2515,6 @@
         <tag>编程</tag>
         <tag>算法</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>机器学习-sklearn包的学习</title>
-    <url>/2021/10/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-sklearn%E5%8C%85%E7%9A%84%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>【未完成】机器学习-优化算法：牛顿法和拟牛顿法</title>
@@ -2675,55 +2675,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-线性回归Linear Regression</title>
-    <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92Linear-Regression/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：找到一系列的参数W，使得f(x) = XW 和真实输出Y之间无限接近或一致。</p>
-<p>方法简述：</p>
-<p>优点：直接，快速，可解释性高</p>
-<p>缺点：基于一系列假设；对异常值敏感；对数据分布敏感；存在多重共线性，自相关，异方差问题；容易出现过拟合与欠拟合问题；</p>
-<span id="more"></span>
-
-<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>什么是回归模型？</p>
-<p>回归是用来拟合输入变量和输出变量之间的关系，回归模型就是表示从输入变量到输出变量的映射函数。</p>
-<p>所以线性回归的目标就是找到一系列的参数W，使得f(x) = XW 和真实输出Y之间无限接近或一致。</p>
-<h1 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h1><h1 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h1><h1 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h1><h2 id="过拟合问题"><a href="#过拟合问题" class="headerlink" title="过拟合问题"></a>过拟合问题</h2><p>​    分析数据，重新做数据清冼，将征工程。</p>
-<p>​    扩充数据集，收集更多数据。</p>
-<p>​    减少特征数量 。</p>
-<p>​    **采用正则化方法</p>
-<h2 id="欠拟合问题"><a href="#欠拟合问题" class="headerlink" title="欠拟合问题 **"></a>欠拟合问题 **</h2><p>​    分析数据，增加特征维度</p>
-<p>​    ** 增加多项式特征阶数</p>
-<p>​    ** 减小正则项的超参数系数</p>
-<p>​    ** 局部加权回归 </p>
-<h2 id="多重共线性"><a href="#多重共线性" class="headerlink" title="多重共线性"></a>多重共线性</h2><p>​    那共线性会引发什么问题。。。。：</p>
-<p>1、模型参数估计不准确，有时甚至会出现回归系数的符号与实际情况完全相反的情况，比如逻辑上应该系数为正的特征系数 算出来为负。</p>
-<p>2、本应该显著的自变量不显著，本不显著的自变量却呈现出显著性（也就是说，无法从p-值的大小判断出变量是否显著——下面会给一个例子）</p>
-<p>3、多重共线性使参数估计值的方差增大，模型参数不稳定，也就是每次训练得到的权重系数差异都比较大。</p>
-<p>其实多重共线性这样理解会简单很多:</p>
-<p>假设原始的线性回归公式为：</p>
-<p>y=w1<em>x1+w2</em>x2+w3*x3</p>
-<p>训练完毕的线性回归公式为：</p>
-<p>y=5x1+7x2+10x3,</p>
-<p>此时加入一个新特征x4，假设x4和x3高度相关，x4=2x3,则</p>
-<p>y=w1<em>x1+w2</em>x2+w3<em>x3+w4</em>x4=w1<em>x1+w2</em>x2+(w3+2w4)*x3</p>
-<p>因为我们之前拟合出来的最优的回归方程为：</p>
-<p>y=5x1+7x2+10x3</p>
-<p>显然w3+2w4可以合并成一个新的权重稀疏 w5，则</p>
-<p>y=w1<em>x1+w2</em>x2+w5*x3,显然：</p>
-<p>y=w1<em>x1+w2</em>x2+w3<em>x3和y=w1</em>x1+w2<em>x2+w5</em>x3是等价的。。。。</p>
-<p>那么最终最优的模型应该也是 y=5x1+7x2+10x3</p>
-<p>但是考虑到引入了x4，所以w4和w3的权重是分开计算出来的，这就导致了</p>
-<p>w5=10=w3+2w4，显然这个方程有无穷多的解，比如w3=4，w4=3，或者w4=-1，w3=12等，因此导致了模型系数估计的不稳定并且可能会出现负系数的问题。</p>
-<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><h2 id="基于-Python-scikit-learn-工具包"><a href="#基于-Python-scikit-learn-工具包" class="headerlink" title="基于 Python scikit-learn 工具包"></a>基于 Python scikit-learn 工具包</h2><h2 id="Python自建实现"><a href="#Python自建实现" class="headerlink" title="Python自建实现"></a>Python自建实现</h2>]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习-逻辑回归Logistic Regression</title>
     <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92Logistic-Regression/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>逻辑回归 = 线性回归+逻辑分布 （如：sigmoid函数）</p>
@@ -2770,6 +2721,55 @@
 <p>(4)准确率并不是很高，因为形式非常的简单(非常类似线性模型)，很难去拟合数据的真实分布;</p>
 <p>(5)<a href="https://www.cda.cn/map/luojihuigui/">逻辑回归</a>本身无法筛选<a href="https://www.cda.cn/map/tezheng/">特征</a>，有时会用gbdt来筛选<a href="https://www.cda.cn/map/tezheng/">特征</a>，然后再上<a href="https://www.cda.cn/map/luojihuigui/">逻辑回归</a>。</p>
 ]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习-线性回归Linear Regression</title>
+    <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92Linear-Regression/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：找到一系列的参数W，使得f(x) = XW 和真实输出Y之间无限接近或一致。</p>
+<p>方法简述：</p>
+<p>优点：直接，快速，可解释性高</p>
+<p>缺点：基于一系列假设；对异常值敏感；对数据分布敏感；存在多重共线性，自相关，异方差问题；容易出现过拟合与欠拟合问题；</p>
+<span id="more"></span>
+
+<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>什么是回归模型？</p>
+<p>回归是用来拟合输入变量和输出变量之间的关系，回归模型就是表示从输入变量到输出变量的映射函数。</p>
+<p>所以线性回归的目标就是找到一系列的参数W，使得f(x) = XW 和真实输出Y之间无限接近或一致。</p>
+<h1 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h1><h1 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h1><h1 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h1><h2 id="过拟合问题"><a href="#过拟合问题" class="headerlink" title="过拟合问题"></a>过拟合问题</h2><p>​    分析数据，重新做数据清冼，将征工程。</p>
+<p>​    扩充数据集，收集更多数据。</p>
+<p>​    减少特征数量 。</p>
+<p>​    **采用正则化方法</p>
+<h2 id="欠拟合问题"><a href="#欠拟合问题" class="headerlink" title="欠拟合问题 **"></a>欠拟合问题 **</h2><p>​    分析数据，增加特征维度</p>
+<p>​    ** 增加多项式特征阶数</p>
+<p>​    ** 减小正则项的超参数系数</p>
+<p>​    ** 局部加权回归 </p>
+<h2 id="多重共线性"><a href="#多重共线性" class="headerlink" title="多重共线性"></a>多重共线性</h2><p>​    那共线性会引发什么问题。。。。：</p>
+<p>1、模型参数估计不准确，有时甚至会出现回归系数的符号与实际情况完全相反的情况，比如逻辑上应该系数为正的特征系数 算出来为负。</p>
+<p>2、本应该显著的自变量不显著，本不显著的自变量却呈现出显著性（也就是说，无法从p-值的大小判断出变量是否显著——下面会给一个例子）</p>
+<p>3、多重共线性使参数估计值的方差增大，模型参数不稳定，也就是每次训练得到的权重系数差异都比较大。</p>
+<p>其实多重共线性这样理解会简单很多:</p>
+<p>假设原始的线性回归公式为：</p>
+<p>y=w1<em>x1+w2</em>x2+w3*x3</p>
+<p>训练完毕的线性回归公式为：</p>
+<p>y=5x1+7x2+10x3,</p>
+<p>此时加入一个新特征x4，假设x4和x3高度相关，x4=2x3,则</p>
+<p>y=w1<em>x1+w2</em>x2+w3<em>x3+w4</em>x4=w1<em>x1+w2</em>x2+(w3+2w4)*x3</p>
+<p>因为我们之前拟合出来的最优的回归方程为：</p>
+<p>y=5x1+7x2+10x3</p>
+<p>显然w3+2w4可以合并成一个新的权重稀疏 w5，则</p>
+<p>y=w1<em>x1+w2</em>x2+w5*x3,显然：</p>
+<p>y=w1<em>x1+w2</em>x2+w3<em>x3和y=w1</em>x1+w2<em>x2+w5</em>x3是等价的。。。。</p>
+<p>那么最终最优的模型应该也是 y=5x1+7x2+10x3</p>
+<p>但是考虑到引入了x4，所以w4和w3的权重是分开计算出来的，这就导致了</p>
+<p>w5=10=w3+2w4，显然这个方程有无穷多的解，比如w3=4，w4=3，或者w4=-1，w3=12等，因此导致了模型系数估计的不稳定并且可能会出现负系数的问题。</p>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><h2 id="基于-Python-scikit-learn-工具包"><a href="#基于-Python-scikit-learn-工具包" class="headerlink" title="基于 Python scikit-learn 工具包"></a>基于 Python scikit-learn 工具包</h2><h2 id="Python自建实现"><a href="#Python自建实现" class="headerlink" title="Python自建实现"></a>Python自建实现</h2>]]></content>
       <categories>
         <category>学习</category>
         <category>机器学习</category>
@@ -3221,8 +3221,8 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-Retina-Net</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-Retina-Net/</url>
+    <title>目标检测-R-CNN系列</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-R-CNN%E7%B3%BB%E5%88%97/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
@@ -3241,8 +3241,8 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-R-CNN系列</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-R-CNN%E7%B3%BB%E5%88%97/</url>
+    <title>目标检测-Retina-Net</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-Retina-Net/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
@@ -3397,6 +3397,34 @@
       </tags>
   </entry>
   <entry>
+    <title>目标检测-YOLOv5</title>
+    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv5/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+
+
+
+
+<p>YOLO V5使用 GIOU Loss作为bounding box的损失。</p>
+<p>YOLO V5使用二进制交叉熵和 Logits 损失函数计算类概率和目标得分的损失。同时我们也可以使用fl _ gamma参数来激活Focal loss计算损失函数。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>YOLO</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>目标检测-YOLOv4</title>
     <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv4/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -3415,34 +3443,6 @@
 <li>能够轻松的将Pytorch权重文件转化为安卓使用的ONXX格式，然后可以转换为OPENCV的使用格式，或者通过CoreML转化为IOS格式，直接部署到手机应用端</li>
 <li>最后YOLO V5s高达140FPS的对象识别速度令人印象非常深刻，使用体验非常棒</li>
 </ul>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>YOLO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>目标检测-YOLOv5</title>
-    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv5/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-
-
-
-
-<p>YOLO V5使用 GIOU Loss作为bounding box的损失。</p>
-<p>YOLO V5使用二进制交叉熵和 Logits 损失函数计算类概率和目标得分的损失。同时我们也可以使用fl _ gamma参数来激活Focal loss计算损失函数。</p>
 ]]></content>
       <categories>
         <category>学习</category>
