@@ -30,7 +30,7 @@
 <meta property="og:image" content="http://example.com/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%5C%E5%A4%9A%E5%88%86%E7%89%87.webp">
 <meta property="og:image" content="http://example.com/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%5C%E9%9B%86%E7%BE%A4%E7%A4%BA%E6%84%8F%E5%9B%BE.png">
 <meta property="article:published_time" content="2021-12-13T08:32:01.000Z">
-<meta property="article:modified_time" content="2021-12-13T08:49:26.000Z">
+<meta property="article:modified_time" content="2021-12-15T15:20:45.000Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="python 深度学习">
 <meta name="twitter:card" content="summary">
@@ -125,7 +125,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">103</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">104</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -282,11 +282,18 @@
 
 <h1 id="ElasticSearch概述"><a href="#ElasticSearch概述" class="headerlink" title="ElasticSearch概述"></a>ElasticSearch概述</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Elasticsearch（ES）是一个基于Lucene （<em>Lucene是apache下的一个开源的全文检索引擎工具包。提供一个简单易用的工具包（类库），方便的在目标系统中实现全文检索的功能。</em>）构建的开源、分布式、RESTful接口的全文搜索引擎。Elasticsearch还是一个分布式文档数据库，其中每个字段均可被索引，而且每个字段的数据均可被搜索，ES能够横向扩展至数以百计的服务器存储以及处理PB级的数据。可以在极短的时间内存储、搜索和分析大量的数据</p>
 <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%5C%E5%A4%9A%E5%88%86%E7%89%87.webp"></p>
-<h3 id="Cluster集群"><a href="#Cluster集群" class="headerlink" title="Cluster集群"></a>Cluster集群</h3><h3 id="Node节点"><a href="#Node节点" class="headerlink" title="Node节点"></a>Node节点</h3><h3 id="Index-索引"><a href="#Index-索引" class="headerlink" title="Index 索引"></a>Index 索引</h3><p>ES将数据存到索引之中，索引存放和读取的单元是Document文档。与关系型数据库中的数据库实列database是类似的。</p>
+<h3 id="Cluster集群"><a href="#Cluster集群" class="headerlink" title="Cluster集群"></a>Cluster集群</h3><p>ES可以作为一个独立的单个搜索服务器。同时，为了处理大型数据集，实现容错和高可用性，ES可以运行在许多互相合作的服务器上，这些服务器的集合称为集群。</p>
+<h3 id="Node节点"><a href="#Node节点" class="headerlink" title="Node节点"></a>Node节点</h3><p>形成集群的每个服务器称为节点。</p>
+<p>注：ElasticSearch 6.x 版本之前还有Type ，6.x 版本后就将其废弃，建议的是每个类型（业务）的数据单独放在一个索引中，这样其实回归到一般意义上的索引定义，索引定位文档。如下图：</p>
+<h3 id="Index-索引"><a href="#Index-索引" class="headerlink" title="Index 索引"></a>Index 索引</h3><p>ES将数据存到索引之中，索引存放和读取的单元是Document文档。与关系型数据库中的数据库实列database是类似的。</p>
 <h3 id="Document文档"><a href="#Document文档" class="headerlink" title="Document文档"></a>Document文档</h3><p>在ES中Document文档是最基础的可被索引的数据单元，类似于一个JSON格式数据</p>
 <h3 id="Shards分片"><a href="#Shards分片" class="headerlink" title="Shards分片"></a>Shards分片</h3><p><code>number_of_shards</code>值与索引有关，而不与整个集群有关。此值指定每个索引的分片数量（而不是集群中的总主分片）。由于Elasticsearch是分布式搜索引擎，因此索引通常会分为多个元素，这些元素称为分片，分布在多个节点上。Elasticsearch自动管理这些分片的排列。它还会根据需要重新平衡分片，因此用户无需担心细节。</p>
 <h3 id="Replicas副本"><a href="#Replicas副本" class="headerlink" title="Replicas副本"></a>Replicas副本</h3><p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%5C%E9%9B%86%E7%BE%A4%E7%A4%BA%E6%84%8F%E5%9B%BE.png"></p>
 <h2 id="支持的业务场景"><a href="#支持的业务场景" class="headerlink" title="支持的业务场景"></a>支持的业务场景</h2><p>网站搜索、日志分析等</p>
+<p>Reference：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://doc.yonyoucloud.com/doc/mastering-elasticsearch/chapter-1/121_README.html">https://doc.yonyoucloud.com/doc/mastering-elasticsearch/chapter-1/121_README.html</a></li>
+</ol>
 
     </div>
 
@@ -383,7 +390,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">103</span>
+          <span class="site-state-item-count">104</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
