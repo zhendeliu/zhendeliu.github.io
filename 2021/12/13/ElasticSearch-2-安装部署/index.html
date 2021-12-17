@@ -20,18 +20,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="ElasticSearch安装 常用操作">
+  <meta name="description" content="ElasticSearch安装 Postman安装 常用操作 集群搭建（暂无） 集群操作（暂无）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ElasticSearch(2):安装部署">
 <meta property="og:url" content="http://example.com/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="ElasticSearch安装 常用操作">
+<meta property="og:description" content="ElasticSearch安装 Postman安装 常用操作 集群搭建（暂无） 集群操作（暂无）">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%5Cjava-version.png">
+<meta property="og:image" content="http://example.com/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%5C%E9%85%8D%E7%BD%AE.png">
+<meta property="og:image" content="http://example.com/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%5Cmax_map_count.jpg">
 <meta property="article:published_time" content="2021-12-13T08:33:02.000Z">
-<meta property="article:modified_time" content="2021-12-15T09:20:54.000Z">
+<meta property="article:modified_time" content="2021-12-17T07:14:37.000Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="python 深度学习">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%5Cjava-version.png">
 
 <link rel="canonical" href="http://example.com/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">
 
@@ -272,21 +276,55 @@
 
       
         <p>ElasticSearch安装</p>
+<p>Postman安装</p>
 <p>常用操作</p>
+<p>集群搭建（暂无）</p>
+<p>集群操作（暂无）</p>
 <span id="more"></span>
 
-
-
-<h1 id="ElasticSearch安装"><a href="#ElasticSearch安装" class="headerlink" title="ElasticSearch安装"></a>ElasticSearch安装</h1><h2 id="安装es可视化工具-kibana"><a href="#安装es可视化工具-kibana" class="headerlink" title="安装es可视化工具  kibana"></a>安装es可视化工具  kibana</h2><p>访问： <a href="http://localhost:`5601`/">http://localhost:`5601`/</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Soinice/article/details/87861121">(21条消息) Kibana（安装篇）：Windows下安装和运行Kibana_Soinice的博客-CSDN博客_kibana windows启动</a></p>
-<h1 id="ES数据导入"><a href="#ES数据导入" class="headerlink" title="ES数据导入"></a>ES数据导入</h1><h2 id="从MySQL数据导入es："><a href="#从MySQL数据导入es：" class="headerlink" title="从MySQL数据导入es："></a>从MySQL数据导入es：</h2><p>logstash安装操作：   [elk收集windows日志 - 今夕何兮 - 博客园 (cnblogs.com)](<a target="_blank" rel="noopener" href="https://www.cnblogs.com/f66666/p/10273435.html#:~:text=%E4%B8%80%E3%80%81windows%E5%AE%89%E8%A3%85logstash">https://www.cnblogs.com/f66666/p/10273435.html#:~:text=一、windows安装logstash</a>. 1. 安装过程. logstash安装需要java环境支持，需先安装jkd1.8。. 官网下载logstash安装包，下载地址：https%3A%2F%2F<a href="http://www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。">www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。</a>. 在bin目录下运行命令：logstash -e “input,{ } } output { stdout {}}”. 然后你会发现终端在等待你的输入。.)</p>
-<h1 id="ES操作方式"><a href="#ES操作方式" class="headerlink" title="ES操作方式"></a>ES操作方式</h1><h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><p>创建索引的时候需要根据数据量的大小确定分片数量！比如根据实际情况1000万条数据大约占用7.68G, </p>
+<h1 id="ElasticSearch安装"><a href="#ElasticSearch安装" class="headerlink" title="ElasticSearch安装"></a>ElasticSearch安装</h1><p>ElasticSearch Centos7 安装步骤如下：</p>
+<ol>
+<li><p>ES依赖于java环境，使用<code>java -version</code>查看系统java环境，需要1.8以上的java环境</p>
+<p><img src="/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%5Cjava-version.png"></p>
+</li>
+<li><p>官网下载es <a target="_blank" rel="noopener" href="https://www.elastic.co/cn/downloads/elasticsearch">https://www.elastic.co/cn/downloads/elasticsearch</a></p>
+</li>
+<li><p>上传安装包到服务器，使用“tar -xvf 解压安装包”</p>
+<p><code>tar -xvf elasticsearch-7.16.0-linux-x86_64.tar</code></p>
+</li>
+<li><p>配置文件修改，进入解压包找到conf包下elasticsearch.yml文件</p>
+<p><img src="/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%5C%E9%85%8D%E7%BD%AE.png"></p>
+</li>
+<li><p> ES安全要求不能直接使用root用户，创建其他用户</p>
+</li>
+<li><p>用户创建完成，启动时出现 vm.max_map_count too low 虚拟内存过小的问题 </p>
+<p><img src="/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%5Cmax_map_count.jpg"></p>
+<p>使用 <code>sysctl -w vm.max_map_count=262144</code> 进行配置，</p>
+<p>或者，在 /etc/sysctl.conf文件最后添加一行</p>
+<p><code>vm.max_map_count=262144</code></p>
+</li>
+<li><p>启动ES <code>sh ./bin/elasticsearch -d</code></p>
+</li>
+<li><p>远程操作时需要需要防火墙开启 9200 端口</p>
+<p>开启防火墙 远程访问9200</p>
+<p><code>firewall-cmd --zone=public --add-port=9200/tcp --permanent </code></p>
+<p>#–permanent永久生效，没有此参数重启后失效</p>
+<p>重新加载防火墙：</p>
+<p> <code>firewall-cmd --reload</code></p>
+</li>
+</ol>
+<h1 id="Postman安装"><a href="#Postman安装" class="headerlink" title="Postman安装"></a>Postman安装</h1><p>安装下载地址：<a target="_blank" rel="noopener" href="https://www.postman.com/">https://www.postman.com/</a></p>
+<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><p>#后面加一个<code>v</code>，让输出内容表格显示表头; <code>pretty</code>则让输出缩进更规范</p>
+<h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><p>创建索引的时候需要根据数据量的大小确定分片数量！比如根据实际情况1000万条数据大约占用7.68G, </p>
 <p>查看索引分片信息： <code>http://127.0.0.1:9200/索引名称/_search_shards</code></p>
 <p>或者： <code>curl -XGET http://localhost:9200/_cat/shards/test*?v</code> </p>
 <p>查看全部索引的空间占用信息： <code>curl -X GET localhost:9200/_cat/indices?v</code></p>
-<h1 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a>集群搭建</h1><p>Reference：</p>
+<h1 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a>集群搭建</h1><p>暂无</p>
+<h1 id="集群操作"><a href="#集群操作" class="headerlink" title="集群操作"></a>集群操作</h1><p>暂无</p>
+<p>Reference：</p>
 <ol>
-<li>  ES 集群管理（集群规划、集群搭建、集群管理） <a target="_blank" rel="noopener" href="https://www.cnblogs.com/leesmall/p/9220535.html">https://www.cnblogs.com/leesmall/p/9220535.html</a></li>
+<li>  ES 集群管理（集群规划、集群搭建、集群管理） <a target="_blank" rel="noopener" href="https://www.cnblogs.com/leesmall/p/9220535.html">https://www.cnblogs.com/leesmall/p/9220535.html</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://www.dotnetboy.com/blog/detail/353574479298826240.html">https://www.dotnetboy.com/blog/detail/353574479298826240.html</a></li>
 </ol>
 
     </div>
@@ -303,8 +341,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/" rel="prev" title="ElasticSearch(1):基础理论">
-      <i class="fa fa-chevron-left"></i> ElasticSearch(1):基础理论
+    <a href="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/" rel="prev" title="ElasticSearch(1):基础概述">
+      <i class="fa fa-chevron-left"></i> ElasticSearch(1):基础概述
     </a></div>
       <div class="post-nav-item">
     <a href="/2021/12/13/ElasticSearch-3-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/" rel="next" title="ElasticSearch(3):实践记录">
@@ -368,7 +406,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ElasticSearch%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">ElasticSearch安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85es%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-kibana"><span class="nav-number">1.1.</span> <span class="nav-text">安装es可视化工具  kibana</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">ES数据导入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5es%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">从MySQL数据导入es：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E6%93%8D%E4%BD%9C%E6%96%B9%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">ES操作方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95"><span class="nav-number">3.0.1.</span> <span class="nav-text">创建索引</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA"><span class="nav-number">4.</span> <span class="nav-text">集群搭建</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ElasticSearch%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">ElasticSearch安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Postman%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">Postman安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95"><span class="nav-number">3.0.1.</span> <span class="nav-text">创建索引</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA"><span class="nav-number">4.</span> <span class="nav-text">集群搭建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%86%E7%BE%A4%E6%93%8D%E4%BD%9C"><span class="nav-number">5.</span> <span class="nav-text">集群操作</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
