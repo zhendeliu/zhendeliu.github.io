@@ -102,11 +102,12 @@
 <p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%5C%E5%88%B0%E6%8E%92%E5%BA%8F2.jpg"></p>
 <p>倒排索引还可以记录更多的信息，比如文档频率信息，表示在文档集合中有多少个包含某个单词。</p>
 <p>根据倒排索引，搜索引擎可以很方便地响应用户的查询。比如用户输入查询 Facebook，搜索系统查找倒排索引，从中读出包含这个单词的文档，这些文档就是提供给用户的搜索结果。</p>
-<h1 id="ES特点和优势"><a href="#ES特点和优势" class="headerlink" title="ES特点和优势"></a>ES特点和优势</h1><p>1）分布式实时文件存储，可将每一个字段存入索引，使其可以被检索到。 </p>
-<p>2）实时分析的分布式搜索引擎。<br>分布式：索引分拆成多个分片，每个分片可有零个或多个副本。集群中的每个数据节点都可承载一个或多个分片，并且协调和处理各种操作；<br>负载再平衡和路由在大多数情况下自动完成。</p>
+<h1 id="ES特点和优势"><a href="#ES特点和优势" class="headerlink" title="ES特点和优势"></a>ES特点和优势</h1><h2 id><a href="#" class="headerlink" title></a></h2><p>1）分布式实时文件存储，可将每一个字段存入索引，使其可以被检索到。 </p>
+<p>2）实时分析的分布式搜索引擎。 </p>
+<p>分布式：索引分拆成多个分片，每个分片可有零个或多个副本。集群中的每个数据节点都可承载一个或多个分片，并且协调和处理各种操作； 负载再平衡和路由在大多数情况下自动完成。</p>
 <p>3）可以扩展到上百台服务器，处理PB级别的结构化或非结构化数据。也可以运行在单台PC上（已测试）</p>
 <p>4）支持插件机制，分词插件、同步插件、Hadoop插件、可视化插件等。</p>
-<h1 id="ES支持场景"><a href="#ES支持场景" class="headerlink" title="ES支持场景"></a>ES支持场景</h1><p>一线公司ES使用场景：</p>
+<h1 id="ES支持场景"><a href="#ES支持场景" class="headerlink" title="ES支持场景"></a>ES支持场景</h1><h2 id="-1"><a href="#-1" class="headerlink" title></a></h2><p>一线公司ES使用场景：</p>
 <p>1）新浪ES 如何分析处理32亿条实时日志 <a href="https://www.oschina.net/action/GoToLink?url=http://dockone.io/article/505">http://dockone.io/article/505</a> </p>
 <p>2）阿里ES 构建挖财自己的日志采集和分析体系 <a href="https://www.oschina.net/action/GoToLink?url=http://afoo.me/columns/tec/logging-platform-spec.html">http://afoo.me/columns/tec/logging-platform-spec.html</a> </p>
 <p>3）有赞ES 业务日志处理 <a href="https://www.oschina.net/action/GoToLink?url=http://tech.youzan.com/you-zan-tong-ri-zhi-ping-tai-chu-tan/">http://tech.youzan.com/you-zan-tong-ri-zhi-ping-tai-chu-tan/</a></p>
@@ -699,6 +700,12 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Hexo网站建设参考资料</title>
+    <url>/2021/10/30/Hexo%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/</url>
+    <content><![CDATA[<p>Hexo next主题：右侧栏配置 <a href="https://www.cnblogs.com/lfri/p/12221359.html">https://www.cnblogs.com/lfri/p/12221359.html</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>OpenCV图像处理基础（一）</title>
     <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>数字图像基础</p>
@@ -743,33 +750,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo网站建设参考资料</title>
-    <url>/2021/10/30/Hexo%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/</url>
-    <content><![CDATA[<p>Hexo next主题：右侧栏配置 <a href="https://www.cnblogs.com/lfri/p/12221359.html">https://www.cnblogs.com/lfri/p/12221359.html</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>OpenCV图像处理基础（三）</title>
-    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-        <tag>基础操作</tag>
-        <tag>噪音</tag>
-        <tag>编程</tag>
-        <tag>灰度图</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python中的*args和**kwargs</title>
     <url>/2021/10/28/Python%E4%B8%AD%E7%9A%84-args%E5%92%8C-kwargs/</url>
     <content><![CDATA[<p>*和**的用法</p>
@@ -800,6 +780,27 @@
       </tags>
   </entry>
   <entry>
+    <title>OpenCV图像处理基础（三）</title>
+    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>基础操作</tag>
+        <tag>噪音</tag>
+        <tag>编程</tag>
+        <tag>灰度图</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python内置模块盘点</title>
     <url>/2021/11/02/Python%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>os模块</p>
@@ -824,20 +825,6 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.copy(src,dst)</span><br><span class="line">shutil.copy2()</span><br><span class="line">shutil.copyfile(src,dst)</span><br><span class="line">shutil.copymode()</span><br><span class="line">shutil.copystat()</span><br><span class="line">shutil.copytree()</span><br><span class="line">shutil.move()</span><br><span class="line">shutil.rmtree()</span><br></pre></td></tr></table></figure>
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>Pytorch框架基础（二）</title>
-    <url>/2021/09/29/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p><a href="https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1">https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>Pytorch</category>
-      </categories>
-      <tags>
-        <tag>基础操作</tag>
-        <tag>编程</tag>
-      </tags>
   </entry>
   <entry>
     <title>Pytorch框架基础（一）</title>
@@ -900,6 +887,20 @@
 
 
 
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>Pytorch</category>
+      </categories>
+      <tags>
+        <tag>基础操作</tag>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Pytorch框架基础（二）</title>
+    <url>/2021/09/29/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p><a href="https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1">https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1</a></p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1050,6 +1051,15 @@
       </tags>
   </entry>
   <entry>
+    <title>cv算法面试问题总结（九）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B9%9D%EF%BC%89/</url>
+    <content><![CDATA[<p>什么是强化学习？<br>强化学习和监督学习、无监督学习的区别是什么？<br>强化学习适合解决什么样子的问题？<br>使用tensorflow进行深度学习算法实验时，如何调节超参数？<br>深度学习中的batch的大小对学习效果有何影响？<br>用梯度下降训练神经网络的参数，为什么参数有时会被训练为nan值？<br>卷积神经网络CNN中池化层有什么作用？<br>请列举几种常见的激活函数。激活函数有什么作用？<br>神经网络中Dropout的作用？具体是怎么实现的？<br>利用梯度下降法训练神经网络，发现模型loss不变，可能有哪些问题？怎么解决？</p>
+<p>如何解决不平衡数据集的分类问题？<br>残差网络为什么能做到很深层？<br>相比sigmoid激活函数ReLU激活函数有什么优势？<br>卷积神经网络中空洞卷积的作用是什么？<br>适用于移动端部署的网络结构都有哪些？<br>深度学习模型参数初始化都有哪些方法？<br>卷积神经网络为什么会具有平移等不变性？</p>
+<span id="more"></span>
+
+]]></content>
+  </entry>
+  <entry>
     <title>cv算法面试问题总结（二）</title>
     <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
@@ -1135,15 +1145,6 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>cv算法面试问题总结（九）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B9%9D%EF%BC%89/</url>
-    <content><![CDATA[<p>什么是强化学习？<br>强化学习和监督学习、无监督学习的区别是什么？<br>强化学习适合解决什么样子的问题？<br>使用tensorflow进行深度学习算法实验时，如何调节超参数？<br>深度学习中的batch的大小对学习效果有何影响？<br>用梯度下降训练神经网络的参数，为什么参数有时会被训练为nan值？<br>卷积神经网络CNN中池化层有什么作用？<br>请列举几种常见的激活函数。激活函数有什么作用？<br>神经网络中Dropout的作用？具体是怎么实现的？<br>利用梯度下降法训练神经网络，发现模型loss不变，可能有哪些问题？怎么解决？</p>
-<p>如何解决不平衡数据集的分类问题？<br>残差网络为什么能做到很深层？<br>相比sigmoid激活函数ReLU激活函数有什么优势？<br>卷积神经网络中空洞卷积的作用是什么？<br>适用于移动端部署的网络结构都有哪些？<br>深度学习模型参数初始化都有哪些方法？<br>卷积神经网络为什么会具有平移等不变性？</p>
-<span id="more"></span>
-
-]]></content>
   </entry>
   <entry>
     <title>cv算法面试问题总结（五）</title>
@@ -1647,6 +1648,63 @@
       </categories>
   </entry>
   <entry>
+    <title>医疗影像dicom图像预处理-Pydicom</title>
+    <url>/2021/10/06/%E5%8C%BB%E7%96%97%E5%BD%B1%E5%83%8Fdicom%E5%9B%BE%E5%83%8F%E9%A2%84%E5%A4%84%E7%90%86-Pydicom/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>pydicom是一个python中的第三方库，用于DICOM文件，主要为了以一种简单的”python式”方式检查和修改dicom数据而设计，可以提供给使用者轻松的修改，读写文件并转换成显式图像图片。</p>
+<p>DICOM被广泛应用于放射医疗、心血管成像以及放射诊疗诊断设备（X射线，CT，核磁共振，超声等），并且在眼科和牙科等其它医学领域得到越来越深入广泛的应用。在数以万计的在用医学成像设备中，DICOM是部署最为广泛的医疗信息标准之一。当前大约有百亿级符合DICOM标准的医学图像用于临床使用。<br>患者的医学图像以DICOM文件格式进行存储，其中包含了图像信息以及患者的PHI（protected health information，即姓名、性别、年龄等），以及产生图像的设备的相关信息。</p>
+<span id="more"></span>
+
+<h1 id="人体内各介质的亨氏单位值"><a href="#人体内各介质的亨氏单位值" class="headerlink" title="人体内各介质的亨氏单位值"></a>人体内各介质的亨氏单位值</h1><p><img src="/2021/10/06/%E5%8C%BB%E7%96%97%E5%BD%B1%E5%83%8Fdicom%E5%9B%BE%E5%83%8F%E9%A2%84%E5%A4%84%E7%90%86-Pydicom/hu.png"></p>
+<h1 id="pydicom基础操作"><a href="#pydicom基础操作" class="headerlink" title="pydicom基础操作"></a>pydicom基础操作</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pydicom</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">dcm = pydicom.read_file(<span class="string">&#x27;test1/Image-100.dcm&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(dcm.<span class="built_in">dir</span>()) <span class="comment"># 查看有哪些方法，属性</span></span><br><span class="line"><span class="built_in">print</span>(dcm.<span class="built_in">dir</span>(<span class="string">&#x27;pat&#x27;</span>)) <span class="comment"># 查看有哪些pat(属性)</span></span><br><span class="line"><span class="comment"># 通过字典关键字来获取图像的数据元信息（当然也可以根据TAG号）</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">info = &#123;&#125;</span><br><span class="line"><span class="comment"># 从dcm 文件中提取patient信息</span></span><br><span class="line">info[<span class="string">&quot;PatientID&quot;</span>] = dcm.PatientID               <span class="comment"># 患者ID</span></span><br><span class="line"><span class="comment"># info[&quot;PatientName&quot;] = dcm.PatientName           # 患者姓名</span></span><br><span class="line"><span class="comment"># info[&quot;PatientBirthData&quot;] = dcm.PatientBirthData # 患者出生日期</span></span><br><span class="line"><span class="comment"># info[&quot;PatientAge&quot;] = dcm.PatientAge             # 患者年龄</span></span><br><span class="line"><span class="comment"># info[&#x27;PatientSex&#x27;] = dcm.PatientSex             # 患者性别</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从dcm 文件中提取study案例信息</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyID&#x27;] = dcm.StudyID                   # 检查ID</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyDate&#x27;] = dcm.StudyDate               # 检查日期</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyTime&#x27;] = dcm.StudyTime               # 检查时间</span></span><br><span class="line"><span class="comment"># info[&#x27;InstitutionName&#x27;] = dcm.InstitutionName   # 机构名称</span></span><br><span class="line"><span class="comment"># info[&#x27;Manufacturer&#x27;] = dcm.Manufacturer         # 设备制造商</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyDescription&#x27;]=dcm.StudyDescription   # 检查项目描述</span></span><br><span class="line"><span class="built_in">print</span>(info)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取图像唯一标识符</span></span><br><span class="line">uid = dcm.SOPInstanceUID</span><br><span class="line">img_arr = dcm.pixel_array</span><br><span class="line"><span class="built_in">print</span>(img_arr.shape)</span><br><span class="line">lens = img_arr.shape[<span class="number">0</span>] * img_arr.shape[<span class="number">1</span>] <span class="comment"># 获取像素点的数量</span></span><br><span class="line">tmp = np.reshape(img_arr,(lens,))</span><br><span class="line">max_val = <span class="built_in">max</span>(tmp)</span><br><span class="line">min_val = <span class="built_in">min</span>(tmp)</span><br><span class="line"><span class="comment"># 图像归一化</span></span><br><span class="line">img_arr = (img_arr-min_val)/(max_val-min_val)</span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>,<span class="number">12</span>),dpi=<span class="number">250</span>) <span class="comment">#dpi每英寸点数，这张是1200*1200像素的图片</span></span><br><span class="line">plt.title(<span class="string">&quot;UID:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(uid))</span><br><span class="line">plt.imshow(img_arr,cmap=plt.cm.gray)<span class="comment">#颜色图谱（colormap), 默认绘制为RGB(A)颜色空间。</span></span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改图片中的元素</span></span><br><span class="line"><span class="keyword">for</span> n,val <span class="keyword">in</span> <span class="built_in">enumerate</span>(dcm.pixel_array.flat):</span><br><span class="line">    <span class="keyword">if</span> val &lt; <span class="number">1300</span>:</span><br><span class="line">        dcm.pixel_array.flat[n] = <span class="number">0</span></span><br><span class="line">dcm.PixelData = dcm.pixel_array.tobytes()</span><br><span class="line">img_arr2 = dcm.pixel_array</span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>,<span class="number">12</span>),dpi=<span class="number">250</span>) <span class="comment">#dpi每英寸点数，这张是1200*1200像素的图片</span></span><br><span class="line">plt.title(<span class="string">&quot;UID:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(uid))</span><br><span class="line">plt.imshow(img_arr2,cmap=plt.cm.gray)<span class="comment">#颜色图谱（colormap), 默认绘制为RGB(A)颜色空间。</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h1 id="案例：肺结节图像预处理"><a href="#案例：肺结节图像预处理" class="headerlink" title="案例：肺结节图像预处理"></a>案例：肺结节图像预处理</h1><ol>
+<li></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 加载必要的python包</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd </span><br><span class="line"><span class="keyword">import</span> dicom</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> scipy.ndimage</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> skimage <span class="keyword">import</span> measure, morphology</span><br><span class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d.art3d <span class="keyword">import</span> Poly3DCollection</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含所有患者目录的根目录</span></span><br><span class="line">INPUT_FOLDER = <span class="string">&#x27;../input/sample_images/&#x27;</span></span><br><span class="line">patients = os.listdir(INPUT_FOLDER)</span><br><span class="line">patients.sort()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载一位患者的所有slice，按照顺序调整为等间隔扫描</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_scan</span>(<span class="params">path</span>):</span></span><br><span class="line">    slices = [dicom.read_file(path + <span class="string">&#x27;/&#x27;</span> + s) <span class="keyword">for</span> s <span class="keyword">in</span> os.listdir(path)]</span><br><span class="line">    <span class="comment">#按照扫描顺序叠加</span></span><br><span class="line">    slices.sort(key = <span class="keyword">lambda</span> x: <span class="built_in">float</span>(x.ImagePositionPatient[<span class="number">2</span>])) </span><br><span class="line">    <span class="comment"># 计算相邻扫描的间隔距离</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        slice_thickness = np.<span class="built_in">abs</span>(slices[<span class="number">0</span>].ImagePositionPatient[<span class="number">2</span>] - slices[<span class="number">1</span>].ImagePositionPatient[<span class="number">2</span>])</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        slice_thickness = np.<span class="built_in">abs</span>(slices[<span class="number">0</span>].SliceLocation - slices[<span class="number">1</span>].SliceLocation)</span><br><span class="line">		</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> slices:</span><br><span class="line">        s.SliceThickness = slice_thickness</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> slices</span><br></pre></td></tr></table></figure>
+
+<p>默认情况下，从DICOM文件中获得的值是HU这个单位。 需要解决这个问题。缩放斜率和截距由硬件制造商决定。<br>它指定从存储在磁盘表示中的像素到存储在内存表示中的像素的线性转换。磁盘存储的值定义为SV。而转化到内存中的像素值uints就需要两个dicom tag : Rescale intercept和Rescale slope。<br>OutputUnits=m∗SV+b<br>RescaleIntercept:b<br>RescaleSlope:m</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 排除扫描边界之外的数据，然后重新计算HU值（乘以重新缩放斜率并添加截距）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_pixels_hu</span>(<span class="params">slices</span>):</span></span><br><span class="line">    image = np.stack([s.pixel_array <span class="keyword">for</span> s <span class="keyword">in</span> slices])</span><br><span class="line">    <span class="comment"># 转换为int16，int16是ok的，因为所有的数值都应该 &lt;32k</span></span><br><span class="line">    image = image.astype(np.int16)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 设置边界外的元素为0</span></span><br><span class="line">    image[image == -<span class="number">2000</span>] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 转换为HU单位</span></span><br><span class="line">    <span class="keyword">for</span> slice_number <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(slices)):</span><br><span class="line"></span><br><span class="line">        intercept = slices[slice_number].RescaleIntercept</span><br><span class="line">        slope = slices[slice_number].RescaleSlope</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> slope != <span class="number">1</span>:</span><br><span class="line">            image[slice_number] = slope * image[slice_number].astype(np.float64)</span><br><span class="line">            image[slice_number] = image[slice_number].astype(np.int16)</span><br><span class="line"></span><br><span class="line">        image[slice_number] += np.int16(intercept)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> np.array(image, dtype=np.int16)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 产看第i位患者的图像</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show_img</span>():</span></span><br><span class="line">    first_patient = load_scan(INPUT_FOLDER + patients[<span class="number">0</span>])</span><br><span class="line">    first_patient_pixels = get_pixels_hu(first_patient)</span><br><span class="line">    plt.hist(first_patient_pixels.flatten(), bins=<span class="number">80</span>, color=<span class="string">&#x27;c&#x27;</span>)</span><br><span class="line">    plt.xlabel(<span class="string">&quot;Hounsfield Units (HU)&quot;</span>)</span><br><span class="line">    plt.ylabel(<span class="string">&quot;Frequency&quot;</span>)</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 显示一个中间位置的切片</span></span><br><span class="line">    plt.imshow(first_patient_pixels[<span class="number">80</span>], cmap=plt.cm.gray)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>统一像素间距spacing，spacing定义了图像像素的物理大小并且保证了实际距离测量的准确性。比如，如果知道x和y轴的像素间距为 0.4mm，那么在图像中的一条 10 像素的线就会有 4mm的长度。同样，由于知道图像像素中的宽和高(比如对于普通CT来说是 512×512)，就能够找到图像的实际尺寸了:512 × 0.4 mm = 204.8 mm。</p>
+<p>在重采样过程中，让图像的spacing保持一致以及具体大小是多少是非常重要的：CNN中Conv操作被提出来的其中一个重要motivation就是图像中有相似的块能用共享的卷积来提取特征，因此对所有图像重采样能减少不同图像之间的不一致性，便于卷积操作提取共同的特征。</p>
+<p>值得注意的是，图像的spacing保持一致，图像中像素值的个数（即图像分辨率）却不一定相同。而分割网络的框架是固定的，一般是需要输入图片的分辨率大小是一致的。所以通常在训练的时候是用一个固定大小的patch从图像中裁剪采样，在这个过程中原图分辨率不一样是不影响的。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">resample</span>(<span class="params">image, scan, new_spacing=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span>):</span></span><br><span class="line">    <span class="comment"># Determine current pixel spacing</span></span><br><span class="line">    spacing = np.array([scan[<span class="number">0</span>].SliceThickness] + scan[<span class="number">0</span>].PixelSpacing, dtype=np.float32)</span><br><span class="line"></span><br><span class="line">    resize_factor = spacing / new_spacing</span><br><span class="line">    new_real_shape = image.shape * resize_factor</span><br><span class="line">    new_shape = np.<span class="built_in">round</span>(new_real_shape)</span><br><span class="line">    real_resize_factor = new_shape / image.shape</span><br><span class="line">    new_spacing = spacing / real_resize_factor</span><br><span class="line"></span><br><span class="line">    image = scipy.ndimage.interpolation.zoom(image, real_resize_factor, mode=<span class="string">&#x27;nearest&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> image, new_spacing</span><br><span class="line"></span><br><span class="line">pix_resampled, spacing = resample(first_patient_pixels, first_patient, [<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Shape before resampling\t&quot;</span>, first_patient_pixels.shape)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Shape after resampling\t&quot;</span>, pix_resampled.shape)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 画3D图像，用立方体为我们的3D对象创建一个近似网格</span></span><br><span class="line"><span class="comment"># 采用的阈值可以被用来绘制某些结构，例如所有组织或仅骨骼。 400是仅显示骨骼的阈值（见上面的Hounsfield单位表）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_3d</span>(<span class="params">image, threshold=-<span class="number">300</span></span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Position the scan upright, </span></span><br><span class="line">    <span class="comment"># so the head of the patient would be at the top facing the camera</span></span><br><span class="line">    p = image.transpose(<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    verts, faces = measure.marching_cubes(p, threshold)</span><br><span class="line"></span><br><span class="line">    fig = plt.figure(figsize=(<span class="number">10</span>, <span class="number">10</span>))</span><br><span class="line">    ax = fig.add_subplot(<span class="number">111</span>, projection=<span class="string">&#x27;3d&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Fancy indexing: `verts[faces]` to generate a collection of triangles</span></span><br><span class="line">    mesh = Poly3DCollection(verts[faces], alpha=<span class="number">0.70</span>)</span><br><span class="line">    face_color = [<span class="number">0.45</span>, <span class="number">0.45</span>, <span class="number">0.75</span>]</span><br><span class="line">    mesh.set_facecolor(face_color)</span><br><span class="line">    ax.add_collection3d(mesh)</span><br><span class="line"></span><br><span class="line">    ax.set_xlim(<span class="number">0</span>, p.shape[<span class="number">0</span>])</span><br><span class="line">    ax.set_ylim(<span class="number">0</span>, p.shape[<span class="number">1</span>])</span><br><span class="line">    ax.set_zlim(<span class="number">0</span>, p.shape[<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>肺部切割</p>
+<ul>
+<li>阈值图像（-320 HU）</li>
+<li>做连接组件，确定人周围的空气标签，在二进制图像中用1s填充</li>
+<li>可选：对于扫描中的每个轴向切片，确定最大的固体连接组件（人体周围的身体+空气），并将其他组件设置为0。这样可以填充面罩中肺部的结构。</li>
+<li>只保留最大的气袋（人体在这里和那里都有其他的气袋）</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">largest_label_volume</span>(<span class="params">im, bg=-<span class="number">1</span></span>):</span></span><br><span class="line">    vals, counts = np.unique(im, return_counts=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    counts = counts[vals != bg]</span><br><span class="line">    vals = vals[vals != bg]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(counts) &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> vals[np.argmax(counts)]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">segment_lung_mask</span>(<span class="params">image, fill_lung_structures=<span class="literal">True</span></span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># not actually binary, but 1 and 2. </span></span><br><span class="line">    <span class="comment"># 0 is treated as background, which we do not want</span></span><br><span class="line">    binary_image = np.array(image &gt; -<span class="number">320</span>, dtype=np.int8)+<span class="number">1</span></span><br><span class="line">    labels = measure.label(binary_image)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Pick the pixel in the very corner to determine which label is air.</span></span><br><span class="line">    <span class="comment">#   Improvement: Pick multiple background labels from around the patient</span></span><br><span class="line">    <span class="comment">#   More resistant to &quot;trays&quot; on which the patient lays cutting the air </span></span><br><span class="line">    <span class="comment">#   around the person in half</span></span><br><span class="line">    background_label = labels[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment">#Fill the air around the person</span></span><br><span class="line">    binary_image[background_label == labels] = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Method of filling the lung structures (that is superior to something like </span></span><br><span class="line">    <span class="comment"># morphological closing)</span></span><br><span class="line">    <span class="keyword">if</span> fill_lung_structures:</span><br><span class="line">        <span class="comment"># For every slice we determine the largest solid structure</span></span><br><span class="line">        <span class="keyword">for</span> i, axial_slice <span class="keyword">in</span> <span class="built_in">enumerate</span>(binary_image):</span><br><span class="line">            axial_slice = axial_slice - <span class="number">1</span></span><br><span class="line">            labeling = measure.label(axial_slice)</span><br><span class="line">            l_max = largest_label_volume(labeling, bg=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> l_max <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>: <span class="comment">#This slice contains some lung</span></span><br><span class="line">                binary_image[i][labeling != l_max] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    binary_image -= <span class="number">1</span> <span class="comment">#Make the image actual binary</span></span><br><span class="line">    binary_image = <span class="number">1</span>-binary_image <span class="comment"># Invert it, lungs are now 1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Remove other air pockets insided body</span></span><br><span class="line">    labels = measure.label(binary_image, background=<span class="number">0</span>)</span><br><span class="line">    l_max = largest_label_volume(labels, bg=<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">if</span> l_max <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>: <span class="comment"># There are air pockets</span></span><br><span class="line">        binary_image[labels != l_max] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> binary_image</span><br><span class="line"></span><br><span class="line">segmented_lungs = segment_lung_mask(pix_resampled, <span class="literal">False</span>)</span><br><span class="line">segmented_lungs_fill = segment_lung_mask(pix_resampled, <span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">plot_3d(segmented_lungs, <span class="number">0</span>)</span><br><span class="line">plot_3d(segmented_lungs_fill, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<p>当使用这个时，记得首先在它上面应用扩张形态学操作（即用圆形内核）。这会在所有方向上扩展蒙版。仅肺部的空气+结构将不包含所有结节，特别是它会遗漏那些粘在肺部侧面的结节，它们经常出现在那里！所以扩大面具一点:)</p>
+<p>对于某些边缘情况，此分段可能会失败。它依赖于患者体外的空气不与肺部空气相连的事实。如果患者进行了气管造口术，情况也可能并非如此，不知道这是否存在于数据集中。此外，特别是噪声图像（例如由于下图中的起搏器），这种方法也可能失败。相反，身体中的第二大气袋将被分割。您可以通过检查蒙版对应的图像分数来识别这一点，对于这种情况，这将是非常小的。然后，你可以首先使用几毫米大小的内核进行形态学关闭操作以关闭这些孔，之后它应该可以工作（或者更简单地说，不要对此图像使用蒙版）。</p>
+<p>数据归一化</p>
+<p>目前所有的数值在-1024到2000左右。超过400的任何东西其实是不用关心的，因为只是一些具有不同辐射密度的骨骼。 常用的阈值集合在-1000到400之间。这里有一些代码可以使用：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">MIN_BOUND = -<span class="number">1000.0</span></span><br><span class="line">MAX_BOUND = <span class="number">400.0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">normalize</span>(<span class="params">image</span>):</span></span><br><span class="line">    image = (image - MIN_BOUND) / (MAX_BOUND - MIN_BOUND)</span><br><span class="line">    image[image&gt;<span class="number">1</span>] = <span class="number">1.</span></span><br><span class="line">    image[image&lt;<span class="number">0</span>] = <span class="number">0.</span></span><br><span class="line">    <span class="keyword">return</span> image</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据零居中</span></span><br><span class="line"><span class="comment"># 将数据平均值设置为零。为此，只需从所有像素中减去平均像素值。</span></span><br><span class="line">PIXEL_MEAN = <span class="number">0.25</span> <span class="comment"># 假设均值为0.25</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">zero_center</span>(<span class="params">image</span>):</span></span><br><span class="line">    image = image - PIXEL_MEAN</span><br><span class="line">    <span class="keyword">return</span> image</span><br></pre></td></tr></table></figure>
+
+
+
+<p>未完 参考 <a href="https://zhuanlan.zhihu.com/p/59413289">https://zhuanlan.zhihu.com/p/59413289</a></p>
+]]></content>
+      <categories>
+        <category>Python</category>
+        <category>图像识别</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>医学图像</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>医疗数据集资源收集</title>
     <url>/2021/11/23/%E5%8C%BB%E7%96%97%E6%95%B0%E6%8D%AE%E9%9B%86%E8%B5%84%E6%BA%90%E6%94%B6%E9%9B%86/</url>
     <content><![CDATA[<h1 id="数据集类别"><a href="#数据集类别" class="headerlink" title="数据集类别"></a>数据集类别</h1><p>肺部数据集</p>
@@ -1845,63 +1903,6 @@
       </categories>
   </entry>
   <entry>
-    <title>医疗影像dicom图像预处理-Pydicom</title>
-    <url>/2021/10/06/%E5%8C%BB%E7%96%97%E5%BD%B1%E5%83%8Fdicom%E5%9B%BE%E5%83%8F%E9%A2%84%E5%A4%84%E7%90%86-Pydicom/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>pydicom是一个python中的第三方库，用于DICOM文件，主要为了以一种简单的”python式”方式检查和修改dicom数据而设计，可以提供给使用者轻松的修改，读写文件并转换成显式图像图片。</p>
-<p>DICOM被广泛应用于放射医疗、心血管成像以及放射诊疗诊断设备（X射线，CT，核磁共振，超声等），并且在眼科和牙科等其它医学领域得到越来越深入广泛的应用。在数以万计的在用医学成像设备中，DICOM是部署最为广泛的医疗信息标准之一。当前大约有百亿级符合DICOM标准的医学图像用于临床使用。<br>患者的医学图像以DICOM文件格式进行存储，其中包含了图像信息以及患者的PHI（protected health information，即姓名、性别、年龄等），以及产生图像的设备的相关信息。</p>
-<span id="more"></span>
-
-<h1 id="人体内各介质的亨氏单位值"><a href="#人体内各介质的亨氏单位值" class="headerlink" title="人体内各介质的亨氏单位值"></a>人体内各介质的亨氏单位值</h1><p><img src="/2021/10/06/%E5%8C%BB%E7%96%97%E5%BD%B1%E5%83%8Fdicom%E5%9B%BE%E5%83%8F%E9%A2%84%E5%A4%84%E7%90%86-Pydicom/hu.png"></p>
-<h1 id="pydicom基础操作"><a href="#pydicom基础操作" class="headerlink" title="pydicom基础操作"></a>pydicom基础操作</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pydicom</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">dcm = pydicom.read_file(<span class="string">&#x27;test1/Image-100.dcm&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(dcm.<span class="built_in">dir</span>()) <span class="comment"># 查看有哪些方法，属性</span></span><br><span class="line"><span class="built_in">print</span>(dcm.<span class="built_in">dir</span>(<span class="string">&#x27;pat&#x27;</span>)) <span class="comment"># 查看有哪些pat(属性)</span></span><br><span class="line"><span class="comment"># 通过字典关键字来获取图像的数据元信息（当然也可以根据TAG号）</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">info = &#123;&#125;</span><br><span class="line"><span class="comment"># 从dcm 文件中提取patient信息</span></span><br><span class="line">info[<span class="string">&quot;PatientID&quot;</span>] = dcm.PatientID               <span class="comment"># 患者ID</span></span><br><span class="line"><span class="comment"># info[&quot;PatientName&quot;] = dcm.PatientName           # 患者姓名</span></span><br><span class="line"><span class="comment"># info[&quot;PatientBirthData&quot;] = dcm.PatientBirthData # 患者出生日期</span></span><br><span class="line"><span class="comment"># info[&quot;PatientAge&quot;] = dcm.PatientAge             # 患者年龄</span></span><br><span class="line"><span class="comment"># info[&#x27;PatientSex&#x27;] = dcm.PatientSex             # 患者性别</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从dcm 文件中提取study案例信息</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyID&#x27;] = dcm.StudyID                   # 检查ID</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyDate&#x27;] = dcm.StudyDate               # 检查日期</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyTime&#x27;] = dcm.StudyTime               # 检查时间</span></span><br><span class="line"><span class="comment"># info[&#x27;InstitutionName&#x27;] = dcm.InstitutionName   # 机构名称</span></span><br><span class="line"><span class="comment"># info[&#x27;Manufacturer&#x27;] = dcm.Manufacturer         # 设备制造商</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyDescription&#x27;]=dcm.StudyDescription   # 检查项目描述</span></span><br><span class="line"><span class="built_in">print</span>(info)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取图像唯一标识符</span></span><br><span class="line">uid = dcm.SOPInstanceUID</span><br><span class="line">img_arr = dcm.pixel_array</span><br><span class="line"><span class="built_in">print</span>(img_arr.shape)</span><br><span class="line">lens = img_arr.shape[<span class="number">0</span>] * img_arr.shape[<span class="number">1</span>] <span class="comment"># 获取像素点的数量</span></span><br><span class="line">tmp = np.reshape(img_arr,(lens,))</span><br><span class="line">max_val = <span class="built_in">max</span>(tmp)</span><br><span class="line">min_val = <span class="built_in">min</span>(tmp)</span><br><span class="line"><span class="comment"># 图像归一化</span></span><br><span class="line">img_arr = (img_arr-min_val)/(max_val-min_val)</span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>,<span class="number">12</span>),dpi=<span class="number">250</span>) <span class="comment">#dpi每英寸点数，这张是1200*1200像素的图片</span></span><br><span class="line">plt.title(<span class="string">&quot;UID:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(uid))</span><br><span class="line">plt.imshow(img_arr,cmap=plt.cm.gray)<span class="comment">#颜色图谱（colormap), 默认绘制为RGB(A)颜色空间。</span></span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改图片中的元素</span></span><br><span class="line"><span class="keyword">for</span> n,val <span class="keyword">in</span> <span class="built_in">enumerate</span>(dcm.pixel_array.flat):</span><br><span class="line">    <span class="keyword">if</span> val &lt; <span class="number">1300</span>:</span><br><span class="line">        dcm.pixel_array.flat[n] = <span class="number">0</span></span><br><span class="line">dcm.PixelData = dcm.pixel_array.tobytes()</span><br><span class="line">img_arr2 = dcm.pixel_array</span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>,<span class="number">12</span>),dpi=<span class="number">250</span>) <span class="comment">#dpi每英寸点数，这张是1200*1200像素的图片</span></span><br><span class="line">plt.title(<span class="string">&quot;UID:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(uid))</span><br><span class="line">plt.imshow(img_arr2,cmap=plt.cm.gray)<span class="comment">#颜色图谱（colormap), 默认绘制为RGB(A)颜色空间。</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-<h1 id="案例：肺结节图像预处理"><a href="#案例：肺结节图像预处理" class="headerlink" title="案例：肺结节图像预处理"></a>案例：肺结节图像预处理</h1><ol>
-<li></li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 加载必要的python包</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd </span><br><span class="line"><span class="keyword">import</span> dicom</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> scipy.ndimage</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> skimage <span class="keyword">import</span> measure, morphology</span><br><span class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d.art3d <span class="keyword">import</span> Poly3DCollection</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含所有患者目录的根目录</span></span><br><span class="line">INPUT_FOLDER = <span class="string">&#x27;../input/sample_images/&#x27;</span></span><br><span class="line">patients = os.listdir(INPUT_FOLDER)</span><br><span class="line">patients.sort()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载一位患者的所有slice，按照顺序调整为等间隔扫描</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_scan</span>(<span class="params">path</span>):</span></span><br><span class="line">    slices = [dicom.read_file(path + <span class="string">&#x27;/&#x27;</span> + s) <span class="keyword">for</span> s <span class="keyword">in</span> os.listdir(path)]</span><br><span class="line">    <span class="comment">#按照扫描顺序叠加</span></span><br><span class="line">    slices.sort(key = <span class="keyword">lambda</span> x: <span class="built_in">float</span>(x.ImagePositionPatient[<span class="number">2</span>])) </span><br><span class="line">    <span class="comment"># 计算相邻扫描的间隔距离</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        slice_thickness = np.<span class="built_in">abs</span>(slices[<span class="number">0</span>].ImagePositionPatient[<span class="number">2</span>] - slices[<span class="number">1</span>].ImagePositionPatient[<span class="number">2</span>])</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        slice_thickness = np.<span class="built_in">abs</span>(slices[<span class="number">0</span>].SliceLocation - slices[<span class="number">1</span>].SliceLocation)</span><br><span class="line">		</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> slices:</span><br><span class="line">        s.SliceThickness = slice_thickness</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> slices</span><br></pre></td></tr></table></figure>
-
-<p>默认情况下，从DICOM文件中获得的值是HU这个单位。 需要解决这个问题。缩放斜率和截距由硬件制造商决定。<br>它指定从存储在磁盘表示中的像素到存储在内存表示中的像素的线性转换。磁盘存储的值定义为SV。而转化到内存中的像素值uints就需要两个dicom tag : Rescale intercept和Rescale slope。<br>OutputUnits=m∗SV+b<br>RescaleIntercept:b<br>RescaleSlope:m</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 排除扫描边界之外的数据，然后重新计算HU值（乘以重新缩放斜率并添加截距）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_pixels_hu</span>(<span class="params">slices</span>):</span></span><br><span class="line">    image = np.stack([s.pixel_array <span class="keyword">for</span> s <span class="keyword">in</span> slices])</span><br><span class="line">    <span class="comment"># 转换为int16，int16是ok的，因为所有的数值都应该 &lt;32k</span></span><br><span class="line">    image = image.astype(np.int16)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 设置边界外的元素为0</span></span><br><span class="line">    image[image == -<span class="number">2000</span>] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 转换为HU单位</span></span><br><span class="line">    <span class="keyword">for</span> slice_number <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(slices)):</span><br><span class="line"></span><br><span class="line">        intercept = slices[slice_number].RescaleIntercept</span><br><span class="line">        slope = slices[slice_number].RescaleSlope</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> slope != <span class="number">1</span>:</span><br><span class="line">            image[slice_number] = slope * image[slice_number].astype(np.float64)</span><br><span class="line">            image[slice_number] = image[slice_number].astype(np.int16)</span><br><span class="line"></span><br><span class="line">        image[slice_number] += np.int16(intercept)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> np.array(image, dtype=np.int16)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 产看第i位患者的图像</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show_img</span>():</span></span><br><span class="line">    first_patient = load_scan(INPUT_FOLDER + patients[<span class="number">0</span>])</span><br><span class="line">    first_patient_pixels = get_pixels_hu(first_patient)</span><br><span class="line">    plt.hist(first_patient_pixels.flatten(), bins=<span class="number">80</span>, color=<span class="string">&#x27;c&#x27;</span>)</span><br><span class="line">    plt.xlabel(<span class="string">&quot;Hounsfield Units (HU)&quot;</span>)</span><br><span class="line">    plt.ylabel(<span class="string">&quot;Frequency&quot;</span>)</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 显示一个中间位置的切片</span></span><br><span class="line">    plt.imshow(first_patient_pixels[<span class="number">80</span>], cmap=plt.cm.gray)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
-
-<p>统一像素间距spacing，spacing定义了图像像素的物理大小并且保证了实际距离测量的准确性。比如，如果知道x和y轴的像素间距为 0.4mm，那么在图像中的一条 10 像素的线就会有 4mm的长度。同样，由于知道图像像素中的宽和高(比如对于普通CT来说是 512×512)，就能够找到图像的实际尺寸了:512 × 0.4 mm = 204.8 mm。</p>
-<p>在重采样过程中，让图像的spacing保持一致以及具体大小是多少是非常重要的：CNN中Conv操作被提出来的其中一个重要motivation就是图像中有相似的块能用共享的卷积来提取特征，因此对所有图像重采样能减少不同图像之间的不一致性，便于卷积操作提取共同的特征。</p>
-<p>值得注意的是，图像的spacing保持一致，图像中像素值的个数（即图像分辨率）却不一定相同。而分割网络的框架是固定的，一般是需要输入图片的分辨率大小是一致的。所以通常在训练的时候是用一个固定大小的patch从图像中裁剪采样，在这个过程中原图分辨率不一样是不影响的。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">resample</span>(<span class="params">image, scan, new_spacing=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span>):</span></span><br><span class="line">    <span class="comment"># Determine current pixel spacing</span></span><br><span class="line">    spacing = np.array([scan[<span class="number">0</span>].SliceThickness] + scan[<span class="number">0</span>].PixelSpacing, dtype=np.float32)</span><br><span class="line"></span><br><span class="line">    resize_factor = spacing / new_spacing</span><br><span class="line">    new_real_shape = image.shape * resize_factor</span><br><span class="line">    new_shape = np.<span class="built_in">round</span>(new_real_shape)</span><br><span class="line">    real_resize_factor = new_shape / image.shape</span><br><span class="line">    new_spacing = spacing / real_resize_factor</span><br><span class="line"></span><br><span class="line">    image = scipy.ndimage.interpolation.zoom(image, real_resize_factor, mode=<span class="string">&#x27;nearest&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> image, new_spacing</span><br><span class="line"></span><br><span class="line">pix_resampled, spacing = resample(first_patient_pixels, first_patient, [<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Shape before resampling\t&quot;</span>, first_patient_pixels.shape)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Shape after resampling\t&quot;</span>, pix_resampled.shape)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 画3D图像，用立方体为我们的3D对象创建一个近似网格</span></span><br><span class="line"><span class="comment"># 采用的阈值可以被用来绘制某些结构，例如所有组织或仅骨骼。 400是仅显示骨骼的阈值（见上面的Hounsfield单位表）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_3d</span>(<span class="params">image, threshold=-<span class="number">300</span></span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Position the scan upright, </span></span><br><span class="line">    <span class="comment"># so the head of the patient would be at the top facing the camera</span></span><br><span class="line">    p = image.transpose(<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    verts, faces = measure.marching_cubes(p, threshold)</span><br><span class="line"></span><br><span class="line">    fig = plt.figure(figsize=(<span class="number">10</span>, <span class="number">10</span>))</span><br><span class="line">    ax = fig.add_subplot(<span class="number">111</span>, projection=<span class="string">&#x27;3d&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Fancy indexing: `verts[faces]` to generate a collection of triangles</span></span><br><span class="line">    mesh = Poly3DCollection(verts[faces], alpha=<span class="number">0.70</span>)</span><br><span class="line">    face_color = [<span class="number">0.45</span>, <span class="number">0.45</span>, <span class="number">0.75</span>]</span><br><span class="line">    mesh.set_facecolor(face_color)</span><br><span class="line">    ax.add_collection3d(mesh)</span><br><span class="line"></span><br><span class="line">    ax.set_xlim(<span class="number">0</span>, p.shape[<span class="number">0</span>])</span><br><span class="line">    ax.set_ylim(<span class="number">0</span>, p.shape[<span class="number">1</span>])</span><br><span class="line">    ax.set_zlim(<span class="number">0</span>, p.shape[<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
-
-
-
-<p>肺部切割</p>
-<ul>
-<li>阈值图像（-320 HU）</li>
-<li>做连接组件，确定人周围的空气标签，在二进制图像中用1s填充</li>
-<li>可选：对于扫描中的每个轴向切片，确定最大的固体连接组件（人体周围的身体+空气），并将其他组件设置为0。这样可以填充面罩中肺部的结构。</li>
-<li>只保留最大的气袋（人体在这里和那里都有其他的气袋）</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">largest_label_volume</span>(<span class="params">im, bg=-<span class="number">1</span></span>):</span></span><br><span class="line">    vals, counts = np.unique(im, return_counts=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    counts = counts[vals != bg]</span><br><span class="line">    vals = vals[vals != bg]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(counts) &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> vals[np.argmax(counts)]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">segment_lung_mask</span>(<span class="params">image, fill_lung_structures=<span class="literal">True</span></span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># not actually binary, but 1 and 2. </span></span><br><span class="line">    <span class="comment"># 0 is treated as background, which we do not want</span></span><br><span class="line">    binary_image = np.array(image &gt; -<span class="number">320</span>, dtype=np.int8)+<span class="number">1</span></span><br><span class="line">    labels = measure.label(binary_image)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Pick the pixel in the very corner to determine which label is air.</span></span><br><span class="line">    <span class="comment">#   Improvement: Pick multiple background labels from around the patient</span></span><br><span class="line">    <span class="comment">#   More resistant to &quot;trays&quot; on which the patient lays cutting the air </span></span><br><span class="line">    <span class="comment">#   around the person in half</span></span><br><span class="line">    background_label = labels[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment">#Fill the air around the person</span></span><br><span class="line">    binary_image[background_label == labels] = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Method of filling the lung structures (that is superior to something like </span></span><br><span class="line">    <span class="comment"># morphological closing)</span></span><br><span class="line">    <span class="keyword">if</span> fill_lung_structures:</span><br><span class="line">        <span class="comment"># For every slice we determine the largest solid structure</span></span><br><span class="line">        <span class="keyword">for</span> i, axial_slice <span class="keyword">in</span> <span class="built_in">enumerate</span>(binary_image):</span><br><span class="line">            axial_slice = axial_slice - <span class="number">1</span></span><br><span class="line">            labeling = measure.label(axial_slice)</span><br><span class="line">            l_max = largest_label_volume(labeling, bg=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> l_max <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>: <span class="comment">#This slice contains some lung</span></span><br><span class="line">                binary_image[i][labeling != l_max] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    binary_image -= <span class="number">1</span> <span class="comment">#Make the image actual binary</span></span><br><span class="line">    binary_image = <span class="number">1</span>-binary_image <span class="comment"># Invert it, lungs are now 1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Remove other air pockets insided body</span></span><br><span class="line">    labels = measure.label(binary_image, background=<span class="number">0</span>)</span><br><span class="line">    l_max = largest_label_volume(labels, bg=<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">if</span> l_max <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>: <span class="comment"># There are air pockets</span></span><br><span class="line">        binary_image[labels != l_max] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> binary_image</span><br><span class="line"></span><br><span class="line">segmented_lungs = segment_lung_mask(pix_resampled, <span class="literal">False</span>)</span><br><span class="line">segmented_lungs_fill = segment_lung_mask(pix_resampled, <span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">plot_3d(segmented_lungs, <span class="number">0</span>)</span><br><span class="line">plot_3d(segmented_lungs_fill, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-
-<p>当使用这个时，记得首先在它上面应用扩张形态学操作（即用圆形内核）。这会在所有方向上扩展蒙版。仅肺部的空气+结构将不包含所有结节，特别是它会遗漏那些粘在肺部侧面的结节，它们经常出现在那里！所以扩大面具一点:)</p>
-<p>对于某些边缘情况，此分段可能会失败。它依赖于患者体外的空气不与肺部空气相连的事实。如果患者进行了气管造口术，情况也可能并非如此，不知道这是否存在于数据集中。此外，特别是噪声图像（例如由于下图中的起搏器），这种方法也可能失败。相反，身体中的第二大气袋将被分割。您可以通过检查蒙版对应的图像分数来识别这一点，对于这种情况，这将是非常小的。然后，你可以首先使用几毫米大小的内核进行形态学关闭操作以关闭这些孔，之后它应该可以工作（或者更简单地说，不要对此图像使用蒙版）。</p>
-<p>数据归一化</p>
-<p>目前所有的数值在-1024到2000左右。超过400的任何东西其实是不用关心的，因为只是一些具有不同辐射密度的骨骼。 常用的阈值集合在-1000到400之间。这里有一些代码可以使用：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">MIN_BOUND = -<span class="number">1000.0</span></span><br><span class="line">MAX_BOUND = <span class="number">400.0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">normalize</span>(<span class="params">image</span>):</span></span><br><span class="line">    image = (image - MIN_BOUND) / (MAX_BOUND - MIN_BOUND)</span><br><span class="line">    image[image&gt;<span class="number">1</span>] = <span class="number">1.</span></span><br><span class="line">    image[image&lt;<span class="number">0</span>] = <span class="number">0.</span></span><br><span class="line">    <span class="keyword">return</span> image</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据零居中</span></span><br><span class="line"><span class="comment"># 将数据平均值设置为零。为此，只需从所有像素中减去平均像素值。</span></span><br><span class="line">PIXEL_MEAN = <span class="number">0.25</span> <span class="comment"># 假设均值为0.25</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">zero_center</span>(<span class="params">image</span>):</span></span><br><span class="line">    image = image - PIXEL_MEAN</span><br><span class="line">    <span class="keyword">return</span> image</span><br></pre></td></tr></table></figure>
-
-
-
-<p>未完 参考 <a href="https://zhuanlan.zhihu.com/p/59413289">https://zhuanlan.zhihu.com/p/59413289</a></p>
-]]></content>
-      <categories>
-        <category>Python</category>
-        <category>图像识别</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>医学图像</tag>
-      </tags>
-  </entry>
-  <entry>
     <title></title>
     <url>/2021/12/16/%E5%8D%8E%E4%B8%BA%E6%98%87%E8%85%BECANN%E6%95%99%E7%A8%8B-TBE%E7%AE%97%E5%AD%90%E5%BC%80%E5%8F%91/</url>
     <content><![CDATA[<h1 id="华为昇腾CANN教程-TBE算子开发"><a href="#华为昇腾CANN教程-TBE算子开发" class="headerlink" title="华为昇腾CANN教程-TBE算子开发"></a>华为昇腾CANN教程-TBE算子开发</h1><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><p><strong>算子</strong>：一个函数空间到另一个函数空间的映射，可以说对任何函数进行某一项操作都可以将其认为是一个算子，在神经网络模型中涉及到的计算函数。例如：卷积层中的卷积算法，全连接中的权值求和算子，还有众多激活函数算子。</p>
@@ -1961,6 +1962,42 @@
       </tags>
   </entry>
   <entry>
+    <title>图像识别-[2012]AlexNet</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>AlexNet是2012年ImageNet竞赛冠军获得者Alex Krizhevsky设计的</p>
+<p>方法简述：AlexNet有6亿个参数和650,000个神经元，包含5个卷积层，有些层后面跟了max-pooling层，3个全连接层，为了减少过拟合，在全连接层使用了dropout</p>
+<p>优点：</p>
+<ol>
+<li>使用Relu作为激活函数</li>
+<li>使用Dropou避免过拟合</li>
+<li>使用重叠的MaxPooling,让stride小于池化核的大小，池化层的输出有重叠和覆盖，提升了特征的丰富性</li>
+<li>？？？提出LRN层局部响应归一化层？？？</li>
+<li>使用分组卷机通过CUDA加速深度卷机网络的训练</li>
+<li>数据增强，避免过拟合</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>参数过多，计算量大</li>
+<li>网络不深，准确率不高</li>
+</ol>
+<span id="more"></span>
+
+<p>ImageNet是图像算法领域最常见的数据集，训练集包含120万张图片，验证集包含5万张图片，测试集包含15万张图片，这些图片分为了1000个类别，并且有多种不同的分辨率，</p>
+<h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E7%BB%93%E6%9E%84.png"></p>
+<h1 id="参数计算"><a href="#参数计算" class="headerlink" title="参数计算"></a>参数计算</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E5%8F%82%E6%95%B0%E9%87%8F.png"></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>图像识别</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>图像处理基础-滤波器</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>在图像处理中，经常需要对图像进行平滑去噪、锐化、边界增强等，这些功能可以通过滤波器filter来实现。</p>
@@ -2013,42 +2050,6 @@
         <tag>噪音</tag>
         <tag>编程</tag>
         <tag>滤波器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图像识别-[2012]AlexNet</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>AlexNet是2012年ImageNet竞赛冠军获得者Alex Krizhevsky设计的</p>
-<p>方法简述：AlexNet有6亿个参数和650,000个神经元，包含5个卷积层，有些层后面跟了max-pooling层，3个全连接层，为了减少过拟合，在全连接层使用了dropout</p>
-<p>优点：</p>
-<ol>
-<li>使用Relu作为激活函数</li>
-<li>使用Dropou避免过拟合</li>
-<li>使用重叠的MaxPooling,让stride小于池化核的大小，池化层的输出有重叠和覆盖，提升了特征的丰富性</li>
-<li>？？？提出LRN层局部响应归一化层？？？</li>
-<li>使用分组卷机通过CUDA加速深度卷机网络的训练</li>
-<li>数据增强，避免过拟合</li>
-</ol>
-<p>缺点：</p>
-<ol>
-<li>参数过多，计算量大</li>
-<li>网络不深，准确率不高</li>
-</ol>
-<span id="more"></span>
-
-<p>ImageNet是图像算法领域最常见的数据集，训练集包含120万张图片，验证集包含5万张图片，测试集包含15万张图片，这些图片分为了1000个类别，并且有多种不同的分辨率，</p>
-<h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E7%BB%93%E6%9E%84.png"></p>
-<h1 id="参数计算"><a href="#参数计算" class="headerlink" title="参数计算"></a>参数计算</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/%E5%8F%82%E6%95%B0%E9%87%8F.png"></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>图像识别</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
       </tags>
   </entry>
   <entry>
@@ -2197,11 +2198,6 @@
       </tags>
   </entry>
   <entry>
-    <title>基于YOLOv5的安全帽和口罩检测</title>
-    <url>/2021/10/02/%E5%9F%BA%E4%BA%8EYOLOv5%E7%9A%84%E5%AE%89%E5%85%A8%E5%B8%BD%E5%92%8C%E5%8F%A3%E7%BD%A9%E6%A3%80%E6%B5%8B/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>图像识别-VGGNet</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：随着AlexNet提出，很多人开始利用卷积神经网络来解决图像识别的问题。一般的做法都是重复几层卷积网络，每个卷积网络之后接一些池化层，最后再加上几个全连接层。而如何更优的设计网络结构（深度，kernel size等）</p>
@@ -2237,6 +2233,57 @@
       <tags>
         <tag>编程</tag>
         <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于YOLOv5的安全帽和口罩检测</title>
+    <url>/2021/10/02/%E5%9F%BA%E4%BA%8EYOLOv5%E7%9A%84%E5%AE%89%E5%85%A8%E5%B8%BD%E5%92%8C%E5%8F%A3%E7%BD%A9%E6%A3%80%E6%B5%8B/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>基于python的CUDA编程基础</title>
+    <url>/2021/10/07/%E5%9F%BA%E4%BA%8Epython%E7%9A%84CUDA%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>GPU全名为Graphics Processing Unit，又称视觉处理器、图形显示卡。GPU负责渲染出2D、3D、VR效果，主要专注于计算机图形图像领域。无论是CPU还是GPU，在进行计算时，都需要用核心（Core）来做算术逻辑运算，比如加减乘与或非等。核心中有ALU（逻辑运算单元）和寄存器等电路。在进行计算时，一个核心只能顺序执行某项任务。</p>
+<p>个人桌面电脑CPU只有2到8个CPU核心，数据中心的服务器上也只有20到40个左右CPU核心，GPU却有上千个核心。与CPU的核心不同，GPU的核心只能专注于某些特定的任务。知乎上有人把CPU比作大学教授，把GPU比作一个学校几千个小学生：同样是做加减法，几千个小学生所能做的计算，远比几十个大学教授要多得多。</p>
+<span id="more"></span>
+
+<p>CPU主要从主存（Main Memory）中读写数据，并通过总线（Bus）与GPU交互。GPU除了有超多计算核心外，也有自己独立的存储，被称之为显存。GPU核心在做计算时，只能直接从显存中读写数据，程序员需要在代码中指明哪些数据需要从内存和显存之间相互拷贝。这些数据传输都是在总线上，因此总线的传输速度和带宽成了部分计算任务的瓶颈。也因为这个瓶颈，很多计算任务并不适合放在GPU上，比如笔者这两年关注的推荐系统虽然也在使用深度学习，但因为输入是大规模稀疏特征，GPU加速获得的收益小于数据互相拷贝的时间损失。</p>
+<p><img src="/2021/10/07/%E5%9F%BA%E4%BA%8Epython%E7%9A%84CUDA%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/cpu_gpu.png"></p>
+<p>PU和主存被称为<strong>Host</strong>，GPU被称为<strong>Device</strong>。Host和Device概念会贯穿整个英伟达GPU编程。PU和主存被称为<strong>Host</strong>，GPU被称为<strong>Device</strong>。Host和Device概念会贯穿整个英伟达GPU编程。</p>
+<p>2007年，英伟达发布了CUDA编程模型，软件开发人员从此可以使用CUDA在英伟达的GPU上进行并行编程。在此之前，GPU编程并不友好。</p>
+<p>继CUDA之后，英伟达不断丰富其软件技术栈，提供了科学计算所必须的cuBLAS线性代数库，cuFFT快速傅里叶变换库等，当深度学习大潮到来时，英伟达提供了cuDNN深度神经网络加速库，目前常用的TensorFlow、PyTorch深度学习框架的底层大多基于cuDNN库。英伟达能在人工智能时代击败Intel、AMD等强大对手，很大一部分是因为它丰富的软件体系。这些软件工具库使研发人员专注于自己的研发领域，不用再去花大量时间学习GPU底层知识。CUDA对于GPU就像个人电脑上的Windows、手机上的安卓系统，一旦建立好生态，吸引了开发者，用户非常依赖这套软件生态体系。</p>
+<p>CUDA是英伟达提供给开发者的一个GPU编程框架，程序员可以使用这个框架轻松地编写并行程序。本系列第一篇文章提到，CPU和主存被称为<strong>主机（Host）</strong>，GPU和显存（显卡内存）被称为<strong>设备（Device）</strong>，CPU无法直接读取显存数据，GPU无法直接读取主存数据，主机与设备必须通过总线（Bus）相互通信。</p>
+<p>CUDA程序执行时会独霸一张卡，如果你的机器上有多张GPU卡，CUDA默认会选用0号卡。如果你与其他人共用这台机器，最好协商好谁在用哪张卡。一般使用<code>CUDA_VISIBLE_DEVICES</code>这个环境变量来选择某张卡。如选择5号GPU卡运行你的程序。</p>
+<p>CUDA编程的基本流程为：</p>
+<ol>
+<li>初始化，并将必要的数据拷贝到GPU设备的显存上。</li>
+<li>使用某个执行配置，以一定的并行粒度调用CUDA核函数。</li>
+<li>CPU和GPU异步计算。</li>
+<li>将GPU计算结果拷贝回主机。</li>
+</ol>
+<p>案例：计算两个2千万维的向量的加法</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> numba <span class="keyword">import</span> cuda</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在GPU核函数上添加@cuda.jit装饰符，表示该函数是一个在GPU设备上运行的函数</span></span><br><span class="line"><span class="meta">@cuda.jit</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gpu_add</span>(<span class="params">a, b, result, n</span>):</span></span><br><span class="line">    <span class="comment"># a, b为输入向量，result为输出向量</span></span><br><span class="line">    <span class="comment"># 所有向量都是n维</span></span><br><span class="line">    <span class="comment"># 得到当前thread的索引</span></span><br><span class="line">    idx = cuda.threadIdx.x + cuda.blockDim.x * cuda.blockIdx.x</span><br><span class="line">    <span class="keyword">if</span> idx &lt; n :</span><br><span class="line">        result[idx] = a[idx] + b[idx]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    n = <span class="number">20000000</span></span><br><span class="line">    x = np.arange(n).astype(np.int32)</span><br><span class="line">    y = <span class="number">2</span> * x</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 拷贝数据到设备端</span></span><br><span class="line">    x_device = cuda.to_device(x)</span><br><span class="line">    y_device = cuda.to_device(y)</span><br><span class="line">    <span class="comment"># 在显卡设备上初始化一块用于存放GPU计算结果的空间</span></span><br><span class="line">    gpu_result = cuda.device_array(n)</span><br><span class="line">    cpu_result = np.empty(n)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># CUDA配置</span></span><br><span class="line">    threads_per_block = <span class="number">1024</span></span><br><span class="line">    blocks_per_grid = math.ceil(n / threads_per_block)</span><br><span class="line">    start = time()</span><br><span class="line">    gpu_add[blocks_per_grid, threads_per_block](x_device, y_device, gpu_result, n)</span><br><span class="line">    cuda.synchronize() <span class="comment"># 等待当前设备上所有流中的所有核心完成。</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;gpu vector add time &quot;</span> + <span class="built_in">str</span>(time() - start))</span><br><span class="line">    start = time()</span><br><span class="line">    cpu_result = np.add(x, y)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;cpu vector add time &quot;</span> + <span class="built_in">str</span>(time() - start))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (np.array_equal(cpu_result, gpu_result.copy_to_host())):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;result correct!&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>不同的执行配置会影响GPU程序的速度，一般需要多次调试才能找到较好的执行配置，在实际编程中，执行配置<code>[gridDim, blockDim]</code>应参考下面的方法：</p>
+<ul>
+<li>block运行在SM上，不同硬件架构（Turing、Volta、Pascal…）的CUDA核心数不同，一般需要根据当前硬件来设置block的大小<code>blockDim</code>（执行配置中第二个参数）。一个block中的thread数最好是32、128、256的倍数。==注意，限于当前硬件的设计，block大小不能超过1024。==</li>
+<li>grid的大小<code>gridDim</code>（执行配置中第一个参数），即一个grid中block的个数可以由总次数<code>N</code>除以<code>blockDim</code>，并向上取整。</li>
+</ul>
+<p>例如，我们想并行启动1000个thread，可以将blockDim设置为128，<code>1000 ÷ 128 = 7.8</code>，向上取整为8。使用时，执行配置可以写成<code>gpuWork[8, 128]()</code>，CUDA共启动<code>8 * 128 = 1024</code>个thread，实际计算时只使用前1000个thread，多余的24个thread不进行计算。</p>
+<p>注意，这几个变量比较容易混淆，再次明确一下：<code>blockDim</code>是block中thread的个数，一个block中的<code>threadIdx</code>最大不超过<code>blockDim</code>；<code>gridDim</code>是grid中block的个数，一个grid中的<code>blockIdx</code>最大不超过<code>gridDim</code>。</p>
+<h1 id="PyTorch使用CUDA"><a href="#PyTorch使用CUDA" class="headerlink" title="PyTorch使用CUDA"></a>PyTorch使用CUDA</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World, Hello PyTorch &#123;&#125;&quot;</span>.<span class="built_in">format</span>(torch.__version__))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\nCUDA is available:&#123;&#125;, version is &#123;&#125;&quot;</span>.<span class="built_in">format</span>(torch.cuda.is_available(), torch.version.cuda))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\ndevice_name: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(torch.cuda.get_device_name(<span class="number">0</span>)))</span><br><span class="line"></span><br><span class="line">device = torch.device(<span class="string">&quot;cuda&quot;</span> <span class="keyword">if</span> torch.cuda.is_available() <span class="keyword">else</span> <span class="string">&quot;cpu&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>Python</category>
+        <category>CUDA</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>GPU</tag>
       </tags>
   </entry>
   <entry>
@@ -2420,52 +2467,6 @@
       </categories>
       <tags>
         <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>基于python的CUDA编程基础</title>
-    <url>/2021/10/07/%E5%9F%BA%E4%BA%8Epython%E7%9A%84CUDA%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>GPU全名为Graphics Processing Unit，又称视觉处理器、图形显示卡。GPU负责渲染出2D、3D、VR效果，主要专注于计算机图形图像领域。无论是CPU还是GPU，在进行计算时，都需要用核心（Core）来做算术逻辑运算，比如加减乘与或非等。核心中有ALU（逻辑运算单元）和寄存器等电路。在进行计算时，一个核心只能顺序执行某项任务。</p>
-<p>个人桌面电脑CPU只有2到8个CPU核心，数据中心的服务器上也只有20到40个左右CPU核心，GPU却有上千个核心。与CPU的核心不同，GPU的核心只能专注于某些特定的任务。知乎上有人把CPU比作大学教授，把GPU比作一个学校几千个小学生：同样是做加减法，几千个小学生所能做的计算，远比几十个大学教授要多得多。</p>
-<span id="more"></span>
-
-<p>CPU主要从主存（Main Memory）中读写数据，并通过总线（Bus）与GPU交互。GPU除了有超多计算核心外，也有自己独立的存储，被称之为显存。GPU核心在做计算时，只能直接从显存中读写数据，程序员需要在代码中指明哪些数据需要从内存和显存之间相互拷贝。这些数据传输都是在总线上，因此总线的传输速度和带宽成了部分计算任务的瓶颈。也因为这个瓶颈，很多计算任务并不适合放在GPU上，比如笔者这两年关注的推荐系统虽然也在使用深度学习，但因为输入是大规模稀疏特征，GPU加速获得的收益小于数据互相拷贝的时间损失。</p>
-<p><img src="/2021/10/07/%E5%9F%BA%E4%BA%8Epython%E7%9A%84CUDA%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/cpu_gpu.png"></p>
-<p>PU和主存被称为<strong>Host</strong>，GPU被称为<strong>Device</strong>。Host和Device概念会贯穿整个英伟达GPU编程。PU和主存被称为<strong>Host</strong>，GPU被称为<strong>Device</strong>。Host和Device概念会贯穿整个英伟达GPU编程。</p>
-<p>2007年，英伟达发布了CUDA编程模型，软件开发人员从此可以使用CUDA在英伟达的GPU上进行并行编程。在此之前，GPU编程并不友好。</p>
-<p>继CUDA之后，英伟达不断丰富其软件技术栈，提供了科学计算所必须的cuBLAS线性代数库，cuFFT快速傅里叶变换库等，当深度学习大潮到来时，英伟达提供了cuDNN深度神经网络加速库，目前常用的TensorFlow、PyTorch深度学习框架的底层大多基于cuDNN库。英伟达能在人工智能时代击败Intel、AMD等强大对手，很大一部分是因为它丰富的软件体系。这些软件工具库使研发人员专注于自己的研发领域，不用再去花大量时间学习GPU底层知识。CUDA对于GPU就像个人电脑上的Windows、手机上的安卓系统，一旦建立好生态，吸引了开发者，用户非常依赖这套软件生态体系。</p>
-<p>CUDA是英伟达提供给开发者的一个GPU编程框架，程序员可以使用这个框架轻松地编写并行程序。本系列第一篇文章提到，CPU和主存被称为<strong>主机（Host）</strong>，GPU和显存（显卡内存）被称为<strong>设备（Device）</strong>，CPU无法直接读取显存数据，GPU无法直接读取主存数据，主机与设备必须通过总线（Bus）相互通信。</p>
-<p>CUDA程序执行时会独霸一张卡，如果你的机器上有多张GPU卡，CUDA默认会选用0号卡。如果你与其他人共用这台机器，最好协商好谁在用哪张卡。一般使用<code>CUDA_VISIBLE_DEVICES</code>这个环境变量来选择某张卡。如选择5号GPU卡运行你的程序。</p>
-<p>CUDA编程的基本流程为：</p>
-<ol>
-<li>初始化，并将必要的数据拷贝到GPU设备的显存上。</li>
-<li>使用某个执行配置，以一定的并行粒度调用CUDA核函数。</li>
-<li>CPU和GPU异步计算。</li>
-<li>将GPU计算结果拷贝回主机。</li>
-</ol>
-<p>案例：计算两个2千万维的向量的加法</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> numba <span class="keyword">import</span> cuda</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在GPU核函数上添加@cuda.jit装饰符，表示该函数是一个在GPU设备上运行的函数</span></span><br><span class="line"><span class="meta">@cuda.jit</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gpu_add</span>(<span class="params">a, b, result, n</span>):</span></span><br><span class="line">    <span class="comment"># a, b为输入向量，result为输出向量</span></span><br><span class="line">    <span class="comment"># 所有向量都是n维</span></span><br><span class="line">    <span class="comment"># 得到当前thread的索引</span></span><br><span class="line">    idx = cuda.threadIdx.x + cuda.blockDim.x * cuda.blockIdx.x</span><br><span class="line">    <span class="keyword">if</span> idx &lt; n :</span><br><span class="line">        result[idx] = a[idx] + b[idx]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    n = <span class="number">20000000</span></span><br><span class="line">    x = np.arange(n).astype(np.int32)</span><br><span class="line">    y = <span class="number">2</span> * x</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 拷贝数据到设备端</span></span><br><span class="line">    x_device = cuda.to_device(x)</span><br><span class="line">    y_device = cuda.to_device(y)</span><br><span class="line">    <span class="comment"># 在显卡设备上初始化一块用于存放GPU计算结果的空间</span></span><br><span class="line">    gpu_result = cuda.device_array(n)</span><br><span class="line">    cpu_result = np.empty(n)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># CUDA配置</span></span><br><span class="line">    threads_per_block = <span class="number">1024</span></span><br><span class="line">    blocks_per_grid = math.ceil(n / threads_per_block)</span><br><span class="line">    start = time()</span><br><span class="line">    gpu_add[blocks_per_grid, threads_per_block](x_device, y_device, gpu_result, n)</span><br><span class="line">    cuda.synchronize() <span class="comment"># 等待当前设备上所有流中的所有核心完成。</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;gpu vector add time &quot;</span> + <span class="built_in">str</span>(time() - start))</span><br><span class="line">    start = time()</span><br><span class="line">    cpu_result = np.add(x, y)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;cpu vector add time &quot;</span> + <span class="built_in">str</span>(time() - start))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (np.array_equal(cpu_result, gpu_result.copy_to_host())):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;result correct!&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>不同的执行配置会影响GPU程序的速度，一般需要多次调试才能找到较好的执行配置，在实际编程中，执行配置<code>[gridDim, blockDim]</code>应参考下面的方法：</p>
-<ul>
-<li>block运行在SM上，不同硬件架构（Turing、Volta、Pascal…）的CUDA核心数不同，一般需要根据当前硬件来设置block的大小<code>blockDim</code>（执行配置中第二个参数）。一个block中的thread数最好是32、128、256的倍数。==注意，限于当前硬件的设计，block大小不能超过1024。==</li>
-<li>grid的大小<code>gridDim</code>（执行配置中第一个参数），即一个grid中block的个数可以由总次数<code>N</code>除以<code>blockDim</code>，并向上取整。</li>
-</ul>
-<p>例如，我们想并行启动1000个thread，可以将blockDim设置为128，<code>1000 ÷ 128 = 7.8</code>，向上取整为8。使用时，执行配置可以写成<code>gpuWork[8, 128]()</code>，CUDA共启动<code>8 * 128 = 1024</code>个thread，实际计算时只使用前1000个thread，多余的24个thread不进行计算。</p>
-<p>注意，这几个变量比较容易混淆，再次明确一下：<code>blockDim</code>是block中thread的个数，一个block中的<code>threadIdx</code>最大不超过<code>blockDim</code>；<code>gridDim</code>是grid中block的个数，一个grid中的<code>blockIdx</code>最大不超过<code>gridDim</code>。</p>
-<h1 id="PyTorch使用CUDA"><a href="#PyTorch使用CUDA" class="headerlink" title="PyTorch使用CUDA"></a>PyTorch使用CUDA</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World, Hello PyTorch &#123;&#125;&quot;</span>.<span class="built_in">format</span>(torch.__version__))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\nCUDA is available:&#123;&#125;, version is &#123;&#125;&quot;</span>.<span class="built_in">format</span>(torch.cuda.is_available(), torch.version.cuda))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\ndevice_name: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(torch.cuda.get_device_name(<span class="number">0</span>)))</span><br><span class="line"></span><br><span class="line">device = torch.device(<span class="string">&quot;cuda&quot;</span> <span class="keyword">if</span> torch.cuda.is_available() <span class="keyword">else</span> <span class="string">&quot;cpu&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>Python</category>
-        <category>CUDA</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>GPU</tag>
       </tags>
   </entry>
   <entry>
