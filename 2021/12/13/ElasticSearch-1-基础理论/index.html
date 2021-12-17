@@ -28,11 +28,11 @@
 <meta property="og:description" content="ElasticSearch概述    ES基本概念    ES运行过程    ES查询原理    ES特点和优势    ES支持场景">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%A4%9A%E5%88%86%E7%89%87.jpg">
-<meta property="og:image" content="http://example.com/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%5C%E9%9B%86%E7%BE%A4%E7%A4%BA%E6%84%8F%E5%9B%BE.png">
-<meta property="og:image" content="http://example.com/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%5C%E5%88%B0%E6%8E%92%E5%BA%8F1.jpg">
-<meta property="og:image" content="http://example.com/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%5C%E5%88%B0%E6%8E%92%E5%BA%8F2.jpg">
+<meta property="og:image" content="http://example.com/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E9%9B%86%E7%BE%A4%E7%A4%BA%E6%84%8F%E5%9B%BE.png">
+<meta property="og:image" content="http://example.com/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%88%B0%E6%8E%92%E5%BA%8F1.jpg">
+<meta property="og:image" content="http://example.com/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%88%B0%E6%8E%92%E5%BA%8F2.jpg">
 <meta property="article:published_time" content="2021-12-13T08:32:01.000Z">
-<meta property="article:modified_time" content="2021-12-17T08:09:56.428Z">
+<meta property="article:modified_time" content="2021-12-17T08:13:11.227Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="python 深度学习">
 <meta name="twitter:card" content="summary">
@@ -306,7 +306,7 @@
 <h3 id="Replicas副本"><a href="#Replicas副本" class="headerlink" title="Replicas副本"></a>Replicas副本</h3><p>副本是提供了一个故障恢复机制，ES允许制作一个或多个拷贝放入一个叫做复制分片中。他有两个重要作用</p>
 <p>（1）高可用。它提供了高可用的以来防止分片或者节点宕机，为此，一个非常重要的注意点就是绝对不要讲一个分片的拷贝放在跟这个分片相同的机器上。</p>
 <p>（2）高并发。它允许你的分片可以提供超出自身吞吐量的搜索服务，搜索行为可以在分片所有的拷贝中并行执行。</p>
-<p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%5C%E9%9B%86%E7%BE%A4%E7%A4%BA%E6%84%8F%E5%9B%BE.png"></p>
+<p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E9%9B%86%E7%BE%A4%E7%A4%BA%E6%84%8F%E5%9B%BE.png"></p>
 <p>#ES存储过程</p>
 <h2 id="写入过程"><a href="#写入过程" class="headerlink" title="写入过程"></a>写入过程</h2><ol>
 <li><p>客户端选择一个node发送请求过去，这个node就是coordinating node (协调节点)</p>
@@ -332,9 +332,9 @@
 </ol>
 <h2 id="故障恢复过程"><a href="#故障恢复过程" class="headerlink" title="故障恢复过程"></a>故障恢复过程</h2><p>ES客户端取数据的时候就会在replica或primary 的shard中去读。ES集群有多个节点，会自动选举一个节点为master节点，这个master节点其实就是干一些管理类的操作，比如维护元数据，负责切换primary shard 和replica shard的身份之类的，要是master节点宕机了，那么就会重新选举下一个节点为master为节点。如果时非master宕机了，那么就会有master节点，让那个宕机的节点上的primary shard的身份转移到replica shard上，如果修复了宕机的那台机器，重启之后，master节点就会控制将缺失的replica shard 分配过去，同步后续的修改工作，让集群恢复正常。</p>
 <h1 id="ES查询原理"><a href="#ES查询原理" class="headerlink" title="ES查询原理"></a>ES查询原理</h1><h2 id="倒排序索引"><a href="#倒排序索引" class="headerlink" title="倒排序索引"></a>倒排序索引</h2><p>在ES搜索引擎中，每个文档都有一个对应的文档 ID，文档内容被表示为一系列关键词的集合。例如，文档 1 经过分词，提取了 20 个关键词，每个关键词都会记录它在文档中出现的次数和出现位置。也就是说，倒排索引就是关键词到文档 ID 的映射，每个关键词都对应着一系列的文件，这些文件中都出现了关键词。比如：有以下5个文档</p>
-<p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%5C%E5%88%B0%E6%8E%92%E5%BA%8F1.jpg"></p>
+<p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%88%B0%E6%8E%92%E5%BA%8F1.jpg"></p>
 <p>文档分词创建索引如下：</p>
-<p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%5C%E5%88%B0%E6%8E%92%E5%BA%8F2.jpg"></p>
+<p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%88%B0%E6%8E%92%E5%BA%8F2.jpg"></p>
 <p>倒排索引还可以记录更多的信息，比如文档频率信息，表示在文档集合中有多少个包含某个单词。</p>
 <p>根据倒排索引，搜索引擎可以很方便地响应用户的查询。比如用户输入查询 Facebook，搜索系统查找倒排索引，从中读出包含这个单词的文档，这些文档就是提供给用户的搜索结果。</p>
 <h1 id="ES特点和优势"><a href="#ES特点和优势" class="headerlink" title="ES特点和优势"></a>ES特点和优势</h1><p>1）分布式实时文件存储，可将每一个字段存入索引，使其可以被检索到。 </p>

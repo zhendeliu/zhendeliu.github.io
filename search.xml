@@ -35,11 +35,6 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>AI算法面试问题-机器学习（二）</title>
-    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>ElasticSearch(1):基础概述</title>
     <url>/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/</url>
     <content><![CDATA[<ul>
@@ -72,7 +67,7 @@
 <h3 id="Replicas副本"><a href="#Replicas副本" class="headerlink" title="Replicas副本"></a>Replicas副本</h3><p>副本是提供了一个故障恢复机制，ES允许制作一个或多个拷贝放入一个叫做复制分片中。他有两个重要作用</p>
 <p>（1）高可用。它提供了高可用的以来防止分片或者节点宕机，为此，一个非常重要的注意点就是绝对不要讲一个分片的拷贝放在跟这个分片相同的机器上。</p>
 <p>（2）高并发。它允许你的分片可以提供超出自身吞吐量的搜索服务，搜索行为可以在分片所有的拷贝中并行执行。</p>
-<p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%5C%E9%9B%86%E7%BE%A4%E7%A4%BA%E6%84%8F%E5%9B%BE.png"></p>
+<p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E9%9B%86%E7%BE%A4%E7%A4%BA%E6%84%8F%E5%9B%BE.png"></p>
 <p>#ES存储过程</p>
 <h2 id="写入过程"><a href="#写入过程" class="headerlink" title="写入过程"></a>写入过程</h2><ol>
 <li><p>客户端选择一个node发送请求过去，这个node就是coordinating node (协调节点)</p>
@@ -98,9 +93,9 @@
 </ol>
 <h2 id="故障恢复过程"><a href="#故障恢复过程" class="headerlink" title="故障恢复过程"></a>故障恢复过程</h2><p>ES客户端取数据的时候就会在replica或primary 的shard中去读。ES集群有多个节点，会自动选举一个节点为master节点，这个master节点其实就是干一些管理类的操作，比如维护元数据，负责切换primary shard 和replica shard的身份之类的，要是master节点宕机了，那么就会重新选举下一个节点为master为节点。如果时非master宕机了，那么就会有master节点，让那个宕机的节点上的primary shard的身份转移到replica shard上，如果修复了宕机的那台机器，重启之后，master节点就会控制将缺失的replica shard 分配过去，同步后续的修改工作，让集群恢复正常。</p>
 <h1 id="ES查询原理"><a href="#ES查询原理" class="headerlink" title="ES查询原理"></a>ES查询原理</h1><h2 id="倒排序索引"><a href="#倒排序索引" class="headerlink" title="倒排序索引"></a>倒排序索引</h2><p>在ES搜索引擎中，每个文档都有一个对应的文档 ID，文档内容被表示为一系列关键词的集合。例如，文档 1 经过分词，提取了 20 个关键词，每个关键词都会记录它在文档中出现的次数和出现位置。也就是说，倒排索引就是关键词到文档 ID 的映射，每个关键词都对应着一系列的文件，这些文件中都出现了关键词。比如：有以下5个文档</p>
-<p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%5C%E5%88%B0%E6%8E%92%E5%BA%8F1.jpg"></p>
+<p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%88%B0%E6%8E%92%E5%BA%8F1.jpg"></p>
 <p>文档分词创建索引如下：</p>
-<p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%5C%E5%88%B0%E6%8E%92%E5%BA%8F2.jpg"></p>
+<p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%88%B0%E6%8E%92%E5%BA%8F2.jpg"></p>
 <p>倒排索引还可以记录更多的信息，比如文档频率信息，表示在文档集合中有多少个包含某个单词。</p>
 <p>根据倒排索引，搜索引擎可以很方便地响应用户的查询。比如用户输入查询 Facebook，搜索系统查找倒排索引，从中读出包含这个单词的文档，这些文档就是提供给用户的搜索结果。</p>
 <h1 id="ES特点和优势"><a href="#ES特点和优势" class="headerlink" title="ES特点和优势"></a>ES特点和优势</h1><p>1）分布式实时文件存储，可将每一个字段存入索引，使其可以被检索到。 </p>
@@ -124,6 +119,11 @@
 <li>Elasticsearch的由来、原理及应用场景分析 <a href="https://my.oschina.net/90888/blog/1619325">https://my.oschina.net/90888/blog/1619325</a></li>
 </ol>
 ]]></content>
+  </entry>
+  <entry>
+    <title>AI算法面试问题-机器学习（二）</title>
+    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>ElasticSearch(2):安装部署</title>
@@ -1378,6 +1378,102 @@
       </tags>
   </entry>
   <entry>
+    <title>关于MLPerf Training Benchmark的设计理解</title>
+    <url>/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<p>Mchine Learning的发展需要有行业标准的性能基准测评。Machione Learning有三个基准挑战：</p>
+<ol>
+<li><p>提升训练吞吐量</p>
+</li>
+<li><p>训练中的随机性以及solution的时间会有明显的差异性</p>
+</li>
+<li><p>软硬件的差异性导致难以用相同的精度，code和超参在不同的软硬件上面进行基准测评。</p>
+</li>
+</ol>
+<p>MLPerf定量评估多个厂商的在驱动性能和可伸缩性改进方面的效能</p>
+<span id="more"></span>
+
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>Mchine Learning的发展需要有行业标准的性能基准测评。Machione Learning有三个基准挑战：</p>
+<ol>
+<li><p>提升训练吞吐量</p>
+</li>
+<li><p>训练中的随机性以及solution的时间会有明显的差异性</p>
+</li>
+<li><p>软硬件的差异性导致难以用相同的精度，code和超参在不同的软硬件上面进行基准测评。</p>
+</li>
+</ol>
+<p>MLPerf定量评估多个厂商的在驱动性能和可伸缩性改进方面的效能。</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>MLPerf的目标是创建一个具有代表性的基准测评，公正测评系统性能为了达到5个目标：</p>
+<ol>
+<li>公平竞赛同时鼓励创新</li>
+<li>通过公平且有用的措施加速ML进程</li>
+<li>加强可靠结果的复现性</li>
+<li>同时服务于商用和研究</li>
+<li>确保benchmark对于大家都是可负担的</li>
+</ol>
+<p>MLPerf Training最终是需要达到：</p>
+<ol>
+<li>创建为一个综合性的基准测评，能够覆盖不同的应用，DNN模型以及优化器等</li>
+<li>创建每个基准测评的reference implementation去精确定义模型和训练程序</li>
+<li>建立规则确保submissions对于reference implementation是等价的，并且也使用等价参数</li>
+<li>创建时间规则，减少结果比较时的随机性的影响</li>
+<li>将提交代码开源，以便结果复现</li>
+<li>形成工作组保持benchmark的更新</li>
+</ol>
+<h2 id="MLPerf-实现回面临的问题"><a href="#MLPerf-实现回面临的问题" class="headerlink" title="MLPerf 实现回面临的问题"></a>MLPerf 实现回面临的问题</h2><p>ML 性能基准测试必须确保被测系统达到最先进的质量，同时提供足够的灵活性来适应不同的目标。质量和性能之间的这种权衡具有挑战性，因为多种因素会影响最终质量和实现质量的时间。</p>
+<p>​    <strong>优化对质量的影响</strong>：尽管许多优化会立即改善传统性能指标（如吞吐量），但有些优化可能会降低最终的模型质量，而这种效果只能通过运行整个训练会话来观察到。例如，单精度训练和低精度训练之间的精度差异仅在后来的epoch出现</p>
+<p>​    <strong>训练在时间尺度方面的影响</strong>：系统大小、batch size和动态学习率的变化对性能基准测试带来了另一个挑战。</p>
+<p>​    <strong>运行中的偏差</strong>：DNN训练涉及许多随机影响，这些随机影响在实质性的运行到运行变化中是人为的。例如，随机权重初始化和随机数据传输和系统特征（例如，配置文件驱动的算法选择和浮点加法的非交换性质）。大型分布式训练任务可能涉及异步时间更新，从而改变梯度累积顺序。这些变化使得很难可靠地比较系统性能。</p>
+<p>​    <strong>不同软件架构带来的影响</strong>：软件框架和底层数学库采用不同的算法来实现相同的操作但会产生略有不同的结果。例如，卷积层和完全连接层（现代 DNN 模型中常见的两种计算密集型运算符）通常使用缓存block来利用处理器内存层次结构。块大小和处理顺序（针对不同的硬件进行优化）的不同最最后的结果都有一定的影响</p>
+<h2 id="MLPerf-Training的测试任务"><a href="#MLPerf-Training的测试任务" class="headerlink" title="MLPerf Training的测试任务"></a>MLPerf Training的测试任务</h2><p>Image Classification：</p>
+<p>​        ResNet-50</p>
+<p>Object Detection &amp; Segmentation</p>
+<p>​        Mask R-CNN： 它有两个阶段：第一个阶段提出感兴趣的区域，第二个阶段处理它们以计算边界框和分割掩码。Mask R-CNN 为这些任务提供了高精度的结果，但代价是延迟更高，计算和内存要求更高。基准测试训练时，先做图像resize，将较短的边resize到800，用ResNet-50 作为主干</p>
+<p>​        SSD(Single Shot Detection)： 适用于需要低延迟解决方案的实时应用。SSD以速度换取准确性。训练使用 300 × 300 的输入。选择 ResNet-34 主干网。ResNet-34具有与ResNet-50不同的残差块结构，增加了MLPerf所涵盖的计算主题的多样性。</p>
+<p>Translation</p>
+<p>​        Transformer</p>
+<p>​        GNMT</p>
+<p>Reinforcement Learning</p>
+<p>​        MiniGo</p>
+<p>Recommendation</p>
+<p>​        Neural collaborative filtering (NCF)</p>
+<h2 id="MLPerf-Training"><a href="#MLPerf-Training" class="headerlink" title="MLPerf Training"></a>MLPerf Training</h2><p>MLPerf training可以分为封闭模型分区（Closed Model Division）和开放模型分区（Open Model Division）。</p>
+<p>封闭模型分区要求使用相同模型和优化器，并限制batch大小或学习率等超参数的值，它旨在硬件和软件系统的公平比较。</p>
+<p>开放模型分区只会限制使用相同的数据解决相同的问题，其它模型或平台都不会限制，它旨在推进ML模型和优化的创新。</p>
+<p>对于MLPerf Training每个Benchmark的评价标准是：<strong>在特定数据集上训练一个模型使其达到Quality Target时的Clock time</strong>。由于机器学习任务的训练时间有很大差异，因此，MLPerf 的最终训练结果是由指定次数的基准测试时间平均得出的，其中会去掉最低和最高的数字，一般是运行5次取平均值，Train测试时间包含了模型构建，数据预处理，训练以及质量测试等时间。</p>
+<p>计时从系统接触任何训练或验证数据时开始，到系统在验证数据集上达到定义的质量目标时停止。<br>但不包括一下阶段：</p>
+<p><strong>系统初始化</strong>System initialization，<strong>模型创建和初始化</strong>Model creation and initialization，<strong>数据重新格式化</strong> Data reformatting</p>
+<p><strong>系统初始化</strong>System initialization。初始化（尤其是在大规模初始化）因群集管理选择和系统队列负载而异。例如，它可能涉及在开始训练作业之前对每个节点进行运行诊断。此类开销与系统的训练能力无关，因此将其排除在计时之外。<br><strong>模型创建和初始化</strong>Model creation and initialization.。某些框架可以编译模型图以优化后续执行。在使用行业规模的数据集时，对于较长的训练会话而言，此编译时间无关紧要。然而，MLPerf使用的公共数据集通常比行业数据集小得多。因此，大型分布式系统可以在几分钟内训练一些 MLPerf 基准测试，使累积时间占总时间的很大一部分。为了使基准测试代表在最大的工业数据集上的训练，允许排除长达20分钟的模型创建时间。此限制可确保 MLPerf 限制较小的训练作业，并且不鼓励使用计算和操作成本太高而无法在实践中使用的编译方法进行提交。<br><strong>数据重新格式化</strong> Data reformatting.。原始输入数据通常进行一次重新格式化，然后在许多后续的训练会话中提供。重新格式化示例包括更改图像文件格式和创建数据库（例如，LMDB、TFRecords 或 RecordIO）以实现更高效的访问。由于这些操作对于许多训练系统执行一次，MLPerf 计时不包括重新格式化。但它禁止训练中发生的任何数据处理或增强进入重新格式化阶段（例如，它阻止在定时训练阶段之前创建和保存每个图像的不同裁剪）</p>
+<p>为了解决深度学习方法的随机性质和由此产生的运行到运行方差，MLPerf 要求提交提供每个基准的多次运行以稳定计时。<strong>视觉任务需要5次运</strong>行，以确保来自同一系统的90%的条目在5%以内; 所有其他任务都需要运行 10 次，以确保来自同一系统的 90% 的条目在 10% 以内。<strong>MLPerf 会丢弃最快和最慢的时间，并将剩余运行的算术平均值报告为结果。</strong></p>
+<h3 id="质量阈值的选择"><a href="#质量阈值的选择" class="headerlink" title="质量阈值的选择"></a>质量阈值的选择</h3><p>选择较高阈值，可能需要更长训练的，原因有两个：首先，必须防止优化对最终结果产生不利影响。其次，我们必须尽量减少run-to-run variation，（不同的随机种子产生不同的影响）</p>
+<p><strong>参考实现和超参数</strong><br>MLPerf 使用 PyTorch 或 TensorFlow 框架为每个基准测试提供了一个参考实现，没有被优化，主要目的是定义基准模型和training程序的具体实现。所有提交者都必须遵循这些引用 - 只要 DNN 模型和训练运算在数学上与引用等效，他们就可以在其选择的框架中重新实现基准标记。此外，MLPerf 使用参考实现来建立所需的质量阈值。<br>MLPerf 规则指定可修改的超参数 （Table 2） 以及对其修改的限制。这些限制旨在平衡对不同系统进行调整的需求，并限制超参数搜索空间的大小，以便对计算资源较小的提交者公平。<br>此外，在提交后的审核过程中，允许类似规模的系统之间”超参数借用”，其中一个提交者可以采用另一个提交者的超参数作为特殊基准测试并重新提交其结果（不允许进行其他硬件或软件更改）。在前两轮中，超参数借用成功地用于改进几个提交，表明超参数在某种程度上是可移植的。</p>
+<p><img src="/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/table2.png"></p>
+<h2 id="Report"><a href="#Report" class="headerlink" title="Report"></a>Report</h2><p>MLPerf 提交由系统说明、培训课程日志文件以及重现培训课程所需的所有代码和库组成。所有这些信息都可以在 MLPerf GitHub 网站上公开获得，以及 MLPerf 结果，从而实现可重复性，并使社区能够在后续回合中改进结果。系统描述包括硬件（节点数、处理器和加速器计数和类型、每个节点的存储期限和网络互连）和软件（操作系统以及库及其版本）。培训课程日志文件包含各种结构化信息，包括重要工作负载阶段的时间戳、按规定时间间隔进行的质量指标评估以及超参数选择。这些日志是分析结果的基础。</p>
+<p>An MLPerf submission consists of a system description, training-session log files, and all code and libraries required to reproduce the training sessions. All of this information is publicly available on the MLPerf GitHub site, along with the MLPerf results, allowing for reproducibility and enabling the community to improve the results in subsequent rounds. A system description includes both the hardware (number of nodes, processor and accelerator counts and types, stor- age per node, and network interconnect) and the software (operating system as well as libraries and their versions). A training-session log file contains a variety of structured information including time stamps for important workload stages, quality-metric evaluations at prescribed intervals, and hyperparameter choices. These logs are the foundation for analyzing results.</p>
+<p>4.2 报告结果<br>每个 MLPerf 提交都有多个标签：部门（开放或关闭）、类别（可用、预览或研究）和系统类型（本地或云）。<br>4.2.1 提交部门<br>MLPerf有两个提交部门：封闭和开放。两者都要求提交使用相同的数据集和质量指标作为相应的参考实现。<br>closed区旨在直接进行系统比较，因此它通过要求提交等效于参考实现来努力确保工作负载等效性。等价性包括数学上相同的模型导入、参数初始化、优化器和训练计划以及数据处理和遍历。为了确保公平性，此版本还限制了超参数修改。open区旨在鼓励对重要实际问题进行创新，并鼓励硬件/软件协同设计。它允许提交采用与参考实现不同的模型架构、优化过程和数据增强。</p>
+<p>4.2.2 系统类别<br>为了支持广泛的研究和行业系统，我们定义了三个提交类别：可用、预览和研究。这些类别鼓励新技术和系统（例如，来自学术研究人员），但它们也区分了运输产品和概念验证或早期工程样品。<br>可用类别对硬件和软件可用性都有要求。硬件必须可用于云服务上的第三方租赁，或者，对于本地设备，则可供购买。租赁或购买的铺层和交货时间应适合系统规模和公司规模。为了确保基准测试提交的基准测试被广泛使用，并且不鼓励特定于基准测试的工程，我们还要求此类别中的软件版本化并支持一般用途。<br>预览系统包含自提交之日起 60 天内或下一个提交周期（以较晚者为准）满足可用类别条件的组件。届时，任何预览系统也必须提交到可用类别。<br>研究提交的内容包含无意生产的组件。一个例子是学术研究原型，它被设计为概念验证，而不是一个强大的产品。此类别还包括由专业管道硬件和软件构建但规模大于可用类别配置的系统。</p>
+<p>4.2.3 报告规模<br>现代 ML 训练在系统功耗和成本方面跨越多个数量级。因此，如果报告的性能包括比例，则比较会更有用。通用的规模指标（如成本或功耗）无法在各种系统（云、本地和预生产）中定义，因此需要按系统类型进行区分。<br>在前两轮 MLPerf 中，我们在性能分数旁边加入了系统概念（处理器和/或加速器的数量）。对于本地示例，将来的版本将包括功率测量特性。对于云系统，我们从主机处理器的数量、主机内存量以及加速器的数量和类型中得出了一个”云规模”指标。我们从经验上证实了云规模与三大云提供商的成本密切相关。这些规模指标的报告在 MLPerf v0.5 和 v0.6 中是可选的。</p>
+<p>4.2.4 报告分数<br>MLPerf 结果报告提供了针对每个基准测试进行训练的时间。尽管对于系统比较来说，可能需要一个跨越整个套件的单个摘要分数，但由于两个主要原因，它不适合MLPerf。首先，总分意味着对个人基准分数进行一些加权。鉴于系统用户的多样性和 MLPerf 涵盖的广泛应用，没有一种加权方案具有普遍代表性。其次，如果提交者拒绝报告所有基准测试的结果，则汇总分数的意义就会降低。提交者可能会因为省略某些基准测试而产生多种原因， 并非所有基准测试在每个系统规模上都是可行的（例如，某些模型在最大系统需要数据并行训练所需的迷你批大小下不可训练）。此外，某些处理器可能仅面向某些应用程序。</p>
+<p>5 结果<br>与所有基准一样，MLPerf旨在通过建设性的竞争来鼓励创新;我们通过比较各轮提交的结果来衡量进度。到目前为止，我们已经进行了两轮 MLPerf 训练：v0.5 和 v0.6。它们相隔六个月，底层的硬件和软件系统保持不变。未经修改或在回合之间进行微小修改的结果表明，MLPerf正在推动实现和软件堆栈的快速性能和扩展改进。图3显示，在两个子任务回合之间，尽管目标质量更高，但16芯片系统的最佳性能结果平均提高了1.3×。图4显示，产生最佳整体性能结果所需的芯片数量平均增加了5.5×。其中一些改进归功于更好的基准测试实现，另一些归功于规则更改，例如允许LARS（You et al.，2017）优化器用于大型ResNet批处理。但我们相信，sub-mitters将大部分性能和扩展改进整合到底层软件基础架构中，并将其传递给用户。我们预计MLPerf将通过专注的硬件创新来推动类似的改进。</p>
+<h2 id="MLPerf-Inference"><a href="#MLPerf-Inference" class="headerlink" title="MLPerf Inference"></a>MLPerf Inference</h2><p>对于MLPerf Inference测试，每个Benchmark的评价标准是：<strong>在特定数据集上测量模型的推理性能，包括Latency和吞吐量</strong>。</p>
+<h1 id="MLPerf-Training-BenchMark"><a href="#MLPerf-Training-BenchMark" class="headerlink" title="MLPerf Training BenchMark"></a>MLPerf Training BenchMark</h1><h2 id="Image-Classification"><a href="#Image-Classification" class="headerlink" title="Image Classification"></a>Image Classification</h2><h2 id="Object-Detection-and-Segmentation"><a href="#Object-Detection-and-Segmentation" class="headerlink" title="Object Detection and Segmentation"></a>Object Detection and Segmentation</h2><ol>
+<li><p>Mask R-CNN</p>
+</li>
+<li><p>SSD</p>
+</li>
+<li><p>Translation</p>
+</li>
+<li><p>Reinforcement Learning</p>
+</li>
+<li><p>Recommendation</p>
+</li>
+<li></li>
+</ol>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>ML Comment 官网： <a href="https://mlcommons.org/en/">https://mlcommons.org/en/</a> </p>
+<p>论文链接：<a href="https://arxiv.org/pdf/1910.01500.pdf">https://arxiv.org/pdf/1910.01500.pdf</a></p>
+<p>其他：<a href="https://www.cnblogs.com/caiyishuai/p/14361955.html">https://www.cnblogs.com/caiyishuai/p/14361955.html</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>关于MLPerf Inference Benchmark的设计理解</title>
     <url>/2021/11/25/%E5%85%B3%E4%BA%8EMLPerf-Inference-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/</url>
     <content><![CDATA[<p><strong>LoadGenerator</strong>：负载生成器，MLPerf使用它生成不同的测试场景对inference进行测试</p>
@@ -1510,102 +1606,6 @@
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>ML Comment 官网： <a href="https://mlcommons.org/en/">https://mlcommons.org/en/</a> </p>
 <p>MLPerf Inference Benchmark 原论文地址：<a href="https://arxiv.org/abs/1911.02549">https://arxiv.org/abs/1911.02549</a></p>
 <p>MLPerf Inference论文 <a href="https://blog.51cto.com/u_12870633/2812988">https://blog.51cto.com/u_12870633/2812988</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>关于MLPerf Training Benchmark的设计理解</title>
-    <url>/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<p>Mchine Learning的发展需要有行业标准的性能基准测评。Machione Learning有三个基准挑战：</p>
-<ol>
-<li><p>提升训练吞吐量</p>
-</li>
-<li><p>训练中的随机性以及solution的时间会有明显的差异性</p>
-</li>
-<li><p>软硬件的差异性导致难以用相同的精度，code和超参在不同的软硬件上面进行基准测评。</p>
-</li>
-</ol>
-<p>MLPerf定量评估多个厂商的在驱动性能和可伸缩性改进方面的效能</p>
-<span id="more"></span>
-
-<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>Mchine Learning的发展需要有行业标准的性能基准测评。Machione Learning有三个基准挑战：</p>
-<ol>
-<li><p>提升训练吞吐量</p>
-</li>
-<li><p>训练中的随机性以及solution的时间会有明显的差异性</p>
-</li>
-<li><p>软硬件的差异性导致难以用相同的精度，code和超参在不同的软硬件上面进行基准测评。</p>
-</li>
-</ol>
-<p>MLPerf定量评估多个厂商的在驱动性能和可伸缩性改进方面的效能。</p>
-<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>MLPerf的目标是创建一个具有代表性的基准测评，公正测评系统性能为了达到5个目标：</p>
-<ol>
-<li>公平竞赛同时鼓励创新</li>
-<li>通过公平且有用的措施加速ML进程</li>
-<li>加强可靠结果的复现性</li>
-<li>同时服务于商用和研究</li>
-<li>确保benchmark对于大家都是可负担的</li>
-</ol>
-<p>MLPerf Training最终是需要达到：</p>
-<ol>
-<li>创建为一个综合性的基准测评，能够覆盖不同的应用，DNN模型以及优化器等</li>
-<li>创建每个基准测评的reference implementation去精确定义模型和训练程序</li>
-<li>建立规则确保submissions对于reference implementation是等价的，并且也使用等价参数</li>
-<li>创建时间规则，减少结果比较时的随机性的影响</li>
-<li>将提交代码开源，以便结果复现</li>
-<li>形成工作组保持benchmark的更新</li>
-</ol>
-<h2 id="MLPerf-实现回面临的问题"><a href="#MLPerf-实现回面临的问题" class="headerlink" title="MLPerf 实现回面临的问题"></a>MLPerf 实现回面临的问题</h2><p>ML 性能基准测试必须确保被测系统达到最先进的质量，同时提供足够的灵活性来适应不同的目标。质量和性能之间的这种权衡具有挑战性，因为多种因素会影响最终质量和实现质量的时间。</p>
-<p>​    <strong>优化对质量的影响</strong>：尽管许多优化会立即改善传统性能指标（如吞吐量），但有些优化可能会降低最终的模型质量，而这种效果只能通过运行整个训练会话来观察到。例如，单精度训练和低精度训练之间的精度差异仅在后来的epoch出现</p>
-<p>​    <strong>训练在时间尺度方面的影响</strong>：系统大小、batch size和动态学习率的变化对性能基准测试带来了另一个挑战。</p>
-<p>​    <strong>运行中的偏差</strong>：DNN训练涉及许多随机影响，这些随机影响在实质性的运行到运行变化中是人为的。例如，随机权重初始化和随机数据传输和系统特征（例如，配置文件驱动的算法选择和浮点加法的非交换性质）。大型分布式训练任务可能涉及异步时间更新，从而改变梯度累积顺序。这些变化使得很难可靠地比较系统性能。</p>
-<p>​    <strong>不同软件架构带来的影响</strong>：软件框架和底层数学库采用不同的算法来实现相同的操作但会产生略有不同的结果。例如，卷积层和完全连接层（现代 DNN 模型中常见的两种计算密集型运算符）通常使用缓存block来利用处理器内存层次结构。块大小和处理顺序（针对不同的硬件进行优化）的不同最最后的结果都有一定的影响</p>
-<h2 id="MLPerf-Training的测试任务"><a href="#MLPerf-Training的测试任务" class="headerlink" title="MLPerf Training的测试任务"></a>MLPerf Training的测试任务</h2><p>Image Classification：</p>
-<p>​        ResNet-50</p>
-<p>Object Detection &amp; Segmentation</p>
-<p>​        Mask R-CNN： 它有两个阶段：第一个阶段提出感兴趣的区域，第二个阶段处理它们以计算边界框和分割掩码。Mask R-CNN 为这些任务提供了高精度的结果，但代价是延迟更高，计算和内存要求更高。基准测试训练时，先做图像resize，将较短的边resize到800，用ResNet-50 作为主干</p>
-<p>​        SSD(Single Shot Detection)： 适用于需要低延迟解决方案的实时应用。SSD以速度换取准确性。训练使用 300 × 300 的输入。选择 ResNet-34 主干网。ResNet-34具有与ResNet-50不同的残差块结构，增加了MLPerf所涵盖的计算主题的多样性。</p>
-<p>Translation</p>
-<p>​        Transformer</p>
-<p>​        GNMT</p>
-<p>Reinforcement Learning</p>
-<p>​        MiniGo</p>
-<p>Recommendation</p>
-<p>​        Neural collaborative filtering (NCF)</p>
-<h2 id="MLPerf-Training"><a href="#MLPerf-Training" class="headerlink" title="MLPerf Training"></a>MLPerf Training</h2><p>MLPerf training可以分为封闭模型分区（Closed Model Division）和开放模型分区（Open Model Division）。</p>
-<p>封闭模型分区要求使用相同模型和优化器，并限制batch大小或学习率等超参数的值，它旨在硬件和软件系统的公平比较。</p>
-<p>开放模型分区只会限制使用相同的数据解决相同的问题，其它模型或平台都不会限制，它旨在推进ML模型和优化的创新。</p>
-<p>对于MLPerf Training每个Benchmark的评价标准是：<strong>在特定数据集上训练一个模型使其达到Quality Target时的Clock time</strong>。由于机器学习任务的训练时间有很大差异，因此，MLPerf 的最终训练结果是由指定次数的基准测试时间平均得出的，其中会去掉最低和最高的数字，一般是运行5次取平均值，Train测试时间包含了模型构建，数据预处理，训练以及质量测试等时间。</p>
-<p>计时从系统接触任何训练或验证数据时开始，到系统在验证数据集上达到定义的质量目标时停止。<br>但不包括一下阶段：</p>
-<p><strong>系统初始化</strong>System initialization，<strong>模型创建和初始化</strong>Model creation and initialization，<strong>数据重新格式化</strong> Data reformatting</p>
-<p><strong>系统初始化</strong>System initialization。初始化（尤其是在大规模初始化）因群集管理选择和系统队列负载而异。例如，它可能涉及在开始训练作业之前对每个节点进行运行诊断。此类开销与系统的训练能力无关，因此将其排除在计时之外。<br><strong>模型创建和初始化</strong>Model creation and initialization.。某些框架可以编译模型图以优化后续执行。在使用行业规模的数据集时，对于较长的训练会话而言，此编译时间无关紧要。然而，MLPerf使用的公共数据集通常比行业数据集小得多。因此，大型分布式系统可以在几分钟内训练一些 MLPerf 基准测试，使累积时间占总时间的很大一部分。为了使基准测试代表在最大的工业数据集上的训练，允许排除长达20分钟的模型创建时间。此限制可确保 MLPerf 限制较小的训练作业，并且不鼓励使用计算和操作成本太高而无法在实践中使用的编译方法进行提交。<br><strong>数据重新格式化</strong> Data reformatting.。原始输入数据通常进行一次重新格式化，然后在许多后续的训练会话中提供。重新格式化示例包括更改图像文件格式和创建数据库（例如，LMDB、TFRecords 或 RecordIO）以实现更高效的访问。由于这些操作对于许多训练系统执行一次，MLPerf 计时不包括重新格式化。但它禁止训练中发生的任何数据处理或增强进入重新格式化阶段（例如，它阻止在定时训练阶段之前创建和保存每个图像的不同裁剪）</p>
-<p>为了解决深度学习方法的随机性质和由此产生的运行到运行方差，MLPerf 要求提交提供每个基准的多次运行以稳定计时。<strong>视觉任务需要5次运</strong>行，以确保来自同一系统的90%的条目在5%以内; 所有其他任务都需要运行 10 次，以确保来自同一系统的 90% 的条目在 10% 以内。<strong>MLPerf 会丢弃最快和最慢的时间，并将剩余运行的算术平均值报告为结果。</strong></p>
-<h3 id="质量阈值的选择"><a href="#质量阈值的选择" class="headerlink" title="质量阈值的选择"></a>质量阈值的选择</h3><p>选择较高阈值，可能需要更长训练的，原因有两个：首先，必须防止优化对最终结果产生不利影响。其次，我们必须尽量减少run-to-run variation，（不同的随机种子产生不同的影响）</p>
-<p><strong>参考实现和超参数</strong><br>MLPerf 使用 PyTorch 或 TensorFlow 框架为每个基准测试提供了一个参考实现，没有被优化，主要目的是定义基准模型和training程序的具体实现。所有提交者都必须遵循这些引用 - 只要 DNN 模型和训练运算在数学上与引用等效，他们就可以在其选择的框架中重新实现基准标记。此外，MLPerf 使用参考实现来建立所需的质量阈值。<br>MLPerf 规则指定可修改的超参数 （Table 2） 以及对其修改的限制。这些限制旨在平衡对不同系统进行调整的需求，并限制超参数搜索空间的大小，以便对计算资源较小的提交者公平。<br>此外，在提交后的审核过程中，允许类似规模的系统之间”超参数借用”，其中一个提交者可以采用另一个提交者的超参数作为特殊基准测试并重新提交其结果（不允许进行其他硬件或软件更改）。在前两轮中，超参数借用成功地用于改进几个提交，表明超参数在某种程度上是可移植的。</p>
-<p><img src="/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/table2.png"></p>
-<h2 id="Report"><a href="#Report" class="headerlink" title="Report"></a>Report</h2><p>MLPerf 提交由系统说明、培训课程日志文件以及重现培训课程所需的所有代码和库组成。所有这些信息都可以在 MLPerf GitHub 网站上公开获得，以及 MLPerf 结果，从而实现可重复性，并使社区能够在后续回合中改进结果。系统描述包括硬件（节点数、处理器和加速器计数和类型、每个节点的存储期限和网络互连）和软件（操作系统以及库及其版本）。培训课程日志文件包含各种结构化信息，包括重要工作负载阶段的时间戳、按规定时间间隔进行的质量指标评估以及超参数选择。这些日志是分析结果的基础。</p>
-<p>An MLPerf submission consists of a system description, training-session log files, and all code and libraries required to reproduce the training sessions. All of this information is publicly available on the MLPerf GitHub site, along with the MLPerf results, allowing for reproducibility and enabling the community to improve the results in subsequent rounds. A system description includes both the hardware (number of nodes, processor and accelerator counts and types, stor- age per node, and network interconnect) and the software (operating system as well as libraries and their versions). A training-session log file contains a variety of structured information including time stamps for important workload stages, quality-metric evaluations at prescribed intervals, and hyperparameter choices. These logs are the foundation for analyzing results.</p>
-<p>4.2 报告结果<br>每个 MLPerf 提交都有多个标签：部门（开放或关闭）、类别（可用、预览或研究）和系统类型（本地或云）。<br>4.2.1 提交部门<br>MLPerf有两个提交部门：封闭和开放。两者都要求提交使用相同的数据集和质量指标作为相应的参考实现。<br>closed区旨在直接进行系统比较，因此它通过要求提交等效于参考实现来努力确保工作负载等效性。等价性包括数学上相同的模型导入、参数初始化、优化器和训练计划以及数据处理和遍历。为了确保公平性，此版本还限制了超参数修改。open区旨在鼓励对重要实际问题进行创新，并鼓励硬件/软件协同设计。它允许提交采用与参考实现不同的模型架构、优化过程和数据增强。</p>
-<p>4.2.2 系统类别<br>为了支持广泛的研究和行业系统，我们定义了三个提交类别：可用、预览和研究。这些类别鼓励新技术和系统（例如，来自学术研究人员），但它们也区分了运输产品和概念验证或早期工程样品。<br>可用类别对硬件和软件可用性都有要求。硬件必须可用于云服务上的第三方租赁，或者，对于本地设备，则可供购买。租赁或购买的铺层和交货时间应适合系统规模和公司规模。为了确保基准测试提交的基准测试被广泛使用，并且不鼓励特定于基准测试的工程，我们还要求此类别中的软件版本化并支持一般用途。<br>预览系统包含自提交之日起 60 天内或下一个提交周期（以较晚者为准）满足可用类别条件的组件。届时，任何预览系统也必须提交到可用类别。<br>研究提交的内容包含无意生产的组件。一个例子是学术研究原型，它被设计为概念验证，而不是一个强大的产品。此类别还包括由专业管道硬件和软件构建但规模大于可用类别配置的系统。</p>
-<p>4.2.3 报告规模<br>现代 ML 训练在系统功耗和成本方面跨越多个数量级。因此，如果报告的性能包括比例，则比较会更有用。通用的规模指标（如成本或功耗）无法在各种系统（云、本地和预生产）中定义，因此需要按系统类型进行区分。<br>在前两轮 MLPerf 中，我们在性能分数旁边加入了系统概念（处理器和/或加速器的数量）。对于本地示例，将来的版本将包括功率测量特性。对于云系统，我们从主机处理器的数量、主机内存量以及加速器的数量和类型中得出了一个”云规模”指标。我们从经验上证实了云规模与三大云提供商的成本密切相关。这些规模指标的报告在 MLPerf v0.5 和 v0.6 中是可选的。</p>
-<p>4.2.4 报告分数<br>MLPerf 结果报告提供了针对每个基准测试进行训练的时间。尽管对于系统比较来说，可能需要一个跨越整个套件的单个摘要分数，但由于两个主要原因，它不适合MLPerf。首先，总分意味着对个人基准分数进行一些加权。鉴于系统用户的多样性和 MLPerf 涵盖的广泛应用，没有一种加权方案具有普遍代表性。其次，如果提交者拒绝报告所有基准测试的结果，则汇总分数的意义就会降低。提交者可能会因为省略某些基准测试而产生多种原因， 并非所有基准测试在每个系统规模上都是可行的（例如，某些模型在最大系统需要数据并行训练所需的迷你批大小下不可训练）。此外，某些处理器可能仅面向某些应用程序。</p>
-<p>5 结果<br>与所有基准一样，MLPerf旨在通过建设性的竞争来鼓励创新;我们通过比较各轮提交的结果来衡量进度。到目前为止，我们已经进行了两轮 MLPerf 训练：v0.5 和 v0.6。它们相隔六个月，底层的硬件和软件系统保持不变。未经修改或在回合之间进行微小修改的结果表明，MLPerf正在推动实现和软件堆栈的快速性能和扩展改进。图3显示，在两个子任务回合之间，尽管目标质量更高，但16芯片系统的最佳性能结果平均提高了1.3×。图4显示，产生最佳整体性能结果所需的芯片数量平均增加了5.5×。其中一些改进归功于更好的基准测试实现，另一些归功于规则更改，例如允许LARS（You et al.，2017）优化器用于大型ResNet批处理。但我们相信，sub-mitters将大部分性能和扩展改进整合到底层软件基础架构中，并将其传递给用户。我们预计MLPerf将通过专注的硬件创新来推动类似的改进。</p>
-<h2 id="MLPerf-Inference"><a href="#MLPerf-Inference" class="headerlink" title="MLPerf Inference"></a>MLPerf Inference</h2><p>对于MLPerf Inference测试，每个Benchmark的评价标准是：<strong>在特定数据集上测量模型的推理性能，包括Latency和吞吐量</strong>。</p>
-<h1 id="MLPerf-Training-BenchMark"><a href="#MLPerf-Training-BenchMark" class="headerlink" title="MLPerf Training BenchMark"></a>MLPerf Training BenchMark</h1><h2 id="Image-Classification"><a href="#Image-Classification" class="headerlink" title="Image Classification"></a>Image Classification</h2><h2 id="Object-Detection-and-Segmentation"><a href="#Object-Detection-and-Segmentation" class="headerlink" title="Object Detection and Segmentation"></a>Object Detection and Segmentation</h2><ol>
-<li><p>Mask R-CNN</p>
-</li>
-<li><p>SSD</p>
-</li>
-<li><p>Translation</p>
-</li>
-<li><p>Reinforcement Learning</p>
-</li>
-<li><p>Recommendation</p>
-</li>
-<li></li>
-</ol>
-<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>ML Comment 官网： <a href="https://mlcommons.org/en/">https://mlcommons.org/en/</a> </p>
-<p>论文链接：<a href="https://arxiv.org/pdf/1910.01500.pdf">https://arxiv.org/pdf/1910.01500.pdf</a></p>
-<p>其他：<a href="https://www.cnblogs.com/caiyishuai/p/14361955.html">https://www.cnblogs.com/caiyishuai/p/14361955.html</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -1905,6 +1905,16 @@
       </categories>
   </entry>
   <entry>
+    <title></title>
+    <url>/2021/12/16/%E5%8D%8E%E4%B8%BA%E6%98%87%E8%85%BECANN%E6%95%99%E7%A8%8B-TBE%E7%AE%97%E5%AD%90%E5%BC%80%E5%8F%91/</url>
+    <content><![CDATA[<h1 id="华为昇腾CANN教程-TBE算子开发"><a href="#华为昇腾CANN教程-TBE算子开发" class="headerlink" title="华为昇腾CANN教程-TBE算子开发"></a>华为昇腾CANN教程-TBE算子开发</h1><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><p><strong>算子</strong>：一个函数空间到另一个函数空间的映射，可以说对任何函数进行某一项操作都可以将其认为是一个算子，在神经网络模型中涉及到的计算函数。例如：卷积层中的卷积算法，全连接中的权值求和算子，还有众多激活函数算子。</p>
+<p>每个算子有自己独有的名称，每个网络包含多种算子类型Type。比如神经网络中的卷积类型的算子有conv1，conv2… 池化类型的算子有pool1，pool2…</p>
+<p>TBE（Tensor Boost Engine）：是一款华为自研的NPU算子开发工具，以TVM为基础框架进行扩展。可以用python来开发的。</p>
+<p>NPU（Neural-network Processing Unit）：一类专用于人工智能（神经网络等方面）的硬件加速处理器。课程中使用昇腾910处理器</p>
+<p>TVM（Tensor Virtual Machine）： 能加载多种模型框架在多种平台上运行的中间框架</p>
+]]></content>
+  </entry>
+  <entry>
     <title>图像分割-Unet[项目应用]</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2-Unet/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -1925,16 +1935,6 @@
         <tag>论文复现</tag>
         <tag>项目总结</tag>
       </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2021/12/16/%E5%8D%8E%E4%B8%BA%E6%98%87%E8%85%BECANN%E6%95%99%E7%A8%8B-TBE%E7%AE%97%E5%AD%90%E5%BC%80%E5%8F%91/</url>
-    <content><![CDATA[<h1 id="华为昇腾CANN教程-TBE算子开发"><a href="#华为昇腾CANN教程-TBE算子开发" class="headerlink" title="华为昇腾CANN教程-TBE算子开发"></a>华为昇腾CANN教程-TBE算子开发</h1><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><p><strong>算子</strong>：一个函数空间到另一个函数空间的映射，可以说对任何函数进行某一项操作都可以将其认为是一个算子，在神经网络模型中涉及到的计算函数。例如：卷积层中的卷积算法，全连接中的权值求和算子，还有众多激活函数算子。</p>
-<p>每个算子有自己独有的名称，每个网络包含多种算子类型Type。比如神经网络中的卷积类型的算子有conv1，conv2… 池化类型的算子有pool1，pool2…</p>
-<p>TBE（Tensor Boost Engine）：是一款华为自研的NPU算子开发工具，以TVM为基础框架进行扩展。可以用python来开发的。</p>
-<p>NPU（Neural-network Processing Unit）：一类专用于人工智能（神经网络等方面）的硬件加速处理器。课程中使用昇腾910处理器</p>
-<p>TVM（Tensor Virtual Machine）： 能加载多种模型框架在多种平台上运行的中间框架</p>
-]]></content>
   </entry>
   <entry>
     <title>图像分类-EfficientNet&amp;EfficientDet[项目应用]</title>
@@ -2238,11 +2238,6 @@
       </tags>
   </entry>
   <entry>
-    <title>基于YOLOv5的安全帽和口罩检测</title>
-    <url>/2021/10/02/%E5%9F%BA%E4%BA%8EYOLOv5%E7%9A%84%E5%AE%89%E5%85%A8%E5%B8%BD%E5%92%8C%E5%8F%A3%E7%BD%A9%E6%A3%80%E6%B5%8B/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>基于python的CUDA编程基础</title>
     <url>/2021/10/07/%E5%9F%BA%E4%BA%8Epython%E7%9A%84CUDA%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>GPU全名为Graphics Processing Unit，又称视觉处理器、图形显示卡。GPU负责渲染出2D、3D、VR效果，主要专注于计算机图形图像领域。无论是CPU还是GPU，在进行计算时，都需要用核心（Core）来做算术逻辑运算，比如加减乘与或非等。核心中有ALU（逻辑运算单元）和寄存器等电路。在进行计算时，一个核心只能顺序执行某项任务。</p>
@@ -2287,6 +2282,11 @@
         <tag>编程</tag>
         <tag>GPU</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>基于YOLOv5的安全帽和口罩检测</title>
+    <url>/2021/10/02/%E5%9F%BA%E4%BA%8EYOLOv5%E7%9A%84%E5%AE%89%E5%85%A8%E5%B8%BD%E5%92%8C%E5%8F%A3%E7%BD%A9%E6%A3%80%E6%B5%8B/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>常见的算法面试（一）</title>
@@ -4041,6 +4041,18 @@
       </tags>
   </entry>
   <entry>
+    <title>计算机视觉CV算法概览（更新ing）</title>
+    <url>/2021/09/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89CV%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
+    <content><![CDATA[<h1 id="图像识别"><a href="#图像识别" class="headerlink" title="图像识别"></a>图像识别</h1><h2 id="1-AlexNet"><a href="#1-AlexNet" class="headerlink" title="1. AlexNet"></a>1. AlexNet</h2><h2 id="2-VGGNet"><a href="#2-VGGNet" class="headerlink" title="2. VGGNet"></a>2. VGGNet</h2><h2 id="3-GoogLeNet"><a href="#3-GoogLeNet" class="headerlink" title="3. GoogLeNet"></a>3. GoogLeNet</h2><h2 id="4-ResNet"><a href="#4-ResNet" class="headerlink" title="4. ResNet"></a>4. ResNet</h2><h2 id="5-DenseNet"><a href="#5-DenseNet" class="headerlink" title="5. DenseNet"></a>5. DenseNet</h2><h1 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h1><h2 id="1-R-CNN-系列"><a href="#1-R-CNN-系列" class="headerlink" title="1. R-CNN 系列"></a>1. R-CNN 系列</h2><h3 id="1-R-CNN"><a href="#1-R-CNN" class="headerlink" title="1. R-CNN"></a>1. R-CNN</h3><h3 id="2-Fast-R-CNN"><a href="#2-Fast-R-CNN" class="headerlink" title="2. Fast R-CNN"></a>2. Fast R-CNN</h3><h3 id="3-Faster-R-CNN"><a href="#3-Faster-R-CNN" class="headerlink" title="3. Faster R-CNN"></a>3. Faster R-CNN</h3><h2 id="2-Yolo系列"><a href="#2-Yolo系列" class="headerlink" title="2. Yolo系列"></a>2. Yolo系列</h2><h3 id="1-Yolo-V1"><a href="#1-Yolo-V1" class="headerlink" title="1.Yolo V1"></a>1.Yolo V1</h3><h3 id="2-Yolo-V2"><a href="#2-Yolo-V2" class="headerlink" title="2.Yolo V2"></a>2.Yolo V2</h3><h3 id="3-Yolo-V3"><a href="#3-Yolo-V3" class="headerlink" title="3.Yolo V3"></a>3.Yolo V3</h3><h3 id="4-Yolo-V4"><a href="#4-Yolo-V4" class="headerlink" title="4.Yolo V4"></a>4.Yolo V4</h3><h3 id="5-Yolo-V5"><a href="#5-Yolo-V5" class="headerlink" title="5.Yolo V5"></a>5.Yolo V5</h3><h2 id="3-SSD"><a href="#3-SSD" class="headerlink" title="3. SSD"></a>3. SSD</h2><h2 id="4-Retina-Net"><a href="#4-Retina-Net" class="headerlink" title="4. Retina-Net"></a>4. Retina-Net</h2><h1 id="图像分割"><a href="#图像分割" class="headerlink" title="图像分割"></a>图像分割</h1><h2 id="1-FCN"><a href="#1-FCN" class="headerlink" title="1. FCN"></a>1. FCN</h2><h2 id="2-Mask-R-CNN"><a href="#2-Mask-R-CNN" class="headerlink" title="2. Mask R-CNN"></a>2. Mask R-CNN</h2><h1 id="目标追踪"><a href="#目标追踪" class="headerlink" title="目标追踪"></a>目标追踪</h1><h2 id="1-Goturn"><a href="#1-Goturn" class="headerlink" title="1. Goturn"></a>1. Goturn</h2><h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><h1 id="图像生成"><a href="#图像生成" class="headerlink" title="图像生成"></a>图像生成</h1><h2 id="1-GAN"><a href="#1-GAN" class="headerlink" title="1. GAN"></a>1. GAN</h2>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+      </categories>
+      <tags>
+        <tag>概览</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>站内说明</title>
     <url>/2021/09/29/%E7%AB%99%E5%86%85%E8%AF%B4%E6%98%8E/</url>
     <content><![CDATA[<p>本blog是作为Leo同学的自我拓展过程中的自律自省记录</p>
@@ -4057,18 +4069,6 @@
 ]]></content>
       <categories>
         <category>其他</category>
-      </categories>
-      <tags>
-        <tag>概览</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机视觉CV算法概览（更新ing）</title>
-    <url>/2021/09/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89CV%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
-    <content><![CDATA[<h1 id="图像识别"><a href="#图像识别" class="headerlink" title="图像识别"></a>图像识别</h1><h2 id="1-AlexNet"><a href="#1-AlexNet" class="headerlink" title="1. AlexNet"></a>1. AlexNet</h2><h2 id="2-VGGNet"><a href="#2-VGGNet" class="headerlink" title="2. VGGNet"></a>2. VGGNet</h2><h2 id="3-GoogLeNet"><a href="#3-GoogLeNet" class="headerlink" title="3. GoogLeNet"></a>3. GoogLeNet</h2><h2 id="4-ResNet"><a href="#4-ResNet" class="headerlink" title="4. ResNet"></a>4. ResNet</h2><h2 id="5-DenseNet"><a href="#5-DenseNet" class="headerlink" title="5. DenseNet"></a>5. DenseNet</h2><h1 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h1><h2 id="1-R-CNN-系列"><a href="#1-R-CNN-系列" class="headerlink" title="1. R-CNN 系列"></a>1. R-CNN 系列</h2><h3 id="1-R-CNN"><a href="#1-R-CNN" class="headerlink" title="1. R-CNN"></a>1. R-CNN</h3><h3 id="2-Fast-R-CNN"><a href="#2-Fast-R-CNN" class="headerlink" title="2. Fast R-CNN"></a>2. Fast R-CNN</h3><h3 id="3-Faster-R-CNN"><a href="#3-Faster-R-CNN" class="headerlink" title="3. Faster R-CNN"></a>3. Faster R-CNN</h3><h2 id="2-Yolo系列"><a href="#2-Yolo系列" class="headerlink" title="2. Yolo系列"></a>2. Yolo系列</h2><h3 id="1-Yolo-V1"><a href="#1-Yolo-V1" class="headerlink" title="1.Yolo V1"></a>1.Yolo V1</h3><h3 id="2-Yolo-V2"><a href="#2-Yolo-V2" class="headerlink" title="2.Yolo V2"></a>2.Yolo V2</h3><h3 id="3-Yolo-V3"><a href="#3-Yolo-V3" class="headerlink" title="3.Yolo V3"></a>3.Yolo V3</h3><h3 id="4-Yolo-V4"><a href="#4-Yolo-V4" class="headerlink" title="4.Yolo V4"></a>4.Yolo V4</h3><h3 id="5-Yolo-V5"><a href="#5-Yolo-V5" class="headerlink" title="5.Yolo V5"></a>5.Yolo V5</h3><h2 id="3-SSD"><a href="#3-SSD" class="headerlink" title="3. SSD"></a>3. SSD</h2><h2 id="4-Retina-Net"><a href="#4-Retina-Net" class="headerlink" title="4. Retina-Net"></a>4. Retina-Net</h2><h1 id="图像分割"><a href="#图像分割" class="headerlink" title="图像分割"></a>图像分割</h1><h2 id="1-FCN"><a href="#1-FCN" class="headerlink" title="1. FCN"></a>1. FCN</h2><h2 id="2-Mask-R-CNN"><a href="#2-Mask-R-CNN" class="headerlink" title="2. Mask R-CNN"></a>2. Mask R-CNN</h2><h1 id="目标追踪"><a href="#目标追踪" class="headerlink" title="目标追踪"></a>目标追踪</h1><h2 id="1-Goturn"><a href="#1-Goturn" class="headerlink" title="1. Goturn"></a>1. Goturn</h2><h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><h1 id="图像生成"><a href="#图像生成" class="headerlink" title="图像生成"></a>图像生成</h1><h2 id="1-GAN"><a href="#1-GAN" class="headerlink" title="1. GAN"></a>1. GAN</h2>]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
       </categories>
       <tags>
         <tag>概览</tag>
