@@ -73,8 +73,7 @@
 <p>（1）高可用。它提供了高可用的以来防止分片或者节点宕机，为此，一个非常重要的注意点就是绝对不要讲一个分片的拷贝放在跟这个分片相同的机器上。</p>
 <p>（2）高并发。它允许你的分片可以提供超出自身吞吐量的搜索服务，搜索行为可以在分片所有的拷贝中并行执行。</p>
 <p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E9%9B%86%E7%BE%A4%E7%A4%BA%E6%84%8F%E5%9B%BE.png"></p>
-<p>#ES存储过程</p>
-<h2 id="写入过程"><a href="#写入过程" class="headerlink" title="写入过程"></a>写入过程</h2><ol>
+<h1 id="ES存储过程"><a href="#ES存储过程" class="headerlink" title="ES存储过程"></a>ES存储过程</h1><h2 id="写入过程"><a href="#写入过程" class="headerlink" title="写入过程"></a>写入过程</h2><ol>
 <li><p>客户端选择一个node发送请求过去，这个node就是coordinating node (协调节点)</p>
 </li>
 <li><p>coordinating node，对document进行路由，将请求转发给对应的node</p>
@@ -461,6 +460,25 @@
 ]]></content>
   </entry>
   <entry>
+    <title>ElasticSearch(5):可视化管理Kibana</title>
+    <url>/2021/12/15/ElasticSearch-5-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/</url>
+    <content><![CDATA[<p>发</p>
+<span id="more"></span>
+
+
+
+<h2 id="安装es可视化工具-kibana"><a href="#安装es可视化工具-kibana" class="headerlink" title="安装es可视化工具  kibana"></a>安装es可视化工具  kibana</h2><p>访问： <a href="http://localhost:`5601`/">http://localhost:`5601`/</a></p>
+<p><a href="https://blog.csdn.net/Soinice/article/details/87861121">(21条消息) Kibana（安装篇）：Windows下安装和运行Kibana_Soinice的博客-CSDN博客_kibana windows启动</a></p>
+<h1 id="ES数据导入"><a href="#ES数据导入" class="headerlink" title="ES数据导入"></a>ES数据导入</h1><h2 id="从MySQL数据导入es："><a href="#从MySQL数据导入es：" class="headerlink" title="从MySQL数据导入es："></a>从MySQL数据导入es：</h2><p>logstash安装操作：   [elk收集windows日志 - 今夕何兮 - 博客园 (cnblogs.com)](<a href="https://www.cnblogs.com/f66666/p/10273435.html#:~:text=%E4%B8%80%E3%80%81windows%E5%AE%89%E8%A3%85logstash">https://www.cnblogs.com/f66666/p/10273435.html#:~:text=一、windows安装logstash</a>. 1. 安装过程. logstash安装需要java环境支持，需先安装jkd1.8。. 官网下载logstash安装包，下载地址：https%3A%2F%2F<a href="http://www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。">www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。</a>. 在bin目录下运行命令：logstash -e “input,{ } } output { stdout {}}”. 然后你会发现终端在等待你的输入。.)</p>
+<h1 id="ES操作方式"><a href="#ES操作方式" class="headerlink" title="ES操作方式"></a>ES操作方式</h1><h1 id="过程监控"><a href="#过程监控" class="headerlink" title="过程监控"></a>过程监控</h1><p>开启</p>
+<h1 id><a href="#" class="headerlink" title></a></h1><p>查看每个index的存储情况：</p>
+<p><code>curl -X GET localhost:9200/_cat/indices?v</code></p>
+<p>查看每个shard的存储情况：</p>
+<p><code>curl -X GET localhost:9200/_cat/shards?v</code></p>
+<p>OK! 终于完成了ELK套件，可以深入的内容还有很多</p>
+]]></content>
+  </entry>
+  <entry>
     <title>ElasticSearch(4):logstash从MySQL数据库导入数据</title>
     <url>/2021/12/14/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
     <content><![CDATA[<p>Logstash 是免费且开放的服务器端数据处理管道，拥有200多个插件，能够从多个来源采集数据，转换数据，然后将数据发送到指定的存储库中。在本文中主要实践的是将数十亿的数据从MySQL数据库如何高效导入ES</p>
@@ -587,61 +605,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>ElasticSearch(5):可视化管理Kibana</title>
-    <url>/2021/12/15/ElasticSearch-5-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/</url>
-    <content><![CDATA[<p>发</p>
-<span id="more"></span>
-
-
-
-<h2 id="安装es可视化工具-kibana"><a href="#安装es可视化工具-kibana" class="headerlink" title="安装es可视化工具  kibana"></a>安装es可视化工具  kibana</h2><p>访问： <a href="http://localhost:`5601`/">http://localhost:`5601`/</a></p>
-<p><a href="https://blog.csdn.net/Soinice/article/details/87861121">(21条消息) Kibana（安装篇）：Windows下安装和运行Kibana_Soinice的博客-CSDN博客_kibana windows启动</a></p>
-<h1 id="ES数据导入"><a href="#ES数据导入" class="headerlink" title="ES数据导入"></a>ES数据导入</h1><h2 id="从MySQL数据导入es："><a href="#从MySQL数据导入es：" class="headerlink" title="从MySQL数据导入es："></a>从MySQL数据导入es：</h2><p>logstash安装操作：   [elk收集windows日志 - 今夕何兮 - 博客园 (cnblogs.com)](<a href="https://www.cnblogs.com/f66666/p/10273435.html#:~:text=%E4%B8%80%E3%80%81windows%E5%AE%89%E8%A3%85logstash">https://www.cnblogs.com/f66666/p/10273435.html#:~:text=一、windows安装logstash</a>. 1. 安装过程. logstash安装需要java环境支持，需先安装jkd1.8。. 官网下载logstash安装包，下载地址：https%3A%2F%2F<a href="http://www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。">www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。</a>. 在bin目录下运行命令：logstash -e “input,{ } } output { stdout {}}”. 然后你会发现终端在等待你的输入。.)</p>
-<h1 id="ES操作方式"><a href="#ES操作方式" class="headerlink" title="ES操作方式"></a>ES操作方式</h1><h1 id="过程监控"><a href="#过程监控" class="headerlink" title="过程监控"></a>过程监控</h1><p>开启</p>
-<h1 id><a href="#" class="headerlink" title></a></h1><p>查看每个index的存储情况：</p>
-<p><code>curl -X GET localhost:9200/_cat/indices?v</code></p>
-<p>查看每个shard的存储情况：</p>
-<p><code>curl -X GET localhost:9200/_cat/shards?v</code></p>
-<p>OK! 终于完成了ELK套件，可以深入的内容还有很多</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>ElasticSearch学习记录</title>
-    <url>/2021/12/05/ElasticSearch%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>索引操作</p>
-<p>文档操作</p>
-<p>查询操作</p>
-<span id="more"></span>
-
-<p>注意：</p>
-<p>大小写敏感！</p>
-<h1 id="索引操作"><a href="#索引操作" class="headerlink" title="索引操作"></a>索引操作</h1><p>创建索引：<code>put  http://127.0.0.1:9200/shopping</code></p>
-<p>查看索引：<code>get  http://127.0.0.1:9200/shopping</code></p>
-<p>查看所有索引：<code>get  http://127.0.0.1:9200/_cat/indices?v</code></p>
-<p>删除索引：<code>delete  http://127.0.0.1:9200/shopping</code></p>
-<h1 id="文档操作"><a href="#文档操作" class="headerlink" title="文档操作"></a>文档操作</h1><p>创建</p>
-<p>查询</p>
-<p>修改</p>
-<p>删除</p>
-<h1 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h1><h2 id="基本查询语句"><a href="#基本查询语句" class="headerlink" title="基本查询语句"></a>基本查询语句</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     <span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">          <span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">               <span class="string">&quot;Rfsize&quot;</span>: <span class="string">&quot;71&quot;</span></span><br><span class="line">          &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">	  <span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">	       <span class="string">&quot;Rfsize&quot;</span>: <span class="string">&quot;71&quot;</span></span><br><span class="line">	  &#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;from&quot;</span>:<span class="number">0</span>,</span><br><span class="line">	<span class="string">&quot;size&quot;</span>:<span class="number">2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="指定返回字段-并排序"><a href="#指定返回字段-并排序" class="headerlink" title="指定返回字段,并排序"></a>指定返回字段,并排序</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">	  <span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">	       <span class="string">&quot;Rfsize&quot;</span>: <span class="string">&quot;71&quot;</span></span><br><span class="line">	  &#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;_source&quot;</span>:[<span class="string">&quot;ID&quot;</span>,<span class="string">&quot;RID&quot;</span>,<span class="string">&quot;FID&quot;</span>],</span><br><span class="line">	<span class="string">&quot;sort&quot;</span>:&#123;</span><br><span class="line">		<span class="string">&quot;FID&quot;</span>: &#123;</span><br><span class="line">			<span class="string">&quot;order&quot;</span>: <span class="string">&quot;desc&quot;</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="多条件查询"><a href="#多条件查询" class="headerlink" title="多条件查询"></a>多条件查询</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 多条件查询</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">		<span class="string">&quot;bool&quot;</span>: &#123;</span><br><span class="line">			<span class="string">&quot;must&quot;</span>: [</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Rfsize&quot;</span>:<span class="number">88</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Pfsize&quot;</span>:<span class="number">64</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Tfsize&quot;</span>:<span class="number">36</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			],</span><br><span class="line">			<span class="string">&quot;filter&quot;</span>:&#123;</span><br><span class="line">					<span class="string">&quot;range&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;FID&quot;</span>:&#123;</span><br><span class="line">							<span class="string">&quot;gt&quot;</span>:<span class="number">4000</span>,</span><br><span class="line">							<span class="string">&quot;lt&quot;</span>:<span class="number">8000</span></span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="多范围搜索"><a href="#多范围搜索" class="headerlink" title="多范围搜索"></a>多范围搜索</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">		<span class="string">&quot;bool&quot;</span>: &#123;</span><br><span class="line">			<span class="string">&quot;must&quot;</span>: [</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Rfsize&quot;</span>:<span class="number">88</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Pfsize&quot;</span>:<span class="number">64</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Tfsize&quot;</span>:<span class="number">36</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;range&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;FID&quot;</span>:&#123;</span><br><span class="line">							<span class="string">&quot;gt&quot;</span>:<span class="number">4000</span>,</span><br><span class="line">							<span class="string">&quot;lt&quot;</span>:<span class="number">8000</span></span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;range&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Startp&quot;</span>:&#123;</span><br><span class="line">							<span class="string">&quot;gt&quot;</span>:<span class="number">100</span>,</span><br><span class="line">							<span class="string">&quot;lt&quot;</span>:<span class="number">200</span></span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">			]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="聚合操作-group-by"><a href="#聚合操作-group-by" class="headerlink" title="聚合操作- group by"></a>聚合操作- group by</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;aggs&quot;</span>:&#123;</span><br><span class="line">		<span class="string">&quot;id_group&quot;</span> : &#123;</span><br><span class="line">			<span class="string">&quot;terms&quot;</span>:&#123;</span><br><span class="line">				<span class="string">&quot;field&quot;</span>:<span class="string">&quot;RID&quot;</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;size&quot;</span> : <span class="number">0</span> // 隐藏原始数据</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;aggs&quot;</span>:&#123;</span><br><span class="line">		<span class="string">&quot;id_group&quot;</span> : &#123;</span><br><span class="line">			<span class="string">&quot;terms&quot;</span>:&#123;</span><br><span class="line">				<span class="string">&quot;script&quot;</span>: &#123;</span><br><span class="line">					<span class="string">&quot;source&quot;</span>:<span class="string">&quot;doc[&#x27;FID&#x27;].value + doc[&#x27;RID&#x27;].value&quot;</span>,</span><br><span class="line">					<span class="string">&quot;lang&quot;</span>:<span class="string">&quot;painless&quot;</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;size&quot;</span> : <span class="number">0</span> // 隐藏原始数据</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="结果去重"><a href="#结果去重" class="headerlink" title="结果去重"></a>结果去重</h2><h2 id="结果统计"><a href="#结果统计" class="headerlink" title="结果统计"></a>结果统计</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;aggs&quot;</span>:&#123;</span><br><span class="line">		<span class="string">&quot;distict_id&quot;</span> : &#123;</span><br><span class="line">			<span class="string">&quot;cardinality&quot;</span>:&#123;</span><br><span class="line">				<span class="string">&quot;field&quot;</span>:<span class="string">&quot;ID&quot;</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;size&quot;</span> : <span class="number">0</span> // 隐藏原始数据</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-  </entry>
-  <entry>
     <title>Global-Wheat-Detection全球小麦麦穗检测</title>
     <url>/2021/10/02/Global-Wheat-Detection%E5%85%A8%E7%90%83%E5%B0%8F%E9%BA%A6%E9%BA%A6%E7%A9%97%E6%A3%80%E6%B5%8B/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>Version1.0: 通过对 Faster R-CNN 网络进行微调来实现检测<br> Version2.0: 基于 EfficientDet 网络实现并结合 Pseudo-Labeling 策略进行改进</p>
@@ -697,6 +660,42 @@
 
 
 
+
+]]></content>
+  </entry>
+  <entry>
+    <title>ElasticSearch学习记录</title>
+    <url>/2021/12/05/ElasticSearch%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>索引操作</p>
+<p>文档操作</p>
+<p>查询操作</p>
+<span id="more"></span>
+
+<p>注意：</p>
+<p>大小写敏感！</p>
+<h1 id="索引操作"><a href="#索引操作" class="headerlink" title="索引操作"></a>索引操作</h1><p>创建索引：<code>put  http://127.0.0.1:9200/shopping</code></p>
+<p>查看索引：<code>get  http://127.0.0.1:9200/shopping</code></p>
+<p>查看所有索引：<code>get  http://127.0.0.1:9200/_cat/indices?v</code></p>
+<p>删除索引：<code>delete  http://127.0.0.1:9200/shopping</code></p>
+<h1 id="文档操作"><a href="#文档操作" class="headerlink" title="文档操作"></a>文档操作</h1><p>创建</p>
+<p>查询</p>
+<p>修改</p>
+<p>删除</p>
+<h1 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h1><h2 id="基本查询语句"><a href="#基本查询语句" class="headerlink" title="基本查询语句"></a>基本查询语句</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     <span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">          <span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">               <span class="string">&quot;Rfsize&quot;</span>: <span class="string">&quot;71&quot;</span></span><br><span class="line">          &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">	  <span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">	       <span class="string">&quot;Rfsize&quot;</span>: <span class="string">&quot;71&quot;</span></span><br><span class="line">	  &#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;from&quot;</span>:<span class="number">0</span>,</span><br><span class="line">	<span class="string">&quot;size&quot;</span>:<span class="number">2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="指定返回字段-并排序"><a href="#指定返回字段-并排序" class="headerlink" title="指定返回字段,并排序"></a>指定返回字段,并排序</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">	  <span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">	       <span class="string">&quot;Rfsize&quot;</span>: <span class="string">&quot;71&quot;</span></span><br><span class="line">	  &#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;_source&quot;</span>:[<span class="string">&quot;ID&quot;</span>,<span class="string">&quot;RID&quot;</span>,<span class="string">&quot;FID&quot;</span>],</span><br><span class="line">	<span class="string">&quot;sort&quot;</span>:&#123;</span><br><span class="line">		<span class="string">&quot;FID&quot;</span>: &#123;</span><br><span class="line">			<span class="string">&quot;order&quot;</span>: <span class="string">&quot;desc&quot;</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="多条件查询"><a href="#多条件查询" class="headerlink" title="多条件查询"></a>多条件查询</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 多条件查询</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">		<span class="string">&quot;bool&quot;</span>: &#123;</span><br><span class="line">			<span class="string">&quot;must&quot;</span>: [</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Rfsize&quot;</span>:<span class="number">88</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Pfsize&quot;</span>:<span class="number">64</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Tfsize&quot;</span>:<span class="number">36</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			],</span><br><span class="line">			<span class="string">&quot;filter&quot;</span>:&#123;</span><br><span class="line">					<span class="string">&quot;range&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;FID&quot;</span>:&#123;</span><br><span class="line">							<span class="string">&quot;gt&quot;</span>:<span class="number">4000</span>,</span><br><span class="line">							<span class="string">&quot;lt&quot;</span>:<span class="number">8000</span></span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="多范围搜索"><a href="#多范围搜索" class="headerlink" title="多范围搜索"></a>多范围搜索</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">		<span class="string">&quot;bool&quot;</span>: &#123;</span><br><span class="line">			<span class="string">&quot;must&quot;</span>: [</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Rfsize&quot;</span>:<span class="number">88</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Pfsize&quot;</span>:<span class="number">64</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Tfsize&quot;</span>:<span class="number">36</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;range&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;FID&quot;</span>:&#123;</span><br><span class="line">							<span class="string">&quot;gt&quot;</span>:<span class="number">4000</span>,</span><br><span class="line">							<span class="string">&quot;lt&quot;</span>:<span class="number">8000</span></span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">&quot;range&quot;</span>: &#123;</span><br><span class="line">						<span class="string">&quot;Startp&quot;</span>:&#123;</span><br><span class="line">							<span class="string">&quot;gt&quot;</span>:<span class="number">100</span>,</span><br><span class="line">							<span class="string">&quot;lt&quot;</span>:<span class="number">200</span></span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">			]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="聚合操作-group-by"><a href="#聚合操作-group-by" class="headerlink" title="聚合操作- group by"></a>聚合操作- group by</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;aggs&quot;</span>:&#123;</span><br><span class="line">		<span class="string">&quot;id_group&quot;</span> : &#123;</span><br><span class="line">			<span class="string">&quot;terms&quot;</span>:&#123;</span><br><span class="line">				<span class="string">&quot;field&quot;</span>:<span class="string">&quot;RID&quot;</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;size&quot;</span> : <span class="number">0</span> // 隐藏原始数据</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;aggs&quot;</span>:&#123;</span><br><span class="line">		<span class="string">&quot;id_group&quot;</span> : &#123;</span><br><span class="line">			<span class="string">&quot;terms&quot;</span>:&#123;</span><br><span class="line">				<span class="string">&quot;script&quot;</span>: &#123;</span><br><span class="line">					<span class="string">&quot;source&quot;</span>:<span class="string">&quot;doc[&#x27;FID&#x27;].value + doc[&#x27;RID&#x27;].value&quot;</span>,</span><br><span class="line">					<span class="string">&quot;lang&quot;</span>:<span class="string">&quot;painless&quot;</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;size&quot;</span> : <span class="number">0</span> // 隐藏原始数据</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="结果去重"><a href="#结果去重" class="headerlink" title="结果去重"></a>结果去重</h2><h2 id="结果统计"><a href="#结果统计" class="headerlink" title="结果统计"></a>结果统计</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;aggs&quot;</span>:&#123;</span><br><span class="line">		<span class="string">&quot;distict_id&quot;</span> : &#123;</span><br><span class="line">			<span class="string">&quot;cardinality&quot;</span>:&#123;</span><br><span class="line">				<span class="string">&quot;field&quot;</span>:<span class="string">&quot;ID&quot;</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;size&quot;</span> : <span class="number">0</span> // 隐藏原始数据</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
   </entry>
@@ -828,6 +827,20 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Pytorch框架基础（二）</title>
+    <url>/2021/09/29/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p><a href="https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1">https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>Pytorch</category>
+      </categories>
+      <tags>
+        <tag>基础操作</tag>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Pytorch框架基础（一）</title>
     <url>/2021/09/29/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>Tensor()创建</p>
@@ -888,20 +901,6 @@
 
 
 
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>Pytorch</category>
-      </categories>
-      <tags>
-        <tag>基础操作</tag>
-        <tag>编程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Pytorch框架基础（二）</title>
-    <url>/2021/09/29/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p><a href="https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1">https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1</a></p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1199,6 +1198,24 @@
 ]]></content>
   </entry>
   <entry>
+    <title>hello-world</title>
+    <url>/2021/09/29/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>cv算法面试问题总结（四）</title>
     <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%9B%9B%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
@@ -1238,24 +1255,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hello-world</title>
-    <url>/2021/09/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>kaggle-糖尿病视网膜病变检测</title>
     <url>/2021/10/07/kaggle-%E7%B3%96%E5%B0%BF%E7%97%85%E8%A7%86%E7%BD%91%E8%86%9C%E7%97%85%E5%8F%98%E6%A3%80%E6%B5%8B/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>问题分析：糖尿病作为一种越来越高发的慢性病，每11个人就有一人是糖尿病患者。糖尿病视网膜病变作为并发症导致的视网膜病变失明也十分常见，如何预防因糖尿病继发的视网膜病变问题的是十分迫切的。这影响到62.5万英国人、甚至是全球1亿人的生活。</p>
@@ -1292,6 +1291,23 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>kaggle比赛-NFL Helmet Assignment</title>
+    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-NFL-Helmet-Assignment/</url>
+    <content><![CDATA[<p><a href="https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment">https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>Pytorch</category>
+        <category>深度学习</category>
+        <category>项目比赛</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Kaggle</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>kaggle比赛-脑肿瘤检测</title>
     <url>/2021/09/30/kaggle%E6%AF%94%E8%B5%9B-%E8%84%91%E8%82%BF%E7%98%A4%E6%A3%80%E6%B5%8B/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>数据集简介：脑肿瘤图片</p>
@@ -1320,23 +1336,6 @@
 
 <p>Python3:  str.zfill(lenth) 方法返回指定长度的字符串，原字符串右对齐，前面填充0。</p>
 <p>目标检测、语义分割、姿态估计、SLAM、3D重建</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>Pytorch</category>
-        <category>深度学习</category>
-        <category>项目比赛</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>Kaggle</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>kaggle比赛-NFL Helmet Assignment</title>
-    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-NFL-Helmet-Assignment/</url>
-    <content><![CDATA[<p><a href="https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment">https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment</a></p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1904,6 +1903,16 @@
       </categories>
   </entry>
   <entry>
+    <title></title>
+    <url>/2021/12/16/%E5%8D%8E%E4%B8%BA%E6%98%87%E8%85%BECANN%E6%95%99%E7%A8%8B-TBE%E7%AE%97%E5%AD%90%E5%BC%80%E5%8F%91/</url>
+    <content><![CDATA[<h1 id="华为昇腾CANN教程-TBE算子开发"><a href="#华为昇腾CANN教程-TBE算子开发" class="headerlink" title="华为昇腾CANN教程-TBE算子开发"></a>华为昇腾CANN教程-TBE算子开发</h1><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><p><strong>算子</strong>：一个函数空间到另一个函数空间的映射，可以说对任何函数进行某一项操作都可以将其认为是一个算子，在神经网络模型中涉及到的计算函数。例如：卷积层中的卷积算法，全连接中的权值求和算子，还有众多激活函数算子。</p>
+<p>每个算子有自己独有的名称，每个网络包含多种算子类型Type。比如神经网络中的卷积类型的算子有conv1，conv2… 池化类型的算子有pool1，pool2…</p>
+<p>TBE（Tensor Boost Engine）：是一款华为自研的NPU算子开发工具，以TVM为基础框架进行扩展。可以用python来开发的。</p>
+<p>NPU（Neural-network Processing Unit）：一类专用于人工智能（神经网络等方面）的硬件加速处理器。课程中使用昇腾910处理器</p>
+<p>TVM（Tensor Virtual Machine）： 能加载多种模型框架在多种平台上运行的中间框架</p>
+]]></content>
+  </entry>
+  <entry>
     <title>图像分割-Unet[项目应用]</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2-Unet/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -1924,16 +1933,6 @@
         <tag>论文复现</tag>
         <tag>项目总结</tag>
       </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2021/12/16/%E5%8D%8E%E4%B8%BA%E6%98%87%E8%85%BECANN%E6%95%99%E7%A8%8B-TBE%E7%AE%97%E5%AD%90%E5%BC%80%E5%8F%91/</url>
-    <content><![CDATA[<h1 id="华为昇腾CANN教程-TBE算子开发"><a href="#华为昇腾CANN教程-TBE算子开发" class="headerlink" title="华为昇腾CANN教程-TBE算子开发"></a>华为昇腾CANN教程-TBE算子开发</h1><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><p><strong>算子</strong>：一个函数空间到另一个函数空间的映射，可以说对任何函数进行某一项操作都可以将其认为是一个算子，在神经网络模型中涉及到的计算函数。例如：卷积层中的卷积算法，全连接中的权值求和算子，还有众多激活函数算子。</p>
-<p>每个算子有自己独有的名称，每个网络包含多种算子类型Type。比如神经网络中的卷积类型的算子有conv1，conv2… 池化类型的算子有pool1，pool2…</p>
-<p>TBE（Tensor Boost Engine）：是一款华为自研的NPU算子开发工具，以TVM为基础框架进行扩展。可以用python来开发的。</p>
-<p>NPU（Neural-network Processing Unit）：一类专用于人工智能（神经网络等方面）的硬件加速处理器。课程中使用昇腾910处理器</p>
-<p>TVM（Tensor Virtual Machine）： 能加载多种模型框架在多种平台上运行的中间框架</p>
-]]></content>
   </entry>
   <entry>
     <title>图像分类-EfficientNet&amp;EfficientDet[项目应用]</title>
@@ -2054,49 +2053,6 @@
       </tags>
   </entry>
   <entry>
-    <title>图像识别-ResNet</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/</url>
-    <content><![CDATA[<h1 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：<strong>训练集上的性能下降，可以排除过拟合，BN层的引入也基本解决了plain net的梯度消失和梯度爆炸问题。</strong>如果不是过拟合以及梯度消失导致的，那原因是什么？为什么非常深度的网络在增加更多层时会表现得更差？深度网络点退化（Degradation problem）问题</p>
-<p>方法简述：</p>
-<p>ResNet网络是参考了VGG19网络，在其基础上进行了修改，并通过短路机制加入了残差单元，如图5所示。变化主要体现在ResNet直接使用stride=2的卷积做下采样，并且用global average pool层替换了全连接层。ResNet的一个重要设计原则是：当feature map大小降低一半时，feature map的数量增加一倍，这保持了网络层的复杂度。</p>
-<p>优点：</p>
-<p>ResNet通过残差学习解决了深度网络的退化问题，让我们可以训练出更深的网络</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-<p>认知上，深层网络不会比浅层网络的表现更差。基本假设是第N+1层什么也没学到也只是简单的copy或者恒等映射了前一层的结果，也至少和前一层有相同的准确度。</p>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/ResNet-Architecture.png"></p>
-<p>参考：<a href="https://www.cnblogs.com/shine-lee/p/12363488.html">https://www.cnblogs.com/shine-lee/p/12363488.html</a></p>
-<p>ResNet的设计有如下特点：</p>
-<ul>
-<li>与plain net相比，ResNet多了很多“旁路”，即shortcut路径，其首尾圈出的layers构成一个Residual Block；</li>
-<li>ResNet中，所有的Residual Block都没有pooling层，<strong>降采样是通过conv的stride实现的</strong>；</li>
-<li>分别在conv3_1、conv4_1和conv5_1 Residual Block，降采样1倍，同时feature map数量增加1倍，如图中虚线划定的block；</li>
-<li><strong>通过Average Pooling得到最终的特征</strong>，而不是通过全连接层；</li>
-<li>每个卷积层之后都紧接着BatchNorm layer，为了简化，图中并没有标出；</li>
-</ul>
-<p>ResNet结构非常容易修改和扩展，通过调整block内的channel数量以及堆叠的block数量，就可以很容易地调整网络的宽度和深度，来得到不同表达能力的网络，而不用过多地担心网络的“退化”问题，只要训练数据足够，逐步加深网络，就可以获得更好的性能表现。</p>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/resnet%E6%A8%A1%E5%9D%97.png"></p>
-<h1 id="Residual-Block的分析与改进"><a href="#Residual-Block的分析与改进" class="headerlink" title="Residual Block的分析与改进"></a>Residual Block的分析与改进</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/ResNet%E6%94%B9%E8%BF%9B.png"></p>
-<p>论文：<a href="https://arxiv.org/abs/1603.05027">https://arxiv.org/abs/1603.05027</a></p>
-<p>新提出的Residual Block结构，具有更强的泛化能力，能更好地避免“退化”，堆叠大于1000层后，性能仍在变好。具体的变化在于</p>
-<ul>
-<li><strong>通过保持shortcut路径的“纯净”，可以让信息在前向传播和反向传播中平滑传递，这点十分重要。</strong>为此，如无必要，不引入1×11×1卷积等操作，同时将上图灰色路径上的ReLU移到了𝐹(𝑥)F(x)路径上。</li>
-<li>在残差路径上，<strong>将BN和ReLU统一放在weight前作为pre-activation</strong>，获得了“Ease of optimization”以及“Reducing overfitting”的效果。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>图像识别</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>图像识别-GoogLeNet</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-GoogLeNet/</url>
     <content><![CDATA[<h1 id="GoogleNet"><a href="#GoogleNet" class="headerlink" title="GoogleNet"></a>GoogleNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：一般来说提升网络性能最直接的办法是增加网络深度（卷积层数）和宽度（神经元个数），但是伴随而来的是参数过多，容易过拟合；网络庞大计算复杂；梯度弥散，难以优化；所以需要设计一种模型：1. 让网络模型结构变得稀疏；2.能利用密集矩阵的高性能计算（大部分硬件是对密集矩阵计算优化的，稀疏矩阵计算时耗费的时间并没有减小）</p>
@@ -2199,6 +2155,49 @@
       </tags>
   </entry>
   <entry>
+    <title>图像识别-ResNet</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/</url>
+    <content><![CDATA[<h1 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：<strong>训练集上的性能下降，可以排除过拟合，BN层的引入也基本解决了plain net的梯度消失和梯度爆炸问题。</strong>如果不是过拟合以及梯度消失导致的，那原因是什么？为什么非常深度的网络在增加更多层时会表现得更差？深度网络点退化（Degradation problem）问题</p>
+<p>方法简述：</p>
+<p>ResNet网络是参考了VGG19网络，在其基础上进行了修改，并通过短路机制加入了残差单元，如图5所示。变化主要体现在ResNet直接使用stride=2的卷积做下采样，并且用global average pool层替换了全连接层。ResNet的一个重要设计原则是：当feature map大小降低一半时，feature map的数量增加一倍，这保持了网络层的复杂度。</p>
+<p>优点：</p>
+<p>ResNet通过残差学习解决了深度网络的退化问题，让我们可以训练出更深的网络</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+<p>认知上，深层网络不会比浅层网络的表现更差。基本假设是第N+1层什么也没学到也只是简单的copy或者恒等映射了前一层的结果，也至少和前一层有相同的准确度。</p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/ResNet-Architecture.png"></p>
+<p>参考：<a href="https://www.cnblogs.com/shine-lee/p/12363488.html">https://www.cnblogs.com/shine-lee/p/12363488.html</a></p>
+<p>ResNet的设计有如下特点：</p>
+<ul>
+<li>与plain net相比，ResNet多了很多“旁路”，即shortcut路径，其首尾圈出的layers构成一个Residual Block；</li>
+<li>ResNet中，所有的Residual Block都没有pooling层，<strong>降采样是通过conv的stride实现的</strong>；</li>
+<li>分别在conv3_1、conv4_1和conv5_1 Residual Block，降采样1倍，同时feature map数量增加1倍，如图中虚线划定的block；</li>
+<li><strong>通过Average Pooling得到最终的特征</strong>，而不是通过全连接层；</li>
+<li>每个卷积层之后都紧接着BatchNorm layer，为了简化，图中并没有标出；</li>
+</ul>
+<p>ResNet结构非常容易修改和扩展，通过调整block内的channel数量以及堆叠的block数量，就可以很容易地调整网络的宽度和深度，来得到不同表达能力的网络，而不用过多地担心网络的“退化”问题，只要训练数据足够，逐步加深网络，就可以获得更好的性能表现。</p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/resnet%E6%A8%A1%E5%9D%97.png"></p>
+<h1 id="Residual-Block的分析与改进"><a href="#Residual-Block的分析与改进" class="headerlink" title="Residual Block的分析与改进"></a>Residual Block的分析与改进</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-ResNet/ResNet%E6%94%B9%E8%BF%9B.png"></p>
+<p>论文：<a href="https://arxiv.org/abs/1603.05027">https://arxiv.org/abs/1603.05027</a></p>
+<p>新提出的Residual Block结构，具有更强的泛化能力，能更好地避免“退化”，堆叠大于1000层后，性能仍在变好。具体的变化在于</p>
+<ul>
+<li><strong>通过保持shortcut路径的“纯净”，可以让信息在前向传播和反向传播中平滑传递，这点十分重要。</strong>为此，如无必要，不引入1×11×1卷积等操作，同时将上图灰色路径上的ReLU移到了𝐹(𝑥)F(x)路径上。</li>
+<li>在残差路径上，<strong>将BN和ReLU统一放在weight前作为pre-activation</strong>，获得了“Ease of optimization”以及“Reducing overfitting”的效果。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>图像识别</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>图像识别-VGGNet</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：随着AlexNet提出，很多人开始利用卷积神经网络来解决图像识别的问题。一般的做法都是重复几层卷积网络，每个卷积网络之后接一些池化层，最后再加上几个全连接层。而如何更优的设计网络结构（深度，kernel size等）</p>
@@ -2240,39 +2239,6 @@
     <title>基于YOLOv5的安全帽和口罩检测</title>
     <url>/2021/10/02/%E5%9F%BA%E4%BA%8EYOLOv5%E7%9A%84%E5%AE%89%E5%85%A8%E5%B8%BD%E5%92%8C%E5%8F%A3%E7%BD%A9%E6%A3%80%E6%B5%8B/</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>常见的算法面试（一）</title>
-    <url>/2021/10/03/%E5%B8%B8%E8%A7%81%E7%9A%84%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>底层避障算法ORCA(Optimal Reciprocal Collision Avoidance)</title>
-    <url>/2021/11/02/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>VO（Velocity Obstacle）</p>
-<p>RVO（Reciprocal Velocity Obstacles）</p>
-<p>ORCA</p>
-<span id="more"></span>
-
-<h1 id="VO（Velocity-Obstacle）"><a href="#VO（Velocity-Obstacle）" class="headerlink" title="VO（Velocity Obstacle）"></a>VO（Velocity Obstacle）</h1><p>以两个移动的物体为例：</p>
-<ol>
-<li>计算两个移动物体的相对速度和速度方向</li>
-<li>假设一个物体是静止的，另一个物体以相对速度进行运动，</li>
-<li>判断移动的物体的中心是否在一定时间内到达另一个物体的中心为中心和两个物体的半径和为半径的区域内</li>
-<li>如果到达则认为会碰撞，否则不会</li>
-</ol>
-<p>缺点：</p>
-<p><img src="/2021/11/02/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/VO%E7%BC%BA%E7%82%B9.jpg"></p>
-<p>如图，加入两个物体都采用相同的策略进行移动，两个物体既要确保移动的物体的速度都处于各自的Velocity Obstacle之外，又要尽可能快，所以说速度和方向是不断会被推拉，因此会导致轨迹抖动如图所示，会影响到效率</p>
-<h1 id="RVO（Reciprocal-Velocity-Obstacles）"><a href="#RVO（Reciprocal-Velocity-Obstacles）" class="headerlink" title="RVO（Reciprocal Velocity Obstacles）"></a>RVO（Reciprocal Velocity Obstacles）</h1><p>RVO的目标是解决VO中产生的抖动问题。</p>
-<p>在避障行为的速度选择时，与VO避障中智能体单纯选择VO区域之外的速度不同，这里我们选择的新速度是VO之外的某个速度与当前速度的平均值</p>
-<p><img src="/2021/11/02/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/RVO.png"></p>
-<p>如图所示，RVO是将先前的VO进行平移的到的， By the way, 是Va和VO内的任意Vb求平均得到的。也就是将原来顶点在Vb的夹角区域平移到顶点为(Va+Vb)/2 的位置。也就是说，</p>
-<p>可通过数学证明 <a href="https://blog.csdn.net/zhiai315/article/details/114241684?spm=1001.2101.3001.6650.3&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-3.no_search_link&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-3.no_search_link">https://blog.csdn.net/zhiai315/article/details/114241684?spm=1001.2101.3001.6650.3&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-3.no_search_link&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-3.no_search_link</a></p>
-<p>这样是架设了每个智能体在避免碰撞的过程中各自平均分担了相同的避让。而实际上，各个智能体之间可能在规避碰撞的过程中分别承担不同比例，事实上是可以通过动态划分的。如果A承担的比例是a1，则B承担的是1-a1. </p>
-<p>Va’ = a1*Vr + (1-a1)*Va 由此可知 Vr = (1/a1) * Va’ +(1-1/a1) * Va</p>
-<h1 id="ORCA"><a href="#ORCA" class="headerlink" title="ORCA"></a>ORCA</h1><p>组合RVO区域</p>
-]]></content>
   </entry>
   <entry>
     <title>基于python的CUDA编程基础</title>
@@ -2319,6 +2285,39 @@
         <tag>编程</tag>
         <tag>GPU</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>常见的算法面试（一）</title>
+    <url>/2021/10/03/%E5%B8%B8%E8%A7%81%E7%9A%84%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>底层避障算法ORCA(Optimal Reciprocal Collision Avoidance)</title>
+    <url>/2021/11/02/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>VO（Velocity Obstacle）</p>
+<p>RVO（Reciprocal Velocity Obstacles）</p>
+<p>ORCA</p>
+<span id="more"></span>
+
+<h1 id="VO（Velocity-Obstacle）"><a href="#VO（Velocity-Obstacle）" class="headerlink" title="VO（Velocity Obstacle）"></a>VO（Velocity Obstacle）</h1><p>以两个移动的物体为例：</p>
+<ol>
+<li>计算两个移动物体的相对速度和速度方向</li>
+<li>假设一个物体是静止的，另一个物体以相对速度进行运动，</li>
+<li>判断移动的物体的中心是否在一定时间内到达另一个物体的中心为中心和两个物体的半径和为半径的区域内</li>
+<li>如果到达则认为会碰撞，否则不会</li>
+</ol>
+<p>缺点：</p>
+<p><img src="/2021/11/02/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/VO%E7%BC%BA%E7%82%B9.jpg"></p>
+<p>如图，加入两个物体都采用相同的策略进行移动，两个物体既要确保移动的物体的速度都处于各自的Velocity Obstacle之外，又要尽可能快，所以说速度和方向是不断会被推拉，因此会导致轨迹抖动如图所示，会影响到效率</p>
+<h1 id="RVO（Reciprocal-Velocity-Obstacles）"><a href="#RVO（Reciprocal-Velocity-Obstacles）" class="headerlink" title="RVO（Reciprocal Velocity Obstacles）"></a>RVO（Reciprocal Velocity Obstacles）</h1><p>RVO的目标是解决VO中产生的抖动问题。</p>
+<p>在避障行为的速度选择时，与VO避障中智能体单纯选择VO区域之外的速度不同，这里我们选择的新速度是VO之外的某个速度与当前速度的平均值</p>
+<p><img src="/2021/11/02/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/RVO.png"></p>
+<p>如图所示，RVO是将先前的VO进行平移的到的， By the way, 是Va和VO内的任意Vb求平均得到的。也就是将原来顶点在Vb的夹角区域平移到顶点为(Va+Vb)/2 的位置。也就是说，</p>
+<p>可通过数学证明 <a href="https://blog.csdn.net/zhiai315/article/details/114241684?spm=1001.2101.3001.6650.3&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-3.no_search_link&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-3.no_search_link">https://blog.csdn.net/zhiai315/article/details/114241684?spm=1001.2101.3001.6650.3&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-3.no_search_link&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-3.no_search_link</a></p>
+<p>这样是架设了每个智能体在避免碰撞的过程中各自平均分担了相同的避让。而实际上，各个智能体之间可能在规避碰撞的过程中分别承担不同比例，事实上是可以通过动态划分的。如果A承担的比例是a1，则B承担的是1-a1. </p>
+<p>Va’ = a1*Vr + (1-a1)*Va 由此可知 Vr = (1/a1) * Va’ +(1-1/a1) * Va</p>
+<h1 id="ORCA"><a href="#ORCA" class="headerlink" title="ORCA"></a>ORCA</h1><p>组合RVO区域</p>
+]]></content>
   </entry>
   <entry>
     <title>强化学习Reinforcement Learning</title>
@@ -2758,25 +2757,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-集成算法-AdaBoost</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-AdaBoost/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习-逻辑回归Logistic Regression</title>
     <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92Logistic-Regression/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>逻辑回归 = 线性回归+逻辑分布 （如：sigmoid函数）</p>
@@ -2822,6 +2802,25 @@
 <p>(3)很难处理数据不平衡的问题;</p>
 <p>(4)准确率并不是很高，因为形式非常的简单(非常类似线性模型)，很难去拟合数据的真实分布;</p>
 <p>(5)<a href="https://www.cda.cn/map/luojihuigui/">逻辑回归</a>本身无法筛选<a href="https://www.cda.cn/map/tezheng/">特征</a>，有时会用gbdt来筛选<a href="https://www.cda.cn/map/tezheng/">特征</a>，然后再上<a href="https://www.cda.cn/map/luojihuigui/">逻辑回归</a>。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习-集成算法-AdaBoost</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-AdaBoost/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
 ]]></content>
       <categories>
         <category>学习</category>
