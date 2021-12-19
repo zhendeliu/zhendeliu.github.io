@@ -1178,6 +1178,13 @@
       </tags>
   </entry>
   <entry>
+    <title>cv算法面试问题总结（八）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AB%EF%BC%89/</url>
+    <content><![CDATA[<p>神经网络中会用到批量梯度下降（BGD）吗？为什么用随机梯度下降（SGD）?<br>当神经网络的调参效果不好时，从哪些角度思考？（不要首先归结于overfiting）<br>请阐述下卷积神经网络CNN的基本原理(全网最通俗版)<br>神经网络输出层为什么通常使用softmax?<br>了解无人驾驶的核心技术么？<br>如何形象的理解LSTM的三个门<br>通过一张张动图形象的理解LSTM<br>如何理解反向传播算法BackPropagation<br>请问什么是softmax函数？<br>通俗理解BN(Batch Normalization)<br>批量归一化BN到底解决了什么问题？<br>如何理解随机梯度下降，以及为什么SGD能够收敛？<br>模拟退火算法能解决陷入局部最优的问题么<br>请说下常见优化方法各自的优缺点（BGD、SGD、MBGD、Momentum、NAG、Adagrad、Adadelta、RMSprop、Adam）<br>Adam算法的原理机制是怎么样的？它与相关的AdaGrad和RMSProp方法有什么区别</p>
+<span id="more"></span>
+]]></content>
+  </entry>
+  <entry>
     <title>cv算法面试问题总结（五）</title>
     <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%94%EF%BC%89/</url>
     <content><![CDATA[<p>如何确定CNN的卷积核通道数和卷积输出层的通道数？<br>什么是卷积？<br>什么是CNN的池化pool层？<br>简述下什么是生成对抗网络<br>学梵高作画的原理是什么？<br>请简要介绍下tensorflow的计算图<br>你有哪些深度学习（rnn、cnn）调参的经验？<br>为什么不同的机器学习领域都可以使用CNN，CNN解决了这些领域的哪些共性问题？他是如何解决的？<br>LSTM结构推导，为什么比RNN好？<br>Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。</p>
@@ -1195,13 +1202,6 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>cv算法面试问题总结（八）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AB%EF%BC%89/</url>
-    <content><![CDATA[<p>神经网络中会用到批量梯度下降（BGD）吗？为什么用随机梯度下降（SGD）?<br>当神经网络的调参效果不好时，从哪些角度思考？（不要首先归结于overfiting）<br>请阐述下卷积神经网络CNN的基本原理(全网最通俗版)<br>神经网络输出层为什么通常使用softmax?<br>了解无人驾驶的核心技术么？<br>如何形象的理解LSTM的三个门<br>通过一张张动图形象的理解LSTM<br>如何理解反向传播算法BackPropagation<br>请问什么是softmax函数？<br>通俗理解BN(Batch Normalization)<br>批量归一化BN到底解决了什么问题？<br>如何理解随机梯度下降，以及为什么SGD能够收敛？<br>模拟退火算法能解决陷入局部最优的问题么<br>请说下常见优化方法各自的优缺点（BGD、SGD、MBGD、Momentum、NAG、Adagrad、Adadelta、RMSprop、Adam）<br>Adam算法的原理机制是怎么样的？它与相关的AdaGrad和RMSProp方法有什么区别</p>
-<span id="more"></span>
-]]></content>
   </entry>
   <entry>
     <title>cv算法面试问题总结（六）</title>
@@ -2501,6 +2501,24 @@
       </tags>
   </entry>
   <entry>
+    <title>无人驾驶-视觉方向基础</title>
+    <url>/2021/10/07/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6-%E8%A7%86%E8%A7%89%E6%96%B9%E5%90%91%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>无人驾驶作为人工智能的集大成应用，从来就不是某单一的技术，而是众多技术点的整合。技术上它需要有算法上的创新、系统上的融合，以及来自云平台的支持。</p>
+<p>什么是SLAM？</p>
+<p>什么是VIO？</p>
+<span id="more"></span>
+
+<h1 id="什么是SLAM"><a href="#什么是SLAM" class="headerlink" title="什么是SLAM"></a>什么是SLAM</h1><p>SLAM是 Simultaneous Localization And Mapping的 英文首字母组合，一般翻译为：同时定位与建图、同时定位与地图构建。</p>
+<p><strong>SLAM是指当某种移动设备（如机器人、无人机、手机等）从一个未知环境里的未知地点出发，在运动过程中通过传感器（如激光雷达、摄像头等）观测定位自身位置、姿态、运动轨迹，再根据自身位置进行增量式的地图构建，从而达到同时定位和地图构建的目的</strong>。定位和建图是两个相辅相成的过程，地图可以提供更好的定位，而定位也可以进一步扩建地图。</p>
+<p>比如：扫地机器人，如果在室内随机游走，遇到障碍物就转弯，这样会导致有很多地方会漏掉，扫地效率非常低。一台智能的扫地机器人，可以通过自身的传感器对室内进行扫描建图，根据当前的定位进行Z字形规划清扫，还能实现自动回充、断点续扫等高级功能。</p>
+<p>扫地机器人至少需要知道以下几件事情：</p>
+<p>1、我在哪里？也就是扫地机器人在工作过程中要知道自己在房间的具体位置。对应的术语叫：**定位（Localization)**。</p>
+<p>2、我周围的环境是什么样子？也就是扫地机器人需要知道整个房间的地面结构信息。对应的术语叫：**建图(Mapping)**。</p>
+<p>3、我怎样到达指定地点（充电器）？当扫地机器人电量不足时，如何以最短的路径到达充电器所在位置进行自动充电。对应的术语叫：路径规划（Route Planning）。</p>
+<h1 id="什么是VIO"><a href="#什么是VIO" class="headerlink" title="什么是VIO"></a>什么是VIO</h1><p>参考：<a href="https://zhuanlan.zhihu.com/p/44787066">https://zhuanlan.zhihu.com/p/44787066</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>机器学习-K-means算法</title>
     <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-K-means%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -2518,24 +2536,6 @@
         <tag>编程</tag>
         <tag>算法</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>无人驾驶-视觉方向基础</title>
-    <url>/2021/10/07/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6-%E8%A7%86%E8%A7%89%E6%96%B9%E5%90%91%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>无人驾驶作为人工智能的集大成应用，从来就不是某单一的技术，而是众多技术点的整合。技术上它需要有算法上的创新、系统上的融合，以及来自云平台的支持。</p>
-<p>什么是SLAM？</p>
-<p>什么是VIO？</p>
-<span id="more"></span>
-
-<h1 id="什么是SLAM"><a href="#什么是SLAM" class="headerlink" title="什么是SLAM"></a>什么是SLAM</h1><p>SLAM是 Simultaneous Localization And Mapping的 英文首字母组合，一般翻译为：同时定位与建图、同时定位与地图构建。</p>
-<p><strong>SLAM是指当某种移动设备（如机器人、无人机、手机等）从一个未知环境里的未知地点出发，在运动过程中通过传感器（如激光雷达、摄像头等）观测定位自身位置、姿态、运动轨迹，再根据自身位置进行增量式的地图构建，从而达到同时定位和地图构建的目的</strong>。定位和建图是两个相辅相成的过程，地图可以提供更好的定位，而定位也可以进一步扩建地图。</p>
-<p>比如：扫地机器人，如果在室内随机游走，遇到障碍物就转弯，这样会导致有很多地方会漏掉，扫地效率非常低。一台智能的扫地机器人，可以通过自身的传感器对室内进行扫描建图，根据当前的定位进行Z字形规划清扫，还能实现自动回充、断点续扫等高级功能。</p>
-<p>扫地机器人至少需要知道以下几件事情：</p>
-<p>1、我在哪里？也就是扫地机器人在工作过程中要知道自己在房间的具体位置。对应的术语叫：**定位（Localization)**。</p>
-<p>2、我周围的环境是什么样子？也就是扫地机器人需要知道整个房间的地面结构信息。对应的术语叫：**建图(Mapping)**。</p>
-<p>3、我怎样到达指定地点（充电器）？当扫地机器人电量不足时，如何以最短的路径到达充电器所在位置进行自动充电。对应的术语叫：路径规划（Route Planning）。</p>
-<h1 id="什么是VIO"><a href="#什么是VIO" class="headerlink" title="什么是VIO"></a>什么是VIO</h1><p>参考：<a href="https://zhuanlan.zhihu.com/p/44787066">https://zhuanlan.zhihu.com/p/44787066</a></p>
-]]></content>
   </entry>
   <entry>
     <title>机器学习-KNN邻近算法</title>
@@ -2863,6 +2863,25 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习-集成算法-随机森林</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习经典算法概览</title>
     <url>/2021/09/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
     <content><![CDATA[<p>这是一篇机器学习经典算法的简述，包含了线性回归、逻辑回归、支持向量机(SVM)、最近邻居(KNN)、决策树、k平均、随机森林、朴素贝叶斯、降维、梯度增强（更新ing）</p>
@@ -2911,25 +2930,6 @@
         <tag>编程</tag>
         <tag>优化</tag>
         <tag>调参</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习-集成算法-随机森林</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -3095,6 +3095,54 @@
       </tags>
   </entry>
   <entry>
+    <title>深度学习-RNN的改进：LSTM和GRU</title>
+    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：RNN算法中越晚的输入对结果影响越大，但越晚的输入不一定是最重要的。如何治保留最重要的信息？</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<ol>
+<li>长期信息可以有效的保留</li>
+<li>挑选重要信息保留，不重要的信息会选择“遗忘”</li>
+</ol>
+<p>缺点：</p>
+<span id="more"></span>
+
+
+
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/LSTMandGRU.png"></p>
+<p>LSTM隐含层的中间单元 t 的数据流动示意图，它接收上一个单元 t-1 的输入 Ct-1 和 ht-1，当然还有来自本单元的输入 xt ，LSTM一共经过4步完成这些信息的处理，<strong>输出 t 单元的状态 Ct ，和 其输出 ht</strong> 。</p>
+<ol>
+<li>forget 阶段：这个阶段主要是对上一个节点传进来的输入进行<strong>选择性</strong>忘记。简单来说就是会 “忘记不重要的，记住重要的”。它是由 sigmoid 神经元层和按照点的乘法操作组成的，sigmoid函数的取值范围为0~1，当为0时，也就是不让当前单元的输入xt 的任何信息进入到这个单元的Ct中，如果等于1，意思是全部进入到 Ct 中。wf和bf是sigmoi节点的权重和偏执</li>
+</ol>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/forget.png"></p>
+<ol start="2">
+<li><p>选择记忆阶段。这个阶段将这个阶段的输入有选择性地进行“记忆”。</p>
+<p>sigmoid层确定我们将要更新哪些值</p>
+<p>tanh层创建新的值向量</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/input.png"></p>
+</li>
+<li><p>更新细胞状态Ct: 圈X是乘法，圈+是加法</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/update_ct.png"></p>
+</li>
+<li><p>输出阶段。这个阶段将决定哪些将会被当成当前状态的输出。Ct只不过隐含地输入给了下一个单元 t+1，因此，最后一步要确定 ht </p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/output.png"></p>
+<h1 id="GRU"><a href="#GRU" class="headerlink" title="GRU"></a>GRU</h1><p>对LSTM的有一种改动版本叫做带门的循环单元（Gated Recurrent Unit），简称为 GRU，在2014年由 Cho 等人提出，它将遗忘门和输入门结合为一个“更新门”，同时，将单元的状态 Ct 和隐藏状态合并为一体，这样的修改的结果是比我们上面介绍的标准的LSTM模型更加简化了，因此变得越来越受欢迎。</p>
+</li>
+</ol>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/GRU.png"></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>深度学习-RNN循环神经网络</title>
     <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：CNN算法的输入和输出基本是一对一的，不同的输入之间是没有联系的，但是需要处理序列数据（一串互相依赖的数据流）的场景就不能很好的完成了。比如文本，音频，股票走势等</p>
@@ -3161,54 +3209,6 @@
 <p>同样还是拿上面的机器翻译举例， <img src="https://www.zhihu.com/equation?tex=a_%7B1j%7D" alt="[公式]"> 的计算（此时箭头就表示对h’和 <img src="https://www.zhihu.com/equation?tex=h_j" alt="[公式]"> 同时做变换）：</p>
 <p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/attention3.jpeg"></p>
 <p>Reference: <a href="https://zhuanlan.zhihu.com/p/28054589">https://zhuanlan.zhihu.com/p/28054589</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>深度学习-RNN的改进：LSTM和GRU</title>
-    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：RNN算法中越晚的输入对结果影响越大，但越晚的输入不一定是最重要的。如何治保留最重要的信息？</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<ol>
-<li>长期信息可以有效的保留</li>
-<li>挑选重要信息保留，不重要的信息会选择“遗忘”</li>
-</ol>
-<p>缺点：</p>
-<span id="more"></span>
-
-
-
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/LSTMandGRU.png"></p>
-<p>LSTM隐含层的中间单元 t 的数据流动示意图，它接收上一个单元 t-1 的输入 Ct-1 和 ht-1，当然还有来自本单元的输入 xt ，LSTM一共经过4步完成这些信息的处理，<strong>输出 t 单元的状态 Ct ，和 其输出 ht</strong> 。</p>
-<ol>
-<li>forget 阶段：这个阶段主要是对上一个节点传进来的输入进行<strong>选择性</strong>忘记。简单来说就是会 “忘记不重要的，记住重要的”。它是由 sigmoid 神经元层和按照点的乘法操作组成的，sigmoid函数的取值范围为0~1，当为0时，也就是不让当前单元的输入xt 的任何信息进入到这个单元的Ct中，如果等于1，意思是全部进入到 Ct 中。wf和bf是sigmoi节点的权重和偏执</li>
-</ol>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/forget.png"></p>
-<ol start="2">
-<li><p>选择记忆阶段。这个阶段将这个阶段的输入有选择性地进行“记忆”。</p>
-<p>sigmoid层确定我们将要更新哪些值</p>
-<p>tanh层创建新的值向量</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/input.png"></p>
-</li>
-<li><p>更新细胞状态Ct: 圈X是乘法，圈+是加法</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/update_ct.png"></p>
-</li>
-<li><p>输出阶段。这个阶段将决定哪些将会被当成当前状态的输出。Ct只不过隐含地输入给了下一个单元 t+1，因此，最后一步要确定 ht </p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/output.png"></p>
-<h1 id="GRU"><a href="#GRU" class="headerlink" title="GRU"></a>GRU</h1><p>对LSTM的有一种改动版本叫做带门的循环单元（Gated Recurrent Unit），简称为 GRU，在2014年由 Cho 等人提出，它将遗忘门和输入门结合为一个“更新门”，同时，将单元的状态 Ct 和隐藏状态合并为一体，这样的修改的结果是比我们上面介绍的标准的LSTM模型更加简化了，因此变得越来越受欢迎。</p>
-</li>
-</ol>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-LSTM%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86/GRU.png"></p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -3421,38 +3421,6 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-YOLOv4</title>
-    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv4/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-<p>YOLO V4使用 CIOU Loss作为bounding box的损失，与其他提到的方法相比，CIOU带来了更快的收敛和更好的性能。</p>
-<p>尽管YOLO V5目前仍然计逊一筹，但是YOLO V5仍然具有以下显著的优点：</p>
-<ul>
-<li>使用Pytorch框架，对用户非常友好，能够方便地训练自己的数据集，相对于YOLO V4采用的Darknet框架，Pytorch框架更容易投入生产</li>
-<li>代码易读，整合了大量的计算机视觉技术，非常有利于学习和借鉴</li>
-<li>不仅易于配置环境，模型训练也非常快速，并且批处理推理产生实时结果</li>
-<li>能够直接对单个图像，批处理图像，视频甚至网络摄像头端口输入进行有效推理</li>
-<li>能够轻松的将Pytorch权重文件转化为安卓使用的ONXX格式，然后可以转换为OPENCV的使用格式，或者通过CoreML转化为IOS格式，直接部署到手机应用端</li>
-<li>最后YOLO V5s高达140FPS的对象识别速度令人印象非常深刻，使用体验非常棒</li>
-</ul>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>YOLO</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>目标检测-YOLOv3</title>
     <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv3/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -3478,6 +3446,38 @@
 </ul>
 <ul>
 <li><strong>双IOU阈值和真值分配。</strong>在训练期间，Faster RCNN用了两个IOU阈值，如果预测的边框与ground truth的IoU&gt;0.7，那它是个正样本；如果在[0.3，0.7]之间，则忽略；如果和ground truth的IoU&lt;0.3，那它就是个负样本。作者尝试了这种思路，但效果并不好。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>YOLO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>目标检测-YOLOv4</title>
+    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv4/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+<p>YOLO V4使用 CIOU Loss作为bounding box的损失，与其他提到的方法相比，CIOU带来了更快的收敛和更好的性能。</p>
+<p>尽管YOLO V5目前仍然计逊一筹，但是YOLO V5仍然具有以下显著的优点：</p>
+<ul>
+<li>使用Pytorch框架，对用户非常友好，能够方便地训练自己的数据集，相对于YOLO V4采用的Darknet框架，Pytorch框架更容易投入生产</li>
+<li>代码易读，整合了大量的计算机视觉技术，非常有利于学习和借鉴</li>
+<li>不仅易于配置环境，模型训练也非常快速，并且批处理推理产生实时结果</li>
+<li>能够直接对单个图像，批处理图像，视频甚至网络摄像头端口输入进行有效推理</li>
+<li>能够轻松的将Pytorch权重文件转化为安卓使用的ONXX格式，然后可以转换为OPENCV的使用格式，或者通过CoreML转化为IOS格式，直接部署到手机应用端</li>
+<li>最后YOLO V5s高达140FPS的对象识别速度令人印象非常深刻，使用体验非常棒</li>
 </ul>
 ]]></content>
       <categories>
