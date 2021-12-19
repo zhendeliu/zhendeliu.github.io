@@ -1,8 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>AI算法面试问题-机器学习（一）</title>
+    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
+<li>详细说一下支持向量机的原理</li>
+<li>数据归一化的原因</li>
+<li>哪些算法不需要归一化处理</li>
+<li>树形结构为什么不需要归一化</li>
+<li>常用的距离计算有哪些，有什么区别</li>
+<li>机器学习项目的流程</li>
+<li>Logistic Regression 逻辑回归的原理</li>
+<li>逻辑回归为什么要特征离散化</li>
+<li>overfitting怎么解决</li>
+<li>逻辑回归和SVM的区别与联系</li>
+</ol>
+<span id="more"></span>
+
+<p>面试问题来源机器学习面试150题 <a href="https://www.zhihu.com/column/c_1284826692855771136">https://www.zhihu.com/column/c_1284826692855771136</a></p>
+<h1 id="问题及解答"><a href="#问题及解答" class="headerlink" title="问题及解答"></a>问题及解答</h1><h2 id="详细说一下支持向量机的原理"><a href="#详细说一下支持向量机的原理" class="headerlink" title="详细说一下支持向量机的原理"></a>详细说一下支持向量机的原理</h2>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+        <tag>总结</tag>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AI算法面试问题-机器学习（三）</title>
     <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>AI算法面试问题-机器学习（二）</title>
+    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -457,38 +491,130 @@
 ]]></content>
   </entry>
   <entry>
-    <title>AI算法面试问题-机器学习（一）</title>
-    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
-<li>详细说一下支持向量机的原理</li>
-<li>数据归一化的原因</li>
-<li>哪些算法不需要归一化处理</li>
-<li>树形结构为什么不需要归一化</li>
-<li>常用的距离计算有哪些，有什么区别</li>
-<li>机器学习项目的流程</li>
-<li>Logistic Regression 逻辑回归的原理</li>
-<li>逻辑回归为什么要特征离散化</li>
-<li>overfitting怎么解决</li>
-<li>逻辑回归和SVM的区别与联系</li>
-</ol>
+    <title>ElasticSearch(4):logstash从MySQL数据库导入数据</title>
+    <url>/2021/12/14/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
+    <content><![CDATA[<p>Logstash 是免费且开放的服务器端数据处理管道，拥有200多个插件，能够从多个来源采集数据，转换数据，然后将数据发送到指定的存储库中。在本文中主要实践的是将数十亿的数据从MySQL数据库如何高效导入ES</p>
+<ul>
+<li><p><input checked disabled type="checkbox">  Logstash管道介绍</p>
+</li>
+<li><p><input checked disabled type="checkbox">  Logstash安装下载</p>
+</li>
+<li><p><input checked disabled type="checkbox">  Logstash文件配置</p>
+</li>
+<li><p><input checked disabled type="checkbox">  Logstash操作过程</p>
+</li>
+<li><p><input checked disabled type="checkbox">  Logstash优化传输</p>
+</li>
+<li><p><input disabled type="checkbox">  结果评价</p>
+</li>
+</ul>
 <span id="more"></span>
 
-<p>面试问题来源机器学习面试150题 <a href="https://www.zhihu.com/column/c_1284826692855771136">https://www.zhihu.com/column/c_1284826692855771136</a></p>
-<h1 id="问题及解答"><a href="#问题及解答" class="headerlink" title="问题及解答"></a>问题及解答</h1><h2 id="详细说一下支持向量机的原理"><a href="#详细说一下支持向量机的原理" class="headerlink" title="详细说一下支持向量机的原理"></a>详细说一下支持向量机的原理</h2>]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>面试</tag>
-        <tag>总结</tag>
-        <tag>技巧</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI算法面试问题-机器学习（二）</title>
-    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
+<h1 id="Logstash管道介绍"><a href="#Logstash管道介绍" class="headerlink" title="Logstash管道介绍"></a>Logstash管道介绍</h1><p>Logstash 是免费且开放的服务器端数据处理管道，拥有200多个插件，能够从多个来源采集数据，转换数据，然后将数据发送到喜欢的“存储库”中。在本文中主要实践的是将数十亿的数据从MySQL数据库如何高效导入ES</p>
+<p>logstash管道必须要有input和output元素，filter元素是可选的。input插件定义数据来源，filter插件用来修改用户指定的数据，output插件定义数据写入何地。</p>
+<p>logstash结构如下所示：</p>
+<p><img src="/2021/12/14/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/basic_logstash_pipeline.png"></p>
+<p>input：采集各种样式、大小和来源的数据<br>Logstash 支持各种输入选择 ，同时从众多常用来源捕捉事件。<br>能够以连续的流式传输方式，轻松地从日志、指标、Web 应用、数据存储以及各种服务中采集数据。</p>
+<p>filter：实时解析和转换数据；<em>数据从源传输到存储库的过程中，Logstash 过滤器能够解析各个事件，识别已命名的字段以构建结构，并将它们转换成通用格式，以便更轻松、更快速地分析和实现商业价值。</em><br><em>利用 Grok 从非结构化数据中派生出结构</em><br><em>从 IP 地址破译出地理坐标</em><br><em>将 PII 数据匿名化，完全排除敏感字段</em><br><em>简化整体处理，不受数据源、格式或架构的影响</em></p>
+<p>output：选择目标存储库，可以选择ElasticSearch也可以选择其他存储库</p>
+<h1 id="Logstash下载安装"><a href="#Logstash下载安装" class="headerlink" title="Logstash下载安装"></a>Logstash下载安装</h1><p>Logstash也是依赖于JDK环境的</p>
+<p>官方指导文件：<a href="https://www.elastic.co/guide/en/elastic-stack/current/installing-elastic-stack.html">https://www.elastic.co/guide/en/elastic-stack/current/installing-elastic-stack.html</a></p>
+<h1 id="Logstash管道文件配置"><a href="#Logstash管道文件配置" class="headerlink" title="Logstash管道文件配置"></a>Logstash管道文件配置</h1><p>logstash是通过jdbc input插件来读取mysql中的数据，配置文件如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">input &#123;</span><br><span class="line">    jdbc &#123;</span><br><span class="line">        jdbc_connection_string =&gt; &quot;jdbc:mysql://1xx.xx.xx.41:3306/mysql_db&quot;</span><br><span class="line">        jdbc_user =&gt; &quot;username&quot;</span><br><span class="line">        jdbc_password =&gt; &quot;Password-code&quot;</span><br><span class="line">        jdbc_driver_library =&gt; &quot;\home\es\com.mysql.jdbc_5.1.5.jar&quot;</span><br><span class="line">        jdbc_driver_class =&gt; &quot;com.mysql.jdbc.Driver&quot;</span><br><span class="line">        statement =&gt; &quot;SELECT * FROM `table_name`&quot;</span><br><span class="line">        jdbc_paging_enabled =&gt; true</span><br><span class="line">        jdbc_page_size =&gt; 100000</span><br><span class="line">        # 设置监听间隔 各字段含义（从左至右）分、时、天、月、年，全为*默认含义为每分钟都更新 </span><br><span class="line">		schedule =&gt; &quot;10 * * * *&quot; #每个整十分钟更新，/10为每小时更新10次</span><br><span class="line">		# 是否将sql查询出来的名称全转小写，默认true</span><br><span class="line">		lowercase_column_names =&gt; false</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">filter &#123;</span><br><span class="line">    mutate&#123;</span><br><span class="line">    remove_field =&gt; [&quot;@version&quot;, &quot;@timestamp&quot;]</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">output &#123;</span><br><span class="line">    elasticsearch &#123;</span><br><span class="line">        hosts =&gt; [&quot;localhost:9200&quot;]</span><br><span class="line">        index =&gt; &quot;index_name&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><p><strong>input配置</strong></p>
+<p>jdbc_connection_string*：数据库类型、地址、以及数据库名称</p>
+<p><em>jdbc_user</em>： 数据库用户名</p>
+<p><em>jdbc_password</em>： 数据库密码</p>
+<p><em>jdbc_driver_library</em>：jdbc驱动文件地址： <em><a href="https://static.denglin.me/blog/files/com.mysql.jdbc_5.1.5.jar">https://static.denglin.me/blog/files/com.mysql.jdbc_5.1.5.jar</a></em></p>
+<p><em>statement</em>：查询数据的sql语句；</p>
+<p><em>jdbc_paging_enabled</em>：是否启用分页，如果您的数据较多，建议启用分页，不然logstash会按照您填写的sql语句一次加载所有数据到内存中，有可能造成内存不足；</p>
+<p><em>jdbc_page_size</em>： 启用分页后每次读取数据量</p>
+<p><strong>output配置</strong></p>
+<p>output插件这里是elasticsearch</p>
+<p><em>hosts</em>: 是es的访问地址，这里可以填写多个节点的地址</p>
+<p><em>index</em>: 数据要保存到的索引名称</p>
+<p><em>document_type</em>：数据要保存到的type名 </p>
+<p><em>workers</em>：批量索引的线程数，和CPU数量一致</p>
+<h1 id="Logstash操作过程"><a href="#Logstash操作过程" class="headerlink" title="Logstash操作过程"></a>Logstash操作过程</h1><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p><code>./bin/logstash -f config/logstash-test.conf &amp;</code> # 启动回台运行</p>
+<p>参数描述：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-f #指定配置文件</span><br><span class="line">-w #指定workers线程数量 </span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h2><p>前台运行时：</p>
+<p><code>ctrl+c</code> 结束当前运行</p>
+<p>后台运行时：</p>
+<p><code>ps -ef | grep logstash</code> 查询PID</p>
+<p><code>kill -9 PID</code>　停止进程</p>
+<h1 id="优化传输"><a href="#优化传输" class="headerlink" title="优化传输"></a>优化传输</h1><h2 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h2><p>logstash提供了丰富的调测命令:</p>
+<ol>
+<li><p>event可以查看当前处理的in， filter，output的累计处理数量，如果in 数量大于filter和out，说明filter和out有性能瓶颈，如果filter大于out说明out有性能瓶颈。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -s localhost:9600/_node/stats/events?pretty=true</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><img src="/2021/12/14/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%5C%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90.jpg"></p>
+<ol start="2">
+<li><p>jvm可以查询堆内存使用情况</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -s localhost:9600/_node/stats/jvm?pretty=true</span><br></pre></td></tr></table></figure></li>
+<li><p>pipeline查询处理的详细信息</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -s localhost:9600/_node/stats/pipeline?pretty=true</span><br></pre></td></tr></table></figure></li>
+<li><p>通过hot_threads判断logstash热点线程位置。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -s localhost:9600/_node/stats/hot_threads?human=true</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>也可以通过一下方式做性能分析</p>
+<ol>
+<li><code>cat /proc/cpuinfo |grep &quot;processor&quot;|wc -l</code> 查看CPU核数</li>
+<li><code>cat /proc/cpuinfo </code> 查看CPU信息</li>
+<li><code>top</code>命令查看读取与写入的PID和CPU占用情况 ，top 命令用于实时显示 process 的动态。</li>
+<li><code>ps aux | grep PID</code> 确认PID是Logstash</li>
+<li><code>top -Hp PID</code> 查看线程运行情况</li>
+<li>查看线程对CPU的使用情况</li>
+</ol>
+<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><p>logstash也有一些调整参数，</p>
+<h3 id="方法一：增加线程"><a href="#方法一：增加线程" class="headerlink" title="方法一：增加线程"></a>方法一：增加线程</h3><p>logstash work线程数量，通常等于vcpu的数量或者整数倍， 如果cpu利用率低可以增加work数量，增大并发数据。</p>
+<p><code>./bin/logstash -f config/logstash-test.conf -w 128 &amp;</code> # 默认为64，开启128个线程</p>
+<h3 id="方法二：设置一批次写入ES的doc数量"><a href="#方法二：设置一批次写入ES的doc数量" class="headerlink" title="方法二：设置一批次写入ES的doc数量"></a>方法二：设置一批次写入ES的doc数量</h3><p>一批次写入ES的doc数量，设置太小会频繁的消耗ES写入IO，对于大流量写入数据配置大一些</p>
+<p><code>./bin/logstash -f config/logstash-test.conf -b 300 &amp;</code> # 默认batchsize为125，可以增加为300</p>
+<h3 id="方法三：设置delay时间"><a href="#方法三：设置delay时间" class="headerlink" title="方法三：设置delay时间"></a>方法三：设置delay时间</h3><p>超时时间，如果设定时间没有收到新的event，logstash开始执行filter和output，logstash接收event到event被处理等待的最大时间是pipeline.batch.size * pipeline.batch.delay。</p>
+<p><code>./bin/logstash -f config/logstash-test.conf -u 10 &amp;</code> # 默认delay时间为50ms，可以减</p>
+<h3 id="文件配置"><a href="#文件配置" class="headerlink" title="文件配置"></a>文件配置</h3><p>也可以将以上配置建议直接在logstash.yaml 中配置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pipeline.workers: 128</span><br><span class="line">pipeline.batch.size: 10000</span><br><span class="line">pipeline.batch.delay: 10</span><br></pre></td></tr></table></figure>
+
+<p>logstash调优主要是减少event等待时间加快线程pipeline的切换。</p>
+<h3 id="方法四：解决MySQL的分页偏移导致的低效"><a href="#方法四：解决MySQL的分页偏移导致的低效" class="headerlink" title="方法四：解决MySQL的分页偏移导致的低效"></a>方法四：解决MySQL的分页偏移导致的低效</h3><p><img src="/2021/12/14/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%5Cmysql%E6%9F%A5%E8%AF%A2%E4%BD%8E%E6%95%88.jpg"></p>
+<p>如图： 数据量超过一亿，偏移量特别大的时候的查询时间，会超过4分钟，不可忍受！</p>
+<p>导致缓慢的原因时当offset时一亿，limit是二十万时，MySQL的查询需要一次查询出offset+limit的数据，然后将offset之前全部丢弃，然后取得一亿至一亿二十万的数据，导致offset越大MySQL响应越慢。</p>
+<p>解决方案：</p>
+<ol>
+<li>设置条件查询，也就是说一亿两千万条的数据，可以设置<code>where ID &lt; 120000000 AND　ID &gt;= 100000000</code> 然后对此条件范围内的两千万数据分页查询。</li>
+</ol>
+<h2 id="方法五：提升CPU的使用"><a href="#方法五：提升CPU的使用" class="headerlink" title="方法五：提升CPU的使用"></a>方法五：提升CPU的使用</h2><ol>
+<li><p>线程增加之后发现CPU的使用率还是很小，无压力</p>
+</li>
+<li><p>更具命令查看in，filter，out三部分的处理数量，可以看到filter 和out的处理量是几乎等于in的数量，也就是说filter和out不存在瓶颈，因此效率瓶颈在in，也就是查询效率比较低效</p>
+</li>
+<li><p>设置多个INPUT同步查询，提高查询效率，提高CPU使用率</p>
+</li>
+</ol>
+<p>​    INPUT１：<code>where  ID &lt; 10000000</code></p>
+<p>​    INPUT2 :  <code>where ID &lt; 20000000 AND ID &gt;= 10000000</code></p>
+<p>​    …</p>
+<p>​    INPUT5: …</p>
+<p>​    <strong>注意</strong>：多个INPUT的LIMIT总和不高于内存限制</p>
+<h1 id="结果评价"><a href="#结果评价" class="headerlink" title="结果评价"></a>结果评价</h1><p>优化之后的运行情况：从ID大于一亿的查询速度从之前的200+秒优化为现在的10秒左右</p>
+<p><img src="/2021/12/14/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%5C%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96%E7%BB%93%E6%9E%9C.jpg"></p>
+<p>优化之后的CPU占用情况如图：读取和写入都能较高效率使用CPU，（优化前不到６０％）</p>
+<p><img src="/2021/12/14/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%5C%E7%BB%93%E6%9E%9CCPU%E5%88%A9%E7%94%A8%E6%83%85%E5%86%B5.jpg"></p>
+<p>#PID: 92238 为从MySQL读取数据 #PID：80860为ES写入线程</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<li> <a href="https://www.denglin.me/export-mysql-data-to-elasticsearch/">https://www.denglin.me/export-mysql-data-to-elasticsearch/</a></li>
+<li> <a href="https://www.elastic.co/guide/en/logstash/current/plugins-inputs-jdbc.html">https://www.elastic.co/guide/en/logstash/current/plugins-inputs-jdbc.html</a></li>
+<li> <a href="https://www.kancloud.cn/aiyinsi-tan/logstash/849585">https://www.kancloud.cn/aiyinsi-tan/logstash/849585</a></li>
+<li> ELK下Logstash性能调优 <a href="https://www.cxyzjd.com/article/qq_40907977/104635434">https://www.cxyzjd.com/article/qq_40907977/104635434</a></li>
+<li> 【Kibana】集群监控（二十四）<a href="https://www.cnblogs.com/h--d/p/13192992.html">https://www.cnblogs.com/h--d/p/13192992.html</a></li>
+<li> Logstash配置及性能优化 <a href="https://zhuanlan.zhihu.com/p/348670809">https://zhuanlan.zhihu.com/p/348670809</a></li>
+</ol>
+]]></content>
   </entry>
   <entry>
     <title>ElasticSearch(5):可视化管理Kibana</title>
@@ -655,132 +781,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ElasticSearch(4):logstash从MySQL数据库导入数据</title>
-    <url>/2021/12/14/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
-    <content><![CDATA[<p>Logstash 是免费且开放的服务器端数据处理管道，拥有200多个插件，能够从多个来源采集数据，转换数据，然后将数据发送到指定的存储库中。在本文中主要实践的是将数十亿的数据从MySQL数据库如何高效导入ES</p>
-<ul>
-<li><p><input checked disabled type="checkbox">  Logstash管道介绍</p>
-</li>
-<li><p><input checked disabled type="checkbox">  Logstash安装下载</p>
-</li>
-<li><p><input checked disabled type="checkbox">  Logstash文件配置</p>
-</li>
-<li><p><input checked disabled type="checkbox">  Logstash操作过程</p>
-</li>
-<li><p><input checked disabled type="checkbox">  Logstash优化传输</p>
-</li>
-<li><p><input disabled type="checkbox">  结果评价</p>
-</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="Logstash管道介绍"><a href="#Logstash管道介绍" class="headerlink" title="Logstash管道介绍"></a>Logstash管道介绍</h1><p>Logstash 是免费且开放的服务器端数据处理管道，拥有200多个插件，能够从多个来源采集数据，转换数据，然后将数据发送到喜欢的“存储库”中。在本文中主要实践的是将数十亿的数据从MySQL数据库如何高效导入ES</p>
-<p>logstash管道必须要有input和output元素，filter元素是可选的。input插件定义数据来源，filter插件用来修改用户指定的数据，output插件定义数据写入何地。</p>
-<p>logstash结构如下所示：</p>
-<p><img src="/2021/12/14/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/basic_logstash_pipeline.png"></p>
-<p>input：采集各种样式、大小和来源的数据<br>Logstash 支持各种输入选择 ，同时从众多常用来源捕捉事件。<br>能够以连续的流式传输方式，轻松地从日志、指标、Web 应用、数据存储以及各种服务中采集数据。</p>
-<p>filter：实时解析和转换数据；<em>数据从源传输到存储库的过程中，Logstash 过滤器能够解析各个事件，识别已命名的字段以构建结构，并将它们转换成通用格式，以便更轻松、更快速地分析和实现商业价值。</em><br><em>利用 Grok 从非结构化数据中派生出结构</em><br><em>从 IP 地址破译出地理坐标</em><br><em>将 PII 数据匿名化，完全排除敏感字段</em><br><em>简化整体处理，不受数据源、格式或架构的影响</em></p>
-<p>output：选择目标存储库，可以选择ElasticSearch也可以选择其他存储库</p>
-<h1 id="Logstash下载安装"><a href="#Logstash下载安装" class="headerlink" title="Logstash下载安装"></a>Logstash下载安装</h1><p>Logstash也是依赖于JDK环境的</p>
-<p>官方指导文件：<a href="https://www.elastic.co/guide/en/elastic-stack/current/installing-elastic-stack.html">https://www.elastic.co/guide/en/elastic-stack/current/installing-elastic-stack.html</a></p>
-<h1 id="Logstash管道文件配置"><a href="#Logstash管道文件配置" class="headerlink" title="Logstash管道文件配置"></a>Logstash管道文件配置</h1><p>logstash是通过jdbc input插件来读取mysql中的数据，配置文件如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">input &#123;</span><br><span class="line">    jdbc &#123;</span><br><span class="line">        jdbc_connection_string =&gt; &quot;jdbc:mysql://1xx.xx.xx.41:3306/mysql_db&quot;</span><br><span class="line">        jdbc_user =&gt; &quot;username&quot;</span><br><span class="line">        jdbc_password =&gt; &quot;Password-code&quot;</span><br><span class="line">        jdbc_driver_library =&gt; &quot;\home\es\com.mysql.jdbc_5.1.5.jar&quot;</span><br><span class="line">        jdbc_driver_class =&gt; &quot;com.mysql.jdbc.Driver&quot;</span><br><span class="line">        statement =&gt; &quot;SELECT * FROM `table_name`&quot;</span><br><span class="line">        jdbc_paging_enabled =&gt; true</span><br><span class="line">        jdbc_page_size =&gt; 100000</span><br><span class="line">        # 设置监听间隔 各字段含义（从左至右）分、时、天、月、年，全为*默认含义为每分钟都更新 </span><br><span class="line">		schedule =&gt; &quot;10 * * * *&quot; #每个整十分钟更新，/10为每小时更新10次</span><br><span class="line">		# 是否将sql查询出来的名称全转小写，默认true</span><br><span class="line">		lowercase_column_names =&gt; false</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">filter &#123;</span><br><span class="line">    mutate&#123;</span><br><span class="line">    remove_field =&gt; [&quot;@version&quot;, &quot;@timestamp&quot;]</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">output &#123;</span><br><span class="line">    elasticsearch &#123;</span><br><span class="line">        hosts =&gt; [&quot;localhost:9200&quot;]</span><br><span class="line">        index =&gt; &quot;index_name&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><p><strong>input配置</strong></p>
-<p>jdbc_connection_string*：数据库类型、地址、以及数据库名称</p>
-<p><em>jdbc_user</em>： 数据库用户名</p>
-<p><em>jdbc_password</em>： 数据库密码</p>
-<p><em>jdbc_driver_library</em>：jdbc驱动文件地址： <em><a href="https://static.denglin.me/blog/files/com.mysql.jdbc_5.1.5.jar">https://static.denglin.me/blog/files/com.mysql.jdbc_5.1.5.jar</a></em></p>
-<p><em>statement</em>：查询数据的sql语句；</p>
-<p><em>jdbc_paging_enabled</em>：是否启用分页，如果您的数据较多，建议启用分页，不然logstash会按照您填写的sql语句一次加载所有数据到内存中，有可能造成内存不足；</p>
-<p><em>jdbc_page_size</em>： 启用分页后每次读取数据量</p>
-<p><strong>output配置</strong></p>
-<p>output插件这里是elasticsearch</p>
-<p><em>hosts</em>: 是es的访问地址，这里可以填写多个节点的地址</p>
-<p><em>index</em>: 数据要保存到的索引名称</p>
-<p><em>document_type</em>：数据要保存到的type名 </p>
-<p><em>workers</em>：批量索引的线程数，和CPU数量一致</p>
-<h1 id="Logstash操作过程"><a href="#Logstash操作过程" class="headerlink" title="Logstash操作过程"></a>Logstash操作过程</h1><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p><code>./bin/logstash -f config/logstash-test.conf &amp;</code> # 启动回台运行</p>
-<p>参数描述：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-f #指定配置文件</span><br><span class="line">-w #指定workers线程数量 </span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h2><p>前台运行时：</p>
-<p><code>ctrl+c</code> 结束当前运行</p>
-<p>后台运行时：</p>
-<p><code>ps -ef | grep logstash</code> 查询PID</p>
-<p><code>kill -9 PID</code>　停止进程</p>
-<h1 id="优化传输"><a href="#优化传输" class="headerlink" title="优化传输"></a>优化传输</h1><h2 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h2><p>logstash提供了丰富的调测命令:</p>
-<ol>
-<li><p>event可以查看当前处理的in， filter，output的累计处理数量，如果in 数量大于filter和out，说明filter和out有性能瓶颈，如果filter大于out说明out有性能瓶颈。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -s localhost:9600/_node/stats/events?pretty=true</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p><img src="/2021/12/14/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%5C%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90.jpg"></p>
-<ol start="2">
-<li><p>jvm可以查询堆内存使用情况</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -s localhost:9600/_node/stats/jvm?pretty=true</span><br></pre></td></tr></table></figure></li>
-<li><p>pipeline查询处理的详细信息</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -s localhost:9600/_node/stats/pipeline?pretty=true</span><br></pre></td></tr></table></figure></li>
-<li><p>通过hot_threads判断logstash热点线程位置。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -s localhost:9600/_node/stats/hot_threads?human=true</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>也可以通过一下方式做性能分析</p>
-<ol>
-<li><code>cat /proc/cpuinfo |grep &quot;processor&quot;|wc -l</code> 查看CPU核数</li>
-<li><code>cat /proc/cpuinfo </code> 查看CPU信息</li>
-<li><code>top</code>命令查看读取与写入的PID和CPU占用情况 ，top 命令用于实时显示 process 的动态。</li>
-<li><code>ps aux | grep PID</code> 确认PID是Logstash</li>
-<li><code>top -Hp PID</code> 查看线程运行情况</li>
-<li>查看线程对CPU的使用情况</li>
-</ol>
-<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><p>logstash也有一些调整参数，</p>
-<h3 id="方法一：增加线程"><a href="#方法一：增加线程" class="headerlink" title="方法一：增加线程"></a>方法一：增加线程</h3><p>logstash work线程数量，通常等于vcpu的数量或者整数倍， 如果cpu利用率低可以增加work数量，增大并发数据。</p>
-<p><code>./bin/logstash -f config/logstash-test.conf -w 128 &amp;</code> # 默认为64，开启128个线程</p>
-<h3 id="方法二：设置一批次写入ES的doc数量"><a href="#方法二：设置一批次写入ES的doc数量" class="headerlink" title="方法二：设置一批次写入ES的doc数量"></a>方法二：设置一批次写入ES的doc数量</h3><p>一批次写入ES的doc数量，设置太小会频繁的消耗ES写入IO，对于大流量写入数据配置大一些</p>
-<p><code>./bin/logstash -f config/logstash-test.conf -b 300 &amp;</code> # 默认batchsize为125，可以增加为300</p>
-<h3 id="方法三：设置delay时间"><a href="#方法三：设置delay时间" class="headerlink" title="方法三：设置delay时间"></a>方法三：设置delay时间</h3><p>超时时间，如果设定时间没有收到新的event，logstash开始执行filter和output，logstash接收event到event被处理等待的最大时间是pipeline.batch.size * pipeline.batch.delay。</p>
-<p><code>./bin/logstash -f config/logstash-test.conf -u 10 &amp;</code> # 默认delay时间为50ms，可以减</p>
-<h3 id="文件配置"><a href="#文件配置" class="headerlink" title="文件配置"></a>文件配置</h3><p>也可以将以上配置建议直接在logstash.yaml 中配置</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pipeline.workers: 128</span><br><span class="line">pipeline.batch.size: 10000</span><br><span class="line">pipeline.batch.delay: 10</span><br></pre></td></tr></table></figure>
-
-<p>logstash调优主要是减少event等待时间加快线程pipeline的切换。</p>
-<h3 id="方法四：解决MySQL的分页偏移导致的低效"><a href="#方法四：解决MySQL的分页偏移导致的低效" class="headerlink" title="方法四：解决MySQL的分页偏移导致的低效"></a>方法四：解决MySQL的分页偏移导致的低效</h3><p><img src="/2021/12/14/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%5Cmysql%E6%9F%A5%E8%AF%A2%E4%BD%8E%E6%95%88.jpg"></p>
-<p>如图： 数据量超过一亿，偏移量特别大的时候的查询时间，会超过4分钟，不可忍受！</p>
-<p>导致缓慢的原因时当offset时一亿，limit是二十万时，MySQL的查询需要一次查询出offset+limit的数据，然后将offset之前全部丢弃，然后取得一亿至一亿二十万的数据，导致offset越大MySQL响应越慢。</p>
-<p>解决方案：</p>
-<ol>
-<li>设置条件查询，也就是说一亿两千万条的数据，可以设置<code>where ID &lt; 120000000 AND　ID &gt;= 100000000</code> 然后对此条件范围内的两千万数据分页查询。</li>
-</ol>
-<h2 id="方法五：提升CPU的使用"><a href="#方法五：提升CPU的使用" class="headerlink" title="方法五：提升CPU的使用"></a>方法五：提升CPU的使用</h2><ol>
-<li><p>线程增加之后发现CPU的使用率还是很小，无压力</p>
-</li>
-<li><p>更具命令查看in，filter，out三部分的处理数量，可以看到filter 和out的处理量是几乎等于in的数量，也就是说filter和out不存在瓶颈，因此效率瓶颈在in，也就是查询效率比较低效</p>
-</li>
-<li><p>设置多个INPUT同步查询，提高查询效率，提高CPU使用率</p>
-</li>
-</ol>
-<p>​    INPUT１：<code>where  ID &lt; 10000000</code></p>
-<p>​    INPUT2 :  <code>where ID &lt; 20000000 AND ID &gt;= 10000000</code></p>
-<p>​    …</p>
-<p>​    INPUT5: …</p>
-<p>​    <strong>注意</strong>：多个INPUT的LIMIT总和不高于内存限制</p>
-<h1 id="结果评价"><a href="#结果评价" class="headerlink" title="结果评价"></a>结果评价</h1><p>优化之后的运行情况：从ID大于一亿的查询速度从之前的200+秒优化为现在的10秒左右</p>
-<p><img src="/2021/12/14/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%5C%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96%E7%BB%93%E6%9E%9C.jpg"></p>
-<p>优化之后的CPU占用情况如图：读取和写入都能较高效率使用CPU，（优化前不到６０％）</p>
-<p><img src="/2021/12/14/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%5C%E7%BB%93%E6%9E%9CCPU%E5%88%A9%E7%94%A8%E6%83%85%E5%86%B5.jpg"></p>
-<p>#PID: 92238 为从MySQL读取数据 #PID：80860为ES写入线程</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
-<li> <a href="https://www.denglin.me/export-mysql-data-to-elasticsearch/">https://www.denglin.me/export-mysql-data-to-elasticsearch/</a></li>
-<li> <a href="https://www.elastic.co/guide/en/logstash/current/plugins-inputs-jdbc.html">https://www.elastic.co/guide/en/logstash/current/plugins-inputs-jdbc.html</a></li>
-<li> <a href="https://www.kancloud.cn/aiyinsi-tan/logstash/849585">https://www.kancloud.cn/aiyinsi-tan/logstash/849585</a></li>
-<li> ELK下Logstash性能调优 <a href="https://www.cxyzjd.com/article/qq_40907977/104635434">https://www.cxyzjd.com/article/qq_40907977/104635434</a></li>
-<li> 【Kibana】集群监控（二十四）<a href="https://www.cnblogs.com/h--d/p/13192992.html">https://www.cnblogs.com/h--d/p/13192992.html</a></li>
-<li> Logstash配置及性能优化 <a href="https://zhuanlan.zhihu.com/p/348670809">https://zhuanlan.zhihu.com/p/348670809</a></li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
     <title>OpenCV图像处理基础（三）</title>
     <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
     <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -858,20 +858,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Pytorch框架基础（二）</title>
-    <url>/2021/09/29/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p><a href="https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1">https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>Pytorch</category>
-      </categories>
-      <tags>
-        <tag>基础操作</tag>
-        <tag>编程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Pytorch框架基础（一）</title>
     <url>/2021/09/29/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>Tensor()创建</p>
@@ -932,6 +918,20 @@
 
 
 
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>Pytorch</category>
+      </categories>
+      <tags>
+        <tag>基础操作</tag>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Pytorch框架基础（二）</title>
+    <url>/2021/09/29/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p><a href="https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1">https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1</a></p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1082,6 +1082,15 @@
       </tags>
   </entry>
   <entry>
+    <title>cv算法面试问题总结（九）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B9%9D%EF%BC%89/</url>
+    <content><![CDATA[<p>什么是强化学习？<br>强化学习和监督学习、无监督学习的区别是什么？<br>强化学习适合解决什么样子的问题？<br>使用tensorflow进行深度学习算法实验时，如何调节超参数？<br>深度学习中的batch的大小对学习效果有何影响？<br>用梯度下降训练神经网络的参数，为什么参数有时会被训练为nan值？<br>卷积神经网络CNN中池化层有什么作用？<br>请列举几种常见的激活函数。激活函数有什么作用？<br>神经网络中Dropout的作用？具体是怎么实现的？<br>利用梯度下降法训练神经网络，发现模型loss不变，可能有哪些问题？怎么解决？</p>
+<p>如何解决不平衡数据集的分类问题？<br>残差网络为什么能做到很深层？<br>相比sigmoid激活函数ReLU激活函数有什么优势？<br>卷积神经网络中空洞卷积的作用是什么？<br>适用于移动端部署的网络结构都有哪些？<br>深度学习模型参数初始化都有哪些方法？<br>卷积神经网络为什么会具有平移等不变性？</p>
+<span id="more"></span>
+
+]]></content>
+  </entry>
+  <entry>
     <title>cv算法面试问题总结（二）</title>
     <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
@@ -1195,40 +1204,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>cv算法面试问题总结（九）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B9%9D%EF%BC%89/</url>
-    <content><![CDATA[<p>什么是强化学习？<br>强化学习和监督学习、无监督学习的区别是什么？<br>强化学习适合解决什么样子的问题？<br>使用tensorflow进行深度学习算法实验时，如何调节超参数？<br>深度学习中的batch的大小对学习效果有何影响？<br>用梯度下降训练神经网络的参数，为什么参数有时会被训练为nan值？<br>卷积神经网络CNN中池化层有什么作用？<br>请列举几种常见的激活函数。激活函数有什么作用？<br>神经网络中Dropout的作用？具体是怎么实现的？<br>利用梯度下降法训练神经网络，发现模型loss不变，可能有哪些问题？怎么解决？</p>
-<p>如何解决不平衡数据集的分类问题？<br>残差网络为什么能做到很深层？<br>相比sigmoid激活函数ReLU激活函数有什么优势？<br>卷积神经网络中空洞卷积的作用是什么？<br>适用于移动端部署的网络结构都有哪些？<br>深度学习模型参数初始化都有哪些方法？<br>卷积神经网络为什么会具有平移等不变性？</p>
-<span id="more"></span>
-
-]]></content>
-  </entry>
-  <entry>
-    <title>cv算法面试问题总结（十）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%8D%81%EF%BC%89/</url>
-    <content><![CDATA[<p>基于深度学习的目标检测技术演进：R-CNN、Fast R-CNN、Faster R-CNN、YOLO、SSD<br>请简单解释下目标检测中的这个IOU评价函数（intersection-over-union）<br>KNN与K-means区别？<br>K-means选择初始点的方法有哪些,优缺点是什么?(列出两种以上)<br>简述线性分类器的原理(要求对权重矩阵进行剖析)<br>请简述下log对数、Hinge Loss(折页)、Cross-Entropy Loss(交叉熵)这三个损失函数<br>简述正则化与奥卡姆剃刀原则<br>图像尺寸为 7<em>7, 卷积窗口大小为3</em>3, 步长为3, 是否能输出图像?如果能,输出图像大小为多少?如果不能,说明原因?<br>如果最后一个卷积层和第一个全连接层参数量太大怎么办?<br>为什么说神经网络是端到端的网络?<br>当参数量 &gt;&gt; 样本量时候, 神经网络是如何预防过拟合?<br>什么是感受野？</p>
-<p>简述你对CBIR(Content-based Image Retrieval基于内容的图像检索)的理解<br>什么是计算机视觉单词模型？<br>简述什么是Local Feature(局部特征算子)？<br>KD-Tree相比KNN来进行快速图像特征比对的好处在哪里?<br>简述encode和decode思想<br>输入图片尺寸不匹配CNN网络input时候的解决方式？（三种以上）<br>FCN与CNN最大的区别？<br>遇到class-imbalanced data（数据类目不平衡）问题怎么办？<br>简述孪生随机网络（Siamese Network）<br>DPM（Deformable Parts Model）算法流程<br>什么是NMS（Non-maximum suppression 非极大值抑制）?<br>列举出常见的损失函数(三个以上)?<br>做过目标检测项目么？比如Mask R-CNN和Python做一个抢车位神器<br>如何理解Faster RCNN<br>one-stage和two-stage目标检测方法的区别和优缺点？<br>请画下YOLOv3的网络结构<br>请简单说下YOLOv1,v2,v3,v4各自的特点与发展史<br>如何理解YOLO：YOLO详解<br>怎么理解YOLOv4<br>神经网络参数共享(parameter sharing)是指什么？<br>2021年网易互联网 计算机视觉 一面<br>美团实习算法岗<br>2021商汤-视频理解研究员-校招-技术面</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>hello-world</title>
-    <url>/2021/09/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>cv算法面试问题总结（六）</title>
     <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AD%EF%BC%89/</url>
     <content><![CDATA[<p>神经网络中激活函数的真正意义？一个激活函数需要具有哪些必要的属性？还有哪些属性是好的属性但不必要的？<br>梯度下降法的神经网络容易收敛到局部最优，为什么应用广泛？<br>简单说说CNN常用的几个模型<br>为什么很多做人脸的Paper会最后加入一个Local Connected Conv？<br>什么是梯度爆炸？<br>梯度爆炸会引发什么问题？<br>如何确定是否出现梯度爆炸？<br>如何修复梯度爆炸问题？</p>
@@ -1247,35 +1222,11 @@
       </tags>
   </entry>
   <entry>
-    <title>kaggle-糖尿病视网膜病变检测</title>
-    <url>/2021/10/07/kaggle-%E7%B3%96%E5%B0%BF%E7%97%85%E8%A7%86%E7%BD%91%E8%86%9C%E7%97%85%E5%8F%98%E6%A3%80%E6%B5%8B/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>问题分析：糖尿病作为一种越来越高发的慢性病，每11个人就有一人是糖尿病患者。糖尿病视网膜病变作为并发症导致的视网膜病变失明也十分常见，如何预防因糖尿病继发的视网膜病变问题的是十分迫切的。这影响到62.5万英国人、甚至是全球1亿人的生活。</p>
-<p>解决方法：</p>
-<p>结果：</p>
-<span id="more"></span>
-
-<h1 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h1><p>Pearse Keane是Moorfields的一名眼科顾问，在DeepMind的官网上，他针对糖尿病视网膜病变和因衰老导致的黄斑病变(AMD)的眼部扫描图分析发表了一番见解。</p>
-<p>根据统计，糖尿病患者的失明风险是普通人的25倍，而糖尿病作为一种越来越高发的慢性病，每11个人就有一人是糖友。但！如果早期发现，并进行有效干预，是能够避免因糖尿病继发的视网膜病变问题的。这影响到62.5万英国人、甚至是全球1亿人的生活。</p>
-<p>而AMD已经成为英国最常见的失明原因。根据统计，仅仅在英国，每天就有接近200人无法看到明天的英国雨景（顺手一黑）。而如果让这种状况持续下去，到2020年，全球因AMD而失明的人将达到2亿人。而同样地，这种状况可以通过早期预防和治疗而避免。</p>
-<h1 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h1><h1 id="数据概览"><a href="#数据概览" class="headerlink" title="数据概览"></a>数据概览</h1><p>查阅资料知道：糖尿病视网膜病变是由于糖尿病导致血糖过高损害视网膜毛细血管造成的视网膜病变。</p>
-<p>检测目标：</p>
-<p>检测视网膜内出血 红色的点</p>
-<p>检测血管边缘病变 </p>
-<p>蛋白质泛黄</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">0 - No DR</span><br><span class="line">1 - Mild</span><br><span class="line">2 - Moderate</span><br><span class="line">3 - Severe</span><br><span class="line">4 - Proliferative DR</span><br></pre></td></tr></table></figure>
-
-<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><h2 id="我的方法"><a href="#我的方法" class="headerlink" title="我的方法"></a>我的方法</h2><h2 id="top5的方法"><a href="#top5的方法" class="headerlink" title="top5的方法"></a>top5的方法</h2>]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>Pytorch</category>
-        <category>深度学习</category>
-        <category>项目比赛</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>Kaggle</tag>
-      </tags>
+    <title>cv算法面试问题总结（十）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%8D%81%EF%BC%89/</url>
+    <content><![CDATA[<p>基于深度学习的目标检测技术演进：R-CNN、Fast R-CNN、Faster R-CNN、YOLO、SSD<br>请简单解释下目标检测中的这个IOU评价函数（intersection-over-union）<br>KNN与K-means区别？<br>K-means选择初始点的方法有哪些,优缺点是什么?(列出两种以上)<br>简述线性分类器的原理(要求对权重矩阵进行剖析)<br>请简述下log对数、Hinge Loss(折页)、Cross-Entropy Loss(交叉熵)这三个损失函数<br>简述正则化与奥卡姆剃刀原则<br>图像尺寸为 7<em>7, 卷积窗口大小为3</em>3, 步长为3, 是否能输出图像?如果能,输出图像大小为多少?如果不能,说明原因?<br>如果最后一个卷积层和第一个全连接层参数量太大怎么办?<br>为什么说神经网络是端到端的网络?<br>当参数量 &gt;&gt; 样本量时候, 神经网络是如何预防过拟合?<br>什么是感受野？</p>
+<p>简述你对CBIR(Content-based Image Retrieval基于内容的图像检索)的理解<br>什么是计算机视觉单词模型？<br>简述什么是Local Feature(局部特征算子)？<br>KD-Tree相比KNN来进行快速图像特征比对的好处在哪里?<br>简述encode和decode思想<br>输入图片尺寸不匹配CNN网络input时候的解决方式？（三种以上）<br>FCN与CNN最大的区别？<br>遇到class-imbalanced data（数据类目不平衡）问题怎么办？<br>简述孪生随机网络（Siamese Network）<br>DPM（Deformable Parts Model）算法流程<br>什么是NMS（Non-maximum suppression 非极大值抑制）?<br>列举出常见的损失函数(三个以上)?<br>做过目标检测项目么？比如Mask R-CNN和Python做一个抢车位神器<br>如何理解Faster RCNN<br>one-stage和two-stage目标检测方法的区别和优缺点？<br>请画下YOLOv3的网络结构<br>请简单说下YOLOv1,v2,v3,v4各自的特点与发展史<br>如何理解YOLO：YOLO详解<br>怎么理解YOLOv4<br>神经网络参数共享(parameter sharing)是指什么？<br>2021年网易互联网 计算机视觉 一面<br>美团实习算法岗<br>2021商汤-视频理解研究员-校招-技术面</p>
+]]></content>
   </entry>
   <entry>
     <title>cv算法面试问题总结（四）</title>
@@ -1317,10 +1268,42 @@
       </tags>
   </entry>
   <entry>
-    <title>kaggle比赛-NFL Helmet Assignment</title>
-    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-NFL-Helmet-Assignment/</url>
-    <content><![CDATA[<p><a href="https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment">https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment</a></p>
+    <title>hello-world</title>
+    <url>/2021/09/29/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>kaggle-糖尿病视网膜病变检测</title>
+    <url>/2021/10/07/kaggle-%E7%B3%96%E5%B0%BF%E7%97%85%E8%A7%86%E7%BD%91%E8%86%9C%E7%97%85%E5%8F%98%E6%A3%80%E6%B5%8B/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>问题分析：糖尿病作为一种越来越高发的慢性病，每11个人就有一人是糖尿病患者。糖尿病视网膜病变作为并发症导致的视网膜病变失明也十分常见，如何预防因糖尿病继发的视网膜病变问题的是十分迫切的。这影响到62.5万英国人、甚至是全球1亿人的生活。</p>
+<p>解决方法：</p>
+<p>结果：</p>
+<span id="more"></span>
+
+<h1 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h1><p>Pearse Keane是Moorfields的一名眼科顾问，在DeepMind的官网上，他针对糖尿病视网膜病变和因衰老导致的黄斑病变(AMD)的眼部扫描图分析发表了一番见解。</p>
+<p>根据统计，糖尿病患者的失明风险是普通人的25倍，而糖尿病作为一种越来越高发的慢性病，每11个人就有一人是糖友。但！如果早期发现，并进行有效干预，是能够避免因糖尿病继发的视网膜病变问题的。这影响到62.5万英国人、甚至是全球1亿人的生活。</p>
+<p>而AMD已经成为英国最常见的失明原因。根据统计，仅仅在英国，每天就有接近200人无法看到明天的英国雨景（顺手一黑）。而如果让这种状况持续下去，到2020年，全球因AMD而失明的人将达到2亿人。而同样地，这种状况可以通过早期预防和治疗而避免。</p>
+<h1 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h1><h1 id="数据概览"><a href="#数据概览" class="headerlink" title="数据概览"></a>数据概览</h1><p>查阅资料知道：糖尿病视网膜病变是由于糖尿病导致血糖过高损害视网膜毛细血管造成的视网膜病变。</p>
+<p>检测目标：</p>
+<p>检测视网膜内出血 红色的点</p>
+<p>检测血管边缘病变 </p>
+<p>蛋白质泛黄</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">0 - No DR</span><br><span class="line">1 - Mild</span><br><span class="line">2 - Moderate</span><br><span class="line">3 - Severe</span><br><span class="line">4 - Proliferative DR</span><br></pre></td></tr></table></figure>
+
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><h2 id="我的方法"><a href="#我的方法" class="headerlink" title="我的方法"></a>我的方法</h2><h2 id="top5的方法"><a href="#top5的方法" class="headerlink" title="top5的方法"></a>top5的方法</h2>]]></content>
       <categories>
         <category>学习</category>
         <category>cv算法</category>
@@ -1339,29 +1322,20 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>torch.backends.cudnn相关参数理解及配置</title>
-    <url>/2021/10/08/torch-backends-cudnn%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0%E7%90%86%E8%A7%A3%E5%8F%8A%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="torch-backends-cudnn-deterministic"><a href="#torch-backends-cudnn-deterministic" class="headerlink" title="torch.backends.cudnn.deterministic"></a>torch.backends.cudnn.deterministic</h1><p>使用PyTorch等框架，还要看一下框架的种子是否固定了。</p>
-<p>使用了cuda，必须要设置cuda的随机：将这个 flag 置为True的话，每次返回的卷积算法将是确定的，即默认算法。如果配合上设置 Torch 的随机种子为固定值的话，应该可以保证每次运行网络的时候相同输入的输出是固定的，代码大致这样:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed_all(seed)</span><br><span class="line">        torch.backends.cudnn.deterministic = <span class="literal">True</span></span><br><span class="line">        torch.backends.cudnn.benchmark = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="torch-backends-cudnn-benchmark"><a href="#torch-backends-cudnn-benchmark" class="headerlink" title="torch.backends.cudnn.benchmark"></a>torch.backends.cudnn.benchmark</h1><p>torch.backends.cudnn.benchmark设为True就可以大大提升卷积神经网络的运行速度</p>
-<p>原因：<code>将会让程序在开始时花费一点额外时间，为整个网络的每个卷积层搜索最适合它的卷积实现算法，进而实现网络的加速</code>。</p>
-<p>适用：适用场景是网络结构固定（不是动态变化的），网络的输入形状（包括 batch size，图片大小，输入的通道）是不变的</p>
-<p>背景：</p>
-<p>大多数主流深度学习框架都支持 cuDNN这个GPU加速库，来为训练加速。而卷积网络的具体计算方法又有很多，所以使用torch.backends.cudnn.benchmark就可以在 PyTorch 中<code>对模型里的卷积层进行预先的优化，也就是在每一个卷积层中测试 cuDNN 提供的所有卷积实现算法，然后选择最快的那个</code>。这样在模型启动的时候，只要额外多花一点点预处理时间，就可以较大幅度地减少训练时间。</p>
-<p>影响卷积运行的因素：</p>
-<p>为什么我们可以提前选择每层的算法，即使每次我们送入网络训练的图片是不一样的？即每次网络的输入都是变化的，那么我怎么确保提前选出来的最优算法同样也适用于这个输入呢？原因就是，对于<code>给定输入来说，其具体值的大小是不影响卷积的运行时间的，只有其尺寸才会影响</code>。举例来说，我们只要固定输入大小都是 (8, 64, 224, 224)，即 batch_size 为 8，输入的通道为 64，宽和高为 224，那么卷积层的运行时间都是几乎不变的，无论其中每个像素具体的值是 0.1 还是 1000.0。</p>
-<p>所以当网络的模型不会一直发生变化，且输入的大小不会一直变化的话就可以使用torch.backends.cudnn.benchmark=True来加速训练</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed_all(seed)</span><br><span class="line">        torch.backends.cudnn.deterministic = <span class="literal">True</span></span><br><span class="line">        torch.backends.cudnn.benchmark = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-
+    <title>kaggle比赛-NFL Helmet Assignment</title>
+    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-NFL-Helmet-Assignment/</url>
+    <content><![CDATA[<p><a href="https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment">https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment</a></p>
 ]]></content>
       <categories>
         <category>学习</category>
+        <category>cv算法</category>
         <category>Pytorch</category>
+        <category>深度学习</category>
+        <category>项目比赛</category>
       </categories>
       <tags>
-        <tag>torch</tag>
+        <tag>编程</tag>
+        <tag>Kaggle</tag>
       </tags>
   </entry>
   <entry>
@@ -1407,89 +1381,29 @@
       </tags>
   </entry>
   <entry>
-    <title>关于MLPerf和AIPerf的设计理解</title>
-    <url>/2021/11/11/%E5%85%B3%E4%BA%8EMLPerf%E5%92%8CAIPerf%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<p>MLPerf 是AI芯片的一个基准测试，主要包括：Training 和Inference两个方面的性能测试。Training是于测量系统将模型训练到目标质量指标的速度；Inference是用于测试系统使用训练有素的模型处理输入和产生结果的速度。</p>
-<p>AIPerf的评价指标是Tops（平均每秒处理的混合精度AI浮点操作数），可以用来做横向比较</p>
-<span id="more"></span>
+    <title>torch.backends.cudnn相关参数理解及配置</title>
+    <url>/2021/10/08/torch-backends-cudnn%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0%E7%90%86%E8%A7%A3%E5%8F%8A%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="torch-backends-cudnn-deterministic"><a href="#torch-backends-cudnn-deterministic" class="headerlink" title="torch.backends.cudnn.deterministic"></a>torch.backends.cudnn.deterministic</h1><p>使用PyTorch等框架，还要看一下框架的种子是否固定了。</p>
+<p>使用了cuda，必须要设置cuda的随机：将这个 flag 置为True的话，每次返回的卷积算法将是确定的，即默认算法。如果配合上设置 Torch 的随机种子为固定值的话，应该可以保证每次运行网络的时候相同输入的输出是固定的，代码大致这样:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed_all(seed)</span><br><span class="line">        torch.backends.cudnn.deterministic = <span class="literal">True</span></span><br><span class="line">        torch.backends.cudnn.benchmark = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="MLPerf"><a href="#MLPerf" class="headerlink" title="MLPerf"></a>MLPerf</h1><p>MLPerf 是AI芯片的一个基准测试，主要包括：Training 和Inference两个方面的性能测试。Training是于测量系统将模型训练到目标质量指标的速度；Inference是用于测试系统使用训练有素的模型处理输入和产生结果的速度。</p>
-<p>具体的详细信息可参见论文：MLPERF TRAINING BENCHMARK以及MLPERF INFERENCE BENCHMARK。</p>
-<p>该基准有两种测试形式：*<strong>Closed Division*</strong> 和 <em><strong>Open Division，</strong></em>其中封闭的测试是基于平台固定的测试模型进行测试；开放的测试是用户可以自定义需要测试的模型。</p>
-<p>当前的测试结果根据芯片当前的使用状态分为：Cloud;Available;Preview;Research, Development, and Other（category）。</p>
-<p><img src="/2021/11/11/%E5%85%B3%E4%BA%8EMLPerf%E5%92%8CAIPerf%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/8-benchmarks.png"></p>
-<h1 id="AIPerf"><a href="#AIPerf" class="headerlink" title="AIPerf"></a>AIPerf</h1><p>大规模人工智能计算系统的计算持续发展，需要一个有效评价计算机系统人工智能算力的评价指标；</p>
-<p>浮点计算峰值是指计算机每秒可以完成的浮点计算次数，包括理论浮点峰值和实测浮点峰值。理论浮点峰值是该计算机理论上每秒可以完成的浮点计算次数，主要由CPU的主频决定。</p>
-<p>理论浮点峰值＝CPU主频×CPU核数×CPU每周期执行浮点运算的次数。</p>
-<p>目前的实测方式如下：</p>
-<p>Linpack Benchmark: 广泛用于高性能计算机双精度浮点运算性能基准评测，但大部分人工智能训练任务以单精度浮点数或者16位浮点数为主</p>
-<p>HPL-AI: 通以Linpack为基础的改善的混合精度的基准测评</p>
-<p>Mobile AI Bench：</p>
-<p>DeepBench：</p>
-<p>AIIA DNN Benchmark:</p>
-<p>AIPerf Benchmark:</p>
-<p> 基于微软NNI（neural network intelligence)框架实现，以自动化机器学习AutoML为负载，进行网络结构搜索（网络态射network morphism ）和超参搜索（树状结构Parzen估计）寻找进度更高的网络结构和超参（batch size；最大epoch；lr；最大搜索模型个数，最长搜索总时间；最大并发搜索模型数量等）</p>
-<h1 id="设计目标"><a href="#设计目标" class="headerlink" title="设计目标"></a>设计目标</h1><h2 id="统一的评价指标Score"><a href="#统一的评价指标Score" class="headerlink" title="统一的评价指标Score"></a>统一的评价指标Score</h2><p>AIPerf的评价指标是Tops（平均每秒处理的混合精度AI浮点操作数），可以用来做横向比较</p>
-<h2 id="处理问题规模可变性"><a href="#处理问题规模可变性" class="headerlink" title="处理问题规模可变性"></a>处理问题规模可变性</h2><p>人工智能计算集群的系统规模在节点数量，加速器数量，加速类型，内存大小等指标上存在差异。需要能适应各种规模的计算集群，因此，在AutoML调整问题规模来适应集群规模的变化。</p>
-<h2 id="实际的人工智能意义"><a href="#实际的人工智能意义" class="headerlink" title="实际的人工智能意义"></a>实际的人工智能意义</h2><p>相较于传统的高性能计算机基准测试程序需要具有人工智能的意义在其中，也是其能够检测集群人工智能算力的核心。AIPerf通过在ImageNet数据集上训练神经网络运行CV方面的算法。</p>
-<h2 id="必要的多机通信"><a href="#必要的多机通信" class="headerlink" title="必要的多机通信"></a>必要的多机通信</h2><p>在计算集群中任务分发，多级训练，结果收集等都是以多机通信为基础，是人工智能计算集群计算能力的重要组成。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>医疗影像dicom图像预处理-Pydicom</title>
-    <url>/2021/10/06/%E5%8C%BB%E7%96%97%E5%BD%B1%E5%83%8Fdicom%E5%9B%BE%E5%83%8F%E9%A2%84%E5%A4%84%E7%90%86-Pydicom/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>pydicom是一个python中的第三方库，用于DICOM文件，主要为了以一种简单的”python式”方式检查和修改dicom数据而设计，可以提供给使用者轻松的修改，读写文件并转换成显式图像图片。</p>
-<p>DICOM被广泛应用于放射医疗、心血管成像以及放射诊疗诊断设备（X射线，CT，核磁共振，超声等），并且在眼科和牙科等其它医学领域得到越来越深入广泛的应用。在数以万计的在用医学成像设备中，DICOM是部署最为广泛的医疗信息标准之一。当前大约有百亿级符合DICOM标准的医学图像用于临床使用。<br>患者的医学图像以DICOM文件格式进行存储，其中包含了图像信息以及患者的PHI（protected health information，即姓名、性别、年龄等），以及产生图像的设备的相关信息。</p>
-<span id="more"></span>
+<h1 id="torch-backends-cudnn-benchmark"><a href="#torch-backends-cudnn-benchmark" class="headerlink" title="torch.backends.cudnn.benchmark"></a>torch.backends.cudnn.benchmark</h1><p>torch.backends.cudnn.benchmark设为True就可以大大提升卷积神经网络的运行速度</p>
+<p>原因：<code>将会让程序在开始时花费一点额外时间，为整个网络的每个卷积层搜索最适合它的卷积实现算法，进而实现网络的加速</code>。</p>
+<p>适用：适用场景是网络结构固定（不是动态变化的），网络的输入形状（包括 batch size，图片大小，输入的通道）是不变的</p>
+<p>背景：</p>
+<p>大多数主流深度学习框架都支持 cuDNN这个GPU加速库，来为训练加速。而卷积网络的具体计算方法又有很多，所以使用torch.backends.cudnn.benchmark就可以在 PyTorch 中<code>对模型里的卷积层进行预先的优化，也就是在每一个卷积层中测试 cuDNN 提供的所有卷积实现算法，然后选择最快的那个</code>。这样在模型启动的时候，只要额外多花一点点预处理时间，就可以较大幅度地减少训练时间。</p>
+<p>影响卷积运行的因素：</p>
+<p>为什么我们可以提前选择每层的算法，即使每次我们送入网络训练的图片是不一样的？即每次网络的输入都是变化的，那么我怎么确保提前选出来的最优算法同样也适用于这个输入呢？原因就是，对于<code>给定输入来说，其具体值的大小是不影响卷积的运行时间的，只有其尺寸才会影响</code>。举例来说，我们只要固定输入大小都是 (8, 64, 224, 224)，即 batch_size 为 8，输入的通道为 64，宽和高为 224，那么卷积层的运行时间都是几乎不变的，无论其中每个像素具体的值是 0.1 还是 1000.0。</p>
+<p>所以当网络的模型不会一直发生变化，且输入的大小不会一直变化的话就可以使用torch.backends.cudnn.benchmark=True来加速训练</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed_all(seed)</span><br><span class="line">        torch.backends.cudnn.deterministic = <span class="literal">True</span></span><br><span class="line">        torch.backends.cudnn.benchmark = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="人体内各介质的亨氏单位值"><a href="#人体内各介质的亨氏单位值" class="headerlink" title="人体内各介质的亨氏单位值"></a>人体内各介质的亨氏单位值</h1><p><img src="/2021/10/06/%E5%8C%BB%E7%96%97%E5%BD%B1%E5%83%8Fdicom%E5%9B%BE%E5%83%8F%E9%A2%84%E5%A4%84%E7%90%86-Pydicom/hu.png"></p>
-<h1 id="pydicom基础操作"><a href="#pydicom基础操作" class="headerlink" title="pydicom基础操作"></a>pydicom基础操作</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pydicom</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">dcm = pydicom.read_file(<span class="string">&#x27;test1/Image-100.dcm&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(dcm.<span class="built_in">dir</span>()) <span class="comment"># 查看有哪些方法，属性</span></span><br><span class="line"><span class="built_in">print</span>(dcm.<span class="built_in">dir</span>(<span class="string">&#x27;pat&#x27;</span>)) <span class="comment"># 查看有哪些pat(属性)</span></span><br><span class="line"><span class="comment"># 通过字典关键字来获取图像的数据元信息（当然也可以根据TAG号）</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">info = &#123;&#125;</span><br><span class="line"><span class="comment"># 从dcm 文件中提取patient信息</span></span><br><span class="line">info[<span class="string">&quot;PatientID&quot;</span>] = dcm.PatientID               <span class="comment"># 患者ID</span></span><br><span class="line"><span class="comment"># info[&quot;PatientName&quot;] = dcm.PatientName           # 患者姓名</span></span><br><span class="line"><span class="comment"># info[&quot;PatientBirthData&quot;] = dcm.PatientBirthData # 患者出生日期</span></span><br><span class="line"><span class="comment"># info[&quot;PatientAge&quot;] = dcm.PatientAge             # 患者年龄</span></span><br><span class="line"><span class="comment"># info[&#x27;PatientSex&#x27;] = dcm.PatientSex             # 患者性别</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从dcm 文件中提取study案例信息</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyID&#x27;] = dcm.StudyID                   # 检查ID</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyDate&#x27;] = dcm.StudyDate               # 检查日期</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyTime&#x27;] = dcm.StudyTime               # 检查时间</span></span><br><span class="line"><span class="comment"># info[&#x27;InstitutionName&#x27;] = dcm.InstitutionName   # 机构名称</span></span><br><span class="line"><span class="comment"># info[&#x27;Manufacturer&#x27;] = dcm.Manufacturer         # 设备制造商</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyDescription&#x27;]=dcm.StudyDescription   # 检查项目描述</span></span><br><span class="line"><span class="built_in">print</span>(info)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取图像唯一标识符</span></span><br><span class="line">uid = dcm.SOPInstanceUID</span><br><span class="line">img_arr = dcm.pixel_array</span><br><span class="line"><span class="built_in">print</span>(img_arr.shape)</span><br><span class="line">lens = img_arr.shape[<span class="number">0</span>] * img_arr.shape[<span class="number">1</span>] <span class="comment"># 获取像素点的数量</span></span><br><span class="line">tmp = np.reshape(img_arr,(lens,))</span><br><span class="line">max_val = <span class="built_in">max</span>(tmp)</span><br><span class="line">min_val = <span class="built_in">min</span>(tmp)</span><br><span class="line"><span class="comment"># 图像归一化</span></span><br><span class="line">img_arr = (img_arr-min_val)/(max_val-min_val)</span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>,<span class="number">12</span>),dpi=<span class="number">250</span>) <span class="comment">#dpi每英寸点数，这张是1200*1200像素的图片</span></span><br><span class="line">plt.title(<span class="string">&quot;UID:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(uid))</span><br><span class="line">plt.imshow(img_arr,cmap=plt.cm.gray)<span class="comment">#颜色图谱（colormap), 默认绘制为RGB(A)颜色空间。</span></span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改图片中的元素</span></span><br><span class="line"><span class="keyword">for</span> n,val <span class="keyword">in</span> <span class="built_in">enumerate</span>(dcm.pixel_array.flat):</span><br><span class="line">    <span class="keyword">if</span> val &lt; <span class="number">1300</span>:</span><br><span class="line">        dcm.pixel_array.flat[n] = <span class="number">0</span></span><br><span class="line">dcm.PixelData = dcm.pixel_array.tobytes()</span><br><span class="line">img_arr2 = dcm.pixel_array</span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>,<span class="number">12</span>),dpi=<span class="number">250</span>) <span class="comment">#dpi每英寸点数，这张是1200*1200像素的图片</span></span><br><span class="line">plt.title(<span class="string">&quot;UID:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(uid))</span><br><span class="line">plt.imshow(img_arr2,cmap=plt.cm.gray)<span class="comment">#颜色图谱（colormap), 默认绘制为RGB(A)颜色空间。</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-<h1 id="案例：肺结节图像预处理"><a href="#案例：肺结节图像预处理" class="headerlink" title="案例：肺结节图像预处理"></a>案例：肺结节图像预处理</h1><ol>
-<li></li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 加载必要的python包</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd </span><br><span class="line"><span class="keyword">import</span> dicom</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> scipy.ndimage</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> skimage <span class="keyword">import</span> measure, morphology</span><br><span class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d.art3d <span class="keyword">import</span> Poly3DCollection</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含所有患者目录的根目录</span></span><br><span class="line">INPUT_FOLDER = <span class="string">&#x27;../input/sample_images/&#x27;</span></span><br><span class="line">patients = os.listdir(INPUT_FOLDER)</span><br><span class="line">patients.sort()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载一位患者的所有slice，按照顺序调整为等间隔扫描</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_scan</span>(<span class="params">path</span>):</span></span><br><span class="line">    slices = [dicom.read_file(path + <span class="string">&#x27;/&#x27;</span> + s) <span class="keyword">for</span> s <span class="keyword">in</span> os.listdir(path)]</span><br><span class="line">    <span class="comment">#按照扫描顺序叠加</span></span><br><span class="line">    slices.sort(key = <span class="keyword">lambda</span> x: <span class="built_in">float</span>(x.ImagePositionPatient[<span class="number">2</span>])) </span><br><span class="line">    <span class="comment"># 计算相邻扫描的间隔距离</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        slice_thickness = np.<span class="built_in">abs</span>(slices[<span class="number">0</span>].ImagePositionPatient[<span class="number">2</span>] - slices[<span class="number">1</span>].ImagePositionPatient[<span class="number">2</span>])</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        slice_thickness = np.<span class="built_in">abs</span>(slices[<span class="number">0</span>].SliceLocation - slices[<span class="number">1</span>].SliceLocation)</span><br><span class="line">		</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> slices:</span><br><span class="line">        s.SliceThickness = slice_thickness</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> slices</span><br></pre></td></tr></table></figure>
-
-<p>默认情况下，从DICOM文件中获得的值是HU这个单位。 需要解决这个问题。缩放斜率和截距由硬件制造商决定。<br>它指定从存储在磁盘表示中的像素到存储在内存表示中的像素的线性转换。磁盘存储的值定义为SV。而转化到内存中的像素值uints就需要两个dicom tag : Rescale intercept和Rescale slope。<br>OutputUnits=m∗SV+b<br>RescaleIntercept:b<br>RescaleSlope:m</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 排除扫描边界之外的数据，然后重新计算HU值（乘以重新缩放斜率并添加截距）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_pixels_hu</span>(<span class="params">slices</span>):</span></span><br><span class="line">    image = np.stack([s.pixel_array <span class="keyword">for</span> s <span class="keyword">in</span> slices])</span><br><span class="line">    <span class="comment"># 转换为int16，int16是ok的，因为所有的数值都应该 &lt;32k</span></span><br><span class="line">    image = image.astype(np.int16)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 设置边界外的元素为0</span></span><br><span class="line">    image[image == -<span class="number">2000</span>] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 转换为HU单位</span></span><br><span class="line">    <span class="keyword">for</span> slice_number <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(slices)):</span><br><span class="line"></span><br><span class="line">        intercept = slices[slice_number].RescaleIntercept</span><br><span class="line">        slope = slices[slice_number].RescaleSlope</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> slope != <span class="number">1</span>:</span><br><span class="line">            image[slice_number] = slope * image[slice_number].astype(np.float64)</span><br><span class="line">            image[slice_number] = image[slice_number].astype(np.int16)</span><br><span class="line"></span><br><span class="line">        image[slice_number] += np.int16(intercept)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> np.array(image, dtype=np.int16)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 产看第i位患者的图像</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show_img</span>():</span></span><br><span class="line">    first_patient = load_scan(INPUT_FOLDER + patients[<span class="number">0</span>])</span><br><span class="line">    first_patient_pixels = get_pixels_hu(first_patient)</span><br><span class="line">    plt.hist(first_patient_pixels.flatten(), bins=<span class="number">80</span>, color=<span class="string">&#x27;c&#x27;</span>)</span><br><span class="line">    plt.xlabel(<span class="string">&quot;Hounsfield Units (HU)&quot;</span>)</span><br><span class="line">    plt.ylabel(<span class="string">&quot;Frequency&quot;</span>)</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 显示一个中间位置的切片</span></span><br><span class="line">    plt.imshow(first_patient_pixels[<span class="number">80</span>], cmap=plt.cm.gray)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
-
-<p>统一像素间距spacing，spacing定义了图像像素的物理大小并且保证了实际距离测量的准确性。比如，如果知道x和y轴的像素间距为 0.4mm，那么在图像中的一条 10 像素的线就会有 4mm的长度。同样，由于知道图像像素中的宽和高(比如对于普通CT来说是 512×512)，就能够找到图像的实际尺寸了:512 × 0.4 mm = 204.8 mm。</p>
-<p>在重采样过程中，让图像的spacing保持一致以及具体大小是多少是非常重要的：CNN中Conv操作被提出来的其中一个重要motivation就是图像中有相似的块能用共享的卷积来提取特征，因此对所有图像重采样能减少不同图像之间的不一致性，便于卷积操作提取共同的特征。</p>
-<p>值得注意的是，图像的spacing保持一致，图像中像素值的个数（即图像分辨率）却不一定相同。而分割网络的框架是固定的，一般是需要输入图片的分辨率大小是一致的。所以通常在训练的时候是用一个固定大小的patch从图像中裁剪采样，在这个过程中原图分辨率不一样是不影响的。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">resample</span>(<span class="params">image, scan, new_spacing=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span>):</span></span><br><span class="line">    <span class="comment"># Determine current pixel spacing</span></span><br><span class="line">    spacing = np.array([scan[<span class="number">0</span>].SliceThickness] + scan[<span class="number">0</span>].PixelSpacing, dtype=np.float32)</span><br><span class="line"></span><br><span class="line">    resize_factor = spacing / new_spacing</span><br><span class="line">    new_real_shape = image.shape * resize_factor</span><br><span class="line">    new_shape = np.<span class="built_in">round</span>(new_real_shape)</span><br><span class="line">    real_resize_factor = new_shape / image.shape</span><br><span class="line">    new_spacing = spacing / real_resize_factor</span><br><span class="line"></span><br><span class="line">    image = scipy.ndimage.interpolation.zoom(image, real_resize_factor, mode=<span class="string">&#x27;nearest&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> image, new_spacing</span><br><span class="line"></span><br><span class="line">pix_resampled, spacing = resample(first_patient_pixels, first_patient, [<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Shape before resampling\t&quot;</span>, first_patient_pixels.shape)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Shape after resampling\t&quot;</span>, pix_resampled.shape)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 画3D图像，用立方体为我们的3D对象创建一个近似网格</span></span><br><span class="line"><span class="comment"># 采用的阈值可以被用来绘制某些结构，例如所有组织或仅骨骼。 400是仅显示骨骼的阈值（见上面的Hounsfield单位表）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_3d</span>(<span class="params">image, threshold=-<span class="number">300</span></span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Position the scan upright, </span></span><br><span class="line">    <span class="comment"># so the head of the patient would be at the top facing the camera</span></span><br><span class="line">    p = image.transpose(<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    verts, faces = measure.marching_cubes(p, threshold)</span><br><span class="line"></span><br><span class="line">    fig = plt.figure(figsize=(<span class="number">10</span>, <span class="number">10</span>))</span><br><span class="line">    ax = fig.add_subplot(<span class="number">111</span>, projection=<span class="string">&#x27;3d&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Fancy indexing: `verts[faces]` to generate a collection of triangles</span></span><br><span class="line">    mesh = Poly3DCollection(verts[faces], alpha=<span class="number">0.70</span>)</span><br><span class="line">    face_color = [<span class="number">0.45</span>, <span class="number">0.45</span>, <span class="number">0.75</span>]</span><br><span class="line">    mesh.set_facecolor(face_color)</span><br><span class="line">    ax.add_collection3d(mesh)</span><br><span class="line"></span><br><span class="line">    ax.set_xlim(<span class="number">0</span>, p.shape[<span class="number">0</span>])</span><br><span class="line">    ax.set_ylim(<span class="number">0</span>, p.shape[<span class="number">1</span>])</span><br><span class="line">    ax.set_zlim(<span class="number">0</span>, p.shape[<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
-
-
-
-<p>肺部切割</p>
-<ul>
-<li>阈值图像（-320 HU）</li>
-<li>做连接组件，确定人周围的空气标签，在二进制图像中用1s填充</li>
-<li>可选：对于扫描中的每个轴向切片，确定最大的固体连接组件（人体周围的身体+空气），并将其他组件设置为0。这样可以填充面罩中肺部的结构。</li>
-<li>只保留最大的气袋（人体在这里和那里都有其他的气袋）</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">largest_label_volume</span>(<span class="params">im, bg=-<span class="number">1</span></span>):</span></span><br><span class="line">    vals, counts = np.unique(im, return_counts=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    counts = counts[vals != bg]</span><br><span class="line">    vals = vals[vals != bg]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(counts) &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> vals[np.argmax(counts)]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">segment_lung_mask</span>(<span class="params">image, fill_lung_structures=<span class="literal">True</span></span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># not actually binary, but 1 and 2. </span></span><br><span class="line">    <span class="comment"># 0 is treated as background, which we do not want</span></span><br><span class="line">    binary_image = np.array(image &gt; -<span class="number">320</span>, dtype=np.int8)+<span class="number">1</span></span><br><span class="line">    labels = measure.label(binary_image)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Pick the pixel in the very corner to determine which label is air.</span></span><br><span class="line">    <span class="comment">#   Improvement: Pick multiple background labels from around the patient</span></span><br><span class="line">    <span class="comment">#   More resistant to &quot;trays&quot; on which the patient lays cutting the air </span></span><br><span class="line">    <span class="comment">#   around the person in half</span></span><br><span class="line">    background_label = labels[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment">#Fill the air around the person</span></span><br><span class="line">    binary_image[background_label == labels] = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Method of filling the lung structures (that is superior to something like </span></span><br><span class="line">    <span class="comment"># morphological closing)</span></span><br><span class="line">    <span class="keyword">if</span> fill_lung_structures:</span><br><span class="line">        <span class="comment"># For every slice we determine the largest solid structure</span></span><br><span class="line">        <span class="keyword">for</span> i, axial_slice <span class="keyword">in</span> <span class="built_in">enumerate</span>(binary_image):</span><br><span class="line">            axial_slice = axial_slice - <span class="number">1</span></span><br><span class="line">            labeling = measure.label(axial_slice)</span><br><span class="line">            l_max = largest_label_volume(labeling, bg=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> l_max <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>: <span class="comment">#This slice contains some lung</span></span><br><span class="line">                binary_image[i][labeling != l_max] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    binary_image -= <span class="number">1</span> <span class="comment">#Make the image actual binary</span></span><br><span class="line">    binary_image = <span class="number">1</span>-binary_image <span class="comment"># Invert it, lungs are now 1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Remove other air pockets insided body</span></span><br><span class="line">    labels = measure.label(binary_image, background=<span class="number">0</span>)</span><br><span class="line">    l_max = largest_label_volume(labels, bg=<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">if</span> l_max <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>: <span class="comment"># There are air pockets</span></span><br><span class="line">        binary_image[labels != l_max] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> binary_image</span><br><span class="line"></span><br><span class="line">segmented_lungs = segment_lung_mask(pix_resampled, <span class="literal">False</span>)</span><br><span class="line">segmented_lungs_fill = segment_lung_mask(pix_resampled, <span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">plot_3d(segmented_lungs, <span class="number">0</span>)</span><br><span class="line">plot_3d(segmented_lungs_fill, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-
-<p>当使用这个时，记得首先在它上面应用扩张形态学操作（即用圆形内核）。这会在所有方向上扩展蒙版。仅肺部的空气+结构将不包含所有结节，特别是它会遗漏那些粘在肺部侧面的结节，它们经常出现在那里！所以扩大面具一点:)</p>
-<p>对于某些边缘情况，此分段可能会失败。它依赖于患者体外的空气不与肺部空气相连的事实。如果患者进行了气管造口术，情况也可能并非如此，不知道这是否存在于数据集中。此外，特别是噪声图像（例如由于下图中的起搏器），这种方法也可能失败。相反，身体中的第二大气袋将被分割。您可以通过检查蒙版对应的图像分数来识别这一点，对于这种情况，这将是非常小的。然后，你可以首先使用几毫米大小的内核进行形态学关闭操作以关闭这些孔，之后它应该可以工作（或者更简单地说，不要对此图像使用蒙版）。</p>
-<p>数据归一化</p>
-<p>目前所有的数值在-1024到2000左右。超过400的任何东西其实是不用关心的，因为只是一些具有不同辐射密度的骨骼。 常用的阈值集合在-1000到400之间。这里有一些代码可以使用：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">MIN_BOUND = -<span class="number">1000.0</span></span><br><span class="line">MAX_BOUND = <span class="number">400.0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">normalize</span>(<span class="params">image</span>):</span></span><br><span class="line">    image = (image - MIN_BOUND) / (MAX_BOUND - MIN_BOUND)</span><br><span class="line">    image[image&gt;<span class="number">1</span>] = <span class="number">1.</span></span><br><span class="line">    image[image&lt;<span class="number">0</span>] = <span class="number">0.</span></span><br><span class="line">    <span class="keyword">return</span> image</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据零居中</span></span><br><span class="line"><span class="comment"># 将数据平均值设置为零。为此，只需从所有像素中减去平均像素值。</span></span><br><span class="line">PIXEL_MEAN = <span class="number">0.25</span> <span class="comment"># 假设均值为0.25</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">zero_center</span>(<span class="params">image</span>):</span></span><br><span class="line">    image = image - PIXEL_MEAN</span><br><span class="line">    <span class="keyword">return</span> image</span><br></pre></td></tr></table></figure>
-
-
-
-<p>未完 参考 <a href="https://zhuanlan.zhihu.com/p/59413289">https://zhuanlan.zhihu.com/p/59413289</a></p>
 ]]></content>
       <categories>
-        <category>Python</category>
-        <category>图像识别</category>
+        <category>学习</category>
+        <category>Pytorch</category>
       </categories>
       <tags>
-        <tag>编程</tag>
-        <tag>医学图像</tag>
+        <tag>torch</tag>
       </tags>
   </entry>
   <entry>
@@ -1628,50 +1542,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
-    <url>/2021/12/16/%E5%8D%8E%E4%B8%BA%E6%98%87%E8%85%BECANN%E6%95%99%E7%A8%8B-TBE%E7%AE%97%E5%AD%90%E5%BC%80%E5%8F%91/</url>
-    <content><![CDATA[<h1 id="华为昇腾CANN教程-TBE算子开发"><a href="#华为昇腾CANN教程-TBE算子开发" class="headerlink" title="华为昇腾CANN教程-TBE算子开发"></a>华为昇腾CANN教程-TBE算子开发</h1><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><p><strong>算子</strong>：一个函数空间到另一个函数空间的映射，可以说对任何函数进行某一项操作都可以将其认为是一个算子，在神经网络模型中涉及到的计算函数。例如：卷积层中的卷积算法，全连接中的权值求和算子，还有众多激活函数算子。</p>
-<p>每个算子有自己独有的名称，每个网络包含多种算子类型Type。比如神经网络中的卷积类型的算子有conv1，conv2… 池化类型的算子有pool1，pool2…</p>
-<p>TBE（Tensor Boost Engine）：是一款华为自研的NPU算子开发工具，以TVM为基础框架进行扩展。可以用python来开发的。</p>
-<p>NPU（Neural-network Processing Unit）：一类专用于人工智能（神经网络等方面）的硬件加速处理器。课程中使用昇腾910处理器</p>
-<p>TVM（Tensor Virtual Machine）： 能加载多种模型框架在多种平台上运行的中间框架</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>图像分割-Unet[项目应用]</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2-Unet/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>Pytorch</category>
-        <category>深度学习</category>
-        <category>图像分割</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>项目总结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>医学图像数据集资源收集</title>
-    <url>/2021/11/30/%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE%E9%9B%86%E8%B5%84%E6%BA%90%E6%94%B6%E9%9B%86/</url>
-    <content><![CDATA[<p>背景问题：</p>
-<p>方法简述：</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>数据集</category>
-      </categories>
-  </entry>
-  <entry>
     <title>关于MLPerf Training Benchmark的设计理解</title>
     <url>/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/</url>
     <content><![CDATA[<p>Mchine Learning的发展需要有行业标准的性能基准测评。Machione Learning有三个基准挑战：</p>
@@ -1768,58 +1638,101 @@
 ]]></content>
   </entry>
   <entry>
-    <title>图像处理基础-滤波器</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>在图像处理中，经常需要对图像进行平滑去噪、锐化、边界增强等，这些功能可以通过滤波器filter来实现。</p>
-<p>噪音的分类及如何添加</p>
-<p>椒盐噪声：是一种随机出现的白点(salt)或者黑点(peppe)</p>
-<p>高斯噪声：概率密度函数服从高斯分布（即正态分布）的一类噪声</p>
-<p>常用滤波算法：</p>
-<p>均值滤波器：把邻域内的平均值赋给中心元素。邻域内的像素权重是相等的；但不能保护细节，不能消除椒盐噪声</p>
-<p>高斯滤波器：邻域内各个像素值不同权重的和，将中心点的权重增大，远离中心的的权重减小</p>
-<p>中值滤波器：不使用权重，邻域内所有像素值的中间值来代替当前像素点的像素值</p>
-<p>双边滤波器：同时考虑距离信息（距离越远，权重越小)和色彩信息（色彩差别越大，权重越小）</p>
+    <title>关于MLPerf和AIPerf的设计理解</title>
+    <url>/2021/11/11/%E5%85%B3%E4%BA%8EMLPerf%E5%92%8CAIPerf%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<p>MLPerf 是AI芯片的一个基准测试，主要包括：Training 和Inference两个方面的性能测试。Training是于测量系统将模型训练到目标质量指标的速度；Inference是用于测试系统使用训练有素的模型处理输入和产生结果的速度。</p>
+<p>AIPerf的评价指标是Tops（平均每秒处理的混合精度AI浮点操作数），可以用来做横向比较</p>
 <span id="more"></span>
 
-<h1 id="滤波相关概念："><a href="#滤波相关概念：" class="headerlink" title="滤波相关概念："></a>滤波相关概念：</h1><p>图像的时域： 自变量是时间,即横轴是时间,纵轴是信号的变化。其动态信号x（t）是描述信号在不同时刻取值的函数</p>
-<p>图像的频域：自变量是频率,即横轴是频率,纵轴是该频率信号的幅度,也就是通常说的频谱图。频谱图描述了信号的频率结构及频率与该频率信号幅度的关系</p>
-<p>图像的频率： 图像的频率又称为空间频率，它反映了图像的像素灰度在空间中变化的情况</p>
-<p>如何定量的测量图像的空间频率，最为常用的方法就是二维傅里叶变换。图像经过二维傅里叶变换后会形成与图像等大的复数矩阵，取其幅值形成幅度谱，取其相位形成相位谱。图像的频率能量分布主要体现在幅度谱中。通常习惯将低频成分放在幅度谱的中央，而将高频成分放在幅度谱边缘。</p>
-<p>在图像频域里面，频率低的地方是比较平滑的，低频的区域中灰度值变化是比较小的；频率高的地方通常是边缘或者噪声，这些区域灰度值是突变的</p>
-<p>高通滤波：让频率较高的部分通过，突出边缘等</p>
-<p>低通滤波：保留频率比较低的部分，通常为平滑图像，弱化边缘，消除噪声</p>
-<p>在时域中的滤波器和在频域中的滤波器组成了傅里叶变换对，这部分暂时不深入了。</p>
-<h2 id="滤波器分类"><a href="#滤波器分类" class="headerlink" title="滤波器分类"></a>滤波器分类</h2><p>线性滤波： 对邻域中的像素的计算为线性运算时，如利用窗口函数进行平滑加权求和的运算，或者某种卷积运算，都可以称为线性滤波。常见的线性滤波有：方框滤波、均值滤波、高斯滤波、拉普拉斯滤波等等，通常线性滤波器之间只是模版的系数不同。</p>
-<p>非线性滤波： 非线性滤波利用原始图像跟模版之间的一种逻辑关系得到结果，如最值滤波器，中值滤波器。比较常用的有中值滤波器和双边滤波器。</p>
-<p>reference：<a href="https://blog.csdn.net/qq_44957388/article/details/105763906">https://blog.csdn.net/qq_44957388/article/details/105763906</a></p>
-<h1 id="常见的滤波器："><a href="#常见的滤波器：" class="headerlink" title="常见的滤波器："></a>常见的滤波器：</h1><h2 id="均值滤波器"><a href="#均值滤波器" class="headerlink" title="均值滤波器"></a>均值滤波器</h2><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E5%9D%87%E5%80%BC.png"></p>
-<h3 id="均值滤波的缺点"><a href="#均值滤波的缺点" class="headerlink" title="均值滤波的缺点"></a>均值滤波的缺点</h3><p>均值滤波本身存在着固有的缺陷，即它不能很好地保护图像细节，在图像去噪的同时也破坏了图像的细节部分，从而使图像变得模糊，不能很好地去除噪声点。特别是椒盐噪声。</p>
-<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>均值模糊可以模糊图像以便得到感兴趣物体的粗略描述，也就是说，去除图像中的不相关细节，其中“不相关”是指与滤波器模板尺寸相比较小的像素区域，从而对图像有一个整体的认知。即为了对感兴趣的物体得到一个大致的整体的描述而模糊一幅图像，忽略细小的细节。</p>
-<h2 id="高斯滤波器"><a href="#高斯滤波器" class="headerlink" title="高斯滤波器"></a>高斯滤波器</h2><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E9%AB%98%E6%96%AF.png"></p>
-<p><strong>应用：</strong> 高斯滤波是一种线性平滑滤波器，对于服从正态分布的噪声有很好的抑制作用。在实际场景中，我们通常会假定图像包含的噪声为高斯白噪声，所以在许多实际应用的预处理部分，都会采用高斯滤波抑制噪声，如传统车牌识别等。</p>
-<h2 id="中值滤波器"><a href="#中值滤波器" class="headerlink" title="中值滤波器"></a>中值滤波器</h2><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E4%B8%AD%E5%80%BC.png"></p>
-<p>中值滤波不再采用加权求和的方式计算滤波结果，它用邻域内所有像素值的中间值来代替当前像素点的像素值。</p>
-<p>中值滤波会取当前像素点及其周围临近像素点的像素值，一般有奇数个像素点，将这些像素值排序，将排序后位于中间位置的像素值作为当前像素点的像素值。</p>
-<p>中值滤波对于斑点噪声（speckle noise）和椒盐噪声（salt-and-pepper<br>noise）来说尤其有用，因为它不依赖于邻域内那些与典型值差别很大的值，而且噪声成分很难被选上，所以可以在几乎不影响原有图像的情况下去除全部噪声。但是由于需要进行排序操作，中值滤波的计算量较大。</p>
-<p>中值滤波器在处理连续图像窗函数时与线性滤波器的工作方式类似，但滤波过程却不再是加权运算。</p>
-<h2 id="双边滤波器"><a href="#双边滤波器" class="headerlink" title="双边滤波器"></a>双边滤波器</h2><p>双边滤波是综合考虑空间信息和色彩信息的滤波方式，在滤波过程中能有效的保护图像内的边缘信息。</p>
-<p>双边滤波在计算某一个像素点的像素值时，同时考虑距离信息（距离越远，权重越小)和色彩信息（色彩差别越大，权重越小）。既能去除噪声，又能较好的保护边缘信息。</p>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E5%8F%8C%E8%BE%B9.png"></p>
-<p>在双边滤波中，计算左侧白色区域的滤波结果时：</p>
-<p>对于白色的点，权重较大<br>对于黑色的点，与白色的色彩差别较大（0和255），所以可以将他们的权重设置为0<br>计算右侧黑色区域的滤波结果时：</p>
-<p>对于黑色的点，权重较大<br>对于白色的点，与黑色的色彩差别较大（255和0），所以可以将他们的权重设置为0<br>这样，左侧白色的滤波结果仍是白色，黑色的像素点权重为0，对它不会有影响；右侧黑色的滤波结果仍是黑色，白色的像素点权重为0，对它不会有影响。所以，双边滤波会将边缘信息保留。</p>
-<p>参考链接：<a href="https://blog.csdn.net/qq_44957388/article/details/105763906">https://blog.csdn.net/qq_44957388/article/details/105763906</a></p>
+<h1 id="MLPerf"><a href="#MLPerf" class="headerlink" title="MLPerf"></a>MLPerf</h1><p>MLPerf 是AI芯片的一个基准测试，主要包括：Training 和Inference两个方面的性能测试。Training是于测量系统将模型训练到目标质量指标的速度；Inference是用于测试系统使用训练有素的模型处理输入和产生结果的速度。</p>
+<p>具体的详细信息可参见论文：MLPERF TRAINING BENCHMARK以及MLPERF INFERENCE BENCHMARK。</p>
+<p>该基准有两种测试形式：*<strong>Closed Division*</strong> 和 <em><strong>Open Division，</strong></em>其中封闭的测试是基于平台固定的测试模型进行测试；开放的测试是用户可以自定义需要测试的模型。</p>
+<p>当前的测试结果根据芯片当前的使用状态分为：Cloud;Available;Preview;Research, Development, and Other（category）。</p>
+<p><img src="/2021/11/11/%E5%85%B3%E4%BA%8EMLPerf%E5%92%8CAIPerf%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/8-benchmarks.png"></p>
+<h1 id="AIPerf"><a href="#AIPerf" class="headerlink" title="AIPerf"></a>AIPerf</h1><p>大规模人工智能计算系统的计算持续发展，需要一个有效评价计算机系统人工智能算力的评价指标；</p>
+<p>浮点计算峰值是指计算机每秒可以完成的浮点计算次数，包括理论浮点峰值和实测浮点峰值。理论浮点峰值是该计算机理论上每秒可以完成的浮点计算次数，主要由CPU的主频决定。</p>
+<p>理论浮点峰值＝CPU主频×CPU核数×CPU每周期执行浮点运算的次数。</p>
+<p>目前的实测方式如下：</p>
+<p>Linpack Benchmark: 广泛用于高性能计算机双精度浮点运算性能基准评测，但大部分人工智能训练任务以单精度浮点数或者16位浮点数为主</p>
+<p>HPL-AI: 通以Linpack为基础的改善的混合精度的基准测评</p>
+<p>Mobile AI Bench：</p>
+<p>DeepBench：</p>
+<p>AIIA DNN Benchmark:</p>
+<p>AIPerf Benchmark:</p>
+<p> 基于微软NNI（neural network intelligence)框架实现，以自动化机器学习AutoML为负载，进行网络结构搜索（网络态射network morphism ）和超参搜索（树状结构Parzen估计）寻找进度更高的网络结构和超参（batch size；最大epoch；lr；最大搜索模型个数，最长搜索总时间；最大并发搜索模型数量等）</p>
+<h1 id="设计目标"><a href="#设计目标" class="headerlink" title="设计目标"></a>设计目标</h1><h2 id="统一的评价指标Score"><a href="#统一的评价指标Score" class="headerlink" title="统一的评价指标Score"></a>统一的评价指标Score</h2><p>AIPerf的评价指标是Tops（平均每秒处理的混合精度AI浮点操作数），可以用来做横向比较</p>
+<h2 id="处理问题规模可变性"><a href="#处理问题规模可变性" class="headerlink" title="处理问题规模可变性"></a>处理问题规模可变性</h2><p>人工智能计算集群的系统规模在节点数量，加速器数量，加速类型，内存大小等指标上存在差异。需要能适应各种规模的计算集群，因此，在AutoML调整问题规模来适应集群规模的变化。</p>
+<h2 id="实际的人工智能意义"><a href="#实际的人工智能意义" class="headerlink" title="实际的人工智能意义"></a>实际的人工智能意义</h2><p>相较于传统的高性能计算机基准测试程序需要具有人工智能的意义在其中，也是其能够检测集群人工智能算力的核心。AIPerf通过在ImageNet数据集上训练神经网络运行CV方面的算法。</p>
+<h2 id="必要的多机通信"><a href="#必要的多机通信" class="headerlink" title="必要的多机通信"></a>必要的多机通信</h2><p>在计算集群中任务分发，多级训练，结果收集等都是以多机通信为基础，是人工智能计算集群计算能力的重要组成。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>医学图像数据集资源收集</title>
+    <url>/2021/11/30/%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE%E9%9B%86%E8%B5%84%E6%BA%90%E6%94%B6%E9%9B%86/</url>
+    <content><![CDATA[<p>背景问题：</p>
+<p>方法简述：</p>
+<span id="more"></span>
+
 ]]></content>
       <categories>
-        <category>学习</category>
-        <category>cv算法</category>
+        <category>数据集</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>医疗影像dicom图像预处理-Pydicom</title>
+    <url>/2021/10/06/%E5%8C%BB%E7%96%97%E5%BD%B1%E5%83%8Fdicom%E5%9B%BE%E5%83%8F%E9%A2%84%E5%A4%84%E7%90%86-Pydicom/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>pydicom是一个python中的第三方库，用于DICOM文件，主要为了以一种简单的”python式”方式检查和修改dicom数据而设计，可以提供给使用者轻松的修改，读写文件并转换成显式图像图片。</p>
+<p>DICOM被广泛应用于放射医疗、心血管成像以及放射诊疗诊断设备（X射线，CT，核磁共振，超声等），并且在眼科和牙科等其它医学领域得到越来越深入广泛的应用。在数以万计的在用医学成像设备中，DICOM是部署最为广泛的医疗信息标准之一。当前大约有百亿级符合DICOM标准的医学图像用于临床使用。<br>患者的医学图像以DICOM文件格式进行存储，其中包含了图像信息以及患者的PHI（protected health information，即姓名、性别、年龄等），以及产生图像的设备的相关信息。</p>
+<span id="more"></span>
+
+<h1 id="人体内各介质的亨氏单位值"><a href="#人体内各介质的亨氏单位值" class="headerlink" title="人体内各介质的亨氏单位值"></a>人体内各介质的亨氏单位值</h1><p><img src="/2021/10/06/%E5%8C%BB%E7%96%97%E5%BD%B1%E5%83%8Fdicom%E5%9B%BE%E5%83%8F%E9%A2%84%E5%A4%84%E7%90%86-Pydicom/hu.png"></p>
+<h1 id="pydicom基础操作"><a href="#pydicom基础操作" class="headerlink" title="pydicom基础操作"></a>pydicom基础操作</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pydicom</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">dcm = pydicom.read_file(<span class="string">&#x27;test1/Image-100.dcm&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(dcm.<span class="built_in">dir</span>()) <span class="comment"># 查看有哪些方法，属性</span></span><br><span class="line"><span class="built_in">print</span>(dcm.<span class="built_in">dir</span>(<span class="string">&#x27;pat&#x27;</span>)) <span class="comment"># 查看有哪些pat(属性)</span></span><br><span class="line"><span class="comment"># 通过字典关键字来获取图像的数据元信息（当然也可以根据TAG号）</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">info = &#123;&#125;</span><br><span class="line"><span class="comment"># 从dcm 文件中提取patient信息</span></span><br><span class="line">info[<span class="string">&quot;PatientID&quot;</span>] = dcm.PatientID               <span class="comment"># 患者ID</span></span><br><span class="line"><span class="comment"># info[&quot;PatientName&quot;] = dcm.PatientName           # 患者姓名</span></span><br><span class="line"><span class="comment"># info[&quot;PatientBirthData&quot;] = dcm.PatientBirthData # 患者出生日期</span></span><br><span class="line"><span class="comment"># info[&quot;PatientAge&quot;] = dcm.PatientAge             # 患者年龄</span></span><br><span class="line"><span class="comment"># info[&#x27;PatientSex&#x27;] = dcm.PatientSex             # 患者性别</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从dcm 文件中提取study案例信息</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyID&#x27;] = dcm.StudyID                   # 检查ID</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyDate&#x27;] = dcm.StudyDate               # 检查日期</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyTime&#x27;] = dcm.StudyTime               # 检查时间</span></span><br><span class="line"><span class="comment"># info[&#x27;InstitutionName&#x27;] = dcm.InstitutionName   # 机构名称</span></span><br><span class="line"><span class="comment"># info[&#x27;Manufacturer&#x27;] = dcm.Manufacturer         # 设备制造商</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyDescription&#x27;]=dcm.StudyDescription   # 检查项目描述</span></span><br><span class="line"><span class="built_in">print</span>(info)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取图像唯一标识符</span></span><br><span class="line">uid = dcm.SOPInstanceUID</span><br><span class="line">img_arr = dcm.pixel_array</span><br><span class="line"><span class="built_in">print</span>(img_arr.shape)</span><br><span class="line">lens = img_arr.shape[<span class="number">0</span>] * img_arr.shape[<span class="number">1</span>] <span class="comment"># 获取像素点的数量</span></span><br><span class="line">tmp = np.reshape(img_arr,(lens,))</span><br><span class="line">max_val = <span class="built_in">max</span>(tmp)</span><br><span class="line">min_val = <span class="built_in">min</span>(tmp)</span><br><span class="line"><span class="comment"># 图像归一化</span></span><br><span class="line">img_arr = (img_arr-min_val)/(max_val-min_val)</span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>,<span class="number">12</span>),dpi=<span class="number">250</span>) <span class="comment">#dpi每英寸点数，这张是1200*1200像素的图片</span></span><br><span class="line">plt.title(<span class="string">&quot;UID:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(uid))</span><br><span class="line">plt.imshow(img_arr,cmap=plt.cm.gray)<span class="comment">#颜色图谱（colormap), 默认绘制为RGB(A)颜色空间。</span></span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改图片中的元素</span></span><br><span class="line"><span class="keyword">for</span> n,val <span class="keyword">in</span> <span class="built_in">enumerate</span>(dcm.pixel_array.flat):</span><br><span class="line">    <span class="keyword">if</span> val &lt; <span class="number">1300</span>:</span><br><span class="line">        dcm.pixel_array.flat[n] = <span class="number">0</span></span><br><span class="line">dcm.PixelData = dcm.pixel_array.tobytes()</span><br><span class="line">img_arr2 = dcm.pixel_array</span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>,<span class="number">12</span>),dpi=<span class="number">250</span>) <span class="comment">#dpi每英寸点数，这张是1200*1200像素的图片</span></span><br><span class="line">plt.title(<span class="string">&quot;UID:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(uid))</span><br><span class="line">plt.imshow(img_arr2,cmap=plt.cm.gray)<span class="comment">#颜色图谱（colormap), 默认绘制为RGB(A)颜色空间。</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h1 id="案例：肺结节图像预处理"><a href="#案例：肺结节图像预处理" class="headerlink" title="案例：肺结节图像预处理"></a>案例：肺结节图像预处理</h1><ol>
+<li></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 加载必要的python包</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd </span><br><span class="line"><span class="keyword">import</span> dicom</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> scipy.ndimage</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> skimage <span class="keyword">import</span> measure, morphology</span><br><span class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d.art3d <span class="keyword">import</span> Poly3DCollection</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含所有患者目录的根目录</span></span><br><span class="line">INPUT_FOLDER = <span class="string">&#x27;../input/sample_images/&#x27;</span></span><br><span class="line">patients = os.listdir(INPUT_FOLDER)</span><br><span class="line">patients.sort()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载一位患者的所有slice，按照顺序调整为等间隔扫描</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_scan</span>(<span class="params">path</span>):</span></span><br><span class="line">    slices = [dicom.read_file(path + <span class="string">&#x27;/&#x27;</span> + s) <span class="keyword">for</span> s <span class="keyword">in</span> os.listdir(path)]</span><br><span class="line">    <span class="comment">#按照扫描顺序叠加</span></span><br><span class="line">    slices.sort(key = <span class="keyword">lambda</span> x: <span class="built_in">float</span>(x.ImagePositionPatient[<span class="number">2</span>])) </span><br><span class="line">    <span class="comment"># 计算相邻扫描的间隔距离</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        slice_thickness = np.<span class="built_in">abs</span>(slices[<span class="number">0</span>].ImagePositionPatient[<span class="number">2</span>] - slices[<span class="number">1</span>].ImagePositionPatient[<span class="number">2</span>])</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        slice_thickness = np.<span class="built_in">abs</span>(slices[<span class="number">0</span>].SliceLocation - slices[<span class="number">1</span>].SliceLocation)</span><br><span class="line">		</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> slices:</span><br><span class="line">        s.SliceThickness = slice_thickness</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> slices</span><br></pre></td></tr></table></figure>
+
+<p>默认情况下，从DICOM文件中获得的值是HU这个单位。 需要解决这个问题。缩放斜率和截距由硬件制造商决定。<br>它指定从存储在磁盘表示中的像素到存储在内存表示中的像素的线性转换。磁盘存储的值定义为SV。而转化到内存中的像素值uints就需要两个dicom tag : Rescale intercept和Rescale slope。<br>OutputUnits=m∗SV+b<br>RescaleIntercept:b<br>RescaleSlope:m</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 排除扫描边界之外的数据，然后重新计算HU值（乘以重新缩放斜率并添加截距）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_pixels_hu</span>(<span class="params">slices</span>):</span></span><br><span class="line">    image = np.stack([s.pixel_array <span class="keyword">for</span> s <span class="keyword">in</span> slices])</span><br><span class="line">    <span class="comment"># 转换为int16，int16是ok的，因为所有的数值都应该 &lt;32k</span></span><br><span class="line">    image = image.astype(np.int16)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 设置边界外的元素为0</span></span><br><span class="line">    image[image == -<span class="number">2000</span>] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 转换为HU单位</span></span><br><span class="line">    <span class="keyword">for</span> slice_number <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(slices)):</span><br><span class="line"></span><br><span class="line">        intercept = slices[slice_number].RescaleIntercept</span><br><span class="line">        slope = slices[slice_number].RescaleSlope</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> slope != <span class="number">1</span>:</span><br><span class="line">            image[slice_number] = slope * image[slice_number].astype(np.float64)</span><br><span class="line">            image[slice_number] = image[slice_number].astype(np.int16)</span><br><span class="line"></span><br><span class="line">        image[slice_number] += np.int16(intercept)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> np.array(image, dtype=np.int16)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 产看第i位患者的图像</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show_img</span>():</span></span><br><span class="line">    first_patient = load_scan(INPUT_FOLDER + patients[<span class="number">0</span>])</span><br><span class="line">    first_patient_pixels = get_pixels_hu(first_patient)</span><br><span class="line">    plt.hist(first_patient_pixels.flatten(), bins=<span class="number">80</span>, color=<span class="string">&#x27;c&#x27;</span>)</span><br><span class="line">    plt.xlabel(<span class="string">&quot;Hounsfield Units (HU)&quot;</span>)</span><br><span class="line">    plt.ylabel(<span class="string">&quot;Frequency&quot;</span>)</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 显示一个中间位置的切片</span></span><br><span class="line">    plt.imshow(first_patient_pixels[<span class="number">80</span>], cmap=plt.cm.gray)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>统一像素间距spacing，spacing定义了图像像素的物理大小并且保证了实际距离测量的准确性。比如，如果知道x和y轴的像素间距为 0.4mm，那么在图像中的一条 10 像素的线就会有 4mm的长度。同样，由于知道图像像素中的宽和高(比如对于普通CT来说是 512×512)，就能够找到图像的实际尺寸了:512 × 0.4 mm = 204.8 mm。</p>
+<p>在重采样过程中，让图像的spacing保持一致以及具体大小是多少是非常重要的：CNN中Conv操作被提出来的其中一个重要motivation就是图像中有相似的块能用共享的卷积来提取特征，因此对所有图像重采样能减少不同图像之间的不一致性，便于卷积操作提取共同的特征。</p>
+<p>值得注意的是，图像的spacing保持一致，图像中像素值的个数（即图像分辨率）却不一定相同。而分割网络的框架是固定的，一般是需要输入图片的分辨率大小是一致的。所以通常在训练的时候是用一个固定大小的patch从图像中裁剪采样，在这个过程中原图分辨率不一样是不影响的。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">resample</span>(<span class="params">image, scan, new_spacing=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span>):</span></span><br><span class="line">    <span class="comment"># Determine current pixel spacing</span></span><br><span class="line">    spacing = np.array([scan[<span class="number">0</span>].SliceThickness] + scan[<span class="number">0</span>].PixelSpacing, dtype=np.float32)</span><br><span class="line"></span><br><span class="line">    resize_factor = spacing / new_spacing</span><br><span class="line">    new_real_shape = image.shape * resize_factor</span><br><span class="line">    new_shape = np.<span class="built_in">round</span>(new_real_shape)</span><br><span class="line">    real_resize_factor = new_shape / image.shape</span><br><span class="line">    new_spacing = spacing / real_resize_factor</span><br><span class="line"></span><br><span class="line">    image = scipy.ndimage.interpolation.zoom(image, real_resize_factor, mode=<span class="string">&#x27;nearest&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> image, new_spacing</span><br><span class="line"></span><br><span class="line">pix_resampled, spacing = resample(first_patient_pixels, first_patient, [<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Shape before resampling\t&quot;</span>, first_patient_pixels.shape)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Shape after resampling\t&quot;</span>, pix_resampled.shape)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 画3D图像，用立方体为我们的3D对象创建一个近似网格</span></span><br><span class="line"><span class="comment"># 采用的阈值可以被用来绘制某些结构，例如所有组织或仅骨骼。 400是仅显示骨骼的阈值（见上面的Hounsfield单位表）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_3d</span>(<span class="params">image, threshold=-<span class="number">300</span></span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Position the scan upright, </span></span><br><span class="line">    <span class="comment"># so the head of the patient would be at the top facing the camera</span></span><br><span class="line">    p = image.transpose(<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    verts, faces = measure.marching_cubes(p, threshold)</span><br><span class="line"></span><br><span class="line">    fig = plt.figure(figsize=(<span class="number">10</span>, <span class="number">10</span>))</span><br><span class="line">    ax = fig.add_subplot(<span class="number">111</span>, projection=<span class="string">&#x27;3d&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Fancy indexing: `verts[faces]` to generate a collection of triangles</span></span><br><span class="line">    mesh = Poly3DCollection(verts[faces], alpha=<span class="number">0.70</span>)</span><br><span class="line">    face_color = [<span class="number">0.45</span>, <span class="number">0.45</span>, <span class="number">0.75</span>]</span><br><span class="line">    mesh.set_facecolor(face_color)</span><br><span class="line">    ax.add_collection3d(mesh)</span><br><span class="line"></span><br><span class="line">    ax.set_xlim(<span class="number">0</span>, p.shape[<span class="number">0</span>])</span><br><span class="line">    ax.set_ylim(<span class="number">0</span>, p.shape[<span class="number">1</span>])</span><br><span class="line">    ax.set_zlim(<span class="number">0</span>, p.shape[<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>肺部切割</p>
+<ul>
+<li>阈值图像（-320 HU）</li>
+<li>做连接组件，确定人周围的空气标签，在二进制图像中用1s填充</li>
+<li>可选：对于扫描中的每个轴向切片，确定最大的固体连接组件（人体周围的身体+空气），并将其他组件设置为0。这样可以填充面罩中肺部的结构。</li>
+<li>只保留最大的气袋（人体在这里和那里都有其他的气袋）</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">largest_label_volume</span>(<span class="params">im, bg=-<span class="number">1</span></span>):</span></span><br><span class="line">    vals, counts = np.unique(im, return_counts=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    counts = counts[vals != bg]</span><br><span class="line">    vals = vals[vals != bg]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(counts) &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> vals[np.argmax(counts)]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">segment_lung_mask</span>(<span class="params">image, fill_lung_structures=<span class="literal">True</span></span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># not actually binary, but 1 and 2. </span></span><br><span class="line">    <span class="comment"># 0 is treated as background, which we do not want</span></span><br><span class="line">    binary_image = np.array(image &gt; -<span class="number">320</span>, dtype=np.int8)+<span class="number">1</span></span><br><span class="line">    labels = measure.label(binary_image)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Pick the pixel in the very corner to determine which label is air.</span></span><br><span class="line">    <span class="comment">#   Improvement: Pick multiple background labels from around the patient</span></span><br><span class="line">    <span class="comment">#   More resistant to &quot;trays&quot; on which the patient lays cutting the air </span></span><br><span class="line">    <span class="comment">#   around the person in half</span></span><br><span class="line">    background_label = labels[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment">#Fill the air around the person</span></span><br><span class="line">    binary_image[background_label == labels] = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Method of filling the lung structures (that is superior to something like </span></span><br><span class="line">    <span class="comment"># morphological closing)</span></span><br><span class="line">    <span class="keyword">if</span> fill_lung_structures:</span><br><span class="line">        <span class="comment"># For every slice we determine the largest solid structure</span></span><br><span class="line">        <span class="keyword">for</span> i, axial_slice <span class="keyword">in</span> <span class="built_in">enumerate</span>(binary_image):</span><br><span class="line">            axial_slice = axial_slice - <span class="number">1</span></span><br><span class="line">            labeling = measure.label(axial_slice)</span><br><span class="line">            l_max = largest_label_volume(labeling, bg=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> l_max <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>: <span class="comment">#This slice contains some lung</span></span><br><span class="line">                binary_image[i][labeling != l_max] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    binary_image -= <span class="number">1</span> <span class="comment">#Make the image actual binary</span></span><br><span class="line">    binary_image = <span class="number">1</span>-binary_image <span class="comment"># Invert it, lungs are now 1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Remove other air pockets insided body</span></span><br><span class="line">    labels = measure.label(binary_image, background=<span class="number">0</span>)</span><br><span class="line">    l_max = largest_label_volume(labels, bg=<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">if</span> l_max <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>: <span class="comment"># There are air pockets</span></span><br><span class="line">        binary_image[labels != l_max] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> binary_image</span><br><span class="line"></span><br><span class="line">segmented_lungs = segment_lung_mask(pix_resampled, <span class="literal">False</span>)</span><br><span class="line">segmented_lungs_fill = segment_lung_mask(pix_resampled, <span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">plot_3d(segmented_lungs, <span class="number">0</span>)</span><br><span class="line">plot_3d(segmented_lungs_fill, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<p>当使用这个时，记得首先在它上面应用扩张形态学操作（即用圆形内核）。这会在所有方向上扩展蒙版。仅肺部的空气+结构将不包含所有结节，特别是它会遗漏那些粘在肺部侧面的结节，它们经常出现在那里！所以扩大面具一点:)</p>
+<p>对于某些边缘情况，此分段可能会失败。它依赖于患者体外的空气不与肺部空气相连的事实。如果患者进行了气管造口术，情况也可能并非如此，不知道这是否存在于数据集中。此外，特别是噪声图像（例如由于下图中的起搏器），这种方法也可能失败。相反，身体中的第二大气袋将被分割。您可以通过检查蒙版对应的图像分数来识别这一点，对于这种情况，这将是非常小的。然后，你可以首先使用几毫米大小的内核进行形态学关闭操作以关闭这些孔，之后它应该可以工作（或者更简单地说，不要对此图像使用蒙版）。</p>
+<p>数据归一化</p>
+<p>目前所有的数值在-1024到2000左右。超过400的任何东西其实是不用关心的，因为只是一些具有不同辐射密度的骨骼。 常用的阈值集合在-1000到400之间。这里有一些代码可以使用：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">MIN_BOUND = -<span class="number">1000.0</span></span><br><span class="line">MAX_BOUND = <span class="number">400.0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">normalize</span>(<span class="params">image</span>):</span></span><br><span class="line">    image = (image - MIN_BOUND) / (MAX_BOUND - MIN_BOUND)</span><br><span class="line">    image[image&gt;<span class="number">1</span>] = <span class="number">1.</span></span><br><span class="line">    image[image&lt;<span class="number">0</span>] = <span class="number">0.</span></span><br><span class="line">    <span class="keyword">return</span> image</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据零居中</span></span><br><span class="line"><span class="comment"># 将数据平均值设置为零。为此，只需从所有像素中减去平均像素值。</span></span><br><span class="line">PIXEL_MEAN = <span class="number">0.25</span> <span class="comment"># 假设均值为0.25</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">zero_center</span>(<span class="params">image</span>):</span></span><br><span class="line">    image = image - PIXEL_MEAN</span><br><span class="line">    <span class="keyword">return</span> image</span><br></pre></td></tr></table></figure>
+
+
+
+<p>未完 参考 <a href="https://zhuanlan.zhihu.com/p/59413289">https://zhuanlan.zhihu.com/p/59413289</a></p>
+]]></content>
+      <categories>
+        <category>Python</category>
+        <category>图像识别</category>
       </categories>
       <tags>
-        <tag>OpenCV</tag>
-        <tag>基础操作</tag>
-        <tag>噪音</tag>
         <tag>编程</tag>
-        <tag>滤波器</tag>
+        <tag>医学图像</tag>
       </tags>
   </entry>
   <entry>
@@ -2021,6 +1934,120 @@
       </categories>
   </entry>
   <entry>
+    <title></title>
+    <url>/2021/12/16/%E5%8D%8E%E4%B8%BA%E6%98%87%E8%85%BECANN%E6%95%99%E7%A8%8B-TBE%E7%AE%97%E5%AD%90%E5%BC%80%E5%8F%91/</url>
+    <content><![CDATA[<h1 id="华为昇腾CANN教程-TBE算子开发"><a href="#华为昇腾CANN教程-TBE算子开发" class="headerlink" title="华为昇腾CANN教程-TBE算子开发"></a>华为昇腾CANN教程-TBE算子开发</h1><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><p><strong>算子</strong>：一个函数空间到另一个函数空间的映射，可以说对任何函数进行某一项操作都可以将其认为是一个算子，在神经网络模型中涉及到的计算函数。例如：卷积层中的卷积算法，全连接中的权值求和算子，还有众多激活函数算子。</p>
+<p>每个算子有自己独有的名称，每个网络包含多种算子类型Type。比如神经网络中的卷积类型的算子有conv1，conv2… 池化类型的算子有pool1，pool2…</p>
+<p>TBE（Tensor Boost Engine）：是一款华为自研的NPU算子开发工具，以TVM为基础框架进行扩展。可以用python来开发的。</p>
+<p>NPU（Neural-network Processing Unit）：一类专用于人工智能（神经网络等方面）的硬件加速处理器。课程中使用昇腾910处理器</p>
+<p>TVM（Tensor Virtual Machine）： 能加载多种模型框架在多种平台上运行的中间框架</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>图像分割-Unet[项目应用]</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2-Unet/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>Pytorch</category>
+        <category>深度学习</category>
+        <category>图像分割</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>项目总结</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像分类-EfficientNet&amp;EfficientDet[项目应用]</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB-EfficientNet/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：EfficientNet每个主干包含7个block。这些block还有不同数量的子block，这些子block的数量随着EfficientNetB0到EfficientNetB7而增加。</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+<p>EfficientNet每个主干包含7个block。这些block还有不同数量的子block，这些子block的数量随着EfficientNetB0到EfficientNetB7而增加。</p>
+<p>EfficientNet-B0的总层数，总数是237层，而EfficientNet-B7的总数是813层！！但不用担心，所有这些层都可以由下面的5个模块和上面的主干组成。</p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB-EfficientNet/EfficientNet.png"></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>图像分类</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>项目总结</tag>
+        <tag>kaggle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像处理基础-滤波器</title>
+    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>在图像处理中，经常需要对图像进行平滑去噪、锐化、边界增强等，这些功能可以通过滤波器filter来实现。</p>
+<p>噪音的分类及如何添加</p>
+<p>椒盐噪声：是一种随机出现的白点(salt)或者黑点(peppe)</p>
+<p>高斯噪声：概率密度函数服从高斯分布（即正态分布）的一类噪声</p>
+<p>常用滤波算法：</p>
+<p>均值滤波器：把邻域内的平均值赋给中心元素。邻域内的像素权重是相等的；但不能保护细节，不能消除椒盐噪声</p>
+<p>高斯滤波器：邻域内各个像素值不同权重的和，将中心点的权重增大，远离中心的的权重减小</p>
+<p>中值滤波器：不使用权重，邻域内所有像素值的中间值来代替当前像素点的像素值</p>
+<p>双边滤波器：同时考虑距离信息（距离越远，权重越小)和色彩信息（色彩差别越大，权重越小）</p>
+<span id="more"></span>
+
+<h1 id="滤波相关概念："><a href="#滤波相关概念：" class="headerlink" title="滤波相关概念："></a>滤波相关概念：</h1><p>图像的时域： 自变量是时间,即横轴是时间,纵轴是信号的变化。其动态信号x（t）是描述信号在不同时刻取值的函数</p>
+<p>图像的频域：自变量是频率,即横轴是频率,纵轴是该频率信号的幅度,也就是通常说的频谱图。频谱图描述了信号的频率结构及频率与该频率信号幅度的关系</p>
+<p>图像的频率： 图像的频率又称为空间频率，它反映了图像的像素灰度在空间中变化的情况</p>
+<p>如何定量的测量图像的空间频率，最为常用的方法就是二维傅里叶变换。图像经过二维傅里叶变换后会形成与图像等大的复数矩阵，取其幅值形成幅度谱，取其相位形成相位谱。图像的频率能量分布主要体现在幅度谱中。通常习惯将低频成分放在幅度谱的中央，而将高频成分放在幅度谱边缘。</p>
+<p>在图像频域里面，频率低的地方是比较平滑的，低频的区域中灰度值变化是比较小的；频率高的地方通常是边缘或者噪声，这些区域灰度值是突变的</p>
+<p>高通滤波：让频率较高的部分通过，突出边缘等</p>
+<p>低通滤波：保留频率比较低的部分，通常为平滑图像，弱化边缘，消除噪声</p>
+<p>在时域中的滤波器和在频域中的滤波器组成了傅里叶变换对，这部分暂时不深入了。</p>
+<h2 id="滤波器分类"><a href="#滤波器分类" class="headerlink" title="滤波器分类"></a>滤波器分类</h2><p>线性滤波： 对邻域中的像素的计算为线性运算时，如利用窗口函数进行平滑加权求和的运算，或者某种卷积运算，都可以称为线性滤波。常见的线性滤波有：方框滤波、均值滤波、高斯滤波、拉普拉斯滤波等等，通常线性滤波器之间只是模版的系数不同。</p>
+<p>非线性滤波： 非线性滤波利用原始图像跟模版之间的一种逻辑关系得到结果，如最值滤波器，中值滤波器。比较常用的有中值滤波器和双边滤波器。</p>
+<p>reference：<a href="https://blog.csdn.net/qq_44957388/article/details/105763906">https://blog.csdn.net/qq_44957388/article/details/105763906</a></p>
+<h1 id="常见的滤波器："><a href="#常见的滤波器：" class="headerlink" title="常见的滤波器："></a>常见的滤波器：</h1><h2 id="均值滤波器"><a href="#均值滤波器" class="headerlink" title="均值滤波器"></a>均值滤波器</h2><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E5%9D%87%E5%80%BC.png"></p>
+<h3 id="均值滤波的缺点"><a href="#均值滤波的缺点" class="headerlink" title="均值滤波的缺点"></a>均值滤波的缺点</h3><p>均值滤波本身存在着固有的缺陷，即它不能很好地保护图像细节，在图像去噪的同时也破坏了图像的细节部分，从而使图像变得模糊，不能很好地去除噪声点。特别是椒盐噪声。</p>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>均值模糊可以模糊图像以便得到感兴趣物体的粗略描述，也就是说，去除图像中的不相关细节，其中“不相关”是指与滤波器模板尺寸相比较小的像素区域，从而对图像有一个整体的认知。即为了对感兴趣的物体得到一个大致的整体的描述而模糊一幅图像，忽略细小的细节。</p>
+<h2 id="高斯滤波器"><a href="#高斯滤波器" class="headerlink" title="高斯滤波器"></a>高斯滤波器</h2><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E9%AB%98%E6%96%AF.png"></p>
+<p><strong>应用：</strong> 高斯滤波是一种线性平滑滤波器，对于服从正态分布的噪声有很好的抑制作用。在实际场景中，我们通常会假定图像包含的噪声为高斯白噪声，所以在许多实际应用的预处理部分，都会采用高斯滤波抑制噪声，如传统车牌识别等。</p>
+<h2 id="中值滤波器"><a href="#中值滤波器" class="headerlink" title="中值滤波器"></a>中值滤波器</h2><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E4%B8%AD%E5%80%BC.png"></p>
+<p>中值滤波不再采用加权求和的方式计算滤波结果，它用邻域内所有像素值的中间值来代替当前像素点的像素值。</p>
+<p>中值滤波会取当前像素点及其周围临近像素点的像素值，一般有奇数个像素点，将这些像素值排序，将排序后位于中间位置的像素值作为当前像素点的像素值。</p>
+<p>中值滤波对于斑点噪声（speckle noise）和椒盐噪声（salt-and-pepper<br>noise）来说尤其有用，因为它不依赖于邻域内那些与典型值差别很大的值，而且噪声成分很难被选上，所以可以在几乎不影响原有图像的情况下去除全部噪声。但是由于需要进行排序操作，中值滤波的计算量较大。</p>
+<p>中值滤波器在处理连续图像窗函数时与线性滤波器的工作方式类似，但滤波过程却不再是加权运算。</p>
+<h2 id="双边滤波器"><a href="#双边滤波器" class="headerlink" title="双边滤波器"></a>双边滤波器</h2><p>双边滤波是综合考虑空间信息和色彩信息的滤波方式，在滤波过程中能有效的保护图像内的边缘信息。</p>
+<p>双边滤波在计算某一个像素点的像素值时，同时考虑距离信息（距离越远，权重越小)和色彩信息（色彩差别越大，权重越小）。既能去除噪声，又能较好的保护边缘信息。</p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E5%8F%8C%E8%BE%B9.png"></p>
+<p>在双边滤波中，计算左侧白色区域的滤波结果时：</p>
+<p>对于白色的点，权重较大<br>对于黑色的点，与白色的色彩差别较大（0和255），所以可以将他们的权重设置为0<br>计算右侧黑色区域的滤波结果时：</p>
+<p>对于黑色的点，权重较大<br>对于白色的点，与黑色的色彩差别较大（255和0），所以可以将他们的权重设置为0<br>这样，左侧白色的滤波结果仍是白色，黑色的像素点权重为0，对它不会有影响；右侧黑色的滤波结果仍是黑色，白色的像素点权重为0，对它不会有影响。所以，双边滤波会将边缘信息保留。</p>
+<p>参考链接：<a href="https://blog.csdn.net/qq_44957388/article/details/105763906">https://blog.csdn.net/qq_44957388/article/details/105763906</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>基础操作</tag>
+        <tag>噪音</tag>
+        <tag>编程</tag>
+        <tag>滤波器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>图像识别-[2012]AlexNet</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-AlexNet/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>AlexNet是2012年ImageNet竞赛冠军获得者Alex Krizhevsky设计的</p>
@@ -2202,33 +2229,6 @@
       </tags>
   </entry>
   <entry>
-    <title>图像分类-EfficientNet&amp;EfficientDet[项目应用]</title>
-    <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB-EfficientNet/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：EfficientNet每个主干包含7个block。这些block还有不同数量的子block，这些子block的数量随着EfficientNetB0到EfficientNetB7而增加。</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-<p>EfficientNet每个主干包含7个block。这些block还有不同数量的子block，这些子block的数量随着EfficientNetB0到EfficientNetB7而增加。</p>
-<p>EfficientNet-B0的总层数，总数是237层，而EfficientNet-B7的总数是813层！！但不用担心，所有这些层都可以由下面的5个模块和上面的主干组成。</p>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB-EfficientNet/EfficientNet.png"></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>图像分类</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>项目总结</tag>
-        <tag>kaggle</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>图像识别-VGGNet</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：随着AlexNet提出，很多人开始利用卷积神经网络来解决图像识别的问题。一般的做法都是重复几层卷积网络，每个卷积网络之后接一些池化层，最后再加上几个全连接层。而如何更优的设计网络结构（深度，kernel size等）</p>
@@ -2267,37 +2267,9 @@
       </tags>
   </entry>
   <entry>
-    <title>常见的算法面试（一）</title>
-    <url>/2021/10/03/%E5%B8%B8%E8%A7%81%E7%9A%84%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <title>基于YOLOv5的安全帽和口罩检测</title>
+    <url>/2021/10/02/%E5%9F%BA%E4%BA%8EYOLOv5%E7%9A%84%E5%AE%89%E5%85%A8%E5%B8%BD%E5%92%8C%E5%8F%A3%E7%BD%A9%E6%A3%80%E6%B5%8B/</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>底层避障算法ORCA(Optimal Reciprocal Collision Avoidance)</title>
-    <url>/2021/11/02/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>VO（Velocity Obstacle）</p>
-<p>RVO（Reciprocal Velocity Obstacles）</p>
-<p>ORCA</p>
-<span id="more"></span>
-
-<h1 id="VO（Velocity-Obstacle）"><a href="#VO（Velocity-Obstacle）" class="headerlink" title="VO（Velocity Obstacle）"></a>VO（Velocity Obstacle）</h1><p>以两个移动的物体为例：</p>
-<ol>
-<li>计算两个移动物体的相对速度和速度方向</li>
-<li>假设一个物体是静止的，另一个物体以相对速度进行运动，</li>
-<li>判断移动的物体的中心是否在一定时间内到达另一个物体的中心为中心和两个物体的半径和为半径的区域内</li>
-<li>如果到达则认为会碰撞，否则不会</li>
-</ol>
-<p>缺点：</p>
-<p><img src="/2021/11/02/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/VO%E7%BC%BA%E7%82%B9.jpg"></p>
-<p>如图，加入两个物体都采用相同的策略进行移动，两个物体既要确保移动的物体的速度都处于各自的Velocity Obstacle之外，又要尽可能快，所以说速度和方向是不断会被推拉，因此会导致轨迹抖动如图所示，会影响到效率</p>
-<h1 id="RVO（Reciprocal-Velocity-Obstacles）"><a href="#RVO（Reciprocal-Velocity-Obstacles）" class="headerlink" title="RVO（Reciprocal Velocity Obstacles）"></a>RVO（Reciprocal Velocity Obstacles）</h1><p>RVO的目标是解决VO中产生的抖动问题。</p>
-<p>在避障行为的速度选择时，与VO避障中智能体单纯选择VO区域之外的速度不同，这里我们选择的新速度是VO之外的某个速度与当前速度的平均值</p>
-<p><img src="/2021/11/02/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/RVO.png"></p>
-<p>如图所示，RVO是将先前的VO进行平移的到的， By the way, 是Va和VO内的任意Vb求平均得到的。也就是将原来顶点在Vb的夹角区域平移到顶点为(Va+Vb)/2 的位置。也就是说，</p>
-<p>可通过数学证明 <a href="https://blog.csdn.net/zhiai315/article/details/114241684?spm=1001.2101.3001.6650.3&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-3.no_search_link&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-3.no_search_link">https://blog.csdn.net/zhiai315/article/details/114241684?spm=1001.2101.3001.6650.3&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-3.no_search_link&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-3.no_search_link</a></p>
-<p>这样是架设了每个智能体在避免碰撞的过程中各自平均分担了相同的避让。而实际上，各个智能体之间可能在规避碰撞的过程中分别承担不同比例，事实上是可以通过动态划分的。如果A承担的比例是a1，则B承担的是1-a1. </p>
-<p>Va’ = a1*Vr + (1-a1)*Va 由此可知 Vr = (1/a1) * Va’ +(1-1/a1) * Va</p>
-<h1 id="ORCA"><a href="#ORCA" class="headerlink" title="ORCA"></a>ORCA</h1><p>组合RVO区域</p>
-]]></content>
   </entry>
   <entry>
     <title>基于python的CUDA编程基础</title>
@@ -2346,9 +2318,37 @@
       </tags>
   </entry>
   <entry>
-    <title>基于YOLOv5的安全帽和口罩检测</title>
-    <url>/2021/10/02/%E5%9F%BA%E4%BA%8EYOLOv5%E7%9A%84%E5%AE%89%E5%85%A8%E5%B8%BD%E5%92%8C%E5%8F%A3%E7%BD%A9%E6%A3%80%E6%B5%8B/</url>
+    <title>常见的算法面试（一）</title>
+    <url>/2021/10/03/%E5%B8%B8%E8%A7%81%E7%9A%84%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>底层避障算法ORCA(Optimal Reciprocal Collision Avoidance)</title>
+    <url>/2021/11/02/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>VO（Velocity Obstacle）</p>
+<p>RVO（Reciprocal Velocity Obstacles）</p>
+<p>ORCA</p>
+<span id="more"></span>
+
+<h1 id="VO（Velocity-Obstacle）"><a href="#VO（Velocity-Obstacle）" class="headerlink" title="VO（Velocity Obstacle）"></a>VO（Velocity Obstacle）</h1><p>以两个移动的物体为例：</p>
+<ol>
+<li>计算两个移动物体的相对速度和速度方向</li>
+<li>假设一个物体是静止的，另一个物体以相对速度进行运动，</li>
+<li>判断移动的物体的中心是否在一定时间内到达另一个物体的中心为中心和两个物体的半径和为半径的区域内</li>
+<li>如果到达则认为会碰撞，否则不会</li>
+</ol>
+<p>缺点：</p>
+<p><img src="/2021/11/02/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/VO%E7%BC%BA%E7%82%B9.jpg"></p>
+<p>如图，加入两个物体都采用相同的策略进行移动，两个物体既要确保移动的物体的速度都处于各自的Velocity Obstacle之外，又要尽可能快，所以说速度和方向是不断会被推拉，因此会导致轨迹抖动如图所示，会影响到效率</p>
+<h1 id="RVO（Reciprocal-Velocity-Obstacles）"><a href="#RVO（Reciprocal-Velocity-Obstacles）" class="headerlink" title="RVO（Reciprocal Velocity Obstacles）"></a>RVO（Reciprocal Velocity Obstacles）</h1><p>RVO的目标是解决VO中产生的抖动问题。</p>
+<p>在避障行为的速度选择时，与VO避障中智能体单纯选择VO区域之外的速度不同，这里我们选择的新速度是VO之外的某个速度与当前速度的平均值</p>
+<p><img src="/2021/11/02/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%BA%95%E5%B1%82%E9%81%BF%E9%9A%9C%E7%AE%97%E6%B3%95ORCA-Optimal-Reciprocal-Collision-Avoidance/RVO.png"></p>
+<p>如图所示，RVO是将先前的VO进行平移的到的， By the way, 是Va和VO内的任意Vb求平均得到的。也就是将原来顶点在Vb的夹角区域平移到顶点为(Va+Vb)/2 的位置。也就是说，</p>
+<p>可通过数学证明 <a href="https://blog.csdn.net/zhiai315/article/details/114241684?spm=1001.2101.3001.6650.3&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-3.no_search_link&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-3.no_search_link">https://blog.csdn.net/zhiai315/article/details/114241684?spm=1001.2101.3001.6650.3&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-3.no_search_link&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-3.no_search_link</a></p>
+<p>这样是架设了每个智能体在避免碰撞的过程中各自平均分担了相同的避让。而实际上，各个智能体之间可能在规避碰撞的过程中分别承担不同比例，事实上是可以通过动态划分的。如果A承担的比例是a1，则B承担的是1-a1. </p>
+<p>Va’ = a1*Vr + (1-a1)*Va 由此可知 Vr = (1/a1) * Va’ +(1-1/a1) * Va</p>
+<h1 id="ORCA"><a href="#ORCA" class="headerlink" title="ORCA"></a>ORCA</h1><p>组合RVO区域</p>
+]]></content>
   </entry>
   <entry>
     <title>强化学习Reinforcement Learning</title>
@@ -2501,24 +2501,6 @@
       </tags>
   </entry>
   <entry>
-    <title>无人驾驶-视觉方向基础</title>
-    <url>/2021/10/07/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6-%E8%A7%86%E8%A7%89%E6%96%B9%E5%90%91%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>无人驾驶作为人工智能的集大成应用，从来就不是某单一的技术，而是众多技术点的整合。技术上它需要有算法上的创新、系统上的融合，以及来自云平台的支持。</p>
-<p>什么是SLAM？</p>
-<p>什么是VIO？</p>
-<span id="more"></span>
-
-<h1 id="什么是SLAM"><a href="#什么是SLAM" class="headerlink" title="什么是SLAM"></a>什么是SLAM</h1><p>SLAM是 Simultaneous Localization And Mapping的 英文首字母组合，一般翻译为：同时定位与建图、同时定位与地图构建。</p>
-<p><strong>SLAM是指当某种移动设备（如机器人、无人机、手机等）从一个未知环境里的未知地点出发，在运动过程中通过传感器（如激光雷达、摄像头等）观测定位自身位置、姿态、运动轨迹，再根据自身位置进行增量式的地图构建，从而达到同时定位和地图构建的目的</strong>。定位和建图是两个相辅相成的过程，地图可以提供更好的定位，而定位也可以进一步扩建地图。</p>
-<p>比如：扫地机器人，如果在室内随机游走，遇到障碍物就转弯，这样会导致有很多地方会漏掉，扫地效率非常低。一台智能的扫地机器人，可以通过自身的传感器对室内进行扫描建图，根据当前的定位进行Z字形规划清扫，还能实现自动回充、断点续扫等高级功能。</p>
-<p>扫地机器人至少需要知道以下几件事情：</p>
-<p>1、我在哪里？也就是扫地机器人在工作过程中要知道自己在房间的具体位置。对应的术语叫：**定位（Localization)**。</p>
-<p>2、我周围的环境是什么样子？也就是扫地机器人需要知道整个房间的地面结构信息。对应的术语叫：**建图(Mapping)**。</p>
-<p>3、我怎样到达指定地点（充电器）？当扫地机器人电量不足时，如何以最短的路径到达充电器所在位置进行自动充电。对应的术语叫：路径规划（Route Planning）。</p>
-<h1 id="什么是VIO"><a href="#什么是VIO" class="headerlink" title="什么是VIO"></a>什么是VIO</h1><p>参考：<a href="https://zhuanlan.zhihu.com/p/44787066">https://zhuanlan.zhihu.com/p/44787066</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>机器学习-K-means算法</title>
     <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-K-means%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -2536,6 +2518,24 @@
         <tag>编程</tag>
         <tag>算法</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>无人驾驶-视觉方向基础</title>
+    <url>/2021/10/07/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6-%E8%A7%86%E8%A7%89%E6%96%B9%E5%90%91%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>无人驾驶作为人工智能的集大成应用，从来就不是某单一的技术，而是众多技术点的整合。技术上它需要有算法上的创新、系统上的融合，以及来自云平台的支持。</p>
+<p>什么是SLAM？</p>
+<p>什么是VIO？</p>
+<span id="more"></span>
+
+<h1 id="什么是SLAM"><a href="#什么是SLAM" class="headerlink" title="什么是SLAM"></a>什么是SLAM</h1><p>SLAM是 Simultaneous Localization And Mapping的 英文首字母组合，一般翻译为：同时定位与建图、同时定位与地图构建。</p>
+<p><strong>SLAM是指当某种移动设备（如机器人、无人机、手机等）从一个未知环境里的未知地点出发，在运动过程中通过传感器（如激光雷达、摄像头等）观测定位自身位置、姿态、运动轨迹，再根据自身位置进行增量式的地图构建，从而达到同时定位和地图构建的目的</strong>。定位和建图是两个相辅相成的过程，地图可以提供更好的定位，而定位也可以进一步扩建地图。</p>
+<p>比如：扫地机器人，如果在室内随机游走，遇到障碍物就转弯，这样会导致有很多地方会漏掉，扫地效率非常低。一台智能的扫地机器人，可以通过自身的传感器对室内进行扫描建图，根据当前的定位进行Z字形规划清扫，还能实现自动回充、断点续扫等高级功能。</p>
+<p>扫地机器人至少需要知道以下几件事情：</p>
+<p>1、我在哪里？也就是扫地机器人在工作过程中要知道自己在房间的具体位置。对应的术语叫：**定位（Localization)**。</p>
+<p>2、我周围的环境是什么样子？也就是扫地机器人需要知道整个房间的地面结构信息。对应的术语叫：**建图(Mapping)**。</p>
+<p>3、我怎样到达指定地点（充电器）？当扫地机器人电量不足时，如何以最短的路径到达充电器所在位置进行自动充电。对应的术语叫：路径规划（Route Planning）。</p>
+<h1 id="什么是VIO"><a href="#什么是VIO" class="headerlink" title="什么是VIO"></a>什么是VIO</h1><p>参考：<a href="https://zhuanlan.zhihu.com/p/44787066">https://zhuanlan.zhihu.com/p/44787066</a></p>
+]]></content>
   </entry>
   <entry>
     <title>机器学习-KNN邻近算法</title>
@@ -2578,6 +2578,25 @@
       <tags>
         <tag>编程</tag>
         <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【未完成】机器学习-优化算法：牛顿法和拟牛顿法</title>
+    <url>/2021/10/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95%EF%BC%9A%E7%89%9B%E9%A1%BF%E6%B3%95%E5%92%8C%E6%8B%9F%E7%89%9B%E9%A1%BF%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>牛顿法（Newton method）和拟牛顿法（quasi Newton method）是求解无约束最优化问题的常用方法，有收敛速度快的优点。牛顿法是迭代算法，每一步都需求解目标函数的海塞矩阵（Hessian Matrix），计算比较复杂。拟牛顿法通过正定矩阵近似海塞矩阵的逆矩阵或海塞矩阵，简化了这一计算过程。</p>
+<p>方法：</p>
+<p>牛顿法：是使用函数F(x)的泰勒级数的前面几项来寻找方程F(x)=0的根。</p>
+<p>拟牛顿法：牛顿法虽然收敛速度快，但是需要计算海塞矩阵的逆矩阵 ，而且有时目标函数的海塞矩阵无法保持正定，从而使得牛顿法失效。为了克服这两个问题，人们提出了拟牛顿法。这个方法的基本思想是：不用二阶偏导数而构造出可以近似海塞矩阵（或海塞矩阵的逆)的正定对称阵。不同的构造方法就产生了不同的拟牛顿法。</p>
+<p>优点：</p>
+<p>缺点：</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>优化</tag>
       </tags>
   </entry>
   <entry>
@@ -2720,22 +2739,52 @@
       </tags>
   </entry>
   <entry>
-    <title>【未完成】机器学习-优化算法：牛顿法和拟牛顿法</title>
-    <url>/2021/10/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95%EF%BC%9A%E7%89%9B%E9%A1%BF%E6%B3%95%E5%92%8C%E6%8B%9F%E7%89%9B%E9%A1%BF%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>牛顿法（Newton method）和拟牛顿法（quasi Newton method）是求解无约束最优化问题的常用方法，有收敛速度快的优点。牛顿法是迭代算法，每一步都需求解目标函数的海塞矩阵（Hessian Matrix），计算比较复杂。拟牛顿法通过正定矩阵近似海塞矩阵的逆矩阵或海塞矩阵，简化了这一计算过程。</p>
-<p>方法：</p>
-<p>牛顿法：是使用函数F(x)的泰勒级数的前面几项来寻找方程F(x)=0的根。</p>
-<p>拟牛顿法：牛顿法虽然收敛速度快，但是需要计算海塞矩阵的逆矩阵 ，而且有时目标函数的海塞矩阵无法保持正定，从而使得牛顿法失效。为了克服这两个问题，人们提出了拟牛顿法。这个方法的基本思想是：不用二阶偏导数而构造出可以近似海塞矩阵（或海塞矩阵的逆)的正定对称阵。不同的构造方法就产生了不同的拟牛顿法。</p>
-<p>优点：</p>
-<p>缺点：</p>
-]]></content>
+    <title>机器学习-线性回归Linear Regression</title>
+    <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92Linear-Regression/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：找到一系列的参数W，使得f(x) = XW 和真实输出Y之间无限接近或一致。</p>
+<p>方法简述：</p>
+<p>优点：直接，快速，可解释性高</p>
+<p>缺点：基于一系列假设；对异常值敏感；对数据分布敏感；存在多重共线性，自相关，异方差问题；容易出现过拟合与欠拟合问题；</p>
+<span id="more"></span>
+
+<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>什么是回归模型？</p>
+<p>回归是用来拟合输入变量和输出变量之间的关系，回归模型就是表示从输入变量到输出变量的映射函数。</p>
+<p>所以线性回归的目标就是找到一系列的参数W，使得f(x) = XW 和真实输出Y之间无限接近或一致。</p>
+<h1 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h1><h1 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h1><h1 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h1><h2 id="过拟合问题"><a href="#过拟合问题" class="headerlink" title="过拟合问题"></a>过拟合问题</h2><p>​    分析数据，重新做数据清冼，将征工程。</p>
+<p>​    扩充数据集，收集更多数据。</p>
+<p>​    减少特征数量 。</p>
+<p>​    **采用正则化方法</p>
+<h2 id="欠拟合问题"><a href="#欠拟合问题" class="headerlink" title="欠拟合问题 **"></a>欠拟合问题 **</h2><p>​    分析数据，增加特征维度</p>
+<p>​    ** 增加多项式特征阶数</p>
+<p>​    ** 减小正则项的超参数系数</p>
+<p>​    ** 局部加权回归 </p>
+<h2 id="多重共线性"><a href="#多重共线性" class="headerlink" title="多重共线性"></a>多重共线性</h2><p>​    那共线性会引发什么问题。。。。：</p>
+<p>1、模型参数估计不准确，有时甚至会出现回归系数的符号与实际情况完全相反的情况，比如逻辑上应该系数为正的特征系数 算出来为负。</p>
+<p>2、本应该显著的自变量不显著，本不显著的自变量却呈现出显著性（也就是说，无法从p-值的大小判断出变量是否显著——下面会给一个例子）</p>
+<p>3、多重共线性使参数估计值的方差增大，模型参数不稳定，也就是每次训练得到的权重系数差异都比较大。</p>
+<p>其实多重共线性这样理解会简单很多:</p>
+<p>假设原始的线性回归公式为：</p>
+<p>y=w1<em>x1+w2</em>x2+w3*x3</p>
+<p>训练完毕的线性回归公式为：</p>
+<p>y=5x1+7x2+10x3,</p>
+<p>此时加入一个新特征x4，假设x4和x3高度相关，x4=2x3,则</p>
+<p>y=w1<em>x1+w2</em>x2+w3<em>x3+w4</em>x4=w1<em>x1+w2</em>x2+(w3+2w4)*x3</p>
+<p>因为我们之前拟合出来的最优的回归方程为：</p>
+<p>y=5x1+7x2+10x3</p>
+<p>显然w3+2w4可以合并成一个新的权重稀疏 w5，则</p>
+<p>y=w1<em>x1+w2</em>x2+w5*x3,显然：</p>
+<p>y=w1<em>x1+w2</em>x2+w3<em>x3和y=w1</em>x1+w2<em>x2+w5</em>x3是等价的。。。。</p>
+<p>那么最终最优的模型应该也是 y=5x1+7x2+10x3</p>
+<p>但是考虑到引入了x4，所以w4和w3的权重是分开计算出来的，这就导致了</p>
+<p>w5=10=w3+2w4，显然这个方程有无穷多的解，比如w3=4，w4=3，或者w4=-1，w3=12等，因此导致了模型系数估计的不稳定并且可能会出现负系数的问题。</p>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><h2 id="基于-Python-scikit-learn-工具包"><a href="#基于-Python-scikit-learn-工具包" class="headerlink" title="基于 Python scikit-learn 工具包"></a>基于 Python scikit-learn 工具包</h2><h2 id="Python自建实现"><a href="#Python自建实现" class="headerlink" title="Python自建实现"></a>Python自建实现</h2>]]></content>
       <categories>
         <category>学习</category>
         <category>机器学习</category>
       </categories>
       <tags>
+        <tag>编程</tag>
         <tag>算法</tag>
-        <tag>优化</tag>
       </tags>
   </entry>
   <entry>
@@ -2814,25 +2863,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-集成算法-随机森林</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习经典算法概览</title>
     <url>/2021/09/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
     <content><![CDATA[<p>这是一篇机器学习经典算法的简述，包含了线性回归、逻辑回归、支持向量机(SVM)、最近邻居(KNN)、决策树、k平均、随机森林、朴素贝叶斯、降维、梯度增强（更新ing）</p>
@@ -2860,6 +2890,46 @@
       </categories>
       <tags>
         <tag>概览</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>模型评价方法及指标</title>
+    <url>/2021/10/01/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BB%B7%E6%96%B9%E6%B3%95%E5%8F%8A%E6%8C%87%E6%A0%87/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>深度学习</category>
+        <category>神经网络</category>
+      </categories>
+      <tags>
+        <tag>总结</tag>
+        <tag>编程</tag>
+        <tag>优化</tag>
+        <tag>调参</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习-集成算法-随机森林</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -2930,76 +3000,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-线性回归Linear Regression</title>
-    <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92Linear-Regression/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：找到一系列的参数W，使得f(x) = XW 和真实输出Y之间无限接近或一致。</p>
-<p>方法简述：</p>
-<p>优点：直接，快速，可解释性高</p>
-<p>缺点：基于一系列假设；对异常值敏感；对数据分布敏感；存在多重共线性，自相关，异方差问题；容易出现过拟合与欠拟合问题；</p>
-<span id="more"></span>
-
-<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>什么是回归模型？</p>
-<p>回归是用来拟合输入变量和输出变量之间的关系，回归模型就是表示从输入变量到输出变量的映射函数。</p>
-<p>所以线性回归的目标就是找到一系列的参数W，使得f(x) = XW 和真实输出Y之间无限接近或一致。</p>
-<h1 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h1><h1 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h1><h1 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h1><h2 id="过拟合问题"><a href="#过拟合问题" class="headerlink" title="过拟合问题"></a>过拟合问题</h2><p>​    分析数据，重新做数据清冼，将征工程。</p>
-<p>​    扩充数据集，收集更多数据。</p>
-<p>​    减少特征数量 。</p>
-<p>​    **采用正则化方法</p>
-<h2 id="欠拟合问题"><a href="#欠拟合问题" class="headerlink" title="欠拟合问题 **"></a>欠拟合问题 **</h2><p>​    分析数据，增加特征维度</p>
-<p>​    ** 增加多项式特征阶数</p>
-<p>​    ** 减小正则项的超参数系数</p>
-<p>​    ** 局部加权回归 </p>
-<h2 id="多重共线性"><a href="#多重共线性" class="headerlink" title="多重共线性"></a>多重共线性</h2><p>​    那共线性会引发什么问题。。。。：</p>
-<p>1、模型参数估计不准确，有时甚至会出现回归系数的符号与实际情况完全相反的情况，比如逻辑上应该系数为正的特征系数 算出来为负。</p>
-<p>2、本应该显著的自变量不显著，本不显著的自变量却呈现出显著性（也就是说，无法从p-值的大小判断出变量是否显著——下面会给一个例子）</p>
-<p>3、多重共线性使参数估计值的方差增大，模型参数不稳定，也就是每次训练得到的权重系数差异都比较大。</p>
-<p>其实多重共线性这样理解会简单很多:</p>
-<p>假设原始的线性回归公式为：</p>
-<p>y=w1<em>x1+w2</em>x2+w3*x3</p>
-<p>训练完毕的线性回归公式为：</p>
-<p>y=5x1+7x2+10x3,</p>
-<p>此时加入一个新特征x4，假设x4和x3高度相关，x4=2x3,则</p>
-<p>y=w1<em>x1+w2</em>x2+w3<em>x3+w4</em>x4=w1<em>x1+w2</em>x2+(w3+2w4)*x3</p>
-<p>因为我们之前拟合出来的最优的回归方程为：</p>
-<p>y=5x1+7x2+10x3</p>
-<p>显然w3+2w4可以合并成一个新的权重稀疏 w5，则</p>
-<p>y=w1<em>x1+w2</em>x2+w5*x3,显然：</p>
-<p>y=w1<em>x1+w2</em>x2+w3<em>x3和y=w1</em>x1+w2<em>x2+w5</em>x3是等价的。。。。</p>
-<p>那么最终最优的模型应该也是 y=5x1+7x2+10x3</p>
-<p>但是考虑到引入了x4，所以w4和w3的权重是分开计算出来的，这就导致了</p>
-<p>w5=10=w3+2w4，显然这个方程有无穷多的解，比如w3=4，w4=3，或者w4=-1，w3=12等，因此导致了模型系数估计的不稳定并且可能会出现负系数的问题。</p>
-<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><h2 id="基于-Python-scikit-learn-工具包"><a href="#基于-Python-scikit-learn-工具包" class="headerlink" title="基于 Python scikit-learn 工具包"></a>基于 Python scikit-learn 工具包</h2><h2 id="Python自建实现"><a href="#Python自建实现" class="headerlink" title="Python自建实现"></a>Python自建实现</h2>]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>模型评价方法及指标</title>
-    <url>/2021/10/01/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BB%B7%E6%96%B9%E6%B3%95%E5%8F%8A%E6%8C%87%E6%A0%87/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>深度学习</category>
-        <category>神经网络</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-        <tag>编程</tag>
-        <tag>优化</tag>
-        <tag>调参</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>深度学习-[2013]ZFNet网络模型</title>
     <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-2013-ZFNet%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：在神经网络卷集训练中没有办法知道每一次卷积、每一次池化、每一次经过激活函数到底发生了什么，也不知道神经网络为什么取得了如此好的效果。ZFNet通过使用可视化技术揭示了神经网络各层到底在干什么，起到了什么作用。一旦知道了这些，如何调整我们的神经网络，往什么方向优化，就有了较好的依据。</p>
@@ -3040,6 +3040,127 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>深度学习-Inception结构的理解</title>
+    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>GoogleNet只使用500万个参数，是AlexNet的1/12，它使用了6000万个参数。VGGNet使用了比AlexNet3倍多的参数。</p>
+<p>Inception的计算成本也低于VGGNet，这使它能够应用于大数据场景，或是在有限的内存和计算能力的情况下以相对合理的成本处理较大的数据，如移动端。当然我们可以通过计算技巧来优化一些特定的操作来解决该问题。但是这些方法加大了复杂性。另外，这些优化的方法也可以应用了Inception结构，扩大了效率差。</p>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h2><p> 1、避免表征瓶颈，特别是在网络早期。前向传播网络可以从输入层到<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=54926098&ss_c=ssc.citiao.link">分类器</a>或回归器的无环图来体现。这定义了清晰的信息流。从每一个分割输入和输出的切入，能够获得通过这个切入的信息流量。应该避免使用极端压缩导致的瓶颈。一般讲表征规模应平缓的从输入向输出递减知道最终任务。理论上，信息内容无法仅通过表征的维度来评估，因为它舍弃了一些重要因素相关性结构；维度仅提供了信息内容的粗略估计。</p>
+<p>2、更高维度的表征更容易在一个网络内本地化处理。在卷积网络中加大每层的激活能获得更多的非纠缠特征，可使网络训练更快速。</p>
+<p>3、可以在更低维度嵌入上进行空间聚合，不会损失或损失太多的体现能力。例如在进行3*3卷积之前，可以在空间聚合之前降低输入表征，不会有严重问题。我们假设它是因为在空间聚合情况下使用输出，相邻单元结果的强相关性在降低维度时损失较小。基于此这些信号可便利的被压缩，并且维度降低能使学习更快。</p>
+<p>4、平衡网络的宽度和深度。网络的优化表现可以通过平衡每阶段的过滤器数量和网络深度实现。同时提高宽度和深度可以提高网络质量，但是只有并行提高时才能对计算常量优化提升，因此要在网路的深度和宽度合理平衡分配计算能力。</p>
+<h2 id="Inception-V1模型"><a href="#Inception-V1模型" class="headerlink" title="Inception V1模型"></a>Inception V1模型</h2><p>将1x1，3x3，5x5的conv和3x3的pooling，堆叠在一起，一方面增加了网络的width，另一方面增加了网络对尺度的适应性。所有的卷积核都在上一层的所有输出上来做，5×5的卷积核所需的计算量就太大，造成了特征图厚度很大。为了避免这一现象提出的inception具有如下结构，在3x3前，5x5前，max pooling后分别加上了1x1的卷积核起到了降低特征图厚度的作用，</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/V1.jpg"></p>
+<h2 id="Inception-v2模型"><a href="#Inception-v2模型" class="headerlink" title="Inception v2模型"></a>Inception v2模型</h2><p><code>Inception v2 和 Inception v3</code> 来自同一篇论文《Rethinking the Inception Architecture for Computer Vision》，作者提出了一系列能增加准确度和减少计算复杂度的修正方法。</p>
+<p>一方面了加入了BN层，减少了Internal Covariate Shift（内部neuron的数据分布发生变化），使每一层的输出都规范化到一个N(0, 1)的<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=64912573&ss_c=ssc.citiao.link">高斯</a>；</p>
+<p>另外一方面学习VGG用2个3x3的conv替代inception模块中的5x5，既降低了参数数量，也加速计算；</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/v2-v3.jpg"></p>
+<p>使用3×3的已经很小，那么更小的虽然能使得参数进一步降低，但是不如另一种方式更加有效，就是Asymmetric方式，即使用1×3和3×1两种来代替3×3的卷积核。这种结构在前几层效果不太好，但对特征图大小为12~20的<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=340385&ss_c=ssc.citiao.link">中间层</a>效果明显。</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/V2.jpg"></p>
+<h2 id="Inception-v3模型"><a href="#Inception-v3模型" class="headerlink" title="Inception v3模型"></a>Inception v3模型</h2><p>V3一个最重要的改进是分解（<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=3448023&ss_c=ssc.citiao.link">Factorization</a>），将7x7分解成两个一维的卷积（1x7,7x1），3x3也是一样（1x3,3x1），这样的好处，既可以加速计算（多余的计算能力可以用来加深网络），又可以将1个conv拆成2个conv，使得网络深度进一步增加，增加了网络的非线性，还有值得注意的地方是网络输入从224x224变为了299x299，更加精细设计了35x35/17x17/8x8的模块。</p>
+<h2 id="Inception-v4模型"><a href="#Inception-v4模型" class="headerlink" title="Inception v4模型"></a>Inception v4模型</h2><p>Inception v4 和 Inception -ResNet 在同一篇论文《Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning》中提出来。v4研究了Inception模块结合Residual Connection能不能有改进。发现ResNet的结构可以极大地加速训练，同时性能也有提升，得到一个Inception-ResNet v2网络，同时还设计了一个更深更优化的Inception v4模型，能达到与Inception-ResNet v2相媲美的性能</p>
+<h1 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h1><h3 id="为什么更深的网络有更好的效果？"><a href="#为什么更深的网络有更好的效果？" class="headerlink" title="为什么更深的网络有更好的效果？"></a>为什么更深的网络有更好的效果？</h3><p>神经网络（主要指BP神经网络及其衍生的各种类型）中的层（主要是隐藏层）越多，对输入特征抽象层次越高。因为在神经网络中，后一层神经元的输入是前一层输出的加权和，前一层的特征在后一层就被抽象出来了，学习的过程其实就是调节和优化各连接权重和阈值的过程。</p>
+<p>随着深度的增加，逼近函数的效果好，已经有paper证明过了，个人理解就是，神经网络训练的过程就是调整参数的过程，可以调整的参数（weights and bias）越多，意味着调整的自由度越大，从而逼近效果越好，可以举例子:逼近某一个函数，比较单层，2层，和多层的神经网络逼近效果。</p>
+<p>然而，预测效果却不一定好。针对同一个问题，层数少的时候效果差，这时候逐渐增加层数可以提高效果，但是如果盲目不停地增加层数，则会容易引起overfitting，从而导致预测效果不好，所以并不是层数越多，预测效果就一定会越好的。此外，添加更多层会导致更高的训练误差。最后想提一下，其实增加神经元数也可以提高逼近效果。</p>
+<p>因此，神经网络随着深度的增加，实际的效果是先变好，然后再变差。</p>
+<h3 id="网络深度越深权值越多？"><a href="#网络深度越深权值越多？" class="headerlink" title="网络深度越深权值越多？"></a>网络深度越深权值越多？</h3><p>是的，只要增加卷积，权值数量就会增加</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>深度学习-RNN循环神经网络</title>
+    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：CNN算法的输入和输出基本是一对一的，不同的输入之间是没有联系的，但是需要处理序列数据（一串互相依赖的数据流）的场景就不能很好的完成了。比如文本，音频，股票走势等</p>
+<p>方法简述：每一个样特征的训练计算的时候不仅仅考虑当前样本的值，也要考虑前一个样本的输出值</p>
+<p>优点：</p>
+<p>缺点：</p>
+<ol>
+<li>RNN 有短期记忆问题，无法处理很长的输入序列</li>
+<li>训练 RNN 需要投入极大的成本</li>
+</ol>
+<span id="more"></span>
+
+
+
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/RNN%E5%8D%95%E5%85%83%E7%BB%93%E6%9E%84.jpeg"></p>
+<p>x是一个向量，它表示<strong>输入层</strong>的值（这里面没有画出来表示神经元节点的圆圈）；</p>
+<p>s是一个向量，它表示<strong>隐藏层</strong>的值（可以想象这一层其实是多个节点，节点数与向量s的维度相同）；</p>
+<p>U是输入层到隐藏层的<strong>权重矩阵</strong>，</p>
+<p>o也是一个向量，它表示<strong>输出层</strong>的值；</p>
+<p>V是隐藏层到输出层的<strong>权重矩阵</strong></p>
+<p><strong>循环神经网络</strong>的<strong>隐藏层</strong>的值s不仅仅取决于当前这次的输入x，还取决于上一次<strong>隐藏层</strong>的值s。<strong>权重矩阵</strong> W就是<strong>隐藏层</strong>上一次的值作为这一次的输入的权重。</p>
+<p>另外还有一个偏置项b</p>
+<p>在计算时，<strong>每一步使用的参数U、W、b都是一样的，也就是说每个步骤的参数都是共享的，这是RNN的重要特点，一定要牢记。</strong></p>
+<p>结构示意图</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/RNN%E5%8D%95%E5%85%83.gif"></p>
+<h1 id="N-vs-N模型"><a href="#N-vs-N模型" class="headerlink" title="N vs N模型"></a>N vs N模型</h1><p>Yi = Softmax(V*hi+c)</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%84.jpeg"></p>
+<p>最后可以看出：<strong>这里的RNN的输入和输出序列是等长的</strong></p>
+<h1 id="N-vs-1-模型"><a href="#N-vs-1-模型" class="headerlink" title="N vs 1 模型"></a>N vs 1 模型</h1><p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%84n_1.jpeg"></p>
+<p>这种结构通常用来处理序列分类问题。输入是一个序列输出为一个单独的值，如输入一段文字判别它所属的类别，输入一个句子判断其情感倾向，输入一段视频并判断它的类别等等。</p>
+<h1 id="1-VS-N模型"><a href="#1-VS-N模型" class="headerlink" title="1 VS N模型"></a>1 VS N模型</h1><p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%841_n.jpeg"></p>
+<p>or</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%841_n2.jpeg"></p>
+<p>这种1 VS N的结构可以处理的问题有：</p>
+<ul>
+<li>从图像生成文字（image caption），此时输入的X就是图像的特征，而输出的y序列就是一段句子</li>
+<li>从类别生成语音或音乐等</li>
+</ul>
+<h1 id="N-vs-M-模型"><a href="#N-vs-M-模型" class="headerlink" title="N vs M 模型"></a>N vs M 模型</h1><p>这种结构又叫Encoder-Decoder模型，也可以称之为Seq2Seq模型。</p>
+<p>原始的N vs N RNN要求序列等长，然而我们遇到的大部分问题序列都是不等长的，如机器翻译中，源语言和目标语言的句子往往并没有相同的长度。<strong>为此，Encoder-Decoder结构先将输入数据编码成一个上下文向量c：****拿到c之后，就用另一个RNN网络对其进行解码</strong>，这部分RNN网络被称为Decoder。具体做法就是将c当做之前的初始状态h0输入到Decoder中：</p>
+<ol>
+<li>c = h4</li>
+<li>c = q(h4)</li>
+<li>c = q(h1,h2,h3,h4)</li>
+</ol>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/N_M.jpeg"></p>
+<p>Or 另一种做法将C当作每一步输入</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/N_M2.jpeg"></p>
+<p>由于这种Encoder-Decoder结构不限制输入和输出的序列长度，因此应用的范围非常广泛，比如：</p>
+<ul>
+<li>机器翻译。Encoder-Decoder的最经典应用，事实上这一结构就是在机器翻译领域最先提出的</li>
+<li>文本摘要。输入是一段文本序列，输出是这段文本序列的摘要序列。</li>
+<li>阅读理解。将输入的文章和问题分别编码，再对其进行解码得到问题的答案。</li>
+<li>语音识别。输入是语音信号序列，输出是文字序列。</li>
+</ul>
+<h1 id="Attention-机制"><a href="#Attention-机制" class="headerlink" title="Attention 机制"></a>Attention 机制</h1><p>问题：在Encoder-Decoder结构中，Encoder把所有的输入序列都编码成一个统一的语义特征c再解码，<strong>因此， c中必须包含原始序列中的所有信息，它的长度就成了限制模型性能的瓶颈。</strong>如机器翻译问题，当要翻译的句子较长时，一个c可能存不下那么多信息，就会造成翻译精度的下降。</p>
+<p>解决方法：Attention机制通过在每个时间输入不同的c来解决这个问题，下图是带有Attention机制的Decoder：</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/attention1.jpeg"></p>
+<p><strong>每一个c会自动去选取与当前所要输出的y最合适的上下文信息。具体来说，我们用 a_ij衡量Encoder中第j阶段的hj和解码时第i阶段的相关性，最终Decoder中第i阶段的输入的上下文信息 c_i 就来自于所有 h_i对 a_ij的加权和。</strong></p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/attention2.jpeg"></p>
+<p>Encoder中的h1、h2、h3、h4就可以分别看做是“我”、“爱”、“中”、“国”所代表的信息。在翻译成英语时，第一个上下文c1应该和“我”这个字最相关，因此对应的 <img src="https://www.zhihu.com/equation?tex=a_%7B11%7D" alt="[公式]"> 就比较大，而相应的 <img src="https://www.zhihu.com/equation?tex=a_%7B12%7D" alt="[公式]"> 、 <img src="https://www.zhihu.com/equation?tex=a_%7B13%7D" alt="[公式]"> 、 <img src="https://www.zhihu.com/equation?tex=a_%7B14%7D" alt="[公式]"> 就比较小。c2应该和“爱”最相关，因此对应的 <img src="https://www.zhihu.com/equation?tex=a_%7B22%7D" alt="[公式]"> 就比较大。最后的c3和h3、h4最相关，因此 <img src="https://www.zhihu.com/equation?tex=a_%7B33%7D" alt="[公式]"> 、 <img src="https://www.zhihu.com/equation?tex=a_%7B34%7D" alt="[公式]"> 的值就比较大。</p>
+<p>至此，关于Attention模型，我们就只剩最后一个问题了，那就是：<strong>这些权重 <img src="https://www.zhihu.com/equation?tex=a_%7Bij%7D" alt="[公式]"> 是怎么来的？</strong></p>
+<p>事实上， <img src="https://www.zhihu.com/equation?tex=a_%7Bij%7D" alt="[公式]"> 同样是从模型中学出的，它实际和Decoder的第i-1阶段的隐状态、Encoder第j个阶段的隐状态有关。</p>
+<p>同样还是拿上面的机器翻译举例， <img src="https://www.zhihu.com/equation?tex=a_%7B1j%7D" alt="[公式]"> 的计算（此时箭头就表示对h’和 <img src="https://www.zhihu.com/equation?tex=h_j" alt="[公式]"> 同时做变换）：</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/attention3.jpeg"></p>
+<p>Reference: <a href="https://zhuanlan.zhihu.com/p/28054589">https://zhuanlan.zhihu.com/p/28054589</a></p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -3164,35 +3285,13 @@
       </tags>
   </entry>
   <entry>
-    <title>深度学习-Inception结构的理解</title>
-    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/</url>
+    <title>目标检测-R-CNN系列</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-R-CNN%E7%B3%BB%E5%88%97/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-
-<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>GoogleNet只使用500万个参数，是AlexNet的1/12，它使用了6000万个参数。VGGNet使用了比AlexNet3倍多的参数。</p>
-<p>Inception的计算成本也低于VGGNet，这使它能够应用于大数据场景，或是在有限的内存和计算能力的情况下以相对合理的成本处理较大的数据，如移动端。当然我们可以通过计算技巧来优化一些特定的操作来解决该问题。但是这些方法加大了复杂性。另外，这些优化的方法也可以应用了Inception结构，扩大了效率差。</p>
-<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h2><p> 1、避免表征瓶颈，特别是在网络早期。前向传播网络可以从输入层到<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=54926098&ss_c=ssc.citiao.link">分类器</a>或回归器的无环图来体现。这定义了清晰的信息流。从每一个分割输入和输出的切入，能够获得通过这个切入的信息流量。应该避免使用极端压缩导致的瓶颈。一般讲表征规模应平缓的从输入向输出递减知道最终任务。理论上，信息内容无法仅通过表征的维度来评估，因为它舍弃了一些重要因素相关性结构；维度仅提供了信息内容的粗略估计。</p>
-<p>2、更高维度的表征更容易在一个网络内本地化处理。在卷积网络中加大每层的激活能获得更多的非纠缠特征，可使网络训练更快速。</p>
-<p>3、可以在更低维度嵌入上进行空间聚合，不会损失或损失太多的体现能力。例如在进行3*3卷积之前，可以在空间聚合之前降低输入表征，不会有严重问题。我们假设它是因为在空间聚合情况下使用输出，相邻单元结果的强相关性在降低维度时损失较小。基于此这些信号可便利的被压缩，并且维度降低能使学习更快。</p>
-<p>4、平衡网络的宽度和深度。网络的优化表现可以通过平衡每阶段的过滤器数量和网络深度实现。同时提高宽度和深度可以提高网络质量，但是只有并行提高时才能对计算常量优化提升，因此要在网路的深度和宽度合理平衡分配计算能力。</p>
-<h2 id="Inception-V1模型"><a href="#Inception-V1模型" class="headerlink" title="Inception V1模型"></a>Inception V1模型</h2><p>将1x1，3x3，5x5的conv和3x3的pooling，堆叠在一起，一方面增加了网络的width，另一方面增加了网络对尺度的适应性。所有的卷积核都在上一层的所有输出上来做，5×5的卷积核所需的计算量就太大，造成了特征图厚度很大。为了避免这一现象提出的inception具有如下结构，在3x3前，5x5前，max pooling后分别加上了1x1的卷积核起到了降低特征图厚度的作用，</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/V1.jpg"></p>
-<h2 id="Inception-v2模型"><a href="#Inception-v2模型" class="headerlink" title="Inception v2模型"></a>Inception v2模型</h2><p><code>Inception v2 和 Inception v3</code> 来自同一篇论文《Rethinking the Inception Architecture for Computer Vision》，作者提出了一系列能增加准确度和减少计算复杂度的修正方法。</p>
-<p>一方面了加入了BN层，减少了Internal Covariate Shift（内部neuron的数据分布发生变化），使每一层的输出都规范化到一个N(0, 1)的<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=64912573&ss_c=ssc.citiao.link">高斯</a>；</p>
-<p>另外一方面学习VGG用2个3x3的conv替代inception模块中的5x5，既降低了参数数量，也加速计算；</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/v2-v3.jpg"></p>
-<p>使用3×3的已经很小，那么更小的虽然能使得参数进一步降低，但是不如另一种方式更加有效，就是Asymmetric方式，即使用1×3和3×1两种来代替3×3的卷积核。这种结构在前几层效果不太好，但对特征图大小为12~20的<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=340385&ss_c=ssc.citiao.link">中间层</a>效果明显。</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/V2.jpg"></p>
-<h2 id="Inception-v3模型"><a href="#Inception-v3模型" class="headerlink" title="Inception v3模型"></a>Inception v3模型</h2><p>V3一个最重要的改进是分解（<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=3448023&ss_c=ssc.citiao.link">Factorization</a>），将7x7分解成两个一维的卷积（1x7,7x1），3x3也是一样（1x3,3x1），这样的好处，既可以加速计算（多余的计算能力可以用来加深网络），又可以将1个conv拆成2个conv，使得网络深度进一步增加，增加了网络的非线性，还有值得注意的地方是网络输入从224x224变为了299x299，更加精细设计了35x35/17x17/8x8的模块。</p>
-<h2 id="Inception-v4模型"><a href="#Inception-v4模型" class="headerlink" title="Inception v4模型"></a>Inception v4模型</h2><p>Inception v4 和 Inception -ResNet 在同一篇论文《Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning》中提出来。v4研究了Inception模块结合Residual Connection能不能有改进。发现ResNet的结构可以极大地加速训练，同时性能也有提升，得到一个Inception-ResNet v2网络，同时还设计了一个更深更优化的Inception v4模型，能达到与Inception-ResNet v2相媲美的性能</p>
-<h1 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h1><h3 id="为什么更深的网络有更好的效果？"><a href="#为什么更深的网络有更好的效果？" class="headerlink" title="为什么更深的网络有更好的效果？"></a>为什么更深的网络有更好的效果？</h3><p>神经网络（主要指BP神经网络及其衍生的各种类型）中的层（主要是隐藏层）越多，对输入特征抽象层次越高。因为在神经网络中，后一层神经元的输入是前一层输出的加权和，前一层的特征在后一层就被抽象出来了，学习的过程其实就是调节和优化各连接权重和阈值的过程。</p>
-<p>随着深度的增加，逼近函数的效果好，已经有paper证明过了，个人理解就是，神经网络训练的过程就是调整参数的过程，可以调整的参数（weights and bias）越多，意味着调整的自由度越大，从而逼近效果越好，可以举例子:逼近某一个函数，比较单层，2层，和多层的神经网络逼近效果。</p>
-<p>然而，预测效果却不一定好。针对同一个问题，层数少的时候效果差，这时候逐渐增加层数可以提高效果，但是如果盲目不停地增加层数，则会容易引起overfitting，从而导致预测效果不好，所以并不是层数越多，预测效果就一定会越好的。此外，添加更多层会导致更高的训练误差。最后想提一下，其实增加神经元数也可以提高逼近效果。</p>
-<p>因此，神经网络随着深度的增加，实际的效果是先变好，然后再变差。</p>
-<h3 id="网络深度越深权值越多？"><a href="#网络深度越深权值越多？" class="headerlink" title="网络深度越深权值越多？"></a>网络深度越深权值越多？</h3><p>是的，只要增加卷积，权值数量就会增加</p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -3252,137 +3351,6 @@
       <tags>
         <tag>编程</tag>
         <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>深度学习-RNN循环神经网络</title>
-    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：CNN算法的输入和输出基本是一对一的，不同的输入之间是没有联系的，但是需要处理序列数据（一串互相依赖的数据流）的场景就不能很好的完成了。比如文本，音频，股票走势等</p>
-<p>方法简述：每一个样特征的训练计算的时候不仅仅考虑当前样本的值，也要考虑前一个样本的输出值</p>
-<p>优点：</p>
-<p>缺点：</p>
-<ol>
-<li>RNN 有短期记忆问题，无法处理很长的输入序列</li>
-<li>训练 RNN 需要投入极大的成本</li>
-</ol>
-<span id="more"></span>
-
-
-
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/RNN%E5%8D%95%E5%85%83%E7%BB%93%E6%9E%84.jpeg"></p>
-<p>x是一个向量，它表示<strong>输入层</strong>的值（这里面没有画出来表示神经元节点的圆圈）；</p>
-<p>s是一个向量，它表示<strong>隐藏层</strong>的值（可以想象这一层其实是多个节点，节点数与向量s的维度相同）；</p>
-<p>U是输入层到隐藏层的<strong>权重矩阵</strong>，</p>
-<p>o也是一个向量，它表示<strong>输出层</strong>的值；</p>
-<p>V是隐藏层到输出层的<strong>权重矩阵</strong></p>
-<p><strong>循环神经网络</strong>的<strong>隐藏层</strong>的值s不仅仅取决于当前这次的输入x，还取决于上一次<strong>隐藏层</strong>的值s。<strong>权重矩阵</strong> W就是<strong>隐藏层</strong>上一次的值作为这一次的输入的权重。</p>
-<p>另外还有一个偏置项b</p>
-<p>在计算时，<strong>每一步使用的参数U、W、b都是一样的，也就是说每个步骤的参数都是共享的，这是RNN的重要特点，一定要牢记。</strong></p>
-<p>结构示意图</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/RNN%E5%8D%95%E5%85%83.gif"></p>
-<h1 id="N-vs-N模型"><a href="#N-vs-N模型" class="headerlink" title="N vs N模型"></a>N vs N模型</h1><p>Yi = Softmax(V*hi+c)</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%84.jpeg"></p>
-<p>最后可以看出：<strong>这里的RNN的输入和输出序列是等长的</strong></p>
-<h1 id="N-vs-1-模型"><a href="#N-vs-1-模型" class="headerlink" title="N vs 1 模型"></a>N vs 1 模型</h1><p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%84n_1.jpeg"></p>
-<p>这种结构通常用来处理序列分类问题。输入是一个序列输出为一个单独的值，如输入一段文字判别它所属的类别，输入一个句子判断其情感倾向，输入一段视频并判断它的类别等等。</p>
-<h1 id="1-VS-N模型"><a href="#1-VS-N模型" class="headerlink" title="1 VS N模型"></a>1 VS N模型</h1><p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%841_n.jpeg"></p>
-<p>or</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%841_n2.jpeg"></p>
-<p>这种1 VS N的结构可以处理的问题有：</p>
-<ul>
-<li>从图像生成文字（image caption），此时输入的X就是图像的特征，而输出的y序列就是一段句子</li>
-<li>从类别生成语音或音乐等</li>
-</ul>
-<h1 id="N-vs-M-模型"><a href="#N-vs-M-模型" class="headerlink" title="N vs M 模型"></a>N vs M 模型</h1><p>这种结构又叫Encoder-Decoder模型，也可以称之为Seq2Seq模型。</p>
-<p>原始的N vs N RNN要求序列等长，然而我们遇到的大部分问题序列都是不等长的，如机器翻译中，源语言和目标语言的句子往往并没有相同的长度。<strong>为此，Encoder-Decoder结构先将输入数据编码成一个上下文向量c：****拿到c之后，就用另一个RNN网络对其进行解码</strong>，这部分RNN网络被称为Decoder。具体做法就是将c当做之前的初始状态h0输入到Decoder中：</p>
-<ol>
-<li>c = h4</li>
-<li>c = q(h4)</li>
-<li>c = q(h1,h2,h3,h4)</li>
-</ol>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/N_M.jpeg"></p>
-<p>Or 另一种做法将C当作每一步输入</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/N_M2.jpeg"></p>
-<p>由于这种Encoder-Decoder结构不限制输入和输出的序列长度，因此应用的范围非常广泛，比如：</p>
-<ul>
-<li>机器翻译。Encoder-Decoder的最经典应用，事实上这一结构就是在机器翻译领域最先提出的</li>
-<li>文本摘要。输入是一段文本序列，输出是这段文本序列的摘要序列。</li>
-<li>阅读理解。将输入的文章和问题分别编码，再对其进行解码得到问题的答案。</li>
-<li>语音识别。输入是语音信号序列，输出是文字序列。</li>
-</ul>
-<h1 id="Attention-机制"><a href="#Attention-机制" class="headerlink" title="Attention 机制"></a>Attention 机制</h1><p>问题：在Encoder-Decoder结构中，Encoder把所有的输入序列都编码成一个统一的语义特征c再解码，<strong>因此， c中必须包含原始序列中的所有信息，它的长度就成了限制模型性能的瓶颈。</strong>如机器翻译问题，当要翻译的句子较长时，一个c可能存不下那么多信息，就会造成翻译精度的下降。</p>
-<p>解决方法：Attention机制通过在每个时间输入不同的c来解决这个问题，下图是带有Attention机制的Decoder：</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/attention1.jpeg"></p>
-<p><strong>每一个c会自动去选取与当前所要输出的y最合适的上下文信息。具体来说，我们用 a_ij衡量Encoder中第j阶段的hj和解码时第i阶段的相关性，最终Decoder中第i阶段的输入的上下文信息 c_i 就来自于所有 h_i对 a_ij的加权和。</strong></p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/attention2.jpeg"></p>
-<p>Encoder中的h1、h2、h3、h4就可以分别看做是“我”、“爱”、“中”、“国”所代表的信息。在翻译成英语时，第一个上下文c1应该和“我”这个字最相关，因此对应的 <img src="https://www.zhihu.com/equation?tex=a_%7B11%7D" alt="[公式]"> 就比较大，而相应的 <img src="https://www.zhihu.com/equation?tex=a_%7B12%7D" alt="[公式]"> 、 <img src="https://www.zhihu.com/equation?tex=a_%7B13%7D" alt="[公式]"> 、 <img src="https://www.zhihu.com/equation?tex=a_%7B14%7D" alt="[公式]"> 就比较小。c2应该和“爱”最相关，因此对应的 <img src="https://www.zhihu.com/equation?tex=a_%7B22%7D" alt="[公式]"> 就比较大。最后的c3和h3、h4最相关，因此 <img src="https://www.zhihu.com/equation?tex=a_%7B33%7D" alt="[公式]"> 、 <img src="https://www.zhihu.com/equation?tex=a_%7B34%7D" alt="[公式]"> 的值就比较大。</p>
-<p>至此，关于Attention模型，我们就只剩最后一个问题了，那就是：<strong>这些权重 <img src="https://www.zhihu.com/equation?tex=a_%7Bij%7D" alt="[公式]"> 是怎么来的？</strong></p>
-<p>事实上， <img src="https://www.zhihu.com/equation?tex=a_%7Bij%7D" alt="[公式]"> 同样是从模型中学出的，它实际和Decoder的第i-1阶段的隐状态、Encoder第j个阶段的隐状态有关。</p>
-<p>同样还是拿上面的机器翻译举例， <img src="https://www.zhihu.com/equation?tex=a_%7B1j%7D" alt="[公式]"> 的计算（此时箭头就表示对h’和 <img src="https://www.zhihu.com/equation?tex=h_j" alt="[公式]"> 同时做变换）：</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/attention3.jpeg"></p>
-<p>Reference: <a href="https://zhuanlan.zhihu.com/p/28054589">https://zhuanlan.zhihu.com/p/28054589</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>目标检测-R-CNN系列</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-R-CNN%E7%B3%BB%E5%88%97/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>目标检测-YOLOv4</title>
-    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv4/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-<p>YOLO V4使用 CIOU Loss作为bounding box的损失，与其他提到的方法相比，CIOU带来了更快的收敛和更好的性能。</p>
-<p>尽管YOLO V5目前仍然计逊一筹，但是YOLO V5仍然具有以下显著的优点：</p>
-<ul>
-<li>使用Pytorch框架，对用户非常友好，能够方便地训练自己的数据集，相对于YOLO V4采用的Darknet框架，Pytorch框架更容易投入生产</li>
-<li>代码易读，整合了大量的计算机视觉技术，非常有利于学习和借鉴</li>
-<li>不仅易于配置环境，模型训练也非常快速，并且批处理推理产生实时结果</li>
-<li>能够直接对单个图像，批处理图像，视频甚至网络摄像头端口输入进行有效推理</li>
-<li>能够轻松的将Pytorch权重文件转化为安卓使用的ONXX格式，然后可以转换为OPENCV的使用格式，或者通过CoreML转化为IOS格式，直接部署到手机应用端</li>
-<li>最后YOLO V5s高达140FPS的对象识别速度令人印象非常深刻，使用体验非常棒</li>
-</ul>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>YOLO</tag>
       </tags>
   </entry>
   <entry>
@@ -3453,42 +3421,23 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-YOLOv5</title>
-    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv5/</url>
+    <title>目标检测-YOLOv4</title>
+    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv4/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
 
-
-
-
-
-<p>YOLO V5使用 GIOU Loss作为bounding box的损失。</p>
-<p>YOLO V5使用二进制交叉熵和 Logits 损失函数计算类概率和目标得分的损失。同时我们也可以使用fl _ gamma参数来激活Focal loss计算损失函数。</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>YOLO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>目标检测-YOLOx</title>
-    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOx/</url>
-    <content><![CDATA[<ul>
-<li><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span></li>
+<p>YOLO V4使用 CIOU Loss作为bounding box的损失，与其他提到的方法相比，CIOU带来了更快的收敛和更好的性能。</p>
+<p>尽管YOLO V5目前仍然计逊一筹，但是YOLO V5仍然具有以下显著的优点：</p>
+<ul>
+<li>使用Pytorch框架，对用户非常友好，能够方便地训练自己的数据集，相对于YOLO V4采用的Darknet框架，Pytorch框架更容易投入生产</li>
+<li>代码易读，整合了大量的计算机视觉技术，非常有利于学习和借鉴</li>
+<li>不仅易于配置环境，模型训练也非常快速，并且批处理推理产生实时结果</li>
+<li>能够直接对单个图像，批处理图像，视频甚至网络摄像头端口输入进行有效推理</li>
+<li>能够轻松的将Pytorch权重文件转化为安卓使用的ONXX格式，然后可以转换为OPENCV的使用格式，或者通过CoreML转化为IOS格式，直接部署到手机应用端</li>
+<li>最后YOLO V5s高达140FPS的对象识别速度令人印象非常深刻，使用体验非常棒</li>
 </ul>
 ]]></content>
       <categories>
@@ -3529,6 +3478,57 @@
 </ul>
 <ul>
 <li><strong>双IOU阈值和真值分配。</strong>在训练期间，Faster RCNN用了两个IOU阈值，如果预测的边框与ground truth的IoU&gt;0.7，那它是个正样本；如果在[0.3，0.7]之间，则忽略；如果和ground truth的IoU&lt;0.3，那它就是个负样本。作者尝试了这种思路，但效果并不好。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>YOLO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>目标检测-YOLOv5</title>
+    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv5/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+
+
+
+
+<p>YOLO V5使用 GIOU Loss作为bounding box的损失。</p>
+<p>YOLO V5使用二进制交叉熵和 Logits 损失函数计算类概率和目标得分的损失。同时我们也可以使用fl _ gamma参数来激活Focal loss计算损失函数。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>YOLO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>目标检测-YOLOx</title>
+    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOx/</url>
+    <content><![CDATA[<ul>
+<li><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span></li>
 </ul>
 ]]></content>
       <categories>
@@ -3625,53 +3625,6 @@
       </tags>
   </entry>
   <entry>
-    <title>神经网络-learning rate学习率的优化总结</title>
-    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-<p>学习率是一个非常非常重要的超参数，在 <strong>梯度下降方法</strong> 中，学习率的取值非常关键，如果过大就不会收敛，如果过小则收敛速度太慢。面对不同规模、不同batch-size、不同优化方式、不同数据集，其最合适的值都是不确定的，无法凭借经验来准确地确定<code>lr</code>的值，就是在训练中不断寻找最合适当前状态的学习率。</p>
-<p>可以使用的方法：利用fastai中的lr_find()函数寻找合适的学习率，根据学习率-损失曲线得到合适的学习率。</p>
-<h1 id="learning-rate与batch-size的关系"><a href="#learning-rate与batch-size的关系" class="headerlink" title="learning-rate与batch-size的关系"></a>learning-rate与batch-size的关系</h1><p>一般来说，越大的batch-size使用越大的学习率。原理很简单，越大的<code>batch-size</code>意味着我们学习的时候，收敛方向的<code>confidence</code>越大，我们前进的方向更加坚定，而小的<code>batch-size</code>则显得比较杂乱，毫无规律性，因为相比批次大的时候，批次小的情况下无法照顾到更多的情况，所以需要小的学习率来保证不至于出错。可以看下图<code>损失Loss</code>与<code>学习率Lr</code>的关系：</p>
-<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/lr_batchsize.png"></p>
-<p>在显存足够的条件下，最好采用较大的batch-size进行训练，找到合适的学习率后，可以加快收敛速度。</p>
-<p>另外，较大的batch-size可以避免batch normalization出现的一些小问题，参考如下Pytorch库Issue[3]</p>
-<h1 id="学习率衰减-学习率退火"><a href="#学习率衰减-学习率退火" class="headerlink" title="学习率衰减 / 学习率退火"></a>学习率衰减 / 学习率退火</h1><p>从经验上看，<strong>学习率在一开始要保持大些来保证收敛速度，在收敛到最优点附近时要小些以避免来回震荡。</strong>比较简单的学习率调整可以通过 <strong>学习率衰减（Learning Rate Decay）</strong>的方式来实现，也称为 <strong>学习率退火（Learning Rate Annealing）</strong>。</p>
-<p>假设初始化学习率为lr0，在第t次迭代时的学习率lrt。常用的衰减方式为可以设置为 <strong>按迭代次数</strong> 进行衰减。</p>
-<p>常见的衰减方法有以下几种：</p>
-<h5 id="分段常数衰减（Piecewise-Constant-Decay）"><a href="#分段常数衰减（Piecewise-Constant-Decay）" class="headerlink" title="分段常数衰减（Piecewise Constant Decay）"></a>分段常数衰减（Piecewise Constant Decay）</h5><p>即每经过<img src="https://math.jianshu.com/math?formula=T_1,%20T_2,%20%C2%B7%20%C2%B7%20%C2%B7%20,%20T_m" alt="T_1, T_2, · · · , T_m">次迭<br>代将学习率衰减为原来的<img src="https://math.jianshu.com/math?formula=%CE%B2_1,%20%CE%B2_2,%20%C2%B7%20%C2%B7%20%C2%B7%20,%20%CE%B2_m" alt="β_1, β_2, · · · , β_m">倍，其中**<img src="https://math.jianshu.com/math?formula=T_m" alt="T_m">** 和 **<img src="https://math.jianshu.com/math?formula=%CE%B2_m%3C1" alt="β_m&lt;1">**为根据经验设置的 <strong>超参数</strong>。</p>
-<h5 id="逆时衰减（Inverse-Time-Decay）"><a href="#逆时衰减（Inverse-Time-Decay）" class="headerlink" title="逆时衰减（Inverse Time Decay）"></a>逆时衰减（Inverse Time Decay）</h5><p>lr-t = lr0 /(1+b*t)  b为衰减率</p>
-<h5 id="指数衰减（Exponential-Decay）"><a href="#指数衰减（Exponential-Decay）" class="headerlink" title="指数衰减（Exponential Decay）"></a>指数衰减（Exponential Decay）</h5><p>Lr-t = lr0*(b**t)</p>
-<h5 id="自然指数衰减（Natural-Exponential-Decay）"><a href="#自然指数衰减（Natural-Exponential-Decay）" class="headerlink" title="自然指数衰减（Natural Exponential Decay）"></a>自然指数衰减（Natural Exponential Decay）</h5><h5 id="余弦衰减（Cosine-Decay）"><a href="#余弦衰减（Cosine-Decay）" class="headerlink" title="余弦衰减（Cosine Decay）"></a>余弦衰减（Cosine Decay）</h5><p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%A1%B0%E5%87%8F.png"></p>
-<h1 id="学习率预热"><a href="#学习率预热" class="headerlink" title="学习率预热"></a>学习率预热</h1><p>在 <strong>小批量梯度下降方法</strong> 中，当批量大小的设置比较大时，通常需要比较大的学习率。但在刚开始训练时，由于参数是随机初始化的，<strong>梯度往往也比较大</strong>，在加上 <strong>比较大的初始学习率，会使得训练不稳定。</strong></p>
-<p>为了提高训练稳定性，我们可以 <strong>在最初几轮迭代时，采用比较小的学习率，等梯度下降到一定程度后再恢复到初始的学习率，</strong>这种方法称为 <strong>学习率预热（Learning Rate Warmup）。</strong></p>
-<p>一个常用的学习率预热方法是 <strong>逐渐预热（Gradual Warmup）</strong>。<strong>当预热过程结束，再选择一种学习率衰减方法来逐渐降低学习率。</strong></p>
-<h1 id="周期性学习率调整"><a href="#周期性学习率调整" class="headerlink" title="周期性学习率调整"></a>周期性学习率调整</h1><p>为了使得 <strong>梯度下降方法</strong> 能够 <strong>逃离局部最小值或鞍点</strong>，一种经验性的方式是在训练过程中 <strong>周期性地增大学习率</strong>。虽然增加学习率可能短期内有损网络的收敛稳定性，但从长期来看有助于找到更好的局部最优解。</p>
-<p>一般而言，当一个模型 <strong>收敛到一个平坦（Flat）的局部最小值</strong> 时，其 <strong>鲁棒性会更好</strong>，即 <strong>微小的参数变动不会剧烈影响模型能力</strong>；而当模型 <strong>收敛到一个尖锐（Sharp）的局部最小值</strong> 时，其 <strong>鲁棒性也会比较差</strong>。具备良好泛化能力的模型通常应该是鲁棒的，因此理想的局部最小值应该是平坦的。</p>
-<p><strong>周期性学习率调整</strong> 可以使得梯度下降方法在优化过程中 <strong>跳出尖锐的局部极小值</strong>，虽然会短期内会损害优化过程，但最终会收敛到更加理想的局部极小值。</p>
-<h5 id="循环学习率"><a href="#循环学习率" class="headerlink" title="循环学习率"></a>循环学习率</h5><p>一种简单的方法是使用循环学习率，即在让学习率在 <strong>一个区间内</strong> <strong>周期性地增大和缩小</strong>。</p>
-<p>通常可以使用 <strong>线性缩放</strong> 来调整学习率，称为 <strong>三角循环学习率（Triangular Cyclic Learning Rate）。</strong></p>
-<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/%E5%BE%AA%E7%8E%AF%E5%AD%A6%E4%B9%A0%E7%8E%87.png"></p>
-<h5 id="带热重启的随机梯度下降"><a href="#带热重启的随机梯度下降" class="headerlink" title="带热重启的随机梯度下降"></a>带热重启的随机梯度下降</h5><p>带热重启的随机梯度下降（Stochastic Gradient Descent with Warm Restarts，SGDR）是用 <strong>热重启方式</strong> 来替代 <strong>学习率衰减</strong> 的方法。</p>
-<p><strong>学习率每间隔一定周期后，重新初始化为某个预先设定值，然后逐渐衰减。</strong>每次重启后模型参数不是从头开始优化，而是从重启前的参数基础上继续优化。</p>
-<p>!</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>深度学习</category>
-        <category>神经网络</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-        <tag>编程</tag>
-        <tag>优化</tag>
-        <tag>调参</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>目标检测中候选边界框的处理(NMS,soft-NMS,WBF)</title>
     <url>/2021/10/11/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E5%80%99%E9%80%89%E8%BE%B9%E7%95%8C%E6%A1%86%E7%9A%84%E5%A4%84%E7%90%86-NMS-soft-NMS-WBF/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>目标检测的过程中在同一目标的位置上会产生大量的候选框，这些候选框相互之间可能会有重叠，此时我们需要消除冗余的边界框。</p>
@@ -3742,29 +3695,51 @@
       </tags>
   </entry>
   <entry>
-    <title>神经网络-权值初始化的方法</title>
-    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%9D%83%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>权值初始化的原因：1. 防止层激活输出在深度神经网络的正向传递过程中爆炸或消失。2. 有助于加速收敛。</p>
-<p>权值初始化的方法：</p>
-<p>常量初始化（constant）、高斯分布初始化（gaussian）、positive_unitball初始化、均匀分布初始化（uniform）、xavier初始化、msra初始化、双线性初始化（bilinear）</p>
+    <title>神经网络-learning rate学习率的优化总结</title>
+    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
 <span id="more"></span>
 
-<p>权重初始化相比于其他的trick来说在平常使用并不是很频繁。因为大部分人使用的模型都是预训练模型，使用的权重都是在大型数据集上训练好的模型，当然不需要自己去初始化权重了。只有没有预训练模型的领域会自己初始化权重，或者在模型中去初始化神经网络最后那几个全连接层的权重。常用的权重初始化算法是 :</p>
-<h1 id="常量初始化"><a href="#常量初始化" class="headerlink" title="常量初始化"></a>常量初始化</h1><h1 id="均匀分布初始化"><a href="#均匀分布初始化" class="headerlink" title="均匀分布初始化"></a>均匀分布初始化</h1><h1 id="高斯分布初始化"><a href="#高斯分布初始化" class="headerlink" title="高斯分布初始化"></a>高斯分布初始化</h1><ul>
-<li>normal高斯分布初始化， 其中stdev为高斯分布的标准差，均值设为0：</li>
-</ul>
-<h1 id="Xavier初始化"><a href="#Xavier初始化" class="headerlink" title="Xavier初始化"></a>Xavier初始化</h1><ul>
-<li>Xavier初始法，适用于普通激活函数(tanh, sigmoid)：</li>
-</ul>
-<p>Xavier初始化将每层权重设置为在有界的随机均匀分布中选择的值</p>
-<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%9D%83%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95/Xavier.png"></p>
-<h1 id="MSRA初始化"><a href="#MSRA初始化" class="headerlink" title="MSRA初始化"></a>MSRA初始化</h1><h1 id="双线性初始化"><a href="#双线性初始化" class="headerlink" title="双线性初始化"></a>双线性初始化</h1><h1 id="Kaiming初始化"><a href="#Kaiming初始化" class="headerlink" title="Kaiming初始化"></a>Kaiming初始化</h1><p>保持层激活的标准偏差大约为1将允许我们在深度神经网络中堆叠更多层而不会出现梯度爆炸或消失。</p>
-<p>关于探索如何在类ReLU的激活的网络中最佳地初始化权重促使何凯明等优秀学者提出自己的初始化方案，这些方案是专门用来处理这些非对称，非线性激活的深层神经网络的。</p>
-<p>在他们的2015年论文中何凯明等人证明了如果采用以下输入权重初始化策略，深层网络（例如22层CNN）会更早收敛：</p>
-<p>\1. 使用适合给定图层的权重矩阵创建张量，并使用从标准正态分布中随机选择的数字填充它。</p>
-<p>\2. 将每个随机选择的数字乘以√2/√n，其中n是从前一层输出到指定层的连接数（也称为“fan-in”）。</p>
-<p>\3. 偏差张量初始化为零。</p>
+<p>学习率是一个非常非常重要的超参数，在 <strong>梯度下降方法</strong> 中，学习率的取值非常关键，如果过大就不会收敛，如果过小则收敛速度太慢。面对不同规模、不同batch-size、不同优化方式、不同数据集，其最合适的值都是不确定的，无法凭借经验来准确地确定<code>lr</code>的值，就是在训练中不断寻找最合适当前状态的学习率。</p>
+<p>可以使用的方法：利用fastai中的lr_find()函数寻找合适的学习率，根据学习率-损失曲线得到合适的学习率。</p>
+<h1 id="learning-rate与batch-size的关系"><a href="#learning-rate与batch-size的关系" class="headerlink" title="learning-rate与batch-size的关系"></a>learning-rate与batch-size的关系</h1><p>一般来说，越大的batch-size使用越大的学习率。原理很简单，越大的<code>batch-size</code>意味着我们学习的时候，收敛方向的<code>confidence</code>越大，我们前进的方向更加坚定，而小的<code>batch-size</code>则显得比较杂乱，毫无规律性，因为相比批次大的时候，批次小的情况下无法照顾到更多的情况，所以需要小的学习率来保证不至于出错。可以看下图<code>损失Loss</code>与<code>学习率Lr</code>的关系：</p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/lr_batchsize.png"></p>
+<p>在显存足够的条件下，最好采用较大的batch-size进行训练，找到合适的学习率后，可以加快收敛速度。</p>
+<p>另外，较大的batch-size可以避免batch normalization出现的一些小问题，参考如下Pytorch库Issue[3]</p>
+<h1 id="学习率衰减-学习率退火"><a href="#学习率衰减-学习率退火" class="headerlink" title="学习率衰减 / 学习率退火"></a>学习率衰减 / 学习率退火</h1><p>从经验上看，<strong>学习率在一开始要保持大些来保证收敛速度，在收敛到最优点附近时要小些以避免来回震荡。</strong>比较简单的学习率调整可以通过 <strong>学习率衰减（Learning Rate Decay）</strong>的方式来实现，也称为 <strong>学习率退火（Learning Rate Annealing）</strong>。</p>
+<p>假设初始化学习率为lr0，在第t次迭代时的学习率lrt。常用的衰减方式为可以设置为 <strong>按迭代次数</strong> 进行衰减。</p>
+<p>常见的衰减方法有以下几种：</p>
+<h5 id="分段常数衰减（Piecewise-Constant-Decay）"><a href="#分段常数衰减（Piecewise-Constant-Decay）" class="headerlink" title="分段常数衰减（Piecewise Constant Decay）"></a>分段常数衰减（Piecewise Constant Decay）</h5><p>即每经过<img src="https://math.jianshu.com/math?formula=T_1,%20T_2,%20%C2%B7%20%C2%B7%20%C2%B7%20,%20T_m" alt="T_1, T_2, · · · , T_m">次迭<br>代将学习率衰减为原来的<img src="https://math.jianshu.com/math?formula=%CE%B2_1,%20%CE%B2_2,%20%C2%B7%20%C2%B7%20%C2%B7%20,%20%CE%B2_m" alt="β_1, β_2, · · · , β_m">倍，其中**<img src="https://math.jianshu.com/math?formula=T_m" alt="T_m">** 和 **<img src="https://math.jianshu.com/math?formula=%CE%B2_m%3C1" alt="β_m&lt;1">**为根据经验设置的 <strong>超参数</strong>。</p>
+<h5 id="逆时衰减（Inverse-Time-Decay）"><a href="#逆时衰减（Inverse-Time-Decay）" class="headerlink" title="逆时衰减（Inverse Time Decay）"></a>逆时衰减（Inverse Time Decay）</h5><p>lr-t = lr0 /(1+b*t)  b为衰减率</p>
+<h5 id="指数衰减（Exponential-Decay）"><a href="#指数衰减（Exponential-Decay）" class="headerlink" title="指数衰减（Exponential Decay）"></a>指数衰减（Exponential Decay）</h5><p>Lr-t = lr0*(b**t)</p>
+<h5 id="自然指数衰减（Natural-Exponential-Decay）"><a href="#自然指数衰减（Natural-Exponential-Decay）" class="headerlink" title="自然指数衰减（Natural Exponential Decay）"></a>自然指数衰减（Natural Exponential Decay）</h5><h5 id="余弦衰减（Cosine-Decay）"><a href="#余弦衰减（Cosine-Decay）" class="headerlink" title="余弦衰减（Cosine Decay）"></a>余弦衰减（Cosine Decay）</h5><p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%A1%B0%E5%87%8F.png"></p>
+<h1 id="学习率预热"><a href="#学习率预热" class="headerlink" title="学习率预热"></a>学习率预热</h1><p>在 <strong>小批量梯度下降方法</strong> 中，当批量大小的设置比较大时，通常需要比较大的学习率。但在刚开始训练时，由于参数是随机初始化的，<strong>梯度往往也比较大</strong>，在加上 <strong>比较大的初始学习率，会使得训练不稳定。</strong></p>
+<p>为了提高训练稳定性，我们可以 <strong>在最初几轮迭代时，采用比较小的学习率，等梯度下降到一定程度后再恢复到初始的学习率，</strong>这种方法称为 <strong>学习率预热（Learning Rate Warmup）。</strong></p>
+<p>一个常用的学习率预热方法是 <strong>逐渐预热（Gradual Warmup）</strong>。<strong>当预热过程结束，再选择一种学习率衰减方法来逐渐降低学习率。</strong></p>
+<h1 id="周期性学习率调整"><a href="#周期性学习率调整" class="headerlink" title="周期性学习率调整"></a>周期性学习率调整</h1><p>为了使得 <strong>梯度下降方法</strong> 能够 <strong>逃离局部最小值或鞍点</strong>，一种经验性的方式是在训练过程中 <strong>周期性地增大学习率</strong>。虽然增加学习率可能短期内有损网络的收敛稳定性，但从长期来看有助于找到更好的局部最优解。</p>
+<p>一般而言，当一个模型 <strong>收敛到一个平坦（Flat）的局部最小值</strong> 时，其 <strong>鲁棒性会更好</strong>，即 <strong>微小的参数变动不会剧烈影响模型能力</strong>；而当模型 <strong>收敛到一个尖锐（Sharp）的局部最小值</strong> 时，其 <strong>鲁棒性也会比较差</strong>。具备良好泛化能力的模型通常应该是鲁棒的，因此理想的局部最小值应该是平坦的。</p>
+<p><strong>周期性学习率调整</strong> 可以使得梯度下降方法在优化过程中 <strong>跳出尖锐的局部极小值</strong>，虽然会短期内会损害优化过程，但最终会收敛到更加理想的局部极小值。</p>
+<h5 id="循环学习率"><a href="#循环学习率" class="headerlink" title="循环学习率"></a>循环学习率</h5><p>一种简单的方法是使用循环学习率，即在让学习率在 <strong>一个区间内</strong> <strong>周期性地增大和缩小</strong>。</p>
+<p>通常可以使用 <strong>线性缩放</strong> 来调整学习率，称为 <strong>三角循环学习率（Triangular Cyclic Learning Rate）。</strong></p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-learning-rate%E5%AD%A6%E4%B9%A0%E7%8E%87%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/%E5%BE%AA%E7%8E%AF%E5%AD%A6%E4%B9%A0%E7%8E%87.png"></p>
+<h5 id="带热重启的随机梯度下降"><a href="#带热重启的随机梯度下降" class="headerlink" title="带热重启的随机梯度下降"></a>带热重启的随机梯度下降</h5><p>带热重启的随机梯度下降（Stochastic Gradient Descent with Warm Restarts，SGDR）是用 <strong>热重启方式</strong> 来替代 <strong>学习率衰减</strong> 的方法。</p>
+<p><strong>学习率每间隔一定周期后，重新初始化为某个预先设定值，然后逐渐衰减。</strong>每次重启后模型参数不是从头开始优化，而是从重启前的参数基础上继续优化。</p>
+<p>!</p>
 ]]></content>
+      <categories>
+        <category>学习</category>
+        <category>深度学习</category>
+        <category>神经网络</category>
+      </categories>
+      <tags>
+        <tag>总结</tag>
+        <tag>编程</tag>
+        <tag>优化</tag>
+        <tag>调参</tag>
+      </tags>
   </entry>
   <entry>
     <title>神经网络-损失函数</title>
@@ -3821,6 +3796,31 @@
         <tag>优化</tag>
         <tag>调参</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>神经网络-权值初始化的方法</title>
+    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%9D%83%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>权值初始化的原因：1. 防止层激活输出在深度神经网络的正向传递过程中爆炸或消失。2. 有助于加速收敛。</p>
+<p>权值初始化的方法：</p>
+<p>常量初始化（constant）、高斯分布初始化（gaussian）、positive_unitball初始化、均匀分布初始化（uniform）、xavier初始化、msra初始化、双线性初始化（bilinear）</p>
+<span id="more"></span>
+
+<p>权重初始化相比于其他的trick来说在平常使用并不是很频繁。因为大部分人使用的模型都是预训练模型，使用的权重都是在大型数据集上训练好的模型，当然不需要自己去初始化权重了。只有没有预训练模型的领域会自己初始化权重，或者在模型中去初始化神经网络最后那几个全连接层的权重。常用的权重初始化算法是 :</p>
+<h1 id="常量初始化"><a href="#常量初始化" class="headerlink" title="常量初始化"></a>常量初始化</h1><h1 id="均匀分布初始化"><a href="#均匀分布初始化" class="headerlink" title="均匀分布初始化"></a>均匀分布初始化</h1><h1 id="高斯分布初始化"><a href="#高斯分布初始化" class="headerlink" title="高斯分布初始化"></a>高斯分布初始化</h1><ul>
+<li>normal高斯分布初始化， 其中stdev为高斯分布的标准差，均值设为0：</li>
+</ul>
+<h1 id="Xavier初始化"><a href="#Xavier初始化" class="headerlink" title="Xavier初始化"></a>Xavier初始化</h1><ul>
+<li>Xavier初始法，适用于普通激活函数(tanh, sigmoid)：</li>
+</ul>
+<p>Xavier初始化将每层权重设置为在有界的随机均匀分布中选择的值</p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%9D%83%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95/Xavier.png"></p>
+<h1 id="MSRA初始化"><a href="#MSRA初始化" class="headerlink" title="MSRA初始化"></a>MSRA初始化</h1><h1 id="双线性初始化"><a href="#双线性初始化" class="headerlink" title="双线性初始化"></a>双线性初始化</h1><h1 id="Kaiming初始化"><a href="#Kaiming初始化" class="headerlink" title="Kaiming初始化"></a>Kaiming初始化</h1><p>保持层激活的标准偏差大约为1将允许我们在深度神经网络中堆叠更多层而不会出现梯度爆炸或消失。</p>
+<p>关于探索如何在类ReLU的激活的网络中最佳地初始化权重促使何凯明等优秀学者提出自己的初始化方案，这些方案是专门用来处理这些非对称，非线性激活的深层神经网络的。</p>
+<p>在他们的2015年论文中何凯明等人证明了如果采用以下输入权重初始化策略，深层网络（例如22层CNN）会更早收敛：</p>
+<p>\1. 使用适合给定图层的权重矩阵创建张量，并使用从标准正态分布中随机选择的数字填充它。</p>
+<p>\2. 将每个随机选择的数字乘以√2/√n，其中n是从前一层输出到指定层的连接数（也称为“fan-in”）。</p>
+<p>\3. 偏差张量初始化为零。</p>
+]]></content>
   </entry>
   <entry>
     <title>神经网络-梯度优化方法</title>
@@ -4070,6 +4070,40 @@
       </tags>
   </entry>
   <entry>
+    <title>站内说明</title>
+    <url>/2021/09/29/%E7%AB%99%E5%86%85%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<p>本blog是作为Leo同学的自我拓展过程中的自律自省记录</p>
+<p>对该blog的计划是对一下类别和领域的学习与探索：</p>
+<p>理论方面：</p>
+<p>​    计算机视觉</p>
+<p>​    深度学习算法</p>
+<p>​    机器学习算法</p>
+<p>Coding方面：</p>
+<p>​    OpenCV</p>
+<p>​    Python</p>
+<p>​    Pytorch</p>
+<p>​    </p>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>概览</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机视觉CV算法概览（更新ing）</title>
+    <url>/2021/09/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89CV%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
+    <content><![CDATA[<h1 id="图像识别"><a href="#图像识别" class="headerlink" title="图像识别"></a>图像识别</h1><h2 id="1-AlexNet"><a href="#1-AlexNet" class="headerlink" title="1. AlexNet"></a>1. AlexNet</h2><h2 id="2-VGGNet"><a href="#2-VGGNet" class="headerlink" title="2. VGGNet"></a>2. VGGNet</h2><h2 id="3-GoogLeNet"><a href="#3-GoogLeNet" class="headerlink" title="3. GoogLeNet"></a>3. GoogLeNet</h2><h2 id="4-ResNet"><a href="#4-ResNet" class="headerlink" title="4. ResNet"></a>4. ResNet</h2><h2 id="5-DenseNet"><a href="#5-DenseNet" class="headerlink" title="5. DenseNet"></a>5. DenseNet</h2><h1 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h1><h2 id="1-R-CNN-系列"><a href="#1-R-CNN-系列" class="headerlink" title="1. R-CNN 系列"></a>1. R-CNN 系列</h2><h3 id="1-R-CNN"><a href="#1-R-CNN" class="headerlink" title="1. R-CNN"></a>1. R-CNN</h3><h3 id="2-Fast-R-CNN"><a href="#2-Fast-R-CNN" class="headerlink" title="2. Fast R-CNN"></a>2. Fast R-CNN</h3><h3 id="3-Faster-R-CNN"><a href="#3-Faster-R-CNN" class="headerlink" title="3. Faster R-CNN"></a>3. Faster R-CNN</h3><h2 id="2-Yolo系列"><a href="#2-Yolo系列" class="headerlink" title="2. Yolo系列"></a>2. Yolo系列</h2><h3 id="1-Yolo-V1"><a href="#1-Yolo-V1" class="headerlink" title="1.Yolo V1"></a>1.Yolo V1</h3><h3 id="2-Yolo-V2"><a href="#2-Yolo-V2" class="headerlink" title="2.Yolo V2"></a>2.Yolo V2</h3><h3 id="3-Yolo-V3"><a href="#3-Yolo-V3" class="headerlink" title="3.Yolo V3"></a>3.Yolo V3</h3><h3 id="4-Yolo-V4"><a href="#4-Yolo-V4" class="headerlink" title="4.Yolo V4"></a>4.Yolo V4</h3><h3 id="5-Yolo-V5"><a href="#5-Yolo-V5" class="headerlink" title="5.Yolo V5"></a>5.Yolo V5</h3><h2 id="3-SSD"><a href="#3-SSD" class="headerlink" title="3. SSD"></a>3. SSD</h2><h2 id="4-Retina-Net"><a href="#4-Retina-Net" class="headerlink" title="4. Retina-Net"></a>4. Retina-Net</h2><h1 id="图像分割"><a href="#图像分割" class="headerlink" title="图像分割"></a>图像分割</h1><h2 id="1-FCN"><a href="#1-FCN" class="headerlink" title="1. FCN"></a>1. FCN</h2><h2 id="2-Mask-R-CNN"><a href="#2-Mask-R-CNN" class="headerlink" title="2. Mask R-CNN"></a>2. Mask R-CNN</h2><h1 id="目标追踪"><a href="#目标追踪" class="headerlink" title="目标追踪"></a>目标追踪</h1><h2 id="1-Goturn"><a href="#1-Goturn" class="headerlink" title="1. Goturn"></a>1. Goturn</h2><h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><h1 id="图像生成"><a href="#图像生成" class="headerlink" title="图像生成"></a>图像生成</h1><h2 id="1-GAN"><a href="#1-GAN" class="headerlink" title="1. GAN"></a>1. GAN</h2>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+      </categories>
+      <tags>
+        <tag>概览</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>计算机视觉模型库-timm</title>
     <url>/2021/10/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E6%A8%A1%E5%9E%8B%E5%BA%93-timm/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>Py<strong>T</strong>orch <strong>Im</strong>age <strong>M</strong>odels (<strong>timm</strong>)由Ross Wightman创建的深度学习库，是一个图像模型（models）、层（layers）、实用程序（utilities）、优化器（optimizers）、调度器（schedulers）、数据加载/增强（data-loaders / augmentations）和参考训练/验证脚本（reference training / validation scripts）的集合是一个关于SOTA的计算机视觉模型、层、实用工具、optimizers, schedulers, data-loaders, augmentations，可以复现ImageNet训练结果的训练/验证代码。</p>
@@ -4097,43 +4131,9 @@
       </tags>
   </entry>
   <entry>
-    <title>站内说明</title>
-    <url>/2021/09/29/%E7%AB%99%E5%86%85%E8%AF%B4%E6%98%8E/</url>
-    <content><![CDATA[<p>本blog是作为Leo同学的自我拓展过程中的自律自省记录</p>
-<p>对该blog的计划是对一下类别和领域的学习与探索：</p>
-<p>理论方面：</p>
-<p>​    计算机视觉</p>
-<p>​    深度学习算法</p>
-<p>​    机器学习算法</p>
-<p>Coding方面：</p>
-<p>​    OpenCV</p>
-<p>​    Python</p>
-<p>​    Pytorch</p>
-<p>​    </p>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-      <tags>
-        <tag>概览</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>论文精度-AIPerf: Automated machine learning as an AI-HPC benchmark</title>
     <url>/2021/11/11/%E8%AE%BA%E6%96%87%E7%B2%BE%E5%BA%A6-AIPerf-Automated-machine-learning-as-an-AI-HPC-benchmark/</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>计算机视觉CV算法概览（更新ing）</title>
-    <url>/2021/09/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89CV%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
-    <content><![CDATA[<h1 id="图像识别"><a href="#图像识别" class="headerlink" title="图像识别"></a>图像识别</h1><h2 id="1-AlexNet"><a href="#1-AlexNet" class="headerlink" title="1. AlexNet"></a>1. AlexNet</h2><h2 id="2-VGGNet"><a href="#2-VGGNet" class="headerlink" title="2. VGGNet"></a>2. VGGNet</h2><h2 id="3-GoogLeNet"><a href="#3-GoogLeNet" class="headerlink" title="3. GoogLeNet"></a>3. GoogLeNet</h2><h2 id="4-ResNet"><a href="#4-ResNet" class="headerlink" title="4. ResNet"></a>4. ResNet</h2><h2 id="5-DenseNet"><a href="#5-DenseNet" class="headerlink" title="5. DenseNet"></a>5. DenseNet</h2><h1 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h1><h2 id="1-R-CNN-系列"><a href="#1-R-CNN-系列" class="headerlink" title="1. R-CNN 系列"></a>1. R-CNN 系列</h2><h3 id="1-R-CNN"><a href="#1-R-CNN" class="headerlink" title="1. R-CNN"></a>1. R-CNN</h3><h3 id="2-Fast-R-CNN"><a href="#2-Fast-R-CNN" class="headerlink" title="2. Fast R-CNN"></a>2. Fast R-CNN</h3><h3 id="3-Faster-R-CNN"><a href="#3-Faster-R-CNN" class="headerlink" title="3. Faster R-CNN"></a>3. Faster R-CNN</h3><h2 id="2-Yolo系列"><a href="#2-Yolo系列" class="headerlink" title="2. Yolo系列"></a>2. Yolo系列</h2><h3 id="1-Yolo-V1"><a href="#1-Yolo-V1" class="headerlink" title="1.Yolo V1"></a>1.Yolo V1</h3><h3 id="2-Yolo-V2"><a href="#2-Yolo-V2" class="headerlink" title="2.Yolo V2"></a>2.Yolo V2</h3><h3 id="3-Yolo-V3"><a href="#3-Yolo-V3" class="headerlink" title="3.Yolo V3"></a>3.Yolo V3</h3><h3 id="4-Yolo-V4"><a href="#4-Yolo-V4" class="headerlink" title="4.Yolo V4"></a>4.Yolo V4</h3><h3 id="5-Yolo-V5"><a href="#5-Yolo-V5" class="headerlink" title="5.Yolo V5"></a>5.Yolo V5</h3><h2 id="3-SSD"><a href="#3-SSD" class="headerlink" title="3. SSD"></a>3. SSD</h2><h2 id="4-Retina-Net"><a href="#4-Retina-Net" class="headerlink" title="4. Retina-Net"></a>4. Retina-Net</h2><h1 id="图像分割"><a href="#图像分割" class="headerlink" title="图像分割"></a>图像分割</h1><h2 id="1-FCN"><a href="#1-FCN" class="headerlink" title="1. FCN"></a>1. FCN</h2><h2 id="2-Mask-R-CNN"><a href="#2-Mask-R-CNN" class="headerlink" title="2. Mask R-CNN"></a>2. Mask R-CNN</h2><h1 id="目标追踪"><a href="#目标追踪" class="headerlink" title="目标追踪"></a>目标追踪</h1><h2 id="1-Goturn"><a href="#1-Goturn" class="headerlink" title="1. Goturn"></a>1. Goturn</h2><h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><h1 id="图像生成"><a href="#图像生成" class="headerlink" title="图像生成"></a>图像生成</h1><h2 id="1-GAN"><a href="#1-GAN" class="headerlink" title="1. GAN"></a>1. GAN</h2>]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-      </categories>
-      <tags>
-        <tag>概览</tag>
-      </tags>
   </entry>
   <entry>
     <title>论文精读-Deep-Learninge-Driven Quantification of Interstitial Fibrosis in Digitized Kidney Biopsies</title>
@@ -4221,14 +4221,24 @@
       </tags>
   </entry>
   <entry>
-    <title>项目实战-延时显微镜下的细胞检测和跟踪</title>
-    <url>/2021/10/01/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98-%E5%BB%B6%E6%97%B6%E6%98%BE%E5%BE%AE%E9%95%9C%E4%B8%8B%E7%9A%84%E7%BB%86%E8%83%9E%E6%A3%80%E6%B5%8B%E5%92%8C%E8%B7%9F%E8%B8%AA/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>这个项目是9517 计算机视觉课程的一个project</p>
-<p>要求是检测显微镜下图片中的细胞以及后续判断细胞的移动轨迹</p>
-<p>Version1.0是使用了传统的OpenCV方法做的</p>
-<p>对延时显微镜下的细胞图像做训练，通过OpenCV形态学操作对图像做预处理</p>
-<p>Version1.0: 使用Unet网络框架进行细胞检测并多目标跟踪绘制细胞运动轨迹及运动属性计算</p>
+    <title>轻量化网络-MobileNet</title>
+    <url>/2021/09/29/%E8%BD%BB%E9%87%8F%E5%8C%96%E7%BD%91%E7%BB%9C-MobileNet/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
 ]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>轻量化模型</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
   </entry>
   <entry>
     <title>针对深度学习网络的PyTorch训练代码结构</title>
@@ -4311,24 +4321,14 @@
       </tags>
   </entry>
   <entry>
-    <title>轻量化网络-MobileNet</title>
-    <url>/2021/09/29/%E8%BD%BB%E9%87%8F%E5%8C%96%E7%BD%91%E7%BB%9C-MobileNet/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
+    <title>项目实战-延时显微镜下的细胞检测和跟踪</title>
+    <url>/2021/10/01/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98-%E5%BB%B6%E6%97%B6%E6%98%BE%E5%BE%AE%E9%95%9C%E4%B8%8B%E7%9A%84%E7%BB%86%E8%83%9E%E6%A3%80%E6%B5%8B%E5%92%8C%E8%B7%9F%E8%B8%AA/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>这个项目是9517 计算机视觉课程的一个project</p>
+<p>要求是检测显微镜下图片中的细胞以及后续判断细胞的移动轨迹</p>
+<p>Version1.0是使用了传统的OpenCV方法做的</p>
+<p>对延时显微镜下的细胞图像做训练，通过OpenCV形态学操作对图像做预处理</p>
+<p>Version1.0: 使用Unet网络框架进行细胞检测并多目标跟踪绘制细胞运动轨迹及运动属性计算</p>
 ]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>轻量化模型</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
   </entry>
   <entry>
     <title>深度学习-常用卷积方法梳理</title>
