@@ -672,6 +672,12 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Hexo网站建设参考资料</title>
+    <url>/2021/10/30/Hexo%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/</url>
+    <content><![CDATA[<p>Hexo next主题：右侧栏配置 <a href="https://www.cnblogs.com/lfri/p/12221359.html">https://www.cnblogs.com/lfri/p/12221359.html</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Global-Wheat-Detection全球小麦麦穗检测</title>
     <url>/2021/10/02/Global-Wheat-Detection%E5%85%A8%E7%90%83%E5%B0%8F%E9%BA%A6%E9%BA%A6%E7%A9%97%E6%A3%80%E6%B5%8B/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>Version1.0: 通过对 Faster R-CNN 网络进行微调来实现检测<br> Version2.0: 基于 EfficientDet 网络实现并结合 Pseudo-Labeling 策略进行改进</p>
@@ -728,12 +734,6 @@
 
 
 
-]]></content>
-  </entry>
-  <entry>
-    <title>Hexo网站建设参考资料</title>
-    <url>/2021/10/30/Hexo%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/</url>
-    <content><![CDATA[<p>Hexo next主题：右侧栏配置 <a href="https://www.cnblogs.com/lfri/p/12221359.html">https://www.cnblogs.com/lfri/p/12221359.html</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -802,6 +802,32 @@
       </tags>
   </entry>
   <entry>
+    <title>Python内置模块盘点</title>
+    <url>/2021/11/02/Python%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>os模块</p>
+<p>shutil模块</p>
+<span id="more"></span>
+
+
+
+
+
+
+
+
+
+<h1 id="os模块"><a href="#os模块" class="headerlink" title="os模块"></a>os模块</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="shutil模块"><a href="#shutil模块" class="headerlink" title="shutil模块"></a>shutil模块</h1><p>完成文件的复制，删除，移动，压缩，解压</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.copy(src,dst)</span><br><span class="line">shutil.copy2()</span><br><span class="line">shutil.copyfile(src,dst)</span><br><span class="line">shutil.copymode()</span><br><span class="line">shutil.copystat()</span><br><span class="line">shutil.copytree()</span><br><span class="line">shutil.move()</span><br><span class="line">shutil.rmtree()</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
     <title>Python中的*args和**kwargs</title>
     <url>/2021/10/28/Python%E4%B8%AD%E7%9A%84-args%E5%92%8C-kwargs/</url>
     <content><![CDATA[<p>*和**的用法</p>
@@ -830,32 +856,6 @@
         <tag>基础操作</tag>
         <tag>编程</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Python内置模块盘点</title>
-    <url>/2021/11/02/Python%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>os模块</p>
-<p>shutil模块</p>
-<span id="more"></span>
-
-
-
-
-
-
-
-
-
-<h1 id="os模块"><a href="#os模块" class="headerlink" title="os模块"></a>os模块</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="shutil模块"><a href="#shutil模块" class="headerlink" title="shutil模块"></a>shutil模块</h1><p>完成文件的复制，删除，移动，压缩，解压</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.copy(src,dst)</span><br><span class="line">shutil.copy2()</span><br><span class="line">shutil.copyfile(src,dst)</span><br><span class="line">shutil.copymode()</span><br><span class="line">shutil.copystat()</span><br><span class="line">shutil.copytree()</span><br><span class="line">shutil.move()</span><br><span class="line">shutil.rmtree()</span><br></pre></td></tr></table></figure>
-
-]]></content>
   </entry>
   <entry>
     <title>Pytorch框架基础（一）</title>
@@ -1178,13 +1178,6 @@
       </tags>
   </entry>
   <entry>
-    <title>cv算法面试问题总结（八）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AB%EF%BC%89/</url>
-    <content><![CDATA[<p>神经网络中会用到批量梯度下降（BGD）吗？为什么用随机梯度下降（SGD）?<br>当神经网络的调参效果不好时，从哪些角度思考？（不要首先归结于overfiting）<br>请阐述下卷积神经网络CNN的基本原理(全网最通俗版)<br>神经网络输出层为什么通常使用softmax?<br>了解无人驾驶的核心技术么？<br>如何形象的理解LSTM的三个门<br>通过一张张动图形象的理解LSTM<br>如何理解反向传播算法BackPropagation<br>请问什么是softmax函数？<br>通俗理解BN(Batch Normalization)<br>批量归一化BN到底解决了什么问题？<br>如何理解随机梯度下降，以及为什么SGD能够收敛？<br>模拟退火算法能解决陷入局部最优的问题么<br>请说下常见优化方法各自的优缺点（BGD、SGD、MBGD、Momentum、NAG、Adagrad、Adadelta、RMSprop、Adam）<br>Adam算法的原理机制是怎么样的？它与相关的AdaGrad和RMSProp方法有什么区别</p>
-<span id="more"></span>
-]]></content>
-  </entry>
-  <entry>
     <title>cv算法面试问题总结（五）</title>
     <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%94%EF%BC%89/</url>
     <content><![CDATA[<p>如何确定CNN的卷积核通道数和卷积输出层的通道数？<br>什么是卷积？<br>什么是CNN的池化pool层？<br>简述下什么是生成对抗网络<br>学梵高作画的原理是什么？<br>请简要介绍下tensorflow的计算图<br>你有哪些深度学习（rnn、cnn）调参的经验？<br>为什么不同的机器学习领域都可以使用CNN，CNN解决了这些领域的哪些共性问题？他是如何解决的？<br>LSTM结构推导，为什么比RNN好？<br>Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。</p>
@@ -1204,6 +1197,13 @@
       </tags>
   </entry>
   <entry>
+    <title>cv算法面试问题总结（八）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AB%EF%BC%89/</url>
+    <content><![CDATA[<p>神经网络中会用到批量梯度下降（BGD）吗？为什么用随机梯度下降（SGD）?<br>当神经网络的调参效果不好时，从哪些角度思考？（不要首先归结于overfiting）<br>请阐述下卷积神经网络CNN的基本原理(全网最通俗版)<br>神经网络输出层为什么通常使用softmax?<br>了解无人驾驶的核心技术么？<br>如何形象的理解LSTM的三个门<br>通过一张张动图形象的理解LSTM<br>如何理解反向传播算法BackPropagation<br>请问什么是softmax函数？<br>通俗理解BN(Batch Normalization)<br>批量归一化BN到底解决了什么问题？<br>如何理解随机梯度下降，以及为什么SGD能够收敛？<br>模拟退火算法能解决陷入局部最优的问题么<br>请说下常见优化方法各自的优缺点（BGD、SGD、MBGD、Momentum、NAG、Adagrad、Adadelta、RMSprop、Adam）<br>Adam算法的原理机制是怎么样的？它与相关的AdaGrad和RMSProp方法有什么区别</p>
+<span id="more"></span>
+]]></content>
+  </entry>
+  <entry>
     <title>cv算法面试问题总结（六）</title>
     <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AD%EF%BC%89/</url>
     <content><![CDATA[<p>神经网络中激活函数的真正意义？一个激活函数需要具有哪些必要的属性？还有哪些属性是好的属性但不必要的？<br>梯度下降法的神经网络容易收敛到局部最优，为什么应用广泛？<br>简单说说CNN常用的几个模型<br>为什么很多做人脸的Paper会最后加入一个Local Connected Conv？<br>什么是梯度爆炸？<br>梯度爆炸会引发什么问题？<br>如何确定是否出现梯度爆炸？<br>如何修复梯度爆炸问题？</p>
@@ -1220,13 +1220,6 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>cv算法面试问题总结（十）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%8D%81%EF%BC%89/</url>
-    <content><![CDATA[<p>基于深度学习的目标检测技术演进：R-CNN、Fast R-CNN、Faster R-CNN、YOLO、SSD<br>请简单解释下目标检测中的这个IOU评价函数（intersection-over-union）<br>KNN与K-means区别？<br>K-means选择初始点的方法有哪些,优缺点是什么?(列出两种以上)<br>简述线性分类器的原理(要求对权重矩阵进行剖析)<br>请简述下log对数、Hinge Loss(折页)、Cross-Entropy Loss(交叉熵)这三个损失函数<br>简述正则化与奥卡姆剃刀原则<br>图像尺寸为 7<em>7, 卷积窗口大小为3</em>3, 步长为3, 是否能输出图像?如果能,输出图像大小为多少?如果不能,说明原因?<br>如果最后一个卷积层和第一个全连接层参数量太大怎么办?<br>为什么说神经网络是端到端的网络?<br>当参数量 &gt;&gt; 样本量时候, 神经网络是如何预防过拟合?<br>什么是感受野？</p>
-<p>简述你对CBIR(Content-based Image Retrieval基于内容的图像检索)的理解<br>什么是计算机视觉单词模型？<br>简述什么是Local Feature(局部特征算子)？<br>KD-Tree相比KNN来进行快速图像特征比对的好处在哪里?<br>简述encode和decode思想<br>输入图片尺寸不匹配CNN网络input时候的解决方式？（三种以上）<br>FCN与CNN最大的区别？<br>遇到class-imbalanced data（数据类目不平衡）问题怎么办？<br>简述孪生随机网络（Siamese Network）<br>DPM（Deformable Parts Model）算法流程<br>什么是NMS（Non-maximum suppression 非极大值抑制）?<br>列举出常见的损失函数(三个以上)?<br>做过目标检测项目么？比如Mask R-CNN和Python做一个抢车位神器<br>如何理解Faster RCNN<br>one-stage和two-stage目标检测方法的区别和优缺点？<br>请画下YOLOv3的网络结构<br>请简单说下YOLOv1,v2,v3,v4各自的特点与发展史<br>如何理解YOLO：YOLO详解<br>怎么理解YOLOv4<br>神经网络参数共享(parameter sharing)是指什么？<br>2021年网易互联网 计算机视觉 一面<br>美团实习算法岗<br>2021商汤-视频理解研究员-校招-技术面</p>
-]]></content>
   </entry>
   <entry>
     <title>cv算法面试问题总结（四）</title>
@@ -1266,6 +1259,13 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>cv算法面试问题总结（十）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%8D%81%EF%BC%89/</url>
+    <content><![CDATA[<p>基于深度学习的目标检测技术演进：R-CNN、Fast R-CNN、Faster R-CNN、YOLO、SSD<br>请简单解释下目标检测中的这个IOU评价函数（intersection-over-union）<br>KNN与K-means区别？<br>K-means选择初始点的方法有哪些,优缺点是什么?(列出两种以上)<br>简述线性分类器的原理(要求对权重矩阵进行剖析)<br>请简述下log对数、Hinge Loss(折页)、Cross-Entropy Loss(交叉熵)这三个损失函数<br>简述正则化与奥卡姆剃刀原则<br>图像尺寸为 7<em>7, 卷积窗口大小为3</em>3, 步长为3, 是否能输出图像?如果能,输出图像大小为多少?如果不能,说明原因?<br>如果最后一个卷积层和第一个全连接层参数量太大怎么办?<br>为什么说神经网络是端到端的网络?<br>当参数量 &gt;&gt; 样本量时候, 神经网络是如何预防过拟合?<br>什么是感受野？</p>
+<p>简述你对CBIR(Content-based Image Retrieval基于内容的图像检索)的理解<br>什么是计算机视觉单词模型？<br>简述什么是Local Feature(局部特征算子)？<br>KD-Tree相比KNN来进行快速图像特征比对的好处在哪里?<br>简述encode和decode思想<br>输入图片尺寸不匹配CNN网络input时候的解决方式？（三种以上）<br>FCN与CNN最大的区别？<br>遇到class-imbalanced data（数据类目不平衡）问题怎么办？<br>简述孪生随机网络（Siamese Network）<br>DPM（Deformable Parts Model）算法流程<br>什么是NMS（Non-maximum suppression 非极大值抑制）?<br>列举出常见的损失函数(三个以上)?<br>做过目标检测项目么？比如Mask R-CNN和Python做一个抢车位神器<br>如何理解Faster RCNN<br>one-stage和two-stage目标检测方法的区别和优缺点？<br>请画下YOLOv3的网络结构<br>请简单说下YOLOv1,v2,v3,v4各自的特点与发展史<br>如何理解YOLO：YOLO详解<br>怎么理解YOLOv4<br>神经网络参数共享(parameter sharing)是指什么？<br>2021年网易互联网 计算机视觉 一面<br>美团实习算法岗<br>2021商汤-视频理解研究员-校招-技术面</p>
+]]></content>
   </entry>
   <entry>
     <title>hello-world</title>
@@ -2863,25 +2863,6 @@
       </tags>
   </entry>
   <entry>
-    <title>机器学习-集成算法-随机森林</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习经典算法概览</title>
     <url>/2021/09/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
     <content><![CDATA[<p>这是一篇机器学习经典算法的简述，包含了线性回归、逻辑回归、支持向量机(SVM)、最近邻居(KNN)、决策树、k平均、随机森林、朴素贝叶斯、降维、梯度增强（更新ing）</p>
@@ -2909,6 +2890,25 @@
       </categories>
       <tags>
         <tag>概览</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习-集成算法-随机森林</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
