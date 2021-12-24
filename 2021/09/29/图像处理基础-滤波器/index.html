@@ -27,10 +27,10 @@
 <meta property="og:site_name" content="Leo的三板斧">
 <meta property="og:description" content="摘要在图像处理中，经常需要对图像进行平滑去噪、锐化、边界增强等，这些功能可以通过滤波器filter来实现。 噪音的分类及如何添加 椒盐噪声：是一种随机出现的白点(salt)或者黑点(peppe) 高斯噪声：概率密度函数服从高斯分布（即正态分布）的一类噪声 常用滤波算法： 均值滤波器：把邻域内的平均值赋给中心元素。邻域内的像素权重是相等的；但不能保护细节，不能消除椒盐噪声 高斯滤波器：邻域内各个像素">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E5%9D%87%E5%80%BC.png">
-<meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E9%AB%98%E6%96%AF.png">
-<meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E4%B8%AD%E5%80%BC.png">
-<meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E5%8F%8C%E8%BE%B9.png">
+<meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/均值.png">
+<meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/高斯.png">
+<meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/中值.png">
+<meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/双边.png">
 <meta property="article:published_time" content="2021-09-29T10:21:45.000Z">
 <meta property="article:modified_time" content="2021-10-02T04:48:24.879Z">
 <meta property="article:author" content="Leo">
@@ -40,7 +40,7 @@
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="滤波器">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E5%9D%87%E5%80%BC.png">
+<meta name="twitter:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/均值.png">
 
 <link rel="canonical" href="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/">
 
@@ -293,7 +293,6 @@
 <p>中值滤波器：不使用权重，邻域内所有像素值的中间值来代替当前像素点的像素值</p>
 <p>双边滤波器：同时考虑距离信息（距离越远，权重越小)和色彩信息（色彩差别越大，权重越小）</p>
 <span id="more"></span>
-
 <h1 id="滤波相关概念："><a href="#滤波相关概念：" class="headerlink" title="滤波相关概念："></a>滤波相关概念：</h1><p>图像的时域： 自变量是时间,即横轴是时间,纵轴是信号的变化。其动态信号x（t）是描述信号在不同时刻取值的函数</p>
 <p>图像的频域：自变量是频率,即横轴是频率,纵轴是该频率信号的幅度,也就是通常说的频谱图。频谱图描述了信号的频率结构及频率与该频率信号幅度的关系</p>
 <p>图像的频率： 图像的频率又称为空间频率，它反映了图像的像素灰度在空间中变化的情况</p>
@@ -305,19 +304,19 @@
 <h2 id="滤波器分类"><a href="#滤波器分类" class="headerlink" title="滤波器分类"></a>滤波器分类</h2><p>线性滤波： 对邻域中的像素的计算为线性运算时，如利用窗口函数进行平滑加权求和的运算，或者某种卷积运算，都可以称为线性滤波。常见的线性滤波有：方框滤波、均值滤波、高斯滤波、拉普拉斯滤波等等，通常线性滤波器之间只是模版的系数不同。</p>
 <p>非线性滤波： 非线性滤波利用原始图像跟模版之间的一种逻辑关系得到结果，如最值滤波器，中值滤波器。比较常用的有中值滤波器和双边滤波器。</p>
 <p>reference：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44957388/article/details/105763906">https://blog.csdn.net/qq_44957388/article/details/105763906</a></p>
-<h1 id="常见的滤波器："><a href="#常见的滤波器：" class="headerlink" title="常见的滤波器："></a>常见的滤波器：</h1><h2 id="均值滤波器"><a href="#均值滤波器" class="headerlink" title="均值滤波器"></a>均值滤波器</h2><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E5%9D%87%E5%80%BC.png"></p>
+<h1 id="常见的滤波器："><a href="#常见的滤波器：" class="headerlink" title="常见的滤波器："></a>常见的滤波器：</h1><h2 id="均值滤波器"><a href="#均值滤波器" class="headerlink" title="均值滤波器"></a>均值滤波器</h2><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/均值.png" alt></p>
 <h3 id="均值滤波的缺点"><a href="#均值滤波的缺点" class="headerlink" title="均值滤波的缺点"></a>均值滤波的缺点</h3><p>均值滤波本身存在着固有的缺陷，即它不能很好地保护图像细节，在图像去噪的同时也破坏了图像的细节部分，从而使图像变得模糊，不能很好地去除噪声点。特别是椒盐噪声。</p>
 <h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>均值模糊可以模糊图像以便得到感兴趣物体的粗略描述，也就是说，去除图像中的不相关细节，其中“不相关”是指与滤波器模板尺寸相比较小的像素区域，从而对图像有一个整体的认知。即为了对感兴趣的物体得到一个大致的整体的描述而模糊一幅图像，忽略细小的细节。</p>
-<h2 id="高斯滤波器"><a href="#高斯滤波器" class="headerlink" title="高斯滤波器"></a>高斯滤波器</h2><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E9%AB%98%E6%96%AF.png"></p>
+<h2 id="高斯滤波器"><a href="#高斯滤波器" class="headerlink" title="高斯滤波器"></a>高斯滤波器</h2><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/高斯.png" alt></p>
 <p><strong>应用：</strong> 高斯滤波是一种线性平滑滤波器，对于服从正态分布的噪声有很好的抑制作用。在实际场景中，我们通常会假定图像包含的噪声为高斯白噪声，所以在许多实际应用的预处理部分，都会采用高斯滤波抑制噪声，如传统车牌识别等。</p>
-<h2 id="中值滤波器"><a href="#中值滤波器" class="headerlink" title="中值滤波器"></a>中值滤波器</h2><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E4%B8%AD%E5%80%BC.png"></p>
+<h2 id="中值滤波器"><a href="#中值滤波器" class="headerlink" title="中值滤波器"></a>中值滤波器</h2><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/中值.png" alt></p>
 <p>中值滤波不再采用加权求和的方式计算滤波结果，它用邻域内所有像素值的中间值来代替当前像素点的像素值。</p>
 <p>中值滤波会取当前像素点及其周围临近像素点的像素值，一般有奇数个像素点，将这些像素值排序，将排序后位于中间位置的像素值作为当前像素点的像素值。</p>
 <p>中值滤波对于斑点噪声（speckle noise）和椒盐噪声（salt-and-pepper<br>noise）来说尤其有用，因为它不依赖于邻域内那些与典型值差别很大的值，而且噪声成分很难被选上，所以可以在几乎不影响原有图像的情况下去除全部噪声。但是由于需要进行排序操作，中值滤波的计算量较大。</p>
 <p>中值滤波器在处理连续图像窗函数时与线性滤波器的工作方式类似，但滤波过程却不再是加权运算。</p>
 <h2 id="双边滤波器"><a href="#双边滤波器" class="headerlink" title="双边滤波器"></a>双边滤波器</h2><p>双边滤波是综合考虑空间信息和色彩信息的滤波方式，在滤波过程中能有效的保护图像内的边缘信息。</p>
 <p>双边滤波在计算某一个像素点的像素值时，同时考虑距离信息（距离越远，权重越小)和色彩信息（色彩差别越大，权重越小）。既能去除噪声，又能较好的保护边缘信息。</p>
-<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/%E5%8F%8C%E8%BE%B9.png"></p>
+<p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/双边.png" alt></p>
 <p>在双边滤波中，计算左侧白色区域的滤波结果时：</p>
 <p>对于白色的点，权重较大<br>对于黑色的点，与白色的色彩差别较大（0和255），所以可以将他们的权重设置为0<br>计算右侧黑色区域的滤波结果时：</p>
 <p>对于黑色的点，权重较大<br>对于白色的点，与黑色的色彩差别较大（255和0），所以可以将他们的权重设置为0<br>这样，左侧白色的滤波结果仍是白色，黑色的像素点权重为0，对它不会有影响；右侧黑色的滤波结果仍是黑色，白色的像素点权重为0，对它不会有影响。所以，双边滤波会将边缘信息保留。</p>

@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="Leo的三板斧">
 <meta property="og:description" content="摘要背景问题： 方法简述： 优点： 缺点：">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/%E5%B8%B8%E8%A7%81%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0.png">
+<meta property="og:image" content="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/常见激活函数.png">
 <meta property="article:published_time" content="2021-10-01T07:56:29.000Z">
 <meta property="article:modified_time" content="2021-10-09T07:13:28.482Z">
 <meta property="article:author" content="Leo">
@@ -36,7 +36,7 @@
 <meta property="article:tag" content="优化">
 <meta property="article:tag" content="调参">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/%E5%B8%B8%E8%A7%81%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0.png">
+<meta name="twitter:image" content="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/常见激活函数.png">
 
 <link rel="canonical" href="http://example.com/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/">
 
@@ -288,7 +288,6 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-
 <h2 id="激活函数的作用"><a href="#激活函数的作用" class="headerlink" title="激活函数的作用"></a>激活函数的作用</h2><ol>
 <li>激活函数对模型学习、理解非常复杂和非线性的函数具有重要作用。</li>
 <li>激活函数可以引入非线性因素。如果不使用激活函数，则输出信号仅是一个简单的线性函数。线性函数一个一级多项式，线性方程的复杂度有限，从数据中学习复杂函数映射的能力很小。没有激活函数，神经网络将无法学习和模拟其他复杂类型的数据，例如图像、视频、音频、语音等。</li>
@@ -315,7 +314,7 @@
 <li>在隐含层可能会使用一些线性激活函数。</li>
 <li>一般用到的线性激活函数很少。</li>
 </ol>
-<h1 id="非线性激活函数"><a href="#非线性激活函数" class="headerlink" title="非线性激活函数"></a>非线性激活函数</h1><p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/%E5%B8%B8%E8%A7%81%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0.png"></p>
+<h1 id="非线性激活函数"><a href="#非线性激活函数" class="headerlink" title="非线性激活函数"></a>非线性激活函数</h1><p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/常见激活函数.png" alt></p>
 <h2 id="ReLu-激活函数的优点"><a href="#ReLu-激活函数的优点" class="headerlink" title="ReLu 激活函数的优点"></a>ReLu 激活函数的优点</h2><ol>
 <li>在区间变动很大的情况下，ReLu 激活函数的导数或者激活函数的斜率都会远大于 0，在程序实现就是一个 if-else 语句，而 sigmoid 函数需要进行浮点四则运算，在实践中，使用 ReLu 激活函数神经网络通常会比使用 sigmoid 或者 tanh 激活函数学习的更快。</li>
 <li>sigmoid 和 tanh 函数的导数在正负饱和区的梯度都会接近于 0，这会造成梯度弥散，而 Relu 和Leaky ReLu 函数大于 0 部分都为常数，不会产生梯度弥散现象。</li>
