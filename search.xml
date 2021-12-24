@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>AI算法面试问题-机器学习（三）</title>
-    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>AI算法面试问题-机器学习（一）</title>
     <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
@@ -33,6 +28,11 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>AI算法面试问题-机器学习（三）</title>
+    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>AI算法面试问题-机器学习（二）</title>
@@ -177,28 +177,11 @@
 
 <h2 id="文档操作"><a href="#文档操作" class="headerlink" title="文档操作"></a>文档操作</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建</span></span><br><span class="line">POST http://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9200</span>/shopping/_doc</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;title&quot;</span>:<span class="string">&quot;小米&quot;</span>,</span><br><span class="line">    <span class="string">&quot;price&quot;</span>:<span class="number">3999.00</span>,</span><br><span class="line">    <span class="string">&quot;category&quot;</span>:<span class="string">&quot;手机&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定id创建文档</span></span><br><span class="line">PUT http://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9200</span>/shopping/_doc/<span class="number">1001</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;title&quot;</span>:<span class="string">&quot;小米&quot;</span>,</span><br><span class="line">    <span class="string">&quot;price&quot;</span>:<span class="number">3999.00</span>,</span><br><span class="line">    <span class="string">&quot;category&quot;</span>:<span class="string">&quot;手机&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除</span></span><br><span class="line">DELETE http://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9200</span>/shopping/_doc/<span class="number">1001</span></span><br><span class="line">        </span><br><span class="line"><span class="comment"># 查询索引下的所有文档</span></span><br><span class="line">GET http://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9200</span>/index_name/_search</span><br><span class="line">        </span><br><span class="line"><span class="comment"># 精确查询：term查询</span></span><br><span class="line"><span class="comment"># term用来对数字、ID、名称等的查询，避免用term查询text字段</span></span><br><span class="line"><span class="comment"># 对字符串查询 .keyword</span></span><br><span class="line">GET / _search </span><br><span class="line">&#123; <span class="string">&quot;query&quot;</span> : </span><br><span class="line"> 	&#123; <span class="string">&quot;term&quot;</span> : </span><br><span class="line">     	&#123; <span class="string">&quot;neme.keyword&quot;</span>: <span class="string">&quot;8F50A0ECEF4CE6D2956F2D24CCA7FF1C038FCEF55C82BA84D55C9CF276157250&quot;</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment"># 查询id</span></span><br><span class="line">&#123; <span class="string">&quot;query&quot;</span> : </span><br><span class="line"> 	&#123; <span class="string">&quot;term&quot;</span> : </span><br><span class="line">     	&#123; <span class="string">&quot;rid&quot;</span>: <span class="number">778659</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment"># terms查询  列表 多值查询，</span></span><br><span class="line">GET   /_search </span><br><span class="line">&#123; <span class="string">&quot;query&quot;</span> : </span><br><span class="line"> 	&#123; <span class="string">&quot;terms&quot;</span> : </span><br><span class="line">     	&#123; <span class="string">&quot;user.id&quot;</span> : [ <span class="string">&quot;kimchy&quot;</span> , <span class="string">&quot;elkbee&quot;</span> ], </span><br><span class="line">         <span class="string">&quot;boost&quot;</span> : <span class="number">1.0</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment"># bool查询</span></span><br><span class="line"><span class="comment">#must：必须都为true</span></span><br><span class="line"><span class="comment">#must not：必须都是false</span></span><br><span class="line"><span class="comment">#should：其中只有一个为true即可</span></span><br><span class="line"><span class="comment">#为true越多则分数越高</span></span><br><span class="line">GET /movie/_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;bool&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;should&quot;</span>: [</span><br><span class="line">        &#123;<span class="string">&quot;match&quot;</span>: &#123;<span class="string">&quot;title&quot;</span>: <span class="string">&quot;basketball with cartoom aliens&quot;</span>&#125;&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;match&quot;</span>: &#123;<span class="string">&quot;overview&quot;</span>: <span class="string">&quot;basketball with cartoom aliens&quot;</span>&#125;&#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 多条件过滤查询</span></span><br><span class="line">GET /index_name/_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;bool&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;filter&quot;</span>: [</span><br><span class="line">        &#123;<span class="string">&quot;term&quot;</span>:&#123;<span class="string">&quot;title&quot;</span>: <span class="string">&quot;steve&quot;</span>&#125;&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;term&quot;</span>:&#123;<span class="string">&quot;cast.name&quot;</span>: <span class="string">&quot;gaspard&quot;</span>&#125;&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;range&quot;</span>:&#123;<span class="string">&quot;release_date&quot;</span>: &#123;<span class="string">&quot;lte&quot;</span>:<span class="string">&quot;2014/01/01&quot;</span>&#125;&#125;&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;range&quot;</span>:&#123;<span class="string">&quot;popularity&quot;</span>: &#123;<span class="string">&quot;gte&quot;</span>:<span class="string">&quot;25&quot;</span>&#125;&#125;&#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 聚合查询 等同于 MySQL的group by</span></span><br><span class="line"><span class="comment"># GET /index_name/_search</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;name&quot;</span>: <span class="string">&quot;关&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;sort&quot;</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">&quot;age&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;order&quot;</span>: <span class="string">&quot;desc&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="string">&quot;aggs&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;group_by_age&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;terms&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;field&quot;</span>: <span class="string">&quot;age&quot;</span>,</span><br><span class="line">        <span class="string">&quot;size&quot;</span>: <span class="number">10</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h2 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 缓存清理</span><br><span class="line">GET http://127.0.0.1:9200/index_name/_cache/clear</span><br><span class="line"></span><br><span class="line"># 索引复制</span><br><span class="line">POST http://127.0.0.1:9200/_reindex</span><br><span class="line">&#123;</span><br><span class="line">  &quot;source&quot;: &#123;</span><br><span class="line">    &quot;index&quot;: &quot;source_index&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dest&quot;: &#123;</span><br><span class="line">    &quot;index&quot;: &quot;new_index&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h2 id="集群操作"><a href="#集群操作" class="headerlink" title="集群操作"></a>集群操作</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 创建</span><br><span class="line"></span><br><span class="line"># 查看</span><br><span class="line"></span><br><span class="line"># 删除</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 缓存清理</span><br><span class="line">GET http://127.0.0.1:9200/index_name/_cache/clear</span><br><span class="line"></span><br><span class="line"># 索引复制</span><br><span class="line">POST http://127.0.0.1:9200/_reindex</span><br><span class="line">&#123;</span><br><span class="line">  &quot;source&quot;: &#123;</span><br><span class="line">    &quot;index&quot;: &quot;source_index&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dest&quot;: &#123;</span><br><span class="line">    &quot;index&quot;: &quot;new_index&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h2 id="信息查看"><a href="#信息查看" class="headerlink" title="信息查看"></a>信息查看</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#Postman查看索引分片信息： </span><br><span class="line">http://127.0.0.1:9200/index_name/_search_shards</span><br><span class="line"># linux 查看索引分片信息： </span><br><span class="line">curl -XGET http://localhost:9200/_cat/shards/index_name?v</span><br><span class="line"></span><br><span class="line"># 查看全部索引的空间占用信息： </span><br><span class="line">curl -X GET localhost:9200/_cat/indices?v</span><br><span class="line"></span><br><span class="line"># 查看全部分片的空间占用信息： </span><br><span class="line">curl -X GET localhost:9200/_cat/shards?v</span><br></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-<p>创建索引的时候需要根据数据量的大小确定分片数量！比如根据实际情况1000万条数据大约占用7.68G, </p>
-<h1 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a>集群搭建</h1><p>暂无</p>
-<p>集群搭建： <a href="https://segmentfault.com/a/1190000023077227">https://segmentfault.com/a/1190000023077227</a></p>
-<h1 id="集群操作-1"><a href="#集群操作-1" class="headerlink" title="集群操作"></a>集群操作</h1><p>暂无</p>
+<p>创建索引的时候需要根据数据量的大小确定分片数量！比如根据实际情况1000万条数据大约占用7.68G</p>
 <p>Reference：</p>
 <ol>
 <li>  ES 集群管理（集群规划、集群搭建、集群管理） <a href="https://www.cnblogs.com/leesmall/p/9220535.html">https://www.cnblogs.com/leesmall/p/9220535.html</a></li>
@@ -207,8 +190,27 @@
 ]]></content>
   </entry>
   <entry>
-    <title>ElasticSearch(3):logstash从MySQL数据库导入数据</title>
-    <url>/2021/12/13/ElasticSearch-3-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
+    <title>ElasticSearch(3):可视化管理Kibana</title>
+    <url>/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/</url>
+    <content><![CDATA[<p>8888</p>
+<span id="more"></span>
+
+
+
+<h2 id="安装es可视化工具-kibana"><a href="#安装es可视化工具-kibana" class="headerlink" title="安装es可视化工具  kibana"></a>安装es可视化工具  kibana</h2><p>访问： <a href="http://localhost:`5601`/">http://localhost:`5601`/</a></p>
+<p><a href="https://blog.csdn.net/Soinice/article/details/87861121">(21条消息) Kibana（安装篇）：Windows下安装和运行Kibana_Soinice的博客-CSDN博客_kibana windows启动</a></p>
+<h1 id="ES数据导入"><a href="#ES数据导入" class="headerlink" title="ES数据导入"></a>ES数据导入</h1><h2 id="从MySQL数据导入es："><a href="#从MySQL数据导入es：" class="headerlink" title="从MySQL数据导入es："></a>从MySQL数据导入es：</h2><p>logstash安装操作：   [elk收集windows日志 - 今夕何兮 - 博客园 (cnblogs.com)](<a href="https://www.cnblogs.com/f66666/p/10273435.html#:~:text=%E4%B8%80%E3%80%81windows%E5%AE%89%E8%A3%85logstash">https://www.cnblogs.com/f66666/p/10273435.html#:~:text=一、windows安装logstash</a>. 1. 安装过程. logstash安装需要java环境支持，需先安装jkd1.8。. 官网下载logstash安装包，下载地址：https%3A%2F%2F<a href="http://www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。">www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。</a>. 在bin目录下运行命令：logstash -e “input,{ } } output { stdout {}}”. 然后你会发现终端在等待你的输入。.)</p>
+<h1 id="ES操作方式"><a href="#ES操作方式" class="headerlink" title="ES操作方式"></a>ES操作方式</h1><h1 id="过程监控"><a href="#过程监控" class="headerlink" title="过程监控"></a>过程监控</h1><p>开启</p>
+<h1 id><a href="#" class="headerlink" title></a></h1><p>查看每个index的存储情况：</p>
+<p><code>curl -X GET localhost:9200/_cat/indices?v</code></p>
+<p>查看每个shard的存储情况：</p>
+<p><code>curl -X GET localhost:9200/_cat/shards?v</code></p>
+<p>OK! 终于完成了ELK套件，可以深入的内容还有很多</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>ElasticSearch(4):logstash从MySQL数据库导入数据</title>
+    <url>/2021/12/13/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
     <content><![CDATA[<p>Logstash 是免费且开放的服务器端数据处理管道，拥有200多个插件，能够从多个来源采集数据，转换数据，然后将数据发送到指定的存储库中。在本文中主要实践的是将数十亿的数据从MySQL数据库如何高效导入ES</p>
 <ul>
 <li><p><input checked disabled type="checkbox">  Logstash管道介绍</p>
@@ -229,7 +231,7 @@
 <h1 id="Logstash管道介绍"><a href="#Logstash管道介绍" class="headerlink" title="Logstash管道介绍"></a>Logstash管道介绍</h1><p>Logstash 是免费且开放的服务器端数据处理管道，拥有200多个插件，能够从多个来源采集数据，转换数据，然后将数据发送到喜欢的“存储库”中。在本文中主要实践的是将数十亿的数据从MySQL数据库如何高效导入ES</p>
 <p>logstash管道必须要有input和output元素，filter元素是可选的。input插件定义数据来源，filter插件用来修改用户指定的数据，output插件定义数据写入何地。</p>
 <p>logstash结构如下所示：</p>
-<p><img src="/2021/12/13/ElasticSearch-3-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/basic_logstash_pipeline.png"></p>
+<p><img src="/2021/12/13/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/basic_logstash_pipeline.png"></p>
 <p>input：采集各种样式、大小和来源的数据<br>Logstash 支持各种输入选择 ，同时从众多常用来源捕捉事件。<br>能够以连续的流式传输方式，轻松地从日志、指标、Web 应用、数据存储以及各种服务中采集数据。</p>
 <p>filter：实时解析和转换数据；<em>数据从源传输到存储库的过程中，Logstash 过滤器能够解析各个事件，识别已命名的字段以构建结构，并将它们转换成通用格式，以便更轻松、更快速地分析和实现商业价值。</em><br><em>利用 Grok 从非结构化数据中派生出结构</em><br><em>从 IP 地址破译出地理坐标</em><br><em>将 PII 数据匿名化，完全排除敏感字段</em><br><em>简化整体处理，不受数据源、格式或架构的影响</em></p>
 <p>output：选择目标存储库，可以选择ElasticSearch也可以选择其他存储库</p>
@@ -268,7 +270,7 @@
 <li><p>event可以查看当前处理的in， filter，output的累计处理数量，如果in 数量大于filter和out，说明filter和out有性能瓶颈，如果filter大于out说明out有性能瓶颈。</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -s localhost:9600/_node/stats/events?pretty=true</span><br></pre></td></tr></table></figure></li>
 </ol>
-<p><img src="/2021/12/13/ElasticSearch-3-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%5C%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90.jpg"></p>
+<p><img src="/2021/12/13/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%5C%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90.jpg"></p>
 <ol start="2">
 <li><p>jvm可以查询堆内存使用情况</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -s localhost:9600/_node/stats/jvm?pretty=true</span><br></pre></td></tr></table></figure></li>
@@ -297,7 +299,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pipeline.workers: 128</span><br><span class="line">pipeline.batch.size: 10000</span><br><span class="line">pipeline.batch.delay: 10</span><br></pre></td></tr></table></figure>
 
 <p>logstash调优主要是减少event等待时间加快线程pipeline的切换。</p>
-<h3 id="方法四：解决MySQL的分页偏移导致的低效"><a href="#方法四：解决MySQL的分页偏移导致的低效" class="headerlink" title="方法四：解决MySQL的分页偏移导致的低效"></a>方法四：解决MySQL的分页偏移导致的低效</h3><p><img src="/2021/12/13/ElasticSearch-3-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%5Cmysql%E6%9F%A5%E8%AF%A2%E4%BD%8E%E6%95%88.jpg"></p>
+<h3 id="方法四：解决MySQL的分页偏移导致的低效"><a href="#方法四：解决MySQL的分页偏移导致的低效" class="headerlink" title="方法四：解决MySQL的分页偏移导致的低效"></a>方法四：解决MySQL的分页偏移导致的低效</h3><p><img src="/2021/12/13/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%5Cmysql%E6%9F%A5%E8%AF%A2%E4%BD%8E%E6%95%88.jpg"></p>
 <p>如图： 数据量超过一亿，偏移量特别大的时候的查询时间，会超过4分钟，不可忍受！</p>
 <p>导致缓慢的原因时当offset时一亿，limit是二十万时，MySQL的查询需要一次查询出offset+limit的数据，然后将offset之前全部丢弃，然后取得一亿至一亿二十万的数据，导致offset越大MySQL响应越慢。</p>
 <p>解决方案：</p>
@@ -320,9 +322,9 @@
 <h3 id="优化六：解决存储空间不足"><a href="#优化六：解决存储空间不足" class="headerlink" title="优化六：解决存储空间不足"></a>优化六：解决存储空间不足</h3><p>方法1. ElasticSearch7.13 之前的版本都可以通过配置多个path.data 来使用挂载的其他硬盘。7.13之后的版本，path.data多路径配置被遗弃无法使用</p>
 <p>方法2. 新建node</p>
 <h1 id="结果评价"><a href="#结果评价" class="headerlink" title="结果评价"></a>结果评价</h1><p>优化之后的运行情况：从ID大于一亿的查询速度从之前的200+秒优化为现在的10秒左右</p>
-<p><img src="/2021/12/13/ElasticSearch-3-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%5C%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96%E7%BB%93%E6%9E%9C.jpg"></p>
+<p><img src="/2021/12/13/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%5C%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96%E7%BB%93%E6%9E%9C.jpg"></p>
 <p>优化之后的CPU占用情况如图：读取和写入都能较高效率使用CPU，（优化前不到６０％）</p>
-<p><img src="/2021/12/13/ElasticSearch-3-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%5C%E7%BB%93%E6%9E%9CCPU%E5%88%A9%E7%94%A8%E6%83%85%E5%86%B5.jpg"></p>
+<p><img src="/2021/12/13/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%5C%E7%BB%93%E6%9E%9CCPU%E5%88%A9%E7%94%A8%E6%83%85%E5%86%B5.jpg"></p>
 <p>#PID: 92238 为从MySQL读取数据 #PID：80860为ES写入线程</p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
 <li> <a href="https://www.denglin.me/export-mysql-data-to-elasticsearch/">https://www.denglin.me/export-mysql-data-to-elasticsearch/</a></li>
@@ -335,13 +337,8 @@
 ]]></content>
   </entry>
   <entry>
-    <title>ElasticSearch(4-2):实践记录(二)</title>
-    <url>/2021/12/16/ElasticSearch-4-2-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95-%E4%BA%8C/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>ElasticSearch(4):实践记录</title>
-    <url>/2021/12/14/ElasticSearch-4-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/</url>
+    <title>ElasticSearch(5):实践记录</title>
+    <url>/2021/12/14/ElasticSearch-5-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<ul>
 <li><p><input checked disabled type="checkbox">  业务场景描述</p>
 </li>
@@ -658,28 +655,25 @@
 ]]></content>
   </entry>
   <entry>
-    <title>ElasticSearch(5):可视化管理Kibana</title>
-    <url>/2021/12/17/ElasticSearch-5-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/</url>
-    <content><![CDATA[<p>8888</p>
-<span id="more"></span>
-
-
-
-<h2 id="安装es可视化工具-kibana"><a href="#安装es可视化工具-kibana" class="headerlink" title="安装es可视化工具  kibana"></a>安装es可视化工具  kibana</h2><p>访问： <a href="http://localhost:`5601`/">http://localhost:`5601`/</a></p>
-<p><a href="https://blog.csdn.net/Soinice/article/details/87861121">(21条消息) Kibana（安装篇）：Windows下安装和运行Kibana_Soinice的博客-CSDN博客_kibana windows启动</a></p>
-<h1 id="ES数据导入"><a href="#ES数据导入" class="headerlink" title="ES数据导入"></a>ES数据导入</h1><h2 id="从MySQL数据导入es："><a href="#从MySQL数据导入es：" class="headerlink" title="从MySQL数据导入es："></a>从MySQL数据导入es：</h2><p>logstash安装操作：   [elk收集windows日志 - 今夕何兮 - 博客园 (cnblogs.com)](<a href="https://www.cnblogs.com/f66666/p/10273435.html#:~:text=%E4%B8%80%E3%80%81windows%E5%AE%89%E8%A3%85logstash">https://www.cnblogs.com/f66666/p/10273435.html#:~:text=一、windows安装logstash</a>. 1. 安装过程. logstash安装需要java环境支持，需先安装jkd1.8。. 官网下载logstash安装包，下载地址：https%3A%2F%2F<a href="http://www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。">www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。</a>. 在bin目录下运行命令：logstash -e “input,{ } } output { stdout {}}”. 然后你会发现终端在等待你的输入。.)</p>
-<h1 id="ES操作方式"><a href="#ES操作方式" class="headerlink" title="ES操作方式"></a>ES操作方式</h1><h1 id="过程监控"><a href="#过程监控" class="headerlink" title="过程监控"></a>过程监控</h1><p>开启</p>
-<h1 id><a href="#" class="headerlink" title></a></h1><p>查看每个index的存储情况：</p>
-<p><code>curl -X GET localhost:9200/_cat/indices?v</code></p>
-<p>查看每个shard的存储情况：</p>
-<p><code>curl -X GET localhost:9200/_cat/shards?v</code></p>
-<p>OK! 终于完成了ELK套件，可以深入的内容还有很多</p>
+    <title>ElasticSearch(6):实践记录(二)</title>
+    <url>/2021/12/20/ElasticSearch-6-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95-%E4%BA%8C/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>ElasticSearch(7):集群部署与操作</title>
+    <url>/2021/12/22/ElasticSearch-6-%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2%E4%B8%8E%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a>集群搭建</h1><p>暂无</p>
+<p>集群搭建： <a href="https://segmentfault.com/a/1190000023077227">https://segmentfault.com/a/1190000023077227</a></p>
+<h1 id="集群操作"><a href="#集群操作" class="headerlink" title="集群操作"></a>集群操作</h1><p>暂无</p>
 ]]></content>
   </entry>
   <entry>
-    <title>ElasticSearch(6):集群部署与操作</title>
-    <url>/2021/12/22/ElasticSearch-6-%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2%E4%B8%8E%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[]]></content>
+    <title>ElasticSearch(7):集群部署与操作</title>
+    <url>/2021/12/22/ElasticSearch-7-%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2%E4%B8%8E%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a>集群搭建</h1><p>暂无</p>
+<p>集群搭建： <a href="https://segmentfault.com/a/1190000023077227">https://segmentfault.com/a/1190000023077227</a></p>
+<h1 id="集群操作"><a href="#集群操作" class="headerlink" title="集群操作"></a>集群操作</h1><p>暂无</p>
+]]></content>
   </entry>
   <entry>
     <title>ElasticSearch学习记录</title>
@@ -975,6 +969,20 @@
       </tags>
   </entry>
   <entry>
+    <title>Pytorch框架基础（二）</title>
+    <url>/2021/09/29/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p><a href="https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1">https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>Pytorch</category>
+      </categories>
+      <tags>
+        <tag>基础操作</tag>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>cv算法面试问题总结（一）</title>
     <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表："><a href="#问题列表：" class="headerlink" title="问题列表："></a>问题列表：</h1><ol>
@@ -1083,20 +1091,6 @@
 <span id="more"></span>
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>Pytorch框架基础（二）</title>
-    <url>/2021/09/29/Pytorch%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p><a href="https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1">https://www.cnblogs.com/Jason66661010/category/1831834.html?page=1</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>Pytorch</category>
-      </categories>
-      <tags>
-        <tag>基础操作</tag>
-        <tag>编程</tag>
-      </tags>
   </entry>
   <entry>
     <title>cv算法面试问题总结（三）</title>
@@ -1243,6 +1237,20 @@
       </tags>
   </entry>
   <entry>
+    <title>cv算法面试问题总结（八）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AB%EF%BC%89/</url>
+    <content><![CDATA[<p>神经网络中会用到批量梯度下降（BGD）吗？为什么用随机梯度下降（SGD）?<br>当神经网络的调参效果不好时，从哪些角度思考？（不要首先归结于overfiting）<br>请阐述下卷积神经网络CNN的基本原理(全网最通俗版)<br>神经网络输出层为什么通常使用softmax?<br>了解无人驾驶的核心技术么？<br>如何形象的理解LSTM的三个门<br>通过一张张动图形象的理解LSTM<br>如何理解反向传播算法BackPropagation<br>请问什么是softmax函数？<br>通俗理解BN(Batch Normalization)<br>批量归一化BN到底解决了什么问题？<br>如何理解随机梯度下降，以及为什么SGD能够收敛？<br>模拟退火算法能解决陷入局部最优的问题么<br>请说下常见优化方法各自的优缺点（BGD、SGD、MBGD、Momentum、NAG、Adagrad、Adadelta、RMSprop、Adam）<br>Adam算法的原理机制是怎么样的？它与相关的AdaGrad和RMSProp方法有什么区别</p>
+<span id="more"></span>
+]]></content>
+  </entry>
+  <entry>
+    <title>cv算法面试问题总结（十）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%8D%81%EF%BC%89/</url>
+    <content><![CDATA[<p>基于深度学习的目标检测技术演进：R-CNN、Fast R-CNN、Faster R-CNN、YOLO、SSD<br>请简单解释下目标检测中的这个IOU评价函数（intersection-over-union）<br>KNN与K-means区别？<br>K-means选择初始点的方法有哪些,优缺点是什么?(列出两种以上)<br>简述线性分类器的原理(要求对权重矩阵进行剖析)<br>请简述下log对数、Hinge Loss(折页)、Cross-Entropy Loss(交叉熵)这三个损失函数<br>简述正则化与奥卡姆剃刀原则<br>图像尺寸为 7<em>7, 卷积窗口大小为3</em>3, 步长为3, 是否能输出图像?如果能,输出图像大小为多少?如果不能,说明原因?<br>如果最后一个卷积层和第一个全连接层参数量太大怎么办?<br>为什么说神经网络是端到端的网络?<br>当参数量 &gt;&gt; 样本量时候, 神经网络是如何预防过拟合?<br>什么是感受野？</p>
+<p>简述你对CBIR(Content-based Image Retrieval基于内容的图像检索)的理解<br>什么是计算机视觉单词模型？<br>简述什么是Local Feature(局部特征算子)？<br>KD-Tree相比KNN来进行快速图像特征比对的好处在哪里?<br>简述encode和decode思想<br>输入图片尺寸不匹配CNN网络input时候的解决方式？（三种以上）<br>FCN与CNN最大的区别？<br>遇到class-imbalanced data（数据类目不平衡）问题怎么办？<br>简述孪生随机网络（Siamese Network）<br>DPM（Deformable Parts Model）算法流程<br>什么是NMS（Non-maximum suppression 非极大值抑制）?<br>列举出常见的损失函数(三个以上)?<br>做过目标检测项目么？比如Mask R-CNN和Python做一个抢车位神器<br>如何理解Faster RCNN<br>one-stage和two-stage目标检测方法的区别和优缺点？<br>请画下YOLOv3的网络结构<br>请简单说下YOLOv1,v2,v3,v4各自的特点与发展史<br>如何理解YOLO：YOLO详解<br>怎么理解YOLOv4<br>神经网络参数共享(parameter sharing)是指什么？<br>2021年网易互联网 计算机视觉 一面<br>美团实习算法岗<br>2021商汤-视频理解研究员-校招-技术面</p>
+]]></content>
+  </entry>
+  <entry>
     <title>cv算法面试问题总结（六）</title>
     <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AD%EF%BC%89/</url>
     <content><![CDATA[<p>神经网络中激活函数的真正意义？一个激活函数需要具有哪些必要的属性？还有哪些属性是好的属性但不必要的？<br>梯度下降法的神经网络容易收敛到局部最优，为什么应用广泛？<br>简单说说CNN常用的几个模型<br>为什么很多做人脸的Paper会最后加入一个Local Connected Conv？<br>什么是梯度爆炸？<br>梯度爆炸会引发什么问题？<br>如何确定是否出现梯度爆炸？<br>如何修复梯度爆炸问题？</p>
@@ -1259,20 +1267,6 @@
         <tag>总结</tag>
         <tag>技巧</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>cv算法面试问题总结（十）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%8D%81%EF%BC%89/</url>
-    <content><![CDATA[<p>基于深度学习的目标检测技术演进：R-CNN、Fast R-CNN、Faster R-CNN、YOLO、SSD<br>请简单解释下目标检测中的这个IOU评价函数（intersection-over-union）<br>KNN与K-means区别？<br>K-means选择初始点的方法有哪些,优缺点是什么?(列出两种以上)<br>简述线性分类器的原理(要求对权重矩阵进行剖析)<br>请简述下log对数、Hinge Loss(折页)、Cross-Entropy Loss(交叉熵)这三个损失函数<br>简述正则化与奥卡姆剃刀原则<br>图像尺寸为 7<em>7, 卷积窗口大小为3</em>3, 步长为3, 是否能输出图像?如果能,输出图像大小为多少?如果不能,说明原因?<br>如果最后一个卷积层和第一个全连接层参数量太大怎么办?<br>为什么说神经网络是端到端的网络?<br>当参数量 &gt;&gt; 样本量时候, 神经网络是如何预防过拟合?<br>什么是感受野？</p>
-<p>简述你对CBIR(Content-based Image Retrieval基于内容的图像检索)的理解<br>什么是计算机视觉单词模型？<br>简述什么是Local Feature(局部特征算子)？<br>KD-Tree相比KNN来进行快速图像特征比对的好处在哪里?<br>简述encode和decode思想<br>输入图片尺寸不匹配CNN网络input时候的解决方式？（三种以上）<br>FCN与CNN最大的区别？<br>遇到class-imbalanced data（数据类目不平衡）问题怎么办？<br>简述孪生随机网络（Siamese Network）<br>DPM（Deformable Parts Model）算法流程<br>什么是NMS（Non-maximum suppression 非极大值抑制）?<br>列举出常见的损失函数(三个以上)?<br>做过目标检测项目么？比如Mask R-CNN和Python做一个抢车位神器<br>如何理解Faster RCNN<br>one-stage和two-stage目标检测方法的区别和优缺点？<br>请画下YOLOv3的网络结构<br>请简单说下YOLOv1,v2,v3,v4各自的特点与发展史<br>如何理解YOLO：YOLO详解<br>怎么理解YOLOv4<br>神经网络参数共享(parameter sharing)是指什么？<br>2021年网易互联网 计算机视觉 一面<br>美团实习算法岗<br>2021商汤-视频理解研究员-校招-技术面</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>cv算法面试问题总结（八）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AB%EF%BC%89/</url>
-    <content><![CDATA[<p>神经网络中会用到批量梯度下降（BGD）吗？为什么用随机梯度下降（SGD）?<br>当神经网络的调参效果不好时，从哪些角度思考？（不要首先归结于overfiting）<br>请阐述下卷积神经网络CNN的基本原理(全网最通俗版)<br>神经网络输出层为什么通常使用softmax?<br>了解无人驾驶的核心技术么？<br>如何形象的理解LSTM的三个门<br>通过一张张动图形象的理解LSTM<br>如何理解反向传播算法BackPropagation<br>请问什么是softmax函数？<br>通俗理解BN(Batch Normalization)<br>批量归一化BN到底解决了什么问题？<br>如何理解随机梯度下降，以及为什么SGD能够收敛？<br>模拟退火算法能解决陷入局部最优的问题么<br>请说下常见优化方法各自的优缺点（BGD、SGD、MBGD、Momentum、NAG、Adagrad、Adadelta、RMSprop、Adam）<br>Adam算法的原理机制是怎么样的？它与相关的AdaGrad和RMSProp方法有什么区别</p>
-<span id="more"></span>
-]]></content>
   </entry>
   <entry>
     <title>cv算法面试问题总结（四）</title>
@@ -1363,11 +1357,6 @@
       </tags>
   </entry>
   <entry>
-    <title>kaggle比赛-Molecular Translation</title>
-    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-Molecular-Translation/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>kaggle比赛-NFL Helmet Assignment</title>
     <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-NFL-Helmet-Assignment/</url>
     <content><![CDATA[<p><a href="https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment">https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment</a></p>
@@ -1383,6 +1372,11 @@
         <tag>编程</tag>
         <tag>Kaggle</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>kaggle比赛-Molecular Translation</title>
+    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-Molecular-Translation/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>kaggle比赛-脑肿瘤检测</title>
@@ -1588,6 +1582,35 @@
 ]]></content>
   </entry>
   <entry>
+    <title>关于MLPerf和AIPerf的设计理解</title>
+    <url>/2021/11/11/%E5%85%B3%E4%BA%8EMLPerf%E5%92%8CAIPerf%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<p>MLPerf 是AI芯片的一个基准测试，主要包括：Training 和Inference两个方面的性能测试。Training是于测量系统将模型训练到目标质量指标的速度；Inference是用于测试系统使用训练有素的模型处理输入和产生结果的速度。</p>
+<p>AIPerf的评价指标是Tops（平均每秒处理的混合精度AI浮点操作数），可以用来做横向比较</p>
+<span id="more"></span>
+
+<h1 id="MLPerf"><a href="#MLPerf" class="headerlink" title="MLPerf"></a>MLPerf</h1><p>MLPerf 是AI芯片的一个基准测试，主要包括：Training 和Inference两个方面的性能测试。Training是于测量系统将模型训练到目标质量指标的速度；Inference是用于测试系统使用训练有素的模型处理输入和产生结果的速度。</p>
+<p>具体的详细信息可参见论文：MLPERF TRAINING BENCHMARK以及MLPERF INFERENCE BENCHMARK。</p>
+<p>该基准有两种测试形式：*<strong>Closed Division*</strong> 和 <em><strong>Open Division，</strong></em>其中封闭的测试是基于平台固定的测试模型进行测试；开放的测试是用户可以自定义需要测试的模型。</p>
+<p>当前的测试结果根据芯片当前的使用状态分为：Cloud;Available;Preview;Research, Development, and Other（category）。</p>
+<p><img src="/2021/11/11/%E5%85%B3%E4%BA%8EMLPerf%E5%92%8CAIPerf%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/8-benchmarks.png"></p>
+<h1 id="AIPerf"><a href="#AIPerf" class="headerlink" title="AIPerf"></a>AIPerf</h1><p>大规模人工智能计算系统的计算持续发展，需要一个有效评价计算机系统人工智能算力的评价指标；</p>
+<p>浮点计算峰值是指计算机每秒可以完成的浮点计算次数，包括理论浮点峰值和实测浮点峰值。理论浮点峰值是该计算机理论上每秒可以完成的浮点计算次数，主要由CPU的主频决定。</p>
+<p>理论浮点峰值＝CPU主频×CPU核数×CPU每周期执行浮点运算的次数。</p>
+<p>目前的实测方式如下：</p>
+<p>Linpack Benchmark: 广泛用于高性能计算机双精度浮点运算性能基准评测，但大部分人工智能训练任务以单精度浮点数或者16位浮点数为主</p>
+<p>HPL-AI: 通以Linpack为基础的改善的混合精度的基准测评</p>
+<p>Mobile AI Bench：</p>
+<p>DeepBench：</p>
+<p>AIIA DNN Benchmark:</p>
+<p>AIPerf Benchmark:</p>
+<p> 基于微软NNI（neural network intelligence)框架实现，以自动化机器学习AutoML为负载，进行网络结构搜索（网络态射network morphism ）和超参搜索（树状结构Parzen估计）寻找进度更高的网络结构和超参（batch size；最大epoch；lr；最大搜索模型个数，最长搜索总时间；最大并发搜索模型数量等）</p>
+<h1 id="设计目标"><a href="#设计目标" class="headerlink" title="设计目标"></a>设计目标</h1><h2 id="统一的评价指标Score"><a href="#统一的评价指标Score" class="headerlink" title="统一的评价指标Score"></a>统一的评价指标Score</h2><p>AIPerf的评价指标是Tops（平均每秒处理的混合精度AI浮点操作数），可以用来做横向比较</p>
+<h2 id="处理问题规模可变性"><a href="#处理问题规模可变性" class="headerlink" title="处理问题规模可变性"></a>处理问题规模可变性</h2><p>人工智能计算集群的系统规模在节点数量，加速器数量，加速类型，内存大小等指标上存在差异。需要能适应各种规模的计算集群，因此，在AutoML调整问题规模来适应集群规模的变化。</p>
+<h2 id="实际的人工智能意义"><a href="#实际的人工智能意义" class="headerlink" title="实际的人工智能意义"></a>实际的人工智能意义</h2><p>相较于传统的高性能计算机基准测试程序需要具有人工智能的意义在其中，也是其能够检测集群人工智能算力的核心。AIPerf通过在ImageNet数据集上训练神经网络运行CV方面的算法。</p>
+<h2 id="必要的多机通信"><a href="#必要的多机通信" class="headerlink" title="必要的多机通信"></a>必要的多机通信</h2><p>在计算集群中任务分发，多级训练，结果收集等都是以多机通信为基础，是人工智能计算集群计算能力的重要组成。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>关于MLPerf Training Benchmark的设计理解</title>
     <url>/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/</url>
     <content><![CDATA[<p>Mchine Learning的发展需要有行业标准的性能基准测评。Machione Learning有三个基准挑战：</p>
@@ -1681,35 +1704,6 @@
 <h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>ML Comment 官网： <a href="https://mlcommons.org/en/">https://mlcommons.org/en/</a> </p>
 <p>论文链接：<a href="https://arxiv.org/pdf/1910.01500.pdf">https://arxiv.org/pdf/1910.01500.pdf</a></p>
 <p>其他：<a href="https://www.cnblogs.com/caiyishuai/p/14361955.html">https://www.cnblogs.com/caiyishuai/p/14361955.html</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>关于MLPerf和AIPerf的设计理解</title>
-    <url>/2021/11/11/%E5%85%B3%E4%BA%8EMLPerf%E5%92%8CAIPerf%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<p>MLPerf 是AI芯片的一个基准测试，主要包括：Training 和Inference两个方面的性能测试。Training是于测量系统将模型训练到目标质量指标的速度；Inference是用于测试系统使用训练有素的模型处理输入和产生结果的速度。</p>
-<p>AIPerf的评价指标是Tops（平均每秒处理的混合精度AI浮点操作数），可以用来做横向比较</p>
-<span id="more"></span>
-
-<h1 id="MLPerf"><a href="#MLPerf" class="headerlink" title="MLPerf"></a>MLPerf</h1><p>MLPerf 是AI芯片的一个基准测试，主要包括：Training 和Inference两个方面的性能测试。Training是于测量系统将模型训练到目标质量指标的速度；Inference是用于测试系统使用训练有素的模型处理输入和产生结果的速度。</p>
-<p>具体的详细信息可参见论文：MLPERF TRAINING BENCHMARK以及MLPERF INFERENCE BENCHMARK。</p>
-<p>该基准有两种测试形式：*<strong>Closed Division*</strong> 和 <em><strong>Open Division，</strong></em>其中封闭的测试是基于平台固定的测试模型进行测试；开放的测试是用户可以自定义需要测试的模型。</p>
-<p>当前的测试结果根据芯片当前的使用状态分为：Cloud;Available;Preview;Research, Development, and Other（category）。</p>
-<p><img src="/2021/11/11/%E5%85%B3%E4%BA%8EMLPerf%E5%92%8CAIPerf%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/8-benchmarks.png"></p>
-<h1 id="AIPerf"><a href="#AIPerf" class="headerlink" title="AIPerf"></a>AIPerf</h1><p>大规模人工智能计算系统的计算持续发展，需要一个有效评价计算机系统人工智能算力的评价指标；</p>
-<p>浮点计算峰值是指计算机每秒可以完成的浮点计算次数，包括理论浮点峰值和实测浮点峰值。理论浮点峰值是该计算机理论上每秒可以完成的浮点计算次数，主要由CPU的主频决定。</p>
-<p>理论浮点峰值＝CPU主频×CPU核数×CPU每周期执行浮点运算的次数。</p>
-<p>目前的实测方式如下：</p>
-<p>Linpack Benchmark: 广泛用于高性能计算机双精度浮点运算性能基准评测，但大部分人工智能训练任务以单精度浮点数或者16位浮点数为主</p>
-<p>HPL-AI: 通以Linpack为基础的改善的混合精度的基准测评</p>
-<p>Mobile AI Bench：</p>
-<p>DeepBench：</p>
-<p>AIIA DNN Benchmark:</p>
-<p>AIPerf Benchmark:</p>
-<p> 基于微软NNI（neural network intelligence)框架实现，以自动化机器学习AutoML为负载，进行网络结构搜索（网络态射network morphism ）和超参搜索（树状结构Parzen估计）寻找进度更高的网络结构和超参（batch size；最大epoch；lr；最大搜索模型个数，最长搜索总时间；最大并发搜索模型数量等）</p>
-<h1 id="设计目标"><a href="#设计目标" class="headerlink" title="设计目标"></a>设计目标</h1><h2 id="统一的评价指标Score"><a href="#统一的评价指标Score" class="headerlink" title="统一的评价指标Score"></a>统一的评价指标Score</h2><p>AIPerf的评价指标是Tops（平均每秒处理的混合精度AI浮点操作数），可以用来做横向比较</p>
-<h2 id="处理问题规模可变性"><a href="#处理问题规模可变性" class="headerlink" title="处理问题规模可变性"></a>处理问题规模可变性</h2><p>人工智能计算集群的系统规模在节点数量，加速器数量，加速类型，内存大小等指标上存在差异。需要能适应各种规模的计算集群，因此，在AutoML调整问题规模来适应集群规模的变化。</p>
-<h2 id="实际的人工智能意义"><a href="#实际的人工智能意义" class="headerlink" title="实际的人工智能意义"></a>实际的人工智能意义</h2><p>相较于传统的高性能计算机基准测试程序需要具有人工智能的意义在其中，也是其能够检测集群人工智能算力的核心。AIPerf通过在ImageNet数据集上训练神经网络运行CV方面的算法。</p>
-<h2 id="必要的多机通信"><a href="#必要的多机通信" class="headerlink" title="必要的多机通信"></a>必要的多机通信</h2><p>在计算集群中任务分发，多级训练，结果收集等都是以多机通信为基础，是人工智能计算集群计算能力的重要组成。</p>
 ]]></content>
   </entry>
   <entry>
@@ -1980,16 +1974,6 @@
       </categories>
   </entry>
   <entry>
-    <title></title>
-    <url>/2021/12/16/%E5%8D%8E%E4%B8%BA%E6%98%87%E8%85%BECANN%E6%95%99%E7%A8%8B-TBE%E7%AE%97%E5%AD%90%E5%BC%80%E5%8F%91/</url>
-    <content><![CDATA[<h1 id="华为昇腾CANN教程-TBE算子开发"><a href="#华为昇腾CANN教程-TBE算子开发" class="headerlink" title="华为昇腾CANN教程-TBE算子开发"></a>华为昇腾CANN教程-TBE算子开发</h1><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><p><strong>算子</strong>：一个函数空间到另一个函数空间的映射，可以说对任何函数进行某一项操作都可以将其认为是一个算子，在神经网络模型中涉及到的计算函数。例如：卷积层中的卷积算法，全连接中的权值求和算子，还有众多激活函数算子。</p>
-<p>每个算子有自己独有的名称，每个网络包含多种算子类型Type。比如神经网络中的卷积类型的算子有conv1，conv2… 池化类型的算子有pool1，pool2…</p>
-<p>TBE（Tensor Boost Engine）：是一款华为自研的NPU算子开发工具，以TVM为基础框架进行扩展。可以用python来开发的。</p>
-<p>NPU（Neural-network Processing Unit）：一类专用于人工智能（神经网络等方面）的硬件加速处理器。课程中使用昇腾910处理器</p>
-<p>TVM（Tensor Virtual Machine）： 能加载多种模型框架在多种平台上运行的中间框架</p>
-]]></content>
-  </entry>
-  <entry>
     <title>图像分割-Unet[项目应用]</title>
     <url>/2021/09/29/%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2-Unet/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -2010,6 +1994,16 @@
         <tag>论文复现</tag>
         <tag>项目总结</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/12/16/%E5%8D%8E%E4%B8%BA%E6%98%87%E8%85%BECANN%E6%95%99%E7%A8%8B-TBE%E7%AE%97%E5%AD%90%E5%BC%80%E5%8F%91/</url>
+    <content><![CDATA[<h1 id="华为昇腾CANN教程-TBE算子开发"><a href="#华为昇腾CANN教程-TBE算子开发" class="headerlink" title="华为昇腾CANN教程-TBE算子开发"></a>华为昇腾CANN教程-TBE算子开发</h1><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><p><strong>算子</strong>：一个函数空间到另一个函数空间的映射，可以说对任何函数进行某一项操作都可以将其认为是一个算子，在神经网络模型中涉及到的计算函数。例如：卷积层中的卷积算法，全连接中的权值求和算子，还有众多激活函数算子。</p>
+<p>每个算子有自己独有的名称，每个网络包含多种算子类型Type。比如神经网络中的卷积类型的算子有conv1，conv2… 池化类型的算子有pool1，pool2…</p>
+<p>TBE（Tensor Boost Engine）：是一款华为自研的NPU算子开发工具，以TVM为基础框架进行扩展。可以用python来开发的。</p>
+<p>NPU（Neural-network Processing Unit）：一类专用于人工智能（神经网络等方面）的硬件加速处理器。课程中使用昇腾910处理器</p>
+<p>TVM（Tensor Virtual Machine）： 能加载多种模型框架在多种平台上运行的中间框架</p>
+]]></content>
   </entry>
   <entry>
     <title>图像分类-EfficientNet&amp;EfficientDet[项目应用]</title>
@@ -2627,6 +2621,25 @@
       </tags>
   </entry>
   <entry>
+    <title>【未完成】机器学习-优化算法：牛顿法和拟牛顿法</title>
+    <url>/2021/10/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95%EF%BC%9A%E7%89%9B%E9%A1%BF%E6%B3%95%E5%92%8C%E6%8B%9F%E7%89%9B%E9%A1%BF%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>牛顿法（Newton method）和拟牛顿法（quasi Newton method）是求解无约束最优化问题的常用方法，有收敛速度快的优点。牛顿法是迭代算法，每一步都需求解目标函数的海塞矩阵（Hessian Matrix），计算比较复杂。拟牛顿法通过正定矩阵近似海塞矩阵的逆矩阵或海塞矩阵，简化了这一计算过程。</p>
+<p>方法：</p>
+<p>牛顿法：是使用函数F(x)的泰勒级数的前面几项来寻找方程F(x)=0的根。</p>
+<p>拟牛顿法：牛顿法虽然收敛速度快，但是需要计算海塞矩阵的逆矩阵 ，而且有时目标函数的海塞矩阵无法保持正定，从而使得牛顿法失效。为了克服这两个问题，人们提出了拟牛顿法。这个方法的基本思想是：不用二阶偏导数而构造出可以近似海塞矩阵（或海塞矩阵的逆)的正定对称阵。不同的构造方法就产生了不同的拟牛顿法。</p>
+<p>优点：</p>
+<p>缺点：</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习-决策树Decision Tree</title>
     <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%86%B3%E7%AD%96%E6%A0%91Decision-Tree/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：根据属性值做if … else …划分。问题在于先行选择哪个属性做划分是最优的？用什么标准来定量的去做这个选择？</p>
@@ -2671,44 +2684,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【未完成】机器学习-优化算法：牛顿法和拟牛顿法</title>
-    <url>/2021/10/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95%EF%BC%9A%E7%89%9B%E9%A1%BF%E6%B3%95%E5%92%8C%E6%8B%9F%E7%89%9B%E9%A1%BF%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>牛顿法（Newton method）和拟牛顿法（quasi Newton method）是求解无约束最优化问题的常用方法，有收敛速度快的优点。牛顿法是迭代算法，每一步都需求解目标函数的海塞矩阵（Hessian Matrix），计算比较复杂。拟牛顿法通过正定矩阵近似海塞矩阵的逆矩阵或海塞矩阵，简化了这一计算过程。</p>
-<p>方法：</p>
-<p>牛顿法：是使用函数F(x)的泰勒级数的前面几项来寻找方程F(x)=0的根。</p>
-<p>拟牛顿法：牛顿法虽然收敛速度快，但是需要计算海塞矩阵的逆矩阵 ，而且有时目标函数的海塞矩阵无法保持正定，从而使得牛顿法失效。为了克服这两个问题，人们提出了拟牛顿法。这个方法的基本思想是：不用二阶偏导数而构造出可以近似海塞矩阵（或海塞矩阵的逆)的正定对称阵。不同的构造方法就产生了不同的拟牛顿法。</p>
-<p>优点：</p>
-<p>缺点：</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>优化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习-奇异值分解SVD</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%A5%87%E5%BC%82%E5%80%BC%E5%88%86%E8%A7%A3SVD/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习-回归树Regression-Tree</title>
     <url>/2021/10/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%9B%9E%E5%BD%92%E6%A0%91Regression-Tree/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：决策树是解决分类问题的主要方法，分类是离散问题，但回归是连续问题，</p>
@@ -2720,6 +2695,25 @@
 <span id="more"></span>
 
 <p>参考：<a href="https://zhuanlan.zhihu.com/p/82054400">https://zhuanlan.zhihu.com/p/82054400</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习-奇异值分解SVD</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%A5%87%E5%BC%82%E5%80%BC%E5%88%86%E8%A7%A3SVD/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
 ]]></content>
       <categories>
         <category>学习</category>
@@ -3331,6 +3325,26 @@
       </tags>
   </entry>
   <entry>
+    <title>目标检测-R-CNN系列</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-R-CNN%E7%B3%BB%E5%88%97/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>目标检测-Retina-Net</title>
     <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-Retina-Net/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -3447,38 +3461,6 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-YOLOv4</title>
-    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv4/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-<p>YOLO V4使用 CIOU Loss作为bounding box的损失，与其他提到的方法相比，CIOU带来了更快的收敛和更好的性能。</p>
-<p>尽管YOLO V5目前仍然计逊一筹，但是YOLO V5仍然具有以下显著的优点：</p>
-<ul>
-<li>使用Pytorch框架，对用户非常友好，能够方便地训练自己的数据集，相对于YOLO V4采用的Darknet框架，Pytorch框架更容易投入生产</li>
-<li>代码易读，整合了大量的计算机视觉技术，非常有利于学习和借鉴</li>
-<li>不仅易于配置环境，模型训练也非常快速，并且批处理推理产生实时结果</li>
-<li>能够直接对单个图像，批处理图像，视频甚至网络摄像头端口输入进行有效推理</li>
-<li>能够轻松的将Pytorch权重文件转化为安卓使用的ONXX格式，然后可以转换为OPENCV的使用格式，或者通过CoreML转化为IOS格式，直接部署到手机应用端</li>
-<li>最后YOLO V5s高达140FPS的对象识别速度令人印象非常深刻，使用体验非常棒</li>
-</ul>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>YOLO</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>目标检测-YOLOv3</title>
     <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv3/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -3519,14 +3501,23 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-YOLOx</title>
-    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOx/</url>
-    <content><![CDATA[<ul>
-<li><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+    <title>目标检测-YOLOv4</title>
+    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv4/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
 <p>缺点：</p>
-<span id="more"></span></li>
+<span id="more"></span>
+
+<p>YOLO V4使用 CIOU Loss作为bounding box的损失，与其他提到的方法相比，CIOU带来了更快的收敛和更好的性能。</p>
+<p>尽管YOLO V5目前仍然计逊一筹，但是YOLO V5仍然具有以下显著的优点：</p>
+<ul>
+<li>使用Pytorch框架，对用户非常友好，能够方便地训练自己的数据集，相对于YOLO V4采用的Darknet框架，Pytorch框架更容易投入生产</li>
+<li>代码易读，整合了大量的计算机视觉技术，非常有利于学习和借鉴</li>
+<li>不仅易于配置环境，模型训练也非常快速，并且批处理推理产生实时结果</li>
+<li>能够直接对单个图像，批处理图像，视频甚至网络摄像头端口输入进行有效推理</li>
+<li>能够轻松的将Pytorch权重文件转化为安卓使用的ONXX格式，然后可以转换为OPENCV的使用格式，或者通过CoreML转化为IOS格式，直接部署到手机应用端</li>
+<li>最后YOLO V5s高达140FPS的对象识别速度令人印象非常深刻，使用体验非常棒</li>
 </ul>
 ]]></content>
       <categories>
@@ -3556,6 +3547,29 @@
 
 <p>YOLO V5使用 GIOU Loss作为bounding box的损失。</p>
 <p>YOLO V5使用二进制交叉熵和 Logits 损失函数计算类概率和目标得分的损失。同时我们也可以使用fl _ gamma参数来激活Focal loss计算损失函数。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>YOLO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>目标检测-YOLOx</title>
+    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOx/</url>
+    <content><![CDATA[<ul>
+<li><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span></li>
+</ul>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -3648,26 +3662,6 @@
         <tag>编程</tag>
         <tag>论文复现</tag>
         <tag>YOLO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>目标检测-R-CNN系列</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-R-CNN%E7%B3%BB%E5%88%97/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
       </tags>
   </entry>
   <entry>
