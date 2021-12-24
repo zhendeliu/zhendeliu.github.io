@@ -23,22 +23,22 @@
   <meta name="description" content="ElasticSearch概述    ES基本概念    ES运行过程    ES查询原理    ES特点和优势    ES支持场景">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ElasticSearch(1):基础概述">
-<meta property="og:url" content="http://example.com/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/index.html">
+<meta property="og:url" content="http://example.com/2021/12/06/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
 <meta property="og:description" content="ElasticSearch概述    ES基本概念    ES运行过程    ES查询原理    ES特点和优势    ES支持场景">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%A4%9A%E5%88%86%E7%89%87.jpg">
-<meta property="og:image" content="http://example.com/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E9%9B%86%E7%BE%A4%E7%A4%BA%E6%84%8F%E5%9B%BE.png">
-<meta property="og:image" content="http://example.com/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%88%B0%E6%8E%92%E5%BA%8F1.jpg">
-<meta property="og:image" content="http://example.com/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%88%B0%E6%8E%92%E5%BA%8F2.jpg">
-<meta property="article:published_time" content="2021-12-13T08:32:01.000Z">
-<meta property="article:modified_time" content="2021-12-17T09:47:23.000Z">
+<meta property="og:image" content="http://example.com/2021/12/06/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%A4%9A%E5%88%86%E7%89%87.jpg">
+<meta property="og:image" content="http://example.com/2021/12/06/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E9%9B%86%E7%BE%A4%E7%A4%BA%E6%84%8F%E5%9B%BE.png">
+<meta property="og:image" content="http://example.com/2021/12/06/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%88%B0%E6%8E%92%E5%BA%8F1.jpg">
+<meta property="og:image" content="http://example.com/2021/12/06/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%88%B0%E6%8E%92%E5%BA%8F2.jpg">
+<meta property="article:published_time" content="2021-12-06T05:32:01.000Z">
+<meta property="article:modified_time" content="2021-12-24T03:02:45.000Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="python 深度学习">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%A4%9A%E5%88%86%E7%89%87.jpg">
+<meta name="twitter:image" content="http://example.com/2021/12/06/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%A4%9A%E5%88%86%E7%89%87.jpg">
 
-<link rel="canonical" href="http://example.com/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/">
+<link rel="canonical" href="http://example.com/2021/12/06/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/">
 
 
 <script id="page-configurations">
@@ -127,7 +127,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">104</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">106</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -145,14 +145,14 @@
     <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="section"><i class="fas fa-laptop-code fa-fw"></i>深度学习</a>
 
   </li>
-        <li class="menu-item menu-item-pytorch">
+        <li class="menu-item menu-item-pytorch实践">
 
-    <a href="/categories/Pytorch/" rel="section"><i class="fa fa-code fa-fw"></i>PyTorch</a>
+    <a href="/categories/Pytorch/" rel="section"><i class="fa fa-code fa-fw"></i>PyTorch实践</a>
 
   </li>
-        <li class="menu-item menu-item-pyqt界面">
+        <li class="menu-item menu-item-pyqt界面开发">
 
-    <a href="/categories/PyQT6/" rel="section"><i class="fab fa-python fa-fw"></i>PyQT界面</a>
+    <a href="/categories/PyQT6/" rel="section"><i class="fab fa-python fa-fw"></i>PyQT界面开发</a>
 
   </li>
         <li class="menu-item menu-item-常用工具">
@@ -229,7 +229,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/06/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/android-chrome-512x512.png">
@@ -252,7 +252,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-12-13 16:32:01" itemprop="dateCreated datePublished" datetime="2021-12-13T16:32:01+08:00">2021-12-13</time>
+              <time title="创建时间：2021-12-06 13:32:01" itemprop="dateCreated datePublished" datetime="2021-12-06T13:32:01+08:00">2021-12-06</time>
             </span>
 
           
@@ -283,20 +283,20 @@
 <span id="more"></span>
 
 <h1 id="ElasticSearch概述"><a href="#ElasticSearch概述" class="headerlink" title="ElasticSearch概述"></a>ElasticSearch概述</h1><p>Elasticsearch（ES）是一个基于Lucene （<em>Lucene是apache下的一个开源的全文检索引擎工具包。提供一个简单易用的工具包（类库），方便的在目标系统中实现全文检索的功能。</em>）构建的开源、分布式、RESTful接口的全文搜索引擎。Elasticsearch还是一个分布式文档数据库，其中每个字段均可被索引，而且每个字段的数据均可被搜索，ES能够横向扩展至数以百计的服务器存储以及处理PB级的数据。可以在极短的时间内存储、搜索和分析大量的数据</p>
-<h1 id="ES基本概念"><a href="#ES基本概念" class="headerlink" title="ES基本概念"></a>ES基本概念</h1><p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%A4%9A%E5%88%86%E7%89%87.jpg"></p>
+<h1 id="ES基本概念"><a href="#ES基本概念" class="headerlink" title="ES基本概念"></a>ES基本概念</h1><p><img src="/2021/12/06/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%A4%9A%E5%88%86%E7%89%87.jpg"></p>
 <h2 id="Cluster集群"><a href="#Cluster集群" class="headerlink" title="Cluster集群"></a>Cluster集群</h2><p>ES可以作为一个独立的单个搜索服务器。同时，为了处理大型数据集，实现容错和高可用性，ES可以运行在许多互相合作的服务器上，这些服务器的集合称为集群。</p>
-<h2 id="Node节点"><a href="#Node节点" class="headerlink" title="Node节点"></a>Node节点</h2><p>形成集群的每个服务器称为节点。</p>
+<h2 id="Node节点"><a href="#Node节点" class="headerlink" title="Node节点"></a>Node节点</h2><p>一般认为形成集群的每个服务器称为节点。一台机器也可以运行多个节点</p>
 <h2 id="Index-索引"><a href="#Index-索引" class="headerlink" title="Index 索引"></a>Index 索引</h2><p>ES将数据存到索引之中，索引存放和读取的单元是Document文档。与关系型数据库中的数据库实列database是类似的。</p>
 <p>注：ElasticSearch 6.x 版本之前还有Type ，6.x 版本后就将其废弃，建议的是每个类型（业务）的数据单独放在一个索引中，这样其实回归到一般意义上的索引定义，索引定位文档。</p>
-<h2 id="Document文档"><a href="#Document文档" class="headerlink" title="Document文档##"></a>Document文档##</h2><p>在ES中Document文档是最基础的可被索引的数据单元，类似于一个JSON格式数据</p>
+<h2 id="Document文档"><a href="#Document文档" class="headerlink" title="Document文档"></a>Document文档</h2><p>在ES中Document文档是最基础的可被索引的数据单元，包含一条数据记录，类似于一个JSON格式数据</p>
 <h2 id="Shards分片"><a href="#Shards分片" class="headerlink" title="Shards分片"></a>Shards分片</h2><p><code>number_of_shards</code>值指定索引的分片数量，而不与整个集群有关。在一个搜索里存储的数据，潜在的情况下可能会超过单个节点的硬件的存储限制，因此，elasticsearch提供了分片的功能，它可以将索引划分为多个分片，当你创建一个索引的时候，你就可以简单的定义你想要的分片的数量，每一个分片本身是一个全功能的完全独立的索引，可以部署到集群中的任何一个节点。Elasticsearch自动管理这些分片的排列。它还会根据需要重新平衡分片，无需担心细节。</p>
 <p>分片好处：</p>
 <p>（1）允许水平切分索引，然后分布在多台机器上，提升效率，降低硬件存储限制</p>
 <p>（2）分片可以通过分布和并行操作来应对日益增长的执行量</p>
 <h2 id="Replicas副本"><a href="#Replicas副本" class="headerlink" title="Replicas副本"></a>Replicas副本</h2><p>副本是提供了一个故障恢复机制，ES允许制作一个或多个拷贝放入一个叫做复制分片中。他有两个重要作用</p>
-<p>（1）高可用。它提供了高可用的以来防止分片或者节点宕机，为此，一个非常重要的注意点就是绝对不要讲一个分片的拷贝放在跟这个分片相同的机器上。</p>
-<p>（2）高并发。它允许你的分片可以提供超出自身吞吐量的搜索服务，搜索行为可以在分片所有的拷贝中并行执行。</p>
-<p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E9%9B%86%E7%BE%A4%E7%A4%BA%E6%84%8F%E5%9B%BE.png"></p>
+<p>（1）高可用。它提供了高可用的以来防止分片或者节点宕机。</p>
+<p>（2）高并发。它允许分片提供超出自身吞吐量的搜索服务，搜索行为可以在分片所有的拷贝中并行执行。</p>
+<p><img src="/2021/12/06/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E9%9B%86%E7%BE%A4%E7%A4%BA%E6%84%8F%E5%9B%BE.png"></p>
 <h1 id="ES存储过程"><a href="#ES存储过程" class="headerlink" title="ES存储过程"></a>ES存储过程</h1><h2 id="写入过程"><a href="#写入过程" class="headerlink" title="写入过程"></a>写入过程</h2><ol>
 <li><p>客户端选择一个node发送请求过去，这个node就是coordinating node (协调节点)</p>
 </li>
@@ -319,11 +319,11 @@
 <p>更多底层查询过程：<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000015256970">https://segmentfault.com/a/1190000015256970</a></p>
 </li>
 </ol>
-<h2 id="故障恢复过程"><a href="#故障恢复过程" class="headerlink" title="故障恢复过程"></a>故障恢复过程</h2><p>ES客户端取数据的时候就会在replica或primary 的shard中去读。ES集群有多个节点，会自动选举一个节点为master节点，这个master节点其实就是干一些管理类的操作，比如维护元数据，负责切换primary shard 和replica shard的身份之类的，要是master节点宕机了，那么就会重新选举下一个节点为master为节点。如果时非master宕机了，那么就会有master节点，让那个宕机的节点上的primary shard的身份转移到replica shard上，如果修复了宕机的那台机器，重启之后，master节点就会控制将缺失的replica shard 分配过去，同步后续的修改工作，让集群恢复正常。</p>
+<h2 id="故障恢复过程"><a href="#故障恢复过程" class="headerlink" title="故障恢复过程"></a>故障恢复过程</h2><p>ES客户端取数据的时候就会在replica或primary 的shard中去读。ES集群有多个节点，会自动选举一个节点为master节点，这个master节点可以进行管理协调，比如维护元数据，负责切换primary shard 和replica shard的身份之类的，要是master节点宕机了，那么就会重新选举下一个节点为master为节点。如果非master节点宕机了，那么就会有master节点，让那个宕机的节点上的primary shard的身份转移到replica shard上，如果修复了宕机的那台机器，重启之后，master节点就会控制将缺失的replica shard 分配过去，同步后续的修改工作，让集群恢复正常。</p>
 <h1 id="ES查询原理"><a href="#ES查询原理" class="headerlink" title="ES查询原理"></a>ES查询原理</h1><h2 id="倒排序索引"><a href="#倒排序索引" class="headerlink" title="倒排序索引"></a>倒排序索引</h2><p>在ES搜索引擎中，每个文档都有一个对应的文档 ID，文档内容被表示为一系列关键词的集合。例如，文档 1 经过分词，提取了 20 个关键词，每个关键词都会记录它在文档中出现的次数和出现位置。也就是说，倒排索引就是关键词到文档 ID 的映射，每个关键词都对应着一系列的文件，这些文件中都出现了关键词。比如：有以下5个文档</p>
-<p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%88%B0%E6%8E%92%E5%BA%8F1.jpg"></p>
+<p><img src="/2021/12/06/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%88%B0%E6%8E%92%E5%BA%8F1.jpg"></p>
 <p>文档分词创建索引如下：</p>
-<p><img src="/2021/12/13/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%88%B0%E6%8E%92%E5%BA%8F2.jpg"></p>
+<p><img src="/2021/12/06/ElasticSearch-1-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E5%88%B0%E6%8E%92%E5%BA%8F2.jpg"></p>
 <p>倒排索引还可以记录更多的信息，比如文档频率信息，表示在文档集合中有多少个包含某个单词。</p>
 <p>根据倒排索引，搜索引擎可以很方便地响应用户的查询。比如用户输入查询 Facebook，搜索系统查找倒排索引，从中读出包含这个单词的文档，这些文档就是提供给用户的搜索结果。</p>
 <h1 id="ES特点和优势"><a href="#ES特点和优势" class="headerlink" title="ES特点和优势"></a>ES特点和优势</h1><p>1）分布式实时文件存储，可将每一个字段存入索引，使其可以被检索到。 </p>
@@ -365,8 +365,8 @@
       <i class="fa fa-chevron-left"></i> ElasticSearch学习记录
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" rel="next" title="ElasticSearch(2):安装部署">
-      ElasticSearch(2):安装部署 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/12/07/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" rel="next" title="ElasticSearch(2):安装与基本操作">
+      ElasticSearch(2):安装与基本操作 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -426,7 +426,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ElasticSearch%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">ElasticSearch概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">ES基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cluster%E9%9B%86%E7%BE%A4"><span class="nav-number">2.1.</span> <span class="nav-text">Cluster集群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node%E8%8A%82%E7%82%B9"><span class="nav-number">2.2.</span> <span class="nav-text">Node节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Index-%E7%B4%A2%E5%BC%95"><span class="nav-number">2.3.</span> <span class="nav-text">Index 索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Document%E6%96%87%E6%A1%A3"><span class="nav-number">2.4.</span> <span class="nav-text">Document文档##</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shards%E5%88%86%E7%89%87"><span class="nav-number">2.5.</span> <span class="nav-text">Shards分片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Replicas%E5%89%AF%E6%9C%AC"><span class="nav-number">2.6.</span> <span class="nav-text">Replicas副本</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">ES存储过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E5%85%A5%E8%BF%87%E7%A8%8B"><span class="nav-number">3.1.</span> <span class="nav-text">写入过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E8%BF%87%E7%A8%8B"><span class="nav-number">3.2.</span> <span class="nav-text">查询过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%85%E9%9A%9C%E6%81%A2%E5%A4%8D%E8%BF%87%E7%A8%8B"><span class="nav-number">3.3.</span> <span class="nav-text">故障恢复过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E6%9F%A5%E8%AF%A2%E5%8E%9F%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">ES查询原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%92%E6%8E%92%E5%BA%8F%E7%B4%A2%E5%BC%95"><span class="nav-number">4.1.</span> <span class="nav-text">倒排序索引</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E7%89%B9%E7%82%B9%E5%92%8C%E4%BC%98%E5%8A%BF"><span class="nav-number">5.</span> <span class="nav-text">ES特点和优势</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E6%94%AF%E6%8C%81%E5%9C%BA%E6%99%AF"><span class="nav-number">6.</span> <span class="nav-text">ES支持场景</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ElasticSearch%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">ElasticSearch概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">ES基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cluster%E9%9B%86%E7%BE%A4"><span class="nav-number">2.1.</span> <span class="nav-text">Cluster集群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node%E8%8A%82%E7%82%B9"><span class="nav-number">2.2.</span> <span class="nav-text">Node节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Index-%E7%B4%A2%E5%BC%95"><span class="nav-number">2.3.</span> <span class="nav-text">Index 索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Document%E6%96%87%E6%A1%A3"><span class="nav-number">2.4.</span> <span class="nav-text">Document文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shards%E5%88%86%E7%89%87"><span class="nav-number">2.5.</span> <span class="nav-text">Shards分片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Replicas%E5%89%AF%E6%9C%AC"><span class="nav-number">2.6.</span> <span class="nav-text">Replicas副本</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">ES存储过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E5%85%A5%E8%BF%87%E7%A8%8B"><span class="nav-number">3.1.</span> <span class="nav-text">写入过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E8%BF%87%E7%A8%8B"><span class="nav-number">3.2.</span> <span class="nav-text">查询过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%85%E9%9A%9C%E6%81%A2%E5%A4%8D%E8%BF%87%E7%A8%8B"><span class="nav-number">3.3.</span> <span class="nav-text">故障恢复过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E6%9F%A5%E8%AF%A2%E5%8E%9F%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">ES查询原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%92%E6%8E%92%E5%BA%8F%E7%B4%A2%E5%BC%95"><span class="nav-number">4.1.</span> <span class="nav-text">倒排序索引</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E7%89%B9%E7%82%B9%E5%92%8C%E4%BC%98%E5%8A%BF"><span class="nav-number">5.</span> <span class="nav-text">ES特点和优势</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E6%94%AF%E6%8C%81%E5%9C%BA%E6%99%AF"><span class="nav-number">6.</span> <span class="nav-text">ES支持场景</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -442,7 +442,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">104</span>
+          <span class="site-state-item-count">106</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

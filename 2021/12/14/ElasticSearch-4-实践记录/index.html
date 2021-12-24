@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="问题场景描述    ES实践过程    ES优化记录    ES实践结果    Conclusion">
+  <meta name="description" content="业务场景描述    ES实践过程    ES优化记录    ES实践结果    Conclusion">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ElasticSearch(3):实践记录">
-<meta property="og:url" content="http://example.com/2021/12/13/ElasticSearch-3-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:title" content="ElasticSearch(4):实践记录">
+<meta property="og:url" content="http://example.com/2021/12/14/ElasticSearch-4-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="问题场景描述    ES实践过程    ES优化记录    ES实践结果    Conclusion">
+<meta property="og:description" content="业务场景描述    ES实践过程    ES优化记录    ES实践结果    Conclusion">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-12-13T08:34:34.000Z">
-<meta property="article:modified_time" content="2021-12-17T10:02:10.000Z">
+<meta property="article:published_time" content="2021-12-14T08:34:34.000Z">
+<meta property="article:modified_time" content="2021-12-24T03:03:22.000Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="python 深度学习">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/12/13/ElasticSearch-3-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/">
+<link rel="canonical" href="http://example.com/2021/12/14/ElasticSearch-4-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>ElasticSearch(3):实践记录 | Leo的三板斧</title>
+  <title>ElasticSearch(4):实践记录 | Leo的三板斧</title>
   
 
 
@@ -122,7 +122,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">104</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">106</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -140,14 +140,14 @@
     <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="section"><i class="fas fa-laptop-code fa-fw"></i>深度学习</a>
 
   </li>
-        <li class="menu-item menu-item-pytorch">
+        <li class="menu-item menu-item-pytorch实践">
 
-    <a href="/categories/Pytorch/" rel="section"><i class="fa fa-code fa-fw"></i>PyTorch</a>
+    <a href="/categories/Pytorch/" rel="section"><i class="fa fa-code fa-fw"></i>PyTorch实践</a>
 
   </li>
-        <li class="menu-item menu-item-pyqt界面">
+        <li class="menu-item menu-item-pyqt界面开发">
 
-    <a href="/categories/PyQT6/" rel="section"><i class="fab fa-python fa-fw"></i>PyQT界面</a>
+    <a href="/categories/PyQT6/" rel="section"><i class="fab fa-python fa-fw"></i>PyQT界面开发</a>
 
   </li>
         <li class="menu-item menu-item-常用工具">
@@ -224,7 +224,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/13/ElasticSearch-3-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/14/ElasticSearch-4-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/android-chrome-512x512.png">
@@ -237,7 +237,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          ElasticSearch(3):实践记录
+          ElasticSearch(4):实践记录
         </h1>
 
         <div class="post-meta">
@@ -247,7 +247,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-12-13 16:34:34" itemprop="dateCreated datePublished" datetime="2021-12-13T16:34:34+08:00">2021-12-13</time>
+              <time title="创建时间：2021-12-14 16:34:34" itemprop="dateCreated datePublished" datetime="2021-12-14T16:34:34+08:00">2021-12-14</time>
             </span>
 
           
@@ -262,7 +262,7 @@
 
       
         <ul>
-<li><p><input checked disabled type="checkbox">  问题场景描述</p>
+<li><p><input checked disabled type="checkbox">  业务场景描述</p>
 </li>
 <li><p><input checked disabled type="checkbox">  ES实践过程</p>
 </li>
@@ -275,7 +275,7 @@
 </ul>
 <span id="more"></span>
 
-<h1 id="问题场景描述"><a href="#问题场景描述" class="headerlink" title="问题场景描述"></a>问题场景描述</h1><p>已知数据是从原始文本集提取的特征数据表。数据表根据类别做了分类，每个类别下有多张数据表，这些表格以 class01-1、class01-2 。。。class05-58命名，保存在mysql数据库中，单张表的数据量有一千万到一亿条记录不等，每条记录包含50个字段。所有字段均为整数数值。</p>
+<h1 id="业务场景描述"><a href="#业务场景描述" class="headerlink" title="业务场景描述"></a>业务场景描述</h1><p>已知数据是从原始文本集提取的特征数据表。数据表根据类别做了分类，每个类别下有多张数据表，这些表格以 class01-1、class01-2 。。。class05-58命名，保存在mysql数据库中，单张表的数据量有一千万到一亿条记录不等，每条记录包含50个字段。所有字段均为整数数值。</p>
 <h1 id="ES实践过程"><a href="#ES实践过程" class="headerlink" title="ES实践过程"></a>ES实践过程</h1><h2 id="index创建"><a href="#index创建" class="headerlink" title="index创建"></a>index创建</h2><p>在我们业务场景下不需要做全文检索的分词等，直接创建非结构化index即可，另外需要确定的是索引对应的分片数量。主分片数量在index创建之后是无法更改的，因此需要权衡的是shards的数量，索引的分片数不是越多越好，也不是越少越好</p>
 <ol>
 <li><strong>分片数至少是一个可被数据节点整除的数字</strong></li>
@@ -540,6 +540,36 @@
 </tbody></table>
 <h3 id="生产场景测试"><a href="#生产场景测试" class="headerlink" title="生产场景测试"></a>生产场景测试</h3><p>暂无</p>
 <h3 id="分布式集群测试"><a href="#分布式集群测试" class="headerlink" title="分布式集群测试"></a>分布式集群测试</h3><p>暂无</p>
+<p>第三条SQL：在java_1索引  无去重 无缓存 中运行 297.04 秒  返回94581~条数据 </p>
+<p>第三条SQL：在java_1索引  无去重 无缓存 中运行 24.41 秒   返回94581~条数据 </p>
+<p>第三条SQL：在java_1、2索引 无去重 无缓存 中运行342.77 秒 213781条数据 </p>
+<p>第三条SQL：在java_1、2索引 无去重 有缓存 中运行62.58 秒 213781条数据 </p>
+<p>第三条SQL 在java1-8 索引中 无去重 有缓存 中运行1294.75 秒 返回606655条数据</p>
+<h1 id="数字查询"><a href="#数字查询" class="headerlink" title="数字查询"></a>数字查询</h1><p>ES怎么处理数字索引 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/137576216">https://zhuanlan.zhihu.com/p/137576216</a></p>
+<h1 id="Query流程"><a href="#Query流程" class="headerlink" title="Query流程"></a>Query流程</h1><ol>
+<li><p><strong>根据Rfhash，Pfhash，Tfhash从file_info_java和file_version_info_java查询一些字段和拼接的多个VersionPrimary和VersionSecond （需要Rfhash，Pfhash，Tfhash）</strong></p>
+<p>ES实现：</p>
+<p>Reference：ES来做关系查询总结：<a target="_blank" rel="noopener" href="https://www.slideshare.net/sirensolutions/searching-relational-data-with-elasticsearch%EF%BC%8C">https://www.slideshare.net/sirensolutions/searching-relational-data-with-elasticsearch，</a> <a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000004468130">https://segmentfault.com/a/1190000004468130</a></p>
+<p><strong>方法一：</strong>用python来做join：</p>
+<p>第一步：通过Rfhash，Pfhash，Tfhash从file_info_java查询到id，</p>
+<p>第二部：查询file_version_info_java通过id=fid,查询得到VersionPrimary和VersionSecond 完成拼接</p>
+<p>第三步：完成满足条件的id对应的所有字段</p>
+</li>
+<li><p><strong>分布根据Rfhash，Pfhash，Tfhash遍历所有block_info_java</strong></p>
+</li>
+</ol>
+<ol>
+<li><strong>条件触发对所有block_info_java 做范围查询 (需要范围值)</strong></li>
+</ol>
+<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><p>问题1： 返回数据量过大导致的速度慢：</p>
+<p>方法： 加大max_size:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -XPUT &quot;http://localhost:9200/_all/_settings&quot; -H &#x27;Content-Type: application/json&#x27; -d &#x27;&#123; &quot;index&quot; : &#123; &quot;max_result_window&quot; : 500000 &#125; &#125;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>问题2：terms数量限制问题 限制小于</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;failed to create query: The number of terms [100000] used in the Terms Query request has exceeded the allowed maximum of [65536]. This maximum can be set by changing the [index.max_terms_count] index level setting.&#x27;)</span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>Reference：</p>
 <ol>
 <li>如何在 Elasticsearch 中为每个索引选择正确的分片数 <a target="_blank" rel="noopener" href="https://opster.com/guides/elasticsearch/data-structuring/elasticsearch-choose-number-of-shards/">https://opster.com/guides/elasticsearch/data-structuring/elasticsearch-choose-number-of-shards/</a></li>
@@ -559,12 +589,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/12/13/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" rel="prev" title="ElasticSearch(2):安装部署">
-      <i class="fa fa-chevron-left"></i> ElasticSearch(2):安装部署
+    <a href="/2021/12/13/ElasticSearch-3-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/" rel="prev" title="ElasticSearch(3):logstash从MySQL数据库导入数据">
+      <i class="fa fa-chevron-left"></i> ElasticSearch(3):logstash从MySQL数据库导入数据
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/12/14/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/" rel="next" title="ElasticSearch(4):logstash从MySQL数据库导入数据">
-      ElasticSearch(4):logstash从MySQL数据库导入数据 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/12/16/%E5%8D%8E%E4%B8%BA%E6%98%87%E8%85%BECANN%E6%95%99%E7%A8%8B-TBE%E7%AE%97%E5%AD%90%E5%BC%80%E5%8F%91/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -624,7 +654,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%9C%BA%E6%99%AF%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">问题场景描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E5%AE%9E%E8%B7%B5%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">ES实践过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#index%E5%88%9B%E5%BB%BA"><span class="nav-number">2.1.</span> <span class="nav-text">index创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#index%E6%9F%A5%E8%AF%A2"><span class="nav-number">2.2.</span> <span class="nav-text">index查询</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E4%BC%98%E5%8C%96%E8%AE%B0%E5%BD%95"><span class="nav-number">3.</span> <span class="nav-text">ES优化记录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E5%AE%9E%E8%B7%B5%E7%BB%93%E6%9E%9C"><span class="nav-number">4.</span> <span class="nav-text">ES实践结果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lenovo-X1-intel-i7-16G-%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C"><span class="nav-number">4.0.1.</span> <span class="nav-text">Lenovo X1 (intel-i7 16G ) 查询结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E6%9C%BA%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%EF%BC%9A-%EF%BC%88%E9%80%9A%E8%BF%87python%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0%E8%BF%9B%E8%A1%8C%E8%AF%84%E4%BC%B0%EF%BC%89"><span class="nav-number">4.0.2.</span> <span class="nav-text">物理机查询结果： （通过python脚本实现进行评估）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91%E6%B5%8B%E8%AF%95%E4%BA%8C"><span class="nav-number">4.0.3.</span> <span class="nav-text">多线程并发测试二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91%E6%B5%8B%E8%AF%95%E4%BA%8C-1"><span class="nav-number">4.0.4.</span> <span class="nav-text">多线程并发测试二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E5%9C%BA%E6%99%AF%E6%B5%8B%E8%AF%95"><span class="nav-number">4.0.5.</span> <span class="nav-text">生产场景测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E9%9B%86%E7%BE%A4%E6%B5%8B%E8%AF%95"><span class="nav-number">4.0.6.</span> <span class="nav-text">分布式集群测试</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusion"><span class="nav-number">5.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%9A%E5%8A%A1%E5%9C%BA%E6%99%AF%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">业务场景描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E5%AE%9E%E8%B7%B5%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">ES实践过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#index%E5%88%9B%E5%BB%BA"><span class="nav-number">2.1.</span> <span class="nav-text">index创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#index%E6%9F%A5%E8%AF%A2"><span class="nav-number">2.2.</span> <span class="nav-text">index查询</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E4%BC%98%E5%8C%96%E8%AE%B0%E5%BD%95"><span class="nav-number">3.</span> <span class="nav-text">ES优化记录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E5%AE%9E%E8%B7%B5%E7%BB%93%E6%9E%9C"><span class="nav-number">4.</span> <span class="nav-text">ES实践结果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lenovo-X1-intel-i7-16G-%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C"><span class="nav-number">4.0.1.</span> <span class="nav-text">Lenovo X1 (intel-i7 16G ) 查询结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E6%9C%BA%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%EF%BC%9A-%EF%BC%88%E9%80%9A%E8%BF%87python%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0%E8%BF%9B%E8%A1%8C%E8%AF%84%E4%BC%B0%EF%BC%89"><span class="nav-number">4.0.2.</span> <span class="nav-text">物理机查询结果： （通过python脚本实现进行评估）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91%E6%B5%8B%E8%AF%95%E4%BA%8C"><span class="nav-number">4.0.3.</span> <span class="nav-text">多线程并发测试二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91%E6%B5%8B%E8%AF%95%E4%BA%8C-1"><span class="nav-number">4.0.4.</span> <span class="nav-text">多线程并发测试二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E5%9C%BA%E6%99%AF%E6%B5%8B%E8%AF%95"><span class="nav-number">4.0.5.</span> <span class="nav-text">生产场景测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E9%9B%86%E7%BE%A4%E6%B5%8B%E8%AF%95"><span class="nav-number">4.0.6.</span> <span class="nav-text">分布式集群测试</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E6%9F%A5%E8%AF%A2"><span class="nav-number">5.</span> <span class="nav-text">数字查询</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Query%E6%B5%81%E7%A8%8B"><span class="nav-number">6.</span> <span class="nav-text">Query流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%98%E5%8C%96"><span class="nav-number">7.</span> <span class="nav-text">优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusion"><span class="nav-number">8.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -640,7 +670,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">104</span>
+          <span class="site-state-item-count">106</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

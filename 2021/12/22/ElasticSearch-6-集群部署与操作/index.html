@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="8888">
+  <meta name="description" content="毕业于UNSW(QS-43)人工智能专业，好奇心重，擅长动手">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ElasticSearch(5):可视化管理Kibana">
-<meta property="og:url" content="http://example.com/2021/12/15/ElasticSearch-5-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/index.html">
+<meta property="og:title" content="ElasticSearch(6):集群部署与操作">
+<meta property="og:url" content="http://example.com/2021/12/22/ElasticSearch-6-%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2%E4%B8%8E%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="8888">
+<meta property="og:description" content="毕业于UNSW(QS-43)人工智能专业，好奇心重，擅长动手">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-12-15T08:49:53.000Z">
-<meta property="article:modified_time" content="2021-12-18T14:18:18.254Z">
+<meta property="article:published_time" content="2021-12-22T02:50:36.000Z">
+<meta property="article:modified_time" content="2021-12-24T03:04:05.000Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="python 深度学习">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/12/15/ElasticSearch-5-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/">
+<link rel="canonical" href="http://example.com/2021/12/22/ElasticSearch-6-%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2%E4%B8%8E%E6%93%8D%E4%BD%9C/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>ElasticSearch(5):可视化管理Kibana | Leo的三板斧</title>
+  <title>ElasticSearch(6):集群部署与操作 | Leo的三板斧</title>
   
 
 
@@ -122,7 +122,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">104</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">106</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -140,14 +140,14 @@
     <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="section"><i class="fas fa-laptop-code fa-fw"></i>深度学习</a>
 
   </li>
-        <li class="menu-item menu-item-pytorch">
+        <li class="menu-item menu-item-pytorch实践">
 
-    <a href="/categories/Pytorch/" rel="section"><i class="fa fa-code fa-fw"></i>PyTorch</a>
+    <a href="/categories/Pytorch/" rel="section"><i class="fa fa-code fa-fw"></i>PyTorch实践</a>
 
   </li>
-        <li class="menu-item menu-item-pyqt界面">
+        <li class="menu-item menu-item-pyqt界面开发">
 
-    <a href="/categories/PyQT6/" rel="section"><i class="fab fa-python fa-fw"></i>PyQT界面</a>
+    <a href="/categories/PyQT6/" rel="section"><i class="fab fa-python fa-fw"></i>PyQT界面开发</a>
 
   </li>
         <li class="menu-item menu-item-常用工具">
@@ -224,7 +224,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/15/ElasticSearch-5-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/22/ElasticSearch-6-%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2%E4%B8%8E%E6%93%8D%E4%BD%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/android-chrome-512x512.png">
@@ -237,7 +237,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          ElasticSearch(5):可视化管理Kibana
+          ElasticSearch(6):集群部署与操作
         </h1>
 
         <div class="post-meta">
@@ -247,7 +247,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-12-15 16:49:53" itemprop="dateCreated datePublished" datetime="2021-12-15T16:49:53+08:00">2021-12-15</time>
+              <time title="创建时间：2021-12-22 10:50:36" itemprop="dateCreated datePublished" datetime="2021-12-22T10:50:36+08:00">2021-12-22</time>
             </span>
 
           
@@ -261,21 +261,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>8888</p>
-<span id="more"></span>
-
-
-
-<h2 id="安装es可视化工具-kibana"><a href="#安装es可视化工具-kibana" class="headerlink" title="安装es可视化工具  kibana"></a>安装es可视化工具  kibana</h2><p>访问： <a href="http://localhost:`5601`/">http://localhost:`5601`/</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Soinice/article/details/87861121">(21条消息) Kibana（安装篇）：Windows下安装和运行Kibana_Soinice的博客-CSDN博客_kibana windows启动</a></p>
-<h1 id="ES数据导入"><a href="#ES数据导入" class="headerlink" title="ES数据导入"></a>ES数据导入</h1><h2 id="从MySQL数据导入es："><a href="#从MySQL数据导入es：" class="headerlink" title="从MySQL数据导入es："></a>从MySQL数据导入es：</h2><p>logstash安装操作：   [elk收集windows日志 - 今夕何兮 - 博客园 (cnblogs.com)](<a target="_blank" rel="noopener" href="https://www.cnblogs.com/f66666/p/10273435.html#:~:text=%E4%B8%80%E3%80%81windows%E5%AE%89%E8%A3%85logstash">https://www.cnblogs.com/f66666/p/10273435.html#:~:text=一、windows安装logstash</a>. 1. 安装过程. logstash安装需要java环境支持，需先安装jkd1.8。. 官网下载logstash安装包，下载地址：https%3A%2F%2F<a href="http://www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。">www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。</a>. 在bin目录下运行命令：logstash -e “input,{ } } output { stdout {}}”. 然后你会发现终端在等待你的输入。.)</p>
-<h1 id="ES操作方式"><a href="#ES操作方式" class="headerlink" title="ES操作方式"></a>ES操作方式</h1><h1 id="过程监控"><a href="#过程监控" class="headerlink" title="过程监控"></a>过程监控</h1><p>开启</p>
-<h1 id><a href="#" class="headerlink" title></a></h1><p>查看每个index的存储情况：</p>
-<p><code>curl -X GET localhost:9200/_cat/indices?v</code></p>
-<p>查看每个shard的存储情况：</p>
-<p><code>curl -X GET localhost:9200/_cat/shards?v</code></p>
-<p>OK! 终于完成了ELK套件，可以深入的内容还有很多</p>
-
+        
     </div>
 
     
@@ -290,13 +276,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/12/14/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/" rel="prev" title="ElasticSearch(4):logstash从MySQL数据库导入数据">
-      <i class="fa fa-chevron-left"></i> ElasticSearch(4):logstash从MySQL数据库导入数据
+    <a href="/2021/12/17/ElasticSearch-5-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/" rel="prev" title="ElasticSearch(5):可视化管理Kibana">
+      <i class="fa fa-chevron-left"></i> ElasticSearch(5):可视化管理Kibana
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/12/16/%E5%8D%8E%E4%B8%BA%E6%98%87%E8%85%BECANN%E6%95%99%E7%A8%8B-TBE%E7%AE%97%E5%AD%90%E5%BC%80%E5%8F%91/" rel="next" title="">
-       <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -355,7 +338,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85es%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-kibana"><span class="nav-number">1.</span> <span class="nav-text">安装es可视化工具  kibana</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5"><span class="nav-number"></span> <span class="nav-text">ES数据导入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5es%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">从MySQL数据导入es：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E6%93%8D%E4%BD%9C%E6%96%B9%E5%BC%8F"><span class="nav-number"></span> <span class="nav-text">ES操作方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B%E7%9B%91%E6%8E%A7"><span class="nav-number"></span> <span class="nav-text">过程监控</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number"></span> <span class="nav-text"></span></a></div>
       </div>
       <!--/noindex-->
 
@@ -371,7 +353,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">104</span>
+          <span class="site-state-item-count">106</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

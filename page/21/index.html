@@ -120,7 +120,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">104</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">106</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -138,14 +138,14 @@
     <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="section"><i class="fas fa-laptop-code fa-fw"></i>深度学习</a>
 
   </li>
-        <li class="menu-item menu-item-pytorch">
+        <li class="menu-item menu-item-pytorch实践">
 
-    <a href="/categories/Pytorch/" rel="section"><i class="fa fa-code fa-fw"></i>PyTorch</a>
+    <a href="/categories/Pytorch/" rel="section"><i class="fa fa-code fa-fw"></i>PyTorch实践</a>
 
   </li>
-        <li class="menu-item menu-item-pyqt界面">
+        <li class="menu-item menu-item-pyqt界面开发">
 
-    <a href="/categories/PyQT6/" rel="section"><i class="fab fa-python fa-fw"></i>PyQT界面</a>
+    <a href="/categories/PyQT6/" rel="section"><i class="fab fa-python fa-fw"></i>PyQT界面开发</a>
 
   </li>
         <li class="menu-item menu-item-常用工具">
@@ -217,6 +217,174 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/android-chrome-512x512.png">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="毕业于UNSW(QS-43)人工智能专业，好奇心重，擅长动手">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo的三板斧">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/" class="post-title-link" itemprop="url">图像处理基础-滤波器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-29 18:21:45" itemprop="dateCreated datePublished" datetime="2021-09-29T18:21:45+08:00">2021-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/cv%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">cv算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>在图像处理中，经常需要对图像进行平滑去噪、锐化、边界增强等，这些功能可以通过滤波器filter来实现。</p>
+<p>噪音的分类及如何添加</p>
+<p>椒盐噪声：是一种随机出现的白点(salt)或者黑点(peppe)</p>
+<p>高斯噪声：概率密度函数服从高斯分布（即正态分布）的一类噪声</p>
+<p>常用滤波算法：</p>
+<p>均值滤波器：把邻域内的平均值赋给中心元素。邻域内的像素权重是相等的；但不能保护细节，不能消除椒盐噪声</p>
+<p>高斯滤波器：邻域内各个像素值不同权重的和，将中心点的权重增大，远离中心的的权重减小</p>
+<p>中值滤波器：不使用权重，邻域内所有像素值的中间值来代替当前像素点的像素值</p>
+<p>双边滤波器：同时考虑距离信息（距离越远，权重越小)和色彩信息（色彩差别越大，权重越小）</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80-%E6%BB%A4%E6%B3%A2%E5%99%A8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/android-chrome-512x512.png">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="毕业于UNSW(QS-43)人工智能专业，好奇心重，擅长动手">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo的三板斧">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/" class="post-title-link" itemprop="url">OpenCV图像处理基础（一）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-29 18:13:56" itemprop="dateCreated datePublished" datetime="2021-09-29T18:13:56+08:00">2021-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/cv%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">cv算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>数字图像基础</p>
+<p>读、写、显示（图片、视频）</p>
+<p>缩放、补边、裁剪</p>
+<p>绘制形状</p>
+<p>书写文字</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -434,100 +602,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/16/%E6%88%91%E7%9A%84%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA%E6%96%B9%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/android-chrome-512x512.png">
-      <meta itemprop="name" content="Leo">
-      <meta itemprop="description" content="毕业于UNSW(QS-43)人工智能专业，好奇心重，擅长动手">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leo的三板斧">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/16/%E6%88%91%E7%9A%84%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">我的知识体系构建方法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-09-16 13:13:19" itemprop="dateCreated datePublished" datetime="2021-09-16T13:13:19+08:00">2021-09-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/other/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="医学"><a href="#医学" class="headerlink" title="医学"></a>医学</h1><p>​    医学图像<br>​    医学数据集</p>
-<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><ul>
-<li>深度学习<ul>
-<li>图像分割</li>
-<li>图像分类</li>
-<li>图像识别 </li>
-<li>目标检测</li>
-<li></li>
-</ul>
-</li>
-<li>机器学习</li>
-<li>强化学习</li>
-<li>联邦学习</li>
-</ul>
-<h1 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h1><ul>
-<li>python技能</li>
-<li>CUDA编程</li>
-</ul>
-<h1 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h1><ul>
-<li>Kaggle</li>
-<li>天池</li>
-</ul>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>标签</p>
-<p>CV算法 GPU Kaggle NMS OpenCV WBF YOLO kaggle torch 优化 候选框 医学图像 噪音 基础操作 总结 技巧 梯度 概览 概述 汇总 源码阅读 滤波器 灰度图 目标检测 算法 编程 论文 论文复现 调参 面试  轻量化模型</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/20/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span>
+    <a class="extend prev" rel="prev" href="/page/20/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/22/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -595,7 +673,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">104</span>
+          <span class="site-state-item-count">106</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
