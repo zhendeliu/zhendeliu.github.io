@@ -263,14 +263,11 @@
       
         <p>8888</p>
 <span id="more"></span>
-
-
-
 <h2 id="安装es可视化工具-kibana"><a href="#安装es可视化工具-kibana" class="headerlink" title="安装es可视化工具  kibana"></a>安装es可视化工具  kibana</h2><p>访问： <a href="http://localhost:`5601`/">http://localhost:`5601`/</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Soinice/article/details/87861121">(21条消息) Kibana（安装篇）：Windows下安装和运行Kibana_Soinice的博客-CSDN博客_kibana windows启动</a></p>
-<h1 id="ES数据导入"><a href="#ES数据导入" class="headerlink" title="ES数据导入"></a>ES数据导入</h1><h2 id="从MySQL数据导入es："><a href="#从MySQL数据导入es：" class="headerlink" title="从MySQL数据导入es："></a>从MySQL数据导入es：</h2><p>logstash安装操作：   [elk收集windows日志 - 今夕何兮 - 博客园 (cnblogs.com)](<a target="_blank" rel="noopener" href="https://www.cnblogs.com/f66666/p/10273435.html#:~:text=%E4%B8%80%E3%80%81windows%E5%AE%89%E8%A3%85logstash">https://www.cnblogs.com/f66666/p/10273435.html#:~:text=一、windows安装logstash</a>. 1. 安装过程. logstash安装需要java环境支持，需先安装jkd1.8。. 官网下载logstash安装包，下载地址：https%3A%2F%2F<a href="http://www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。">www.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。</a>. 在bin目录下运行命令：logstash -e “input,{ } } output { stdout {}}”. 然后你会发现终端在等待你的输入。.)</p>
+<h1 id="ES数据导入"><a href="#ES数据导入" class="headerlink" title="ES数据导入"></a>ES数据导入</h1><h2 id="从MySQL数据导入es："><a href="#从MySQL数据导入es：" class="headerlink" title="从MySQL数据导入es："></a>从MySQL数据导入es：</h2><p>logstash安装操作：   <a target="_blank" rel="noopener" href="https://www.cnblogs.com/f66666/p/10273435.html#:~:text=一、windows安装logstash. 1. 安装过程. logstash安装需要java环境支持，需先安装jkd1.8。. 官网下载logstash安装包，下载地址：https%3A%2F%2Fwww.elastic.co%2Fcn%2Fdownloads%2Flogstash，下载zip文件logstash-6.5.4.zip%2C解压到某个目录下。. 在bin目录下运行命令：logstash -e &quot;input,{ } } output { stdout {}}&quot;. 然后你会发现终端在等待你的输入。.">elk收集windows日志 - 今夕何兮 - 博客园 (cnblogs.com)</a></p>
 <h1 id="ES操作方式"><a href="#ES操作方式" class="headerlink" title="ES操作方式"></a>ES操作方式</h1><h1 id="过程监控"><a href="#过程监控" class="headerlink" title="过程监控"></a>过程监控</h1><p>开启</p>
-<h1 id><a href="#" class="headerlink" title></a></h1><p>查看每个index的存储情况：</p>
+<h1 id><a href="#" class="headerlink" title=" "></a> </h1><p>查看每个index的存储情况：</p>
 <p><code>curl -X GET localhost:9200/_cat/indices?v</code></p>
 <p>查看每个shard的存储情况：</p>
 <p><code>curl -X GET localhost:9200/_cat/shards?v</code></p>
@@ -355,7 +352,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85es%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-kibana"><span class="nav-number">1.</span> <span class="nav-text">安装es可视化工具  kibana</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5"><span class="nav-number"></span> <span class="nav-text">ES数据导入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5es%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">从MySQL数据导入es：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E6%93%8D%E4%BD%9C%E6%96%B9%E5%BC%8F"><span class="nav-number"></span> <span class="nav-text">ES操作方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B%E7%9B%91%E6%8E%A7"><span class="nav-number"></span> <span class="nav-text">过程监控</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number"></span> <span class="nav-text"></span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85es%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-kibana"><span class="nav-number">1.</span> <span class="nav-text">安装es可视化工具  kibana</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5"><span class="nav-number"></span> <span class="nav-text">ES数据导入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5es%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">从MySQL数据导入es：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E6%93%8D%E4%BD%9C%E6%96%B9%E5%BC%8F"><span class="nav-number"></span> <span class="nav-text">ES操作方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B%E7%9B%91%E6%8E%A7"><span class="nav-number"></span> <span class="nav-text">过程监控</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number"></span> <span class="nav-text"> </span></a></div>
       </div>
       <!--/noindex-->
 
