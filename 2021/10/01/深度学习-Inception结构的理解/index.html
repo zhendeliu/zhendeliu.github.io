@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="Leo的三板斧">
 <meta property="og:description" content="摘要背景问题： 方法简述： 优点： 缺点：">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/深度学习-Inception结构的理解/V1.jpg">
-<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/深度学习-Inception结构的理解/v2-v3.jpg">
-<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/深度学习-Inception结构的理解/V2.jpg">
+<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/V1.jpg">
+<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/v2-v3.jpg">
+<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/V2.jpg">
 <meta property="article:published_time" content="2021-10-01T03:24:21.000Z">
 <meta property="article:modified_time" content="2021-11-16T01:10:02.995Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="论文复现">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/深度学习-Inception结构的理解/V1.jpg">
+<meta name="twitter:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/V1.jpg">
 
 <link rel="canonical" href="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/">
 
@@ -127,7 +127,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">107</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">106</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -292,21 +292,22 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
+
 <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>GoogleNet只使用500万个参数，是AlexNet的1/12，它使用了6000万个参数。VGGNet使用了比AlexNet3倍多的参数。</p>
 <p>Inception的计算成本也低于VGGNet，这使它能够应用于大数据场景，或是在有限的内存和计算能力的情况下以相对合理的成本处理较大的数据，如移动端。当然我们可以通过计算技巧来优化一些特定的操作来解决该问题。但是这些方法加大了复杂性。另外，这些优化的方法也可以应用了Inception结构，扩大了效率差。</p>
-<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h2><p> 1、避免表征瓶颈，特别是在网络早期。前向传播网络可以从输入层到<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=54926098&amp;ss_c=ssc.citiao.link">分类器</a>或回归器的无环图来体现。这定义了清晰的信息流。从每一个分割输入和输出的切入，能够获得通过这个切入的信息流量。应该避免使用极端压缩导致的瓶颈。一般讲表征规模应平缓的从输入向输出递减知道最终任务。理论上，信息内容无法仅通过表征的维度来评估，因为它舍弃了一些重要因素相关性结构；维度仅提供了信息内容的粗略估计。</p>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h2><p> 1、避免表征瓶颈，特别是在网络早期。前向传播网络可以从输入层到<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=54926098&ss_c=ssc.citiao.link">分类器</a>或回归器的无环图来体现。这定义了清晰的信息流。从每一个分割输入和输出的切入，能够获得通过这个切入的信息流量。应该避免使用极端压缩导致的瓶颈。一般讲表征规模应平缓的从输入向输出递减知道最终任务。理论上，信息内容无法仅通过表征的维度来评估，因为它舍弃了一些重要因素相关性结构；维度仅提供了信息内容的粗略估计。</p>
 <p>2、更高维度的表征更容易在一个网络内本地化处理。在卷积网络中加大每层的激活能获得更多的非纠缠特征，可使网络训练更快速。</p>
 <p>3、可以在更低维度嵌入上进行空间聚合，不会损失或损失太多的体现能力。例如在进行3*3卷积之前，可以在空间聚合之前降低输入表征，不会有严重问题。我们假设它是因为在空间聚合情况下使用输出，相邻单元结果的强相关性在降低维度时损失较小。基于此这些信号可便利的被压缩，并且维度降低能使学习更快。</p>
 <p>4、平衡网络的宽度和深度。网络的优化表现可以通过平衡每阶段的过滤器数量和网络深度实现。同时提高宽度和深度可以提高网络质量，但是只有并行提高时才能对计算常量优化提升，因此要在网路的深度和宽度合理平衡分配计算能力。</p>
 <h2 id="Inception-V1模型"><a href="#Inception-V1模型" class="headerlink" title="Inception V1模型"></a>Inception V1模型</h2><p>将1x1，3x3，5x5的conv和3x3的pooling，堆叠在一起，一方面增加了网络的width，另一方面增加了网络对尺度的适应性。所有的卷积核都在上一层的所有输出上来做，5×5的卷积核所需的计算量就太大，造成了特征图厚度很大。为了避免这一现象提出的inception具有如下结构，在3x3前，5x5前，max pooling后分别加上了1x1的卷积核起到了降低特征图厚度的作用，</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/深度学习-Inception结构的理解/V1.jpg" alt></p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/V1.jpg"></p>
 <h2 id="Inception-v2模型"><a href="#Inception-v2模型" class="headerlink" title="Inception v2模型"></a>Inception v2模型</h2><p><code>Inception v2 和 Inception v3</code> 来自同一篇论文《Rethinking the Inception Architecture for Computer Vision》，作者提出了一系列能增加准确度和减少计算复杂度的修正方法。</p>
-<p>一方面了加入了BN层，减少了Internal Covariate Shift（内部neuron的数据分布发生变化），使每一层的输出都规范化到一个N(0, 1)的<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=64912573&amp;ss_c=ssc.citiao.link">高斯</a>；</p>
+<p>一方面了加入了BN层，减少了Internal Covariate Shift（内部neuron的数据分布发生变化），使每一层的输出都规范化到一个N(0, 1)的<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=64912573&ss_c=ssc.citiao.link">高斯</a>；</p>
 <p>另外一方面学习VGG用2个3x3的conv替代inception模块中的5x5，既降低了参数数量，也加速计算；</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/深度学习-Inception结构的理解/v2-v3.jpg" alt></p>
-<p>使用3×3的已经很小，那么更小的虽然能使得参数进一步降低，但是不如另一种方式更加有效，就是Asymmetric方式，即使用1×3和3×1两种来代替3×3的卷积核。这种结构在前几层效果不太好，但对特征图大小为12~20的<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=340385&amp;ss_c=ssc.citiao.link">中间层</a>效果明显。</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/深度学习-Inception结构的理解/V2.jpg" alt></p>
-<h2 id="Inception-v3模型"><a href="#Inception-v3模型" class="headerlink" title="Inception v3模型"></a>Inception v3模型</h2><p>V3一个最重要的改进是分解（<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=3448023&amp;ss_c=ssc.citiao.link">Factorization</a>），将7x7分解成两个一维的卷积（1x7,7x1），3x3也是一样（1x3,3x1），这样的好处，既可以加速计算（多余的计算能力可以用来加深网络），又可以将1个conv拆成2个conv，使得网络深度进一步增加，增加了网络的非线性，还有值得注意的地方是网络输入从224x224变为了299x299，更加精细设计了35x35/17x17/8x8的模块。</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/v2-v3.jpg"></p>
+<p>使用3×3的已经很小，那么更小的虽然能使得参数进一步降低，但是不如另一种方式更加有效，就是Asymmetric方式，即使用1×3和3×1两种来代替3×3的卷积核。这种结构在前几层效果不太好，但对特征图大小为12~20的<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=340385&ss_c=ssc.citiao.link">中间层</a>效果明显。</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/V2.jpg"></p>
+<h2 id="Inception-v3模型"><a href="#Inception-v3模型" class="headerlink" title="Inception v3模型"></a>Inception v3模型</h2><p>V3一个最重要的改进是分解（<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=3448023&ss_c=ssc.citiao.link">Factorization</a>），将7x7分解成两个一维的卷积（1x7,7x1），3x3也是一样（1x3,3x1），这样的好处，既可以加速计算（多余的计算能力可以用来加深网络），又可以将1个conv拆成2个conv，使得网络深度进一步增加，增加了网络的非线性，还有值得注意的地方是网络输入从224x224变为了299x299，更加精细设计了35x35/17x17/8x8的模块。</p>
 <h2 id="Inception-v4模型"><a href="#Inception-v4模型" class="headerlink" title="Inception v4模型"></a>Inception v4模型</h2><p>Inception v4 和 Inception -ResNet 在同一篇论文《Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning》中提出来。v4研究了Inception模块结合Residual Connection能不能有改进。发现ResNet的结构可以极大地加速训练，同时性能也有提升，得到一个Inception-ResNet v2网络，同时还设计了一个更深更优化的Inception v4模型，能达到与Inception-ResNet v2相媲美的性能</p>
 <h1 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h1><h3 id="为什么更深的网络有更好的效果？"><a href="#为什么更深的网络有更好的效果？" class="headerlink" title="为什么更深的网络有更好的效果？"></a>为什么更深的网络有更好的效果？</h3><p>神经网络（主要指BP神经网络及其衍生的各种类型）中的层（主要是隐藏层）越多，对输入特征抽象层次越高。因为在神经网络中，后一层神经元的输入是前一层输出的加权和，前一层的特征在后一层就被抽象出来了，学习的过程其实就是调节和优化各连接权重和阈值的过程。</p>
 <p>随着深度的增加，逼近函数的效果好，已经有paper证明过了，个人理解就是，神经网络训练的过程就是调整参数的过程，可以调整的参数（weights and bias）越多，意味着调整的自由度越大，从而逼近效果越好，可以举例子:逼近某一个函数，比较单层，2层，和多层的神经网络逼近效果。</p>
@@ -413,7 +414,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">107</span>
+          <span class="site-state-item-count">106</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

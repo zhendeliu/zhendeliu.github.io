@@ -27,12 +27,12 @@
 <meta property="og:site_name" content="Leo的三板斧">
 <meta property="og:description" content="摘要背景问题：CNN算法的输入和输出基本是一对一的，不同的输入之间是没有联系的，但是需要处理序列数据（一串互相依赖的数据流）的场景就不能很好的完成了。比如文本，音频，股票走势等 方法简述：每一个样特征的训练计算的时候不仅仅考虑当前样本的值，也要考虑前一个样本的输出值 优点： 缺点：  RNN 有短期记忆问题，无法处理很长的输入序列 训练 RNN 需要投入极大的成本">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/RNN单元结构.jpeg">
-<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/RNN单元.gif">
-<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/连续结构.jpeg">
-<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/连续结构n_1.jpeg">
-<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/连续结构1_n.jpeg">
-<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/连续结构1_n2.jpeg">
+<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/RNN%E5%8D%95%E5%85%83%E7%BB%93%E6%9E%84.jpeg">
+<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/RNN%E5%8D%95%E5%85%83.gif">
+<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%84.jpeg">
+<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%84n_1.jpeg">
+<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%841_n.jpeg">
+<meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%841_n2.jpeg">
 <meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/N_M.jpeg">
 <meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/N_M2.jpeg">
 <meta property="og:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/attention1.jpeg">
@@ -55,7 +55,7 @@
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="论文复现">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/RNN单元结构.jpeg">
+<meta name="twitter:image" content="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/RNN%E5%8D%95%E5%85%83%E7%BB%93%E6%9E%84.jpeg">
 
 <link rel="canonical" href="http://example.com/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
 
@@ -146,7 +146,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">107</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">106</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -315,7 +315,10 @@
 <li>训练 RNN 需要投入极大的成本</li>
 </ol>
 <span id="more"></span>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/RNN单元结构.jpeg" alt></p>
+
+
+
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/RNN%E5%8D%95%E5%85%83%E7%BB%93%E6%9E%84.jpeg"></p>
 <p>x是一个向量，它表示<strong>输入层</strong>的值（这里面没有画出来表示神经元节点的圆圈）；</p>
 <p>s是一个向量，它表示<strong>隐藏层</strong>的值（可以想象这一层其实是多个节点，节点数与向量s的维度相同）；</p>
 <p>U是输入层到隐藏层的<strong>权重矩阵</strong>，</p>
@@ -325,30 +328,30 @@
 <p>另外还有一个偏置项b</p>
 <p>在计算时，<strong>每一步使用的参数U、W、b都是一样的，也就是说每个步骤的参数都是共享的，这是RNN的重要特点，一定要牢记。</strong></p>
 <p>结构示意图</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/RNN单元.gif" alt></p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/RNN%E5%8D%95%E5%85%83.gif"></p>
 <h1 id="N-vs-N模型"><a href="#N-vs-N模型" class="headerlink" title="N vs N模型"></a>N vs N模型</h1><p>Yi = Softmax(V*hi+c)</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/连续结构.jpeg" alt></p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%84.jpeg"></p>
 <p>最后可以看出：<strong>这里的RNN的输入和输出序列是等长的</strong></p>
-<h1 id="N-vs-1-模型"><a href="#N-vs-1-模型" class="headerlink" title="N vs 1 模型"></a>N vs 1 模型</h1><p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/连续结构n_1.jpeg" alt></p>
+<h1 id="N-vs-1-模型"><a href="#N-vs-1-模型" class="headerlink" title="N vs 1 模型"></a>N vs 1 模型</h1><p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%84n_1.jpeg"></p>
 <p>这种结构通常用来处理序列分类问题。输入是一个序列输出为一个单独的值，如输入一段文字判别它所属的类别，输入一个句子判断其情感倾向，输入一段视频并判断它的类别等等。</p>
-<h1 id="1-VS-N模型"><a href="#1-VS-N模型" class="headerlink" title="1 VS N模型"></a>1 VS N模型</h1><p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/连续结构1_n.jpeg" alt></p>
+<h1 id="1-VS-N模型"><a href="#1-VS-N模型" class="headerlink" title="1 VS N模型"></a>1 VS N模型</h1><p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%841_n.jpeg"></p>
 <p>or</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/连续结构1_n2.jpeg" alt></p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E8%BF%9E%E7%BB%AD%E7%BB%93%E6%9E%841_n2.jpeg"></p>
 <p>这种1 VS N的结构可以处理的问题有：</p>
 <ul>
 <li>从图像生成文字（image caption），此时输入的X就是图像的特征，而输出的y序列就是一段句子</li>
 <li>从类别生成语音或音乐等</li>
 </ul>
 <h1 id="N-vs-M-模型"><a href="#N-vs-M-模型" class="headerlink" title="N vs M 模型"></a>N vs M 模型</h1><p>这种结构又叫Encoder-Decoder模型，也可以称之为Seq2Seq模型。</p>
-<p>原始的N vs N RNN要求序列等长，然而我们遇到的大部分问题序列都是不等长的，如机器翻译中，源语言和目标语言的句子往往并没有相同的长度。<strong>为此，Encoder-Decoder结构先将输入数据编码成一个上下文向量c：**</strong>拿到c之后，就用另一个RNN网络对其进行解码**，这部分RNN网络被称为Decoder。具体做法就是将c当做之前的初始状态h0输入到Decoder中：</p>
+<p>原始的N vs N RNN要求序列等长，然而我们遇到的大部分问题序列都是不等长的，如机器翻译中，源语言和目标语言的句子往往并没有相同的长度。<strong>为此，Encoder-Decoder结构先将输入数据编码成一个上下文向量c：****拿到c之后，就用另一个RNN网络对其进行解码</strong>，这部分RNN网络被称为Decoder。具体做法就是将c当做之前的初始状态h0输入到Decoder中：</p>
 <ol>
 <li>c = h4</li>
 <li>c = q(h4)</li>
 <li>c = q(h1,h2,h3,h4)</li>
 </ol>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/N_M.jpeg" alt></p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/N_M.jpeg"></p>
 <p>Or 另一种做法将C当作每一步输入</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/N_M2.jpeg" alt></p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/N_M2.jpeg"></p>
 <p>由于这种Encoder-Decoder结构不限制输入和输出的序列长度，因此应用的范围非常广泛，比如：</p>
 <ul>
 <li>机器翻译。Encoder-Decoder的最经典应用，事实上这一结构就是在机器翻译领域最先提出的</li>
@@ -358,14 +361,14 @@
 </ul>
 <h1 id="Attention-机制"><a href="#Attention-机制" class="headerlink" title="Attention 机制"></a>Attention 机制</h1><p>问题：在Encoder-Decoder结构中，Encoder把所有的输入序列都编码成一个统一的语义特征c再解码，<strong>因此， c中必须包含原始序列中的所有信息，它的长度就成了限制模型性能的瓶颈。</strong>如机器翻译问题，当要翻译的句子较长时，一个c可能存不下那么多信息，就会造成翻译精度的下降。</p>
 <p>解决方法：Attention机制通过在每个时间输入不同的c来解决这个问题，下图是带有Attention机制的Decoder：</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/attention1.jpeg" alt></p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/attention1.jpeg"></p>
 <p><strong>每一个c会自动去选取与当前所要输出的y最合适的上下文信息。具体来说，我们用 a_ij衡量Encoder中第j阶段的hj和解码时第i阶段的相关性，最终Decoder中第i阶段的输入的上下文信息 c_i 就来自于所有 h_i对 a_ij的加权和。</strong></p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/attention2.jpeg" alt></p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/attention2.jpeg"></p>
 <p>Encoder中的h1、h2、h3、h4就可以分别看做是“我”、“爱”、“中”、“国”所代表的信息。在翻译成英语时，第一个上下文c1应该和“我”这个字最相关，因此对应的 <img src="https://www.zhihu.com/equation?tex=a_%7B11%7D" alt="[公式]"> 就比较大，而相应的 <img src="https://www.zhihu.com/equation?tex=a_%7B12%7D" alt="[公式]"> 、 <img src="https://www.zhihu.com/equation?tex=a_%7B13%7D" alt="[公式]"> 、 <img src="https://www.zhihu.com/equation?tex=a_%7B14%7D" alt="[公式]"> 就比较小。c2应该和“爱”最相关，因此对应的 <img src="https://www.zhihu.com/equation?tex=a_%7B22%7D" alt="[公式]"> 就比较大。最后的c3和h3、h4最相关，因此 <img src="https://www.zhihu.com/equation?tex=a_%7B33%7D" alt="[公式]"> 、 <img src="https://www.zhihu.com/equation?tex=a_%7B34%7D" alt="[公式]"> 的值就比较大。</p>
 <p>至此，关于Attention模型，我们就只剩最后一个问题了，那就是：<strong>这些权重 <img src="https://www.zhihu.com/equation?tex=a_%7Bij%7D" alt="[公式]"> 是怎么来的？</strong></p>
 <p>事实上， <img src="https://www.zhihu.com/equation?tex=a_%7Bij%7D" alt="[公式]"> 同样是从模型中学出的，它实际和Decoder的第i-1阶段的隐状态、Encoder第j个阶段的隐状态有关。</p>
 <p>同样还是拿上面的机器翻译举例， <img src="https://www.zhihu.com/equation?tex=a_%7B1j%7D" alt="[公式]"> 的计算（此时箭头就表示对h’和 <img src="https://www.zhihu.com/equation?tex=h_j" alt="[公式]"> 同时做变换）：</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/attention3.jpeg" alt></p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-RNN%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/attention3.jpeg"></p>
 <p>Reference: <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/28054589">https://zhuanlan.zhihu.com/p/28054589</a></p>
 
     </div>
@@ -467,7 +470,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">107</span>
+          <span class="site-state-item-count">106</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

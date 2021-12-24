@@ -123,7 +123,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">107</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">106</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -278,12 +278,20 @@
         <p>*和**的用法</p>
 <p>*args和**kwargs的用法</p>
 <span id="more"></span>
-<h2 id="和-的用法"><a href="#和-的用法" class="headerlink" title=" 和 * 的用法"></a><em> 和 *</em> 的用法</h2><p>*和**还可用于列表、元组、字典的解包，但是*后的参数必须是一个迭代器。例如:</p>
+
+
+
+<h2 id="和-的用法"><a href="#和-的用法" class="headerlink" title="* 和 ** 的用法"></a>* 和 ** 的用法</h2><p>*和**还可用于列表、元组、字典的解包，但是*后的参数必须是一个迭代器。例如:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="comment"># (1, 2, 3)</span></span><br><span class="line"><span class="built_in">print</span>(*a)</span><br><span class="line"><span class="comment"># 1 2 3</span></span><br><span class="line">b = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>,<span class="string">&#x27;n&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"><span class="comment"># &#123;&#x27;a&#x27;: 1, &#x27;n&#x27;: 2&#125;</span></span><br><span class="line"><span class="built_in">print</span>(*b)</span><br><span class="line"><span class="comment"># a n</span></span><br></pre></td></tr></table></figure>
-<h2 id="args和-kwargs的用法"><a href="#args和-kwargs的用法" class="headerlink" title="*args和**kwargs的用法"></a>*args和**kwargs的用法</h2><p>定义一个函数时，当输入的参数个数不确定的时候，不能够使用基于位置的参数表示方式，我们会使用(<em>args, \</em>*kwargs)来自动适应变参数和命名参数。这意味着，我们想往函数中输入多少个参数都行，分别以<strong>元组</strong>形式，<strong>字典</strong>形式传递参数。</p>
+
+<h2 id="args和-kwargs的用法"><a href="#args和-kwargs的用法" class="headerlink" title="*args和**kwargs的用法"></a>*args和**kwargs的用法</h2><p>定义一个函数时，当输入的参数个数不确定的时候，不能够使用基于位置的参数表示方式，我们会使用(*args, **kwargs)来自动适应变参数和命名参数。这意味着，我们想往函数中输入多少个参数都行，分别以<strong>元组</strong>形式，<strong>字典</strong>形式传递参数。</p>
 <p>**kwargs传入的参数必须形式上有key-value才可以</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span>(<span class="params">*args,**kwargs</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">type</span>(args),args)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">type</span>(kwargs),kwargs)</span><br><span class="line"></span><br><span class="line">test(<span class="string">&quot;test&quot;</span>,y=<span class="string">&#x27;test2&#x27;</span>)</span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; (&#x27;test&#x27;,)</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#x27;y&#x27;: &#x27;test2&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">a=(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">b=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">c=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;</span><br><span class="line">d=&#123;<span class="number">1</span>:<span class="number">1</span>,<span class="number">2</span>:<span class="number">2</span>,<span class="number">3</span>:<span class="number">3</span>&#125;</span><br><span class="line"></span><br><span class="line">test(a)</span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; ((1, 2, 3),)  # 输出元组的元素为元组</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#125;</span></span><br><span class="line"></span><br><span class="line">test(b)</span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; ([1, 2, 3],)  # 输出元组的元素为列表</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#125;</span></span><br><span class="line"></span><br><span class="line">test(c)</span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; (&#123;1, 2, 3&#125;,)  # 输出元组的元素为集合</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#125;</span></span><br><span class="line"></span><br><span class="line">test(d)</span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; (&#123;1: 1, 2: 2, 3: 3&#125;,)  # 输出元组的元素为字典</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#125;</span></span><br><span class="line"></span><br><span class="line">test(a,b,c,d)</span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; ((1, 2, 3), [1, 2, 3], &#123;1, 2, 3&#125;, &#123;1: 1, 2: 2, 3: 3&#125;)  # 输出元组的元素可以为不同的类型</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#125;</span></span><br><span class="line"></span><br><span class="line">test(a,y=b,z=c)  <span class="comment"># 只有当以关键字参数传入时，**kwargs才能接受</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; ((1, 2, 3),)</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#x27;y&#x27;: [1, 2, 3], &#x27;z&#x27;: &#123;1, 2, 3&#125;&#125;  # 输出字典</span></span><br></pre></td></tr></table></figure>
+
+
+
 
     </div>
 
@@ -368,7 +376,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%92%8C-%E7%9A%84%E7%94%A8%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text"> 和 * 的用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#args%E5%92%8C-kwargs%E7%9A%84%E7%94%A8%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">*args和**kwargs的用法</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%92%8C-%E7%9A%84%E7%94%A8%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">* 和 ** 的用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#args%E5%92%8C-kwargs%E7%9A%84%E7%94%A8%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">*args和**kwargs的用法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -384,7 +392,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">107</span>
+          <span class="site-state-item-count">106</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
