@@ -20,18 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="优化curl -XPUT “http:&#x2F;&#x2F;localhost:9200&#x2F;_all&#x2F;_settings“ -H ‘Content-Type: application&#x2F;json’ -d ‘{ “index” : { “max_result_window” : 1000000 } }’ curl -XPUT “http:&#x2F;&#x2F;localhost:9200&#x2F;_all&#x2F;_settings“ -H ‘Conte">
+  <meta name="description" content="流程描述    生产场景测试    优化方法    结果对比">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ElasticSearch(6):实践记录(二)">
 <meta property="og:url" content="http://example.com/2021/12/20/ElasticSearch-6-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95-%E4%BA%8C/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="优化curl -XPUT “http:&#x2F;&#x2F;localhost:9200&#x2F;_all&#x2F;_settings“ -H ‘Content-Type: application&#x2F;json’ -d ‘{ “index” : { “max_result_window” : 1000000 } }’ curl -XPUT “http:&#x2F;&#x2F;localhost:9200&#x2F;_all&#x2F;_settings“ -H ‘Conte">
+<meta property="og:description" content="流程描述    生产场景测试    优化方法    结果对比">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/12/20/ElasticSearch-6-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95-%E4%BA%8C/%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
 <meta property="article:published_time" content="2021-12-20T02:54:16.000Z">
-<meta property="article:modified_time" content="2021-12-24T07:03:32.000Z">
+<meta property="article:modified_time" content="2021-12-24T09:58:23.000Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="python 深度学习">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/12/20/ElasticSearch-6-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95-%E4%BA%8C/%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
 
 <link rel="canonical" href="http://example.com/2021/12/20/ElasticSearch-6-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95-%E4%BA%8C/">
 
@@ -261,47 +263,105 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><p>curl -XPUT “<a target="_blank" rel="noopener" href="http://localhost:9200/_all/_settings">http://localhost:9200/_all/_settings</a>“ -H ‘Content-Type: application/json’ -d ‘{ “index” : { “max_result_window” : 1000000 } }’</p>
-<p>curl -XPUT “<a target="_blank" rel="noopener" href="http://localhost:9200/_all/_settings">http://localhost:9200/_all/_settings</a>“ -H ‘Content-Type: application/json’ -d ‘{ “index” : { “max_terms_count” : 1000000 } }’</p>
-<h2 id="分页方式"><a href="#分页方式" class="headerlink" title="分页方式"></a>分页方式</h2><div class="table-container">
-<table>
+        <ul>
+<li><p><input checked disabled type="checkbox">  流程描述</p>
+</li>
+<li><p><input checked disabled type="checkbox">  生产场景测试</p>
+</li>
+<li><p><input checked disabled type="checkbox">  优化方法</p>
+</li>
+<li><p><input disabled type="checkbox">  结果对比</p>
+</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="流程描述"><a href="#流程描述" class="headerlink" title="流程描述"></a>流程描述</h1><p><img src="/2021/12/20/ElasticSearch-6-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95-%E4%BA%8C/%E6%B5%81%E7%A8%8B%E5%9B%BE.png"></p>
+<ol>
+<li><p>依次根据文件Rfhash，Pfhash，Tfhash和<strong>范围条件</strong> 从file_info_java和file_version_info_java关联查询一些字段和拼接的多个VersionPrimary和VersionSecond ，如果有结果结束查询，如果都没结果进行第二步</p>
+</li>
+<li><p>依次根据block的Rfhash，Pfhash，Tfhash和<strong>范围条件</strong> 从所有java_block表查询一些字段，如果都没有结束查询，如果有结果，获得其FID字段</p>
+</li>
+<li><p>依次根据第二步的FID从file_info_java和file_version_info_java关联查询一些字段和拼接的多个VersionPrimary和VersionSecond </p>
+</li>
+</ol>
+<h1 id="生产场景测试"><a href="#生产场景测试" class="headerlink" title="生产场景测试"></a>生产场景测试</h1><h2 id="单条语句测试"><a href="#单条语句测试" class="headerlink" title="单条语句测试"></a>单条语句测试</h2><p>由python代码将SQL语句转换为ES查询条件：</p>
+<p>第三条SQL：在java_1索引  无去重 无缓存 中运行 297.04 秒  返回94581~条数据 </p>
+<p>第三条SQL：在java_1索引  无去重 有缓存 中运行 24.41 秒   返回94581~条数据 </p>
+<p>第三条SQL：在java_1、2索引 无去重 无缓存 中运行342.77 秒 213781条数据 </p>
+<p>第三条SQL：在java_1、2索引 无去重 有缓存 中运行62.58 秒 213781条数据 </p>
+<p>第三条SQL 在java1-8 索引中 无去重 有缓存 中运行1294.75 秒 返回606655条数据</p>
+<h2 id="完整业务流程测试"><a href="#完整业务流程测试" class="headerlink" title="完整业务流程测试"></a>完整业务流程测试</h2><p>测试过程有python代码完成调试，文件结构如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">D:.</span><br><span class="line">│  BlockTest.java-block.json</span><br><span class="line">│  BlockTest.java-file.json</span><br><span class="line">│  blocks_query.py</span><br><span class="line">│  file_info_query.py</span><br><span class="line">│  utils.py</span><br><span class="line">│  main.py</span><br></pre></td></tr></table></figure>
+
+<p>BlockTest.java-file.json: 需要检索file相关的参数（hashes，range_conditions）</p>
+<p>BlockTest.java-block.json 需要检索file相关的参数（hashes，range_conditions）</p>
+<p>main.py </p>
+<pre><code> 1. 读取并解析两个json文件，
+ 2. 调用utile.py里面的方法生产es查询语句，
+ 3. 调用file_info_query.py进行依次对三个文件hash检索，无结果之后调用file范围搜索方法进行检索，同时使用计时装饰器进行计时
+ 4. 第三步hash检索无结果返回之后，解析block.json文件，并调用utile.py产生block查询语句
+ 5. 调用blocks_query.py进行依次对三个文件hash检索，无结果之后调用block范围搜索方法进行检索，同时使用计时装饰器进行计时
+</code></pre>
+<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h2 id="问题一：-返回数据量过大导致的速度慢："><a href="#问题一：-返回数据量过大导致的速度慢：" class="headerlink" title="问题一： 返回数据量过大导致的速度慢："></a>问题一： 返回数据量过大导致的速度慢：</h2><table>
 <thead>
 <tr>
-<th style="text-align:left">分页方式</th>
-<th style="text-align:left">性能</th>
-<th style="text-align:left">优点</th>
-<th style="text-align:left">缺点</th>
-<th style="text-align:left">场景</th>
-<th></th>
+<th align="left">分页方式</th>
+<th align="left">性能</th>
+<th align="left">优点</th>
+<th align="left">缺点</th>
+<th align="left">场景</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">from + size</td>
-<td style="text-align:left">低</td>
-<td style="text-align:left">灵活性好，实现简单</td>
-<td style="text-align:left">深度分页问题</td>
-<td style="text-align:left">数据量比较小，能容忍深度分页问题</td>
-<td></td>
+<tbody><tr>
+<td align="left">from + size</td>
+<td align="left">低</td>
+<td align="left">灵活性好，实现简单</td>
+<td align="left">深度分页问题</td>
+<td align="left">数据量比较小，能容忍深度分页问题</td>
 </tr>
 <tr>
-<td style="text-align:left">scroll</td>
-<td style="text-align:left">中</td>
-<td style="text-align:left">解决了深度分页问题</td>
-<td style="text-align:left">无法反应数据的实时性（快照版本）维护成本高，需要维护一个 scroll_id,</td>
-<td style="text-align:left">海量数据的导出，需要查询海量结果集的数据</td>
-<td></td>
+<td align="left">scroll</td>
+<td align="left">中</td>
+<td align="left">解决了深度分页问题</td>
+<td align="left">无法反应数据的实时性（快照版本）维护成本高，需要维护一个 scroll_id,</td>
+<td align="left">海量数据的导出，需要查询海量结果集的数据</td>
 </tr>
 <tr>
-<td style="text-align:left">search_after</td>
-<td style="text-align:left">高</td>
-<td style="text-align:left">性能最好不存在深度分页问题能够反映数据的实时变更</td>
-<td style="text-align:left">实现复杂，需要有一个全局唯一的字段连续分页的实现会比较复杂，因为每一次查询都需要上次查询的结果</td>
-<td style="text-align:left">海量数据的分页</td>
+<td align="left">search_after</td>
+<td align="left">高</td>
+<td align="left">性能最好不存在深度分页问题能够反映数据的实时变更</td>
+<td align="left">实现复杂，需要有一个全局唯一的字段连续分页的实现会比较复杂，因为每一次查询都需要上次查询的结果</td>
+<td align="left">海量数据的分页</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
+<p>方法： 继续使用scroll分页方式，加大max_result_window:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -XPUT &quot;http://localhost:9200/_all/_settings&quot; -H &#x27;Content-Type: application/json&#x27; -d &#x27;&#123; &quot;index&quot; : &#123; &quot;max_result_window&quot; : 1000000 &#125; &#125;&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="优化结果："><a href="#优化结果：" class="headerlink" title="优化结果："></a>优化结果：</h3><p>返回34万条数据从200+秒提升值60秒内</p>
+<h2 id="问题二：terms数量限制问题-限制小于"><a href="#问题二：terms数量限制问题-限制小于" class="headerlink" title="问题二：terms数量限制问题 限制小于"></a>问题二：terms数量限制问题 限制小于</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">错误信息：&#x27;failed to create query: The number of terms [100000] used in the Terms Query request has exceeded the allowed maximum of [65536]. This maximum can be set by changing the [index.max_terms_count] index level setting.&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>方法：增大max_terms_count配置</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -XPUT &quot;http://localhost:9200/_all/_settings&quot; -H &#x27;Content-Type: application/json&#x27; -d &#x27;&#123; &quot;index&quot; : &#123; &quot;max_terms_count&quot; : 1000000 &#125; &#125;&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="优化结果：-1"><a href="#优化结果：-1" class="headerlink" title="优化结果："></a>优化结果：</h3><p>可以对file_info中的fid进行批量检索，但时间效率低，10W个ID共耗时约 3416.49 秒</p>
+<h2 id="问题三：不能在ES中完成group-by去重操作"><a href="#问题三：不能在ES中完成group-by去重操作" class="headerlink" title="问题三：不能在ES中完成group by去重操作"></a>问题三：不能在ES中完成group by去重操作</h2><p><strong>方法一</strong>：ES实现，影响效率</p>
+<p><strong>方法二：</strong>使用代码编程实现，</p>
+<h2 id="问题四：不能进行MySQL的关联表操作，程序实现效率差"><a href="#问题四：不能进行MySQL的关联表操作，程序实现效率差" class="headerlink" title="问题四：不能进行MySQL的关联表操作，程序实现效率差"></a>问题四：不能进行MySQL的关联表操作，程序实现效率差</h2><p><strong>方法一</strong>：ES实现，难以实现</p>
+<p>ES来做关系查询总结：<a target="_blank" rel="noopener" href="https://www.slideshare.net/sirensolutions/searching-relational-data-with-elasticsearch%EF%BC%8C">https://www.slideshare.net/sirensolutions/searching-relational-data-with-elasticsearch，</a> <a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000004468130">https://segmentfault.com/a/1190000004468130</a></p>
+<p><strong>方法二：</strong>使用代码编程实现</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>ElasticSearch有检索速度优势，但需要考虑以下几个问题：</p>
+<ol>
+<li><p>不能直接执行SQL语句</p>
+</li>
+<li><p>不能高效处理大批量结果集的检索</p>
+</li>
+<li><p>去重效果难以实现，可能需要通过代码编程实现</p>
+</li>
+<li><p>对MySQL中的关联表查询难以实现，可能需要通过代码编程</p>
+</li>
+<li><p>数据量的不断提升，需要考虑集群的规模</p>
+</li>
+</ol>
 
     </div>
 
@@ -382,7 +442,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%98%E5%8C%96"><span class="nav-number">1.</span> <span class="nav-text">优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%A1%B5%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">分页方式</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">流程描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E5%9C%BA%E6%99%AF%E6%B5%8B%E8%AF%95"><span class="nav-number">2.</span> <span class="nav-text">生产场景测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E6%9D%A1%E8%AF%AD%E5%8F%A5%E6%B5%8B%E8%AF%95"><span class="nav-number">2.1.</span> <span class="nav-text">单条语句测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E4%B8%9A%E5%8A%A1%E6%B5%81%E7%A8%8B%E6%B5%8B%E8%AF%95"><span class="nav-number">2.2.</span> <span class="nav-text">完整业务流程测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%98%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80%EF%BC%9A-%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE%E9%87%8F%E8%BF%87%E5%A4%A7%E5%AF%BC%E8%87%B4%E7%9A%84%E9%80%9F%E5%BA%A6%E6%85%A2%EF%BC%9A"><span class="nav-number">3.1.</span> <span class="nav-text">问题一： 返回数据量过大导致的速度慢：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E7%BB%93%E6%9E%9C%EF%BC%9A"><span class="nav-number">3.1.1.</span> <span class="nav-text">优化结果：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%BA%8C%EF%BC%9Aterms%E6%95%B0%E9%87%8F%E9%99%90%E5%88%B6%E9%97%AE%E9%A2%98-%E9%99%90%E5%88%B6%E5%B0%8F%E4%BA%8E"><span class="nav-number">3.2.</span> <span class="nav-text">问题二：terms数量限制问题 限制小于</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E7%BB%93%E6%9E%9C%EF%BC%9A-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">优化结果：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%B8%89%EF%BC%9A%E4%B8%8D%E8%83%BD%E5%9C%A8ES%E4%B8%AD%E5%AE%8C%E6%88%90group-by%E5%8E%BB%E9%87%8D%E6%93%8D%E4%BD%9C"><span class="nav-number">3.3.</span> <span class="nav-text">问题三：不能在ES中完成group by去重操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%9B%9B%EF%BC%9A%E4%B8%8D%E8%83%BD%E8%BF%9B%E8%A1%8CMySQL%E7%9A%84%E5%85%B3%E8%81%94%E8%A1%A8%E6%93%8D%E4%BD%9C%EF%BC%8C%E7%A8%8B%E5%BA%8F%E5%AE%9E%E7%8E%B0%E6%95%88%E7%8E%87%E5%B7%AE"><span class="nav-number">3.4.</span> <span class="nav-text">问题四：不能进行MySQL的关联表操作，程序实现效率差</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

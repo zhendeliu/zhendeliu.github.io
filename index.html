@@ -260,15 +260,15 @@
 
       
           <ul>
-<li><p>[x] 业务场景描述</p>
+<li><p><input checked disabled type="checkbox">  业务场景描述</p>
 </li>
-<li><p>[x] ES实践过程</p>
+<li><p><input checked disabled type="checkbox">  ES实践过程</p>
 </li>
-<li><p>[x] ES优化记录</p>
+<li><p><input checked disabled type="checkbox">  ES优化记录</p>
 </li>
-<li><p>[x] ES实践结果</p>
+<li><p><input checked disabled type="checkbox">  ES实践结果</p>
 </li>
-<li><p>[ ] Conclusion</p>
+<li><p><input disabled type="checkbox">  Conclusion</p>
 </li>
 </ul>
           <!--noindex-->
@@ -335,48 +335,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><p>curl -XPUT “<a target="_blank" rel="noopener" href="http://localhost:9200/_all/_settings">http://localhost:9200/_all/_settings</a>“ -H ‘Content-Type: application/json’ -d ‘{ “index” : { “max_result_window” : 1000000 } }’</p>
-<p>curl -XPUT “<a target="_blank" rel="noopener" href="http://localhost:9200/_all/_settings">http://localhost:9200/_all/_settings</a>“ -H ‘Content-Type: application/json’ -d ‘{ “index” : { “max_terms_count” : 1000000 } }’</p>
-<h2 id="分页方式"><a href="#分页方式" class="headerlink" title="分页方式"></a>分页方式</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left">分页方式</th>
-<th style="text-align:left">性能</th>
-<th style="text-align:left">优点</th>
-<th style="text-align:left">缺点</th>
-<th style="text-align:left">场景</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">from + size</td>
-<td style="text-align:left">低</td>
-<td style="text-align:left">灵活性好，实现简单</td>
-<td style="text-align:left">深度分页问题</td>
-<td style="text-align:left">数据量比较小，能容忍深度分页问题</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">scroll</td>
-<td style="text-align:left">中</td>
-<td style="text-align:left">解决了深度分页问题</td>
-<td style="text-align:left">无法反应数据的实时性（快照版本）维护成本高，需要维护一个 scroll_id,</td>
-<td style="text-align:left">海量数据的导出，需要查询海量结果集的数据</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">search_after</td>
-<td style="text-align:left">高</td>
-<td style="text-align:left">性能最好不存在深度分页问题能够反映数据的实时变更</td>
-<td style="text-align:left">实现复杂，需要有一个全局唯一的字段连续分页的实现会比较复杂，因为每一次查询都需要上次查询的结果</td>
-<td style="text-align:left">海量数据的分页</td>
-</tr>
-</tbody>
-</table>
-</div>
-
+          <ul>
+<li><p><input checked disabled type="checkbox">  流程描述</p>
+</li>
+<li><p><input checked disabled type="checkbox">  生产场景测试</p>
+</li>
+<li><p><input checked disabled type="checkbox">  优化方法</p>
+</li>
+<li><p><input disabled type="checkbox">  结果对比</p>
+</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/12/20/ElasticSearch-6-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95-%E4%BA%8C/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -496,16 +472,12 @@
 
       
           <ul>
-<li><p>[x] 业务场景描述</p>
-</li>
-<li><p>[x] ES实践过程</p>
-</li>
-<li><p>[x] ES优化记录</p>
-</li>
-<li><p>[x] ES实践结果</p>
-</li>
-<li><p>[ ] Conclusion</p>
-</li>
+<li><input checked disabled type="checkbox"> 业务场景描述</li>
+<li><input disabled type="checkbox"> es数字查询（未完成）</li>
+<li><input checked disabled type="checkbox"> ES实践过程</li>
+<li><input checked disabled type="checkbox"> ES优化记录</li>
+<li><input checked disabled type="checkbox"> ES实践结果</li>
+<li><input disabled type="checkbox"> Conclusion</li>
 </ul>
           <!--noindex-->
             <div class="post-button">
@@ -547,7 +519,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/12/13/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/" class="post-title-link" itemprop="url">ElasticSearch(4):logstash从MySQL数据库导入数据</a>
+            <a href="/2021/12/13/ElasticSearch-4-logstash%E4%BB%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/" class="post-title-link" itemprop="url">ElasticSearch(4):Logstash数据管道：从MySQL导入ES</a>
         </h2>
 
         <div class="post-meta">
@@ -573,17 +545,17 @@
       
           <p>Logstash 是免费且开放的服务器端数据处理管道，拥有200多个插件，能够从多个来源采集数据，转换数据，然后将数据发送到指定的存储库中。在本文中主要实践的是将数十亿的数据从MySQL数据库如何高效导入ES</p>
 <ul>
-<li><p>[x] Logstash管道介绍</p>
+<li><p><input checked disabled type="checkbox">  Logstash管道介绍</p>
 </li>
-<li><p>[x] Logstash安装下载</p>
+<li><p><input checked disabled type="checkbox">  Logstash安装下载</p>
 </li>
-<li><p>[x] Logstash文件配置</p>
+<li><p><input checked disabled type="checkbox">  Logstash文件配置</p>
 </li>
-<li><p>[x] Logstash操作过程</p>
+<li><p><input checked disabled type="checkbox">  Logstash操作过程</p>
 </li>
-<li><p>[x] Logstash优化传输</p>
+<li><p><input checked disabled type="checkbox">  Logstash优化传输</p>
 </li>
-<li><p>[ ] 结果评价</p>
+<li><p><input disabled type="checkbox">  结果评价</p>
 </li>
 </ul>
           <!--noindex-->
