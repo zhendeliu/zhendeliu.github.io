@@ -878,33 +878,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Hexo网站建设参考资料</title>
-    <url>/2021/10/30/Hexo%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/</url>
-    <content><![CDATA[<p>Hexo next主题：右侧栏配置 <a href="https://www.cnblogs.com/lfri/p/12221359.html">https://www.cnblogs.com/lfri/p/12221359.html</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>OpenCV图像处理基础（三）</title>
-    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-        <tag>基础操作</tag>
-        <tag>噪音</tag>
-        <tag>灰度图</tag>
-        <tag>编程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenCV图像处理基础（一）</title>
     <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>数字图像基础</p>
@@ -946,6 +919,33 @@
         <tag>基础操作</tag>
         <tag>噪音</tag>
         <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo网站建设参考资料</title>
+    <url>/2021/10/30/Hexo%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/</url>
+    <content><![CDATA[<p>Hexo next主题：右侧栏配置 <a href="https://www.cnblogs.com/lfri/p/12221359.html">https://www.cnblogs.com/lfri/p/12221359.html</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>OpenCV图像处理基础（三）</title>
+    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>基础操作</tag>
+        <tag>噪音</tag>
+        <tag>编程</tag>
+        <tag>灰度图</tag>
       </tags>
   </entry>
   <entry>
@@ -2648,24 +2648,6 @@
       </tags>
   </entry>
   <entry>
-    <title>无人驾驶-视觉方向基础</title>
-    <url>/2021/10/07/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6-%E8%A7%86%E8%A7%89%E6%96%B9%E5%90%91%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>无人驾驶作为人工智能的集大成应用，从来就不是某单一的技术，而是众多技术点的整合。技术上它需要有算法上的创新、系统上的融合，以及来自云平台的支持。</p>
-<p>什么是SLAM？</p>
-<p>什么是VIO？</p>
-<span id="more"></span>
-
-<h1 id="什么是SLAM"><a href="#什么是SLAM" class="headerlink" title="什么是SLAM"></a>什么是SLAM</h1><p>SLAM是 Simultaneous Localization And Mapping的 英文首字母组合，一般翻译为：同时定位与建图、同时定位与地图构建。</p>
-<p><strong>SLAM是指当某种移动设备（如机器人、无人机、手机等）从一个未知环境里的未知地点出发，在运动过程中通过传感器（如激光雷达、摄像头等）观测定位自身位置、姿态、运动轨迹，再根据自身位置进行增量式的地图构建，从而达到同时定位和地图构建的目的</strong>。定位和建图是两个相辅相成的过程，地图可以提供更好的定位，而定位也可以进一步扩建地图。</p>
-<p>比如：扫地机器人，如果在室内随机游走，遇到障碍物就转弯，这样会导致有很多地方会漏掉，扫地效率非常低。一台智能的扫地机器人，可以通过自身的传感器对室内进行扫描建图，根据当前的定位进行Z字形规划清扫，还能实现自动回充、断点续扫等高级功能。</p>
-<p>扫地机器人至少需要知道以下几件事情：</p>
-<p>1、我在哪里？也就是扫地机器人在工作过程中要知道自己在房间的具体位置。对应的术语叫：**定位（Localization)**。</p>
-<p>2、我周围的环境是什么样子？也就是扫地机器人需要知道整个房间的地面结构信息。对应的术语叫：**建图(Mapping)**。</p>
-<p>3、我怎样到达指定地点（充电器）？当扫地机器人电量不足时，如何以最短的路径到达充电器所在位置进行自动充电。对应的术语叫：路径规划（Route Planning）。</p>
-<h1 id="什么是VIO"><a href="#什么是VIO" class="headerlink" title="什么是VIO"></a>什么是VIO</h1><p>参考：<a href="https://zhuanlan.zhihu.com/p/44787066">https://zhuanlan.zhihu.com/p/44787066</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>机器学习-K-means算法</title>
     <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-K-means%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -2702,6 +2684,24 @@
         <tag>编程</tag>
         <tag>算法</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>无人驾驶-视觉方向基础</title>
+    <url>/2021/10/07/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6-%E8%A7%86%E8%A7%89%E6%96%B9%E5%90%91%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>无人驾驶作为人工智能的集大成应用，从来就不是某单一的技术，而是众多技术点的整合。技术上它需要有算法上的创新、系统上的融合，以及来自云平台的支持。</p>
+<p>什么是SLAM？</p>
+<p>什么是VIO？</p>
+<span id="more"></span>
+
+<h1 id="什么是SLAM"><a href="#什么是SLAM" class="headerlink" title="什么是SLAM"></a>什么是SLAM</h1><p>SLAM是 Simultaneous Localization And Mapping的 英文首字母组合，一般翻译为：同时定位与建图、同时定位与地图构建。</p>
+<p><strong>SLAM是指当某种移动设备（如机器人、无人机、手机等）从一个未知环境里的未知地点出发，在运动过程中通过传感器（如激光雷达、摄像头等）观测定位自身位置、姿态、运动轨迹，再根据自身位置进行增量式的地图构建，从而达到同时定位和地图构建的目的</strong>。定位和建图是两个相辅相成的过程，地图可以提供更好的定位，而定位也可以进一步扩建地图。</p>
+<p>比如：扫地机器人，如果在室内随机游走，遇到障碍物就转弯，这样会导致有很多地方会漏掉，扫地效率非常低。一台智能的扫地机器人，可以通过自身的传感器对室内进行扫描建图，根据当前的定位进行Z字形规划清扫，还能实现自动回充、断点续扫等高级功能。</p>
+<p>扫地机器人至少需要知道以下几件事情：</p>
+<p>1、我在哪里？也就是扫地机器人在工作过程中要知道自己在房间的具体位置。对应的术语叫：**定位（Localization)**。</p>
+<p>2、我周围的环境是什么样子？也就是扫地机器人需要知道整个房间的地面结构信息。对应的术语叫：**建图(Mapping)**。</p>
+<p>3、我怎样到达指定地点（充电器）？当扫地机器人电量不足时，如何以最短的路径到达充电器所在位置进行自动充电。对应的术语叫：路径规划（Route Planning）。</p>
+<h1 id="什么是VIO"><a href="#什么是VIO" class="headerlink" title="什么是VIO"></a>什么是VIO</h1><p>参考：<a href="https://zhuanlan.zhihu.com/p/44787066">https://zhuanlan.zhihu.com/p/44787066</a></p>
+]]></content>
   </entry>
   <entry>
     <title>机器学习-sklearn包的学习</title>
@@ -2935,6 +2935,25 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习-集成算法-AdaBoost</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-AdaBoost/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习-逻辑回归Logistic Regression</title>
     <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92Logistic-Regression/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>逻辑回归 = 线性回归+逻辑分布 （如：sigmoid函数）</p>
@@ -2980,25 +2999,6 @@
 <p>(3)很难处理数据不平衡的问题;</p>
 <p>(4)准确率并不是很高，因为形式非常的简单(非常类似线性模型)，很难去拟合数据的真实分布;</p>
 <p>(5)<a href="https://www.cda.cn/map/luojihuigui/">逻辑回归</a>本身无法筛选<a href="https://www.cda.cn/map/tezheng/">特征</a>，有时会用gbdt来筛选<a href="https://www.cda.cn/map/tezheng/">特征</a>，然后再上<a href="https://www.cda.cn/map/luojihuigui/">逻辑回归</a>。</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习-集成算法-AdaBoost</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-AdaBoost/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
 ]]></content>
       <categories>
         <category>学习</category>
@@ -4150,6 +4150,28 @@
       </tags>
   </entry>
   <entry>
+    <title>站内说明</title>
+    <url>/2021/09/29/%E7%AB%99%E5%86%85%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<p>本blog是作为Leo同学的自我拓展过程中的自律自省记录</p>
+<p>对该blog的计划是对一下类别和领域的学习与探索：</p>
+<p>理论方面：</p>
+<p>​    计算机视觉</p>
+<p>​    深度学习算法</p>
+<p>​    机器学习算法</p>
+<p>Coding方面：</p>
+<p>​    OpenCV</p>
+<p>​    Python</p>
+<p>​    Pytorch</p>
+<p>​    </p>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>概览</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>神经网络-激活函数</title>
     <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -4214,28 +4236,6 @@
         <tag>编程</tag>
         <tag>优化</tag>
         <tag>调参</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>站内说明</title>
-    <url>/2021/09/29/%E7%AB%99%E5%86%85%E8%AF%B4%E6%98%8E/</url>
-    <content><![CDATA[<p>本blog是作为Leo同学的自我拓展过程中的自律自省记录</p>
-<p>对该blog的计划是对一下类别和领域的学习与探索：</p>
-<p>理论方面：</p>
-<p>​    计算机视觉</p>
-<p>​    深度学习算法</p>
-<p>​    机器学习算法</p>
-<p>Coding方面：</p>
-<p>​    OpenCV</p>
-<p>​    Python</p>
-<p>​    Pytorch</p>
-<p>​    </p>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-      <tags>
-        <tag>概览</tag>
       </tags>
   </entry>
   <entry>
