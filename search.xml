@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>AI算法面试问题-机器学习（三）</title>
+    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>AI算法面试问题-机器学习（二）</title>
+    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>AI算法面试问题-机器学习（一）</title>
     <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
@@ -30,14 +40,66 @@
       </tags>
   </entry>
   <entry>
-    <title>AI算法面试问题-机器学习（三）</title>
-    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>AI算法面试问题-机器学习（二）</title>
-    <url>/2021/10/02/AI%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
+    <title>ElasticSearch(2):安装与基本操作</title>
+    <url>/2021/12/07/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<ul>
+<li><input checked disabled type="checkbox"> ElasticSearch安装</li>
+<li><input checked disabled type="checkbox"> Postman安装</li>
+<li><input checked disabled type="checkbox"> 基本操作</li>
+<li><input checked disabled type="checkbox"> 系统信息操作</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="ElasticSearch安装"><a href="#ElasticSearch安装" class="headerlink" title="ElasticSearch安装"></a>ElasticSearch安装</h1><p>ElasticSearch Centos7 安装步骤如下：</p>
+<ol>
+<li><p>ES依赖于java环境，使用<code>java -version</code>查看系统java环境，需要1.8以上的java环境</p>
+<p><img src="/2021/12/07/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/java-version.png"></p>
+</li>
+<li><p>官网下载es <a href="https://www.elastic.co/cn/downloads/elasticsearch">https://www.elastic.co/cn/downloads/elasticsearch</a></p>
+</li>
+<li><p>上传安装包到服务器，使用“tar -xvf 解压安装包”</p>
+<p><code>tar -xvf elasticsearch-7.16.0-linux-x86_64.tar</code></p>
+</li>
+<li><p>配置文件修改，进入解压包找到conf包下elasticsearch.yml文件</p>
+<p><img src="/2021/12/07/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AE.png"></p>
+</li>
+<li><p> ES安全要求不能直接使用root用户，创建其他用户</p>
+</li>
+<li><p>用户创建完成，启动时出现 vm.max_map_count too low 虚拟内存过小的问题 </p>
+<p><img src="/2021/12/07/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/max_map_count.jpg"></p>
+<p>使用 <code>sysctl -w vm.max_map_count=262144</code> 进行配置，</p>
+<p>或者，在 /etc/sysctl.conf文件最后添加一行</p>
+<p><code>vm.max_map_count=262144</code></p>
+</li>
+<li><p>启动ES <code>sh ./bin/elasticsearch -d</code></p>
+</li>
+<li><p>远程操作时需要需要防火墙开启 9200 端口</p>
+<p>开启防火墙 远程访问9200</p>
+<p><code>firewall-cmd --zone=public --add-port=9200/tcp --permanent </code></p>
+<p>#–permanent永久生效，没有此参数重启后失效</p>
+<p>重新加载防火墙：</p>
+<p> <code>firewall-cmd --reload</code></p>
+</li>
+</ol>
+<h1 id="Postman安装"><a href="#Postman安装" class="headerlink" title="Postman安装"></a>Postman安装</h1><p>安装下载地址：<a href="https://www.postman.com/">https://www.postman.com/</a></p>
+<p>ElasticSearch 支持REST API。 大部分的时候需要通过其REST API来探索ES提供的各种功能，也可以通过curl命令来进行演示，但输出unreadable，不够美观整洁，也不太方便进行分类，归纳和复用。结合postman来演示ES的搜索是常见的方式。</p>
+<p>安装完成之后，在地址栏输入master node所在ip地址，参考基本操作进行操作</p>
+<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h4 id="注：所有操作后面加-v，让输出内容表格显示表头-pretty则让输出缩进更规范"><a href="#注：所有操作后面加-v，让输出内容表格显示表头-pretty则让输出缩进更规范" class="headerlink" title="注：所有操作后面加?v，让输出内容表格显示表头; pretty则让输出缩进更规范"></a>注：所有操作后面加<code>?v</code>，让输出内容表格显示表头; <code>pretty</code>则让输出缩进更规范</h4><h2 id="索引操作"><a href="#索引操作" class="headerlink" title="索引操作"></a>索引操作</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># master node地址以本机地址为例：http://127.0.0.1:9200/</span><br><span class="line">PUT http://127.0.0.1:9200/index_name</span><br><span class="line">&#123;</span><br><span class="line">  &quot;settings&quot;: &#123;</span><br><span class="line">    &quot;number_of_shards&quot;: 1, #分片数量</span><br><span class="line">    &quot;number_of_replicas&quot;: 1 # 复制数量</span><br><span class="line">  &#125;,</span><br><span class="line">   &quot;mappings&quot;: &#123; # 结构化创建时采用 非结构化时可以</span><br><span class="line">    &quot;properties&quot;: &#123;</span><br><span class="line">      &quot;id&quot;:&#123;&quot;type&quot;: &quot;integer&quot;&#125;,</span><br><span class="line">      &quot;name&quot;:&#123;&quot;type&quot;: &quot;text&quot;,&quot;analyzer&quot;: &quot;ik_max_word&quot;,&quot;search_analyzer&quot;: &quot;ik_smart&quot;&#125;,</span><br><span class="line">      &quot;tags&quot;:&#123;&quot;type&quot;: &quot;text&quot;,&quot;analyzer&quot;: &quot;whitespace&quot;,&quot;fielddata&quot;: true&#125;,</span><br><span class="line">      &quot;location&quot;:&#123;&quot;type&quot;: &quot;geo_point&quot;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 查看全部索引</span><br><span class="line">GET http://127.0.0.1:9200/_cat/indices?v</span><br><span class="line"></span><br><span class="line"># 查看单个索引</span><br><span class="line">GET http://127.0.0.1:9200/index_name</span><br><span class="line"></span><br><span class="line"># 删除</span><br><span class="line">DELETE http://127.0.0.1:9200/index_name</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="文档操作"><a href="#文档操作" class="headerlink" title="文档操作"></a>文档操作</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建</span></span><br><span class="line">POST http://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9200</span>/shopping/_doc</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;title&quot;</span>:<span class="string">&quot;小米&quot;</span>,</span><br><span class="line">    <span class="string">&quot;price&quot;</span>:<span class="number">3999.00</span>,</span><br><span class="line">    <span class="string">&quot;category&quot;</span>:<span class="string">&quot;手机&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定id创建文档</span></span><br><span class="line">PUT http://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9200</span>/shopping/_doc/<span class="number">1001</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;title&quot;</span>:<span class="string">&quot;小米&quot;</span>,</span><br><span class="line">    <span class="string">&quot;price&quot;</span>:<span class="number">3999.00</span>,</span><br><span class="line">    <span class="string">&quot;category&quot;</span>:<span class="string">&quot;手机&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除</span></span><br><span class="line">DELETE http://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9200</span>/shopping/_doc/<span class="number">1001</span></span><br><span class="line">        </span><br><span class="line"><span class="comment"># 查询索引下的所有文档</span></span><br><span class="line">GET http://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9200</span>/index_name/_search</span><br><span class="line">        </span><br><span class="line"><span class="comment"># 精确查询：term查询</span></span><br><span class="line"><span class="comment"># term用来对数字、ID、名称等的查询，避免用term查询text字段</span></span><br><span class="line"><span class="comment"># 对字符串查询 .keyword</span></span><br><span class="line">GET / _search </span><br><span class="line">&#123; <span class="string">&quot;query&quot;</span> : </span><br><span class="line"> 	&#123; <span class="string">&quot;term&quot;</span> : </span><br><span class="line">     	&#123; <span class="string">&quot;neme.keyword&quot;</span>: <span class="string">&quot;8F50A0ECEF4CE6D2956F2D24CCA7FF1C038FCEF55C82BA84D55C9CF276157250&quot;</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment"># 查询id</span></span><br><span class="line">&#123; <span class="string">&quot;query&quot;</span> : </span><br><span class="line"> 	&#123; <span class="string">&quot;term&quot;</span> : </span><br><span class="line">     	&#123; <span class="string">&quot;rid&quot;</span>: <span class="number">778659</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment"># terms查询  列表 多值查询，</span></span><br><span class="line">GET   /_search </span><br><span class="line">&#123; <span class="string">&quot;query&quot;</span> : </span><br><span class="line"> 	&#123; <span class="string">&quot;terms&quot;</span> : </span><br><span class="line">     	&#123; <span class="string">&quot;user.id&quot;</span> : [ <span class="string">&quot;kimchy&quot;</span> , <span class="string">&quot;elkbee&quot;</span> ], </span><br><span class="line">         <span class="string">&quot;boost&quot;</span> : <span class="number">1.0</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment"># bool查询</span></span><br><span class="line"><span class="comment">#must：必须都为true</span></span><br><span class="line"><span class="comment">#must not：必须都是false</span></span><br><span class="line"><span class="comment">#should：其中只有一个为true即可</span></span><br><span class="line"><span class="comment">#为true越多则分数越高</span></span><br><span class="line">GET /movie/_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;bool&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;should&quot;</span>: [</span><br><span class="line">        &#123;<span class="string">&quot;match&quot;</span>: &#123;<span class="string">&quot;title&quot;</span>: <span class="string">&quot;basketball with cartoom aliens&quot;</span>&#125;&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;match&quot;</span>: &#123;<span class="string">&quot;overview&quot;</span>: <span class="string">&quot;basketball with cartoom aliens&quot;</span>&#125;&#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 多条件过滤查询</span></span><br><span class="line">GET /index_name/_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;bool&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;filter&quot;</span>: [</span><br><span class="line">        &#123;<span class="string">&quot;term&quot;</span>:&#123;<span class="string">&quot;title&quot;</span>: <span class="string">&quot;steve&quot;</span>&#125;&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;term&quot;</span>:&#123;<span class="string">&quot;cast.name&quot;</span>: <span class="string">&quot;gaspard&quot;</span>&#125;&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;range&quot;</span>:&#123;<span class="string">&quot;release_date&quot;</span>: &#123;<span class="string">&quot;lte&quot;</span>:<span class="string">&quot;2014/01/01&quot;</span>&#125;&#125;&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;range&quot;</span>:&#123;<span class="string">&quot;popularity&quot;</span>: &#123;<span class="string">&quot;gte&quot;</span>:<span class="string">&quot;25&quot;</span>&#125;&#125;&#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 聚合查询 等同于 MySQL的group by</span></span><br><span class="line"><span class="comment"># GET /index_name/_search</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;name&quot;</span>: <span class="string">&quot;关&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;sort&quot;</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">&quot;age&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;order&quot;</span>: <span class="string">&quot;desc&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="string">&quot;aggs&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;group_by_age&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;terms&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;field&quot;</span>: <span class="string">&quot;age&quot;</span>,</span><br><span class="line">        <span class="string">&quot;size&quot;</span>: <span class="number">10</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 缓存清理</span><br><span class="line">GET http://127.0.0.1:9200/index_name/_cache/clear</span><br><span class="line"></span><br><span class="line"># 索引复制</span><br><span class="line">POST http://127.0.0.1:9200/_reindex</span><br><span class="line">&#123;</span><br><span class="line">  &quot;source&quot;: &#123;</span><br><span class="line">    &quot;index&quot;: &quot;source_index&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dest&quot;: &#123;</span><br><span class="line">    &quot;index&quot;: &quot;new_index&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>Reference：</p>
+<ol>
+<li>  ES 集群管理（集群规划、集群搭建、集群管理） <a href="https://www.cnblogs.com/leesmall/p/9220535.html">https://www.cnblogs.com/leesmall/p/9220535.html</a></li>
+<li>   <a href="https://www.dotnetboy.com/blog/detail/353574479298826240.html">https://www.dotnetboy.com/blog/detail/353574479298826240.html</a></li>
+</ol>
+]]></content>
   </entry>
   <entry>
     <title>ElasticSearch(1):基础概述</title>
@@ -121,68 +183,6 @@
 <li>ES分布式架构及底层原理 <a href="https://segmentfault.com/a/119000001525697">https://segmentfault.com/a/119000001525697</a></li>
 <li>Elasticsearch的由来、原理及应用场景分析 <a href="https://my.oschina.net/90888/blog/1619325">https://my.oschina.net/90888/blog/1619325</a></li>
 <li>Elastic search 分片和副本策略 <a href="https://juejin.cn/post/6844903862067789838">https://juejin.cn/post/6844903862067789838</a></li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
-    <title>ElasticSearch(2):安装与基本操作</title>
-    <url>/2021/12/07/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<ul>
-<li><input checked disabled type="checkbox"> ElasticSearch安装</li>
-<li><input checked disabled type="checkbox"> Postman安装</li>
-<li><input checked disabled type="checkbox"> 基本操作</li>
-<li><input checked disabled type="checkbox"> 系统信息操作</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="ElasticSearch安装"><a href="#ElasticSearch安装" class="headerlink" title="ElasticSearch安装"></a>ElasticSearch安装</h1><p>ElasticSearch Centos7 安装步骤如下：</p>
-<ol>
-<li><p>ES依赖于java环境，使用<code>java -version</code>查看系统java环境，需要1.8以上的java环境</p>
-<p><img src="/2021/12/07/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/java-version.png"></p>
-</li>
-<li><p>官网下载es <a href="https://www.elastic.co/cn/downloads/elasticsearch">https://www.elastic.co/cn/downloads/elasticsearch</a></p>
-</li>
-<li><p>上传安装包到服务器，使用“tar -xvf 解压安装包”</p>
-<p><code>tar -xvf elasticsearch-7.16.0-linux-x86_64.tar</code></p>
-</li>
-<li><p>配置文件修改，进入解压包找到conf包下elasticsearch.yml文件</p>
-<p><img src="/2021/12/07/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AE.png"></p>
-</li>
-<li><p> ES安全要求不能直接使用root用户，创建其他用户</p>
-</li>
-<li><p>用户创建完成，启动时出现 vm.max_map_count too low 虚拟内存过小的问题 </p>
-<p><img src="/2021/12/07/ElasticSearch-2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/max_map_count.jpg"></p>
-<p>使用 <code>sysctl -w vm.max_map_count=262144</code> 进行配置，</p>
-<p>或者，在 /etc/sysctl.conf文件最后添加一行</p>
-<p><code>vm.max_map_count=262144</code></p>
-</li>
-<li><p>启动ES <code>sh ./bin/elasticsearch -d</code></p>
-</li>
-<li><p>远程操作时需要需要防火墙开启 9200 端口</p>
-<p>开启防火墙 远程访问9200</p>
-<p><code>firewall-cmd --zone=public --add-port=9200/tcp --permanent </code></p>
-<p>#–permanent永久生效，没有此参数重启后失效</p>
-<p>重新加载防火墙：</p>
-<p> <code>firewall-cmd --reload</code></p>
-</li>
-</ol>
-<h1 id="Postman安装"><a href="#Postman安装" class="headerlink" title="Postman安装"></a>Postman安装</h1><p>安装下载地址：<a href="https://www.postman.com/">https://www.postman.com/</a></p>
-<p>ElasticSearch 支持REST API。 大部分的时候需要通过其REST API来探索ES提供的各种功能，也可以通过curl命令来进行演示，但输出unreadable，不够美观整洁，也不太方便进行分类，归纳和复用。结合postman来演示ES的搜索是常见的方式。</p>
-<p>安装完成之后，在地址栏输入master node所在ip地址，参考基本操作进行操作</p>
-<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h4 id="注：所有操作后面加-v，让输出内容表格显示表头-pretty则让输出缩进更规范"><a href="#注：所有操作后面加-v，让输出内容表格显示表头-pretty则让输出缩进更规范" class="headerlink" title="注：所有操作后面加?v，让输出内容表格显示表头; pretty则让输出缩进更规范"></a>注：所有操作后面加<code>?v</code>，让输出内容表格显示表头; <code>pretty</code>则让输出缩进更规范</h4><h2 id="索引操作"><a href="#索引操作" class="headerlink" title="索引操作"></a>索引操作</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># master node地址以本机地址为例：http://127.0.0.1:9200/</span><br><span class="line">PUT http://127.0.0.1:9200/index_name</span><br><span class="line">&#123;</span><br><span class="line">  &quot;settings&quot;: &#123;</span><br><span class="line">    &quot;number_of_shards&quot;: 1, #分片数量</span><br><span class="line">    &quot;number_of_replicas&quot;: 1 # 复制数量</span><br><span class="line">  &#125;,</span><br><span class="line">   &quot;mappings&quot;: &#123; # 结构化创建时采用 非结构化时可以</span><br><span class="line">    &quot;properties&quot;: &#123;</span><br><span class="line">      &quot;id&quot;:&#123;&quot;type&quot;: &quot;integer&quot;&#125;,</span><br><span class="line">      &quot;name&quot;:&#123;&quot;type&quot;: &quot;text&quot;,&quot;analyzer&quot;: &quot;ik_max_word&quot;,&quot;search_analyzer&quot;: &quot;ik_smart&quot;&#125;,</span><br><span class="line">      &quot;tags&quot;:&#123;&quot;type&quot;: &quot;text&quot;,&quot;analyzer&quot;: &quot;whitespace&quot;,&quot;fielddata&quot;: true&#125;,</span><br><span class="line">      &quot;location&quot;:&#123;&quot;type&quot;: &quot;geo_point&quot;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 查看全部索引</span><br><span class="line">GET http://127.0.0.1:9200/_cat/indices?v</span><br><span class="line"></span><br><span class="line"># 查看单个索引</span><br><span class="line">GET http://127.0.0.1:9200/index_name</span><br><span class="line"></span><br><span class="line"># 删除</span><br><span class="line">DELETE http://127.0.0.1:9200/index_name</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="文档操作"><a href="#文档操作" class="headerlink" title="文档操作"></a>文档操作</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建</span></span><br><span class="line">POST http://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9200</span>/shopping/_doc</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;title&quot;</span>:<span class="string">&quot;小米&quot;</span>,</span><br><span class="line">    <span class="string">&quot;price&quot;</span>:<span class="number">3999.00</span>,</span><br><span class="line">    <span class="string">&quot;category&quot;</span>:<span class="string">&quot;手机&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定id创建文档</span></span><br><span class="line">PUT http://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9200</span>/shopping/_doc/<span class="number">1001</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;title&quot;</span>:<span class="string">&quot;小米&quot;</span>,</span><br><span class="line">    <span class="string">&quot;price&quot;</span>:<span class="number">3999.00</span>,</span><br><span class="line">    <span class="string">&quot;category&quot;</span>:<span class="string">&quot;手机&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除</span></span><br><span class="line">DELETE http://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9200</span>/shopping/_doc/<span class="number">1001</span></span><br><span class="line">        </span><br><span class="line"><span class="comment"># 查询索引下的所有文档</span></span><br><span class="line">GET http://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9200</span>/index_name/_search</span><br><span class="line">        </span><br><span class="line"><span class="comment"># 精确查询：term查询</span></span><br><span class="line"><span class="comment"># term用来对数字、ID、名称等的查询，避免用term查询text字段</span></span><br><span class="line"><span class="comment"># 对字符串查询 .keyword</span></span><br><span class="line">GET / _search </span><br><span class="line">&#123; <span class="string">&quot;query&quot;</span> : </span><br><span class="line"> 	&#123; <span class="string">&quot;term&quot;</span> : </span><br><span class="line">     	&#123; <span class="string">&quot;neme.keyword&quot;</span>: <span class="string">&quot;8F50A0ECEF4CE6D2956F2D24CCA7FF1C038FCEF55C82BA84D55C9CF276157250&quot;</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment"># 查询id</span></span><br><span class="line">&#123; <span class="string">&quot;query&quot;</span> : </span><br><span class="line"> 	&#123; <span class="string">&quot;term&quot;</span> : </span><br><span class="line">     	&#123; <span class="string">&quot;rid&quot;</span>: <span class="number">778659</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment"># terms查询  列表 多值查询，</span></span><br><span class="line">GET   /_search </span><br><span class="line">&#123; <span class="string">&quot;query&quot;</span> : </span><br><span class="line"> 	&#123; <span class="string">&quot;terms&quot;</span> : </span><br><span class="line">     	&#123; <span class="string">&quot;user.id&quot;</span> : [ <span class="string">&quot;kimchy&quot;</span> , <span class="string">&quot;elkbee&quot;</span> ], </span><br><span class="line">         <span class="string">&quot;boost&quot;</span> : <span class="number">1.0</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment"># bool查询</span></span><br><span class="line"><span class="comment">#must：必须都为true</span></span><br><span class="line"><span class="comment">#must not：必须都是false</span></span><br><span class="line"><span class="comment">#should：其中只有一个为true即可</span></span><br><span class="line"><span class="comment">#为true越多则分数越高</span></span><br><span class="line">GET /movie/_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;bool&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;should&quot;</span>: [</span><br><span class="line">        &#123;<span class="string">&quot;match&quot;</span>: &#123;<span class="string">&quot;title&quot;</span>: <span class="string">&quot;basketball with cartoom aliens&quot;</span>&#125;&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;match&quot;</span>: &#123;<span class="string">&quot;overview&quot;</span>: <span class="string">&quot;basketball with cartoom aliens&quot;</span>&#125;&#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 多条件过滤查询</span></span><br><span class="line">GET /index_name/_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;bool&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;filter&quot;</span>: [</span><br><span class="line">        &#123;<span class="string">&quot;term&quot;</span>:&#123;<span class="string">&quot;title&quot;</span>: <span class="string">&quot;steve&quot;</span>&#125;&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;term&quot;</span>:&#123;<span class="string">&quot;cast.name&quot;</span>: <span class="string">&quot;gaspard&quot;</span>&#125;&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;range&quot;</span>:&#123;<span class="string">&quot;release_date&quot;</span>: &#123;<span class="string">&quot;lte&quot;</span>:<span class="string">&quot;2014/01/01&quot;</span>&#125;&#125;&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;range&quot;</span>:&#123;<span class="string">&quot;popularity&quot;</span>: &#123;<span class="string">&quot;gte&quot;</span>:<span class="string">&quot;25&quot;</span>&#125;&#125;&#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 聚合查询 等同于 MySQL的group by</span></span><br><span class="line"><span class="comment"># GET /index_name/_search</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;match&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;name&quot;</span>: <span class="string">&quot;关&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;sort&quot;</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">&quot;age&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;order&quot;</span>: <span class="string">&quot;desc&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="string">&quot;aggs&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;group_by_age&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;terms&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;field&quot;</span>: <span class="string">&quot;age&quot;</span>,</span><br><span class="line">        <span class="string">&quot;size&quot;</span>: <span class="number">10</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 缓存清理</span><br><span class="line">GET http://127.0.0.1:9200/index_name/_cache/clear</span><br><span class="line"></span><br><span class="line"># 索引复制</span><br><span class="line">POST http://127.0.0.1:9200/_reindex</span><br><span class="line">&#123;</span><br><span class="line">  &quot;source&quot;: &#123;</span><br><span class="line">    &quot;index&quot;: &quot;source_index&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dest&quot;: &#123;</span><br><span class="line">    &quot;index&quot;: &quot;new_index&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p>Reference：</p>
-<ol>
-<li>  ES 集群管理（集群规划、集群搭建、集群管理） <a href="https://www.cnblogs.com/leesmall/p/9220535.html">https://www.cnblogs.com/leesmall/p/9220535.html</a></li>
-<li>   <a href="https://www.dotnetboy.com/blog/detail/353574479298826240.html">https://www.dotnetboy.com/blog/detail/353574479298826240.html</a></li>
 </ol>
 ]]></content>
   </entry>
@@ -819,6 +819,86 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Hexo网站建设参考资料</title>
+    <url>/2021/10/30/Hexo%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/</url>
+    <content><![CDATA[<p>Hexo next主题：右侧栏配置 <a href="https://www.cnblogs.com/lfri/p/12221359.html">https://www.cnblogs.com/lfri/p/12221359.html</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>OpenCV图像处理基础（一）</title>
+    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>数字图像基础</p>
+<p>读、写、显示（图片、视频）</p>
+<p>缩放、补边、裁剪</p>
+<p>绘制形状</p>
+<p>书写文字</p>
+<span id="more"></span>
+
+<h1 id="图像的数字表示"><a href="#图像的数字表示" class="headerlink" title="图像的数字表示"></a>图像的数字表示</h1><p>在计算机系统中存储的是每张图像每个像素点的值</p>
+<p>灰度图，单通道图像也就是8位图像，每个像素点的值占8字节，00000000-11111111也就是0-255</p>
+<p>RGB/BGR图像，是三通道图像，也就是24位图像，每个像素点的值占24字节，也就是三个通道每个通道的值占8字节0-255</p>
+<p>灰度图也可以表示成三通道，不过三通道上的值是相等的</p>
+<p>像素值为0表示黑色，255表示白色</p>
+<p>32位图像在24位的基础上增加了一个alpha分量，该分量用于记录图像的透明度信息。</p>
+<h1 id="读、写、显示"><a href="#读、写、显示" class="headerlink" title="读、写、显示"></a>读、写、显示</h1><h2 id="图片读取"><a href="#图片读取" class="headerlink" title="图片读取"></a>图片读取</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="comment"># 读取函数imread()</span></span><br><span class="line">img = cv2.imread(<span class="string">&quot;Path.jpg/png&quot;</span>)</span><br><span class="line"><span class="comment"># 显示函数 imshow()</span></span><br><span class="line">cv2.imshow(<span class="string">&#x27;窗口名称&#x27;</span>,img)</span><br><span class="line"><span class="comment"># 写入函数 imwrite()</span></span><br><span class="line">cv2.imwrite(<span class="string">&#x27;写入的文件名.jpg&#x27;</span>,img)</span><br><span class="line"><span class="comment"># cv2.IMWRITE_JPEG_QUALITY指定jpg质量，范围0到100，默认95，越高画质越好，文件越大</span></span><br><span class="line">cv2.imwrite(<span class="string">&#x27;写入的文件名.jpg&#x27;</span>, img, (cv2.IMWRITE_JPEG_QUALITY, <span class="number">80</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># cv2.IMWRITE_PNG_COMPRESSION指定png质量，范围0到9，默认3，越高文件越小，画质越差</span></span><br><span class="line">cv2.imwrite(<span class="string">&#x27;写入的文件名.png&#x27;</span>, img, (cv2.IMWRITE_PNG_COMPRESSION, <span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="显示图片需要对窗口进行设置"><a href="#显示图片需要对窗口进行设置" class="headerlink" title="显示图片需要对窗口进行设置"></a>显示图片需要对窗口进行设置</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imshow(<span class="string">&#x27;窗口名称&#x27;</span>,img)</span><br><span class="line">cv2.waitkey(<span class="number">0</span>)</span><br><span class="line">cv2.destoryAllWindows()</span><br></pre></td></tr></table></figure>
+
+<p><code>cv2.waitKey()</code> 是键盘绑定函数，可以设置毫秒级数值，如果是0会一直等待，也可以设置为指定字母，比如a</p>
+<p><code>cv2.destoryAllWindows()</code>销毁所有创建的窗口</p>
+<h2 id="视频读取，显示"><a href="#视频读取，显示" class="headerlink" title="视频读取，显示"></a>视频读取，显示</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cap = cv2.VideoCapture(<span class="string">&#x27;视频名称.mp4/avi&#x27;</span>) <span class="comment"># 获取视频</span></span><br><span class="line"><span class="comment"># cap = cv2.VideoCapture(0) # 获取摄像头 0内置 1外置摄像头</span></span><br><span class="line"><span class="comment"># 视频显示：while循环显示视频的每一帧</span></span><br><span class="line"><span class="comment"># 使用read()获取的视频帧，将每一帧显示100ms,如果期间检测到‘q‘则退出，关闭窗口</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">  reg,frame = cap.read()</span><br><span class="line">  cv2.imshow(<span class="string">&#x27;caputre&#x27;</span>,frame)</span><br><span class="line">  <span class="keyword">if</span> cv2.waitkey(<span class="number">100</span>) <span class="keyword">and</span> <span class="number">0xFF</span> == <span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="缩放，补边，裁剪"><a href="#缩放，补边，裁剪" class="headerlink" title="缩放，补边，裁剪"></a>缩放，补边，裁剪</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 缩放成200x200的方形图像</span></span><br><span class="line">img_200x200 = cv2.resize(img, (<span class="number">200</span>, <span class="number">200</span>))</span><br><span class="line"><span class="comment"># 根据缩放比例来</span></span><br><span class="line"><span class="comment"># 默认线性插值 cv2.INTER_LINEAR</span></span><br><span class="line">img = cv2.resize(img,(<span class="number">0</span>,<span class="number">0</span>),fx=<span class="number">0.5</span>,fy=<span class="number">0.5</span>,interpolation=cv2.INTER_NEAREST) <span class="comment"># 邻近插值</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 上下左右分布补边50，40，30，20宽，常数填充 都是黑边</span></span><br><span class="line">img = cv2.copyMakeBorder(img, <span class="number">50</span>, <span class="number">40</span>, <span class="number">30</span>, <span class="number">20</span>,cv2.BORDER_CONSTANT, value=(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据切片来做裁剪</span></span><br><span class="line">imgCropped = img[<span class="number">50</span>:<span class="number">250</span>,<span class="number">120</span>:<span class="number">330</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="绘制形状"><a href="#绘制形状" class="headerlink" title="绘制形状"></a>绘制形状</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># cv2.line() 图像，起点，终点，画笔颜色，线宽</span></span><br><span class="line">img = cv2.line(img,(<span class="number">0</span>,<span class="number">0</span>),(<span class="number">511</span>,<span class="number">511</span>),(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),<span class="number">5</span>)  </span><br><span class="line"><span class="comment"># cv2.circle() 图像，圆心，半径，颜色，-1是表示一个封闭的图形</span></span><br><span class="line">img = cv2.circle(img,(<span class="number">447</span>,<span class="number">63</span>),<span class="number">63</span>,(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),-<span class="number">1</span>)  </span><br><span class="line"><span class="comment"># cv2.rectangle() 图像，左上角，右下角，颜色，线宽</span></span><br><span class="line">img = cv2.rectangle(img,(<span class="number">384</span>,<span class="number">0</span>),(<span class="number">510</span>,<span class="number">128</span>),(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">3</span>) </span><br><span class="line"><span class="comment"># cv2.ellipse()</span></span><br><span class="line">img = cv2.ellipse(img,(<span class="number">256</span>,<span class="number">256</span>),(<span class="number">100</span>,<span class="number">50</span>),<span class="number">0</span>,<span class="number">0</span>,<span class="number">180</span>,<span class="number">255</span>,-<span class="number">1</span>) </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="书写文字"><a href="#书写文字" class="headerlink" title="书写文字"></a>书写文字</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># cv2.putText()</span></span><br><span class="line"><span class="comment"># 各参数依次是：图片，添加的文字，左上角坐标，字体，字体大小，颜色，字体粗细</span></span><br><span class="line">img = cv2.putText(img, <span class="built_in">str</span>, (<span class="number">123</span>,<span class="number">456</span>)), font, <span class="number">2</span>, (<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>), <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>基础操作</tag>
+        <tag>噪音</tag>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python中的*args和**kwargs</title>
+    <url>/2021/10/28/Python%E4%B8%AD%E7%9A%84-args%E5%92%8C-kwargs/</url>
+    <content><![CDATA[<p>*和**的用法</p>
+<p>*args和**kwargs的用法</p>
+<span id="more"></span>
+
+
+
+<h2 id="和-的用法"><a href="#和-的用法" class="headerlink" title="* 和 ** 的用法"></a>* 和 ** 的用法</h2><p>*和**还可用于列表、元组、字典的解包，但是*后的参数必须是一个迭代器。例如:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="comment"># (1, 2, 3)</span></span><br><span class="line"><span class="built_in">print</span>(*a)</span><br><span class="line"><span class="comment"># 1 2 3</span></span><br><span class="line">b = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>,<span class="string">&#x27;n&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"><span class="comment"># &#123;&#x27;a&#x27;: 1, &#x27;n&#x27;: 2&#125;</span></span><br><span class="line"><span class="built_in">print</span>(*b)</span><br><span class="line"><span class="comment"># a n</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="args和-kwargs的用法"><a href="#args和-kwargs的用法" class="headerlink" title="*args和**kwargs的用法"></a>*args和**kwargs的用法</h2><p>定义一个函数时，当输入的参数个数不确定的时候，不能够使用基于位置的参数表示方式，我们会使用(*args, **kwargs)来自动适应变参数和命名参数。这意味着，我们想往函数中输入多少个参数都行，分别以<strong>元组</strong>形式，<strong>字典</strong>形式传递参数。</p>
+<p>**kwargs传入的参数必须形式上有key-value才可以</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span>(<span class="params">*args,**kwargs</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">type</span>(args),args)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">type</span>(kwargs),kwargs)</span><br><span class="line"></span><br><span class="line">test(<span class="string">&quot;test&quot;</span>,y=<span class="string">&#x27;test2&#x27;</span>)</span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; (&#x27;test&#x27;,)</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#x27;y&#x27;: &#x27;test2&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a=(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">b=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">c=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;</span><br><span class="line">d=&#123;<span class="number">1</span>:<span class="number">1</span>,<span class="number">2</span>:<span class="number">2</span>,<span class="number">3</span>:<span class="number">3</span>&#125;</span><br><span class="line"></span><br><span class="line">test(a)</span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; ((1, 2, 3),)  # 输出元组的元素为元组</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#125;</span></span><br><span class="line"></span><br><span class="line">test(b)</span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; ([1, 2, 3],)  # 输出元组的元素为列表</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#125;</span></span><br><span class="line"></span><br><span class="line">test(c)</span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; (&#123;1, 2, 3&#125;,)  # 输出元组的元素为集合</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#125;</span></span><br><span class="line"></span><br><span class="line">test(d)</span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; (&#123;1: 1, 2: 2, 3: 3&#125;,)  # 输出元组的元素为字典</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#125;</span></span><br><span class="line"></span><br><span class="line">test(a,b,c,d)</span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; ((1, 2, 3), [1, 2, 3], &#123;1, 2, 3&#125;, &#123;1: 1, 2: 2, 3: 3&#125;)  # 输出元组的元素可以为不同的类型</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#125;</span></span><br><span class="line"></span><br><span class="line">test(a,y=b,z=c)  <span class="comment"># 只有当以关键字参数传入时，**kwargs才能接受</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; ((1, 2, 3),)</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#x27;y&#x27;: [1, 2, 3], &#x27;z&#x27;: &#123;1, 2, 3&#125;&#125;  # 输出字典</span></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>基础操作</tag>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Global-Wheat-Detection全球小麦麦穗检测</title>
     <url>/2021/10/02/Global-Wheat-Detection%E5%85%A8%E7%90%83%E5%B0%8F%E9%BA%A6%E9%BA%A6%E7%A9%97%E6%A3%80%E6%B5%8B/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>Version1.0: 通过对 Faster R-CNN 网络进行微调来实现检测<br> Version2.0: 基于 EfficientDet 网络实现并结合 Pseudo-Labeling 策略进行改进</p>
@@ -878,56 +958,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>OpenCV图像处理基础（一）</title>
-    <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>数字图像基础</p>
-<p>读、写、显示（图片、视频）</p>
-<p>缩放、补边、裁剪</p>
-<p>绘制形状</p>
-<p>书写文字</p>
-<span id="more"></span>
-
-<h1 id="图像的数字表示"><a href="#图像的数字表示" class="headerlink" title="图像的数字表示"></a>图像的数字表示</h1><p>在计算机系统中存储的是每张图像每个像素点的值</p>
-<p>灰度图，单通道图像也就是8位图像，每个像素点的值占8字节，00000000-11111111也就是0-255</p>
-<p>RGB/BGR图像，是三通道图像，也就是24位图像，每个像素点的值占24字节，也就是三个通道每个通道的值占8字节0-255</p>
-<p>灰度图也可以表示成三通道，不过三通道上的值是相等的</p>
-<p>像素值为0表示黑色，255表示白色</p>
-<p>32位图像在24位的基础上增加了一个alpha分量，该分量用于记录图像的透明度信息。</p>
-<h1 id="读、写、显示"><a href="#读、写、显示" class="headerlink" title="读、写、显示"></a>读、写、显示</h1><h2 id="图片读取"><a href="#图片读取" class="headerlink" title="图片读取"></a>图片读取</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="comment"># 读取函数imread()</span></span><br><span class="line">img = cv2.imread(<span class="string">&quot;Path.jpg/png&quot;</span>)</span><br><span class="line"><span class="comment"># 显示函数 imshow()</span></span><br><span class="line">cv2.imshow(<span class="string">&#x27;窗口名称&#x27;</span>,img)</span><br><span class="line"><span class="comment"># 写入函数 imwrite()</span></span><br><span class="line">cv2.imwrite(<span class="string">&#x27;写入的文件名.jpg&#x27;</span>,img)</span><br><span class="line"><span class="comment"># cv2.IMWRITE_JPEG_QUALITY指定jpg质量，范围0到100，默认95，越高画质越好，文件越大</span></span><br><span class="line">cv2.imwrite(<span class="string">&#x27;写入的文件名.jpg&#x27;</span>, img, (cv2.IMWRITE_JPEG_QUALITY, <span class="number">80</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># cv2.IMWRITE_PNG_COMPRESSION指定png质量，范围0到9，默认3，越高文件越小，画质越差</span></span><br><span class="line">cv2.imwrite(<span class="string">&#x27;写入的文件名.png&#x27;</span>, img, (cv2.IMWRITE_PNG_COMPRESSION, <span class="number">5</span>))</span><br></pre></td></tr></table></figure>
-
-<h2 id="显示图片需要对窗口进行设置"><a href="#显示图片需要对窗口进行设置" class="headerlink" title="显示图片需要对窗口进行设置"></a>显示图片需要对窗口进行设置</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imshow(<span class="string">&#x27;窗口名称&#x27;</span>,img)</span><br><span class="line">cv2.waitkey(<span class="number">0</span>)</span><br><span class="line">cv2.destoryAllWindows()</span><br></pre></td></tr></table></figure>
-
-<p><code>cv2.waitKey()</code> 是键盘绑定函数，可以设置毫秒级数值，如果是0会一直等待，也可以设置为指定字母，比如a</p>
-<p><code>cv2.destoryAllWindows()</code>销毁所有创建的窗口</p>
-<h2 id="视频读取，显示"><a href="#视频读取，显示" class="headerlink" title="视频读取，显示"></a>视频读取，显示</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cap = cv2.VideoCapture(<span class="string">&#x27;视频名称.mp4/avi&#x27;</span>) <span class="comment"># 获取视频</span></span><br><span class="line"><span class="comment"># cap = cv2.VideoCapture(0) # 获取摄像头 0内置 1外置摄像头</span></span><br><span class="line"><span class="comment"># 视频显示：while循环显示视频的每一帧</span></span><br><span class="line"><span class="comment"># 使用read()获取的视频帧，将每一帧显示100ms,如果期间检测到‘q‘则退出，关闭窗口</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">  reg,frame = cap.read()</span><br><span class="line">  cv2.imshow(<span class="string">&#x27;caputre&#x27;</span>,frame)</span><br><span class="line">  <span class="keyword">if</span> cv2.waitkey(<span class="number">100</span>) <span class="keyword">and</span> <span class="number">0xFF</span> == <span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="缩放，补边，裁剪"><a href="#缩放，补边，裁剪" class="headerlink" title="缩放，补边，裁剪"></a>缩放，补边，裁剪</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 缩放成200x200的方形图像</span></span><br><span class="line">img_200x200 = cv2.resize(img, (<span class="number">200</span>, <span class="number">200</span>))</span><br><span class="line"><span class="comment"># 根据缩放比例来</span></span><br><span class="line"><span class="comment"># 默认线性插值 cv2.INTER_LINEAR</span></span><br><span class="line">img = cv2.resize(img,(<span class="number">0</span>,<span class="number">0</span>),fx=<span class="number">0.5</span>,fy=<span class="number">0.5</span>,interpolation=cv2.INTER_NEAREST) <span class="comment"># 邻近插值</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 上下左右分布补边50，40，30，20宽，常数填充 都是黑边</span></span><br><span class="line">img = cv2.copyMakeBorder(img, <span class="number">50</span>, <span class="number">40</span>, <span class="number">30</span>, <span class="number">20</span>,cv2.BORDER_CONSTANT, value=(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据切片来做裁剪</span></span><br><span class="line">imgCropped = img[<span class="number">50</span>:<span class="number">250</span>,<span class="number">120</span>:<span class="number">330</span>]</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="绘制形状"><a href="#绘制形状" class="headerlink" title="绘制形状"></a>绘制形状</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># cv2.line() 图像，起点，终点，画笔颜色，线宽</span></span><br><span class="line">img = cv2.line(img,(<span class="number">0</span>,<span class="number">0</span>),(<span class="number">511</span>,<span class="number">511</span>),(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),<span class="number">5</span>)  </span><br><span class="line"><span class="comment"># cv2.circle() 图像，圆心，半径，颜色，-1是表示一个封闭的图形</span></span><br><span class="line">img = cv2.circle(img,(<span class="number">447</span>,<span class="number">63</span>),<span class="number">63</span>,(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),-<span class="number">1</span>)  </span><br><span class="line"><span class="comment"># cv2.rectangle() 图像，左上角，右下角，颜色，线宽</span></span><br><span class="line">img = cv2.rectangle(img,(<span class="number">384</span>,<span class="number">0</span>),(<span class="number">510</span>,<span class="number">128</span>),(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">3</span>) </span><br><span class="line"><span class="comment"># cv2.ellipse()</span></span><br><span class="line">img = cv2.ellipse(img,(<span class="number">256</span>,<span class="number">256</span>),(<span class="number">100</span>,<span class="number">50</span>),<span class="number">0</span>,<span class="number">0</span>,<span class="number">180</span>,<span class="number">255</span>,-<span class="number">1</span>) </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="书写文字"><a href="#书写文字" class="headerlink" title="书写文字"></a>书写文字</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># cv2.putText()</span></span><br><span class="line"><span class="comment"># 各参数依次是：图片，添加的文字，左上角坐标，字体，字体大小，颜色，字体粗细</span></span><br><span class="line">img = cv2.putText(img, <span class="built_in">str</span>, (<span class="number">123</span>,<span class="number">456</span>)), font, <span class="number">2</span>, (<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>), <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-        <tag>基础操作</tag>
-        <tag>噪音</tag>
-        <tag>编程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo网站建设参考资料</title>
-    <url>/2021/10/30/Hexo%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/</url>
-    <content><![CDATA[<p>Hexo next主题：右侧栏配置 <a href="https://www.cnblogs.com/lfri/p/12221359.html">https://www.cnblogs.com/lfri/p/12221359.html</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>OpenCV图像处理基础（三）</title>
     <url>/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/</url>
     <content><![CDATA[<h1 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h1><h1 id="灰度直方图等"><a href="#灰度直方图等" class="headerlink" title="灰度直方图等"></a>灰度直方图等</h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -946,36 +976,6 @@
         <tag>噪音</tag>
         <tag>编程</tag>
         <tag>灰度图</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python中的*args和**kwargs</title>
-    <url>/2021/10/28/Python%E4%B8%AD%E7%9A%84-args%E5%92%8C-kwargs/</url>
-    <content><![CDATA[<p>*和**的用法</p>
-<p>*args和**kwargs的用法</p>
-<span id="more"></span>
-
-
-
-<h2 id="和-的用法"><a href="#和-的用法" class="headerlink" title="* 和 ** 的用法"></a>* 和 ** 的用法</h2><p>*和**还可用于列表、元组、字典的解包，但是*后的参数必须是一个迭代器。例如:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="comment"># (1, 2, 3)</span></span><br><span class="line"><span class="built_in">print</span>(*a)</span><br><span class="line"><span class="comment"># 1 2 3</span></span><br><span class="line">b = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>,<span class="string">&#x27;n&#x27;</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"><span class="comment"># &#123;&#x27;a&#x27;: 1, &#x27;n&#x27;: 2&#125;</span></span><br><span class="line"><span class="built_in">print</span>(*b)</span><br><span class="line"><span class="comment"># a n</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="args和-kwargs的用法"><a href="#args和-kwargs的用法" class="headerlink" title="*args和**kwargs的用法"></a>*args和**kwargs的用法</h2><p>定义一个函数时，当输入的参数个数不确定的时候，不能够使用基于位置的参数表示方式，我们会使用(*args, **kwargs)来自动适应变参数和命名参数。这意味着，我们想往函数中输入多少个参数都行，分别以<strong>元组</strong>形式，<strong>字典</strong>形式传递参数。</p>
-<p>**kwargs传入的参数必须形式上有key-value才可以</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span>(<span class="params">*args,**kwargs</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">type</span>(args),args)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">type</span>(kwargs),kwargs)</span><br><span class="line"></span><br><span class="line">test(<span class="string">&quot;test&quot;</span>,y=<span class="string">&#x27;test2&#x27;</span>)</span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; (&#x27;test&#x27;,)</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#x27;y&#x27;: &#x27;test2&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a=(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">b=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">c=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;</span><br><span class="line">d=&#123;<span class="number">1</span>:<span class="number">1</span>,<span class="number">2</span>:<span class="number">2</span>,<span class="number">3</span>:<span class="number">3</span>&#125;</span><br><span class="line"></span><br><span class="line">test(a)</span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; ((1, 2, 3),)  # 输出元组的元素为元组</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#125;</span></span><br><span class="line"></span><br><span class="line">test(b)</span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; ([1, 2, 3],)  # 输出元组的元素为列表</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#125;</span></span><br><span class="line"></span><br><span class="line">test(c)</span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; (&#123;1, 2, 3&#125;,)  # 输出元组的元素为集合</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#125;</span></span><br><span class="line"></span><br><span class="line">test(d)</span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; (&#123;1: 1, 2: 2, 3: 3&#125;,)  # 输出元组的元素为字典</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#125;</span></span><br><span class="line"></span><br><span class="line">test(a,b,c,d)</span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; ((1, 2, 3), [1, 2, 3], &#123;1, 2, 3&#125;, &#123;1: 1, 2: 2, 3: 3&#125;)  # 输出元组的元素可以为不同的类型</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#125;</span></span><br><span class="line"></span><br><span class="line">test(a,y=b,z=c)  <span class="comment"># 只有当以关键字参数传入时，**kwargs才能接受</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;tuple&#x27;&gt; ((1, 2, 3),)</span></span><br><span class="line"><span class="comment"># &lt;class &#x27;dict&#x27;&gt; &#123;&#x27;y&#x27;: [1, 2, 3], &#x27;z&#x27;: &#123;1, 2, 3&#125;&#125;  # 输出字典</span></span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>基础操作</tag>
-        <tag>编程</tag>
       </tags>
   </entry>
   <entry>
@@ -1229,15 +1229,6 @@
       </tags>
   </entry>
   <entry>
-    <title>cv算法面试问题总结（九）</title>
-    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B9%9D%EF%BC%89/</url>
-    <content><![CDATA[<p>什么是强化学习？<br>强化学习和监督学习、无监督学习的区别是什么？<br>强化学习适合解决什么样子的问题？<br>使用tensorflow进行深度学习算法实验时，如何调节超参数？<br>深度学习中的batch的大小对学习效果有何影响？<br>用梯度下降训练神经网络的参数，为什么参数有时会被训练为nan值？<br>卷积神经网络CNN中池化层有什么作用？<br>请列举几种常见的激活函数。激活函数有什么作用？<br>神经网络中Dropout的作用？具体是怎么实现的？<br>利用梯度下降法训练神经网络，发现模型loss不变，可能有哪些问题？怎么解决？</p>
-<p>如何解决不平衡数据集的分类问题？<br>残差网络为什么能做到很深层？<br>相比sigmoid激活函数ReLU激活函数有什么优势？<br>卷积神经网络中空洞卷积的作用是什么？<br>适用于移动端部署的网络结构都有哪些？<br>深度学习模型参数初始化都有哪些方法？<br>卷积神经网络为什么会具有平移等不变性？</p>
-<span id="more"></span>
-
-]]></content>
-  </entry>
-  <entry>
     <title>cv算法面试问题总结（二）</title>
     <url>/2021/09/29/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><ol>
@@ -1325,23 +1316,13 @@
       </tags>
   </entry>
   <entry>
-    <title>cv算法面试问题总结（五）</title>
-    <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%94%EF%BC%89/</url>
-    <content><![CDATA[<p>如何确定CNN的卷积核通道数和卷积输出层的通道数？<br>什么是卷积？<br>什么是CNN的池化pool层？<br>简述下什么是生成对抗网络<br>学梵高作画的原理是什么？<br>请简要介绍下tensorflow的计算图<br>你有哪些深度学习（rnn、cnn）调参的经验？<br>为什么不同的机器学习领域都可以使用CNN，CNN解决了这些领域的哪些共性问题？他是如何解决的？<br>LSTM结构推导，为什么比RNN好？<br>Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。</p>
-<p>为什么引入非线性激励函数？<br>请问人工神经网络中为什么ReLu要好过于tanh和sigmoid function？<br>为什么LSTM模型中既存在sigmoid又存在tanh两种激活函数，而不是选择统一一种sigmoid或者tanh？这样做的目的是什么？<br>如何解决RNN梯度爆炸和弥散的问题？<br>什么样的数据集不适合用深度学习？<br>广义线性模型是怎被应用在深度学习中？<br>如何缓解梯度消失和梯度膨胀（微调、梯度截断、改良激活函数等）<br>简述神经网络的发展历史<br>深度学习常用方法<br>请简述神经网络的发展史。</p>
+    <title>cv算法面试问题总结（九）</title>
+    <url>/2021/10/06/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B9%9D%EF%BC%89/</url>
+    <content><![CDATA[<p>什么是强化学习？<br>强化学习和监督学习、无监督学习的区别是什么？<br>强化学习适合解决什么样子的问题？<br>使用tensorflow进行深度学习算法实验时，如何调节超参数？<br>深度学习中的batch的大小对学习效果有何影响？<br>用梯度下降训练神经网络的参数，为什么参数有时会被训练为nan值？<br>卷积神经网络CNN中池化层有什么作用？<br>请列举几种常见的激活函数。激活函数有什么作用？<br>神经网络中Dropout的作用？具体是怎么实现的？<br>利用梯度下降法训练神经网络，发现模型loss不变，可能有哪些问题？怎么解决？</p>
+<p>如何解决不平衡数据集的分类问题？<br>残差网络为什么能做到很深层？<br>相比sigmoid激活函数ReLU激活函数有什么优势？<br>卷积神经网络中空洞卷积的作用是什么？<br>适用于移动端部署的网络结构都有哪些？<br>深度学习模型参数初始化都有哪些方法？<br>卷积神经网络为什么会具有平移等不变性？</p>
 <span id="more"></span>
 
 ]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>面试</tag>
-        <tag>总结</tag>
-        <tag>技巧</tag>
-      </tags>
   </entry>
   <entry>
     <title>cv算法面试问题总结（八）</title>
@@ -1374,6 +1355,43 @@
     <content><![CDATA[<p>基于深度学习的目标检测技术演进：R-CNN、Fast R-CNN、Faster R-CNN、YOLO、SSD<br>请简单解释下目标检测中的这个IOU评价函数（intersection-over-union）<br>KNN与K-means区别？<br>K-means选择初始点的方法有哪些,优缺点是什么?(列出两种以上)<br>简述线性分类器的原理(要求对权重矩阵进行剖析)<br>请简述下log对数、Hinge Loss(折页)、Cross-Entropy Loss(交叉熵)这三个损失函数<br>简述正则化与奥卡姆剃刀原则<br>图像尺寸为 7<em>7, 卷积窗口大小为3</em>3, 步长为3, 是否能输出图像?如果能,输出图像大小为多少?如果不能,说明原因?<br>如果最后一个卷积层和第一个全连接层参数量太大怎么办?<br>为什么说神经网络是端到端的网络?<br>当参数量 &gt;&gt; 样本量时候, 神经网络是如何预防过拟合?<br>什么是感受野？</p>
 <p>简述你对CBIR(Content-based Image Retrieval基于内容的图像检索)的理解<br>什么是计算机视觉单词模型？<br>简述什么是Local Feature(局部特征算子)？<br>KD-Tree相比KNN来进行快速图像特征比对的好处在哪里?<br>简述encode和decode思想<br>输入图片尺寸不匹配CNN网络input时候的解决方式？（三种以上）<br>FCN与CNN最大的区别？<br>遇到class-imbalanced data（数据类目不平衡）问题怎么办？<br>简述孪生随机网络（Siamese Network）<br>DPM（Deformable Parts Model）算法流程<br>什么是NMS（Non-maximum suppression 非极大值抑制）?<br>列举出常见的损失函数(三个以上)?<br>做过目标检测项目么？比如Mask R-CNN和Python做一个抢车位神器<br>如何理解Faster RCNN<br>one-stage和two-stage目标检测方法的区别和优缺点？<br>请画下YOLOv3的网络结构<br>请简单说下YOLOv1,v2,v3,v4各自的特点与发展史<br>如何理解YOLO：YOLO详解<br>怎么理解YOLOv4<br>神经网络参数共享(parameter sharing)是指什么？<br>2021年网易互联网 计算机视觉 一面<br>美团实习算法岗<br>2021商汤-视频理解研究员-校招-技术面</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>hello-world</title>
+    <url>/2021/09/29/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>cv算法面试问题总结（五）</title>
+    <url>/2021/10/01/cv%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%94%EF%BC%89/</url>
+    <content><![CDATA[<p>如何确定CNN的卷积核通道数和卷积输出层的通道数？<br>什么是卷积？<br>什么是CNN的池化pool层？<br>简述下什么是生成对抗网络<br>学梵高作画的原理是什么？<br>请简要介绍下tensorflow的计算图<br>你有哪些深度学习（rnn、cnn）调参的经验？<br>为什么不同的机器学习领域都可以使用CNN，CNN解决了这些领域的哪些共性问题？他是如何解决的？<br>LSTM结构推导，为什么比RNN好？<br>Sigmoid、Tanh、ReLu这三个激活函数有什么缺点或不足，有没改进的激活函数。</p>
+<p>为什么引入非线性激励函数？<br>请问人工神经网络中为什么ReLu要好过于tanh和sigmoid function？<br>为什么LSTM模型中既存在sigmoid又存在tanh两种激活函数，而不是选择统一一种sigmoid或者tanh？这样做的目的是什么？<br>如何解决RNN梯度爆炸和弥散的问题？<br>什么样的数据集不适合用深度学习？<br>广义线性模型是怎被应用在深度学习中？<br>如何缓解梯度消失和梯度膨胀（微调、梯度截断、改良激活函数等）<br>简述神经网络的发展历史<br>深度学习常用方法<br>请简述神经网络的发展史。</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+        <tag>总结</tag>
+        <tag>技巧</tag>
+      </tags>
   </entry>
   <entry>
     <title>cv算法面试问题总结（四）</title>
@@ -1415,22 +1433,9 @@
       </tags>
   </entry>
   <entry>
-    <title>hello-world</title>
-    <url>/2021/09/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
+    <title>kaggle比赛-Molecular Translation</title>
+    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-Molecular-Translation/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>kaggle-糖尿病视网膜病变检测</title>
@@ -1462,11 +1467,6 @@
         <tag>编程</tag>
         <tag>Kaggle</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>kaggle比赛-Molecular Translation</title>
-    <url>/2021/10/03/kaggle%E6%AF%94%E8%B5%9B-Molecular-Translation/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>kaggle比赛-NFL Helmet Assignment</title>
@@ -1826,63 +1826,6 @@
       </categories>
   </entry>
   <entry>
-    <title>医疗影像dicom图像预处理-Pydicom</title>
-    <url>/2021/10/06/%E5%8C%BB%E7%96%97%E5%BD%B1%E5%83%8Fdicom%E5%9B%BE%E5%83%8F%E9%A2%84%E5%A4%84%E7%90%86-Pydicom/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>pydicom是一个python中的第三方库，用于DICOM文件，主要为了以一种简单的”python式”方式检查和修改dicom数据而设计，可以提供给使用者轻松的修改，读写文件并转换成显式图像图片。</p>
-<p>DICOM被广泛应用于放射医疗、心血管成像以及放射诊疗诊断设备（X射线，CT，核磁共振，超声等），并且在眼科和牙科等其它医学领域得到越来越深入广泛的应用。在数以万计的在用医学成像设备中，DICOM是部署最为广泛的医疗信息标准之一。当前大约有百亿级符合DICOM标准的医学图像用于临床使用。<br>患者的医学图像以DICOM文件格式进行存储，其中包含了图像信息以及患者的PHI（protected health information，即姓名、性别、年龄等），以及产生图像的设备的相关信息。</p>
-<span id="more"></span>
-
-<h1 id="人体内各介质的亨氏单位值"><a href="#人体内各介质的亨氏单位值" class="headerlink" title="人体内各介质的亨氏单位值"></a>人体内各介质的亨氏单位值</h1><p><img src="/2021/10/06/%E5%8C%BB%E7%96%97%E5%BD%B1%E5%83%8Fdicom%E5%9B%BE%E5%83%8F%E9%A2%84%E5%A4%84%E7%90%86-Pydicom/hu.png"></p>
-<h1 id="pydicom基础操作"><a href="#pydicom基础操作" class="headerlink" title="pydicom基础操作"></a>pydicom基础操作</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pydicom</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">dcm = pydicom.read_file(<span class="string">&#x27;test1/Image-100.dcm&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(dcm.<span class="built_in">dir</span>()) <span class="comment"># 查看有哪些方法，属性</span></span><br><span class="line"><span class="built_in">print</span>(dcm.<span class="built_in">dir</span>(<span class="string">&#x27;pat&#x27;</span>)) <span class="comment"># 查看有哪些pat(属性)</span></span><br><span class="line"><span class="comment"># 通过字典关键字来获取图像的数据元信息（当然也可以根据TAG号）</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">info = &#123;&#125;</span><br><span class="line"><span class="comment"># 从dcm 文件中提取patient信息</span></span><br><span class="line">info[<span class="string">&quot;PatientID&quot;</span>] = dcm.PatientID               <span class="comment"># 患者ID</span></span><br><span class="line"><span class="comment"># info[&quot;PatientName&quot;] = dcm.PatientName           # 患者姓名</span></span><br><span class="line"><span class="comment"># info[&quot;PatientBirthData&quot;] = dcm.PatientBirthData # 患者出生日期</span></span><br><span class="line"><span class="comment"># info[&quot;PatientAge&quot;] = dcm.PatientAge             # 患者年龄</span></span><br><span class="line"><span class="comment"># info[&#x27;PatientSex&#x27;] = dcm.PatientSex             # 患者性别</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从dcm 文件中提取study案例信息</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyID&#x27;] = dcm.StudyID                   # 检查ID</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyDate&#x27;] = dcm.StudyDate               # 检查日期</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyTime&#x27;] = dcm.StudyTime               # 检查时间</span></span><br><span class="line"><span class="comment"># info[&#x27;InstitutionName&#x27;] = dcm.InstitutionName   # 机构名称</span></span><br><span class="line"><span class="comment"># info[&#x27;Manufacturer&#x27;] = dcm.Manufacturer         # 设备制造商</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyDescription&#x27;]=dcm.StudyDescription   # 检查项目描述</span></span><br><span class="line"><span class="built_in">print</span>(info)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取图像唯一标识符</span></span><br><span class="line">uid = dcm.SOPInstanceUID</span><br><span class="line">img_arr = dcm.pixel_array</span><br><span class="line"><span class="built_in">print</span>(img_arr.shape)</span><br><span class="line">lens = img_arr.shape[<span class="number">0</span>] * img_arr.shape[<span class="number">1</span>] <span class="comment"># 获取像素点的数量</span></span><br><span class="line">tmp = np.reshape(img_arr,(lens,))</span><br><span class="line">max_val = <span class="built_in">max</span>(tmp)</span><br><span class="line">min_val = <span class="built_in">min</span>(tmp)</span><br><span class="line"><span class="comment"># 图像归一化</span></span><br><span class="line">img_arr = (img_arr-min_val)/(max_val-min_val)</span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>,<span class="number">12</span>),dpi=<span class="number">250</span>) <span class="comment">#dpi每英寸点数，这张是1200*1200像素的图片</span></span><br><span class="line">plt.title(<span class="string">&quot;UID:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(uid))</span><br><span class="line">plt.imshow(img_arr,cmap=plt.cm.gray)<span class="comment">#颜色图谱（colormap), 默认绘制为RGB(A)颜色空间。</span></span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改图片中的元素</span></span><br><span class="line"><span class="keyword">for</span> n,val <span class="keyword">in</span> <span class="built_in">enumerate</span>(dcm.pixel_array.flat):</span><br><span class="line">    <span class="keyword">if</span> val &lt; <span class="number">1300</span>:</span><br><span class="line">        dcm.pixel_array.flat[n] = <span class="number">0</span></span><br><span class="line">dcm.PixelData = dcm.pixel_array.tobytes()</span><br><span class="line">img_arr2 = dcm.pixel_array</span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>,<span class="number">12</span>),dpi=<span class="number">250</span>) <span class="comment">#dpi每英寸点数，这张是1200*1200像素的图片</span></span><br><span class="line">plt.title(<span class="string">&quot;UID:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(uid))</span><br><span class="line">plt.imshow(img_arr2,cmap=plt.cm.gray)<span class="comment">#颜色图谱（colormap), 默认绘制为RGB(A)颜色空间。</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-<h1 id="案例：肺结节图像预处理"><a href="#案例：肺结节图像预处理" class="headerlink" title="案例：肺结节图像预处理"></a>案例：肺结节图像预处理</h1><ol>
-<li></li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 加载必要的python包</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd </span><br><span class="line"><span class="keyword">import</span> dicom</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> scipy.ndimage</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> skimage <span class="keyword">import</span> measure, morphology</span><br><span class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d.art3d <span class="keyword">import</span> Poly3DCollection</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含所有患者目录的根目录</span></span><br><span class="line">INPUT_FOLDER = <span class="string">&#x27;../input/sample_images/&#x27;</span></span><br><span class="line">patients = os.listdir(INPUT_FOLDER)</span><br><span class="line">patients.sort()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载一位患者的所有slice，按照顺序调整为等间隔扫描</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_scan</span>(<span class="params">path</span>):</span></span><br><span class="line">    slices = [dicom.read_file(path + <span class="string">&#x27;/&#x27;</span> + s) <span class="keyword">for</span> s <span class="keyword">in</span> os.listdir(path)]</span><br><span class="line">    <span class="comment">#按照扫描顺序叠加</span></span><br><span class="line">    slices.sort(key = <span class="keyword">lambda</span> x: <span class="built_in">float</span>(x.ImagePositionPatient[<span class="number">2</span>])) </span><br><span class="line">    <span class="comment"># 计算相邻扫描的间隔距离</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        slice_thickness = np.<span class="built_in">abs</span>(slices[<span class="number">0</span>].ImagePositionPatient[<span class="number">2</span>] - slices[<span class="number">1</span>].ImagePositionPatient[<span class="number">2</span>])</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        slice_thickness = np.<span class="built_in">abs</span>(slices[<span class="number">0</span>].SliceLocation - slices[<span class="number">1</span>].SliceLocation)</span><br><span class="line">		</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> slices:</span><br><span class="line">        s.SliceThickness = slice_thickness</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> slices</span><br></pre></td></tr></table></figure>
-
-<p>默认情况下，从DICOM文件中获得的值是HU这个单位。 需要解决这个问题。缩放斜率和截距由硬件制造商决定。<br>它指定从存储在磁盘表示中的像素到存储在内存表示中的像素的线性转换。磁盘存储的值定义为SV。而转化到内存中的像素值uints就需要两个dicom tag : Rescale intercept和Rescale slope。<br>OutputUnits=m∗SV+b<br>RescaleIntercept:b<br>RescaleSlope:m</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 排除扫描边界之外的数据，然后重新计算HU值（乘以重新缩放斜率并添加截距）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_pixels_hu</span>(<span class="params">slices</span>):</span></span><br><span class="line">    image = np.stack([s.pixel_array <span class="keyword">for</span> s <span class="keyword">in</span> slices])</span><br><span class="line">    <span class="comment"># 转换为int16，int16是ok的，因为所有的数值都应该 &lt;32k</span></span><br><span class="line">    image = image.astype(np.int16)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 设置边界外的元素为0</span></span><br><span class="line">    image[image == -<span class="number">2000</span>] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 转换为HU单位</span></span><br><span class="line">    <span class="keyword">for</span> slice_number <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(slices)):</span><br><span class="line"></span><br><span class="line">        intercept = slices[slice_number].RescaleIntercept</span><br><span class="line">        slope = slices[slice_number].RescaleSlope</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> slope != <span class="number">1</span>:</span><br><span class="line">            image[slice_number] = slope * image[slice_number].astype(np.float64)</span><br><span class="line">            image[slice_number] = image[slice_number].astype(np.int16)</span><br><span class="line"></span><br><span class="line">        image[slice_number] += np.int16(intercept)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> np.array(image, dtype=np.int16)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 产看第i位患者的图像</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show_img</span>():</span></span><br><span class="line">    first_patient = load_scan(INPUT_FOLDER + patients[<span class="number">0</span>])</span><br><span class="line">    first_patient_pixels = get_pixels_hu(first_patient)</span><br><span class="line">    plt.hist(first_patient_pixels.flatten(), bins=<span class="number">80</span>, color=<span class="string">&#x27;c&#x27;</span>)</span><br><span class="line">    plt.xlabel(<span class="string">&quot;Hounsfield Units (HU)&quot;</span>)</span><br><span class="line">    plt.ylabel(<span class="string">&quot;Frequency&quot;</span>)</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 显示一个中间位置的切片</span></span><br><span class="line">    plt.imshow(first_patient_pixels[<span class="number">80</span>], cmap=plt.cm.gray)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
-
-<p>统一像素间距spacing，spacing定义了图像像素的物理大小并且保证了实际距离测量的准确性。比如，如果知道x和y轴的像素间距为 0.4mm，那么在图像中的一条 10 像素的线就会有 4mm的长度。同样，由于知道图像像素中的宽和高(比如对于普通CT来说是 512×512)，就能够找到图像的实际尺寸了:512 × 0.4 mm = 204.8 mm。</p>
-<p>在重采样过程中，让图像的spacing保持一致以及具体大小是多少是非常重要的：CNN中Conv操作被提出来的其中一个重要motivation就是图像中有相似的块能用共享的卷积来提取特征，因此对所有图像重采样能减少不同图像之间的不一致性，便于卷积操作提取共同的特征。</p>
-<p>值得注意的是，图像的spacing保持一致，图像中像素值的个数（即图像分辨率）却不一定相同。而分割网络的框架是固定的，一般是需要输入图片的分辨率大小是一致的。所以通常在训练的时候是用一个固定大小的patch从图像中裁剪采样，在这个过程中原图分辨率不一样是不影响的。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">resample</span>(<span class="params">image, scan, new_spacing=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span>):</span></span><br><span class="line">    <span class="comment"># Determine current pixel spacing</span></span><br><span class="line">    spacing = np.array([scan[<span class="number">0</span>].SliceThickness] + scan[<span class="number">0</span>].PixelSpacing, dtype=np.float32)</span><br><span class="line"></span><br><span class="line">    resize_factor = spacing / new_spacing</span><br><span class="line">    new_real_shape = image.shape * resize_factor</span><br><span class="line">    new_shape = np.<span class="built_in">round</span>(new_real_shape)</span><br><span class="line">    real_resize_factor = new_shape / image.shape</span><br><span class="line">    new_spacing = spacing / real_resize_factor</span><br><span class="line"></span><br><span class="line">    image = scipy.ndimage.interpolation.zoom(image, real_resize_factor, mode=<span class="string">&#x27;nearest&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> image, new_spacing</span><br><span class="line"></span><br><span class="line">pix_resampled, spacing = resample(first_patient_pixels, first_patient, [<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Shape before resampling\t&quot;</span>, first_patient_pixels.shape)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Shape after resampling\t&quot;</span>, pix_resampled.shape)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 画3D图像，用立方体为我们的3D对象创建一个近似网格</span></span><br><span class="line"><span class="comment"># 采用的阈值可以被用来绘制某些结构，例如所有组织或仅骨骼。 400是仅显示骨骼的阈值（见上面的Hounsfield单位表）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_3d</span>(<span class="params">image, threshold=-<span class="number">300</span></span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Position the scan upright, </span></span><br><span class="line">    <span class="comment"># so the head of the patient would be at the top facing the camera</span></span><br><span class="line">    p = image.transpose(<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    verts, faces = measure.marching_cubes(p, threshold)</span><br><span class="line"></span><br><span class="line">    fig = plt.figure(figsize=(<span class="number">10</span>, <span class="number">10</span>))</span><br><span class="line">    ax = fig.add_subplot(<span class="number">111</span>, projection=<span class="string">&#x27;3d&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Fancy indexing: `verts[faces]` to generate a collection of triangles</span></span><br><span class="line">    mesh = Poly3DCollection(verts[faces], alpha=<span class="number">0.70</span>)</span><br><span class="line">    face_color = [<span class="number">0.45</span>, <span class="number">0.45</span>, <span class="number">0.75</span>]</span><br><span class="line">    mesh.set_facecolor(face_color)</span><br><span class="line">    ax.add_collection3d(mesh)</span><br><span class="line"></span><br><span class="line">    ax.set_xlim(<span class="number">0</span>, p.shape[<span class="number">0</span>])</span><br><span class="line">    ax.set_ylim(<span class="number">0</span>, p.shape[<span class="number">1</span>])</span><br><span class="line">    ax.set_zlim(<span class="number">0</span>, p.shape[<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
-
-
-
-<p>肺部切割</p>
-<ul>
-<li>阈值图像（-320 HU）</li>
-<li>做连接组件，确定人周围的空气标签，在二进制图像中用1s填充</li>
-<li>可选：对于扫描中的每个轴向切片，确定最大的固体连接组件（人体周围的身体+空气），并将其他组件设置为0。这样可以填充面罩中肺部的结构。</li>
-<li>只保留最大的气袋（人体在这里和那里都有其他的气袋）</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">largest_label_volume</span>(<span class="params">im, bg=-<span class="number">1</span></span>):</span></span><br><span class="line">    vals, counts = np.unique(im, return_counts=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    counts = counts[vals != bg]</span><br><span class="line">    vals = vals[vals != bg]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(counts) &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> vals[np.argmax(counts)]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">segment_lung_mask</span>(<span class="params">image, fill_lung_structures=<span class="literal">True</span></span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># not actually binary, but 1 and 2. </span></span><br><span class="line">    <span class="comment"># 0 is treated as background, which we do not want</span></span><br><span class="line">    binary_image = np.array(image &gt; -<span class="number">320</span>, dtype=np.int8)+<span class="number">1</span></span><br><span class="line">    labels = measure.label(binary_image)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Pick the pixel in the very corner to determine which label is air.</span></span><br><span class="line">    <span class="comment">#   Improvement: Pick multiple background labels from around the patient</span></span><br><span class="line">    <span class="comment">#   More resistant to &quot;trays&quot; on which the patient lays cutting the air </span></span><br><span class="line">    <span class="comment">#   around the person in half</span></span><br><span class="line">    background_label = labels[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment">#Fill the air around the person</span></span><br><span class="line">    binary_image[background_label == labels] = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Method of filling the lung structures (that is superior to something like </span></span><br><span class="line">    <span class="comment"># morphological closing)</span></span><br><span class="line">    <span class="keyword">if</span> fill_lung_structures:</span><br><span class="line">        <span class="comment"># For every slice we determine the largest solid structure</span></span><br><span class="line">        <span class="keyword">for</span> i, axial_slice <span class="keyword">in</span> <span class="built_in">enumerate</span>(binary_image):</span><br><span class="line">            axial_slice = axial_slice - <span class="number">1</span></span><br><span class="line">            labeling = measure.label(axial_slice)</span><br><span class="line">            l_max = largest_label_volume(labeling, bg=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> l_max <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>: <span class="comment">#This slice contains some lung</span></span><br><span class="line">                binary_image[i][labeling != l_max] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    binary_image -= <span class="number">1</span> <span class="comment">#Make the image actual binary</span></span><br><span class="line">    binary_image = <span class="number">1</span>-binary_image <span class="comment"># Invert it, lungs are now 1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Remove other air pockets insided body</span></span><br><span class="line">    labels = measure.label(binary_image, background=<span class="number">0</span>)</span><br><span class="line">    l_max = largest_label_volume(labels, bg=<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">if</span> l_max <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>: <span class="comment"># There are air pockets</span></span><br><span class="line">        binary_image[labels != l_max] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> binary_image</span><br><span class="line"></span><br><span class="line">segmented_lungs = segment_lung_mask(pix_resampled, <span class="literal">False</span>)</span><br><span class="line">segmented_lungs_fill = segment_lung_mask(pix_resampled, <span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">plot_3d(segmented_lungs, <span class="number">0</span>)</span><br><span class="line">plot_3d(segmented_lungs_fill, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-
-<p>当使用这个时，记得首先在它上面应用扩张形态学操作（即用圆形内核）。这会在所有方向上扩展蒙版。仅肺部的空气+结构将不包含所有结节，特别是它会遗漏那些粘在肺部侧面的结节，它们经常出现在那里！所以扩大面具一点:)</p>
-<p>对于某些边缘情况，此分段可能会失败。它依赖于患者体外的空气不与肺部空气相连的事实。如果患者进行了气管造口术，情况也可能并非如此，不知道这是否存在于数据集中。此外，特别是噪声图像（例如由于下图中的起搏器），这种方法也可能失败。相反，身体中的第二大气袋将被分割。您可以通过检查蒙版对应的图像分数来识别这一点，对于这种情况，这将是非常小的。然后，你可以首先使用几毫米大小的内核进行形态学关闭操作以关闭这些孔，之后它应该可以工作（或者更简单地说，不要对此图像使用蒙版）。</p>
-<p>数据归一化</p>
-<p>目前所有的数值在-1024到2000左右。超过400的任何东西其实是不用关心的，因为只是一些具有不同辐射密度的骨骼。 常用的阈值集合在-1000到400之间。这里有一些代码可以使用：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">MIN_BOUND = -<span class="number">1000.0</span></span><br><span class="line">MAX_BOUND = <span class="number">400.0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">normalize</span>(<span class="params">image</span>):</span></span><br><span class="line">    image = (image - MIN_BOUND) / (MAX_BOUND - MIN_BOUND)</span><br><span class="line">    image[image&gt;<span class="number">1</span>] = <span class="number">1.</span></span><br><span class="line">    image[image&lt;<span class="number">0</span>] = <span class="number">0.</span></span><br><span class="line">    <span class="keyword">return</span> image</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据零居中</span></span><br><span class="line"><span class="comment"># 将数据平均值设置为零。为此，只需从所有像素中减去平均像素值。</span></span><br><span class="line">PIXEL_MEAN = <span class="number">0.25</span> <span class="comment"># 假设均值为0.25</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">zero_center</span>(<span class="params">image</span>):</span></span><br><span class="line">    image = image - PIXEL_MEAN</span><br><span class="line">    <span class="keyword">return</span> image</span><br></pre></td></tr></table></figure>
-
-
-
-<p>未完 参考 <a href="https://zhuanlan.zhihu.com/p/59413289">https://zhuanlan.zhihu.com/p/59413289</a></p>
-]]></content>
-      <categories>
-        <category>Python</category>
-        <category>图像识别</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>医学图像</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>医疗数据集资源收集</title>
     <url>/2021/11/23/%E5%8C%BB%E7%96%97%E6%95%B0%E6%8D%AE%E9%9B%86%E8%B5%84%E6%BA%90%E6%94%B6%E9%9B%86/</url>
     <content><![CDATA[<h1 id="数据集类别"><a href="#数据集类别" class="headerlink" title="数据集类别"></a>数据集类别</h1><p>肺部数据集</p>
@@ -2081,14 +2024,61 @@
       </categories>
   </entry>
   <entry>
-    <title></title>
-    <url>/2021/12/16/%E5%8D%8E%E4%B8%BA%E6%98%87%E8%85%BECANN%E6%95%99%E7%A8%8B-TBE%E7%AE%97%E5%AD%90%E5%BC%80%E5%8F%91/</url>
-    <content><![CDATA[<h1 id="华为昇腾CANN教程-TBE算子开发"><a href="#华为昇腾CANN教程-TBE算子开发" class="headerlink" title="华为昇腾CANN教程-TBE算子开发"></a>华为昇腾CANN教程-TBE算子开发</h1><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><p><strong>算子</strong>：一个函数空间到另一个函数空间的映射，可以说对任何函数进行某一项操作都可以将其认为是一个算子，在神经网络模型中涉及到的计算函数。例如：卷积层中的卷积算法，全连接中的权值求和算子，还有众多激活函数算子。</p>
-<p>每个算子有自己独有的名称，每个网络包含多种算子类型Type。比如神经网络中的卷积类型的算子有conv1，conv2… 池化类型的算子有pool1，pool2…</p>
-<p>TBE（Tensor Boost Engine）：是一款华为自研的NPU算子开发工具，以TVM为基础框架进行扩展。可以用python来开发的。</p>
-<p>NPU（Neural-network Processing Unit）：一类专用于人工智能（神经网络等方面）的硬件加速处理器。课程中使用昇腾910处理器</p>
-<p>TVM（Tensor Virtual Machine）： 能加载多种模型框架在多种平台上运行的中间框架</p>
+    <title>医疗影像dicom图像预处理-Pydicom</title>
+    <url>/2021/10/06/%E5%8C%BB%E7%96%97%E5%BD%B1%E5%83%8Fdicom%E5%9B%BE%E5%83%8F%E9%A2%84%E5%A4%84%E7%90%86-Pydicom/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>pydicom是一个python中的第三方库，用于DICOM文件，主要为了以一种简单的”python式”方式检查和修改dicom数据而设计，可以提供给使用者轻松的修改，读写文件并转换成显式图像图片。</p>
+<p>DICOM被广泛应用于放射医疗、心血管成像以及放射诊疗诊断设备（X射线，CT，核磁共振，超声等），并且在眼科和牙科等其它医学领域得到越来越深入广泛的应用。在数以万计的在用医学成像设备中，DICOM是部署最为广泛的医疗信息标准之一。当前大约有百亿级符合DICOM标准的医学图像用于临床使用。<br>患者的医学图像以DICOM文件格式进行存储，其中包含了图像信息以及患者的PHI（protected health information，即姓名、性别、年龄等），以及产生图像的设备的相关信息。</p>
+<span id="more"></span>
+
+<h1 id="人体内各介质的亨氏单位值"><a href="#人体内各介质的亨氏单位值" class="headerlink" title="人体内各介质的亨氏单位值"></a>人体内各介质的亨氏单位值</h1><p><img src="/2021/10/06/%E5%8C%BB%E7%96%97%E5%BD%B1%E5%83%8Fdicom%E5%9B%BE%E5%83%8F%E9%A2%84%E5%A4%84%E7%90%86-Pydicom/hu.png"></p>
+<h1 id="pydicom基础操作"><a href="#pydicom基础操作" class="headerlink" title="pydicom基础操作"></a>pydicom基础操作</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pydicom</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">dcm = pydicom.read_file(<span class="string">&#x27;test1/Image-100.dcm&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(dcm.<span class="built_in">dir</span>()) <span class="comment"># 查看有哪些方法，属性</span></span><br><span class="line"><span class="built_in">print</span>(dcm.<span class="built_in">dir</span>(<span class="string">&#x27;pat&#x27;</span>)) <span class="comment"># 查看有哪些pat(属性)</span></span><br><span class="line"><span class="comment"># 通过字典关键字来获取图像的数据元信息（当然也可以根据TAG号）</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">info = &#123;&#125;</span><br><span class="line"><span class="comment"># 从dcm 文件中提取patient信息</span></span><br><span class="line">info[<span class="string">&quot;PatientID&quot;</span>] = dcm.PatientID               <span class="comment"># 患者ID</span></span><br><span class="line"><span class="comment"># info[&quot;PatientName&quot;] = dcm.PatientName           # 患者姓名</span></span><br><span class="line"><span class="comment"># info[&quot;PatientBirthData&quot;] = dcm.PatientBirthData # 患者出生日期</span></span><br><span class="line"><span class="comment"># info[&quot;PatientAge&quot;] = dcm.PatientAge             # 患者年龄</span></span><br><span class="line"><span class="comment"># info[&#x27;PatientSex&#x27;] = dcm.PatientSex             # 患者性别</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从dcm 文件中提取study案例信息</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyID&#x27;] = dcm.StudyID                   # 检查ID</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyDate&#x27;] = dcm.StudyDate               # 检查日期</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyTime&#x27;] = dcm.StudyTime               # 检查时间</span></span><br><span class="line"><span class="comment"># info[&#x27;InstitutionName&#x27;] = dcm.InstitutionName   # 机构名称</span></span><br><span class="line"><span class="comment"># info[&#x27;Manufacturer&#x27;] = dcm.Manufacturer         # 设备制造商</span></span><br><span class="line"><span class="comment"># info[&#x27;StudyDescription&#x27;]=dcm.StudyDescription   # 检查项目描述</span></span><br><span class="line"><span class="built_in">print</span>(info)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取图像唯一标识符</span></span><br><span class="line">uid = dcm.SOPInstanceUID</span><br><span class="line">img_arr = dcm.pixel_array</span><br><span class="line"><span class="built_in">print</span>(img_arr.shape)</span><br><span class="line">lens = img_arr.shape[<span class="number">0</span>] * img_arr.shape[<span class="number">1</span>] <span class="comment"># 获取像素点的数量</span></span><br><span class="line">tmp = np.reshape(img_arr,(lens,))</span><br><span class="line">max_val = <span class="built_in">max</span>(tmp)</span><br><span class="line">min_val = <span class="built_in">min</span>(tmp)</span><br><span class="line"><span class="comment"># 图像归一化</span></span><br><span class="line">img_arr = (img_arr-min_val)/(max_val-min_val)</span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>,<span class="number">12</span>),dpi=<span class="number">250</span>) <span class="comment">#dpi每英寸点数，这张是1200*1200像素的图片</span></span><br><span class="line">plt.title(<span class="string">&quot;UID:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(uid))</span><br><span class="line">plt.imshow(img_arr,cmap=plt.cm.gray)<span class="comment">#颜色图谱（colormap), 默认绘制为RGB(A)颜色空间。</span></span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改图片中的元素</span></span><br><span class="line"><span class="keyword">for</span> n,val <span class="keyword">in</span> <span class="built_in">enumerate</span>(dcm.pixel_array.flat):</span><br><span class="line">    <span class="keyword">if</span> val &lt; <span class="number">1300</span>:</span><br><span class="line">        dcm.pixel_array.flat[n] = <span class="number">0</span></span><br><span class="line">dcm.PixelData = dcm.pixel_array.tobytes()</span><br><span class="line">img_arr2 = dcm.pixel_array</span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>,<span class="number">12</span>),dpi=<span class="number">250</span>) <span class="comment">#dpi每英寸点数，这张是1200*1200像素的图片</span></span><br><span class="line">plt.title(<span class="string">&quot;UID:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(uid))</span><br><span class="line">plt.imshow(img_arr2,cmap=plt.cm.gray)<span class="comment">#颜色图谱（colormap), 默认绘制为RGB(A)颜色空间。</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h1 id="案例：肺结节图像预处理"><a href="#案例：肺结节图像预处理" class="headerlink" title="案例：肺结节图像预处理"></a>案例：肺结节图像预处理</h1><ol>
+<li></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 加载必要的python包</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd </span><br><span class="line"><span class="keyword">import</span> dicom</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> scipy.ndimage</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> skimage <span class="keyword">import</span> measure, morphology</span><br><span class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d.art3d <span class="keyword">import</span> Poly3DCollection</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含所有患者目录的根目录</span></span><br><span class="line">INPUT_FOLDER = <span class="string">&#x27;../input/sample_images/&#x27;</span></span><br><span class="line">patients = os.listdir(INPUT_FOLDER)</span><br><span class="line">patients.sort()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载一位患者的所有slice，按照顺序调整为等间隔扫描</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_scan</span>(<span class="params">path</span>):</span></span><br><span class="line">    slices = [dicom.read_file(path + <span class="string">&#x27;/&#x27;</span> + s) <span class="keyword">for</span> s <span class="keyword">in</span> os.listdir(path)]</span><br><span class="line">    <span class="comment">#按照扫描顺序叠加</span></span><br><span class="line">    slices.sort(key = <span class="keyword">lambda</span> x: <span class="built_in">float</span>(x.ImagePositionPatient[<span class="number">2</span>])) </span><br><span class="line">    <span class="comment"># 计算相邻扫描的间隔距离</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        slice_thickness = np.<span class="built_in">abs</span>(slices[<span class="number">0</span>].ImagePositionPatient[<span class="number">2</span>] - slices[<span class="number">1</span>].ImagePositionPatient[<span class="number">2</span>])</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        slice_thickness = np.<span class="built_in">abs</span>(slices[<span class="number">0</span>].SliceLocation - slices[<span class="number">1</span>].SliceLocation)</span><br><span class="line">		</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> slices:</span><br><span class="line">        s.SliceThickness = slice_thickness</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> slices</span><br></pre></td></tr></table></figure>
+
+<p>默认情况下，从DICOM文件中获得的值是HU这个单位。 需要解决这个问题。缩放斜率和截距由硬件制造商决定。<br>它指定从存储在磁盘表示中的像素到存储在内存表示中的像素的线性转换。磁盘存储的值定义为SV。而转化到内存中的像素值uints就需要两个dicom tag : Rescale intercept和Rescale slope。<br>OutputUnits=m∗SV+b<br>RescaleIntercept:b<br>RescaleSlope:m</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 排除扫描边界之外的数据，然后重新计算HU值（乘以重新缩放斜率并添加截距）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_pixels_hu</span>(<span class="params">slices</span>):</span></span><br><span class="line">    image = np.stack([s.pixel_array <span class="keyword">for</span> s <span class="keyword">in</span> slices])</span><br><span class="line">    <span class="comment"># 转换为int16，int16是ok的，因为所有的数值都应该 &lt;32k</span></span><br><span class="line">    image = image.astype(np.int16)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 设置边界外的元素为0</span></span><br><span class="line">    image[image == -<span class="number">2000</span>] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 转换为HU单位</span></span><br><span class="line">    <span class="keyword">for</span> slice_number <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(slices)):</span><br><span class="line"></span><br><span class="line">        intercept = slices[slice_number].RescaleIntercept</span><br><span class="line">        slope = slices[slice_number].RescaleSlope</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> slope != <span class="number">1</span>:</span><br><span class="line">            image[slice_number] = slope * image[slice_number].astype(np.float64)</span><br><span class="line">            image[slice_number] = image[slice_number].astype(np.int16)</span><br><span class="line"></span><br><span class="line">        image[slice_number] += np.int16(intercept)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> np.array(image, dtype=np.int16)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 产看第i位患者的图像</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show_img</span>():</span></span><br><span class="line">    first_patient = load_scan(INPUT_FOLDER + patients[<span class="number">0</span>])</span><br><span class="line">    first_patient_pixels = get_pixels_hu(first_patient)</span><br><span class="line">    plt.hist(first_patient_pixels.flatten(), bins=<span class="number">80</span>, color=<span class="string">&#x27;c&#x27;</span>)</span><br><span class="line">    plt.xlabel(<span class="string">&quot;Hounsfield Units (HU)&quot;</span>)</span><br><span class="line">    plt.ylabel(<span class="string">&quot;Frequency&quot;</span>)</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 显示一个中间位置的切片</span></span><br><span class="line">    plt.imshow(first_patient_pixels[<span class="number">80</span>], cmap=plt.cm.gray)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>统一像素间距spacing，spacing定义了图像像素的物理大小并且保证了实际距离测量的准确性。比如，如果知道x和y轴的像素间距为 0.4mm，那么在图像中的一条 10 像素的线就会有 4mm的长度。同样，由于知道图像像素中的宽和高(比如对于普通CT来说是 512×512)，就能够找到图像的实际尺寸了:512 × 0.4 mm = 204.8 mm。</p>
+<p>在重采样过程中，让图像的spacing保持一致以及具体大小是多少是非常重要的：CNN中Conv操作被提出来的其中一个重要motivation就是图像中有相似的块能用共享的卷积来提取特征，因此对所有图像重采样能减少不同图像之间的不一致性，便于卷积操作提取共同的特征。</p>
+<p>值得注意的是，图像的spacing保持一致，图像中像素值的个数（即图像分辨率）却不一定相同。而分割网络的框架是固定的，一般是需要输入图片的分辨率大小是一致的。所以通常在训练的时候是用一个固定大小的patch从图像中裁剪采样，在这个过程中原图分辨率不一样是不影响的。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">resample</span>(<span class="params">image, scan, new_spacing=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span>):</span></span><br><span class="line">    <span class="comment"># Determine current pixel spacing</span></span><br><span class="line">    spacing = np.array([scan[<span class="number">0</span>].SliceThickness] + scan[<span class="number">0</span>].PixelSpacing, dtype=np.float32)</span><br><span class="line"></span><br><span class="line">    resize_factor = spacing / new_spacing</span><br><span class="line">    new_real_shape = image.shape * resize_factor</span><br><span class="line">    new_shape = np.<span class="built_in">round</span>(new_real_shape)</span><br><span class="line">    real_resize_factor = new_shape / image.shape</span><br><span class="line">    new_spacing = spacing / real_resize_factor</span><br><span class="line"></span><br><span class="line">    image = scipy.ndimage.interpolation.zoom(image, real_resize_factor, mode=<span class="string">&#x27;nearest&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> image, new_spacing</span><br><span class="line"></span><br><span class="line">pix_resampled, spacing = resample(first_patient_pixels, first_patient, [<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Shape before resampling\t&quot;</span>, first_patient_pixels.shape)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Shape after resampling\t&quot;</span>, pix_resampled.shape)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 画3D图像，用立方体为我们的3D对象创建一个近似网格</span></span><br><span class="line"><span class="comment"># 采用的阈值可以被用来绘制某些结构，例如所有组织或仅骨骼。 400是仅显示骨骼的阈值（见上面的Hounsfield单位表）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_3d</span>(<span class="params">image, threshold=-<span class="number">300</span></span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Position the scan upright, </span></span><br><span class="line">    <span class="comment"># so the head of the patient would be at the top facing the camera</span></span><br><span class="line">    p = image.transpose(<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    verts, faces = measure.marching_cubes(p, threshold)</span><br><span class="line"></span><br><span class="line">    fig = plt.figure(figsize=(<span class="number">10</span>, <span class="number">10</span>))</span><br><span class="line">    ax = fig.add_subplot(<span class="number">111</span>, projection=<span class="string">&#x27;3d&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Fancy indexing: `verts[faces]` to generate a collection of triangles</span></span><br><span class="line">    mesh = Poly3DCollection(verts[faces], alpha=<span class="number">0.70</span>)</span><br><span class="line">    face_color = [<span class="number">0.45</span>, <span class="number">0.45</span>, <span class="number">0.75</span>]</span><br><span class="line">    mesh.set_facecolor(face_color)</span><br><span class="line">    ax.add_collection3d(mesh)</span><br><span class="line"></span><br><span class="line">    ax.set_xlim(<span class="number">0</span>, p.shape[<span class="number">0</span>])</span><br><span class="line">    ax.set_ylim(<span class="number">0</span>, p.shape[<span class="number">1</span>])</span><br><span class="line">    ax.set_zlim(<span class="number">0</span>, p.shape[<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>肺部切割</p>
+<ul>
+<li>阈值图像（-320 HU）</li>
+<li>做连接组件，确定人周围的空气标签，在二进制图像中用1s填充</li>
+<li>可选：对于扫描中的每个轴向切片，确定最大的固体连接组件（人体周围的身体+空气），并将其他组件设置为0。这样可以填充面罩中肺部的结构。</li>
+<li>只保留最大的气袋（人体在这里和那里都有其他的气袋）</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">largest_label_volume</span>(<span class="params">im, bg=-<span class="number">1</span></span>):</span></span><br><span class="line">    vals, counts = np.unique(im, return_counts=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    counts = counts[vals != bg]</span><br><span class="line">    vals = vals[vals != bg]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(counts) &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> vals[np.argmax(counts)]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">segment_lung_mask</span>(<span class="params">image, fill_lung_structures=<span class="literal">True</span></span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># not actually binary, but 1 and 2. </span></span><br><span class="line">    <span class="comment"># 0 is treated as background, which we do not want</span></span><br><span class="line">    binary_image = np.array(image &gt; -<span class="number">320</span>, dtype=np.int8)+<span class="number">1</span></span><br><span class="line">    labels = measure.label(binary_image)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Pick the pixel in the very corner to determine which label is air.</span></span><br><span class="line">    <span class="comment">#   Improvement: Pick multiple background labels from around the patient</span></span><br><span class="line">    <span class="comment">#   More resistant to &quot;trays&quot; on which the patient lays cutting the air </span></span><br><span class="line">    <span class="comment">#   around the person in half</span></span><br><span class="line">    background_label = labels[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment">#Fill the air around the person</span></span><br><span class="line">    binary_image[background_label == labels] = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Method of filling the lung structures (that is superior to something like </span></span><br><span class="line">    <span class="comment"># morphological closing)</span></span><br><span class="line">    <span class="keyword">if</span> fill_lung_structures:</span><br><span class="line">        <span class="comment"># For every slice we determine the largest solid structure</span></span><br><span class="line">        <span class="keyword">for</span> i, axial_slice <span class="keyword">in</span> <span class="built_in">enumerate</span>(binary_image):</span><br><span class="line">            axial_slice = axial_slice - <span class="number">1</span></span><br><span class="line">            labeling = measure.label(axial_slice)</span><br><span class="line">            l_max = largest_label_volume(labeling, bg=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> l_max <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>: <span class="comment">#This slice contains some lung</span></span><br><span class="line">                binary_image[i][labeling != l_max] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    binary_image -= <span class="number">1</span> <span class="comment">#Make the image actual binary</span></span><br><span class="line">    binary_image = <span class="number">1</span>-binary_image <span class="comment"># Invert it, lungs are now 1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Remove other air pockets insided body</span></span><br><span class="line">    labels = measure.label(binary_image, background=<span class="number">0</span>)</span><br><span class="line">    l_max = largest_label_volume(labels, bg=<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">if</span> l_max <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>: <span class="comment"># There are air pockets</span></span><br><span class="line">        binary_image[labels != l_max] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> binary_image</span><br><span class="line"></span><br><span class="line">segmented_lungs = segment_lung_mask(pix_resampled, <span class="literal">False</span>)</span><br><span class="line">segmented_lungs_fill = segment_lung_mask(pix_resampled, <span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">plot_3d(segmented_lungs, <span class="number">0</span>)</span><br><span class="line">plot_3d(segmented_lungs_fill, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<p>当使用这个时，记得首先在它上面应用扩张形态学操作（即用圆形内核）。这会在所有方向上扩展蒙版。仅肺部的空气+结构将不包含所有结节，特别是它会遗漏那些粘在肺部侧面的结节，它们经常出现在那里！所以扩大面具一点:)</p>
+<p>对于某些边缘情况，此分段可能会失败。它依赖于患者体外的空气不与肺部空气相连的事实。如果患者进行了气管造口术，情况也可能并非如此，不知道这是否存在于数据集中。此外，特别是噪声图像（例如由于下图中的起搏器），这种方法也可能失败。相反，身体中的第二大气袋将被分割。您可以通过检查蒙版对应的图像分数来识别这一点，对于这种情况，这将是非常小的。然后，你可以首先使用几毫米大小的内核进行形态学关闭操作以关闭这些孔，之后它应该可以工作（或者更简单地说，不要对此图像使用蒙版）。</p>
+<p>数据归一化</p>
+<p>目前所有的数值在-1024到2000左右。超过400的任何东西其实是不用关心的，因为只是一些具有不同辐射密度的骨骼。 常用的阈值集合在-1000到400之间。这里有一些代码可以使用：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">MIN_BOUND = -<span class="number">1000.0</span></span><br><span class="line">MAX_BOUND = <span class="number">400.0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">normalize</span>(<span class="params">image</span>):</span></span><br><span class="line">    image = (image - MIN_BOUND) / (MAX_BOUND - MIN_BOUND)</span><br><span class="line">    image[image&gt;<span class="number">1</span>] = <span class="number">1.</span></span><br><span class="line">    image[image&lt;<span class="number">0</span>] = <span class="number">0.</span></span><br><span class="line">    <span class="keyword">return</span> image</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据零居中</span></span><br><span class="line"><span class="comment"># 将数据平均值设置为零。为此，只需从所有像素中减去平均像素值。</span></span><br><span class="line">PIXEL_MEAN = <span class="number">0.25</span> <span class="comment"># 假设均值为0.25</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">zero_center</span>(<span class="params">image</span>):</span></span><br><span class="line">    image = image - PIXEL_MEAN</span><br><span class="line">    <span class="keyword">return</span> image</span><br></pre></td></tr></table></figure>
+
+
+
+<p>未完 参考 <a href="https://zhuanlan.zhihu.com/p/59413289">https://zhuanlan.zhihu.com/p/59413289</a></p>
 ]]></content>
+      <categories>
+        <category>Python</category>
+        <category>图像识别</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>医学图像</tag>
+      </tags>
   </entry>
   <entry>
     <title>图像分割-Unet[项目应用]</title>
@@ -2138,6 +2128,16 @@
         <tag>项目总结</tag>
         <tag>kaggle</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/12/16/%E5%8D%8E%E4%B8%BA%E6%98%87%E8%85%BECANN%E6%95%99%E7%A8%8B-TBE%E7%AE%97%E5%AD%90%E5%BC%80%E5%8F%91/</url>
+    <content><![CDATA[<h1 id="华为昇腾CANN教程-TBE算子开发"><a href="#华为昇腾CANN教程-TBE算子开发" class="headerlink" title="华为昇腾CANN教程-TBE算子开发"></a>华为昇腾CANN教程-TBE算子开发</h1><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><p><strong>算子</strong>：一个函数空间到另一个函数空间的映射，可以说对任何函数进行某一项操作都可以将其认为是一个算子，在神经网络模型中涉及到的计算函数。例如：卷积层中的卷积算法，全连接中的权值求和算子，还有众多激活函数算子。</p>
+<p>每个算子有自己独有的名称，每个网络包含多种算子类型Type。比如神经网络中的卷积类型的算子有conv1，conv2… 池化类型的算子有pool1，pool2…</p>
+<p>TBE（Tensor Boost Engine）：是一款华为自研的NPU算子开发工具，以TVM为基础框架进行扩展。可以用python来开发的。</p>
+<p>NPU（Neural-network Processing Unit）：一类专用于人工智能（神经网络等方面）的硬件加速处理器。课程中使用昇腾910处理器</p>
+<p>TVM（Tensor Virtual Machine）： 能加载多种模型框架在多种平台上运行的中间框架</p>
+]]></content>
   </entry>
   <entry>
     <title>图像处理基础-滤波器</title>
@@ -2414,11 +2414,6 @@
       </tags>
   </entry>
   <entry>
-    <title>基于YOLOv5的安全帽和口罩检测</title>
-    <url>/2021/10/02/%E5%9F%BA%E4%BA%8EYOLOv5%E7%9A%84%E5%AE%89%E5%85%A8%E5%B8%BD%E5%92%8C%E5%8F%A3%E7%BD%A9%E6%A3%80%E6%B5%8B/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>基于python的CUDA编程基础</title>
     <url>/2021/10/07/%E5%9F%BA%E4%BA%8Epython%E7%9A%84CUDA%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>GPU全名为Graphics Processing Unit，又称视觉处理器、图形显示卡。GPU负责渲染出2D、3D、VR效果，主要专注于计算机图形图像领域。无论是CPU还是GPU，在进行计算时，都需要用核心（Core）来做算术逻辑运算，比如加减乘与或非等。核心中有ALU（逻辑运算单元）和寄存器等电路。在进行计算时，一个核心只能顺序执行某项任务。</p>
@@ -2465,6 +2460,11 @@
       </tags>
   </entry>
   <entry>
+    <title>基于YOLOv5的安全帽和口罩检测</title>
+    <url>/2021/10/02/%E5%9F%BA%E4%BA%8EYOLOv5%E7%9A%84%E5%AE%89%E5%85%A8%E5%B8%BD%E5%92%8C%E5%8F%A3%E7%BD%A9%E6%A3%80%E6%B5%8B/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>常见的算法面试（一）</title>
     <url>/2021/10/03/%E5%B8%B8%E8%A7%81%E7%9A%84%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[]]></content>
@@ -2496,29 +2496,6 @@
 <p>Va’ = a1*Vr + (1-a1)*Va 由此可知 Vr = (1/a1) * Va’ +(1-1/a1) * Va</p>
 <h1 id="ORCA"><a href="#ORCA" class="headerlink" title="ORCA"></a>ORCA</h1><p>组合RVO区域</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>强化学习Reinforcement Learning</title>
-    <url>/2021/10/26/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0Reinforcement-Learning/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-<p><img src="/2021/10/26/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0Reinforcement-Learning/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0Reinforcement-Learning/%E5%88%86%E7%B1%BB.png"></p>
-<p>强化学习的主流分类</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>强化学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
   </entry>
   <entry>
     <title>我的知识体系构建方法</title>
@@ -2648,6 +2625,29 @@
       </tags>
   </entry>
   <entry>
+    <title>强化学习Reinforcement Learning</title>
+    <url>/2021/10/26/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0Reinforcement-Learning/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+<p><img src="/2021/10/26/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0Reinforcement-Learning/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0Reinforcement-Learning/%E5%88%86%E7%B1%BB.png"></p>
+<p>强化学习的主流分类</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>强化学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习-K-means算法</title>
     <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-K-means%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -2704,11 +2704,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>机器学习-sklearn包的学习</title>
-    <url>/2021/10/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-sklearn%E5%8C%85%E7%9A%84%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>机器学习-主成分分析PCA</title>
     <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90PCA/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -2726,6 +2721,11 @@
         <tag>编程</tag>
         <tag>算法</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>机器学习-sklearn包的学习</title>
+    <url>/2021/10/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-sklearn%E5%8C%85%E7%9A%84%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>【未完成】机器学习-优化算法：牛顿法和拟牛顿法</title>
@@ -2832,6 +2832,25 @@
       </tags>
   </entry>
   <entry>
+    <title>机器学习-朴素贝叶斯</title>
+    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习-支持向量机(SVM)</title>
     <url>/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA-SVM/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：逻辑回归是找到可以划分数据的超平面，但是如何找到最优的超平面来划分数据集呢？</p>
@@ -2856,25 +2875,6 @@
 <p>应用：</p>
 <p>文本分类领域效果最好的机器学习算法，在工业界主要应用在网页分类、微博情感分析、舆情监控、用户评论挖掘、文本过滤等诸多领域</p>
 <span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习-朴素贝叶斯</title>
-    <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
 ]]></content>
       <categories>
         <category>学习</category>
@@ -3010,6 +3010,27 @@
       </tags>
   </entry>
   <entry>
+    <title>模型评价方法及指标</title>
+    <url>/2021/10/01/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BB%B7%E6%96%B9%E6%B3%95%E5%8F%8A%E6%8C%87%E6%A0%87/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>深度学习</category>
+        <category>神经网络</category>
+      </categories>
+      <tags>
+        <tag>总结</tag>
+        <tag>编程</tag>
+        <tag>优化</tag>
+        <tag>调参</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习-集成算法-随机森林</title>
     <url>/2021/10/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -3056,27 +3077,6 @@
       </categories>
       <tags>
         <tag>概览</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>模型评价方法及指标</title>
-    <url>/2021/10/01/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BB%B7%E6%96%B9%E6%B3%95%E5%8F%8A%E6%8C%87%E6%A0%87/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>深度学习</category>
-        <category>神经网络</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-        <tag>编程</tag>
-        <tag>优化</tag>
-        <tag>调参</tag>
       </tags>
   </entry>
   <entry>
@@ -3187,48 +3187,6 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>深度学习-Inception结构的理解</title>
-    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>GoogleNet只使用500万个参数，是AlexNet的1/12，它使用了6000万个参数。VGGNet使用了比AlexNet3倍多的参数。</p>
-<p>Inception的计算成本也低于VGGNet，这使它能够应用于大数据场景，或是在有限的内存和计算能力的情况下以相对合理的成本处理较大的数据，如移动端。当然我们可以通过计算技巧来优化一些特定的操作来解决该问题。但是这些方法加大了复杂性。另外，这些优化的方法也可以应用了Inception结构，扩大了效率差。</p>
-<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h2><p> 1、避免表征瓶颈，特别是在网络早期。前向传播网络可以从输入层到<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=54926098&ss_c=ssc.citiao.link">分类器</a>或回归器的无环图来体现。这定义了清晰的信息流。从每一个分割输入和输出的切入，能够获得通过这个切入的信息流量。应该避免使用极端压缩导致的瓶颈。一般讲表征规模应平缓的从输入向输出递减知道最终任务。理论上，信息内容无法仅通过表征的维度来评估，因为它舍弃了一些重要因素相关性结构；维度仅提供了信息内容的粗略估计。</p>
-<p>2、更高维度的表征更容易在一个网络内本地化处理。在卷积网络中加大每层的激活能获得更多的非纠缠特征，可使网络训练更快速。</p>
-<p>3、可以在更低维度嵌入上进行空间聚合，不会损失或损失太多的体现能力。例如在进行3*3卷积之前，可以在空间聚合之前降低输入表征，不会有严重问题。我们假设它是因为在空间聚合情况下使用输出，相邻单元结果的强相关性在降低维度时损失较小。基于此这些信号可便利的被压缩，并且维度降低能使学习更快。</p>
-<p>4、平衡网络的宽度和深度。网络的优化表现可以通过平衡每阶段的过滤器数量和网络深度实现。同时提高宽度和深度可以提高网络质量，但是只有并行提高时才能对计算常量优化提升，因此要在网路的深度和宽度合理平衡分配计算能力。</p>
-<h2 id="Inception-V1模型"><a href="#Inception-V1模型" class="headerlink" title="Inception V1模型"></a>Inception V1模型</h2><p>将1x1，3x3，5x5的conv和3x3的pooling，堆叠在一起，一方面增加了网络的width，另一方面增加了网络对尺度的适应性。所有的卷积核都在上一层的所有输出上来做，5×5的卷积核所需的计算量就太大，造成了特征图厚度很大。为了避免这一现象提出的inception具有如下结构，在3x3前，5x5前，max pooling后分别加上了1x1的卷积核起到了降低特征图厚度的作用，</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/V1.jpg"></p>
-<h2 id="Inception-v2模型"><a href="#Inception-v2模型" class="headerlink" title="Inception v2模型"></a>Inception v2模型</h2><p><code>Inception v2 和 Inception v3</code> 来自同一篇论文《Rethinking the Inception Architecture for Computer Vision》，作者提出了一系列能增加准确度和减少计算复杂度的修正方法。</p>
-<p>一方面了加入了BN层，减少了Internal Covariate Shift（内部neuron的数据分布发生变化），使每一层的输出都规范化到一个N(0, 1)的<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=64912573&ss_c=ssc.citiao.link">高斯</a>；</p>
-<p>另外一方面学习VGG用2个3x3的conv替代inception模块中的5x5，既降低了参数数量，也加速计算；</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/v2-v3.jpg"></p>
-<p>使用3×3的已经很小，那么更小的虽然能使得参数进一步降低，但是不如另一种方式更加有效，就是Asymmetric方式，即使用1×3和3×1两种来代替3×3的卷积核。这种结构在前几层效果不太好，但对特征图大小为12~20的<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=340385&ss_c=ssc.citiao.link">中间层</a>效果明显。</p>
-<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/V2.jpg"></p>
-<h2 id="Inception-v3模型"><a href="#Inception-v3模型" class="headerlink" title="Inception v3模型"></a>Inception v3模型</h2><p>V3一个最重要的改进是分解（<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=3448023&ss_c=ssc.citiao.link">Factorization</a>），将7x7分解成两个一维的卷积（1x7,7x1），3x3也是一样（1x3,3x1），这样的好处，既可以加速计算（多余的计算能力可以用来加深网络），又可以将1个conv拆成2个conv，使得网络深度进一步增加，增加了网络的非线性，还有值得注意的地方是网络输入从224x224变为了299x299，更加精细设计了35x35/17x17/8x8的模块。</p>
-<h2 id="Inception-v4模型"><a href="#Inception-v4模型" class="headerlink" title="Inception v4模型"></a>Inception v4模型</h2><p>Inception v4 和 Inception -ResNet 在同一篇论文《Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning》中提出来。v4研究了Inception模块结合Residual Connection能不能有改进。发现ResNet的结构可以极大地加速训练，同时性能也有提升，得到一个Inception-ResNet v2网络，同时还设计了一个更深更优化的Inception v4模型，能达到与Inception-ResNet v2相媲美的性能</p>
-<h1 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h1><h3 id="为什么更深的网络有更好的效果？"><a href="#为什么更深的网络有更好的效果？" class="headerlink" title="为什么更深的网络有更好的效果？"></a>为什么更深的网络有更好的效果？</h3><p>神经网络（主要指BP神经网络及其衍生的各种类型）中的层（主要是隐藏层）越多，对输入特征抽象层次越高。因为在神经网络中，后一层神经元的输入是前一层输出的加权和，前一层的特征在后一层就被抽象出来了，学习的过程其实就是调节和优化各连接权重和阈值的过程。</p>
-<p>随着深度的增加，逼近函数的效果好，已经有paper证明过了，个人理解就是，神经网络训练的过程就是调整参数的过程，可以调整的参数（weights and bias）越多，意味着调整的自由度越大，从而逼近效果越好，可以举例子:逼近某一个函数，比较单层，2层，和多层的神经网络逼近效果。</p>
-<p>然而，预测效果却不一定好。针对同一个问题，层数少的时候效果差，这时候逐渐增加层数可以提高效果，但是如果盲目不停地增加层数，则会容易引起overfitting，从而导致预测效果不好，所以并不是层数越多，预测效果就一定会越好的。此外，添加更多层会导致更高的训练误差。最后想提一下，其实增加神经元数也可以提高逼近效果。</p>
-<p>因此，神经网络随着深度的增加，实际的效果是先变好，然后再变差。</p>
-<h3 id="网络深度越深权值越多？"><a href="#网络深度越深权值越多？" class="headerlink" title="网络深度越深权值越多？"></a>网络深度越深权值越多？</h3><p>是的，只要增加卷积，权值数量就会增加</p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -3369,6 +3327,98 @@
       </tags>
   </entry>
   <entry>
+    <title>深度学习-Inception结构的理解</title>
+    <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+
+<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>GoogleNet只使用500万个参数，是AlexNet的1/12，它使用了6000万个参数。VGGNet使用了比AlexNet3倍多的参数。</p>
+<p>Inception的计算成本也低于VGGNet，这使它能够应用于大数据场景，或是在有限的内存和计算能力的情况下以相对合理的成本处理较大的数据，如移动端。当然我们可以通过计算技巧来优化一些特定的操作来解决该问题。但是这些方法加大了复杂性。另外，这些优化的方法也可以应用了Inception结构，扩大了效率差。</p>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h2><p> 1、避免表征瓶颈，特别是在网络早期。前向传播网络可以从输入层到<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=54926098&ss_c=ssc.citiao.link">分类器</a>或回归器的无环图来体现。这定义了清晰的信息流。从每一个分割输入和输出的切入，能够获得通过这个切入的信息流量。应该避免使用极端压缩导致的瓶颈。一般讲表征规模应平缓的从输入向输出递减知道最终任务。理论上，信息内容无法仅通过表征的维度来评估，因为它舍弃了一些重要因素相关性结构；维度仅提供了信息内容的粗略估计。</p>
+<p>2、更高维度的表征更容易在一个网络内本地化处理。在卷积网络中加大每层的激活能获得更多的非纠缠特征，可使网络训练更快速。</p>
+<p>3、可以在更低维度嵌入上进行空间聚合，不会损失或损失太多的体现能力。例如在进行3*3卷积之前，可以在空间聚合之前降低输入表征，不会有严重问题。我们假设它是因为在空间聚合情况下使用输出，相邻单元结果的强相关性在降低维度时损失较小。基于此这些信号可便利的被压缩，并且维度降低能使学习更快。</p>
+<p>4、平衡网络的宽度和深度。网络的优化表现可以通过平衡每阶段的过滤器数量和网络深度实现。同时提高宽度和深度可以提高网络质量，但是只有并行提高时才能对计算常量优化提升，因此要在网路的深度和宽度合理平衡分配计算能力。</p>
+<h2 id="Inception-V1模型"><a href="#Inception-V1模型" class="headerlink" title="Inception V1模型"></a>Inception V1模型</h2><p>将1x1，3x3，5x5的conv和3x3的pooling，堆叠在一起，一方面增加了网络的width，另一方面增加了网络对尺度的适应性。所有的卷积核都在上一层的所有输出上来做，5×5的卷积核所需的计算量就太大，造成了特征图厚度很大。为了避免这一现象提出的inception具有如下结构，在3x3前，5x5前，max pooling后分别加上了1x1的卷积核起到了降低特征图厚度的作用，</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/V1.jpg"></p>
+<h2 id="Inception-v2模型"><a href="#Inception-v2模型" class="headerlink" title="Inception v2模型"></a>Inception v2模型</h2><p><code>Inception v2 和 Inception v3</code> 来自同一篇论文《Rethinking the Inception Architecture for Computer Vision》，作者提出了一系列能增加准确度和减少计算复杂度的修正方法。</p>
+<p>一方面了加入了BN层，减少了Internal Covariate Shift（内部neuron的数据分布发生变化），使每一层的输出都规范化到一个N(0, 1)的<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=64912573&ss_c=ssc.citiao.link">高斯</a>；</p>
+<p>另外一方面学习VGG用2个3x3的conv替代inception模块中的5x5，既降低了参数数量，也加速计算；</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/v2-v3.jpg"></p>
+<p>使用3×3的已经很小，那么更小的虽然能使得参数进一步降低，但是不如另一种方式更加有效，就是Asymmetric方式，即使用1×3和3×1两种来代替3×3的卷积核。这种结构在前几层效果不太好，但对特征图大小为12~20的<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=340385&ss_c=ssc.citiao.link">中间层</a>效果明显。</p>
+<p><img src="/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Inception%E7%BB%93%E6%9E%84%E7%9A%84%E7%90%86%E8%A7%A3/V2.jpg"></p>
+<h2 id="Inception-v3模型"><a href="#Inception-v3模型" class="headerlink" title="Inception v3模型"></a>Inception v3模型</h2><p>V3一个最重要的改进是分解（<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=3448023&ss_c=ssc.citiao.link">Factorization</a>），将7x7分解成两个一维的卷积（1x7,7x1），3x3也是一样（1x3,3x1），这样的好处，既可以加速计算（多余的计算能力可以用来加深网络），又可以将1个conv拆成2个conv，使得网络深度进一步增加，增加了网络的非线性，还有值得注意的地方是网络输入从224x224变为了299x299，更加精细设计了35x35/17x17/8x8的模块。</p>
+<h2 id="Inception-v4模型"><a href="#Inception-v4模型" class="headerlink" title="Inception v4模型"></a>Inception v4模型</h2><p>Inception v4 和 Inception -ResNet 在同一篇论文《Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning》中提出来。v4研究了Inception模块结合Residual Connection能不能有改进。发现ResNet的结构可以极大地加速训练，同时性能也有提升，得到一个Inception-ResNet v2网络，同时还设计了一个更深更优化的Inception v4模型，能达到与Inception-ResNet v2相媲美的性能</p>
+<h1 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h1><h3 id="为什么更深的网络有更好的效果？"><a href="#为什么更深的网络有更好的效果？" class="headerlink" title="为什么更深的网络有更好的效果？"></a>为什么更深的网络有更好的效果？</h3><p>神经网络（主要指BP神经网络及其衍生的各种类型）中的层（主要是隐藏层）越多，对输入特征抽象层次越高。因为在神经网络中，后一层神经元的输入是前一层输出的加权和，前一层的特征在后一层就被抽象出来了，学习的过程其实就是调节和优化各连接权重和阈值的过程。</p>
+<p>随着深度的增加，逼近函数的效果好，已经有paper证明过了，个人理解就是，神经网络训练的过程就是调整参数的过程，可以调整的参数（weights and bias）越多，意味着调整的自由度越大，从而逼近效果越好，可以举例子:逼近某一个函数，比较单层，2层，和多层的神经网络逼近效果。</p>
+<p>然而，预测效果却不一定好。针对同一个问题，层数少的时候效果差，这时候逐渐增加层数可以提高效果，但是如果盲目不停地增加层数，则会容易引起overfitting，从而导致预测效果不好，所以并不是层数越多，预测效果就一定会越好的。此外，添加更多层会导致更高的训练误差。最后想提一下，其实增加神经元数也可以提高逼近效果。</p>
+<p>因此，神经网络随着深度的增加，实际的效果是先变好，然后再变差。</p>
+<h3 id="网络深度越深权值越多？"><a href="#网络深度越深权值越多？" class="headerlink" title="网络深度越深权值越多？"></a>网络深度越深权值越多？</h3><p>是的，只要增加卷积，权值数量就会增加</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>申威异构众核并行程序设计与优化（一）</title>
+    <url>/2022/01/09/%E7%94%B3%E5%A8%81%E5%BC%82%E6%9E%84%E4%BC%97%E6%A0%B8%E5%B9%B6%E8%A1%8C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E4%BC%98%E5%8C%96%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>申威异构众核并行程序设计与优化（二）</title>
+    <url>/2022/01/09/%E7%94%B3%E5%A8%81%E5%BC%82%E6%9E%84%E4%BC%97%E6%A0%B8%E5%B9%B6%E8%A1%8C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E4%BC%98%E5%8C%96%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>目标检测-Retina-Net</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-Retina-Net/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>目标检测-R-CNN系列</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-R-CNN%E7%B3%BB%E5%88%97/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>深度学习-深度可分离卷积Depthwise Separable Conv</title>
     <url>/2021/10/01/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E5%BA%A6%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8D%B7%E7%A7%AFDepthwise-Separable-Conv/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>可分离卷积卷积分为空间可分离卷积和深度可分离卷积</p>
@@ -3432,63 +3482,25 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-R-CNN系列</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-R-CNN%E7%B3%BB%E5%88%97/</url>
+    <title>目标检测-YOLOv4</title>
+    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv4/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
 <p>方法简述：</p>
 <p>优点：</p>
 <p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>目标检测-Retina-Net</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-Retina-Net/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>目标检测-SSD系列</title>
-    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：解决速度和精度问题</p>
-<p>方法简述：</p>
-<p>SSD （Single Shot MultiBox Detector）是一个one-stage目标检测模型，在一个网络中就可以同时完成目标检测和分类。通过CNN进行特征提取，均匀的在不同位置采用不同的尺寸和长宽比进行密集抽样。同时做物体分类和预选框位置的回归，使得模型速度十分快。</p>
-<p>优点：</p>
-<p>速度快；准确度相对来说比较高；</p>
-<p>缺点：</p>
-<p>均匀密集采样带来的缺点是正样本与负样本（背景）极其不均衡，会导致模型准确度降低，模型训练比较困难</p>
 <span id="more"></span>
 
-<h1 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h1><p><img src="/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/%E7%BB%86%E8%8A%82%E6%9E%B6%E6%9E%84.png"></p>
-<p>SSD anchor的选择具体参考【目标检测中的anchor】</p>
-<h1 id="论文精读"><a href="#论文精读" class="headerlink" title="论文精读"></a>论文精读</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>SSD 是将bounding box的输出空间离散化到一组不同比例的默认框，scales每个特征映射的位置</p>
-<p>预测阶段：对每个默认框分布在各个类别上进行评分，同时调整 #默认框？？？使得与物体形状更加匹配；另外，网络结合了来自多个不同分辨率的特征图的预测结果，可以自然处理不同size的目标。SSD和 object proposal 方法只有简单的相关（完全取消了预选框的生成和后序的像素处理和重采样阶段），将所有的计算都封装在一个网络。</p>
-<p>SSD mAP达到76.9% 超过Faster R-CNN； 并且比其他单阶段模型有更高的accuracy，即便是输入更小的图片。</p>
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2>]]></content>
+<p>YOLO V4使用 CIOU Loss作为bounding box的损失，与其他提到的方法相比，CIOU带来了更快的收敛和更好的性能。</p>
+<p>尽管YOLO V5目前仍然计逊一筹，但是YOLO V5仍然具有以下显著的优点：</p>
+<ul>
+<li>使用Pytorch框架，对用户非常友好，能够方便地训练自己的数据集，相对于YOLO V4采用的Darknet框架，Pytorch框架更容易投入生产</li>
+<li>代码易读，整合了大量的计算机视觉技术，非常有利于学习和借鉴</li>
+<li>不仅易于配置环境，模型训练也非常快速，并且批处理推理产生实时结果</li>
+<li>能够直接对单个图像，批处理图像，视频甚至网络摄像头端口输入进行有效推理</li>
+<li>能够轻松的将Pytorch权重文件转化为安卓使用的ONXX格式，然后可以转换为OPENCV的使用格式，或者通过CoreML转化为IOS格式，直接部署到手机应用端</li>
+<li>最后YOLO V5s高达140FPS的对象识别速度令人印象非常深刻，使用体验非常棒</li>
+</ul>
+]]></content>
       <categories>
         <category>学习</category>
         <category>cv算法</category>
@@ -3498,6 +3510,7 @@
       <tags>
         <tag>编程</tag>
         <tag>论文复现</tag>
+        <tag>YOLO</tag>
       </tags>
   </entry>
   <entry>
@@ -3568,6 +3581,35 @@
       </tags>
   </entry>
   <entry>
+    <title>目标检测-SSD系列</title>
+    <url>/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：解决速度和精度问题</p>
+<p>方法简述：</p>
+<p>SSD （Single Shot MultiBox Detector）是一个one-stage目标检测模型，在一个网络中就可以同时完成目标检测和分类。通过CNN进行特征提取，均匀的在不同位置采用不同的尺寸和长宽比进行密集抽样。同时做物体分类和预选框位置的回归，使得模型速度十分快。</p>
+<p>优点：</p>
+<p>速度快；准确度相对来说比较高；</p>
+<p>缺点：</p>
+<p>均匀密集采样带来的缺点是正样本与负样本（背景）极其不均衡，会导致模型准确度降低，模型训练比较困难</p>
+<span id="more"></span>
+
+<h1 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h1><p><img src="/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-SSD%E7%B3%BB%E5%88%97/%E7%BB%86%E8%8A%82%E6%9E%B6%E6%9E%84.png"></p>
+<p>SSD anchor的选择具体参考【目标检测中的anchor】</p>
+<h1 id="论文精读"><a href="#论文精读" class="headerlink" title="论文精读"></a>论文精读</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>SSD 是将bounding box的输出空间离散化到一组不同比例的默认框，scales每个特征映射的位置</p>
+<p>预测阶段：对每个默认框分布在各个类别上进行评分，同时调整 #默认框？？？使得与物体形状更加匹配；另外，网络结合了来自多个不同分辨率的特征图的预测结果，可以自然处理不同size的目标。SSD和 object proposal 方法只有简单的相关（完全取消了预选框的生成和后序的像素处理和重采样阶段），将所有的计算都封装在一个网络。</p>
+<p>SSD mAP达到76.9% 超过Faster R-CNN； 并且比其他单阶段模型有更高的accuracy，即便是输入更小的图片。</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>目标检测-YOLOv3</title>
     <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv3/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -3608,38 +3650,6 @@
       </tags>
   </entry>
   <entry>
-    <title>目标检测-YOLOv4</title>
-    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv4/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span>
-
-<p>YOLO V4使用 CIOU Loss作为bounding box的损失，与其他提到的方法相比，CIOU带来了更快的收敛和更好的性能。</p>
-<p>尽管YOLO V5目前仍然计逊一筹，但是YOLO V5仍然具有以下显著的优点：</p>
-<ul>
-<li>使用Pytorch框架，对用户非常友好，能够方便地训练自己的数据集，相对于YOLO V4采用的Darknet框架，Pytorch框架更容易投入生产</li>
-<li>代码易读，整合了大量的计算机视觉技术，非常有利于学习和借鉴</li>
-<li>不仅易于配置环境，模型训练也非常快速，并且批处理推理产生实时结果</li>
-<li>能够直接对单个图像，批处理图像，视频甚至网络摄像头端口输入进行有效推理</li>
-<li>能够轻松的将Pytorch权重文件转化为安卓使用的ONXX格式，然后可以转换为OPENCV的使用格式，或者通过CoreML转化为IOS格式，直接部署到手机应用端</li>
-<li>最后YOLO V5s高达140FPS的对象识别速度令人印象非常深刻，使用体验非常棒</li>
-</ul>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>YOLO</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>目标检测-YOLOv5</title>
     <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOv5/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
@@ -3654,29 +3664,6 @@
 
 <p>YOLO V5使用 GIOU Loss作为bounding box的损失。</p>
 <p>YOLO V5使用二进制交叉熵和 Logits 损失函数计算类概率和目标得分的损失。同时我们也可以使用fl _ gamma参数来激活Focal loss计算损失函数。</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-        <category>深度学习</category>
-        <category>目标检测</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>论文复现</tag>
-        <tag>YOLO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>目标检测-YOLOx</title>
-    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOx/</url>
-    <content><![CDATA[<ul>
-<li><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
-<p>方法简述：</p>
-<p>优点：</p>
-<p>缺点：</p>
-<span id="more"></span></li>
-</ul>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -3889,6 +3876,124 @@
       </tags>
   </entry>
   <entry>
+    <title>神经网络-权值初始化的方法</title>
+    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%9D%83%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>权值初始化的原因：1. 防止层激活输出在深度神经网络的正向传递过程中爆炸或消失。2. 有助于加速收敛。</p>
+<p>权值初始化的方法：</p>
+<p>常量初始化（constant）、高斯分布初始化（gaussian）、positive_unitball初始化、均匀分布初始化（uniform）、xavier初始化、msra初始化、双线性初始化（bilinear）</p>
+<span id="more"></span>
+
+<p>权重初始化相比于其他的trick来说在平常使用并不是很频繁。因为大部分人使用的模型都是预训练模型，使用的权重都是在大型数据集上训练好的模型，当然不需要自己去初始化权重了。只有没有预训练模型的领域会自己初始化权重，或者在模型中去初始化神经网络最后那几个全连接层的权重。常用的权重初始化算法是 :</p>
+<h1 id="常量初始化"><a href="#常量初始化" class="headerlink" title="常量初始化"></a>常量初始化</h1><h1 id="均匀分布初始化"><a href="#均匀分布初始化" class="headerlink" title="均匀分布初始化"></a>均匀分布初始化</h1><h1 id="高斯分布初始化"><a href="#高斯分布初始化" class="headerlink" title="高斯分布初始化"></a>高斯分布初始化</h1><ul>
+<li>normal高斯分布初始化， 其中stdev为高斯分布的标准差，均值设为0：</li>
+</ul>
+<h1 id="Xavier初始化"><a href="#Xavier初始化" class="headerlink" title="Xavier初始化"></a>Xavier初始化</h1><ul>
+<li>Xavier初始法，适用于普通激活函数(tanh, sigmoid)：</li>
+</ul>
+<p>Xavier初始化将每层权重设置为在有界的随机均匀分布中选择的值</p>
+<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%9D%83%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95/Xavier.png"></p>
+<h1 id="MSRA初始化"><a href="#MSRA初始化" class="headerlink" title="MSRA初始化"></a>MSRA初始化</h1><h1 id="双线性初始化"><a href="#双线性初始化" class="headerlink" title="双线性初始化"></a>双线性初始化</h1><h1 id="Kaiming初始化"><a href="#Kaiming初始化" class="headerlink" title="Kaiming初始化"></a>Kaiming初始化</h1><p>保持层激活的标准偏差大约为1将允许我们在深度神经网络中堆叠更多层而不会出现梯度爆炸或消失。</p>
+<p>关于探索如何在类ReLU的激活的网络中最佳地初始化权重促使何凯明等优秀学者提出自己的初始化方案，这些方案是专门用来处理这些非对称，非线性激活的深层神经网络的。</p>
+<p>在他们的2015年论文中何凯明等人证明了如果采用以下输入权重初始化策略，深层网络（例如22层CNN）会更早收敛：</p>
+<p>\1. 使用适合给定图层的权重矩阵创建张量，并使用从标准正态分布中随机选择的数字填充它。</p>
+<p>\2. 将每个随机选择的数字乘以√2/√n，其中n是从前一层输出到指定层的连接数（也称为“fan-in”）。</p>
+<p>\3. 偏差张量初始化为零。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>神经网络-梯度爆炸和梯度消失</title>
+    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E7%88%86%E7%82%B8%E5%92%8C%E6%A2%AF%E5%BA%A6%E6%B6%88%E5%A4%B1/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>产生原因：反向传播过程的链式法则会导致梯度剧烈变化。如果每一层神经元对上一层的输出的偏导乘上权重结果都小于1的会导致梯度消失，如果都大于1的会导致梯度爆炸。</p>
+<p>解决办法：</p>
+<ol>
+<li><p>预训练加微调</p>
+</li>
+<li><p>针对梯度爆炸：梯度剪切、权重正则，因此，如果发生梯度爆炸，权值的范数就会变的非常大，通过正则化项，可以<strong>部分</strong>限制<strong>梯度爆炸</strong>的发生。</p>
+</li>
+<li><p>使用不同的激活函数，用ReLU、Leaky-ReLU、P-ReLU、R-ReLU、Maxout等替代sigmoid函数。</p>
+</li>
+<li><p>BN（Batch Normalization），batchnorm就是通过对每一层的输出规范为均值和方差一致的方法，消除了w带来的放大缩小的影响，进而解决梯度消失和爆炸的问题。</p>
+</li>
+<li><p>残差的捷径（shortcut）</p>
+</li>
+<li><p>使用LSTM网络，它内部的“门”可以接下来更新的时候“记住”前几次训练的”残留记忆“</p>
+</li>
+</ol>
+<span id="more"></span>
+
+<h1 id="什么是梯度"><a href="#什么是梯度" class="headerlink" title="什么是梯度"></a>什么是梯度</h1><p>在深度神经网络中BP（反向传播算法）就是基于梯度下降策略，以目标的负梯度方向对参数进行调整， 参数的更新为 <img src="https://www.zhihu.com/equation?tex=w%5Cleftarrow+w+%5CDelta+w" alt="[公式]"> ，给定学习率 <img src="https://www.zhihu.com/equation?tex=%5Calpha" alt="[公式]"> ，得出 <img src="https://www.zhihu.com/equation?tex=%5CDelta+w=-%5Calpha%5Cfrac%7B%5Cpartial+Loss%7D%7Bw%7D%5C" alt="[公式]"> 。如果更新第二层隐层的权值信息，根据链式求导法则，更新梯度信息为：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-718946a3296668d9221045a092e42fe0_1440w.jpg" alt="img"></p>
+<p>上式中， <img src="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+f_%7B2%7D%7D%7B%5Cpartial+w_%7B2%7D%7D=f_%7B1%7D" alt="[公式]"> ，即第二隐藏层的输入。<img src="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+f_%7B4%7D%7D%7B%5Cpartial+f_%7B3%7D%7D" alt="[公式]"> 就是对激活函数进行求导，，那么层数增多的时候，最终的求出的梯度更新将以指数形式变化。</p>
+<h1 id="梯度消失-弥散"><a href="#梯度消失-弥散" class="headerlink" title="梯度消失/弥散"></a>梯度消失/弥散</h1><p>根据链式法则，如果每一层神经元对上一层的输出的偏导乘上权重结果都小于1的话，那么即使这个结果是0.99，在经过足够多层传播之后，误差对输入层的偏导会趋于0。</p>
+<p>这种情况会导致靠近输入层的隐含层神经元调整极小。</p>
+<p>梯度消失经常出现，一是在<strong>深层网络</strong>中，二是采用了<strong>不合适的损失函数</strong>，比如sigmoid。</p>
+<h1 id="梯度爆炸"><a href="#梯度爆炸" class="headerlink" title="梯度爆炸"></a>梯度爆炸</h1><p>据链式法则，如果每一层神经元对上一层的输出的偏导乘上权重结果都大于1的话，在经过足够多层传播之后，误差对输入层的偏导会趋于无穷大。</p>
+<p>这种情况又会导致靠近输入层的隐含层神经元调整变动极大。</p>
+<p>梯度爆炸一般出现在深层网络和<strong>权值初始化值太大</strong>的情况下</p>
+<p>注：事实上，在深度神经网络中，往往是梯度消失出现的更多一些。</p>
+<h1 id="梯度消失-爆炸解决方案："><a href="#梯度消失-爆炸解决方案：" class="headerlink" title="梯度消失/爆炸解决方案："></a>梯度消失/爆炸解决方案：</h1><ol>
+<li>预训练加微调</li>
+</ol>
+<p>此方法来自Hinton在2006年发表的一篇论文，Hinton为了解决梯度的问题，提出采取无监督逐层训练方法，其基本思想是每次训练一层隐节点，训练时将上一层隐节点的输出作为输入，而本层隐节点的输出作为下一层隐节点的输入，此过程是逐层“预训练”（pre-training）；在预训练完成后，再对整个网络进行“微调”（fine-tunning）。Hinton在训练深度信念网络（Deep Belief Networks中，使用了这个方法，在各层预训练完成后，再利用BP算法对整个网络进行训练。此思想相当于是先寻找局部最优，然后整合起来寻找全局最优，此方法有一定的好处，但是目前应用的不是很多了。</p>
+<ol start="2">
+<li>针对梯度爆炸：梯度剪切、权重正则</li>
+</ol>
+<p>梯度剪切这个方案主要是针对梯度爆炸提出的，其思想是设置一个梯度剪切阈值，然后更新梯度的时候，如果梯度超过这个阈值，那么就将其强制限制在这个范围之内。</p>
+<p>权重正则化：</p>
+<p>正则化是通过对网络权重做正则限制过拟合，仔细看正则项在损失函数的形式：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-29298ec3d2b9094b20abdc6d9d7b1272_1440w.png" alt="img"></p>
+<p>其中， <img src="https://www.zhihu.com/equation?tex=%5Calpha" alt="[公式]"> 是指正则项系数，因此，如果发生梯度爆炸，权值的范数就会变的非常大，通过正则化项，可以<strong>部分</strong>限制<strong>梯度爆炸</strong>的发生。</p>
+<ol start="3">
+<li><p>使用不同的激活函数</p>
+<p>用ReLU、Leaky-ReLU、P-ReLU、R-ReLU、Maxout等替代sigmoid函数。</p>
+</li>
+<li><p>BN（Batch Normalization）</p>
+<p>反向传播中，经过每一层的梯度会乘以该层的权重，举个简单例子：</p>
+<p>正向传播中f2=f1(wT∗x+b)，那么反向传播中</p>
+<p><img src="https://pic4.zhimg.com/80/v2-614cb67f4bfae76e8452b3dd06223cdf_1440w.png" alt="img"></p>
+<p>反向传播式子中有w的存在，所以w的大小影响了梯度的消失和爆炸，batchnorm就是通过对每一层的输出规范为均值和方差一致的方法，消除了w带来的放大缩小的影响，进而解决梯度消失和爆炸的问题。</p>
+</li>
+<li><p>残差结构</p>
+<p>残差的捷径（shortcut）</p>
+</li>
+<li><p>使用LSTM网络</p>
+<p>LSTM内部复杂的“门”(gates)，LSTM通过它内部的“门”可以接下来更新的时候“记住”前几次训练的”残留记忆“，因此，经常用于生成文本中。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>机器学习</category>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>梯度</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>目标检测-YOLOx</title>
+    <url>/2021/10/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLOx/</url>
+    <content><![CDATA[<ul>
+<li><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：</p>
+<p>方法简述：</p>
+<p>优点：</p>
+<p>缺点：</p>
+<span id="more"></span></li>
+</ul>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
+        <category>深度学习</category>
+        <category>目标检测</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>论文复现</tag>
+        <tag>YOLO</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>神经网络-损失函数</title>
     <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>背景问题：损失函数用来评价模型的预测值和真实值不一样的程度，损失函数越好，通常模型的性能越好。不同的模型用的损失函数一般也不一样。</p>
@@ -3943,31 +4048,6 @@
         <tag>优化</tag>
         <tag>调参</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>神经网络-权值初始化的方法</title>
-    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%9D%83%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>权值初始化的原因：1. 防止层激活输出在深度神经网络的正向传递过程中爆炸或消失。2. 有助于加速收敛。</p>
-<p>权值初始化的方法：</p>
-<p>常量初始化（constant）、高斯分布初始化（gaussian）、positive_unitball初始化、均匀分布初始化（uniform）、xavier初始化、msra初始化、双线性初始化（bilinear）</p>
-<span id="more"></span>
-
-<p>权重初始化相比于其他的trick来说在平常使用并不是很频繁。因为大部分人使用的模型都是预训练模型，使用的权重都是在大型数据集上训练好的模型，当然不需要自己去初始化权重了。只有没有预训练模型的领域会自己初始化权重，或者在模型中去初始化神经网络最后那几个全连接层的权重。常用的权重初始化算法是 :</p>
-<h1 id="常量初始化"><a href="#常量初始化" class="headerlink" title="常量初始化"></a>常量初始化</h1><h1 id="均匀分布初始化"><a href="#均匀分布初始化" class="headerlink" title="均匀分布初始化"></a>均匀分布初始化</h1><h1 id="高斯分布初始化"><a href="#高斯分布初始化" class="headerlink" title="高斯分布初始化"></a>高斯分布初始化</h1><ul>
-<li>normal高斯分布初始化， 其中stdev为高斯分布的标准差，均值设为0：</li>
-</ul>
-<h1 id="Xavier初始化"><a href="#Xavier初始化" class="headerlink" title="Xavier初始化"></a>Xavier初始化</h1><ul>
-<li>Xavier初始法，适用于普通激活函数(tanh, sigmoid)：</li>
-</ul>
-<p>Xavier初始化将每层权重设置为在有界的随机均匀分布中选择的值</p>
-<p><img src="/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%9D%83%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95/Xavier.png"></p>
-<h1 id="MSRA初始化"><a href="#MSRA初始化" class="headerlink" title="MSRA初始化"></a>MSRA初始化</h1><h1 id="双线性初始化"><a href="#双线性初始化" class="headerlink" title="双线性初始化"></a>双线性初始化</h1><h1 id="Kaiming初始化"><a href="#Kaiming初始化" class="headerlink" title="Kaiming初始化"></a>Kaiming初始化</h1><p>保持层激活的标准偏差大约为1将允许我们在深度神经网络中堆叠更多层而不会出现梯度爆炸或消失。</p>
-<p>关于探索如何在类ReLU的激活的网络中最佳地初始化权重促使何凯明等优秀学者提出自己的初始化方案，这些方案是专门用来处理这些非对称，非线性激活的深层神经网络的。</p>
-<p>在他们的2015年论文中何凯明等人证明了如果采用以下输入权重初始化策略，深层网络（例如22层CNN）会更早收敛：</p>
-<p>\1. 使用适合给定图层的权重矩阵创建张量，并使用从标准正态分布中随机选择的数字填充它。</p>
-<p>\2. 将每个随机选择的数字乘以√2/√n，其中n是从前一层输出到指定层的连接数（也称为“fan-in”）。</p>
-<p>\3. 偏差张量初始化为零。</p>
-]]></content>
   </entry>
   <entry>
     <title>神经网络-梯度优化方法</title>
@@ -4080,76 +4160,6 @@
       </tags>
   </entry>
   <entry>
-    <title>神经网络-梯度爆炸和梯度消失</title>
-    <url>/2021/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%A2%AF%E5%BA%A6%E7%88%86%E7%82%B8%E5%92%8C%E6%A2%AF%E5%BA%A6%E6%B6%88%E5%A4%B1/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>产生原因：反向传播过程的链式法则会导致梯度剧烈变化。如果每一层神经元对上一层的输出的偏导乘上权重结果都小于1的会导致梯度消失，如果都大于1的会导致梯度爆炸。</p>
-<p>解决办法：</p>
-<ol>
-<li><p>预训练加微调</p>
-</li>
-<li><p>针对梯度爆炸：梯度剪切、权重正则，因此，如果发生梯度爆炸，权值的范数就会变的非常大，通过正则化项，可以<strong>部分</strong>限制<strong>梯度爆炸</strong>的发生。</p>
-</li>
-<li><p>使用不同的激活函数，用ReLU、Leaky-ReLU、P-ReLU、R-ReLU、Maxout等替代sigmoid函数。</p>
-</li>
-<li><p>BN（Batch Normalization），batchnorm就是通过对每一层的输出规范为均值和方差一致的方法，消除了w带来的放大缩小的影响，进而解决梯度消失和爆炸的问题。</p>
-</li>
-<li><p>残差的捷径（shortcut）</p>
-</li>
-<li><p>使用LSTM网络，它内部的“门”可以接下来更新的时候“记住”前几次训练的”残留记忆“</p>
-</li>
-</ol>
-<span id="more"></span>
-
-<h1 id="什么是梯度"><a href="#什么是梯度" class="headerlink" title="什么是梯度"></a>什么是梯度</h1><p>在深度神经网络中BP（反向传播算法）就是基于梯度下降策略，以目标的负梯度方向对参数进行调整， 参数的更新为 <img src="https://www.zhihu.com/equation?tex=w%5Cleftarrow+w+%5CDelta+w" alt="[公式]"> ，给定学习率 <img src="https://www.zhihu.com/equation?tex=%5Calpha" alt="[公式]"> ，得出 <img src="https://www.zhihu.com/equation?tex=%5CDelta+w=-%5Calpha%5Cfrac%7B%5Cpartial+Loss%7D%7Bw%7D%5C" alt="[公式]"> 。如果更新第二层隐层的权值信息，根据链式求导法则，更新梯度信息为：</p>
-<p><img src="https://pic1.zhimg.com/80/v2-718946a3296668d9221045a092e42fe0_1440w.jpg" alt="img"></p>
-<p>上式中， <img src="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+f_%7B2%7D%7D%7B%5Cpartial+w_%7B2%7D%7D=f_%7B1%7D" alt="[公式]"> ，即第二隐藏层的输入。<img src="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+f_%7B4%7D%7D%7B%5Cpartial+f_%7B3%7D%7D" alt="[公式]"> 就是对激活函数进行求导，，那么层数增多的时候，最终的求出的梯度更新将以指数形式变化。</p>
-<h1 id="梯度消失-弥散"><a href="#梯度消失-弥散" class="headerlink" title="梯度消失/弥散"></a>梯度消失/弥散</h1><p>根据链式法则，如果每一层神经元对上一层的输出的偏导乘上权重结果都小于1的话，那么即使这个结果是0.99，在经过足够多层传播之后，误差对输入层的偏导会趋于0。</p>
-<p>这种情况会导致靠近输入层的隐含层神经元调整极小。</p>
-<p>梯度消失经常出现，一是在<strong>深层网络</strong>中，二是采用了<strong>不合适的损失函数</strong>，比如sigmoid。</p>
-<h1 id="梯度爆炸"><a href="#梯度爆炸" class="headerlink" title="梯度爆炸"></a>梯度爆炸</h1><p>据链式法则，如果每一层神经元对上一层的输出的偏导乘上权重结果都大于1的话，在经过足够多层传播之后，误差对输入层的偏导会趋于无穷大。</p>
-<p>这种情况又会导致靠近输入层的隐含层神经元调整变动极大。</p>
-<p>梯度爆炸一般出现在深层网络和<strong>权值初始化值太大</strong>的情况下</p>
-<p>注：事实上，在深度神经网络中，往往是梯度消失出现的更多一些。</p>
-<h1 id="梯度消失-爆炸解决方案："><a href="#梯度消失-爆炸解决方案：" class="headerlink" title="梯度消失/爆炸解决方案："></a>梯度消失/爆炸解决方案：</h1><ol>
-<li>预训练加微调</li>
-</ol>
-<p>此方法来自Hinton在2006年发表的一篇论文，Hinton为了解决梯度的问题，提出采取无监督逐层训练方法，其基本思想是每次训练一层隐节点，训练时将上一层隐节点的输出作为输入，而本层隐节点的输出作为下一层隐节点的输入，此过程是逐层“预训练”（pre-training）；在预训练完成后，再对整个网络进行“微调”（fine-tunning）。Hinton在训练深度信念网络（Deep Belief Networks中，使用了这个方法，在各层预训练完成后，再利用BP算法对整个网络进行训练。此思想相当于是先寻找局部最优，然后整合起来寻找全局最优，此方法有一定的好处，但是目前应用的不是很多了。</p>
-<ol start="2">
-<li>针对梯度爆炸：梯度剪切、权重正则</li>
-</ol>
-<p>梯度剪切这个方案主要是针对梯度爆炸提出的，其思想是设置一个梯度剪切阈值，然后更新梯度的时候，如果梯度超过这个阈值，那么就将其强制限制在这个范围之内。</p>
-<p>权重正则化：</p>
-<p>正则化是通过对网络权重做正则限制过拟合，仔细看正则项在损失函数的形式：</p>
-<p><img src="https://pic3.zhimg.com/80/v2-29298ec3d2b9094b20abdc6d9d7b1272_1440w.png" alt="img"></p>
-<p>其中， <img src="https://www.zhihu.com/equation?tex=%5Calpha" alt="[公式]"> 是指正则项系数，因此，如果发生梯度爆炸，权值的范数就会变的非常大，通过正则化项，可以<strong>部分</strong>限制<strong>梯度爆炸</strong>的发生。</p>
-<ol start="3">
-<li><p>使用不同的激活函数</p>
-<p>用ReLU、Leaky-ReLU、P-ReLU、R-ReLU、Maxout等替代sigmoid函数。</p>
-</li>
-<li><p>BN（Batch Normalization）</p>
-<p>反向传播中，经过每一层的梯度会乘以该层的权重，举个简单例子：</p>
-<p>正向传播中f2=f1(wT∗x+b)，那么反向传播中</p>
-<p><img src="https://pic4.zhimg.com/80/v2-614cb67f4bfae76e8452b3dd06223cdf_1440w.png" alt="img"></p>
-<p>反向传播式子中有w的存在，所以w的大小影响了梯度的消失和爆炸，batchnorm就是通过对每一层的输出规范为均值和方差一致的方法，消除了w带来的放大缩小的影响，进而解决梯度消失和爆炸的问题。</p>
-</li>
-<li><p>残差结构</p>
-<p>残差的捷径（shortcut）</p>
-</li>
-<li><p>使用LSTM网络</p>
-<p>LSTM内部复杂的“门”(gates)，LSTM通过它内部的“门”可以接下来更新的时候“记住”前几次训练的”残留记忆“，因此，经常用于生成文本中。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>机器学习</category>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>梯度</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>站内说明</title>
     <url>/2021/09/29/%E7%AB%99%E5%86%85%E8%AF%B4%E6%98%8E/</url>
     <content><![CDATA[<p>本blog是作为Leo同学的自我拓展过程中的自律自省记录</p>
@@ -4166,6 +4176,18 @@
 ]]></content>
       <categories>
         <category>其他</category>
+      </categories>
+      <tags>
+        <tag>概览</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机视觉CV算法概览（更新ing）</title>
+    <url>/2021/09/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89CV%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
+    <content><![CDATA[<h1 id="图像识别"><a href="#图像识别" class="headerlink" title="图像识别"></a>图像识别</h1><h2 id="1-AlexNet"><a href="#1-AlexNet" class="headerlink" title="1. AlexNet"></a>1. AlexNet</h2><h2 id="2-VGGNet"><a href="#2-VGGNet" class="headerlink" title="2. VGGNet"></a>2. VGGNet</h2><h2 id="3-GoogLeNet"><a href="#3-GoogLeNet" class="headerlink" title="3. GoogLeNet"></a>3. GoogLeNet</h2><h2 id="4-ResNet"><a href="#4-ResNet" class="headerlink" title="4. ResNet"></a>4. ResNet</h2><h2 id="5-DenseNet"><a href="#5-DenseNet" class="headerlink" title="5. DenseNet"></a>5. DenseNet</h2><h1 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h1><h2 id="1-R-CNN-系列"><a href="#1-R-CNN-系列" class="headerlink" title="1. R-CNN 系列"></a>1. R-CNN 系列</h2><h3 id="1-R-CNN"><a href="#1-R-CNN" class="headerlink" title="1. R-CNN"></a>1. R-CNN</h3><h3 id="2-Fast-R-CNN"><a href="#2-Fast-R-CNN" class="headerlink" title="2. Fast R-CNN"></a>2. Fast R-CNN</h3><h3 id="3-Faster-R-CNN"><a href="#3-Faster-R-CNN" class="headerlink" title="3. Faster R-CNN"></a>3. Faster R-CNN</h3><h2 id="2-Yolo系列"><a href="#2-Yolo系列" class="headerlink" title="2. Yolo系列"></a>2. Yolo系列</h2><h3 id="1-Yolo-V1"><a href="#1-Yolo-V1" class="headerlink" title="1.Yolo V1"></a>1.Yolo V1</h3><h3 id="2-Yolo-V2"><a href="#2-Yolo-V2" class="headerlink" title="2.Yolo V2"></a>2.Yolo V2</h3><h3 id="3-Yolo-V3"><a href="#3-Yolo-V3" class="headerlink" title="3.Yolo V3"></a>3.Yolo V3</h3><h3 id="4-Yolo-V4"><a href="#4-Yolo-V4" class="headerlink" title="4.Yolo V4"></a>4.Yolo V4</h3><h3 id="5-Yolo-V5"><a href="#5-Yolo-V5" class="headerlink" title="5.Yolo V5"></a>5.Yolo V5</h3><h2 id="3-SSD"><a href="#3-SSD" class="headerlink" title="3. SSD"></a>3. SSD</h2><h2 id="4-Retina-Net"><a href="#4-Retina-Net" class="headerlink" title="4. Retina-Net"></a>4. Retina-Net</h2><h1 id="图像分割"><a href="#图像分割" class="headerlink" title="图像分割"></a>图像分割</h1><h2 id="1-FCN"><a href="#1-FCN" class="headerlink" title="1. FCN"></a>1. FCN</h2><h2 id="2-Mask-R-CNN"><a href="#2-Mask-R-CNN" class="headerlink" title="2. Mask R-CNN"></a>2. Mask R-CNN</h2><h1 id="目标追踪"><a href="#目标追踪" class="headerlink" title="目标追踪"></a>目标追踪</h1><h2 id="1-Goturn"><a href="#1-Goturn" class="headerlink" title="1. Goturn"></a>1. Goturn</h2><h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><h1 id="图像生成"><a href="#图像生成" class="headerlink" title="图像生成"></a>图像生成</h1><h2 id="1-GAN"><a href="#1-GAN" class="headerlink" title="1. GAN"></a>1. GAN</h2>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>cv算法</category>
       </categories>
       <tags>
         <tag>概览</tag>
@@ -4236,18 +4258,6 @@
         <tag>编程</tag>
         <tag>优化</tag>
         <tag>调参</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机视觉CV算法概览（更新ing）</title>
-    <url>/2021/09/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89CV%E7%AE%97%E6%B3%95%E6%A6%82%E8%A7%88/</url>
-    <content><![CDATA[<h1 id="图像识别"><a href="#图像识别" class="headerlink" title="图像识别"></a>图像识别</h1><h2 id="1-AlexNet"><a href="#1-AlexNet" class="headerlink" title="1. AlexNet"></a>1. AlexNet</h2><h2 id="2-VGGNet"><a href="#2-VGGNet" class="headerlink" title="2. VGGNet"></a>2. VGGNet</h2><h2 id="3-GoogLeNet"><a href="#3-GoogLeNet" class="headerlink" title="3. GoogLeNet"></a>3. GoogLeNet</h2><h2 id="4-ResNet"><a href="#4-ResNet" class="headerlink" title="4. ResNet"></a>4. ResNet</h2><h2 id="5-DenseNet"><a href="#5-DenseNet" class="headerlink" title="5. DenseNet"></a>5. DenseNet</h2><h1 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h1><h2 id="1-R-CNN-系列"><a href="#1-R-CNN-系列" class="headerlink" title="1. R-CNN 系列"></a>1. R-CNN 系列</h2><h3 id="1-R-CNN"><a href="#1-R-CNN" class="headerlink" title="1. R-CNN"></a>1. R-CNN</h3><h3 id="2-Fast-R-CNN"><a href="#2-Fast-R-CNN" class="headerlink" title="2. Fast R-CNN"></a>2. Fast R-CNN</h3><h3 id="3-Faster-R-CNN"><a href="#3-Faster-R-CNN" class="headerlink" title="3. Faster R-CNN"></a>3. Faster R-CNN</h3><h2 id="2-Yolo系列"><a href="#2-Yolo系列" class="headerlink" title="2. Yolo系列"></a>2. Yolo系列</h2><h3 id="1-Yolo-V1"><a href="#1-Yolo-V1" class="headerlink" title="1.Yolo V1"></a>1.Yolo V1</h3><h3 id="2-Yolo-V2"><a href="#2-Yolo-V2" class="headerlink" title="2.Yolo V2"></a>2.Yolo V2</h3><h3 id="3-Yolo-V3"><a href="#3-Yolo-V3" class="headerlink" title="3.Yolo V3"></a>3.Yolo V3</h3><h3 id="4-Yolo-V4"><a href="#4-Yolo-V4" class="headerlink" title="4.Yolo V4"></a>4.Yolo V4</h3><h3 id="5-Yolo-V5"><a href="#5-Yolo-V5" class="headerlink" title="5.Yolo V5"></a>5.Yolo V5</h3><h2 id="3-SSD"><a href="#3-SSD" class="headerlink" title="3. SSD"></a>3. SSD</h2><h2 id="4-Retina-Net"><a href="#4-Retina-Net" class="headerlink" title="4. Retina-Net"></a>4. Retina-Net</h2><h1 id="图像分割"><a href="#图像分割" class="headerlink" title="图像分割"></a>图像分割</h1><h2 id="1-FCN"><a href="#1-FCN" class="headerlink" title="1. FCN"></a>1. FCN</h2><h2 id="2-Mask-R-CNN"><a href="#2-Mask-R-CNN" class="headerlink" title="2. Mask R-CNN"></a>2. Mask R-CNN</h2><h1 id="目标追踪"><a href="#目标追踪" class="headerlink" title="目标追踪"></a>目标追踪</h1><h2 id="1-Goturn"><a href="#1-Goturn" class="headerlink" title="1. Goturn"></a>1. Goturn</h2><h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><h1 id="图像生成"><a href="#图像生成" class="headerlink" title="图像生成"></a>图像生成</h1><h2 id="1-GAN"><a href="#1-GAN" class="headerlink" title="1. GAN"></a>1. GAN</h2>]]></content>
-      <categories>
-        <category>学习</category>
-        <category>cv算法</category>
-      </categories>
-      <tags>
-        <tag>概览</tag>
       </tags>
   </entry>
   <entry>
@@ -4388,6 +4398,16 @@
       </tags>
   </entry>
   <entry>
+    <title>项目实战-延时显微镜下的细胞检测和跟踪</title>
+    <url>/2021/10/01/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98-%E5%BB%B6%E6%97%B6%E6%98%BE%E5%BE%AE%E9%95%9C%E4%B8%8B%E7%9A%84%E7%BB%86%E8%83%9E%E6%A3%80%E6%B5%8B%E5%92%8C%E8%B7%9F%E8%B8%AA/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>这个项目是9517 计算机视觉课程的一个project</p>
+<p>要求是检测显微镜下图片中的细胞以及后续判断细胞的移动轨迹</p>
+<p>Version1.0是使用了传统的OpenCV方法做的</p>
+<p>对延时显微镜下的细胞图像做训练，通过OpenCV形态学操作对图像做预处理</p>
+<p>Version1.0: 使用Unet网络框架进行细胞检测并多目标跟踪绘制细胞运动轨迹及运动属性计算</p>
+]]></content>
+  </entry>
+  <entry>
     <title>针对深度学习网络的PyTorch训练代码结构</title>
     <url>/2021/10/09/%E9%92%88%E5%AF%B9%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%BB%9C%E7%9A%84PyTorch%E8%AE%AD%E7%BB%83%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/</url>
     <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>根目录文件夹下包含三个文件夹和两个python代码文件：</p>
@@ -4466,16 +4486,6 @@
         <tag>基础操作</tag>
         <tag>编程</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>项目实战-延时显微镜下的细胞检测和跟踪</title>
-    <url>/2021/10/01/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98-%E5%BB%B6%E6%97%B6%E6%98%BE%E5%BE%AE%E9%95%9C%E4%B8%8B%E7%9A%84%E7%BB%86%E8%83%9E%E6%A3%80%E6%B5%8B%E5%92%8C%E8%B7%9F%E8%B8%AA/</url>
-    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>这个项目是9517 计算机视觉课程的一个project</p>
-<p>要求是检测显微镜下图片中的细胞以及后续判断细胞的移动轨迹</p>
-<p>Version1.0是使用了传统的OpenCV方法做的</p>
-<p>对延时显微镜下的细胞图像做训练，通过OpenCV形态学操作对图像做预处理</p>
-<p>Version1.0: 使用Unet网络框架进行细胞检测并多目标跟踪绘制细胞运动轨迹及运动属性计算</p>
-]]></content>
   </entry>
   <entry>
     <title>深度学习-常用卷积方法梳理</title>
