@@ -24,7 +24,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenCV图像处理基础（一）">
 <meta property="og:url" content="http://example.com/2021/09/29/OpenCV%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
-<meta property="og:site_name" content="Leo的三板斧">
+<meta property="og:site_name" content="Leo">
 <meta property="og:description" content="摘要数字图像基础 读、写、显示（图片、视频） 缩放、补边、裁剪 绘制形状 书写文字">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-29T10:13:56.000Z">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>OpenCV图像处理基础（一） | Leo的三板斧</title>
+  <title>OpenCV图像处理基础（一） | Leo</title>
   
 
 
@@ -100,7 +100,7 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Leo的三板斧</h1>
+      <h1 class="site-title">Leo</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
       <p class="site-subtitle" itemprop="description">记录Leo的技术自卷历程，技术探索，望不吝赐教</p>
@@ -125,7 +125,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">110</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">111</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -236,7 +236,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leo的三板斧">
+      <meta itemprop="name" content="Leo">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -283,6 +283,7 @@
 <p>绘制形状</p>
 <p>书写文字</p>
 <span id="more"></span>
+
 <h1 id="图像的数字表示"><a href="#图像的数字表示" class="headerlink" title="图像的数字表示"></a>图像的数字表示</h1><p>在计算机系统中存储的是每张图像每个像素点的值</p>
 <p>灰度图，单通道图像也就是8位图像，每个像素点的值占8字节，00000000-11111111也就是0-255</p>
 <p>RGB/BGR图像，是三通道图像，也就是24位图像，每个像素点的值占24字节，也就是三个通道每个通道的值占8字节0-255</p>
@@ -290,13 +291,21 @@
 <p>像素值为0表示黑色，255表示白色</p>
 <p>32位图像在24位的基础上增加了一个alpha分量，该分量用于记录图像的透明度信息。</p>
 <h1 id="读、写、显示"><a href="#读、写、显示" class="headerlink" title="读、写、显示"></a>读、写、显示</h1><h2 id="图片读取"><a href="#图片读取" class="headerlink" title="图片读取"></a>图片读取</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="comment"># 读取函数imread()</span></span><br><span class="line">img = cv2.imread(<span class="string">&quot;Path.jpg/png&quot;</span>)</span><br><span class="line"><span class="comment"># 显示函数 imshow()</span></span><br><span class="line">cv2.imshow(<span class="string">&#x27;窗口名称&#x27;</span>,img)</span><br><span class="line"><span class="comment"># 写入函数 imwrite()</span></span><br><span class="line">cv2.imwrite(<span class="string">&#x27;写入的文件名.jpg&#x27;</span>,img)</span><br><span class="line"><span class="comment"># cv2.IMWRITE_JPEG_QUALITY指定jpg质量，范围0到100，默认95，越高画质越好，文件越大</span></span><br><span class="line">cv2.imwrite(<span class="string">&#x27;写入的文件名.jpg&#x27;</span>, img, (cv2.IMWRITE_JPEG_QUALITY, <span class="number">80</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># cv2.IMWRITE_PNG_COMPRESSION指定png质量，范围0到9，默认3，越高文件越小，画质越差</span></span><br><span class="line">cv2.imwrite(<span class="string">&#x27;写入的文件名.png&#x27;</span>, img, (cv2.IMWRITE_PNG_COMPRESSION, <span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+
 <h2 id="显示图片需要对窗口进行设置"><a href="#显示图片需要对窗口进行设置" class="headerlink" title="显示图片需要对窗口进行设置"></a>显示图片需要对窗口进行设置</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cv2.imshow(<span class="string">&#x27;窗口名称&#x27;</span>,img)</span><br><span class="line">cv2.waitkey(<span class="number">0</span>)</span><br><span class="line">cv2.destoryAllWindows()</span><br></pre></td></tr></table></figure>
+
 <p><code>cv2.waitKey()</code> 是键盘绑定函数，可以设置毫秒级数值，如果是0会一直等待，也可以设置为指定字母，比如a</p>
 <p><code>cv2.destoryAllWindows()</code>销毁所有创建的窗口</p>
 <h2 id="视频读取，显示"><a href="#视频读取，显示" class="headerlink" title="视频读取，显示"></a>视频读取，显示</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cap = cv2.VideoCapture(<span class="string">&#x27;视频名称.mp4/avi&#x27;</span>) <span class="comment"># 获取视频</span></span><br><span class="line"><span class="comment"># cap = cv2.VideoCapture(0) # 获取摄像头 0内置 1外置摄像头</span></span><br><span class="line"><span class="comment"># 视频显示：while循环显示视频的每一帧</span></span><br><span class="line"><span class="comment"># 使用read()获取的视频帧，将每一帧显示100ms,如果期间检测到‘q‘则退出，关闭窗口</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">  reg,frame = cap.read()</span><br><span class="line">  cv2.imshow(<span class="string">&#x27;caputre&#x27;</span>,frame)</span><br><span class="line">  <span class="keyword">if</span> cv2.waitkey(<span class="number">100</span>) <span class="keyword">and</span> <span class="number">0xFF</span> == <span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+
 <h1 id="缩放，补边，裁剪"><a href="#缩放，补边，裁剪" class="headerlink" title="缩放，补边，裁剪"></a>缩放，补边，裁剪</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 缩放成200x200的方形图像</span></span><br><span class="line">img_200x200 = cv2.resize(img, (<span class="number">200</span>, <span class="number">200</span>))</span><br><span class="line"><span class="comment"># 根据缩放比例来</span></span><br><span class="line"><span class="comment"># 默认线性插值 cv2.INTER_LINEAR</span></span><br><span class="line">img = cv2.resize(img,(<span class="number">0</span>,<span class="number">0</span>),fx=<span class="number">0.5</span>,fy=<span class="number">0.5</span>,interpolation=cv2.INTER_NEAREST) <span class="comment"># 邻近插值</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 上下左右分布补边50，40，30，20宽，常数填充 都是黑边</span></span><br><span class="line">img = cv2.copyMakeBorder(img, <span class="number">50</span>, <span class="number">40</span>, <span class="number">30</span>, <span class="number">20</span>,cv2.BORDER_CONSTANT, value=(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据切片来做裁剪</span></span><br><span class="line">imgCropped = img[<span class="number">50</span>:<span class="number">250</span>,<span class="number">120</span>:<span class="number">330</span>]</span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="绘制形状"><a href="#绘制形状" class="headerlink" title="绘制形状"></a>绘制形状</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cv2.line() 图像，起点，终点，画笔颜色，线宽</span></span><br><span class="line">img = cv2.line(img,(<span class="number">0</span>,<span class="number">0</span>),(<span class="number">511</span>,<span class="number">511</span>),(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),<span class="number">5</span>)  </span><br><span class="line"><span class="comment"># cv2.circle() 图像，圆心，半径，颜色，-1是表示一个封闭的图形</span></span><br><span class="line">img = cv2.circle(img,(<span class="number">447</span>,<span class="number">63</span>),<span class="number">63</span>,(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),-<span class="number">1</span>)  </span><br><span class="line"><span class="comment"># cv2.rectangle() 图像，左上角，右下角，颜色，线宽</span></span><br><span class="line">img = cv2.rectangle(img,(<span class="number">384</span>,<span class="number">0</span>),(<span class="number">510</span>,<span class="number">128</span>),(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">3</span>) </span><br><span class="line"><span class="comment"># cv2.ellipse()</span></span><br><span class="line">img = cv2.ellipse(img,(<span class="number">256</span>,<span class="number">256</span>),(<span class="number">100</span>,<span class="number">50</span>),<span class="number">0</span>,<span class="number">0</span>,<span class="number">180</span>,<span class="number">255</span>,-<span class="number">1</span>) </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <h1 id="书写文字"><a href="#书写文字" class="headerlink" title="书写文字"></a>书写文字</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cv2.putText()</span></span><br><span class="line"><span class="comment"># 各参数依次是：图片，添加的文字，左上角坐标，字体，字体大小，颜色，字体粗细</span></span><br><span class="line">img = cv2.putText(img, <span class="built_in">str</span>, (<span class="number">123</span>,<span class="number">456</span>)), font, <span class="number">2</span>, (<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>), <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -399,7 +408,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">110</span>
+          <span class="site-state-item-count">111</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

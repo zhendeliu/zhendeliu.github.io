@@ -24,7 +24,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="目标检测-YOLOv1">
 <meta property="og:url" content="http://example.com/2021/09/29/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-YOLO%E7%B3%BB%E5%88%97/index.html">
-<meta property="og:site_name" content="Leo的三板斧">
+<meta property="og:site_name" content="Leo">
 <meta property="og:description" content="摘要YOLOv1是典型的目标检测one stage方法，用回归的方法去做目标检测，执行速度快，达到非常高效的检测，其背后的原理和思想也非常简单。YOLOv1的基本思想是把一副图片，首先reshape成448x448大小（由于网络中使用了全连接层，所以图片的尺寸需固定大小输入到CNN中），然后将划分成SxS个单元格（原文中S&#x3D;7），以每个格子所在位置和对应内容为基础，来预测： 方法简述： 优点： 缺">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-29T10:50:55.000Z">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>目标检测-YOLOv1 | Leo的三板斧</title>
+  <title>目标检测-YOLOv1 | Leo</title>
   
 
 
@@ -99,7 +99,7 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Leo的三板斧</h1>
+      <h1 class="site-title">Leo</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
       <p class="site-subtitle" itemprop="description">记录Leo的技术自卷历程，技术探索，望不吝赐教</p>
@@ -124,7 +124,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">110</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">111</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -235,7 +235,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leo的三板斧">
+      <meta itemprop="name" content="Leo">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -289,6 +289,7 @@
 <p>优点：</p>
 <p>缺点：</p>
 <span id="more"></span>
+
 <h1 id="YOLOv1"><a href="#YOLOv1" class="headerlink" title="YOLOv1"></a>YOLOv1</h1><ol>
 <li><p>核心思想 回归思想</p>
 <p>整张图作为网络的输入，在输出层回归Bounding Box的位置和Bounding Box的类别</p>
@@ -306,7 +307,7 @@
 <ul>
 <li>给个一个输入图像，首先将图像划分成7*7的网格；</li>
 <li>对于每个网格，我们都预测2个边框（包括每个边框是目标的置信度以及每个边框区域在多个类别上的概率）；</li>
-<li>根据上一步可以预测出7 <em> 7 </em> 2个目标窗口，然后根据阈值去除可能性比较低的目标窗口，最后NMS去除冗余窗口即可。</li>
+<li>根据上一步可以预测出7 * 7 * 2个目标窗口，然后根据阈值去除可能性比较低的目标窗口，最后NMS去除冗余窗口即可。</li>
 <li>每个网格包含B个检测框和一个C个类别的概率值，每个检测框含有五个值要预测(x, y, w, h)和confidence</li>
 </ul>
 </li>
@@ -342,12 +343,12 @@
 <li>由于输出层为全连接层，因此在检测时，YOLO 训练模型只支持与训练图像相同的输入分辨率的图片。</li>
 </ul>
 <ol>
-<li></li>
+<li><p>Loss= 坐标预测的Loss + 含object的Box的confidence预测 + 不含object的Box的confidence预测 + 类别预测</p>
+<p>只有当某个网格中有object的时候才对classification error进行惩罚。<br>只有当某个box predictor对某个ground truth box负责的时候，才会对box的coordinate error进行惩罚，而对哪个ground truth box负责就看其预测值和ground truth box的IoU是不是在那个cell的所有box中最大。<br>注：</p>
+<p>YOLOv1方法模型训练依赖于物体识别标注数据，因此，对于非常规的物体形状或比例，YOLOv1的检测效果并不理想。<br>YOLOv1采用了多个下采样层，网络学到的物体特征并不精细，因此也会影响检测效果。<br>YOLOv1的loss函数中，大物体IOU误差和小物体IOU误差对网络训练中loss贡献值接近（虽然采用求平方根方式，但没有根本解决问题）。因此，对于小物体，小的IOU误差也会对网络优化过程造成很大的影响，从而降低了物体检测的定位准确性。<br>YOLO的缺点</p>
+<p>YOLO对相互靠的很近的物体和很小的群体检测效果不好，这是因为一个网格中只预测了两个框，并且只属于一类；<br>同一类物体出现的新的不常见的长宽比和其他情况时，泛化能力偏弱；<br>由于损失函数的问题，定位误差是影响检测效果的主要原因。尤其是大小物体的处理上，还有待加强。</p>
+</li>
 </ol>
-<p>   Loss= 坐标预测的Loss + 含object的Box的confidence预测 + 不含object的Box的confidence预测 + 类别预测</p>
-<p>   只有当某个网格中有object的时候才对classification error进行惩罚。<br>   只有当某个box predictor对某个ground truth box负责的时候，才会对box的coordinate error进行惩罚，而对哪个ground truth box负责就看其预测值和ground truth box的IoU是不是在那个cell的所有box中最大。<br>   注：</p>
-<p>   YOLOv1方法模型训练依赖于物体识别标注数据，因此，对于非常规的物体形状或比例，YOLOv1的检测效果并不理想。<br>   YOLOv1采用了多个下采样层，网络学到的物体特征并不精细，因此也会影响检测效果。<br>   YOLOv1的loss函数中，大物体IOU误差和小物体IOU误差对网络训练中loss贡献值接近（虽然采用求平方根方式，但没有根本解决问题）。因此，对于小物体，小的IOU误差也会对网络优化过程造成很大的影响，从而降低了物体检测的定位准确性。<br>   YOLO的缺点</p>
-<p>   YOLO对相互靠的很近的物体和很小的群体检测效果不好，这是因为一个网格中只预测了两个框，并且只属于一类；<br>   同一类物体出现的新的不常见的长宽比和其他情况时，泛化能力偏弱；<br>   由于损失函数的问题，定位误差是影响检测效果的主要原因。尤其是大小物体的处理上，还有待加强。</p>
 
     </div>
 
@@ -449,7 +450,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">110</span>
+          <span class="site-state-item-count">111</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

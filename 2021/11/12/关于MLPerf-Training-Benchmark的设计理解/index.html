@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Mchine Learning的发展需要有行业标准的性能基准测评。Machione Learning有三个基准挑战：  提升训练吞吐量  训练中的随机性以及solution的时间会有明显的差异性  软硬件的差异性导致难以用相同的精度，code和超参在不同的软硬件上面进行基准测评。  MLPerf定量评估多个厂商的在驱动性能和可伸缩性改进方面的效能">
+  <meta name="description" content="Mchine Learning的发展需要有行业标准的性能基准测评。Machione Learning有三个基准挑战：  提升训练吞吐量  训练中的随机性以及solution的时间会有明显的差异性  软硬件的差异性导致难以用相同的精度，code和超参在不同的软硬件上面进行基准测评。   MLPerf定量评估多个厂商的在驱动性能和可伸缩性改进方面的效能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于MLPerf Training Benchmark的设计理解">
 <meta property="og:url" content="http://example.com/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/index.html">
-<meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="Mchine Learning的发展需要有行业标准的性能基准测评。Machione Learning有三个基准挑战：  提升训练吞吐量  训练中的随机性以及solution的时间会有明显的差异性  软硬件的差异性导致难以用相同的精度，code和超参在不同的软硬件上面进行基准测评。  MLPerf定量评估多个厂商的在驱动性能和可伸缩性改进方面的效能">
+<meta property="og:site_name" content="Leo">
+<meta property="og:description" content="Mchine Learning的发展需要有行业标准的性能基准测评。Machione Learning有三个基准挑战：  提升训练吞吐量  训练中的随机性以及solution的时间会有明显的差异性  软硬件的差异性导致难以用相同的精度，code和超参在不同的软硬件上面进行基准测评。   MLPerf定量评估多个厂商的在驱动性能和可伸缩性改进方面的效能">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/关于MLPerf-Training-Benchmark的设计理解/table2.png">
+<meta property="og:image" content="http://example.com/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/table2.png">
 <meta property="article:published_time" content="2021-11-12T02:39:14.000Z">
 <meta property="article:modified_time" content="2021-12-01T07:53:49.000Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="python 深度学习">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/关于MLPerf-Training-Benchmark的设计理解/table2.png">
+<meta name="twitter:image" content="http://example.com/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/table2.png">
 
 <link rel="canonical" href="http://example.com/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/">
 
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>关于MLPerf Training Benchmark的设计理解 | Leo的三板斧</title>
+  <title>关于MLPerf Training Benchmark的设计理解 | Leo</title>
   
 
 
@@ -99,7 +99,7 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Leo的三板斧</h1>
+      <h1 class="site-title">Leo</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
       <p class="site-subtitle" itemprop="description">记录Leo的技术自卷历程，技术探索，望不吝赐教</p>
@@ -124,7 +124,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">110</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">111</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -235,7 +235,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leo的三板斧">
+      <meta itemprop="name" content="Leo">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -269,17 +269,20 @@
 </li>
 <li><p>训练中的随机性以及solution的时间会有明显的差异性</p>
 </li>
-<li>软硬件的差异性导致难以用相同的精度，code和超参在不同的软硬件上面进行基准测评。</li>
+<li><p>软硬件的差异性导致难以用相同的精度，code和超参在不同的软硬件上面进行基准测评。</p>
+</li>
 </ol>
 <p>MLPerf定量评估多个厂商的在驱动性能和可伸缩性改进方面的效能</p>
 <span id="more"></span>
+
 <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>Mchine Learning的发展需要有行业标准的性能基准测评。Machione Learning有三个基准挑战：</p>
 <ol>
 <li><p>提升训练吞吐量</p>
 </li>
 <li><p>训练中的随机性以及solution的时间会有明显的差异性</p>
 </li>
-<li>软硬件的差异性导致难以用相同的精度，code和超参在不同的软硬件上面进行基准测评。</li>
+<li><p>软硬件的差异性导致难以用相同的精度，code和超参在不同的软硬件上面进行基准测评。</p>
+</li>
 </ol>
 <p>MLPerf定量评估多个厂商的在驱动性能和可伸缩性改进方面的效能。</p>
 <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>MLPerf的目标是创建一个具有代表性的基准测评，公正测评系统性能为了达到5个目标：</p>
@@ -326,7 +329,7 @@
 <p>为了解决深度学习方法的随机性质和由此产生的运行到运行方差，MLPerf 要求提交提供每个基准的多次运行以稳定计时。<strong>视觉任务需要5次运</strong>行，以确保来自同一系统的90%的条目在5%以内; 所有其他任务都需要运行 10 次，以确保来自同一系统的 90% 的条目在 10% 以内。<strong>MLPerf 会丢弃最快和最慢的时间，并将剩余运行的算术平均值报告为结果。</strong></p>
 <h3 id="质量阈值的选择"><a href="#质量阈值的选择" class="headerlink" title="质量阈值的选择"></a>质量阈值的选择</h3><p>选择较高阈值，可能需要更长训练的，原因有两个：首先，必须防止优化对最终结果产生不利影响。其次，我们必须尽量减少run-to-run variation，（不同的随机种子产生不同的影响）</p>
 <p><strong>参考实现和超参数</strong><br>MLPerf 使用 PyTorch 或 TensorFlow 框架为每个基准测试提供了一个参考实现，没有被优化，主要目的是定义基准模型和training程序的具体实现。所有提交者都必须遵循这些引用 - 只要 DNN 模型和训练运算在数学上与引用等效，他们就可以在其选择的框架中重新实现基准标记。此外，MLPerf 使用参考实现来建立所需的质量阈值。<br>MLPerf 规则指定可修改的超参数 （Table 2） 以及对其修改的限制。这些限制旨在平衡对不同系统进行调整的需求，并限制超参数搜索空间的大小，以便对计算资源较小的提交者公平。<br>此外，在提交后的审核过程中，允许类似规模的系统之间”超参数借用”，其中一个提交者可以采用另一个提交者的超参数作为特殊基准测试并重新提交其结果（不允许进行其他硬件或软件更改）。在前两轮中，超参数借用成功地用于改进几个提交，表明超参数在某种程度上是可移植的。</p>
-<p><img src="/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/关于MLPerf-Training-Benchmark的设计理解/table2.png" alt></p>
+<p><img src="/2021/11/12/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/zhendeliu/Documents/GitHub/gitblog/source/_posts/%E5%85%B3%E4%BA%8EMLPerf-Training-Benchmark%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3/table2.png"></p>
 <h2 id="Report"><a href="#Report" class="headerlink" title="Report"></a>Report</h2><p>MLPerf 提交由系统说明、培训课程日志文件以及重现培训课程所需的所有代码和库组成。所有这些信息都可以在 MLPerf GitHub 网站上公开获得，以及 MLPerf 结果，从而实现可重复性，并使社区能够在后续回合中改进结果。系统描述包括硬件（节点数、处理器和加速器计数和类型、每个节点的存储期限和网络互连）和软件（操作系统以及库及其版本）。培训课程日志文件包含各种结构化信息，包括重要工作负载阶段的时间戳、按规定时间间隔进行的质量指标评估以及超参数选择。这些日志是分析结果的基础。</p>
 <p>An MLPerf submission consists of a system description, training-session log files, and all code and libraries required to reproduce the training sessions. All of this information is publicly available on the MLPerf GitHub site, along with the MLPerf results, allowing for reproducibility and enabling the community to improve the results in subsequent rounds. A system description includes both the hardware (number of nodes, processor and accelerator counts and types, stor- age per node, and network interconnect) and the software (operating system as well as libraries and their versions). A training-session log file contains a variety of structured information including time stamps for important workload stages, quality-metric evaluations at prescribed intervals, and hyperparameter choices. These logs are the foundation for analyzing results.</p>
 <p>4.2 报告结果<br>每个 MLPerf 提交都有多个标签：部门（开放或关闭）、类别（可用、预览或研究）和系统类型（本地或云）。<br>4.2.1 提交部门<br>MLPerf有两个提交部门：封闭和开放。两者都要求提交使用相同的数据集和质量指标作为相应的参考实现。<br>closed区旨在直接进行系统比较，因此它通过要求提交等效于参考实现来努力确保工作负载等效性。等价性包括数学上相同的模型导入、参数初始化、优化器和训练计划以及数据处理和遍历。为了确保公平性，此版本还限制了超参数修改。open区旨在鼓励对重要实际问题进行创新，并鼓励硬件/软件协同设计。它允许提交采用与参考实现不同的模型架构、优化过程和数据增强。</p>
@@ -342,8 +345,10 @@
 </li>
 <li><p>Translation</p>
 </li>
-<li>Reinforcement Learning</li>
-<li>Recommendation</li>
+<li><p>Reinforcement Learning</p>
+</li>
+<li><p>Recommendation</p>
+</li>
 <li></li>
 </ol>
 <h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>ML Comment 官网： <a target="_blank" rel="noopener" href="https://mlcommons.org/en/">https://mlcommons.org/en/</a> </p>
@@ -445,7 +450,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">110</span>
+          <span class="site-state-item-count">111</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

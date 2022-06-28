@@ -20,25 +20,25 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="[x] ES系统分析 [x] Kibana安装部署 [x] Kibana面板说明">
+  <meta name="description" content="ES系统分析  Kibana安装部署  Kibana面板说明">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ElasticSearch(3):系统管理及Kibana可视化">
 <meta property="og:url" content="http://example.com/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/index.html">
-<meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="[x] ES系统分析 [x] Kibana安装部署 [x] Kibana面板说明">
+<meta property="og:site_name" content="Leo">
+<meta property="og:description" content="ES系统分析  Kibana安装部署  Kibana面板说明">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/开发工具.png">
-<meta property="og:image" content="http://example.com/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/集群概况.jpg">
-<meta property="og:image" content="http://example.com/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/节点概况1.jpg">
-<meta property="og:image" content="http://example.com/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/节点概况2.jpg">
-<meta property="og:image" content="http://example.com/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/索引概况.jpg">
-<meta property="og:image" content="http://example.com/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/索引信息.jpg">
+<meta property="og:image" content="http://example.com/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7.png">
+<meta property="og:image" content="http://example.com/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/%E9%9B%86%E7%BE%A4%E6%A6%82%E5%86%B5.jpg">
+<meta property="og:image" content="http://example.com/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/%E8%8A%82%E7%82%B9%E6%A6%82%E5%86%B51.jpg">
+<meta property="og:image" content="http://example.com/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/%E8%8A%82%E7%82%B9%E6%A6%82%E5%86%B52.jpg">
+<meta property="og:image" content="http://example.com/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/%E7%B4%A2%E5%BC%95%E6%A6%82%E5%86%B5.jpg">
+<meta property="og:image" content="http://example.com/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/%E7%B4%A2%E5%BC%95%E4%BF%A1%E6%81%AF.jpg">
 <meta property="article:published_time" content="2021-12-08T08:49:53.000Z">
 <meta property="article:modified_time" content="2021-12-24T07:40:46.000Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="python 深度学习">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/开发工具.png">
+<meta name="twitter:image" content="http://example.com/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7.png">
 
 <link rel="canonical" href="http://example.com/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/">
 
@@ -53,7 +53,7 @@
   };
 </script>
 
-  <title>ElasticSearch(3):系统管理及Kibana可视化 | Leo的三板斧</title>
+  <title>ElasticSearch(3):系统管理及Kibana可视化 | Leo</title>
   
 
 
@@ -104,7 +104,7 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Leo的三板斧</h1>
+      <h1 class="site-title">Leo</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
       <p class="site-subtitle" itemprop="description">记录Leo的技术自卷历程，技术探索，望不吝赐教</p>
@@ -129,7 +129,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">110</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">111</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -240,7 +240,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leo的三板斧">
+      <meta itemprop="name" content="Leo">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -269,18 +269,21 @@
 
       
         <ul>
-<li>[x] ES系统分析</li>
-<li>[x] Kibana安装部署</li>
-<li>[x] Kibana面板说明</li>
+<li><input checked disabled type="checkbox"> ES系统分析</li>
+<li><input checked disabled type="checkbox"> Kibana安装部署</li>
+<li><input checked disabled type="checkbox"> Kibana面板说明</li>
 </ul>
 <span id="more"></span>
+
 <h1 id="系统分析"><a href="#系统分析" class="headerlink" title="系统分析"></a>系统分析</h1><h2 id="ES分析命令"><a href="#ES分析命令" class="headerlink" title="ES分析命令"></a>ES分析命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#Postman查看索引分片信息： </span><br><span class="line">http://127.0.0.1:9200/index_name/_search_shards</span><br><span class="line"># linux 查看索引分片信息： </span><br><span class="line">curl -XGET http://localhost:9200/_cat/shards/index_name?v</span><br><span class="line"></span><br><span class="line"># 查看全部索引的空间占用信息： </span><br><span class="line">curl -X GET localhost:9200/_cat/indices?v</span><br><span class="line"></span><br><span class="line"># 查看全部分片的空间占用信息： </span><br><span class="line">curl -X GET localhost:9200/_cat/shards?v</span><br></pre></td></tr></table></figure>
+
 <p>创建索引的时候需要根据数据量的大小确定分片数量！比如在后面的实践项目中根据实际情况1000万条数据大约占用7.68G</p>
 <h2 id="系统分析命令"><a href="#系统分析命令" class="headerlink" title="系统分析命令"></a>系统分析命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 查看系统CPU使用情况</span><br><span class="line">top</span><br><span class="line"># 间隔1秒刷新</span><br><span class="line">top -d 1</span><br><span class="line"></span><br><span class="line"># 查看存储空间占用情况</span><br><span class="line">df -h</span><br><span class="line"></span><br><span class="line"># 查看io性能: 显示io详细性能 每个2秒刷新一次</span><br><span class="line">iostat -x 2</span><br><span class="line"></span><br><span class="line"># 等其他性能分析命令</span><br></pre></td></tr></table></figure>
+
 <h1 id="Kibana安装"><a href="#Kibana安装" class="headerlink" title="Kibana安装"></a>Kibana安装</h1><h2 id="Windows安装Kibana"><a href="#Windows安装Kibana" class="headerlink" title="Windows安装Kibana"></a>Windows安装Kibana</h2><ol>
 <li>Kibana和 Elasticsearch需要版本一致。先查看本地ES版本</li>
 <li>下载Kibana <a target="_blank" rel="noopener" href="https://www.elastic.co/cn/downloads/kibana">https://www.elastic.co/cn/downloads/kibana</a></li>
-<li>解压之后 在 <code>config/kibana.yml</code> 配置文件中修改<code>elasticsearch.host</code> 地址指向Elasticsearch实例</li>
+<li>解压之后 在 <code>config/kibana.yml</code> 配置文件中修改<code>elasticsearch.host</code> 地址指向Elasticsearch实例</li>
 <li>双击 <code>bin\kibana.bat</code> 启动</li>
 <li>浏览器打开 <code>127.0.0.1:5601</code></li>
 </ol>
@@ -296,18 +299,18 @@
 <p>Kibana最常用的几个功能如下：（更多功能自行探索）</p>
 <ol>
 <li><p>Dev Tools开发工具这块提供了友好的开发页面包括性能调优以及Debug模式</p>
-<p><img src="/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/开发工具.png" alt></p>
+<p><img src="/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7.png"></p>
 </li>
 <li><p>堆栈检测</p>
-<p><img src="/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/集群概况.jpg" alt></p>
+<p><img src="/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/%E9%9B%86%E7%BE%A4%E6%A6%82%E5%86%B5.jpg"></p>
 <p>节点概况</p>
-<p><img src="/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/节点概况1.jpg" alt></p>
-<p><img src="/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/节点概况2.jpg" alt></p>
+<p><img src="/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/%E8%8A%82%E7%82%B9%E6%A6%82%E5%86%B51.jpg"></p>
+<p><img src="/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/%E8%8A%82%E7%82%B9%E6%A6%82%E5%86%B52.jpg"></p>
 </li>
 <li><p>索引概况</p>
-<p><img src="/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/索引概况.jpg" alt></p>
+<p><img src="/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/%E7%B4%A2%E5%BC%95%E6%A6%82%E5%86%B5.jpg"></p>
 <p>索引信息</p>
-<p><img src="/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/索引信息.jpg" alt></p>
+<p><img src="/2021/12/08/ElasticSearch-3-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86Kibana/%E7%B4%A2%E5%BC%95%E4%BF%A1%E6%81%AF.jpg"></p>
 </li>
 </ol>
 <p>Reference：</p>
@@ -412,7 +415,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">110</span>
+          <span class="site-state-item-count">111</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

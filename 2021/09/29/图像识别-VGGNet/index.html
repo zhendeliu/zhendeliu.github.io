@@ -24,11 +24,11 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="图像识别-VGGNet">
 <meta property="og:url" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/index.html">
-<meta property="og:site_name" content="Leo的三板斧">
+<meta property="og:site_name" content="Leo">
 <meta property="og:description" content="摘要背景问题：随着AlexNet提出，很多人开始利用卷积神经网络来解决图像识别的问题。一般的做法都是重复几层卷积网络，每个卷积网络之后接一些池化层，最后再加上几个全连接层。而如何更优的设计网络结构（深度，kernel size等） 方法简述：用更小更深的卷积核代替大的卷积核，较深的网络层次来提升深度学习的效果。 使用很小的3x3、步长为1的卷积核来扫描输入。两个3x3的卷积核堆起来，和一个5x5的">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/VGG16结构.png">
-<meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/参数计算.png">
+<meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/VGG16%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/%E5%8F%82%E6%95%B0%E8%AE%A1%E7%AE%97.png">
 <meta property="og:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/VGG16VS19.png">
 <meta property="article:published_time" content="2021-09-29T10:40:10.000Z">
 <meta property="article:modified_time" content="2021-10-09T01:47:50.000Z">
@@ -36,7 +36,7 @@
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="论文复现">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/VGG16结构.png">
+<meta name="twitter:image" content="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/VGG16%E7%BB%93%E6%9E%84.png">
 
 <link rel="canonical" href="http://example.com/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/">
 
@@ -51,7 +51,7 @@
   };
 </script>
 
-  <title>图像识别-VGGNet | Leo的三板斧</title>
+  <title>图像识别-VGGNet | Leo</title>
   
 
 
@@ -102,7 +102,7 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Leo的三板斧</h1>
+      <h1 class="site-title">Leo</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
       <p class="site-subtitle" itemprop="description">记录Leo的技术自卷历程，技术探索，望不吝赐教</p>
@@ -127,7 +127,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">110</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">111</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -238,7 +238,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leo的三板斧">
+      <meta itemprop="name" content="Leo">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -304,10 +304,11 @@
 <li>计算耗费更多资源，参数量大（主要是全联接层导致的）， 内存空间占用高 140M</li>
 </ol>
 <span id="more"></span>
-<h1 id="基本结构-VGG16"><a href="#基本结构-VGG16" class="headerlink" title="基本结构-VGG16"></a>基本结构-VGG16</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/VGG16结构.png" alt></p>
+
+<h1 id="基本结构-VGG16"><a href="#基本结构-VGG16" class="headerlink" title="基本结构-VGG16"></a>基本结构-VGG16</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/VGG16%E7%BB%93%E6%9E%84.png"></p>
 <p>图片来源：<a target="_blank" rel="noopener" href="https://www.cxyzjd.com/article/weixin_26726011/108260201">https://www.cxyzjd.com/article/weixin_26726011/108260201</a></p>
-<h1 id="参数计算-VGG16"><a href="#参数计算-VGG16" class="headerlink" title="参数计算-VGG16"></a>参数计算-VGG16</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/参数计算.png" alt></p>
-<h1 id="VGG16-VS-VGG19"><a href="#VGG16-VS-VGG19" class="headerlink" title="VGG16 VS VGG19"></a>VGG16 VS VGG19</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/VGG16VS19.png" alt></p>
+<h1 id="参数计算-VGG16"><a href="#参数计算-VGG16" class="headerlink" title="参数计算-VGG16"></a>参数计算-VGG16</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/%E5%8F%82%E6%95%B0%E8%AE%A1%E7%AE%97.png"></p>
+<h1 id="VGG16-VS-VGG19"><a href="#VGG16-VS-VGG19" class="headerlink" title="VGG16 VS VGG19"></a>VGG16 VS VGG19</h1><p><img src="/2021/09/29/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB-VGGNet/VGG16VS19.png"></p>
 <p>图片来源：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/jesse123/p/7110721.html">https://www.cnblogs.com/jesse123/p/7110721.html</a></p>
 
     </div>
@@ -409,7 +410,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">110</span>
+          <span class="site-state-item-count">111</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
