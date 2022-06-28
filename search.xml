@@ -4372,4 +4372,9 @@
 <p>Version1.0: 使用Unet网络框架进行细胞检测并多目标跟踪绘制细胞运动轨迹及运动属性计算</p>
 ]]></content>
   </entry>
+  <entry>
+    <title>CUDA编程优化方法一</title>
+    <url>/2022/06/28/CUDA%E7%BC%96%E7%A8%8B%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%E4%B8%80/</url>
+    <content><![CDATA[]]></content>
+  </entry>
 </search>
