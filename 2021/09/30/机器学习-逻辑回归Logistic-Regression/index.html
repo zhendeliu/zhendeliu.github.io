@@ -27,14 +27,14 @@
 <meta property="og:site_name" content="Leo的三板斧">
 <meta property="og:description" content="摘要逻辑回归 &#x3D; 线性回归+逻辑分布 （如：sigmoid函数） 背景问题： 回归是连续的，分类是离散的，怎么将解决分类问题转化为解决回归问题 方法简述：先拟合决策边界(不局限于线性，还可以是多项式)，再建立这个边界与分类的概率联系，从而得到了二分类情况下的概率。分类是离散的，但类别的概率是连续的，让模型拟合概率相关的一个指标（对数几率函数logit） 优点： ​    (1)对率函数任意阶可导，">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cmu=0,+%5Cgamma=1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cmu%3D0%2C+%5Cgamma%3D1">
 <meta property="article:published_time" content="2021-09-30T09:19:30.000Z">
-<meta property="article:modified_time" content="2021-10-02T09:31:06.954Z">
+<meta property="article:modified_time" content="2021-10-02T09:31:06.000Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.zhihu.com/equation?tex=%5Cmu=0,+%5Cgamma=1">
+<meta name="twitter:image" content="https://www.zhihu.com/equation?tex=%5Cmu%3D0%2C+%5Cgamma%3D1">
 
 <link rel="canonical" href="http://example.com/2021/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92Logistic-Regression/">
 
@@ -125,7 +125,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">108</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">109</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -295,10 +295,9 @@
 <p>​    (4)准确率并不是很高，因为形式非常的简单(非常类似线性模型)，很难去拟合数据的真实分布;</p>
 <p>​    (5)无法筛选特征</p>
 <span id="more"></span>
-
 <p>线性分类器：线性分类器的学习目标便是要在n维的数据空间中找到一个超平面，使得这个超平面可以将已知的数据点分为两个类别</p>
 <p>逻辑回归不是解决回归问题是用来解决分类问题，本质就是假设数据符合这个分布，然后使用极大似然估计做参数的估计</p>
-<h1 id="Logistic-分布函数"><a href="#Logistic-分布函数" class="headerlink" title="Logistic 分布函数"></a>Logistic 分布函数</h1><p>Logistic 分布是一种连续型的分布，它形状与正态分布的形状相似，但是 Logistic 分布的尾部更长，所以我们可以使用 Logistic 分布来建模比正态分布具有更长尾部和更高波峰的数据分布。在深度学习中常用到的 Sigmoid 函数就是 Logistic 的分布函数在 <img src="https://www.zhihu.com/equation?tex=%5Cmu=0,+%5Cgamma=1" alt="[公式]"> 的特殊形式。</p>
+<h1 id="Logistic-分布函数"><a href="#Logistic-分布函数" class="headerlink" title="Logistic 分布函数"></a>Logistic 分布函数</h1><p>Logistic 分布是一种连续型的分布，它形状与正态分布的形状相似，但是 Logistic 分布的尾部更长，所以我们可以使用 Logistic 分布来建模比正态分布具有更长尾部和更高波峰的数据分布。在深度学习中常用到的 Sigmoid 函数就是 Logistic 的分布函数在 <img src="https://www.zhihu.com/equation?tex=%5Cmu%3D0%2C+%5Cgamma%3D1" alt="[公式]"> 的特殊形式。</p>
 <p>logistic regression是使用线性回归的预测值逼近真实分类的对数几率，优点是：</p>
 <ol>
 <li>直接对分类概率建模，无需进行假设，避免假设带来的不准确</li>
@@ -420,7 +419,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">108</span>
+          <span class="site-state-item-count">109</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

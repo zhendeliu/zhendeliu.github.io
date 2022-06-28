@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要背景问题：损失函数用来评价模型的预测值和真实值不一样的程度，损失函数越好，通常模型的性能越好。不同的模型用的损失函数一般也不一样。 方法简述：  均方差损失 Mean Squared Error Loss 平均绝对误差损失 Mean Absolute Error Loss Huber Loss 分位数损失 Quantile Loss 交叉熵损失 Cross Entropy Loss 合页损失">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-01T07:57:02.000Z">
-<meta property="article:modified_time" content="2021-10-09T06:59:35.500Z">
+<meta property="article:modified_time" content="2021-10-09T06:59:35.000Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="总结">
 <meta property="article:tag" content="编程">
@@ -125,7 +125,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">108</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">109</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -297,9 +297,6 @@
 </ol>
 <p>适用于回归的均方差损失 Mean Squared Loss、平均绝对误差损失 Mean Absolute Error Loss，两者的区别以及两者相结合得到的 Huber Loss，接着是应用于分位数回归的分位数损失 Quantile Loss，表明了平均绝对误差损失实际上是分位数损失的一种特例，在分类场景下，本文讨论了最常用的交叉熵损失函数 Cross Entropy Loss，包括二分类和多分类下的形式，并从信息论的角度解释了交叉熵损失函数，最后简单介绍了应用于 SVM 中的 Hinge 损失 Hinge Loss。</p>
 <span id="more"></span>
-
-
-
 <p>损失函数分为经验风险损失函数和结构风险损失函数。经验风险损失函数指预测结果和实际结果的差别，结构风险损失函数是指经验风险损失函数加上正则项。</p>
 <p>Loss Function、Cost Function 和 Objective Function 的区别和联系。在机器学习的语境下这三个术语经常被交叉使用。</p>
 <ul>
@@ -322,8 +319,7 @@
 <h3 id="二分类"><a href="#二分类" class="headerlink" title="二分类"></a>二分类</h3><p>考虑二分类，在二分类中我们通常使用 Sigmoid 函数将模型的输出压缩到 (0, 1) 区间内 ，用来代表给定输入 ，模型判断为正类的概率。由于只有正负两类，因此同时也得到了负类的概率。</p>
 <p>二分类的交叉熵损失越接近目标值损失越小，随着误差变差，损失呈指数增长。</p>
 <h3 id="多分类"><a href="#多分类" class="headerlink" title="多分类"></a>多分类</h3><p>在多分类的任务中，交叉熵损失函数的推导思路和二分类是一样的，变化的地方是真实值 现在是一个 One-hot 向量，同时模型输出的压缩由原来的 Sigmoid 函数换成 Softmax 函数。Softmax 函数将每个维度的输出范围都限定在 之间，同时所有维度的输出和为 1，</p>
-<p>#合页损失 Hinge Loss</p>
-<p>合页损失 Hinge Loss 是另外一种二分类损失函数，适用于 maximum-margin 的分类，支持向量机 Support Vector Machine (SVM) 模型的损失函数本质上就是 Hinge Loss + L2 正则化。</p>
+<h1 id="合页损失-Hinge-Loss"><a href="#合页损失-Hinge-Loss" class="headerlink" title="合页损失 Hinge Loss"></a>合页损失 Hinge Loss</h1><p>合页损失 Hinge Loss 是另外一种二分类损失函数，适用于 maximum-margin 的分类，支持向量机 Support Vector Machine (SVM) 模型的损失函数本质上就是 Hinge Loss + L2 正则化。</p>
 
     </div>
 
@@ -410,7 +406,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#L2%EF%BC%9A%E5%9D%87%E6%96%B9%E5%B7%AE%E6%8D%9F%E5%A4%B1-Mean-Squared-Error-Loss"><span class="nav-number">2.</span> <span class="nav-text">L2：均方差损失 Mean Squared Error Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#L1%EF%BC%9A%E5%B9%B3%E5%9D%87%E7%BB%9D%E5%AF%B9%E8%AF%AF%E5%B7%AE%E6%8D%9F%E5%A4%B1-Mean-Absolute-Error-Loss"><span class="nav-number">3.</span> <span class="nav-text">L1：平均绝对误差损失 Mean Absolute Error Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Huber-Loss"><span class="nav-number">4.</span> <span class="nav-text">Huber Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E4%BD%8D%E6%95%B0%E6%8D%9F%E5%A4%B1-Quantile-Loss"><span class="nav-number">5.</span> <span class="nav-text">分位数损失 Quantile Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A4%E5%8F%89%E7%86%B5%E6%8D%9F%E5%A4%B1-Cross-Entropy-Loss"><span class="nav-number">6.</span> <span class="nav-text">交叉熵损失 Cross Entropy Loss</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E7%B1%BB"><span class="nav-number">6.0.1.</span> <span class="nav-text">二分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%88%86%E7%B1%BB"><span class="nav-number">6.0.2.</span> <span class="nav-text">多分类</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#L2%EF%BC%9A%E5%9D%87%E6%96%B9%E5%B7%AE%E6%8D%9F%E5%A4%B1-Mean-Squared-Error-Loss"><span class="nav-number">2.</span> <span class="nav-text">L2：均方差损失 Mean Squared Error Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#L1%EF%BC%9A%E5%B9%B3%E5%9D%87%E7%BB%9D%E5%AF%B9%E8%AF%AF%E5%B7%AE%E6%8D%9F%E5%A4%B1-Mean-Absolute-Error-Loss"><span class="nav-number">3.</span> <span class="nav-text">L1：平均绝对误差损失 Mean Absolute Error Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Huber-Loss"><span class="nav-number">4.</span> <span class="nav-text">Huber Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E4%BD%8D%E6%95%B0%E6%8D%9F%E5%A4%B1-Quantile-Loss"><span class="nav-number">5.</span> <span class="nav-text">分位数损失 Quantile Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A4%E5%8F%89%E7%86%B5%E6%8D%9F%E5%A4%B1-Cross-Entropy-Loss"><span class="nav-number">6.</span> <span class="nav-text">交叉熵损失 Cross Entropy Loss</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E7%B1%BB"><span class="nav-number">6.0.1.</span> <span class="nav-text">二分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%88%86%E7%B1%BB"><span class="nav-number">6.0.2.</span> <span class="nav-text">多分类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%88%E9%A1%B5%E6%8D%9F%E5%A4%B1-Hinge-Loss"><span class="nav-number">7.</span> <span class="nav-text">合页损失 Hinge Loss</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -426,7 +422,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">108</span>
+          <span class="site-state-item-count">109</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

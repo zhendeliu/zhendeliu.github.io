@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="业务场景描述  es数字查询（未完成）  ES实践过程  ES优化记录  ES实践结果  Conclusion">
+  <meta name="description" content="[x] 业务场景描述 [ ] es数字查询（未完成） [x] ES实践过程 [x] ES优化记录 [x] ES实践结果 [ ] Conclusion">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ElasticSearch(5):实践记录">
 <meta property="og:url" content="http://example.com/2021/12/14/ElasticSearch-5-%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Leo的三板斧">
-<meta property="og:description" content="业务场景描述  es数字查询（未完成）  ES实践过程  ES优化记录  ES实践结果  Conclusion">
+<meta property="og:description" content="[x] 业务场景描述 [ ] es数字查询（未完成） [x] ES实践过程 [x] ES优化记录 [x] ES实践结果 [ ] Conclusion">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-14T08:34:34.000Z">
-<meta property="article:modified_time" content="2021-12-24T09:49:38.000Z">
+<meta property="article:modified_time" content="2021-12-24T09:49:38.587Z">
 <meta property="article:author" content="Leo">
 <meta property="article:tag" content="python 深度学习">
 <meta name="twitter:card" content="summary">
@@ -122,7 +122,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">108</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">109</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -262,16 +262,15 @@
 
       
         <ul>
-<li><input checked disabled type="checkbox"> 业务场景描述</li>
-<li><input disabled type="checkbox"> es数字查询（未完成）</li>
-<li><input checked disabled type="checkbox"> ES实践过程</li>
-<li><input checked disabled type="checkbox"> ES优化记录</li>
-<li><input checked disabled type="checkbox"> ES实践结果</li>
-<li><input disabled type="checkbox"> Conclusion</li>
+<li>[x] 业务场景描述</li>
+<li>[ ] es数字查询（未完成）</li>
+<li>[x] ES实践过程</li>
+<li>[x] ES优化记录</li>
+<li>[x] ES实践结果</li>
+<li>[ ] Conclusion</li>
 </ul>
 <span id="more"></span>
-
-<h1 id="业务场景描述"><a href="#业务场景描述" class="headerlink" title="业务场景描述"></a>业务场景描述</h1><p>已知数据是从原始文本集提取的特征数据表。数据表根据类别做了分类，每个类别下有多张数据表，这些表格以 class01-1、class01-2 。。。class05-58命名，保存在mysql数据库中，单张表的数据量有一千万到一亿条记录不等，每条记录包含50个字段。所有字段均为整数数值。</p>
+<h1 id="业务场景描述"><a href="#业务场景描述" class="headerlink" title="　业务场景描述"></a>　业务场景描述</h1><p>已知数据是从原始文本集提取的特征数据表。数据表根据类别做了分类，每个类别下有多张数据表，这些表格以 class01-1、class01-2 。。。class05-58命名，保存在mysql数据库中，单张表的数据量有一千万到一亿条记录不等，每条记录包含50个字段。所有字段均为整数数值。</p>
 <h1 id="数字查询"><a href="#数字查询" class="headerlink" title="数字查询"></a>数字查询</h1><p>ES怎么处理数字索引 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/137576216">https://zhuanlan.zhihu.com/p/137576216</a></p>
 <h1 id="ES实践过程"><a href="#ES实践过程" class="headerlink" title="ES实践过程"></a>ES实践过程</h1><h2 id="index创建"><a href="#index创建" class="headerlink" title="index创建"></a>index创建</h2><p>在我们业务场景下不需要做全文检索的分词等，直接创建非结构化index即可，另外需要确定的是索引对应的分片数量。主分片数量在index创建之后是无法更改的，因此需要权衡的是shards的数量，索引的分片数不是越多越好，也不是越少越好</p>
 <ol>
@@ -279,7 +278,7 @@
 </ol>
 <p>​    分片基本上用于并行化索引上的工作。当发送批量请求以索引文档列表时，它们将在所有可用的主分片之间进行拆分和划分。 因此，如果有 5 个主分片并发送包含 100 个文档的批量请求，则每个分片必须并行索引 20 个文档。索引所有文档后，将响应发送回客户端。然后可以索引下一批文档。 </p>
 <p>​    当有更多分片时，索引通常会更快，因为每个文档每个分片只需要存储一次。如果快速摄取是您最关心的问题，那么每个数据节点应该至少有一个分片。但<strong>至少是一个可被数据节点数整除的分片数</strong>。例如，如果有 3 个数据节点，则应该有 3、6 或 9 个分片。如果有 3 个数据节点并决定使用 4 个主分片，在索引过程实际上会比使用 3 个分片时慢，因为 1 个节点（服务器）将有双倍的工作，而其他 2 个将闲置。作为快速索引的经验法则，应该选择至少与数据节点数量一样多的主分片。</p>
-<ol start="2">
+<ol>
 <li><p><strong>每个分片的最佳查询数量</strong></p>
 <p>对于搜索操作，20-25 GB 通常是一个不错的分片大小。 通常最好不超过50G</p>
 <p>每个分片都是一个Lucene Index，所以一个分片只能存放 Integer.MAX_VALUE - 128 = 2,147,483,519个docs</p>
@@ -287,7 +286,6 @@
 </ol>
 <p>根据我们总的数据量，暂时将每个index的分片数设置为3</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">PUT http://localhost:9200/index_name</span><br><span class="line">&#123;</span><br><span class="line">  &quot;settings&quot;: &#123;</span><br><span class="line">    &quot;number_of_shards&quot;:   3, </span><br><span class="line">    &quot;number_of_replicas&quot;: 1</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="index查询"><a href="#index查询" class="headerlink" title="index查询"></a>index查询</h2><p>通过python程序对ES进行操作</p>
 <p>脚本文件详见附录：</p>
 <h1 id="ES优化记录"><a href="#ES优化记录" class="headerlink" title="ES优化记录"></a>ES优化记录</h1><ol>
@@ -301,9 +299,11 @@
 <li><p>ES如何实现去重效果？</p>
 <ol>
 <li><p>根据单个字段去重使用collapse做折叠操作</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;collapse&quot;:&#123;</span><br><span class="line">        &quot;field&quot;:&quot;uid&quot;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;collapse&quot;:&#123;</span><br><span class="line">        &quot;field&quot;:&quot;uid&quot;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>根据多字段去重，等同于SQL中的group by，使用top_hits</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">      </span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">      </span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 </li>
 <li><p>ES对查询结果的获取：默认返回10000条查询结果，如何返回更多结果</p>
@@ -339,7 +339,8 @@
 <li><p>结合集群部署考虑，创建index时将 shards数量设置为3</p>
 </li>
 </ol>
-<h1 id="ES实践结果"><a href="#ES实践结果" class="headerlink" title="ES实践结果"></a>ES实践结果</h1><h3 id="Lenovo-X1-intel-i7-16G-查询结果"><a href="#Lenovo-X1-intel-i7-16G-查询结果" class="headerlink" title="Lenovo X1 (intel-i7 16G ) 查询结果"></a>Lenovo X1 (intel-i7 16G ) 查询结果</h3><table>
+<h1 id="ES实践结果"><a href="#ES实践结果" class="headerlink" title="ES实践结果"></a>ES实践结果</h1><h3 id="Lenovo-X1-intel-i7-16G-查询结果"><a href="#Lenovo-X1-intel-i7-16G-查询结果" class="headerlink" title="Lenovo X1 (intel-i7 16G ) 查询结果"></a>Lenovo X1 (intel-i7 16G ) 查询结果</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>数据量</th>
@@ -350,7 +351,8 @@
 <th>写入文件</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>1003W</td>
 <td>1.39S</td>
 <td>7806</td>
@@ -388,10 +390,12 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="物理机查询结果：-（通过python脚本实现进行评估）"><a href="#物理机查询结果：-（通过python脚本实现进行评估）" class="headerlink" title="物理机查询结果： （通过python脚本实现进行评估）"></a>物理机查询结果： （通过python脚本实现进行评估）</h3><p>执行第1条语句   缓存清理完成   结果：0    共耗时约 0.08 秒   去重True<br>执行第2条语句   缓存清理完成   结果：94   共耗时约 0.17 秒   去重True<br>执行第3条语句   缓存清理完成   结果：7806  共耗时约 2.75 秒   去重True<br>执行第4条语句   缓存清理完成   结果：0     共耗时约 0.05 秒   去重True<br>执行第5条语句   缓存清理完成   结果：0   共耗时约 0.15 秒   去重True<br>执行第6条语句   缓存清理完成   结果：7   共耗时约 0.43 秒   去重True<br>执行第7条语句   缓存清理完成   结果：7   共耗时约 0.49 秒   去重False<br>执行第8条语句   缓存清理完成   结果：7   共耗时约 0.43 秒   去重False<br>执行第9条语句   缓存清理完成   结果：7   共耗时约 0.40 秒   去重False<br>执行第10条语句  缓存清理完成   结果：0   共耗时约 0.32 秒   去重True            </p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -403,7 +407,8 @@
 <th>Kylin查询时间</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>1</td>
 <td>N/A</td>
 <td>0.08S</td>
@@ -475,22 +480,22 @@
 <td>104.156s</td>
 <td>N/A</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><em>数据来源：Kylin4.0.0调研报告：赵伟驰</em></p>
 <h3 id="多线程并发测试二"><a href="#多线程并发测试二" class="headerlink" title="多线程并发测试二"></a>多线程并发测试二</h3><p>10个线程并发： 执行第三条SQL　返回7806条数据  耗时3-8秒  CPU ~100%</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">I&#x27;m NO.5 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 6.24 秒</span><br><span class="line">I&#x27;m NO.4 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 5.69 秒</span><br><span class="line">I&#x27;m NO.2 thread!!!</span><br><span class="line">共耗时约 5.59 秒</span><br><span class="line">I&#x27;m NO.3 thread!!!</span><br><span class="line">共耗时约 6.03 秒</span><br><span class="line">I&#x27;m NO.0 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 4.88 秒</span><br><span class="line">I&#x27;m NO.6 thread!!!</span><br><span class="line">共耗时约 4.46 秒</span><br><span class="line">I&#x27;m NO.8 thread!!!</span><br><span class="line">共耗时约 5.59 秒</span><br><span class="line">I&#x27;m NO.1 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 4.36 秒</span><br><span class="line">I&#x27;m NO.7 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 4.13 秒</span><br><span class="line">I&#x27;m NO.9 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 3.94 秒</span><br></pre></td></tr></table></figure>
-
 <p>100个线程并发  返回7806条   耗时40-60秒  CPU 830%-&gt;74%</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">I&#x27;m NO.64 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 36.97 秒</span><br><span class="line">I&#x27;m NO.49 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 42.53 秒</span><br><span class="line">I&#x27;m NO.4 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 46.43 秒</span><br><span class="line">I&#x27;m NO.12 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 40.81 秒</span><br><span class="line">I&#x27;m NO.21 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 41.34 秒</span><br><span class="line">I&#x27;m NO.93 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 51.63 秒</span><br><span class="line">I&#x27;m NO.0 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 44.42 秒</span><br><span class="line">I&#x27;m NO.86 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 45.17 秒</span><br></pre></td></tr></table></figure>
-
 <p>400个线程并发 执行第三条SQL　返回7806条  耗时40-70秒  CPU 1900%-&gt;150%</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">I&#x27;m NO.63 thread!!!</span><br><span class="line">共耗时约 49.61 秒</span><br><span class="line">I&#x27;m NO.16 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 61.87 秒</span><br><span class="line">I&#x27;m NO.11 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 57.21 秒</span><br><span class="line">I&#x27;m NO.120 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 54.67 秒</span><br><span class="line">I&#x27;m NO.62 thread!!!</span><br><span class="line">共耗时约 54.94 秒</span><br><span class="line">I&#x27;m NO.96 thread!!!</span><br><span class="line">共耗时约 56.83 秒</span><br><span class="line">I&#x27;m NO.15 thread!!!</span><br><span class="line">共耗时约 58.06 秒</span><br><span class="line">I&#x27;m NO.43 thread!!!</span><br><span class="line">共耗时约 57.07 秒</span><br><span class="line">I&#x27;m NO.6 thread!!!</span><br><span class="line">共耗时约 59.93 秒</span><br><span class="line">I&#x27;m NO.37 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">共耗时约 58.40 秒</span><br><span class="line">I&#x27;m NO.25 thread!!!</span><br><span class="line">7806</span><br><span class="line">Scrolling...</span><br><span class="line">7806共耗时约 54.85 秒</span><br><span class="line">I&#x27;m NO.31 thread!!!</span><br></pre></td></tr></table></figure>
-
 <p>总结：</p>
 <p>10个线程并发：每个线程100次查询 执行第三条SQL　  CPU 20%~100%  </p>
 <p>100个线程并发：  每个线程100次查询  执行第三条SQL  CPU 74&amp;~830%</p>
 <p>400个线程并发： 每个线程100次查询 执行第三条SQL  CPU 150%~1900%</p>
 <h3 id="多线程并发测试二-1"><a href="#多线程并发测试二-1" class="headerlink" title="多线程并发测试二"></a>多线程并发测试二</h3><p>在不同数量线程并发条件下，每个线程分别执行index-S1查询20次，index-S2查询20次</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -501,7 +506,8 @@
 <th>CPU占用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>5</td>
 <td>118.79S</td>
 <td>200</td>
@@ -534,9 +540,11 @@
 <td>1990.94</td>
 <td>3200</td>
 <td>0.622S</td>
-<td>64%<del>270%</del>570%</td>
+<td>64%~270%~570%</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>Reference：</p>
 <ol>
 <li>如何在 Elasticsearch 中为每个索引选择正确的分片数 <a target="_blank" rel="noopener" href="https://opster.com/guides/elasticsearch/data-structuring/elasticsearch-choose-number-of-shards/">https://opster.com/guides/elasticsearch/data-structuring/elasticsearch-choose-number-of-shards/</a></li>
@@ -621,7 +629,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%9A%E5%8A%A1%E5%9C%BA%E6%99%AF%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">业务场景描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E6%9F%A5%E8%AF%A2"><span class="nav-number">2.</span> <span class="nav-text">数字查询</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E5%AE%9E%E8%B7%B5%E8%BF%87%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">ES实践过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#index%E5%88%9B%E5%BB%BA"><span class="nav-number">3.1.</span> <span class="nav-text">index创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#index%E6%9F%A5%E8%AF%A2"><span class="nav-number">3.2.</span> <span class="nav-text">index查询</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E4%BC%98%E5%8C%96%E8%AE%B0%E5%BD%95"><span class="nav-number">4.</span> <span class="nav-text">ES优化记录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E5%AE%9E%E8%B7%B5%E7%BB%93%E6%9E%9C"><span class="nav-number">5.</span> <span class="nav-text">ES实践结果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lenovo-X1-intel-i7-16G-%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C"><span class="nav-number">5.0.1.</span> <span class="nav-text">Lenovo X1 (intel-i7 16G ) 查询结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E6%9C%BA%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%EF%BC%9A-%EF%BC%88%E9%80%9A%E8%BF%87python%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0%E8%BF%9B%E8%A1%8C%E8%AF%84%E4%BC%B0%EF%BC%89"><span class="nav-number">5.0.2.</span> <span class="nav-text">物理机查询结果： （通过python脚本实现进行评估）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91%E6%B5%8B%E8%AF%95%E4%BA%8C"><span class="nav-number">5.0.3.</span> <span class="nav-text">多线程并发测试二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91%E6%B5%8B%E8%AF%95%E4%BA%8C-1"><span class="nav-number">5.0.4.</span> <span class="nav-text">多线程并发测试二</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%9A%E5%8A%A1%E5%9C%BA%E6%99%AF%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">　业务场景描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E6%9F%A5%E8%AF%A2"><span class="nav-number">2.</span> <span class="nav-text">数字查询</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E5%AE%9E%E8%B7%B5%E8%BF%87%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">ES实践过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#index%E5%88%9B%E5%BB%BA"><span class="nav-number">3.1.</span> <span class="nav-text">index创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#index%E6%9F%A5%E8%AF%A2"><span class="nav-number">3.2.</span> <span class="nav-text">index查询</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E4%BC%98%E5%8C%96%E8%AE%B0%E5%BD%95"><span class="nav-number">4.</span> <span class="nav-text">ES优化记录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES%E5%AE%9E%E8%B7%B5%E7%BB%93%E6%9E%9C"><span class="nav-number">5.</span> <span class="nav-text">ES实践结果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lenovo-X1-intel-i7-16G-%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C"><span class="nav-number">5.0.1.</span> <span class="nav-text">Lenovo X1 (intel-i7 16G ) 查询结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E6%9C%BA%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%EF%BC%9A-%EF%BC%88%E9%80%9A%E8%BF%87python%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0%E8%BF%9B%E8%A1%8C%E8%AF%84%E4%BC%B0%EF%BC%89"><span class="nav-number">5.0.2.</span> <span class="nav-text">物理机查询结果： （通过python脚本实现进行评估）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91%E6%B5%8B%E8%AF%95%E4%BA%8C"><span class="nav-number">5.0.3.</span> <span class="nav-text">多线程并发测试二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91%E6%B5%8B%E8%AF%95%E4%BA%8C-1"><span class="nav-number">5.0.4.</span> <span class="nav-text">多线程并发测试二</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -637,7 +645,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">108</span>
+          <span class="site-state-item-count">109</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
